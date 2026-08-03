@@ -11,6 +11,7 @@ const menuItems = [
   { label: "대시보드", href: "/" },
   { label: "학생관리", href: "/students" },
   { label: "지문관리", href: "/passages" },
+  { label: "AI 지문 생성", href: "/ai-passage" },
   { label: "문제은행", href: "/questions" },
   { label: "시험출제", href: "/exams" },
   { label: "시험지 기록", href: "/history" },
