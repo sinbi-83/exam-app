@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
     const data = await response.json();
     const rawText = data.content?.[0]?.text ?? "";
 
-    let parsed: { passage: string; items: PassageHighlightItem[] };
+    let parsed: { passage: string; translation: string; items: PassageHighlightItem[] };
     try {
       parsed = JSON.parse(rawText);
     } catch {
@@ -74,10 +74,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(errorResponse, { status: 500 });
     }
 
-    const successResponse: AiPassageResponse = {
+ const successResponse: AiPassageResponse = {
       ok: true,
       data: {
         passage: parsed.passage,
+        translation: parsed.translation,
         items: parsed.items,
       },
     };

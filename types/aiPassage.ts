@@ -12,7 +12,8 @@ export interface PassageHighlightItem {
   type: "vocab" | "grammar";                            // 어휘 문제인지 어법 문제인지
   difficulty: "beginner" | "intermediate" | "advanced"; // 쉬움 / 보통 / 어려움
   answer: string;                                       // 정답
-  wrongAnswers: string[];                               // 오답 보기 (1~3개, 개수 유동적)
+  wrongAnswers: string[];                               // 오답 보기 (정확히 4개)
+  explanation: string;                                  // 정답 해설 (한국어)
 }
 
 // 서버가 성공적으로 만들어서 돌려주는 데이터
@@ -20,6 +21,7 @@ export interface AiPassageSuccessResponse {
   ok: true;
   data: {
     passage: string;                  // AI가 새로 만든 지문 전체
+    translation: string;              // 지문 전체의 한글 번역
     items: PassageHighlightItem[];    // 지문 속 하이라이트 포인트 목록
   };
 }

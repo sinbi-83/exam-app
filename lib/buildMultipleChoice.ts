@@ -5,6 +5,7 @@ export interface PassageHighlightItem {
   difficulty: "beginner" | "intermediate" | "advanced";
   answer: string;
   wrongAnswers: string[];
+  explanation: string;
 }
 
 // 실제 시험 문제로 조립된 후의 모양
@@ -14,6 +15,7 @@ export interface MultipleChoiceQuestion {
   difficulty: "beginner" | "intermediate" | "advanced";
   choices: string[];      // 무작위로 섞인 보기 (개수는 오답 개수+1)
   correctIndex: number;   // 정답이 몇 번째에 있는지
+  explanation: string;    // 정답 해설
 }
 
 // 배열 순서를 무작위로 섞어주는 함수
@@ -53,6 +55,7 @@ export function buildOneMultipleChoice(
     difficulty: item.difficulty,
     choices: shuffled,
     correctIndex,
+    explanation: item.explanation || "",
   };
 }
 
