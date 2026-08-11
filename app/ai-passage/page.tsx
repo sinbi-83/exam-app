@@ -1,30 +1,23 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useParams } from 'next/navigation'
+import { useState } from 'react'
+import {
+  buildMultipleChoiceQuestions,
+  MultipleChoiceQuestion,
+} from '@/lib/buildMultipleChoice'
 import { PassageHighlightItem } from '@/types/aiPassage'
 
-interface MultipleChoiceQuestion {
-  targetText: string
-  type: 'vocab' | 'grammar'
-  difficulty: 'beginner' | 'intermediate' | 'advanced'
-  choices: string[]
-  correctIndex: number
-  explanation: string
-}
-
-interface QuestionSetDetail {
-  id: string
-  grade: string
-  topic: string
-  passage: string
-  translation: string
-  items: PassageHighlightItem[]
-  questions: MultipleChoiceQuestion[]
-  created_at: string
-}
-
-const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
+const GRADE_OPTIONS = [
+  '초등학교 4학년',
+  '초등학교 5학년',
+  '초등학교 6학년',
+  '중학교 1학년',
+  '중학교 2학년',
+  '중학교 3학년',
+  '고등학교 1학년',
+  '고등학교 2학년',
+  '고등학교 3학년',
+]
 
 const TYPE_LABEL: Record<string, string> = {
   vocab: '어휘',
@@ -41,6 +34,8 @@ const TYPE_BG_CLASS: Record<string, string> = {
   vocab: 'bg-yellow-200',
   grammar: 'bg-blue-200',
 }
+
+const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
 function buildHighlightSegments(passage: string, items: PassageHighlightItem[]) {
   type Match = { start: number; end: number; item: PassageHighlightItem }
@@ -80,153 +75,231 @@ function buildHighlightSegments(passage: string, items: PassageHighlightItem[]) 
   return segments
 }
 
-export default function QuestionSetDetailPage() {
-  const params = useParams()
-  const id = params.id as string
+export default function AiPassagePage() {
+  const [grade, setGrade] = useState(GRADE_OPTIONS[3])
+  const [topic, setTopic] = useState('')
+  const [passage, setPassage] = useState('')
+  const [translation, setTranslation] = useState('')
+  const [items, setItems] = useState<PassageHighlightItem[]>([])
+  const [loading, setLoading] = useState(false)
 
-  const [data, setData] = useState<QuestionSetDetail | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState('')
+  const [questions, setQuestions] = useState<MultipleChoiceQuestion[]>([])
+  const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: number }>({})
   const [showTranslation, setShowTranslation] = useState(false)
+  const [saving, setSaving] = useState(false)
 
-  useEffect(() => {
-    async function fetchDetail() {
-      try {
-        const res = await fetch(`/api/question-sets/${id}`)
-        const result = await res.json()
-        if (!res.ok) {
-          setError(result.error || '불러오지 못했습니다.')
-          return
-        }
-        setData(result.data)
-      } catch {
-        setError('서버와 통신 중 문제가 발생했어요.')
-      } finally {
-        setLoading(false)
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setLoading(true)
+    setPassage('')
+    setTranslation('')
+    setItems([])
+    setQuestions([])
+    setSelectedAnswers({})
+    setShowTranslation(false)
+
+    try {
+      const res = await fetch('/api/generate-ai-passage', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ gradeLevel: grade, topicKeyword: topic }),
+      })
+
+      const data = await res.json()
+
+      if (!data.ok) {
+        alert(data.message || '오류가 발생했어요.')
+        return
       }
+
+      setPassage(data.data.passage)
+      setTranslation(data.data.translation || '')
+      setItems(data.data.items || [])
+    } catch (err) {
+      alert('서버와 통신 중 문제가 발생했어요.')
+    } finally {
+      setLoading(false)
     }
-    fetchDetail()
-  }, [id])
-
-  function handlePrintExam() {
-    if (!data) return
-    sessionStorage.setItem(
-      'printData',
-      JSON.stringify({ mode: 'exam', passage: data.passage, questions: data.questions })
-    )
-    window.open('/ai-passage/print', '_blank')
   }
 
-  function handlePrintAnswer() {
-    if (!data) return
-    sessionStorage.setItem(
-      'printData',
-      JSON.stringify({ mode: 'answer', passage: data.passage, questions: data.questions })
-    )
-    window.open('/ai-passage/print', '_blank')
+  async function handleBuildQuestions() {
+    const built = buildMultipleChoiceQuestions(items)
+    setQuestions(built)
+    setSelectedAnswers({})
+
+    // 문제은행에 자동 저장 (실패해도 화면 표시에는 영향 없음)
+    setSaving(true)
+    try {
+      await fetch('/api/save-question-set', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          grade,
+          topic,
+          passage,
+          translation,
+          items,
+          questions: built,
+        }),
+      })
+    } catch (err) {
+      // 저장 실패해도 문제 화면은 그대로 보여줌
+      console.error('문제은행 저장 실패:', err)
+    } finally {
+      setSaving(false)
+    }
   }
 
-  if (loading) {
-    return <p className="p-8 text-sm text-gray-500">불러오는 중...</p>
+  function handleAnswerSelect(questionIndex: number, choiceIndex: number) {
+    setSelectedAnswers((prev) => ({ ...prev, [questionIndex]: choiceIndex }))
   }
 
-  if (error || !data) {
-    return <p className="p-8 text-sm text-red-500">{error || '문제를 찾을 수 없습니다.'}</p>
-  }
-
-  const segments = buildHighlightSegments(data.passage, data.items)
+  const segments = passage ? buildHighlightSegments(passage, items) : []
 
   return (
-    <div className="mx-auto max-w-2xl">
-      <h1 className="mb-1 text-xl font-semibold text-gray-800">{data.topic}</h1>
-      <p className="mb-6 text-sm text-gray-500">
-        {data.grade} · {new Date(data.created_at).toLocaleDateString('ko-KR')}
-      </p>
+    <div className="max-w-2xl mx-auto">
+      <h1 className="text-xl font-semibold text-gray-800 mb-6">
+        AI 지문 생성 (신규)
+      </h1>
 
-      <div className="mb-2 flex gap-3 text-xs text-gray-500">
-        <span className="flex items-center gap-1">
-          <span className="inline-block h-3 w-3 rounded bg-yellow-200" /> 어휘
-        </span>
-        <span className="flex items-center gap-1">
-          <span className="inline-block h-3 w-3 rounded bg-blue-200" /> 어법
-        </span>
-      </div>
+      <form onSubmit={handleSubmit} className="rounded-lg border border-gray-200 bg-white p-6 space-y-5">
+        <div>
+          <label className="block text-sm text-gray-600 mb-1">학년</label>
+          <select
+            value={grade}
+            onChange={(e) => setGrade(e.target.value)}
+            className="w-full rounded border border-gray-300 px-3 py-2"
+          >
+            {GRADE_OPTIONS.map((g) => (
+              <option key={g} value={g}>{g}</option>
+            ))}
+          </select>
+        </div>
 
-      <div className="whitespace-pre-wrap rounded-lg border border-gray-200 bg-white p-6 text-sm leading-8">
-        {segments.map((seg, idx) => {
-          if (!seg.item) {
-            return <span key={idx}>{seg.text}</span>
-          }
-          const bgClass = TYPE_BG_CLASS[seg.item.type] || 'bg-gray-200'
-          return (
-            <span key={idx} className="whitespace-nowrap">
-              <span className={`${bgClass} rounded px-0.5`}>{seg.text}</span>
-              <span className="ml-1 whitespace-nowrap rounded bg-gray-700 px-1 text-[10px] text-white">
-                {TYPE_LABEL[seg.item.type]}·{DIFFICULTY_LABEL[seg.item.difficulty]}
-              </span>
+        <div>
+          <label className="block text-sm text-gray-600 mb-1">주제 키워드</label>
+          <input
+            type="text"
+            value={topic}
+            onChange={(e) => setTopic(e.target.value)}
+            placeholder="예: 우정, 환경, 여행지"
+            className="w-full rounded border border-gray-300 px-3 py-2"
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full rounded bg-blue-600 py-2 text-white disabled:opacity-50"
+        >
+          {loading ? '생성 중...' : '지문 생성'}
+        </button>
+      </form>
+
+      {passage && (
+        <div className="mt-6 space-y-4">
+          <div className="mb-2 flex gap-4 text-xs text-gray-500">
+            <span className="flex items-center gap-1">
+              <span className="inline-block h-3 w-3 rounded bg-yellow-200" /> 어휘
             </span>
-          )
-        })}
-      </div>
+            <span className="flex items-center gap-1">
+              <span className="inline-block h-3 w-3 rounded bg-blue-200" /> 어법
+            </span>
+          </div>
 
-      <button
-        onClick={() => setShowTranslation((v) => !v)}
-        className="my-4 rounded-md border border-gray-300 px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50"
-      >
-        {showTranslation ? '한글 해석 숨기기' : '한글 해석 보기'}
-      </button>
+          <div className="whitespace-pre-wrap rounded border border-gray-300 bg-gray-50 p-4 text-sm leading-8">
+            {segments.map((seg, idx) => {
+              if (!seg.item) {
+                return <span key={idx}>{seg.text}</span>
+              }
+              const bgClass = TYPE_BG_CLASS[seg.item.type] || 'bg-gray-200'
+              return (
+                <span key={idx} className="whitespace-nowrap">
+                  <span className={`${bgClass} rounded px-0.5`}>{seg.text}</span>
+                  <span className="ml-1 whitespace-nowrap rounded bg-gray-700 px-1 py-0.5 text-[10px] font-normal text-white">
+                    {TYPE_LABEL[seg.item.type]}·{DIFFICULTY_LABEL[seg.item.difficulty]}
+                  </span>
+                </span>
+              )
+            })}
+          </div>
 
-      {showTranslation && (
-        <div className="mb-6 rounded-lg bg-gray-50 p-4 text-sm leading-7 text-gray-700">
-          {data.translation}
+          {translation && (
+            <div>
+              <button
+                type="button"
+                onClick={() => setShowTranslation((v) => !v)}
+                className="rounded-md border border-gray-300 px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50"
+              >
+                {showTranslation ? '한글 해석 숨기기' : '한글 해석 보기'}
+              </button>
+              {showTranslation && (
+                <div className="mt-3 rounded-lg bg-gray-50 p-4 text-sm leading-7 text-gray-700">
+                  {translation}
+                </div>
+              )}
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={handleBuildQuestions}
+            disabled={saving}
+            className="w-full rounded bg-green-600 py-2 text-white disabled:opacity-50"
+          >
+            {saving ? '저장 중...' : '문제 만들기'}
+          </button>
         </div>
       )}
 
-      <div className="mb-8 flex gap-2">
-        <button
-          onClick={handlePrintExam}
-          className="flex-1 rounded-md border border-gray-300 py-2 text-sm hover:bg-gray-50"
-        >
-          시험지 PDF 저장/출력
-        </button>
-        <button
-          onClick={handlePrintAnswer}
-          className="flex-1 rounded-md border border-gray-300 py-2 text-sm hover:bg-gray-50"
-        >
-          해설지 PDF 저장/출력
-        </button>
-      </div>
-
-      <h2 className="mb-4 text-lg font-bold">정답 및 해설</h2>
-      <div className="space-y-4">
-        {data.questions.map((q, qIndex) => (
-          <div key={qIndex} className="rounded-lg border border-gray-200 bg-white p-4">
-            <p className="mb-2 font-medium">
-              {qIndex + 1}. &quot;{q.targetText}&quot;의 의미로 가장 알맞은 것은?
-            </p>
-            <div className="mb-2 space-y-1 pl-2">
-              {q.choices.map((choice, choiceIndex) => (
-                <p
-                  key={choiceIndex}
-                  className={
-                    choiceIndex === q.correctIndex
-                      ? 'text-sm font-medium text-green-700'
-                      : 'text-sm text-gray-700'
-                  }
-                >
-                  {CHOICE_MARK[choiceIndex]} {choice}
-                  {choiceIndex === q.correctIndex ? ' (정답)' : ''}
+      {questions.length > 0 && (
+        <div className="mt-6 space-y-4">
+          <h2 className="text-lg font-semibold text-gray-800">
+            생성된 문제 ({questions.length}개)
+          </h2>
+          {questions.map((q, qIndex) => {
+            const selected = selectedAnswers[qIndex]
+            return (
+              <div key={qIndex} className="rounded border border-gray-300 p-4">
+                <div className="mb-2 flex items-center gap-2 text-xs text-gray-500">
+                  <span className="rounded bg-gray-100 px-2 py-0.5">
+                    {TYPE_LABEL[q.type]} · {DIFFICULTY_LABEL[q.difficulty]}
+                  </span>
+                </div>
+                <p className="mb-2 font-medium">
+                  Q{qIndex + 1}. &quot;{q.targetText}&quot;의 의미로 가장 알맞은 것은?
                 </p>
-              ))}
-            </div>
-            {q.explanation && (
-              <p className="border-t border-gray-100 pt-2 text-sm text-gray-500">
-                {q.explanation}
-              </p>
-            )}
-          </div>
-        ))}
-      </div>
+                <div className="space-y-1">
+                  {q.choices.map((choice, choiceIndex) => {
+                    const isSelected = selected === choiceIndex
+                    const isCorrect = choiceIndex === q.correctIndex
+                    let style = 'border-gray-300'
+                    if (selected !== undefined) {
+                      if (isCorrect) style = 'border-green-500 bg-green-50'
+                      else if (isSelected) style = 'border-red-500 bg-red-50'
+                    }
+                    return (
+                      <button
+                        key={choiceIndex}
+                        type="button"
+                        onClick={() => handleAnswerSelect(qIndex, choiceIndex)}
+                        className={`block w-full rounded border px-3 py-2 text-left text-sm ${style}`}
+                      >
+                        {CHOICE_MARK[choiceIndex]} {choice}
+                      </button>
+                    )
+                  })}
+                </div>
+                {selected !== undefined && q.explanation && (
+                  <p className="mt-2 border-t border-gray-100 pt-2 text-sm text-gray-500">
+                    {q.explanation}
+                  </p>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }
