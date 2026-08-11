@@ -26,6 +26,13 @@ interface QuestionSetDetail {
 
 const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
+function buildQuestionPrompt(q: MultipleChoiceQuestion): string {
+  if (q.type === 'grammar') {
+    return `밑줄 친 "${q.targetText}"의 쓰임이 어법상 가장 적절한 것은?`
+  }
+  return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
+}
+
 const TYPE_LABEL: Record<string, string> = {
   vocab: '어휘',
   grammar: '어법',
@@ -202,7 +209,7 @@ export default function QuestionSetDetailPage() {
         {data.questions.map((q, qIndex) => (
           <div key={qIndex} className="rounded-lg border border-gray-200 bg-white p-4">
             <p className="mb-2 font-medium">
-              {qIndex + 1}. &quot;{q.targetText}&quot;의 의미로 가장 알맞은 것은?
+           {qIndex + 1}. {buildQuestionPrompt(q)}
             </p>
             <div className="mb-2 space-y-1 pl-2">
               {q.choices.map((choice, choiceIndex) => (

@@ -19,6 +19,52 @@ interface PrintData {
 
 const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
+function buildQuestionPrompt(q: MultipleChoiceQuestion, qIndex: number): string {
+  if (q.type === 'grammar') {
+    return `빈칸 (${qIndex + 1})에 들어갈 말로 가장 적절한 것은?`
+  }
+  return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
+}
+
+// 어법 문제에 해당하는 부분만 지문에서 빈칸으로 가리는 함수
+function buildExamPassageSegments(passage: string, questions: MultipleChoiceQuestion[]) {
+  type Match = { start: number; end: number; qNumber: number }
+  const matches: Match[] = []
+
+  questions.forEach((q, qIndex) => {
+    if (q.type !== 'grammar' || !q.targetText) return
+    const idx = passage.indexOf(q.targetText)
+    if (idx === -1) return
+    matches.push({ start: idx, end: idx + q.targetText.length, qNumber: qIndex + 1 })
+  })
+
+  matches.sort((a, b) => a.start - b.start)
+
+  const cleaned: Match[] = []
+  let lastEnd = 0
+  for (const m of matches) {
+    if (m.start >= lastEnd) {
+      cleaned.push(m)
+      lastEnd = m.end
+    }
+  }
+
+  const segments: { text: string; blankNumber?: number }[] = []
+  let cursor = 0
+  for (const m of cleaned) {
+    if (m.start > cursor) {
+      segments.push({ text: passage.slice(cursor, m.start) })
+    }
+    segments.push({ text: '', blankNumber: m.qNumber })
+    cursor = m.end
+  }
+  if (cursor < passage.length) {
+    segments.push({ text: passage.slice(cursor) })
+  }
+
+  return segments
+}
+
 export default function PrintPage() {
   const [data, setData] = useState<PrintData | null>(null)
 
@@ -43,6 +89,9 @@ export default function PrintPage() {
     return <p className="p-8 text-sm text-gray-500">불러오는 중...</p>
   }
 
+  const examSegments =
+    data.mode === 'exam' ? buildExamPassageSegments(data.passage, data.questions) : []
+
   return (
     <div className="mx-auto max-w-2xl p-8 print-area">
       {/* 인쇄 버튼: 화면에서만 보이고 실제 인쇄물에는 안 나옴 */}
@@ -58,12 +107,25 @@ export default function PrintPage() {
       {data.mode === 'exam' ? (
         <>
           <h1 className="mb-4 text-lg font-bold">영어 시험문제</h1>
-          <p className="mb-6 whitespace-pre-wrap text-sm leading-8">{data.passage}</p>
+          <p className="mb-6 whitespace-pre-wrap text-sm leading-8">
+            {examSegments.map((seg, idx) =>
+              seg.blankNumber ? (
+                <span
+                  key={idx}
+                  className="mx-1 inline-block min-w-[70px] border-b border-black px-2 text-center font-medium"
+                >
+                  ({seg.blankNumber})
+                </span>
+              ) : (
+                <span key={idx}>{seg.text}</span>
+              )
+            )}
+          </p>
           <div className="space-y-6">
             {data.questions.map((q, qIndex) => (
               <div key={qIndex}>
                 <p className="mb-2 font-medium">
-                  {qIndex + 1}. "{q.targetText}"의 의미로 가장 알맞은 것은?
+                  {qIndex + 1}. {buildQuestionPrompt(q, qIndex)}
                 </p>
                 <div className="space-y-1 pl-2">
                   {q.choices.map((choice, choiceIndex) => (

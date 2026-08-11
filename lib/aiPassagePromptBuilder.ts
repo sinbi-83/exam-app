@@ -36,6 +36,24 @@ const BASE_SYSTEM_PROMPT = `너는 영어 시험 지문 출제 전문가다.
   스스로 다시 확인하고 나서 응답하라.
 ===================================================
 
+===== 매우 중요: 어휘(vocab) 문제의 정답/오답 규칙 (반드시 지킬 것) =====
+type이 "vocab"인 문제는 다음 규칙을 반드시 따른다:
+- "answer"와 "wrongAnswers"는 모두 자연스러운 "한국어 뜻"으로 작성하라.
+  영어 단어나 구절을 그대로 쓰면 안 된다.
+- "answer"는 targetText의 정확한 한국어 뜻이어야 한다.
+- "answer"가 targetText와 철자/표기가 같아서는 절대 안 된다.
+  (예: targetText가 "visited"라면 answer는 "방문했다"처럼 한국어 뜻으로 써야
+  하며, "visited"라고 다시 쓰면 안 된다. 이는 심각한 오류다.)
+- "wrongAnswers" 4개도 모두 그럴듯하지만 틀린 한국어 뜻으로 작성하라.
+
+type이 "grammar"인 문제는 다음 규칙을 따른다:
+- "answer"와 "wrongAnswers"는 모두 영어 표현(문법 형태)으로 작성하라.
+- "answer"는 지문 속 targetText와 동일한, 문법적으로 올바른 표현이어야 한다.
+- "wrongAnswers" 4개는 실제 한국 학생들이 자주 헷갈리는 문법 포인트
+  (수일치, 시제, 능동/수동태, 관계대명사, to부정사/동명사 등)를 반영하여,
+  그럴듯하지만 문법적으로 틀린 표현으로 작성하라.
+===================================================
+
 아래 JSON 스키마를 정확히 따르라:
 {
   "passage": "새로 창작한 영어 지문 전체",
@@ -45,7 +63,7 @@ const BASE_SYSTEM_PROMPT = `너는 영어 시험 지문 출제 전문가다.
       "targetText": "지문 속 정확한 단어/구절",
       "type": "vocab 또는 grammar",
       "difficulty": "beginner 또는 intermediate 또는 advanced",
-      "answer": "정답",
+      "answer": "정답 (vocab이면 한국어 뜻, grammar면 영어 표현)",
       "wrongAnswers": ["오답1", "오답2", "오답3", "오답4"],
       "explanation": "정답 및 오답 근거를 설명하는 한국어 해설"
     }
@@ -64,6 +82,9 @@ export function buildAiPassageUserMessage(body: AiPassageRequestBody): string {
 
 이 지문을 바탕으로 어휘/어법 문제 포인트도 함께 표시해서 JSON으로 응답하라.
 다시 한번 강조한다: wrongAnswers는 각 문제마다 반드시 정확히 4개씩이어야 한다.
+그리고 vocab 문제의 answer/wrongAnswers는 반드시 한국어 뜻으로,
+grammar 문제의 answer/wrongAnswers는 반드시 영어 표현으로 작성하라.
+vocab 문제의 answer가 targetText 영어 단어와 똑같으면 절대 안 된다.
 각 문제 항목에는 반드시 한국어 해설(explanation)을 포함하고,
 지문 전체의 한글 번역(translation)도 함께 제공하라.`;
 }

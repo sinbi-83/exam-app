@@ -37,6 +37,13 @@ const TYPE_BG_CLASS: Record<string, string> = {
 
 const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
+function buildQuestionPrompt(q: MultipleChoiceQuestion): string {
+  if (q.type === 'grammar') {
+    return `밑줄 친 "${q.targetText}"의 쓰임이 어법상 가장 적절한 것은?`
+  }
+  return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
+}
+
 function buildHighlightSegments(passage: string, items: PassageHighlightItem[]) {
   type Match = { start: number; end: number; item: PassageHighlightItem }
   const matches: Match[] = []
@@ -267,7 +274,7 @@ export default function AiPassagePage() {
                   </span>
                 </div>
                 <p className="mb-2 font-medium">
-                  Q{qIndex + 1}. &quot;{q.targetText}&quot;의 의미로 가장 알맞은 것은?
+                  Q{qIndex + 1}. {buildQuestionPrompt(q)}
                 </p>
                 <div className="space-y-1">
                   {q.choices.map((choice, choiceIndex) => {
