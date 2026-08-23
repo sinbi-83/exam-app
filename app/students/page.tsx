@@ -10,13 +10,15 @@ interface Student {
   created_at: string
 }
 
+type CopiedState = { id: string; type: 'link' | 'message' } | null
+
 export default function StudentsPage() {
   const [students, setStudents] = useState<Student[]>([])
   const [loading, setLoading] = useState(true)
   const [name, setName] = useState('')
   const [grade, setGrade] = useState('')
   const [submitting, setSubmitting] = useState(false)
-  const [copiedId, setCopiedId] = useState<string | null>(null)
+  const [copied, setCopied] = useState<CopiedState>(null)
 
   async function fetchStudents() {
     setLoading(true)
@@ -76,12 +78,21 @@ export default function StudentsPage() {
     }
   }
 
-  function handleCopyLink(student: Student) {
+  // 순수 링크만 복사 (테스트/직접 접속용)
+  function handleCopyLinkOnly(student: Student) {
+    const link = `${window.location.origin}/parent/${student.id}`
+    navigator.clipboard.writeText(link)
+    setCopied({ id: student.id, type: 'link' })
+    setTimeout(() => setCopied(null), 2000)
+  }
+
+  // 학부모께 보낼 안내문구 복사 (카톡/문자용, 설명+링크+PIN 포함)
+  function handleCopyMessage(student: Student) {
     const link = `${window.location.origin}/parent/${student.id}`
     const text = `[${student.name} 학생 성적 조회 링크]\n${link}\nPIN 번호: ${student.pin}`
     navigator.clipboard.writeText(text)
-    setCopiedId(student.id)
-    setTimeout(() => setCopiedId(null), 2000)
+    setCopied({ id: student.id, type: 'message' })
+    setTimeout(() => setCopied(null), 2000)
   }
 
   return (
@@ -136,10 +147,16 @@ export default function StudentsPage() {
               </div>
               <div className="flex gap-2">
                 <button
-                  onClick={() => handleCopyLink(student)}
+                  onClick={() => handleCopyLinkOnly(student)}
                   className="rounded border border-gray-300 px-3 py-1.5 text-xs text-gray-600 hover:bg-gray-50"
                 >
-                  {copiedId === student.id ? '복사됨!' : '링크+PIN 복사'}
+                  {copied?.id === student.id && copied.type === 'link' ? '복사됨!' : '링크만 복사'}
+                </button>
+                <button
+                  onClick={() => handleCopyMessage(student)}
+                  className="rounded border border-gray-300 px-3 py-1.5 text-xs text-gray-600 hover:bg-gray-50"
+                >
+                  {copied?.id === student.id && copied.type === 'message' ? '복사됨!' : '학부모 안내문구 복사'}
                 </button>
                 <button
                   onClick={() => handleDelete(student.id)}
