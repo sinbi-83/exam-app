@@ -15,7 +15,7 @@ export async function GET() {
 
   const { data, error } = await supabase
     .from('question_sets')
-    .select('id, grade, topic, created_at')
+    .select('id, grade, topic, created_at, questions')
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 

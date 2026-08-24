@@ -6,6 +6,13 @@ import {
   MultipleChoiceQuestion,
 } from '@/lib/buildMultipleChoice'
 import { PassageHighlightItem } from '@/types/aiPassage'
+import {
+  getTypeLabel,
+  getDifficultyLabel,
+  getTypeHighlightClass,
+  getTypeBadgeClass,
+  getDifficultyBadgeClass,
+} from '@/lib/tagDisplay'
 
 const GRADE_OPTIONS = [
   '초등학교 4학년',
@@ -18,22 +25,6 @@ const GRADE_OPTIONS = [
   '고등학교 2학년',
   '고등학교 3학년',
 ]
-
-const TYPE_LABEL: Record<string, string> = {
-  vocab: '어휘',
-  grammar: '어법',
-}
-
-const DIFFICULTY_LABEL: Record<string, string> = {
-  beginner: '초급',
-  intermediate: '중급',
-  advanced: '고급',
-}
-
-const TYPE_BG_CLASS: Record<string, string> = {
-  vocab: 'bg-yellow-200',
-  grammar: 'bg-blue-200',
-}
 
 const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
@@ -134,7 +125,6 @@ export default function AiPassagePage() {
     setQuestions(built)
     setSelectedAnswers({})
 
-    // 문제은행에 자동 저장 (실패해도 화면 표시에는 영향 없음)
     setSaving(true)
     try {
       await fetch('/api/save-question-set', {
@@ -150,7 +140,6 @@ export default function AiPassagePage() {
         }),
       })
     } catch (err) {
-      // 저장 실패해도 문제 화면은 그대로 보여줌
       console.error('문제은행 저장 실패:', err)
     } finally {
       setSaving(false)
@@ -164,7 +153,7 @@ export default function AiPassagePage() {
   const segments = passage ? buildHighlightSegments(passage, items) : []
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="mx-auto max-w-[820px]">
       <h1 className="text-xl font-semibold text-gray-800 mb-6">
         AI 지문 생성 (신규)
       </h1>
@@ -214,17 +203,17 @@ export default function AiPassagePage() {
             </span>
           </div>
 
-          <div className="whitespace-pre-wrap rounded border border-gray-300 bg-gray-50 p-4 text-sm leading-8">
+          <div className="whitespace-pre-wrap rounded border border-gray-300 bg-gray-50 p-4 text-[15px] leading-9">
             {segments.map((seg, idx) => {
               if (!seg.item) {
                 return <span key={idx}>{seg.text}</span>
               }
-              const bgClass = TYPE_BG_CLASS[seg.item.type] || 'bg-gray-200'
+              const bgClass = getTypeHighlightClass(seg.item.type)
               return (
                 <span key={idx} className="whitespace-nowrap">
                   <span className={`${bgClass} rounded px-0.5`}>{seg.text}</span>
                   <span className="ml-1 whitespace-nowrap rounded bg-gray-700 px-1 py-0.5 text-[10px] font-normal text-white">
-                    {TYPE_LABEL[seg.item.type]}·{DIFFICULTY_LABEL[seg.item.difficulty]}
+                    {getTypeLabel(seg.item.type)}·{getDifficultyLabel(seg.item.difficulty)}
                   </span>
                 </span>
               )
@@ -268,9 +257,12 @@ export default function AiPassagePage() {
             const selected = selectedAnswers[qIndex]
             return (
               <div key={qIndex} className="rounded border border-gray-300 p-4">
-                <div className="mb-2 flex items-center gap-2 text-xs text-gray-500">
-                  <span className="rounded bg-gray-100 px-2 py-0.5">
-                    {TYPE_LABEL[q.type]} · {DIFFICULTY_LABEL[q.difficulty]}
+                <div className="mb-2 flex items-center gap-1.5">
+                  <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getTypeBadgeClass(q.type)}`}>
+                    {getTypeLabel(q.type)}
+                  </span>
+                  <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(q.difficulty)}`}>
+                    {getDifficultyLabel(q.difficulty)}
                   </span>
                 </div>
                 <p className="mb-2 font-medium">

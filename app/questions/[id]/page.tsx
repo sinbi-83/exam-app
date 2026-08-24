@@ -3,6 +3,13 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { PassageHighlightItem } from '@/types/aiPassage'
+import {
+  getTypeLabel,
+  getDifficultyLabel,
+  getTypeHighlightClass,
+  getTypeBadgeClass,
+  getDifficultyBadgeClass,
+} from '@/lib/tagDisplay'
 
 interface MultipleChoiceQuestion {
   targetText: string
@@ -31,22 +38,6 @@ function buildQuestionPrompt(q: MultipleChoiceQuestion): string {
     return `밑줄 친 "${q.targetText}"의 쓰임이 어법상 가장 적절한 것은?`
   }
   return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
-}
-
-const TYPE_LABEL: Record<string, string> = {
-  vocab: '어휘',
-  grammar: '어법',
-}
-
-const DIFFICULTY_LABEL: Record<string, string> = {
-  beginner: '초급',
-  intermediate: '중급',
-  advanced: '고급',
-}
-
-const TYPE_BG_CLASS: Record<string, string> = {
-  vocab: 'bg-yellow-200',
-  grammar: 'bg-blue-200',
 }
 
 function buildHighlightSegments(passage: string, items: PassageHighlightItem[]) {
@@ -144,10 +135,13 @@ export default function QuestionSetDetailPage() {
   const segments = buildHighlightSegments(data.passage, data.items)
 
   return (
-    <div className="mx-auto max-w-2xl">
-      <h1 className="mb-1 text-xl font-semibold text-gray-800">{data.topic}</h1>
+    <div className="mx-auto max-w-[820px]">
+      <div className="mb-1 flex items-center gap-2">
+        <h1 className="text-xl font-semibold text-gray-800">{data.topic}</h1>
+        <span className="rounded bg-gray-100 px-2 py-0.5 text-xs text-gray-500">{data.grade}</span>
+      </div>
       <p className="mb-6 text-sm text-gray-500">
-        {data.grade} · {new Date(data.created_at).toLocaleDateString('ko-KR')}
+        {new Date(data.created_at).toLocaleDateString('ko-KR')}
       </p>
 
       <div className="mb-2 flex gap-3 text-xs text-gray-500">
@@ -159,17 +153,17 @@ export default function QuestionSetDetailPage() {
         </span>
       </div>
 
-      <div className="whitespace-pre-wrap rounded-lg border border-gray-200 bg-white p-6 text-sm leading-8">
+      <div className="whitespace-pre-wrap rounded-lg border border-gray-200 bg-white p-6 text-[15px] leading-9">
         {segments.map((seg, idx) => {
           if (!seg.item) {
             return <span key={idx}>{seg.text}</span>
           }
-          const bgClass = TYPE_BG_CLASS[seg.item.type] || 'bg-gray-200'
+          const bgClass = getTypeHighlightClass(seg.item.type)
           return (
             <span key={idx} className="whitespace-nowrap">
               <span className={`${bgClass} rounded px-0.5`}>{seg.text}</span>
               <span className="ml-1 whitespace-nowrap rounded bg-gray-700 px-1 text-[10px] text-white">
-                {TYPE_LABEL[seg.item.type]}·{DIFFICULTY_LABEL[seg.item.difficulty]}
+                {getTypeLabel(seg.item.type)}·{getDifficultyLabel(seg.item.difficulty)}
               </span>
             </span>
           )
@@ -208,8 +202,18 @@ export default function QuestionSetDetailPage() {
       <div className="space-y-4">
         {data.questions.map((q, qIndex) => (
           <div key={qIndex} className="rounded-lg border border-gray-200 bg-white p-4">
+            <div className="mb-2 flex items-center gap-1.5">
+              <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getTypeBadgeClass(q.type)}`}>
+                {getTypeLabel(q.type)}
+              </span>
+              <span
+                className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(q.difficulty)}`}
+              >
+                {getDifficultyLabel(q.difficulty)}
+              </span>
+            </div>
             <p className="mb-2 font-medium">
-           {qIndex + 1}. {buildQuestionPrompt(q)}
+              {qIndex + 1}. {buildQuestionPrompt(q)}
             </p>
             <div className="mb-2 space-y-1 pl-2">
               {q.choices.map((choice, choiceIndex) => (
@@ -227,9 +231,7 @@ export default function QuestionSetDetailPage() {
               ))}
             </div>
             {q.explanation && (
-              <p className="border-t border-gray-100 pt-2 text-sm text-gray-500">
-                {q.explanation}
-              </p>
+              <p className="border-t border-gray-100 pt-2 text-sm text-gray-500">{q.explanation}</p>
             )}
           </div>
         ))}

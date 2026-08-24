@@ -108,7 +108,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="space-y-5">
+       <main className="mx-auto max-w-[860px] space-y-5">
       <div className="flex items-center justify-between no-print">
         <h1 className="text-2xl font-bold">AI 영어 시험문제 출제 프로그램</h1>
         <Link
