@@ -7,18 +7,50 @@ export const metadata: Metadata = {
   description: "지문을 입력하면 AI가 다양한 스타일의 영어 시험문제를 출제해줍니다.",
 };
 
-const menuItems = [
-  { label: "대시보드", href: "/" },
-  { label: "학생관리", href: "/students" },
-  { label: "지문관리", href: "/passages" },
-  { label: "AI 지문 생성", href: "/ai-passage" },
-  { label: "문제은행", href: "/questions" },
-  { label: "시험출제", href: "/exams" },
+type MenuItem = {
+  label: string;
+  href: string;
+  comingSoon?: boolean;
+};
+
+type MenuGroup = {
+  title: string;
+  items: MenuItem[];
+};
+
+// 학원관리 / 학생관리 / 학업관리 3개 엔진으로 그룹화
+// ⚠️ href(주소)는 기존과 완전히 동일하게 유지, label과 배치만 변경
+const menuGroups: MenuGroup[] = [
+  {
+    title: "학원관리",
+    items: [
+      { label: "설정", href: "/settings", comingSoon: true },
+      { label: "API 사용량", href: "/api-usage", comingSoon: true },
+    ],
+  },
+  {
+    title: "학생관리",
+    items: [
+      { label: "학생관리", href: "/students" },
+      { label: "채점관리", href: "/grading" },
+      { label: "성적분석", href: "/analytics", comingSoon: true },
+    ],
+  },
+  {
+    title: "학업관리",
+    items: [
+      { label: "AI 지문 생성", href: "/ai-passage" },
+      { label: "문제은행", href: "/questions" },
+      { label: "지문관리", href: "/passages", comingSoon: true },
+      { label: "시험출제", href: "/exams", comingSoon: true },
+    ],
+  },
+];
+
+// 레거시(예전) 기능 - 삭제하지 않고 학업관리 하단, 구분선 아래로 분리
+const legacyMenuItems: MenuItem[] = [
+  { label: "이전 문제 생성기", href: "/" },
   { label: "시험지 기록", href: "/history" },
-  { label: "채점관리", href: "/grading" },
-  { label: "성적분석", href: "/analytics" },
-  { label: "API 사용량", href: "/api-usage" },
-  { label: "설정", href: "/settings" },
 ];
 
 export default function RootLayout({
@@ -35,15 +67,43 @@ export default function RootLayout({
               <span className="font-semibold text-gray-800">보스턴S영어학원</span>
             </div>
             <nav className="py-2">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                >
-                  {item.label}
-                </Link>
+              {menuGroups.map((group) => (
+                <div key={group.title} className="mb-3">
+                  <p className="px-4 pb-1 pt-3 text-xs font-semibold uppercase tracking-wide text-gray-400">
+                    {group.title}
+                  </p>
+                  {group.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`block px-4 py-2 text-sm hover:bg-gray-50 ${
+                        item.comingSoon
+                          ? "text-gray-400 hover:text-gray-500"
+                          : "text-gray-600 hover:text-gray-900"
+                      }`}
+                    >
+                      {item.label}
+                      {item.comingSoon && (
+                        <span className="ml-1 text-xs text-gray-300">(준비중)</span>
+                      )}
+                    </Link>
+                  ))}
+                </div>
               ))}
+
+              <div className="mx-4 my-2 border-t border-gray-200" />
+
+              <div>
+                {legacyMenuItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </nav>
           </aside>
 
