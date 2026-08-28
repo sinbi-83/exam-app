@@ -54,6 +54,28 @@ type이 "grammar"인 문제는 다음 규칙을 따른다:
   그럴듯하지만 문법적으로 틀린 표현으로 작성하라.
 ===================================================
 
+===== 새로 추가된 규칙: 상세 태그(detailTags)와 발췌 정보(excerpt) =====
+각 items 배열의 원소마다 아래 정보도 함께 채워라.
+
+- targetSentence: targetText가 포함된 문장 전체 (지문 원문 그대로, 그대로 옮겨 적을 것)
+- sentenceNumber: 그 문장이 지문에서 몇 번째 문장인지 (1부터 시작하는 숫자)
+- detailTags: 아래 항목 중 해당하는 것만 채워라 (해당 없는 항목은 생략 가능)
+  - partOfSpeech: 품사 (예: "동사", "형용사", "명사") — type이 "vocab"일 때 채워라
+  - grammarPoint: 문법 포인트 (예: "수일치", "병렬구조", "동명사구 주어", "관계대명사") — type이 "grammar"일 때 채워라. 하나의 대표 개념만 명확하게 적어라.
+  - vocabPoint: 어휘 포인트 (예: "동의어 추론", "반의어 구분") — type이 "vocab"이고 해당하면 채워라
+  - thinkingType: 사고 유형 (예: "뜻 추론", "문맥 추론", "어법 판단") — 모든 문제에 채워라
+  - answerFormat: 답변 방식 (현재는 항상 "객관식"으로 채워라)
+  - answerLanguage: 답변 언어 (type이 "vocab"이면 "한국어답변", "grammar"면 "영어답변")
+- excerpt: 아래 항목을 채워라
+  - excerptText: targetSentence와 동일하게 채워라
+  - sentenceNumbers: [sentenceNumber] 형태의 한 개짜리 배열
+  - needsFullPassage: 보통 false로 채워라 (한 문장만으로 풀 수 있는 문제이므로)
+  - canUsePartialExcerpt: 보통 true로 채워라
+
+이 필드들은 나중에 문제은행에서 태그로 검색하고 분류하는 데 사용된다.
+반드시 각 items 원소마다 빠짐없이 채워라.
+===================================================
+
 아래 JSON 스키마를 정확히 따르라:
 {
   "passage": "새로 창작한 영어 지문 전체",
@@ -65,7 +87,22 @@ type이 "grammar"인 문제는 다음 규칙을 따른다:
       "difficulty": "beginner 또는 intermediate 또는 advanced",
       "answer": "정답 (vocab이면 한국어 뜻, grammar면 영어 표현)",
       "wrongAnswers": ["오답1", "오답2", "오답3", "오답4"],
-      "explanation": "정답 및 오답 근거를 설명하는 한국어 해설"
+      "explanation": "정답 및 오답 근거를 설명하는 한국어 해설",
+      "targetSentence": "targetText가 포함된 문장 전체",
+      "sentenceNumber": 1,
+      "detailTags": {
+        "partOfSpeech": "vocab일 때만 채움 (예: 동사)",
+        "grammarPoint": "grammar일 때만 채움 (예: 수일치)",
+        "thinkingType": "예: 뜻 추론",
+        "answerFormat": "객관식",
+        "answerLanguage": "한국어답변 또는 영어답변"
+      },
+      "excerpt": {
+        "excerptText": "targetSentence와 동일",
+        "sentenceNumbers": [1],
+        "needsFullPassage": false,
+        "canUsePartialExcerpt": true
+      }
     }
   ]
 }`;
@@ -86,5 +123,7 @@ export function buildAiPassageUserMessage(body: AiPassageRequestBody): string {
 grammar 문제의 answer/wrongAnswers는 반드시 영어 표현으로 작성하라.
 vocab 문제의 answer가 targetText 영어 단어와 똑같으면 절대 안 된다.
 각 문제 항목에는 반드시 한국어 해설(explanation)을 포함하고,
-지문 전체의 한글 번역(translation)도 함께 제공하라.`;
+지문 전체의 한글 번역(translation)도 함께 제공하라.
+그리고 각 문제 항목마다 targetSentence, sentenceNumber, detailTags, excerpt도
+빠짐없이 채워서 응답하라.`;
 }

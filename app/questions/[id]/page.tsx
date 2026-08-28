@@ -9,15 +9,20 @@ import {
   getTypeHighlightClass,
   getTypeBadgeClass,
   getDifficultyBadgeClass,
+  flattenDetailTags,
+  DetailTagsLike,
 } from '@/lib/tagDisplay'
 
 interface MultipleChoiceQuestion {
   targetText: string
-  type: 'vocab' | 'grammar'
+  type: string
   difficulty: 'beginner' | 'intermediate' | 'advanced'
   choices: string[]
   correctIndex: number
   explanation: string
+  targetSentence?: string
+  sentenceNumber?: number
+  detailTags?: DetailTagsLike
 }
 
 interface QuestionSetDetail {
@@ -200,41 +205,49 @@ export default function QuestionSetDetailPage() {
 
       <h2 className="mb-4 text-lg font-bold">정답 및 해설</h2>
       <div className="space-y-4">
-        {data.questions.map((q, qIndex) => (
-          <div key={qIndex} className="rounded-lg border border-gray-200 bg-white p-4">
-            <div className="mb-2 flex items-center gap-1.5">
-              <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getTypeBadgeClass(q.type)}`}>
-                {getTypeLabel(q.type)}
-              </span>
-              <span
-                className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(q.difficulty)}`}
-              >
-                {getDifficultyLabel(q.difficulty)}
-              </span>
-            </div>
-            <p className="mb-2 font-medium">
-              {qIndex + 1}. {buildQuestionPrompt(q)}
-            </p>
-            <div className="mb-2 space-y-1 pl-2">
-              {q.choices.map((choice, choiceIndex) => (
-                <p
-                  key={choiceIndex}
-                  className={
-                    choiceIndex === q.correctIndex
-                      ? 'text-sm font-medium text-green-700'
-                      : 'text-sm text-gray-700'
-                  }
+        {data.questions.map((q, qIndex) => {
+          const detailTagList = flattenDetailTags(q.detailTags)
+          return (
+            <div key={qIndex} className="rounded-lg border border-gray-200 bg-white p-4">
+              <div className="mb-2 flex flex-wrap items-center gap-1.5">
+                <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getTypeBadgeClass(q.type)}`}>
+                  {getTypeLabel(q.type)}
+                </span>
+                <span
+                  className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(q.difficulty)}`}
                 >
-                  {CHOICE_MARK[choiceIndex]} {choice}
-                  {choiceIndex === q.correctIndex ? ' (정답)' : ''}
-                </p>
-              ))}
+                  {getDifficultyLabel(q.difficulty)}
+                </span>
+                {detailTagList.map((tag, i) => (
+                  <span key={i} className="rounded bg-gray-100 px-1.5 py-0.5 text-[11px] text-gray-600">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <p className="mb-2 font-medium">
+                {qIndex + 1}. {buildQuestionPrompt(q)}
+              </p>
+              <div className="mb-2 space-y-1 pl-2">
+                {q.choices.map((choice, choiceIndex) => (
+                  <p
+                    key={choiceIndex}
+                    className={
+                      choiceIndex === q.correctIndex
+                        ? 'text-sm font-medium text-green-700'
+                        : 'text-sm text-gray-700'
+                    }
+                  >
+                    {CHOICE_MARK[choiceIndex]} {choice}
+                    {choiceIndex === q.correctIndex ? ' (정답)' : ''}
+                  </p>
+                ))}
+              </div>
+              {q.explanation && (
+                <p className="border-t border-gray-100 pt-2 text-sm text-gray-500">{q.explanation}</p>
+              )}
             </div>
-            {q.explanation && (
-              <p className="border-t border-gray-100 pt-2 text-sm text-gray-500">{q.explanation}</p>
-            )}
-          </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

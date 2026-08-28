@@ -12,6 +12,7 @@ import {
   getTypeHighlightClass,
   getTypeBadgeClass,
   getDifficultyBadgeClass,
+  flattenDetailTags,
 } from '@/lib/tagDisplay'
 
 const GRADE_OPTIONS = [
@@ -255,15 +256,24 @@ export default function AiPassagePage() {
           </h2>
           {questions.map((q, qIndex) => {
             const selected = selectedAnswers[qIndex]
+            const detailTagList = flattenDetailTags(q.detailTags)
             return (
               <div key={qIndex} className="rounded border border-gray-300 p-4">
-                <div className="mb-2 flex items-center gap-1.5">
+                <div className="mb-2 flex flex-wrap items-center gap-1.5">
                   <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getTypeBadgeClass(q.type)}`}>
                     {getTypeLabel(q.type)}
                   </span>
                   <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(q.difficulty)}`}>
                     {getDifficultyLabel(q.difficulty)}
                   </span>
+                  {detailTagList.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="rounded bg-gray-100 px-1.5 py-0.5 text-[11px] font-medium text-gray-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
                 <p className="mb-2 font-medium">
                   Q{qIndex + 1}. {buildQuestionPrompt(q)}
