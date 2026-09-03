@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
 
-// GET: 로그인한 선생님이 등록한 성적 목록 가져오기 (최신순)
+// GET: 로그인한 선생님이 등록한 시험 카드 목록 가져오기 (최신순)
 export async function GET() {
   const supabase = await createClient()
 
@@ -15,8 +15,8 @@ export async function GET() {
   }
 
   const { data, error } = await supabase
-    .from('exam_results')
-    .select('id, student_id, exam_title, score, max_score, exam_date, exam_id, created_at, students(name)')
+    .from('exams')
+    .select('id, title, exam_date, total_questions, max_score, question_set_id, created_at')
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
@@ -27,7 +27,7 @@ export async function GET() {
   return NextResponse.json({ data })
 }
 
-// POST: 새 성적 등록
+// POST: 새 시험 카드 생성
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
 
@@ -41,22 +41,21 @@ export async function POST(request: NextRequest) {
   }
 
   const body = await request.json()
-  const { student_id, exam_title, score, max_score, exam_date, exam_id } = body
+  const { title, exam_date, total_questions, max_score, question_set_id } = body
 
-  if (!student_id || !exam_title || score === undefined) {
-    return NextResponse.json({ error: '필수 항목이 누락되었습니다.' }, { status: 400 })
+  if (!title || !title.trim()) {
+    return NextResponse.json({ error: '시험명은 필수입니다.' }, { status: 400 })
   }
 
   const { data, error } = await supabase
-    .from('exam_results')
+    .from('exams')
     .insert({
       user_id: user.id,
-      student_id,
-      exam_title,
-      score,
-      max_score: max_score || 100,
-      exam_date: exam_date || new Date().toISOString().slice(0, 10),
-      exam_id: exam_id || null,
+      title: title.trim(),
+      exam_date: exam_date || null,
+      total_questions: total_questions || null,
+      max_score: max_score || null,
+      question_set_id: question_set_id || null,
     })
     .select()
     .single()

@@ -1,3 +1,5 @@
+import { SummaryQuestion } from "@/types/aiPassage";
+
 // 문제 포인트 하나의 원본 재료 모양 (AI가 준 데이터)
 export interface DetailTags {
   partOfSpeech?: string;
@@ -73,7 +75,6 @@ export function buildOneMultipleChoice(
     choices: shuffled,
     correctIndex,
     explanation: item.explanation || "",
-    // 상세 태그/발췌 정보도 그대로 이어받기 (없으면 undefined로 유지)
     targetSentence: item.targetSentence,
     sentenceNumber: item.sentenceNumber,
     detailTags: item.detailTags,
@@ -88,6 +89,51 @@ export function buildMultipleChoiceQuestions(
   const result: MultipleChoiceQuestion[] = [];
   for (const item of items) {
     const question = buildOneMultipleChoice(item);
+    if (question) {
+      result.push(question);
+    }
+  }
+  return result;
+}
+
+// ===== 여기부터 지문요약 빈칸채우기(summaryQuestions) 조립 함수 (신규) =====
+
+// 지문요약 문제 하나가 조립된 후의 모양
+export interface SummaryMultipleChoiceQuestion {
+  summaryText: string;
+  choices: string[];
+  correctIndex: number;
+  explanation: string;
+  difficulty: "beginner" | "intermediate" | "advanced";
+}
+
+export function buildOneSummaryQuestion(
+  item: SummaryQuestion
+): SummaryMultipleChoiceQuestion | null {
+  if (!item.answer || !item.wrongAnswers || item.wrongAnswers.length === 0) {
+    return null;
+  }
+
+  const usedWrongAnswers = item.wrongAnswers.slice(0, 4);
+  const allChoices = [item.answer, ...usedWrongAnswers];
+  const shuffled = shuffleArray(allChoices);
+  const correctIndex = shuffled.indexOf(item.answer);
+
+  return {
+    summaryText: item.summaryText,
+    choices: shuffled,
+    correctIndex,
+    explanation: item.explanation || "",
+    difficulty: item.difficulty,
+  };
+}
+
+export function buildSummaryQuestions(
+  items: SummaryQuestion[]
+): SummaryMultipleChoiceQuestion[] {
+  const result: SummaryMultipleChoiceQuestion[] = [];
+  for (const item of items) {
+    const question = buildOneSummaryQuestion(item);
     if (question) {
       result.push(question);
     }

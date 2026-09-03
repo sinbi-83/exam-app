@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
 
-export async function GET(
+// PATCH: 시험 카드 정보 수정 (이름 변경 등)
+export async function PATCH(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
@@ -16,20 +17,34 @@ export async function GET(
     return NextResponse.json({ error: '로그인이 필요합니다.' }, { status: 401 })
   }
 
+  const body = await request.json()
+  const updateFields: Record<string, unknown> = {}
+
+  if (body.title !== undefined) updateFields.title = body.title.trim()
+  if (body.exam_date !== undefined) updateFields.exam_date = body.exam_date
+  if (body.total_questions !== undefined) updateFields.total_questions = body.total_questions
+  if (body.max_score !== undefined) updateFields.max_score = body.max_score
+
+  if (Object.keys(updateFields).length === 0) {
+    return NextResponse.json({ error: '수정할 내용이 없습니다.' }, { status: 400 })
+  }
+
   const { data, error } = await supabase
-    .from('question_sets')
-    .select('*')
+    .from('exams')
+    .update(updateFields)
     .eq('id', params.id)
     .eq('user_id', user.id)
+    .select()
     .single()
 
-  if (error || !data) {
-    return NextResponse.json({ error: '해당 문제 세트를 찾을 수 없습니다.' }, { status: 404 })
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
   return NextResponse.json({ data })
 }
 
+// DELETE: 시험 카드 삭제
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -45,15 +60,14 @@ export async function DELETE(
     return NextResponse.json({ error: '로그인이 필요합니다.' }, { status: 401 })
   }
 
-  // 본인이 만든 문제 세트만 삭제되도록 user_id까지 함께 확인
   const { error } = await supabase
-    .from('question_sets')
+    .from('exams')
     .delete()
     .eq('id', params.id)
     .eq('user_id', user.id)
 
   if (error) {
-    return NextResponse.json({ error: '삭제 중 문제가 발생했습니다.' }, { status: 500 })
+    return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
   return NextResponse.json({ ok: true })

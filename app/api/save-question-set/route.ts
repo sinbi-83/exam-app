@@ -31,9 +31,19 @@ export async function POST(request: NextRequest) {
 
   // 2. 받은 데이터 꺼내기
   const body = await request.json()
-  const { grade, topic, passage, translation, items, questions } = body
+  const {
+    grade,
+    topic,
+    passage,
+    translation,
+    items,
+    questions,
+    sentences,
+    essayQuestions,
+    summaryQuestions,
+  } = body
 
-  // 3. Supabase에 저장 (기존 로직, 변경 없음)
+  // 3. Supabase에 저장 (기존 로직 + 서술형/지문요약 컬럼 추가)
   const { data, error } = await supabase
     .from('question_sets')
     .insert({
@@ -44,6 +54,9 @@ export async function POST(request: NextRequest) {
       translation,
       items,
       questions,
+      sentences: sentences ?? null,
+      essay_questions: essayQuestions ?? null,
+      summary_questions: summaryQuestions ?? null,
     })
     .select()
     .single()
@@ -52,7 +65,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
-  // 4. [신규 추가] questions 테이블에도 문항 단위로 저장
+  // 4. [기존] questions 테이블에도 문항 단위로 저장
   //    여기서 실패해도 위 question_sets 저장 결과에는 영향 없음
   try {
     if (Array.isArray(questions) && questions.length > 0) {

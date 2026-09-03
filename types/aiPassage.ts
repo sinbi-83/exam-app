@@ -7,18 +7,16 @@ export interface AiPassageRequestBody {
 }
 
 // 문제 하나에 붙는 "상세 태그" - 전부 선택 항목입니다.
-// 예전에 만들어진 데이터에는 이 필드 자체가 없을 수 있습니다.
 export interface DetailTags {
-  partOfSpeech?: string;    // 품사 (예: 동사, 형용사, 명사)
-  grammarPoint?: string;    // 문법 포인트 (예: 수일치, 병렬구조, 동명사구 주어)
-  vocabPoint?: string;      // 어휘 포인트 (예: 동의어 추론, 반의어 구분)
-  readingPoint?: string;    // 독해 포인트 (예: 주제 파악, 세부사항 확인)
-  thinkingType?: string;    // 사고 유형 (예: 뜻 추론, 이유 설명)
-  answerFormat?: string;    // 답변 방식 (예: 객관식, 서술형, 빈칸)
-  answerLanguage?: string;  // 답변 언어 (예: 한국어답변, 영어답변)
+  partOfSpeech?: string;
+  grammarPoint?: string;
+  vocabPoint?: string;
+  readingPoint?: string;
+  thinkingType?: string;
+  answerFormat?: string;
+  answerLanguage?: string;
 }
 
-// 문제가 지문의 어느 부분에서 발췌되어야 하는지에 대한 정보 (전부 선택 항목)
 export interface ExcerptInfo {
   excerptText?: string;
   sentenceNumbers?: number[];
@@ -26,7 +24,6 @@ export interface ExcerptInfo {
   canUsePartialExcerpt?: boolean;
 }
 
-// 지문 안에서 문제로 낼 부분 하나하나의 정보
 export interface PassageHighlightItem {
   targetText: string;
   type: "vocab" | "grammar" | "reading" | "written" | "blank" | string;
@@ -34,11 +31,48 @@ export interface PassageHighlightItem {
   answer: string;
   wrongAnswers: string[];
   explanation: string;
-  // 아래는 상세 태그 확장 필드 (선택 항목, 예전 데이터엔 없을 수 있음)
   targetSentence?: string;
   sentenceNumber?: number;
   detailTags?: DetailTags;
   excerpt?: ExcerptInfo;
+}
+
+// 지문을 문장 단위로 쪼갠 것 하나
+export interface PassageSentence {
+  id: string;
+  text: string;
+}
+
+// 서술형 문제의 채점 기준 한 줄
+export interface EssayRubricItem {
+  criteria: string;
+  points: number;
+}
+
+// 서술형 문제 후보 하나
+export interface EssayQuestion {
+  id: string;
+  scope: "excerpt" | "full";
+  sourceSentenceIds: string[];
+  type: string; // "어법고쳐쓰기" | "조건영작" | "지칭추론" | "해석" | "배열영작" | "생략구문찾기"
+  level: "beginner" | "intermediate" | "advanced";
+  prompt: string;
+  conditions?: string;
+  wordBank?: string[]; // "배열영작" 유형일 때만 사용 (재료 단어/구, 무작위 순서로 제공)
+  modelAnswer: string;
+  rubric: EssayRubricItem[];
+  partialCreditNotes?: string;
+  answerLines?: number;
+}
+
+// 지문요약 빈칸채우기 문제 (객관식, 지문 전체를 보고 푸는 유형)
+export interface SummaryQuestion {
+  id: string;
+  summaryText: string; // 빈칸은 "_____" 로 표시됨
+  answer: string;
+  wrongAnswers: string[];
+  explanation: string;
+  difficulty: "beginner" | "intermediate" | "advanced";
 }
 
 export interface AiPassageSuccessResponse {
@@ -47,6 +81,9 @@ export interface AiPassageSuccessResponse {
     passage: string;
     translation: string;
     items: PassageHighlightItem[];
+    sentences?: PassageSentence[];
+    essayQuestions?: EssayQuestion[];
+    summaryQuestions?: SummaryQuestion[];
   };
 }
 
