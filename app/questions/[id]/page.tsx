@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { PassageHighlightItem, EssayQuestion, PassageSentence } from '@/types/aiPassage'
+import { SummaryMultipleChoiceQuestion } from '@/lib/buildMultipleChoice'
 import {
   getTypeLabel,
   getDifficultyLabel,
@@ -23,14 +24,6 @@ interface MultipleChoiceQuestion {
   targetSentence?: string
   sentenceNumber?: number
   detailTags?: DetailTagsLike
-}
-
-interface SummaryMultipleChoiceQuestion {
-  summaryText: string
-  choices: string[]
-  correctIndex: number
-  explanation: string
-  difficulty: string
 }
 
 interface QuestionSetDetail {
@@ -122,6 +115,7 @@ export default function QuestionSetDetailPage() {
     fetchDetail()
   }, [id])
 
+  // 객관식 시험지 인쇄 (지문요약 문제도 같이 포함되도록 수정)
   function handlePrintExam() {
     if (!data) return
     sessionStorage.setItem(
@@ -137,6 +131,7 @@ export default function QuestionSetDetailPage() {
     window.open('/ai-passage/print', '_blank')
   }
 
+  // 정답지 인쇄 (지문요약 + 서술형 정답도 같이 포함되도록 수정)
   function handlePrintAnswer() {
     if (!data) return
     sessionStorage.setItem(
@@ -153,6 +148,7 @@ export default function QuestionSetDetailPage() {
     window.open('/ai-passage/print', '_blank')
   }
 
+  // 서술형 시험지 인쇄 (신규)
   function handlePrintEssay() {
     if (!data) return
     sessionStorage.setItem(
@@ -163,7 +159,6 @@ export default function QuestionSetDetailPage() {
         passage: data.passage,
         questions: data.questions,
         essayQuestions: data.essay_questions || [],
-        sentences: data.sentences || [],
       })
     )
     window.open('/ai-passage/print', '_blank')
@@ -178,8 +173,9 @@ export default function QuestionSetDetailPage() {
   }
 
   const segments = buildHighlightSegments(data.passage, data.items)
-  const essayQuestions = data.essay_questions || []
   const summaryQuestions = data.summary_questions || []
+  const essayQuestions = data.essay_questions || []
+  const mcqCount = data.questions.length
 
   return (
     <div className="mx-auto max-w-[820px]">
@@ -237,12 +233,6 @@ export default function QuestionSetDetailPage() {
         >
           시험지 PDF 저장/출력
         </button>
-        <button
-          onClick={handlePrintAnswer}
-          className="flex-1 rounded-md border border-gray-300 py-2 text-sm hover:bg-gray-50"
-        >
-          해설지 PDF 저장/출력
-        </button>
         {essayQuestions.length > 0 && (
           <button
             onClick={handlePrintEssay}
@@ -251,6 +241,12 @@ export default function QuestionSetDetailPage() {
             서술형 시험지 PDF 저장/출력
           </button>
         )}
+        <button
+          onClick={handlePrintAnswer}
+          className="flex-1 rounded-md border border-gray-300 py-2 text-sm hover:bg-gray-50"
+        >
+          해설지 PDF 저장/출력
+        </button>
       </div>
 
       <h2 className="mb-4 text-lg font-bold">정답 및 해설</h2>
@@ -300,96 +296,103 @@ export default function QuestionSetDetailPage() {
         })}
       </div>
 
+      {/* 지문요약 문제 정답 (신규) */}
       {summaryQuestions.length > 0 && (
-        <div className="mt-8">
-          <h2 className="mb-4 text-lg font-bold">지문요약 문제 정답</h2>
+        <>
+          <h2 className="mb-4 mt-8 text-lg font-bold">지문요약 문제 정답</h2>
           <div className="space-y-4">
-            {summaryQuestions.map((sq, sIndex) => (
-              <div key={sIndex} className="rounded-lg border border-gray-200 bg-white p-4">
-                <div className="mb-2 flex flex-wrap items-center gap-1.5">
-                  <span className="rounded bg-pink-100 px-1.5 py-0.5 text-[11px] font-medium text-pink-800">
-                    지문요약
-                  </span>
-                  <span
-                    className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(sq.difficulty)}`}
-                  >
-                    {getDifficultyLabel(sq.difficulty)}
-                  </span>
-                </div>
-                <p className="mb-2 font-medium">
-                  {sIndex + 1}. {sq.summaryText}
-                </p>
-                <div className="mb-2 space-y-1 pl-2">
-                  {sq.choices.map((choice, choiceIndex) => (
-                    <p
-                      key={choiceIndex}
-                      className={
-                        choiceIndex === sq.correctIndex
-                          ? 'text-sm font-medium text-green-700'
-                          : 'text-sm text-gray-700'
-                      }
+            {summaryQuestions.map((sq, index) => {
+              const number = mcqCount + index + 1
+              return (
+                <div key={index} className="rounded-lg border border-gray-200 bg-white p-4">
+                  <div className="mb-2 flex flex-wrap items-center gap-1.5">
+                    <span className="rounded bg-pink-100 px-1.5 py-0.5 text-[11px] font-medium text-pink-800">
+                      지문요약
+                    </span>
+                    <span
+                      className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(sq.difficulty)}`}
                     >
-                      {CHOICE_MARK[choiceIndex]} {choice}
-                      {choiceIndex === sq.correctIndex ? ' (정답)' : ''}
-                    </p>
-                  ))}
-                </div>
-                {sq.explanation && (
-                  <p className="border-t border-gray-100 pt-2 text-sm text-gray-500">{sq.explanation}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {essayQuestions.length > 0 && (
-        <div className="mt-8">
-          <h2 className="mb-4 text-lg font-bold">서술형 문제 정답 및 채점기준</h2>
-          <div className="space-y-4">
-            {essayQuestions.map((eq, eIndex) => (
-              <div key={eq.id} className="rounded-lg border border-gray-200 bg-white p-4">
-                <div className="mb-2 flex flex-wrap items-center gap-1.5">
-                  <span className="rounded bg-teal-100 px-1.5 py-0.5 text-[11px] font-medium text-teal-800">
-                    서술형 · {eq.type}
-                  </span>
-                  <span className="rounded bg-indigo-100 px-1.5 py-0.5 text-[11px] font-medium text-indigo-700">
-                    {getDifficultyLabel(eq.level)}
-                  </span>
-                </div>
-
-                {eq.type === '배열영작' && eq.wordBank && eq.wordBank.length > 0 && (
-                  <div className="mb-2 flex flex-wrap gap-1.5">
-                    {eq.wordBank.map((word, wIdx) => (
-                      <span
-                        key={wIdx}
-                        className="rounded border border-gray-300 bg-gray-50 px-2 py-1 text-xs text-gray-700"
+                      {getDifficultyLabel(sq.difficulty)}
+                    </span>
+                  </div>
+                  <p className="mb-2 font-medium">
+                    {number}. {sq.summaryText}
+                  </p>
+                  <div className="mb-2 space-y-1 pl-2">
+                    {sq.choices.map((choice, choiceIndex) => (
+                      <p
+                        key={choiceIndex}
+                        className={
+                          choiceIndex === sq.correctIndex
+                            ? 'text-sm font-medium text-green-700'
+                            : 'text-sm text-gray-700'
+                        }
                       >
-                        {word}
-                      </span>
+                        {CHOICE_MARK[choiceIndex]} {choice}
+                        {choiceIndex === sq.correctIndex ? ' (정답)' : ''}
+                      </p>
                     ))}
                   </div>
-                )}
+                  {sq.explanation && (
+                    <p className="border-t border-gray-100 pt-2 text-sm text-gray-500">{sq.explanation}</p>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </>
+      )}
 
-                <p className="mb-2 font-medium">
-                  {eIndex + 1}. {eq.prompt}
-                </p>
+      {/* 서술형 문제 정답 및 채점기준 (신규) */}
+      {essayQuestions.length > 0 && (
+        <>
+          <h2 className="mb-4 mt-8 text-lg font-bold">서술형 문제 정답 및 채점기준</h2>
+          <div className="space-y-4">
+            {essayQuestions.map((eq, index) => {
+              const number = mcqCount + summaryQuestions.length + index + 1
+              return (
+                <div key={eq.id} className="rounded-lg border border-gray-200 bg-white p-4">
+                  <div className="mb-2 flex flex-wrap items-center gap-1.5">
+                    <span className="rounded bg-teal-100 px-1.5 py-0.5 text-[11px] font-medium text-teal-800">
+                      서술형 · {eq.type}
+                    </span>
+                    <span className="rounded bg-indigo-100 px-1.5 py-0.5 text-[11px] font-medium text-indigo-700">
+                      {getDifficultyLabel(eq.level)}
+                    </span>
+                  </div>
 
-                {eq.conditions && (
-                  <p className="mb-2 rounded border border-dashed border-gray-300 p-2 text-xs text-gray-500">
-                    조건: {eq.conditions}
+                  {eq.type === '배열영작' && eq.wordBank && eq.wordBank.length > 0 && (
+                    <div className="mb-3 flex flex-wrap gap-1.5">
+                      {eq.wordBank.map((word, wIdx) => (
+                        <span
+                          key={wIdx}
+                          className="rounded border border-gray-300 bg-gray-50 px-2 py-1 text-xs text-gray-700"
+                        >
+                          {word}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <p className="mb-2 font-medium">
+                    {number}. {eq.prompt}
                   </p>
-                )}
 
-                <div className="space-y-2 rounded bg-gray-50 p-3 text-sm">
-                  <p>
+                  {eq.conditions && (
+                    <div className="mb-2 rounded border border-dashed border-gray-300 p-2 text-xs text-gray-500">
+                      조건: {eq.conditions}
+                    </div>
+                  )}
+
+                  <p className="text-sm">
                     <span className="font-medium text-gray-700">모범답안: </span>
-                    <span className="text-gray-600">{eq.modelAnswer}</span>
+                    <span className="text-green-700">{eq.modelAnswer}</span>
                   </p>
+
                   {eq.rubric && eq.rubric.length > 0 && (
-                    <div>
-                      <span className="font-medium text-gray-700">채점 기준:</span>
-                      <ul className="mt-1 list-disc pl-5 text-gray-600">
+                    <div className="mt-2">
+                      <span className="text-sm font-medium text-gray-700">채점 기준:</span>
+                      <ul className="mt-1 list-disc pl-5 text-sm text-gray-600">
                         {eq.rubric.map((r, rIdx) => (
                           <li key={rIdx}>
                             {r.criteria} ({r.points}점)
@@ -398,17 +401,18 @@ export default function QuestionSetDetailPage() {
                       </ul>
                     </div>
                   )}
+
                   {eq.partialCreditNotes && (
-                    <p className="text-gray-500">
+                    <p className="mt-2 border-t border-gray-100 pt-2 text-sm text-gray-500">
                       <span className="font-medium text-gray-700">부분점수: </span>
                       {eq.partialCreditNotes}
                     </p>
                   )}
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
-        </div>
+        </>
       )}
     </div>
   )

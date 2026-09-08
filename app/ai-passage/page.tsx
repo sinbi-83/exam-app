@@ -103,6 +103,11 @@ export default function AiPassagePage() {
   const [saving, setSaving] = useState(false)
   const [openAnswerIds, setOpenAnswerIds] = useState<{ [key: string]: boolean }>({})
 
+  // 난이도 필터 (신규): 체크된 난이도만 문제로 뽑힘, 기본은 3개 다 체크
+  const [selectedDifficulties, setSelectedDifficulties] = useState<Set<string>>(
+    new Set(['beginner', 'intermediate', 'advanced'])
+  )
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true)
@@ -146,11 +151,17 @@ export default function AiPassagePage() {
   }
 
   async function handleBuildQuestions() {
-    const built = buildMultipleChoiceQuestions(items)
+    // 체크된 난이도만 남기고 걸러내기 (신규)
+    const filteredItems = items.filter((item) => selectedDifficulties.has(item.difficulty))
+    const filteredSummaryQuestions = summaryQuestions.filter((sq) =>
+      selectedDifficulties.has(sq.difficulty)
+    )
+
+    const built = buildMultipleChoiceQuestions(filteredItems)
     setQuestions(built)
     setSelectedAnswers({})
 
-    const builtSummary = buildSummaryQuestions(summaryQuestions)
+    const builtSummary = buildSummaryQuestions(filteredSummaryQuestions)
     setBuiltSummaryQuestions(builtSummary)
     setSelectedSummaryAnswers({})
 
@@ -164,7 +175,7 @@ export default function AiPassagePage() {
           topic,
           passage,
           translation,
-          items,
+          items: filteredItems,
           questions: built,
           sentences,
           essayQuestions,
@@ -188,6 +199,19 @@ export default function AiPassagePage() {
 
   function toggleAnswerVisible(id: string) {
     setOpenAnswerIds((prev) => ({ ...prev, [id]: !prev[id] }))
+  }
+
+  // 난이도 체크박스 토글 함수 (신규)
+  function toggleDifficulty(level: string) {
+    setSelectedDifficulties((prev) => {
+      const next = new Set(prev)
+      if (next.has(level)) {
+        next.delete(level)
+      } else {
+        next.add(level)
+      }
+      return next
+    })
   }
 
   // 학생용 시험지(객관식) / 서술형 시험지 / 교사용 정답지를 새 탭으로 여는 함수
@@ -291,6 +315,21 @@ export default function AiPassagePage() {
               )}
             </div>
           )}
+
+          {/* 난이도 필터 체크박스 (신규) */}
+          <div className="flex items-center gap-4 rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm">
+            <span className="text-gray-500">난이도 필터:</span>
+            {(['beginner', 'intermediate', 'advanced'] as const).map((level) => (
+              <label key={level} className="flex cursor-pointer items-center gap-1.5">
+                <input
+                  type="checkbox"
+                  checked={selectedDifficulties.has(level)}
+                  onChange={() => toggleDifficulty(level)}
+                />
+                <span>{getDifficultyLabel(level)}</span>
+              </label>
+            ))}
+          </div>
 
           <button
             type="button"

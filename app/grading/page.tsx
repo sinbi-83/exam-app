@@ -125,7 +125,6 @@ export default function GradingPage() {
       setNewExamTotalQuestions('')
       setNewExamMaxScore('100')
       await fetchAll()
-      await fetchAll()
       // 방금 만든 시험을 성적 등록 폼에 자동 선택 (방금 받은 데이터로 바로 채움)
       if (result.data) {
       setSelectedExamId(result.data.id)
