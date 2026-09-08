@@ -6,6 +6,7 @@ import {
   PassageSentence,
   EssayQuestion,
   SummaryQuestion,
+  ReadingQuestion,
 } from "@/types/aiPassage";
 import {
   buildAiPassageSystemPrompt,
@@ -47,7 +48,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         model: "claude-sonnet-4-6",
-        max_tokens: 12000,
+        max_tokens: 14000,
         system: systemPrompt,
         messages: [{ role: "user", content: userMessage }],
       }),
@@ -72,6 +73,7 @@ export async function POST(req: NextRequest) {
       sentences?: PassageSentence[];
       essayQuestions?: EssayQuestion[];
       summaryQuestions?: SummaryQuestion[];
+      readingQuestions?: ReadingQuestion[];
     };
     try {
       parsed = JSON.parse(rawText);
@@ -93,6 +95,7 @@ export async function POST(req: NextRequest) {
         sentences: parsed.sentences,
         essayQuestions: parsed.essayQuestions,
         summaryQuestions: parsed.summaryQuestions,
+        readingQuestions: parsed.readingQuestions,
       },
     };
     return NextResponse.json(successResponse, { status: 200 });

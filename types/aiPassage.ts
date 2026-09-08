@@ -75,6 +75,16 @@ export interface SummaryQuestion {
   difficulty: "beginner" | "intermediate" | "advanced";
 }
 
+// 독해 문제 하나 (지문 전체를 보고 푸는 유형: 주제/제목/분위기/요지/내용일치)
+export interface ReadingQuestion {
+  id: string;
+  type: "주제" | "제목" | "분위기" | "요지" | "내용일치";
+  answer: string;
+  wrongAnswers: string[];
+  explanation: string;
+  difficulty: "beginner" | "intermediate" | "advanced";
+}
+
 export interface AiPassageSuccessResponse {
   ok: true;
   data: {
@@ -84,6 +94,7 @@ export interface AiPassageSuccessResponse {
     sentences?: PassageSentence[];
     essayQuestions?: EssayQuestion[];
     summaryQuestions?: SummaryQuestion[];
+    readingQuestions?: ReadingQuestion[];
   };
 }
 

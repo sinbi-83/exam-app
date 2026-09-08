@@ -41,9 +41,10 @@ export async function POST(request: NextRequest) {
     sentences,
     essayQuestions,
     summaryQuestions,
+    readingQuestions,
   } = body
 
-  // 3. Supabase에 저장 (기존 로직 + 서술형/지문요약 컬럼 추가)
+  // 3. Supabase에 저장 (기존 로직 + 서술형/지문요약/독해 컬럼)
   const { data, error } = await supabase
     .from('question_sets')
     .insert({
@@ -57,6 +58,7 @@ export async function POST(request: NextRequest) {
       sentences: sentences ?? null,
       essay_questions: essayQuestions ?? null,
       summary_questions: summaryQuestions ?? null,
+      reading_questions: readingQuestions ?? null,
     })
     .select()
     .single()

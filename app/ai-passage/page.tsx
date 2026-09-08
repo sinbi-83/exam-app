@@ -4,10 +4,13 @@ import { useState } from 'react'
 import {
   buildMultipleChoiceQuestions,
   buildSummaryQuestions,
+  buildReadingQuestions,
+  buildReadingQuestionPrompt,
   MultipleChoiceQuestion,
   SummaryMultipleChoiceQuestion,
+  ReadingMultipleChoiceQuestion,
 } from '@/lib/buildMultipleChoice'
-import { PassageHighlightItem, EssayQuestion, PassageSentence, SummaryQuestion } from '@/types/aiPassage'
+import { PassageHighlightItem, EssayQuestion, PassageSentence, SummaryQuestion, ReadingQuestion } from '@/types/aiPassage'
 import {
   getTypeLabel,
   getDifficultyLabel,
@@ -93,17 +96,20 @@ export default function AiPassagePage() {
   const [sentences, setSentences] = useState<PassageSentence[]>([])
   const [essayQuestions, setEssayQuestions] = useState<EssayQuestion[]>([])
   const [summaryQuestions, setSummaryQuestions] = useState<SummaryQuestion[]>([])
+  const [readingQuestions, setReadingQuestions] = useState<ReadingQuestion[]>([])
   const [loading, setLoading] = useState(false)
 
   const [questions, setQuestions] = useState<MultipleChoiceQuestion[]>([])
   const [builtSummaryQuestions, setBuiltSummaryQuestions] = useState<SummaryMultipleChoiceQuestion[]>([])
+  const [builtReadingQuestions, setBuiltReadingQuestions] = useState<ReadingMultipleChoiceQuestion[]>([])
   const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: number }>({})
   const [selectedSummaryAnswers, setSelectedSummaryAnswers] = useState<{ [key: number]: number }>({})
+  const [selectedReadingAnswers, setSelectedReadingAnswers] = useState<{ [key: number]: number }>({})
   const [showTranslation, setShowTranslation] = useState(false)
   const [saving, setSaving] = useState(false)
   const [openAnswerIds, setOpenAnswerIds] = useState<{ [key: string]: boolean }>({})
 
-  // 난이도 필터 (신규): 체크된 난이도만 문제로 뽑힘, 기본은 3개 다 체크
+  // 난이도 필터: 체크된 난이도만 문제로 뽑힘, 기본은 3개 다 체크
   const [selectedDifficulties, setSelectedDifficulties] = useState<Set<string>>(
     new Set(['beginner', 'intermediate', 'advanced'])
   )
@@ -117,10 +123,13 @@ export default function AiPassagePage() {
     setSentences([])
     setEssayQuestions([])
     setSummaryQuestions([])
+    setReadingQuestions([])
     setQuestions([])
     setBuiltSummaryQuestions([])
+    setBuiltReadingQuestions([])
     setSelectedAnswers({})
     setSelectedSummaryAnswers({})
+    setSelectedReadingAnswers({})
     setShowTranslation(false)
 
     try {
@@ -143,6 +152,7 @@ export default function AiPassagePage() {
       setSentences(data.data.sentences || [])
       setEssayQuestions(data.data.essayQuestions || [])
       setSummaryQuestions(data.data.summaryQuestions || [])
+      setReadingQuestions(data.data.readingQuestions || [])
     } catch (err) {
       alert('서버와 통신 중 문제가 발생했어요.')
     } finally {
@@ -151,10 +161,13 @@ export default function AiPassagePage() {
   }
 
   async function handleBuildQuestions() {
-    // 체크된 난이도만 남기고 걸러내기 (신규)
+    // 체크된 난이도만 남기고 걸러내기
     const filteredItems = items.filter((item) => selectedDifficulties.has(item.difficulty))
     const filteredSummaryQuestions = summaryQuestions.filter((sq) =>
       selectedDifficulties.has(sq.difficulty)
+    )
+    const filteredReadingQuestions = readingQuestions.filter((rq) =>
+      selectedDifficulties.has(rq.difficulty)
     )
 
     const built = buildMultipleChoiceQuestions(filteredItems)
@@ -164,6 +177,10 @@ export default function AiPassagePage() {
     const builtSummary = buildSummaryQuestions(filteredSummaryQuestions)
     setBuiltSummaryQuestions(builtSummary)
     setSelectedSummaryAnswers({})
+
+    const builtReading = buildReadingQuestions(filteredReadingQuestions)
+    setBuiltReadingQuestions(builtReading)
+    setSelectedReadingAnswers({})
 
     setSaving(true)
     try {
@@ -180,6 +197,7 @@ export default function AiPassagePage() {
           sentences,
           essayQuestions,
           summaryQuestions: builtSummary,
+          readingQuestions: builtReading,
         }),
       })
     } catch (err) {
@@ -197,11 +215,15 @@ export default function AiPassagePage() {
     setSelectedSummaryAnswers((prev) => ({ ...prev, [questionIndex]: choiceIndex }))
   }
 
+  function handleReadingSelect(questionIndex: number, choiceIndex: number) {
+    setSelectedReadingAnswers((prev) => ({ ...prev, [questionIndex]: choiceIndex }))
+  }
+
   function toggleAnswerVisible(id: string) {
     setOpenAnswerIds((prev) => ({ ...prev, [id]: !prev[id] }))
   }
 
-  // 난이도 체크박스 토글 함수 (신규)
+  // 난이도 체크박스 토글 함수
   function toggleDifficulty(level: string) {
     setSelectedDifficulties((prev) => {
       const next = new Set(prev)
@@ -222,6 +244,7 @@ export default function AiPassagePage() {
       passage,
       questions,
       summaryQuestions: builtSummaryQuestions,
+      readingQuestions: builtReadingQuestions,
       essayQuestions,
       sentences,
     }
@@ -316,7 +339,7 @@ export default function AiPassagePage() {
             </div>
           )}
 
-          {/* 난이도 필터 체크박스 (신규) */}
+          {/* 난이도 필터 체크박스 */}
           <div className="flex items-center gap-4 rounded border border-gray-200 bg-gray-50 px-3 py-2 text-sm">
             <span className="text-gray-500">난이도 필터:</span>
             {(['beginner', 'intermediate', 'advanced'] as const).map((level) => (
@@ -468,6 +491,61 @@ export default function AiPassagePage() {
                 {selected !== undefined && sq.explanation && (
                   <p className="mt-2 border-t border-gray-100 pt-2 text-sm text-gray-500">
                     {sq.explanation}
+                  </p>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      )}
+
+      {builtReadingQuestions.length > 0 && (
+        <div className="mt-8 space-y-4">
+          <h2 className="text-lg font-semibold text-gray-800">
+            독해 문제 ({builtReadingQuestions.length}개)
+          </h2>
+          <p className="text-xs text-gray-400">
+            * 지문 전체를 읽고 푸는 주제·제목·분위기·요지·내용일치 문제예요.
+          </p>
+          {builtReadingQuestions.map((rq, rIndex) => {
+            const selected = selectedReadingAnswers[rIndex]
+            return (
+              <div key={rIndex} className="rounded border border-gray-300 p-4">
+                <div className="mb-2 flex flex-wrap items-center gap-1.5">
+                  <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[11px] font-medium text-emerald-800">
+                    독해 · {rq.type}
+                  </span>
+                  <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(rq.difficulty)}`}>
+                    {getDifficultyLabel(rq.difficulty)}
+                  </span>
+                </div>
+                <p className="mb-2 font-medium">
+                  R{rIndex + 1}. {buildReadingQuestionPrompt(rq.type)}
+                </p>
+                <div className="space-y-1">
+                  {rq.choices.map((choice, choiceIndex) => {
+                    const isSelected = selected === choiceIndex
+                    const isCorrect = choiceIndex === rq.correctIndex
+                    let style = 'border-gray-300'
+                    if (selected !== undefined) {
+                      if (isCorrect) style = 'border-green-500 bg-green-50'
+                      else if (isSelected) style = 'border-red-500 bg-red-50'
+                    }
+                    return (
+                      <button
+                        key={choiceIndex}
+                        type="button"
+                        onClick={() => handleReadingSelect(rIndex, choiceIndex)}
+                        className={`block w-full rounded border px-3 py-2 text-left text-sm ${style}`}
+                      >
+                        {CHOICE_MARK[choiceIndex]} {choice}
+                      </button>
+                    )
+                  })}
+                </div>
+                {selected !== undefined && rq.explanation && (
+                  <p className="mt-2 border-t border-gray-100 pt-2 text-sm text-gray-500">
+                    {rq.explanation}
                   </p>
                 )}
               </div>

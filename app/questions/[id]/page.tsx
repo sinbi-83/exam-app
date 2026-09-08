@@ -26,6 +26,14 @@ interface MultipleChoiceQuestion {
   detailTags?: DetailTagsLike
 }
 
+interface ReadingMultipleChoiceQuestion {
+  type: string
+  choices: string[]
+  correctIndex: number
+  explanation: string
+  difficulty: 'beginner' | 'intermediate' | 'advanced'
+}
+
 interface QuestionSetDetail {
   id: string
   grade: string
@@ -37,6 +45,7 @@ interface QuestionSetDetail {
   sentences?: PassageSentence[]
   essay_questions?: EssayQuestion[]
   summary_questions?: SummaryMultipleChoiceQuestion[]
+  reading_questions?: ReadingMultipleChoiceQuestion[]
   created_at: string
 }
 
@@ -47,6 +56,24 @@ function buildQuestionPrompt(q: MultipleChoiceQuestion): string {
     return `밑줄 친 "${q.targetText}"의 쓰임이 어법상 가장 적절한 것은?`
   }
   return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
+}
+
+// 독해 문제 유형별 질문 문구 (코드가 고정으로 담당, lib/buildMultipleChoice.ts와 동일 로직)
+function buildReadingQuestionPrompt(type: string): string {
+  switch (type) {
+    case '주제':
+      return '이 글의 주제로 가장 알맞은 것은?'
+    case '제목':
+      return '이 글의 제목으로 가장 알맞은 것은?'
+    case '분위기':
+      return '이 글의 어조(분위기)로 가장 알맞은 것은?'
+    case '요지':
+      return '이 글의 요지로 가장 알맞은 것은?'
+    case '내용일치':
+      return '이 글의 내용과 일치하지 않는 것은?'
+    default:
+      return '다음 중 가장 알맞은 것은?'
+  }
 }
 
 function buildHighlightSegments(passage: string, items: PassageHighlightItem[]) {
@@ -115,7 +142,7 @@ export default function QuestionSetDetailPage() {
     fetchDetail()
   }, [id])
 
-  // 객관식 시험지 인쇄 (지문요약 문제도 같이 포함되도록 수정)
+  // 객관식 시험지 인쇄 (지문요약 + 독해 문제도 같이 포함)
   function handlePrintExam() {
     if (!data) return
     sessionStorage.setItem(
@@ -126,12 +153,13 @@ export default function QuestionSetDetailPage() {
         passage: data.passage,
         questions: data.questions,
         summaryQuestions: data.summary_questions || [],
+        readingQuestions: data.reading_questions || [],
       })
     )
     window.open('/ai-passage/print', '_blank')
   }
 
-  // 정답지 인쇄 (지문요약 + 서술형 정답도 같이 포함되도록 수정)
+  // 정답지 인쇄 (지문요약 + 독해 + 서술형 정답도 같이 포함)
   function handlePrintAnswer() {
     if (!data) return
     sessionStorage.setItem(
@@ -142,13 +170,14 @@ export default function QuestionSetDetailPage() {
         passage: data.passage,
         questions: data.questions,
         summaryQuestions: data.summary_questions || [],
+        readingQuestions: data.reading_questions || [],
         essayQuestions: data.essay_questions || [],
       })
     )
     window.open('/ai-passage/print', '_blank')
   }
 
-  // 서술형 시험지 인쇄 (신규)
+  // 서술형 시험지 인쇄
   function handlePrintEssay() {
     if (!data) return
     sessionStorage.setItem(
@@ -174,6 +203,7 @@ export default function QuestionSetDetailPage() {
 
   const segments = buildHighlightSegments(data.passage, data.items)
   const summaryQuestions = data.summary_questions || []
+  const readingQuestions = data.reading_questions || []
   const essayQuestions = data.essay_questions || []
   const mcqCount = data.questions.length
 
@@ -296,7 +326,7 @@ export default function QuestionSetDetailPage() {
         })}
       </div>
 
-      {/* 지문요약 문제 정답 (신규) */}
+      {/* 지문요약 문제 정답 */}
       {summaryQuestions.length > 0 && (
         <>
           <h2 className="mb-4 mt-8 text-lg font-bold">지문요약 문제 정답</h2>
@@ -343,13 +373,60 @@ export default function QuestionSetDetailPage() {
         </>
       )}
 
-      {/* 서술형 문제 정답 및 채점기준 (신규) */}
+      {/* 독해 문제 정답 (신규) */}
+      {readingQuestions.length > 0 && (
+        <>
+          <h2 className="mb-4 mt-8 text-lg font-bold">독해 문제 정답</h2>
+          <div className="space-y-4">
+            {readingQuestions.map((rq, index) => {
+              const number = mcqCount + summaryQuestions.length + index + 1
+              return (
+                <div key={index} className="rounded-lg border border-gray-200 bg-white p-4">
+                  <div className="mb-2 flex flex-wrap items-center gap-1.5">
+                    <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[11px] font-medium text-emerald-800">
+                      독해 · {rq.type}
+                    </span>
+                    <span
+                      className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(rq.difficulty)}`}
+                    >
+                      {getDifficultyLabel(rq.difficulty)}
+                    </span>
+                  </div>
+                  <p className="mb-2 font-medium">
+                    {number}. {buildReadingQuestionPrompt(rq.type)}
+                  </p>
+                  <div className="mb-2 space-y-1 pl-2">
+                    {rq.choices.map((choice, choiceIndex) => (
+                      <p
+                        key={choiceIndex}
+                        className={
+                          choiceIndex === rq.correctIndex
+                            ? 'text-sm font-medium text-green-700'
+                            : 'text-sm text-gray-700'
+                        }
+                      >
+                        {CHOICE_MARK[choiceIndex]} {choice}
+                        {choiceIndex === rq.correctIndex ? ' (정답)' : ''}
+                      </p>
+                    ))}
+                  </div>
+                  {rq.explanation && (
+                    <p className="border-t border-gray-100 pt-2 text-sm text-gray-500">{rq.explanation}</p>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </>
+      )}
+
+      {/* 서술형 문제 정답 및 채점기준 */}
       {essayQuestions.length > 0 && (
         <>
           <h2 className="mb-4 mt-8 text-lg font-bold">서술형 문제 정답 및 채점기준</h2>
           <div className="space-y-4">
             {essayQuestions.map((eq, index) => {
-              const number = mcqCount + summaryQuestions.length + index + 1
+              const number = mcqCount + summaryQuestions.length + readingQuestions.length + index + 1
               return (
                 <div key={eq.id} className="rounded-lg border border-gray-200 bg-white p-4">
                   <div className="mb-2 flex flex-wrap items-center gap-1.5">

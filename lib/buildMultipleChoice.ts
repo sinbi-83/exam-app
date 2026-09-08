@@ -1,4 +1,4 @@
-import { SummaryQuestion } from "@/types/aiPassage";
+import { SummaryQuestion, ReadingQuestion } from "@/types/aiPassage";
 
 // 문제 포인트 하나의 원본 재료 모양 (AI가 준 데이터)
 export interface DetailTags {
@@ -96,9 +96,8 @@ export function buildMultipleChoiceQuestions(
   return result;
 }
 
-// ===== 여기부터 지문요약 빈칸채우기(summaryQuestions) 조립 함수 (신규) =====
+// ===== 지문요약 빈칸채우기(summaryQuestions) 조립 함수 =====
 
-// 지문요약 문제 하나가 조립된 후의 모양
 export interface SummaryMultipleChoiceQuestion {
   summaryText: string;
   choices: string[];
@@ -134,6 +133,69 @@ export function buildSummaryQuestions(
   const result: SummaryMultipleChoiceQuestion[] = [];
   for (const item of items) {
     const question = buildOneSummaryQuestion(item);
+    if (question) {
+      result.push(question);
+    }
+  }
+  return result;
+}
+
+// ===== 여기부터 독해 문제(readingQuestions) 조립 함수 (신규) =====
+
+// 독해 문제 하나가 조립된 후의 모양
+export interface ReadingMultipleChoiceQuestion {
+  type: string; // "주제" | "제목" | "분위기" | "요지" | "내용일치"
+  choices: string[];
+  correctIndex: number;
+  explanation: string;
+  difficulty: "beginner" | "intermediate" | "advanced";
+}
+
+// 유형별 질문 문구는 AI가 아니라 코드가 고정으로 담당 (일관성 유지)
+export function buildReadingQuestionPrompt(type: string): string {
+  switch (type) {
+    case "주제":
+      return "이 글의 주제로 가장 알맞은 것은?";
+    case "제목":
+      return "이 글의 제목으로 가장 알맞은 것은?";
+    case "분위기":
+      return "이 글의 어조(분위기)로 가장 알맞은 것은?";
+    case "요지":
+      return "이 글의 요지로 가장 알맞은 것은?";
+    case "내용일치":
+      return "이 글의 내용과 일치하지 않는 것은?";
+    default:
+      return "다음 중 가장 알맞은 것은?";
+  }
+}
+
+export function buildOneReadingQuestion(
+  item: ReadingQuestion
+): ReadingMultipleChoiceQuestion | null {
+  if (!item.answer || !item.wrongAnswers || item.wrongAnswers.length === 0) {
+    return null;
+  }
+
+  const usedWrongAnswers = item.wrongAnswers.slice(0, 4);
+  const allChoices = [item.answer, ...usedWrongAnswers];
+  const shuffled = shuffleArray(allChoices);
+  const correctIndex = shuffled.indexOf(item.answer);
+
+  return {
+    type: item.type,
+    choices: shuffled,
+    correctIndex,
+    explanation: item.explanation || "",
+    difficulty: item.difficulty,
+  };
+}
+
+export function buildReadingQuestions(
+  items: ReadingQuestion[]
+): ReadingMultipleChoiceQuestion[] {
+  const result: ReadingMultipleChoiceQuestion[] = [];
+  for (const item of items) {
+    const question = buildOneReadingQuestion(item);
     if (question) {
       result.push(question);
     }

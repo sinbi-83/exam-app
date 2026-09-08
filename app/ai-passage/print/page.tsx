@@ -20,12 +20,21 @@ interface SummaryMultipleChoiceQuestion {
   difficulty: string
 }
 
+interface ReadingMultipleChoiceQuestion {
+  type: string
+  choices: string[]
+  correctIndex: number
+  explanation: string
+  difficulty: string
+}
+
 interface PrintData {
   mode: 'exam' | 'answer' | 'essay'
   grade?: string
   passage: string
   questions: MultipleChoiceQuestion[]
   summaryQuestions?: SummaryMultipleChoiceQuestion[]
+  readingQuestions?: ReadingMultipleChoiceQuestion[]
   essayQuestions?: EssayQuestion[]
   sentences?: PassageSentence[]
 }
@@ -37,6 +46,24 @@ function buildQuestionPrompt(q: MultipleChoiceQuestion, qIndex: number): string 
     return `빈칸 (${qIndex + 1})에 들어갈 말로 가장 적절한 것은?`
   }
   return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
+}
+
+// 독해 문제 유형별 질문 문구 (코드가 고정으로 담당, lib/buildMultipleChoice.ts와 동일 로직)
+function buildReadingQuestionPrompt(type: string): string {
+  switch (type) {
+    case '주제':
+      return '이 글의 주제로 가장 알맞은 것은?'
+    case '제목':
+      return '이 글의 제목으로 가장 알맞은 것은?'
+    case '분위기':
+      return '이 글의 어조(분위기)로 가장 알맞은 것은?'
+    case '요지':
+      return '이 글의 요지로 가장 알맞은 것은?'
+    case '내용일치':
+      return '이 글의 내용과 일치하지 않는 것은?'
+    default:
+      return '다음 중 가장 알맞은 것은?'
+  }
 }
 
 // 어법 문제에 해당하는 부분만 지문에서 빈칸으로 가리는 함수
@@ -106,6 +133,7 @@ export default function PrintPage() {
 
   const essayQuestions = data.essayQuestions || []
   const summaryQuestions = data.summaryQuestions || []
+  const readingQuestions = data.readingQuestions || []
   const mcqCount = data.questions.length
   const gradePrefix = data.grade ? `${data.grade} ` : ''
 
@@ -175,6 +203,28 @@ export default function PrintPage() {
                       </p>
                       <div className="space-y-1 pl-2">
                         {sq.choices.map((choice, choiceIndex) => (
+                          <p key={choiceIndex} className="text-sm">
+                            {CHOICE_MARK[choiceIndex]} {choice}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+
+            {readingQuestions.length > 0 && (
+              <div className="mt-6 space-y-6">
+                {readingQuestions.map((rq, index) => {
+                  const number = mcqCount + summaryQuestions.length + index + 1
+                  return (
+                    <div key={index} className="break-inside-avoid">
+                      <p className="mb-2 font-medium">
+                        {number}. {buildReadingQuestionPrompt(rq.type)}
+                      </p>
+                      <div className="space-y-1 pl-2">
+                        {rq.choices.map((choice, choiceIndex) => (
                           <p key={choiceIndex} className="text-sm">
                             {CHOICE_MARK[choiceIndex]} {choice}
                           </p>
@@ -259,11 +309,30 @@ export default function PrintPage() {
               </div>
             )}
 
+            {readingQuestions.length > 0 && (
+              <div className="mt-6 space-y-2 border-t border-gray-300 pt-4">
+                <h2 className="text-base font-bold">독해 문제 정답</h2>
+                {readingQuestions.map((rq, index) => {
+                  const number = mcqCount + summaryQuestions.length + index + 1
+                  return (
+                    <div key={index} className="break-inside-avoid">
+                      <p className="text-sm font-medium">
+                        {number}. [{rq.type}] 정답: {CHOICE_MARK[rq.correctIndex]} {rq.choices[rq.correctIndex]}
+                      </p>
+                      {rq.explanation && (
+                        <p className="mt-1 text-sm text-gray-600">{rq.explanation}</p>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+
             {essayQuestions.length > 0 && (
               <div className="mt-6 space-y-4 border-t border-gray-300 pt-4">
                 <h2 className="text-base font-bold">서술형 정답 및 채점기준</h2>
                 {essayQuestions.map((eq, index) => {
-                  const number = mcqCount + summaryQuestions.length + index + 1
+                  const number = mcqCount + summaryQuestions.length + readingQuestions.length + index + 1
                   return (
                     <div key={eq.id} className="break-inside-avoid">
                       <p className="text-sm font-medium">
