@@ -33,7 +33,7 @@ const menuGroups: MenuGroup[] = [
     items: [
       { label: "학생관리", href: "/students" },
       { label: "채점관리", href: "/grading" },
-      { label: "성적분석", href: "/analytics", comingSoon: true },
+      { label: "성적분석", href: "/analytics" }, 
     ],
   },
   {
