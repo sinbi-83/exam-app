@@ -41,6 +41,7 @@ const menuGroups: MenuGroup[] = [
     items: [
       { label: "AI 지문 생성", href: "/ai-passage" },
       { label: "문제은행", href: "/questions" },
+      { label: "문항 검색", href: "/question-search" },
       { label: "지문관리", href: "/passages", comingSoon: true },
       { label: "시험출제", href: "/exams", comingSoon: true },
     ],
