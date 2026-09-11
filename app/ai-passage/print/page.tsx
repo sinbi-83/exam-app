@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
 import { EssayQuestion, PassageSentence } from '@/types/aiPassage'
 
 interface MultipleChoiceQuestion {
@@ -41,11 +43,36 @@ interface PrintData {
 
 const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
-function buildQuestionPrompt(q: MultipleChoiceQuestion, qIndex: number): string {
+function buildQuestionPrompt(q: MultipleChoiceQuestion, displayNumber: number): string {
   if (q.type === 'grammar') {
-    return `빈칸 (${qIndex + 1})에 들어갈 말로 가장 적절한 것은?`
+    return `빈칸 (${displayNumber})에 들어갈 말로 가장 적절한 것은?`
   }
-  return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
+  return `"${q.targetText}"(${displayNumber})의 의미로 가장 알맞은 것은?`
+}
+
+// 단어 중간이 아니라 독립된 단어/구절로 등장하는 위치를 정확히 찾는 함수
+// (예: "her"를 찾을 때 "There" 안의 "her"에 잘못 매칭되는 것을 방지)
+function findWordBoundaryIndex(passage: string, target: string): number {
+  if (!target) return -1
+  const escaped = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  try {
+    const match = passage.match(new RegExp(`\\b${escaped}\\b`))
+    if (match && typeof match.index === 'number') return match.index
+  } catch {
+    // 정규식 생성에 실패하면 기존 방식으로 대체
+  }
+  return passage.indexOf(target)
+}
+
+// 문제들을 "지문에 실제로 등장하는 순서"로 정렬하고, 그 순서대로 번호(1~N)를 매기는 함수
+// 시험지와 정답지가 항상 같은 번호를 쓰도록 여기서 한 번만 순서를 정한다
+function buildExamOrder(passage: string, questions: MultipleChoiceQuestion[]) {
+  const items = questions.map((q, qIndex) => {
+    const idx = q.targetText ? findWordBoundaryIndex(passage, q.targetText) : -1
+    return { q, qIndex, start: idx === -1 ? Number.MAX_SAFE_INTEGER : idx }
+  })
+  items.sort((a, b) => a.start - b.start)
+  return items.map((item, i) => ({ ...item, displayNumber: i + 1 }))
 }
 
 // 독해 문제 유형별 질문 문구 (코드가 고정으로 담당, lib/buildMultipleChoice.ts와 동일 로직)
@@ -66,16 +93,23 @@ function buildReadingQuestionPrompt(type: string): string {
   }
 }
 
-// 어법 문제에 해당하는 부분만 지문에서 빈칸으로 가리는 함수
-function buildExamPassageSegments(passage: string, questions: MultipleChoiceQuestion[]) {
-  type Match = { start: number; end: number; qNumber: number }
+// 어법 문제는 빈칸으로, 어휘 문제는 밑줄+번호로 지문에 표시하는 함수
+function buildExamPassageSegments(
+  passage: string,
+  orderedItems: { q: MultipleChoiceQuestion; displayNumber: number; start: number }[]
+) {
+  type Match = { start: number; end: number; qNumber: number; kind: 'grammar' | 'vocab'; text: string }
   const matches: Match[] = []
 
-  questions.forEach((q, qIndex) => {
-    if (q.type !== 'grammar' || !q.targetText) return
-    const idx = passage.indexOf(q.targetText)
-    if (idx === -1) return
-    matches.push({ start: idx, end: idx + q.targetText.length, qNumber: qIndex + 1 })
+  orderedItems.forEach(({ q, displayNumber, start }) => {
+    if (!q.targetText || start === Number.MAX_SAFE_INTEGER) return
+    matches.push({
+      start,
+      end: start + q.targetText.length,
+      qNumber: displayNumber,
+      kind: q.type === 'grammar' ? 'grammar' : 'vocab',
+      text: q.targetText,
+    })
   })
 
   matches.sort((a, b) => a.start - b.start)
@@ -89,13 +123,17 @@ function buildExamPassageSegments(passage: string, questions: MultipleChoiceQues
     }
   }
 
-  const segments: { text: string; blankNumber?: number }[] = []
+  const segments: { text: string; blankNumber?: number; underlineNumber?: number }[] = []
   let cursor = 0
   for (const m of cleaned) {
     if (m.start > cursor) {
       segments.push({ text: passage.slice(cursor, m.start) })
     }
-    segments.push({ text: '', blankNumber: m.qNumber })
+    if (m.kind === 'grammar') {
+      segments.push({ text: '', blankNumber: m.qNumber })
+    } else {
+      segments.push({ text: m.text, underlineNumber: m.qNumber })
+    }
     cursor = m.end
   }
   if (cursor < passage.length) {
@@ -105,8 +143,19 @@ function buildExamPassageSegments(passage: string, questions: MultipleChoiceQues
   return segments
 }
 
+// 이미지 파일을 미리 불러와서 <img> 엘리먼트로 반환하는 함수 (워터마크를 PDF에 그릴 때 사용)
+function loadImage(src: string): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    img.onload = () => resolve(img)
+    img.onerror = reject
+    img.src = src
+  })
+}
+
 export default function PrintPage() {
   const [data, setData] = useState<PrintData | null>(null)
+  const [isDownloading, setIsDownloading] = useState(false)
 
   useEffect(() => {
     const raw = sessionStorage.getItem('printData')
@@ -124,12 +173,109 @@ export default function PrintPage() {
     }
   }, [data])
 
+  // 화면을 이미지로 캡처해서 PDF 파일로 바로 저장하는 함수
+  // 제목/지문/문제 하나하나(.break-inside-avoid)를 각각 따로 캡처해서
+  // 페이지에 순서대로 쌓아 올리는 방식 — 한 블록을 통째로 하나의 이미지로 캡처하기 때문에
+  // 블록 중간에서 페이지가 잘리는 일이 원천적으로 생기지 않는다
+  async function handleDownloadPdf() {
+    const container = document.querySelector('.print-area') as HTMLElement | null
+    if (!container) return
+
+    const blockEls = Array.from(container.querySelectorAll('.break-inside-avoid')) as HTMLElement[]
+    if (blockEls.length === 0) return
+
+    setIsDownloading(true)
+    try {
+         const blockCanvases: HTMLCanvasElement[] = []
+      for (const el of blockEls) {
+        // 캡처 중에만 위아래 여유 공간을 살짝 줘서 글자 획이 잘리지 않게 함
+        const originalPaddingTop = el.style.paddingTop
+        const originalPaddingBottom = el.style.paddingBottom
+        el.style.paddingTop = `${(parseFloat(originalPaddingTop) || 0) + 4}px`
+        el.style.paddingBottom = `${(parseFloat(originalPaddingBottom) || 0) + 4}px`
+
+        const canvas = await html2canvas(el, {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: '#ffffff',
+          ignoreElements: (node) => node.getAttribute('data-pdf-ignore') === 'true',
+        })
+
+        el.style.paddingTop = originalPaddingTop
+        el.style.paddingBottom = originalPaddingBottom
+
+        blockCanvases.push(canvas)
+      }
+
+           const pdf = new jsPDF('p', 'mm', 'a4')
+      const pageWidthMm = pdf.internal.pageSize.getWidth()
+      const pageHeightMm = pdf.internal.pageSize.getHeight()
+      const marginMm = 12
+      const usableWidthMm = pageWidthMm - marginMm * 2
+      const bottomLimitMm = pageHeightMm - marginMm
+
+      // 블록마다 몇 번째 페이지 어디에 놓일지 먼저 계산 (아직 실제로 그리지는 않음)
+      const placements: { pageIndex: number; x: number; y: number; w: number; h: number }[] = []
+      let cursorMm = marginMm
+      let pageIndex = 0
+      blockCanvases.forEach((canvas, idx) => {
+        const imgHeightMm = (canvas.height * usableWidthMm) / canvas.width
+
+        if (idx > 0 && cursorMm + imgHeightMm > bottomLimitMm) {
+          pageIndex += 1
+          cursorMm = marginMm
+        }
+
+        placements.push({ pageIndex, x: marginMm, y: cursorMm, w: usableWidthMm, h: imgHeightMm })
+        cursorMm += imgHeightMm + 4
+      })
+
+      const totalPages = pageIndex + 1
+      for (let i = 1; i < totalPages; i++) {
+        pdf.addPage()
+      }
+
+      // 워터마크 로고를 각 페이지에 먼저 연하게 깔아둔다 (그 다음에 문제 내용을 위에 겹쳐 그림)
+      try {
+        const watermarkImg = await loadImage('/boston-logo-watermark.png')
+        const watermarkWidthMm = 70
+        const watermarkHeightMm = (watermarkImg.height / watermarkImg.width) * watermarkWidthMm
+        const wx = (pageWidthMm - watermarkWidthMm) / 2
+        const wy = (pageHeightMm - watermarkHeightMm) / 2
+
+        for (let p = 1; p <= totalPages; p++) {
+          pdf.setPage(p)
+          ;(pdf as any).setGState(new (pdf as any).GState({ opacity: 0.1 }))
+          pdf.addImage(watermarkImg, 'PNG', wx, wy, watermarkWidthMm, watermarkHeightMm)
+          ;(pdf as any).setGState(new (pdf as any).GState({ opacity: 1 }))
+        }
+          } catch (err) {
+        // 워터마크를 못 불러오더라도 나머지 내용은 그대로 저장되도록 진행
+        console.error('워터마크 로고를 불러오지 못했습니다:', err)
+      }
+
+      // 계산해둔 위치에 맞춰 문제 내용을 그린다
+      blockCanvases.forEach((canvas, idx) => {
+        const { pageIndex: pIdx, x, y, w, h } = placements[idx]
+        pdf.setPage(pIdx + 1)
+        const imgData = canvas.toDataURL('image/png')
+        pdf.addImage(imgData, 'PNG', x, y, w, h)
+      })
+
+      const modeLabel =
+        data?.mode === 'answer' ? '정답지' : data?.mode === 'essay' ? '서술형시험지' : '시험지'
+      pdf.save(`${data?.grade || ''}${modeLabel}.pdf`)
+    } finally {
+      setIsDownloading(false)
+    }
+  }
+
   if (!data) {
     return <p className="p-8 text-sm text-gray-500">불러오는 중...</p>
   }
 
-  const examSegments =
-    data.mode === 'exam' ? buildExamPassageSegments(data.passage, data.questions) : []
+  const examOrder = buildExamOrder(data.passage, data.questions)
+  const examSegments = data.mode === 'exam' ? buildExamPassageSegments(data.passage, examOrder) : []
 
   const essayQuestions = data.essayQuestions || []
   const summaryQuestions = data.summaryQuestions || []
@@ -139,28 +285,36 @@ export default function PrintPage() {
 
   return (
     <div className="relative mx-auto max-w-2xl p-8 print-area">
-      {/* 배경 워터마크 로고: 아주 연하게, 화면과 인쇄물 모두에 표시됨 */}
+      {/* 배경 워터마크 로고: 아주 연하게, 화면과 인쇄물 모두에 표시됨 (PDF 다운로드에서는 제외) */}
       <img
         src="/boston-logo-watermark.png"
         alt=""
         aria-hidden="true"
+        data-pdf-ignore="true"
         className="pointer-events-none fixed left-1/2 top-1/2 z-0 w-[380px] -translate-x-1/2 -translate-y-1/2 opacity-[0.10] print:opacity-[0.10]"
       />
 
       {/* 실제 시험지 내용: 워터마크보다 위에 쌓이도록 z-10 */}
       <div className="relative z-10">
-        <div className="mb-4 flex justify-end print:hidden">
+        <div className="mb-4 flex justify-end gap-2 print:hidden" data-pdf-ignore="true">
           <button
             onClick={() => window.print()}
             className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
           >
             🖨 인쇄하기
           </button>
+          <button
+            onClick={handleDownloadPdf}
+            disabled={isDownloading}
+            className="rounded-md bg-gray-700 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 disabled:opacity-50"
+          >
+            {isDownloading ? '만드는 중...' : '⬇ PDF 다운로드'}
+          </button>
         </div>
 
         {data.mode === 'exam' && (
           <>
-            <h1 className="mb-4 text-lg font-bold">{gradePrefix}영어 시험문제</h1>
+            <h1 className="mb-4 text-lg font-bold break-inside-avoid">{gradePrefix}영어 시험문제</h1>
             <p className="mb-6 whitespace-pre-wrap text-sm leading-8 break-inside-avoid">
               {examSegments.map((seg, idx) =>
                 seg.blankNumber ? (
@@ -170,16 +324,21 @@ export default function PrintPage() {
                   >
                     ({seg.blankNumber})
                   </span>
+                ) : seg.underlineNumber ? (
+                  <span key={idx}>
+                    <span className="underline">{seg.text}</span>
+                    <span className="font-medium">({seg.underlineNumber})</span>
+                  </span>
                 ) : (
                   <span key={idx}>{seg.text}</span>
                 )
               )}
             </p>
             <div className="space-y-6">
-              {data.questions.map((q, qIndex) => (
-                <div key={qIndex} className="break-inside-avoid">
+              {examOrder.map(({ q, displayNumber }) => (
+                <div key={displayNumber} className="break-inside-avoid">
                   <p className="mb-2 font-medium">
-                    {qIndex + 1}. {buildQuestionPrompt(q, qIndex)}
+                    {displayNumber}. {buildQuestionPrompt(q, displayNumber)}
                   </p>
                   <div className="space-y-1 pl-2">
                     {q.choices.map((choice, choiceIndex) => (
@@ -240,7 +399,7 @@ export default function PrintPage() {
 
         {data.mode === 'essay' && (
           <>
-            <h1 className="mb-4 text-lg font-bold">{gradePrefix}영어 서술형 시험문제</h1>
+            <h1 className="mb-4 text-lg font-bold break-inside-avoid">{gradePrefix}영어 서술형 시험문제</h1>
             <div className="space-y-6">
               {essayQuestions.map((eq, index) => {
                 return (
@@ -276,12 +435,12 @@ export default function PrintPage() {
 
         {data.mode === 'answer' && (
           <>
-            <h1 className="mb-4 text-lg font-bold">{gradePrefix}정답 및 해설</h1>
+            <h1 className="mb-4 text-lg font-bold break-inside-avoid">{gradePrefix}정답 및 해설</h1>
             <div className="space-y-4">
-              {data.questions.map((q, qIndex) => (
-                <div key={qIndex} className="break-inside-avoid">
+              {examOrder.map(({ q, displayNumber }) => (
+                <div key={displayNumber} className="break-inside-avoid">
                   <p className="text-sm font-medium">
-                    {qIndex + 1}. "{q.targetText}" — 정답: {CHOICE_MARK[q.correctIndex]} {q.choices[q.correctIndex]}
+                    {displayNumber}. "{q.targetText}" — 정답: {CHOICE_MARK[q.correctIndex]} {q.choices[q.correctIndex]}
                   </p>
                   {q.explanation && (
                     <p className="mt-1 text-sm text-gray-600">{q.explanation}</p>

@@ -55,6 +55,8 @@ export async function POST(req: NextRequest) {
     });
 
     if (!response.ok) {
+      const errorBody = await response.text();
+      console.error("Claude API 요청 실패:", response.status, errorBody);
       const errorResponse: AiPassageResponse = {
         ok: false,
         errorType: "network",
