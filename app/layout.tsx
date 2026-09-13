@@ -26,6 +26,8 @@ const menuGroups: MenuGroup[] = [
     items: [
       { label: "설정", href: "/settings" },
       { label: "API 사용량", href: "/api-usage" },
+      { label: "수업 일정", href: "/schedule" },
+      { label: "원비 관리", href: "/tuition" },
     ],
   },
   {
@@ -35,6 +37,8 @@ const menuGroups: MenuGroup[] = [
       { label: "보고서 작성", href: "/report" },
       { label: "채점관리", href: "/grading" },
       { label: "성적분석", href: "/analytics" },
+      { label: "출석관리", href: "/attendance" },
+      { label: "오답 노트", href: "/error-notes" },
     ],
   },
   {
@@ -45,6 +49,13 @@ const menuGroups: MenuGroup[] = [
       { label: "문항 검색", href: "/question-search" },
       { label: "지문관리", href: "/passages" },
       { label: "시험출제", href: "/exams" },
+      { label: "단어 테스트", href: "/vocab-test" },
+    ],
+  },
+  {
+    title: "알림",
+    items: [
+      { label: "학부모 알림", href: "/notifications" },
     ],
   },
 ];
