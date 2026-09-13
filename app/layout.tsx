@@ -24,16 +24,17 @@ const menuGroups: MenuGroup[] = [
   {
     title: "학원관리",
     items: [
-      { label: "설정", href: "/settings", comingSoon: true },
-      { label: "API 사용량", href: "/api-usage", comingSoon: true },
+      { label: "설정", href: "/settings" },
+      { label: "API 사용량", href: "/api-usage" },
     ],
   },
   {
     title: "학생관리",
     items: [
       { label: "학생관리", href: "/students" },
+      { label: "보고서 작성", href: "/report" },
       { label: "채점관리", href: "/grading" },
-      { label: "성적분석", href: "/analytics" }, 
+      { label: "성적분석", href: "/analytics" },
     ],
   },
   {
@@ -42,8 +43,8 @@ const menuGroups: MenuGroup[] = [
       { label: "AI 지문 생성", href: "/ai-passage" },
       { label: "문제은행", href: "/questions" },
       { label: "문항 검색", href: "/question-search" },
-      { label: "지문관리", href: "/passages", comingSoon: true },
-      { label: "시험출제", href: "/exams", comingSoon: true },
+      { label: "지문관리", href: "/passages" },
+      { label: "시험출제", href: "/exams" },
     ],
   },
 ];
