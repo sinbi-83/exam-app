@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from 'react'
 
+interface EssayMeta {
+  wordBank?: string[] | null
+  conditions?: string | null
+  answerLines?: number | null
+}
+
 interface PrintItem {
   number: number
   question_type: string
@@ -9,6 +15,7 @@ interface PrintItem {
   choices: string[] | null
   correct_answer: string | null
   explanation: string | null
+  essay_meta?: EssayMeta | null
 }
 
 interface PrintGroup {
@@ -122,9 +129,23 @@ export default function SearchPrintPage() {
                   <div key={item.number} className="break-inside-avoid">
                     {data.mode === 'exam' ? (
                       <>
+                        {item.question_type.startsWith('essay_') && item.essay_meta?.wordBank && item.essay_meta.wordBank.length > 0 && (
+                          <div className="mb-2 flex flex-wrap gap-1.5">
+                            {item.essay_meta.wordBank.map((word, wIdx) => (
+                              <span key={wIdx} className="rounded border border-gray-400 px-2 py-0.5 text-xs">
+                                {word}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                         <p className="mb-2 font-medium">
                           {item.number}. {item.question_text}
                         </p>
+                        {item.question_type.startsWith('essay_') && item.essay_meta?.conditions && (
+                          <p className="mb-2 rounded border border-dashed border-gray-400 p-2 text-xs text-gray-600">
+                            조건: {item.essay_meta.conditions}
+                          </p>
+                        )}
                         {item.choices && item.choices.length > 0 ? (
                           <div className="space-y-1 pl-2">
                             {item.choices.map((choice, idx) => (
@@ -135,8 +156,9 @@ export default function SearchPrintPage() {
                           </div>
                         ) : (
                           <div className="space-y-2 pl-1">
-                            <div className="h-6 border-b border-black" />
-                            <div className="h-6 border-b border-black" />
+                            {Array.from({ length: item.essay_meta?.answerLines || 2 }).map((_, lineIdx) => (
+                              <div key={lineIdx} className="h-6 border-b border-black" />
+                            ))}
                           </div>
                         )}
                       </>

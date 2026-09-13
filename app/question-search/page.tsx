@@ -30,6 +30,12 @@ const CATEGORY_OPTIONS: { value: string; label: string }[] = [
   { value: 'essay', label: '서술형' },
 ]
 
+interface EssayMeta {
+  wordBank?: string[] | null
+  conditions?: string | null
+  answerLines?: number | null
+}
+
 interface QuestionRow {
   id: string
   question_set_id: string
@@ -42,6 +48,7 @@ interface QuestionRow {
   topic: string
   difficulty: number | null
   created_at: string
+  essay_meta?: EssayMeta | null
 }
 
 interface PassageGroup {
@@ -224,6 +231,7 @@ export default function QuestionSearchPage() {
         choices: q.choices,
         correct_answer: q.correct_answer,
         explanation: q.explanation,
+        essay_meta: q.essay_meta ?? null,
       })),
     }))
     sessionStorage.setItem('searchPrintData', JSON.stringify({ mode, groups: printGroups }))
@@ -391,9 +399,25 @@ export default function QuestionSearchPage() {
                       )}
                     </div>
 
+                    {q.question_type.startsWith('essay_') && q.essay_meta?.wordBank && q.essay_meta.wordBank.length > 0 && (
+                      <div className="mb-2 flex flex-wrap gap-1">
+                        {q.essay_meta.wordBank.map((word, wIdx) => (
+                          <span key={wIdx} className="rounded border border-gray-400 px-2 py-0.5 text-[11px]">
+                            {word}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
                     <p className="mb-2 text-sm font-medium text-gray-800">
                       {qIndex + 1}. {q.question_text}
                     </p>
+
+                    {q.question_type.startsWith('essay_') && q.essay_meta?.conditions && (
+                      <p className="mb-2 rounded border border-dashed border-gray-400 p-2 text-xs text-gray-600">
+                        조건: {q.essay_meta.conditions}
+                      </p>
+                    )}
 
                     {q.choices && q.choices.length > 0 ? (
                       <div className="space-y-1 pl-2">

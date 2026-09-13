@@ -163,6 +163,11 @@ export async function POST(request: NextRequest) {
           tags: topic ? [topic, '서술형'] : ['서술형'],
           weakness_tags: [],
           status: 'ai_generated',
+          essay_meta: {
+            wordBank: eq.wordBank ?? null,
+            conditions: eq.conditions ?? null,
+            answerLines: eq.answerLines ?? null,
+          },
         })
       }
     }
