@@ -174,9 +174,9 @@ export default function PrintPage() {
   }, [data])
 
   // 화면을 이미지로 캡처해서 PDF 파일로 바로 저장하는 함수
-  // 제목/지문/문제 하나하나(.break-inside-avoid)를 각각 따로 캡처해서
-  // 페이지에 순서대로 쌓아 올리는 방식 — 한 블록을 통째로 하나의 이미지로 캡처하기 때문에
-  // 블록 중간에서 페이지가 잘리는 일이 원천적으로 생기지 않는다
+  // 제목/지문/문제 하나하나(.break-inside-avoid)를 각각 따로 캡처한 뒤,
+  // 페이지 단위 Canvas를 만들어 워터마크(globalAlpha=0.1)와 내용을 합성해서 PDF에 넣는다.
+  // Canvas globalAlpha 방식은 jsPDF GState보다 훨씬 안정적으로 동작한다.
   async function handleDownloadPdf() {
     const container = document.querySelector('.print-area') as HTMLElement | null
     if (!container) return
@@ -186,9 +186,9 @@ export default function PrintPage() {
 
     setIsDownloading(true)
     try {
-         const blockCanvases: HTMLCanvasElement[] = []
+      // 1. 각 블록을 캡처
+      const blockCanvases: HTMLCanvasElement[] = []
       for (const el of blockEls) {
-        // 캡처 중에만 위아래 여유 공간을 살짝 줘서 글자 획이 잘리지 않게 함
         const originalPaddingTop = el.style.paddingTop
         const originalPaddingBottom = el.style.paddingBottom
         el.style.paddingTop = `${(parseFloat(originalPaddingTop) || 0) + 4}px`
@@ -203,64 +203,83 @@ export default function PrintPage() {
 
         el.style.paddingTop = originalPaddingTop
         el.style.paddingBottom = originalPaddingBottom
-
         blockCanvases.push(canvas)
       }
 
-           const pdf = new jsPDF('p', 'mm', 'a4')
-      const pageWidthMm = pdf.internal.pageSize.getWidth()
-      const pageHeightMm = pdf.internal.pageSize.getHeight()
+      // 2. PDF 기본 설정
+      const pdf = new jsPDF('p', 'mm', 'a4')
+      const pageWidthMm = pdf.internal.pageSize.getWidth()   // 210
+      const pageHeightMm = pdf.internal.pageSize.getHeight() // 297
       const marginMm = 12
       const usableWidthMm = pageWidthMm - marginMm * 2
       const bottomLimitMm = pageHeightMm - marginMm
 
-      // 블록마다 몇 번째 페이지 어디에 놓일지 먼저 계산 (아직 실제로 그리지는 않음)
+      // 3. 블록 배치 계산 (mm 기준)
       const placements: { pageIndex: number; x: number; y: number; w: number; h: number }[] = []
       let cursorMm = marginMm
       let pageIndex = 0
       blockCanvases.forEach((canvas, idx) => {
         const imgHeightMm = (canvas.height * usableWidthMm) / canvas.width
-
         if (idx > 0 && cursorMm + imgHeightMm > bottomLimitMm) {
           pageIndex += 1
           cursorMm = marginMm
         }
-
         placements.push({ pageIndex, x: marginMm, y: cursorMm, w: usableWidthMm, h: imgHeightMm })
         cursorMm += imgHeightMm + 4
       })
 
       const totalPages = pageIndex + 1
-      for (let i = 1; i < totalPages; i++) {
-        pdf.addPage()
-      }
+      for (let i = 1; i < totalPages; i++) pdf.addPage()
 
-      // 워터마크 로고를 각 페이지에 먼저 연하게 깔아둔다 (그 다음에 문제 내용을 위에 겹쳐 그림)
+      // 4. mm → px 변환 비율: 블록 캔버스 너비를 기준으로 계산
+      //    (html2canvas scale=2로 캡처했으므로 캔버스 px ÷ usableWidthMm = px/mm)
+      const mmToPx = blockCanvases[0].width / usableWidthMm
+      const pageWidthPx = Math.round(pageWidthMm * mmToPx)
+      const pageHeightPx = Math.round(pageHeightMm * mmToPx)
+
+      // 5. 워터마크 이미지 로드 (실패해도 내용은 그대로 저장)
+      let watermarkImg: HTMLImageElement | null = null
       try {
-        const watermarkImg = await loadImage('/boston-logo-watermark.png')
-        const watermarkWidthMm = 70
-        const watermarkHeightMm = (watermarkImg.height / watermarkImg.width) * watermarkWidthMm
-        const wx = (pageWidthMm - watermarkWidthMm) / 2
-        const wy = (pageHeightMm - watermarkHeightMm) / 2
-
-        for (let p = 1; p <= totalPages; p++) {
-          pdf.setPage(p)
-          ;(pdf as any).setGState(new (pdf as any).GState({ opacity: 0.1 }))
-          pdf.addImage(watermarkImg, 'PNG', wx, wy, watermarkWidthMm, watermarkHeightMm)
-          ;(pdf as any).setGState(new (pdf as any).GState({ opacity: 1 }))
-        }
-          } catch (err) {
-        // 워터마크를 못 불러오더라도 나머지 내용은 그대로 저장되도록 진행
+        watermarkImg = await loadImage('/boston-logo-watermark.png')
+      } catch (err) {
         console.error('워터마크 로고를 불러오지 못했습니다:', err)
       }
 
-      // 계산해둔 위치에 맞춰 문제 내용을 그린다
-      blockCanvases.forEach((canvas, idx) => {
-        const { pageIndex: pIdx, x, y, w, h } = placements[idx]
-        pdf.setPage(pIdx + 1)
-        const imgData = canvas.toDataURL('image/png')
-        pdf.addImage(imgData, 'PNG', x, y, w, h)
-      })
+      // 6. 페이지별로 Canvas에 워터마크 + 내용을 합성해서 PDF에 삽입
+      for (let p = 0; p < totalPages; p++) {
+        const pageCanvas = document.createElement('canvas')
+        pageCanvas.width = pageWidthPx
+        pageCanvas.height = pageHeightPx
+        const ctx = pageCanvas.getContext('2d')!
+
+        // 흰 배경
+        ctx.fillStyle = '#ffffff'
+        ctx.fillRect(0, 0, pageWidthPx, pageHeightPx)
+
+        // 워터마크: Canvas globalAlpha로 투명도를 주면 모든 브라우저에서 안정적으로 동작
+        if (watermarkImg) {
+          const wmWidthMm = 70
+          const wmHeightMm = (watermarkImg.height / watermarkImg.width) * wmWidthMm
+          const wxPx = (pageWidthMm - wmWidthMm) / 2 * mmToPx
+          const wyPx = (pageHeightMm - wmHeightMm) / 2 * mmToPx
+          const wwPx = wmWidthMm * mmToPx
+          const whPx = wmHeightMm * mmToPx
+          ctx.globalAlpha = 0.1
+          ctx.drawImage(watermarkImg, wxPx, wyPx, wwPx, whPx)
+          ctx.globalAlpha = 1.0
+        }
+
+        // 이 페이지에 속한 블록 이미지들을 그 위에 겹쳐 그린다
+        placements.forEach(({ pageIndex: pIdx, x, y }, idx) => {
+          if (pIdx !== p) return
+          const bc = blockCanvases[idx]
+          ctx.drawImage(bc, x * mmToPx, y * mmToPx, bc.width, bc.height)
+        })
+
+        // 완성된 페이지 Canvas를 PDF 페이지로 추가
+        pdf.setPage(p + 1)
+        pdf.addImage(pageCanvas.toDataURL('image/png'), 'PNG', 0, 0, pageWidthMm, pageHeightMm)
+      }
 
       const modeLabel =
         data?.mode === 'answer' ? '정답지' : data?.mode === 'essay' ? '서술형시험지' : '시험지'
