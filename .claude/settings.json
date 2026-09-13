@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /home/user/exam-app && npm run dev > /tmp/nextjs-dev.log 2>&1",
+            "async": true,
+            "statusMessage": "🚀 보스턴S 개발 서버 시작 중... (localhost:3000)"
+          }
+        ]
+      }
+    ]
+  }
+}
