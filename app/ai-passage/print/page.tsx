@@ -256,7 +256,15 @@ export default function PrintPage() {
         ctx.fillStyle = '#ffffff'
         ctx.fillRect(0, 0, pageWidthPx, pageHeightPx)
 
-        // 워터마크: Canvas globalAlpha로 투명도를 주면 모든 브라우저에서 안정적으로 동작
+        // 이 페이지에 속한 블록 이미지들을 먼저 그린다
+        placements.forEach(({ pageIndex: pIdx, x, y }, idx) => {
+          if (pIdx !== p) return
+          const bc = blockCanvases[idx]
+          ctx.drawImage(bc, x * mmToPx, y * mmToPx, bc.width, bc.height)
+        })
+
+        // 워터마크: 내용 블록 위에 겹쳐 그린다 (블록의 흰 배경에 덮이지 않도록)
+        // Canvas globalAlpha로 투명도를 주면 모든 브라우저에서 안정적으로 동작
         if (watermarkImg) {
           const wmWidthMm = 70
           const wmHeightMm = (watermarkImg.height / watermarkImg.width) * wmWidthMm
@@ -268,13 +276,6 @@ export default function PrintPage() {
           ctx.drawImage(watermarkImg, wxPx, wyPx, wwPx, whPx)
           ctx.globalAlpha = 1.0
         }
-
-        // 이 페이지에 속한 블록 이미지들을 그 위에 겹쳐 그린다
-        placements.forEach(({ pageIndex: pIdx, x, y }, idx) => {
-          if (pIdx !== p) return
-          const bc = blockCanvases[idx]
-          ctx.drawImage(bc, x * mmToPx, y * mmToPx, bc.width, bc.height)
-        })
 
         // 완성된 페이지 Canvas를 PDF 페이지로 추가
         pdf.setPage(p + 1)
