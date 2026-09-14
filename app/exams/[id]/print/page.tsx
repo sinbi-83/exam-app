@@ -88,6 +88,8 @@ function PrintContent() {
           body { margin: 0; }
           .no-print { display: none !important; }
           .page { box-shadow: none !important; }
+          .question-block { break-inside: avoid; page-break-inside: avoid; }
+          .passage-block { break-inside: avoid; page-break-inside: avoid; }
         }
       `}</style>
 
@@ -144,7 +146,7 @@ function PrintContent() {
             return passageGroups.map((group, gi) => (
               <div key={gi}>
                 {group.passage && (
-                  <div className="mb-3 rounded border border-gray-200 bg-gray-50 p-3">
+                  <div className="mb-3 rounded border border-gray-200 bg-gray-50 p-3" style={{ breakInside: 'avoid', pageBreakInside: 'avoid' }}>
                     <p className="mb-1 text-xs font-semibold text-gray-500">【지문】</p>
                     <p className="text-xs leading-relaxed text-gray-700 whitespace-pre-wrap">{group.passage}</p>
                   </div>
@@ -158,7 +160,7 @@ function PrintContent() {
                   const isShortAnswer = !isMultiple && !isEssay
 
                   return (
-                    <div key={eq.id} className="pb-3">
+                    <div key={eq.id} className="pb-3" style={{ breakInside: 'avoid', pageBreakInside: 'avoid' }}>
                       <div className="mb-1 flex items-start gap-2">
                         <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-800 text-[10px] font-bold text-white">
                           {num}
