@@ -118,13 +118,38 @@ function ReportForm() {
     }
   }
 
-  function handlePrint() {
+  async function handlePrint() {
     if (!studentId || !score) {
       alert('학생과 점수를 입력해주세요.')
       return
     }
     const student = students.find((s) => s.id === studentId)
     const exam    = exams.find((e) => e.id === examId)
+    const filteredTypeScores = Object.fromEntries(Object.entries(typeScores).filter(([, v]) => v !== ''))
+
+    // 보고서 DB 저장
+    try {
+      await fetch('/api/reports', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          student_id:    studentId,
+          exam_id:       examId || null,
+          student_name:  student?.name ?? '',
+          student_grade: student?.grade ?? '',
+          exam_title:    exam?.title ?? examTitleOverride ?? '(시험명 미지정)',
+          exam_date:     examDate || exam?.exam_date || new Date().toISOString().slice(0, 10),
+          score,
+          max_score:     maxScore,
+          strengths,
+          comment,
+          next_steps:    nextSteps,
+          type_scores:   filteredTypeScores,
+        }),
+      })
+    } catch {
+      // 저장 실패해도 인쇄는 진행
+    }
 
     const params = new URLSearchParams({
       studentName:  student?.name ?? '',
@@ -136,9 +161,7 @@ function ReportForm() {
       comment,
       nextSteps,
       strengths,
-      typeScores: JSON.stringify(
-        Object.fromEntries(Object.entries(typeScores).filter(([, v]) => v !== ''))
-      ),
+      typeScores: JSON.stringify(filteredTypeScores),
     })
 
     window.open(`/report/print?${params.toString()}`, '_blank')

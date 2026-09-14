@@ -81,3 +81,27 @@ CREATE POLICY "parent_notifications_own" ON parent_notifications
 
 -- 완료!
 SELECT 'Migration complete! 5 tables created.' AS result;
+
+-- =============================================
+-- 보고서 저장 테이블
+-- =============================================
+CREATE TABLE IF NOT EXISTS reports (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  student_id UUID REFERENCES students(id) ON DELETE SET NULL,
+  exam_id UUID REFERENCES exams(id) ON DELETE SET NULL,
+  student_name TEXT NOT NULL,
+  student_grade TEXT,
+  exam_title TEXT,
+  exam_date DATE,
+  score INTEGER,
+  max_score INTEGER DEFAULT 100,
+  strengths TEXT,
+  comment TEXT,
+  next_steps TEXT,
+  type_scores JSONB DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+ALTER TABLE reports ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "reports_own" ON reports
+  FOR ALL USING (auth.uid() = user_id);

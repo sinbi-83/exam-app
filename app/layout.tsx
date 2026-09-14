@@ -35,6 +35,7 @@ const menuGroups: MenuGroup[] = [
     items: [
       { label: "학생관리", href: "/students" },
       { label: "보고서 작성", href: "/report" },
+      { label: "보고서 목록", href: "/reports" },
       { label: "채점관리", href: "/grading" },
       { label: "성적분석", href: "/analytics" },
       { label: "출석관리", href: "/attendance" },
