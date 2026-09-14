@@ -38,7 +38,7 @@ const menuGroups: MenuGroup[] = [
       { label: "채점관리", href: "/grading" },
       { label: "성적분석", href: "/analytics" },
       { label: "출석관리", href: "/attendance" },
-      { label: "오답 노트", href: "/error-notes" },
+      { label: "오답 분석", href: "/wrong-answers" },
     ],
   },
   {
