@@ -3,6 +3,19 @@
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
 
+async function downloadPdf(filename: string) {
+  const html2pdf = (await import('html2pdf.js')).default
+  const el = document.querySelector('.print-area')
+  if (!el) return
+  html2pdf().set({
+    margin: 0,
+    filename: `${filename}.pdf`,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+  }).from(el).save()
+}
+
 interface QuestionData {
   type: string
   question: string
@@ -71,7 +84,13 @@ function PrintContent() {
           onClick={() => window.print()}
           className="rounded bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700"
         >
-          인쇄 / PDF 저장
+          🖨️ 인쇄
+        </button>
+        <button
+          onClick={() => downloadPdf(title)}
+          className="rounded bg-red-600 px-6 py-2 text-sm font-medium text-white hover:bg-red-700"
+        >
+          📄 PDF 저장
         </button>
       </div>
 
