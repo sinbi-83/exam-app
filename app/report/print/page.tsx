@@ -5,16 +5,18 @@ import { Suspense } from 'react'
 
 async function downloadPdf(filename: string) {
   const html2pdf = (await import('html2pdf.js')).default
-  const el = document.querySelector('.print-area')
+  const el = document.querySelector('.print-area') as HTMLElement
   if (!el) return
-  html2pdf().set({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const options: any = {
     margin: 0,
     filename: `${filename}.pdf`,
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2, useCORS: true, logging: false },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
-  }).from(el).save()
+  }
+  html2pdf().set(options).from(el).save()
 }
 
 function RadarBar({ label, value, max = 100 }: { label: string; value: number; max?: number }) {

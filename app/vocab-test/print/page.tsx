@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 
 async function downloadPdf(filename: string) {
   const html2pdf = (await import('html2pdf.js')).default
-  const el = document.querySelector('.print-area')
+  const el = document.querySelector('.print-area') as HTMLElement
   if (!el) return
   html2pdf().set({
     margin: 0,
