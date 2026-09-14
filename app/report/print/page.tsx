@@ -171,7 +171,7 @@ function SignatureSvg() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/signature.png"
+      src="/싸인.png"
       alt="서명"
       style={{
         width: 130,
