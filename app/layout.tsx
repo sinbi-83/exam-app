@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MobileNav from "./components/MobileNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,8 +19,6 @@ type MenuGroup = {
   items: MenuItem[];
 };
 
-// 학원관리 / 학생관리 / 학업관리 3개 엔진으로 그룹화
-// ⚠️ href(주소)는 기존과 완전히 동일하게 유지, label과 배치만 변경
 const menuGroups: MenuGroup[] = [
   {
     title: "학원관리",
@@ -61,7 +60,6 @@ const menuGroups: MenuGroup[] = [
   },
 ];
 
-// 레거시(예전) 기능 - 삭제하지 않고 학업관리 하단, 구분선 아래로 분리
 const legacyMenuItems: MenuItem[] = [
   { label: "이전 문제 생성기", href: "/" },
   { label: "시험지 기록", href: "/history" },
@@ -76,11 +74,13 @@ export default function RootLayout({
     <html lang="ko">
       <body className="min-h-screen bg-gray-50">
         <div className="flex min-h-screen">
-          <aside className="w-56 shrink-0 border-r border-gray-200 bg-white">
+
+          {/* 데스크탑 사이드바 (md 이상에서만 표시) */}
+          <aside className="hidden md:flex w-56 shrink-0 flex-col border-r border-gray-200 bg-white">
             <div className="px-4 py-4 border-b border-gray-200">
               <span className="font-semibold text-gray-800">보스턴S영어</span>
             </div>
-            <nav className="py-2">
+            <nav className="flex-1 overflow-y-auto py-2">
               {menuGroups.map((group) => (
                 <div key={group.title} className="mb-3">
                   <p className="px-4 pb-1 pt-3 text-xs font-semibold uppercase tracking-wide text-gray-400">
@@ -104,9 +104,7 @@ export default function RootLayout({
                   ))}
                 </div>
               ))}
-
               <div className="mx-4 my-2 border-t border-gray-200" />
-
               <div>
                 {legacyMenuItems.map((item) => (
                   <Link
@@ -121,9 +119,18 @@ export default function RootLayout({
             </nav>
           </aside>
 
-          <div className="flex-1 flex flex-col">
+          {/* 메인 콘텐츠 */}
+          <div className="flex-1 flex flex-col min-w-0">
             <header className="border-b border-gray-200 bg-white">
-              <div className="px-6 py-3 flex items-center justify-end">
+              <div className="px-4 py-3 flex items-center justify-between">
+                {/* 모바일: 햄버거 + 로고 */}
+                <div className="flex items-center gap-3 md:hidden">
+                  <MobileNav />
+                  <span className="font-semibold text-gray-800 text-sm">보스턴S영어</span>
+                </div>
+                {/* 데스크탑: 빈 공간 */}
+                <div className="hidden md:block" />
+                {/* 로그아웃 */}
                 <form action="/logout" method="POST">
                   <button
                     type="submit"
@@ -134,7 +141,7 @@ export default function RootLayout({
                 </form>
               </div>
             </header>
-            <main className="flex-1 px-6 py-6">{children}</main>
+            <main className="flex-1 px-4 py-5 md:px-6 md:py-6">{children}</main>
           </div>
         </div>
       </body>
