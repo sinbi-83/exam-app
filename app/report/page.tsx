@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useEffect, useState, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 interface Student {
   id: string
@@ -16,20 +16,14 @@ interface Exam {
   max_score: number | null
 }
 
-const TYPE_LABELS: Record<string, string> = {
-  어휘: '어휘',
-  어법: '어법',
-  서술형: '서술형',
-  독해: '독해',
-  지문요약: '지문요약',
-}
 const ALL_TYPES = ['어휘', '어법', '독해', '지문요약', '서술형']
 
-export default function ReportPage() {
-  const router = useRouter()
+function ReportForm() {
+  const searchParams = useSearchParams()
   const [students, setStudents] = useState<Student[]>([])
   const [exams, setExams] = useState<Exam[]>([])
   const [loading, setLoading] = useState(true)
+  const [prefilled, setPrefilled] = useState(false)
 
   // 선택
   const [studentId, setStudentId] = useState('')
@@ -39,8 +33,9 @@ export default function ReportPage() {
   const [score, setScore] = useState('')
   const [maxScore, setMaxScore] = useState('100')
   const [examDate, setExamDate] = useState('')
+  const [examTitleOverride, setExamTitleOverride] = useState('') // 시험 미선택 시 직접 표시용
 
-  // 영역별 점수 (선택적)
+  // 영역별 점수
   const [typeScores, setTypeScores] = useState<Record<string, string>>(
     Object.fromEntries(ALL_TYPES.map((t) => [t, '']))
   )
@@ -62,8 +57,60 @@ export default function ReportPage() {
       .finally(() => setLoading(false))
   }, [])
 
+  // 학생·시험 로드 후 URL 파라미터로 자동 채우기 (오답분석 연동)
+  useEffect(() => {
+    if (loading || prefilled) return
+    const studentIdParam = searchParams.get('student_id')
+    const examIdParam    = searchParams.get('exam_id')
+    const scoreParam     = searchParams.get('score')
+    const maxScoreParam  = searchParams.get('maxScore')
+    const examDateParam  = searchParams.get('examDate')
+    const commentParam   = searchParams.get('comment')
+    const strengthsParam = searchParams.get('strengths')
+    const nextStepsParam = searchParams.get('nextSteps')
+    const typeScoresParam = searchParams.get('typeScores')
+    const examTitleParam = searchParams.get('examTitle')
+
+    if (!studentIdParam) return  // 오답분석에서 온 게 아님
+
+    if (studentIdParam) setStudentId(studentIdParam)
+    if (examIdParam)    setExamId(examIdParam)
+    if (scoreParam)     setScore(scoreParam)
+    if (maxScoreParam)  setMaxScore(maxScoreParam)
+    if (examDateParam)  setExamDate(examDateParam)
+    if (commentParam)   setComment(commentParam)
+    if (strengthsParam) setStrengths(strengthsParam)
+    if (nextStepsParam) setNextSteps(nextStepsParam)
+    if (examTitleParam) setExamTitleOverride(examTitleParam)
+
+    if (typeScoresParam) {
+      try {
+        const parsed: Record<string, number> = JSON.parse(typeScoresParam)
+        setTypeScores(prev => {
+          const next = { ...prev }
+          Object.entries(parsed).forEach(([k, v]) => {
+            if (k in next) next[k] = String(v)
+          })
+          return next
+        })
+      } catch { /* ignore */ }
+    }
+
+    // 시험이 선택됐으면 만점/날짜 맞추기
+    if (examIdParam) {
+      const found = exams.find(e => e.id === examIdParam)
+      if (found) {
+        if (found.max_score && !maxScoreParam) setMaxScore(String(found.max_score))
+        if (found.exam_date && !examDateParam) setExamDate(found.exam_date)
+      }
+    }
+
+    setPrefilled(true)
+  }, [loading, exams, students, prefilled, searchParams])
+
   function handleExamSelect(id: string) {
     setExamId(id)
+    setExamTitleOverride('')
     const found = exams.find((e) => e.id === id)
     if (found) {
       if (found.max_score) setMaxScore(String(found.max_score))
@@ -71,29 +118,50 @@ export default function ReportPage() {
     }
   }
 
-  function handlePrint() {
+  async function handlePrint() {
     if (!studentId || !score) {
       alert('학생과 점수를 입력해주세요.')
       return
     }
     const student = students.find((s) => s.id === studentId)
-    const exam = exams.find((e) => e.id === examId)
+    const exam    = exams.find((e) => e.id === examId)
+    const filteredTypeScores = Object.fromEntries(Object.entries(typeScores).filter(([, v]) => v !== ''))
+
+    // 보고서 DB 저장
+    try {
+      await fetch('/api/reports', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          student_id:    studentId,
+          exam_id:       examId || null,
+          student_name:  student?.name ?? '',
+          student_grade: student?.grade ?? '',
+          exam_title:    exam?.title ?? examTitleOverride ?? '(시험명 미지정)',
+          exam_date:     examDate || exam?.exam_date || new Date().toISOString().slice(0, 10),
+          score,
+          max_score:     maxScore,
+          strengths,
+          comment,
+          next_steps:    nextSteps,
+          type_scores:   filteredTypeScores,
+        }),
+      })
+    } catch {
+      // 저장 실패해도 인쇄는 진행
+    }
 
     const params = new URLSearchParams({
-      studentName: student?.name ?? '',
+      studentName:  student?.name ?? '',
       studentGrade: student?.grade ?? '',
-      examTitle: exam?.title ?? '(시험명 미지정)',
-      examDate: examDate || exam?.exam_date || new Date().toISOString().slice(0, 10),
+      examTitle:    exam?.title ?? examTitleOverride ?? '(시험명 미지정)',
+      examDate:     examDate || exam?.exam_date || new Date().toISOString().slice(0, 10),
       score,
       maxScore,
       comment,
       nextSteps,
       strengths,
-      typeScores: JSON.stringify(
-        Object.fromEntries(
-          Object.entries(typeScores).filter(([, v]) => v !== '')
-        )
-      ),
+      typeScores: JSON.stringify(filteredTypeScores),
     })
 
     window.open(`/report/print?${params.toString()}`, '_blank')
@@ -107,9 +175,19 @@ export default function ReportPage() {
     )
   }
 
+  const fromWrongAnswers = !!searchParams.get('student_id')
+
   return (
     <div className="mx-auto max-w-2xl">
-      <h1 className="mb-6 text-xl font-semibold text-gray-800">보고서 작성</h1>
+      <h1 className="mb-2 text-xl font-semibold text-gray-800">보고서 작성</h1>
+
+      {/* 오답분석 연동 안내 배너 */}
+      {fromWrongAnswers && (
+        <div className="mb-5 flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-700">
+          <span className="text-base">📊</span>
+          <span>오답 분석 결과가 자동으로 채워졌습니다. 내용을 확인 후 수정하세요.</span>
+        </div>
+      )}
 
       <div className="space-y-6">
         {/* 기본 정보 */}
@@ -138,7 +216,9 @@ export default function ReportPage() {
                 onChange={(e) => handleExamSelect(e.target.value)}
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               >
-                <option value="">시험 선택 (직접 입력 가능)</option>
+                <option value="">
+                  {examTitleOverride ? `📋 ${examTitleOverride}` : '시험 선택 (직접 입력 가능)'}
+                </option>
                 {exams.map((ex) => (
                   <option key={ex.id} value={ex.id}>
                     {ex.title}
@@ -178,9 +258,17 @@ export default function ReportPage() {
           </div>
         </section>
 
-        {/* 영역별 점수 (선택) */}
+        {/* 영역별 점수 */}
         <section className="rounded-lg border border-gray-200 bg-white p-5">
-          <h2 className="mb-1 text-sm font-semibold text-gray-700">② 영역별 점수 <span className="font-normal text-gray-400">(선택)</span></h2>
+          <h2 className="mb-1 text-sm font-semibold text-gray-700">
+            ② 영역별 점수{' '}
+            <span className="font-normal text-gray-400">(선택)</span>
+            {fromWrongAnswers && (
+              <span className="ml-2 rounded bg-blue-100 px-2 py-0.5 text-[10px] font-normal text-blue-600">
+                오답분석 자동 채움
+              </span>
+            )}
+          </h2>
           <p className="mb-3 text-xs text-gray-400">입력하지 않으면 보고서에서 해당 영역은 생략됩니다.</p>
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
             {ALL_TYPES.map((type) => (
@@ -193,7 +281,9 @@ export default function ReportPage() {
                     setTypeScores((prev) => ({ ...prev, [type]: e.target.value }))
                   }
                   placeholder="점"
-                  className="w-full rounded border border-gray-300 px-2 py-1.5 text-sm"
+                  className={`w-full rounded border px-2 py-1.5 text-sm ${
+                    typeScores[type] ? 'border-blue-300 bg-blue-50' : 'border-gray-300'
+                  }`}
                 />
               </div>
             ))}
@@ -202,7 +292,14 @@ export default function ReportPage() {
 
         {/* 선생님 코멘트 */}
         <section className="rounded-lg border border-gray-200 bg-white p-5">
-          <h2 className="mb-4 text-sm font-semibold text-gray-700">③ 선생님 코멘트</h2>
+          <h2 className="mb-4 text-sm font-semibold text-gray-700">
+            ③ 선생님 코멘트
+            {fromWrongAnswers && (
+              <span className="ml-2 rounded bg-blue-100 px-2 py-0.5 text-[10px] font-normal text-blue-600">
+                오답분석 자동 채움
+              </span>
+            )}
+          </h2>
           <div className="space-y-4">
             <div>
               <label className="mb-1 block text-xs text-gray-600">잘한 점 / 강점</label>
@@ -220,7 +317,7 @@ export default function ReportPage() {
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 rows={3}
-                placeholder="예) 서술형 문제에서 조건을 꼼꼼히 확인하는 습관이 필요합니다. 어법 규칙 중 시제 일치 부분을 더 연습해야 합니다."
+                placeholder="예) 서술형 문제에서 조건을 꼼꼼히 확인하는 습관이 필요합니다."
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               />
             </div>
@@ -248,5 +345,13 @@ export default function ReportPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function ReportPage() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center py-20 text-sm text-gray-400">불러오는 중…</div>}>
+      <ReportForm />
+    </Suspense>
   )
 }

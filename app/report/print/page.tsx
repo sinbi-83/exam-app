@@ -3,6 +3,20 @@
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
 
+async function downloadPdf(filename: string) {
+  const html2pdf = (await import('html2pdf.js')).default
+  const el = document.querySelector('.print-area')
+  if (!el) return
+  html2pdf().set({
+    margin: 0,
+    filename: `${filename}.pdf`,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true, logging: false },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+  }).from(el).save()
+}
+
 function RadarBar({ label, value, max = 100 }: { label: string; value: number; max?: number }) {
   const pct = Math.min((value / max) * 100, 100)
   const color =
@@ -63,10 +77,11 @@ function ReportContent() {
         * { font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; }
         @page { size: A4; margin: 0; }
         @media print {
-          body { margin: 0; }
+          body { margin: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
           .no-print { display: none !important; }
           .page { box-shadow: none !important; }
         }
+        * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       `}</style>
 
       {/* Print button */}
@@ -75,16 +90,21 @@ function ReportContent() {
           onClick={() => window.print()}
           className="rounded bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700"
         >
-          인쇄 / PDF 저장
+          🖨️ 인쇄
+        </button>
+        <button
+          onClick={() => downloadPdf(studentName || '학생보고서')}
+          className="rounded bg-red-600 px-6 py-2 text-sm font-medium text-white hover:bg-red-700"
+        >
+          📄 PDF 저장
         </button>
       </div>
 
       {/* A4 Page */}
       <div
-        className="page mx-auto bg-white shadow-lg"
+        className="print-area page mx-auto bg-white shadow-lg"
         style={{
           width: '210mm',
-          minHeight: '297mm',
           padding: '14mm 16mm 12mm',
         }}
       >
@@ -95,7 +115,7 @@ function ReportContent() {
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-medium opacity-80">보스턴S영어학원</p>
+              <p className="text-xs font-medium opacity-80">보스턴S영어</p>
               <p className="mt-0.5 text-lg font-bold">학생 성취도 보고서</p>
             </div>
             <div className="text-right text-xs opacity-70">
@@ -178,7 +198,7 @@ function ReportContent() {
         {/* Footer */}
         <div className="mt-auto border-t border-gray-100 pt-3">
           <div className="flex items-center justify-between text-[10px] text-gray-400">
-            <span>보스턴S영어학원 | 담당 교사: 서향미 선생님</span>
+            <span>보스턴S영어 | 담당 교사: 서향미 선생님</span>
             <span>이 보고서는 AI 시험문제 출제 시스템으로 생성되었습니다.</span>
           </div>
           <div className="mt-4 grid grid-cols-2 gap-8">

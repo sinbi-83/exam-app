@@ -16,6 +16,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const grade = searchParams.get('grade')
   const difficultiesParam = searchParams.get('difficulties') // 예: "2,3,4"
+  const questionSetId = searchParams.get('question_set_id')
 
   let query = supabase
     .from('questions')
@@ -26,6 +27,10 @@ export async function GET(request: NextRequest) {
 
   if (grade && grade !== 'all') {
     query = query.eq('grade', grade)
+  }
+
+  if (questionSetId) {
+    query = query.eq('question_set_id', questionSetId)
   }
 
   if (difficultiesParam) {
@@ -61,5 +66,20 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  return NextResponse.json({ data, passages })
+  // DB 컬럼명(question_text, question_type, choices, correct_answer)을
+  // 프론트엔드 인터페이스(question, type, options, answer)에 맞게 변환
+  const mapped = (data || []).map((q: any) => ({
+    id: q.id,
+    type: (q.question_type ?? '').replace(/^reading_|^essay_/, '') || q.question_type,
+    question: q.question_text ?? '',
+    options: q.choices ?? [],
+    answer: q.correct_answer ?? '',
+    explanation: q.explanation ?? '',
+    grade: q.grade ?? '',
+    topic: q.topic ?? '',
+    difficulty: q.difficulty,
+    question_set_id: q.question_set_id,
+  }))
+
+  return NextResponse.json({ data: mapped, passages })
 }

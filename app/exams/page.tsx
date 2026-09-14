@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 interface Exam {
   id: string
@@ -111,11 +112,7 @@ export default function ExamsPage() {
   }
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center py-20 text-sm text-gray-400">
-        불러오는 중…
-      </div>
-    )
+    return <div className="flex items-center justify-center py-20 text-sm text-gray-400">불러오는 중…</div>
   }
 
   return (
@@ -131,12 +128,9 @@ export default function ExamsPage() {
       </div>
 
       {error && (
-        <div className="mb-4 rounded border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
-          {error}
-        </div>
+        <div className="mb-4 rounded border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">{error}</div>
       )}
 
-      {/* 새 시험 생성 폼 */}
       {showForm && (
         <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 p-5">
           <h2 className="mb-4 text-sm font-semibold text-blue-800">새 시험 등록</h2>
@@ -170,16 +164,6 @@ export default function ExamsPage() {
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               />
             </div>
-            <div>
-              <label className="mb-1 block text-xs text-gray-600">총 문항 수</label>
-              <input
-                type="number"
-                value={form.total_questions}
-                onChange={(e) => setForm((f) => ({ ...f, total_questions: e.target.value }))}
-                placeholder="20"
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
-              />
-            </div>
             <div className="col-span-2 flex gap-2 pt-1">
               <button
                 type="submit"
@@ -208,10 +192,7 @@ export default function ExamsPage() {
       ) : (
         <div className="grid gap-4">
           {exams.map((exam) => (
-            <div
-              key={exam.id}
-              className="rounded-lg border border-gray-200 bg-white p-5"
-            >
+            <div key={exam.id} className="rounded-lg border border-gray-200 bg-white p-5">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   {editing === exam.id ? (
@@ -223,43 +204,28 @@ export default function ExamsPage() {
                         className="flex-1 rounded border border-gray-300 px-2 py-1 text-sm"
                         onKeyDown={(e) => e.key === 'Enter' && handleRename(exam.id)}
                       />
-                      <button
-                        onClick={() => handleRename(exam.id)}
-                        className="rounded bg-blue-600 px-3 py-1 text-xs text-white"
-                      >
-                        저장
-                      </button>
-                      <button
-                        onClick={() => setEditing(null)}
-                        className="rounded border border-gray-300 px-3 py-1 text-xs text-gray-600"
-                      >
-                        취소
-                      </button>
+                      <button onClick={() => handleRename(exam.id)} className="rounded bg-blue-600 px-3 py-1 text-xs text-white">저장</button>
+                      <button onClick={() => setEditing(null)} className="rounded border border-gray-300 px-3 py-1 text-xs text-gray-600">취소</button>
                     </div>
                   ) : (
                     <h2 className="text-base font-semibold text-gray-800">{exam.title}</h2>
                   )}
-
                   <div className="mt-2 flex flex-wrap gap-3 text-xs text-gray-500">
-                    {exam.exam_date && (
-                      <span>📅 {exam.exam_date}</span>
-                    )}
-                    {exam.total_questions && (
-                      <span>📝 {exam.total_questions}문항</span>
-                    )}
-                    {exam.max_score && (
-                      <span>🎯 만점 {exam.max_score}점</span>
-                    )}
+                    {exam.exam_date && <span>📅 {exam.exam_date}</span>}
+                    {exam.total_questions && <span>📝 {exam.total_questions}문항</span>}
+                    {exam.max_score && <span>🎯 만점 {exam.max_score}점</span>}
                     <span className="text-gray-400">등록: {exam.created_at.slice(0, 10)}</span>
                   </div>
                 </div>
-
                 <div className="ml-4 flex gap-2">
+                  <Link
+                    href={`/exams/${exam.id}`}
+                    className="rounded bg-blue-600 px-3 py-1 text-xs font-medium text-white hover:bg-blue-700"
+                  >
+                    문항 구성 →
+                  </Link>
                   <button
-                    onClick={() => {
-                      setEditing(exam.id)
-                      setEditTitle(exam.title)
-                    }}
+                    onClick={() => { setEditing(exam.id); setEditTitle(exam.title) }}
                     className="rounded border border-gray-300 px-3 py-1 text-xs text-gray-600 hover:bg-gray-100"
                   >
                     수정
