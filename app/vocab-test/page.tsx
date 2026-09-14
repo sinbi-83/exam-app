@@ -35,10 +35,14 @@ export default function VocabTestPage() {
   }
 
   function openPrint() {
-    const data = encodeURIComponent(JSON.stringify(words))
-    const t = encodeURIComponent(title || '단어 테스트')
-    const type = encodeURIComponent(testType)
-    window.open(`/vocab-test/print?title=${t}&type=${type}&data=${data}`, '_blank')
+    const url = `/vocab-test/print?title=${encodeURIComponent(title || '단어 테스트')}&type=${encodeURIComponent(testType)}&data=${encodeURIComponent(JSON.stringify(words))}`
+    const a = document.createElement('a')
+    a.href = url
+    a.target = '_blank'
+    a.rel = 'noopener noreferrer'
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
   }
 
   return (

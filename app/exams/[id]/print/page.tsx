@@ -35,7 +35,7 @@ function PrintContent() {
 
   let questions: ExamQuestion[] = []
   try {
-    questions = JSON.parse(decodeURIComponent(dataRaw))
+    questions = JSON.parse(dataRaw)
   } catch { /* ignore */ }
 
   const totalPoints = questions.reduce((s, q) => s + q.points, 0)

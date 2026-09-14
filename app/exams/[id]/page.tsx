@@ -141,10 +141,14 @@ export default function ExamDetailPage() {
   }
 
   function openPrint() {
-    const data = encodeURIComponent(JSON.stringify(examQuestions))
-    const title = encodeURIComponent(exam?.title ?? '')
-    const date = encodeURIComponent(exam?.exam_date ?? '')
-    window.open(`/exams/${examId}/print?title=${title}&date=${date}&data=${data}`, '_blank')
+    const url = `/exams/${examId}/print?title=${encodeURIComponent(exam?.title ?? '')}&date=${encodeURIComponent(exam?.exam_date ?? '')}&data=${encodeURIComponent(JSON.stringify(examQuestions))}`
+    const a = document.createElement('a')
+    a.href = url
+    a.target = '_blank'
+    a.rel = 'noopener noreferrer'
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
   }
 
   const filteredBank = bankType === 'all'

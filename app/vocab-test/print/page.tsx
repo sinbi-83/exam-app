@@ -15,7 +15,7 @@ function PrintContent() {
   const dataRaw = params.get('data') ?? '[]'
 
   let words: WordPair[] = []
-  try { words = JSON.parse(decodeURIComponent(dataRaw)) } catch { /* ignore */ }
+  try { words = JSON.parse(dataRaw) } catch { /* ignore */ }
 
   const today = new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })
 
