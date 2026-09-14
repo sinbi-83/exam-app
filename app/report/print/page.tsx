@@ -35,9 +35,23 @@ function toBullets(text: string): string[] {
     .filter(Boolean)
 }
 
-// ── 보스턴S영어 배지 로고 SVG ──
-// 실제 로고: 네이비 badge + 크림 테두리 + 파란 책 + 월계수 + BOSTON S ENGLISH 텍스트
+// ── 보스턴S영어 배지 로고 (실제 PNG 이미지) ──
 function BostonLogoSvg({ size = 58 }: { size?: number }) {
+  const h = Math.round(size * 390 / 520)
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/boston-logo-watermark.png"
+      alt="Boston S English Logo"
+      width={size}
+      height={h}
+      style={{ objectFit: 'contain', display: 'block' }}
+    />
+  )
+}
+
+// ── (unused SVG fallback kept for reference) ──
+function _BostonLogoSvgFallback({ size = 58 }: { size?: number }) {
   const h = Math.round(size * 390 / 520)
   return (
     <svg width={size} height={h} viewBox="0 0 520 390" xmlns="http://www.w3.org/2000/svg">
@@ -150,37 +164,37 @@ function BostonLogoSvg({ size = 58 }: { size?: number }) {
   )
 }
 
-// ── 손글씨 서명 SVG ──
-// 실제 서명: 세로 획(사선) + 가로 교차선 + 연결 루프 + 큰 D형 루프 + 긴 꼬리
+// ── 손글씨 서명 ──
+// public/signature.png 가 있으면 실제 이미지 사용, 없으면 SVG fallback
 function SignatureSvg() {
+  // signature.png 업로드 여부 확인 (클라이언트에서 이미지 로드 시도)
   return (
-    <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg"
-         style={{ width: 128, height: 56, display: 'block' }}>
-      {/* 첫 번째 주요 세로 획 (사선 올라가는 선) */}
-      <path
-        d="M 175,258 L 228,28"
-        stroke="#1a2744" strokeWidth="3.2" fill="none"
-        strokeLinecap="round"
-      />
-      {/* 가로 교차 선 (사선을 가로지르는 바) */}
-      <path
-        d="M 82,180 L 355,158"
-        stroke="#1a2744" strokeWidth="3.0" fill="none"
-        strokeLinecap="round"
-      />
-      {/* 교차점 이후 → 첫 루프(a형) → 두 번째 루프(m형) → 큰 D형 루프 → 긴 꼬리 */}
-      <path
-        d="M 275,166
-           C 295,138 320,110 338,128
-           C 354,144 354,172 370,152
-           C 386,132 398,96  422,84
-           C 456,68  500,68  526,90
-           C 550,110 548,148 528,164
-           L 625,148"
-        stroke="#1a2744" strokeWidth="3.0" fill="none"
-        strokeLinecap="round" strokeLinejoin="round"
-      />
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/signature.png"
+      alt="서명"
+      style={{
+        width: 130,
+        height: 58,
+        objectFit: 'contain',
+        display: 'block',
+        mixBlendMode: 'multiply',   // 흰 배경 투명 처리
+      }}
+      onError={(e) => {
+        // signature.png 없으면 SVG fallback으로 교체
+        const target = e.currentTarget
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        svg.setAttribute('viewBox', '0 0 640 280')
+        svg.style.cssText = 'width:130px;height:58px;display:block'
+        svg.innerHTML = `
+          <path d="M 175,258 L 228,28" stroke="#1a2744" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+          <path d="M 82,180 L 355,158" stroke="#1a2744" stroke-width="3.0" fill="none" stroke-linecap="round"/>
+          <path d="M 275,166 C 295,138 320,110 338,128 C 354,144 354,172 370,152 C 386,132 398,96 422,84 C 456,68 500,68 526,90 C 550,110 548,148 528,164 L 625,148"
+            stroke="#1a2744" stroke-width="3.0" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        `
+        target.parentNode?.replaceChild(svg, target)
+      }}
+    />
   )
 }
 
