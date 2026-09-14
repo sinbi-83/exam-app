@@ -101,10 +101,22 @@ export default function WrongAnswersPage() {
   const [pickedQuestions, setPickedQuestions] = useState<PickedQuestion[]>([])  // 선택한 문항들
   const [showBankPanel, setShowBankPanel] = useState(false)
 
-  // 현재 사용할 문항 목록 (모드에 따라)
-  const activeQuestions: PickedQuestion[] = mode === 'exam'
+  // 유형 필터 (분석에서 제외할 유형)
+  const [excludedTypes, setExcludedTypes] = useState<Set<string>>(new Set())
+
+  function toggleExcludeType(type: string) {
+    setExcludedTypes(prev => {
+      const next = new Set(prev)
+      if (next.has(type)) next.delete(type); else next.add(type)
+      return next
+    })
+  }
+
+  // 현재 사용할 문항 목록 (모드 + 유형 필터 적용)
+  const activeQuestions: PickedQuestion[] = (mode === 'exam'
     ? examQuestions.map(q => ({ ...q }))
     : pickedQuestions
+  ).filter(q => !excludedTypes.has(q.question_data.type))
 
   useEffect(() => {
     fetch('/api/students').then(r => r.json()).then(j => setStudents(j.data ?? []))
@@ -396,6 +408,42 @@ export default function WrongAnswersPage() {
         </div>
       </div>
 
+      {/* 유형 필터 — 시험 문항이 로드된 후에만 표시 */}
+      {(examQuestions.length > 0 || pickedQuestions.length > 0) && (() => {
+        const allTypes = Array.from(new Set(
+          (mode === 'exam' ? examQuestions : pickedQuestions).map(q => q.question_data.type)
+        ))
+        if (allTypes.length === 0) return null
+        return (
+          <div className="mb-4 rounded-lg border border-gray-200 bg-white px-5 py-3">
+            <p className="mb-2 text-xs font-semibold text-gray-500">📌 분석에 포함할 유형 선택</p>
+            <div className="flex flex-wrap gap-2">
+              {allTypes.map(type => {
+                const excluded = excludedTypes.has(type)
+                return (
+                  <button
+                    key={type}
+                    onClick={() => toggleExcludeType(type)}
+                    className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+                      excluded
+                        ? 'border-gray-300 bg-gray-100 text-gray-400 line-through'
+                        : 'border-blue-300 bg-blue-50 text-blue-700'
+                    }`}
+                  >
+                    {TYPE_LABELS[type] ?? type}
+                  </button>
+                )
+              })}
+            </div>
+            {excludedTypes.size > 0 && (
+              <p className="mt-2 text-[11px] text-gray-400">
+                취소선 유형은 채점 목록 및 분석에서 제외됩니다.
+              </p>
+            )}
+          </div>
+        )
+      })()}
+
       {/* ── 문제은행 직접 선택 모드 ── */}
       {mode === 'bank' && (
         <div className="mb-6">
@@ -601,6 +649,17 @@ export default function WrongAnswersPage() {
         <div className="space-y-4">
           <div className="rounded-lg border border-gray-200 bg-white p-5">
             <h2 className="mb-4 text-sm font-semibold text-gray-700">📊 분석 결과</h2>
+
+            {/* 개수 요약 한 줄 */}
+            <div className="mb-4 rounded-lg bg-gray-50 px-4 py-3 text-center">
+              <span className="text-sm text-gray-500">
+                총 <strong className="text-gray-800">{analysis.totalQuestions}문항</strong> 중{' '}
+                <strong className="text-green-600">{analysis.totalQuestions - analysis.wrongCount}개 정답</strong>
+                {' / '}
+                <strong className="text-red-500">{analysis.wrongCount}개 오답</strong>
+              </span>
+            </div>
+
             <div className="grid grid-cols-4 gap-3 text-center">
               <div className="rounded-lg bg-gray-50 p-3">
                 <p className="text-xs text-gray-400">총 문항</p>
@@ -609,6 +668,7 @@ export default function WrongAnswersPage() {
               <div className="rounded-lg bg-red-50 p-3">
                 <p className="text-xs text-red-400">틀린 문항</p>
                 <p className="mt-1 text-2xl font-bold text-red-600">{analysis.wrongCount}</p>
+                <p className="text-[10px] text-gray-400">맞은 것 {analysis.totalQuestions - analysis.wrongCount}개</p>
               </div>
               <div className="rounded-lg bg-blue-50 p-3">
                 <p className="text-xs text-blue-400">득점</p>
@@ -636,12 +696,14 @@ export default function WrongAnswersPage() {
                     <div className="mb-1.5 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className={`font-semibold ${colors.text}`}>{TYPE_LABELS[t.type] ?? t.type}</span>
-                        <span className="text-xs text-gray-500">{t.total}문항</span>
                         <span className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${colors.bg} ${colors.text}`}>{colors.badge}</span>
                       </div>
                       <div className="text-right">
-                        <span className={`text-sm font-bold ${colors.text}`}>{t.correctPct}%</span>
-                        <span className="ml-1 text-xs text-gray-400">({t.total - t.wrong}/{t.total} 정답)</span>
+                        <span className={`text-base font-bold ${colors.text}`}>
+                          {t.total - t.wrong}
+                          <span className="text-xs font-normal text-gray-400">/{t.total}개 정답</span>
+                        </span>
+                        <span className={`ml-2 text-sm font-semibold ${colors.text}`}>({t.correctPct}%)</span>
                       </div>
                     </div>
                     <div className="h-2 w-full overflow-hidden rounded-full bg-white/60">
