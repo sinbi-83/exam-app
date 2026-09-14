@@ -7,7 +7,7 @@ const anthropic = new Anthropic({
 });
 
 const MODEL = "claude-sonnet-5";
-const TIMEOUT_MS = 60_000;
+const TIMEOUT_MS = 120_000; // 20문항 생성은 시간이 더 걸림
 
 function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
   return new Promise((resolve, reject) => {
@@ -58,7 +58,7 @@ async function callClaudeOnce(
   const message = await withTimeout(
     anthropic.messages.create({
       model: MODEL,
-      max_tokens: 8000,
+      max_tokens: 16000, // 20문항(선택지 5개 + 해설 포함)은 최소 12000+ 토큰 필요
       system: systemPrompt,
       messages: [{ role: "user", content: userMessage }],
     }),
@@ -81,6 +81,15 @@ export async function generateExamQuestions(
       const parsed = tryParseExamJson(raw);
 
       if (parsed) {
+        // 객관식 20문항 검증: 부족하면 재시도
+        const mcCount = parsed.questions.filter(
+          (q: { isWrittenAnswer?: boolean; choices?: unknown[] }) =>
+            !q.isWrittenAnswer && Array.isArray(q.choices) && q.choices.length > 0
+        ).length;
+        if (mcCount < 20 && attempt < 2) {
+          // 재시도 (다음 루프)
+          continue;
+        }
         return { ok: true, data: parsed };
       }
 
