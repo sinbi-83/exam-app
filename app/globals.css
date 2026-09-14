@@ -2,27 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: #1f2937;
-  background: #f9fafb;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --sidebar-bg: #0f1117;
+  --sidebar-border: #1e2130;
+  --sidebar-text: #8b92a5;
+  --sidebar-text-hover: #e2e8f0;
+  --sidebar-active: #3b82f6;
+  --sidebar-active-bg: rgba(59,130,246,0.12);
+  --content-bg: #f4f6fb;
+  --header-bg: #ffffff;
 }
 
-/* 인쇄 시: .print-area 안의 내용만 보이고 나머지 UI는 전부 숨김 */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  color: #1e293b;
+  background: var(--content-bg);
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* 인쇄 */
 @media print {
-  body * {
-    visibility: hidden;
-  }
-  .print-area,
-  .print-area * {
-    visibility: visible;
-  }
-  .print-area {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-  .no-print {
-    display: none !important;
-  }
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; left: 0; top: 0; width: 100%; }
+  .no-print { display: none !important; }
 }
