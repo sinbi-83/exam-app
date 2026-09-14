@@ -40,6 +40,10 @@ export default function GradingPage() {
   const [maxScore, setMaxScore] = useState('100')
   const [examDate, setExamDate] = useState(new Date().toISOString().slice(0, 10))
   const [submitting, setSubmitting] = useState(false)
+  // 틀린 개수 입력 모드
+  const [scoreMode, setScoreMode] = useState<'score' | 'wrong'>('score')
+  const [wrongCount, setWrongCount] = useState('')
+  const [totalQuestions, setTotalQuestions] = useState('')
 
   // 시험 카드 관리
   const [examManagerOpen, setExamManagerOpen] = useState(false)
@@ -87,6 +91,16 @@ export default function GradingPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // 틀린 개수 → 점수 자동 계산
+  const calcScore = (() => {
+    const wc = Number(wrongCount)
+    const tq = Number(totalQuestions)
+    const ms = Number(maxScore)
+    if (!wrongCount || !tq || !ms || isNaN(wc) || isNaN(tq) || isNaN(ms) || tq <= 0) return ''
+    const correct = Math.max(0, tq - wc)
+    return String(Math.round((correct / tq) * ms))
+  })()
+
   // 시험 카드를 선택하면 시험명/만점/날짜를 자동으로 채워줌
   function handleSelectExam(examId: string) {
     setSelectedExamId(examId)
@@ -95,6 +109,7 @@ export default function GradingPage() {
     if (exam) {
       setExamTitle(exam.title)
       setMaxScore(exam.max_score ? String(exam.max_score) : '100')
+      if (exam.total_questions) setTotalQuestions(String(exam.total_questions))
       if (exam.exam_date) setExamDate(exam.exam_date)
     }
   }
@@ -165,10 +180,20 @@ export default function GradingPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!studentId || !examTitle.trim() || score === '') {
-      alert('학생, 시험명, 점수는 필수입니다.')
+    if (!studentId || !examTitle.trim()) {
+      alert('학생, 시험명은 필수입니다.')
       return
     }
+    if (scoreMode === 'score' && score === '') {
+      alert('점수를 입력해주세요.')
+      return
+    }
+    if (scoreMode === 'wrong' && (!totalQuestions || !calcScore)) {
+      alert('총 문항 수와 틀린 개수를 입력해주세요.')
+      return
+    }
+
+    const finalScore = scoreMode === 'wrong' ? Number(calcScore) : Number(score)
 
     setSubmitting(true)
     try {
@@ -178,7 +203,7 @@ export default function GradingPage() {
         body: JSON.stringify({
           student_id: studentId,
           exam_title: examTitle,
-          score: Number(score),
+          score: finalScore,
           max_score: Number(maxScore),
           exam_date: examDate,
           exam_id: selectedExamId || null,
@@ -385,36 +410,112 @@ export default function GradingPage() {
           />
         </div>
 
-        <div className="flex gap-3">
-          <div className="flex-1">
-            <label className="block text-sm text-gray-600 mb-1">점수</label>
-            <input
-              type="number"
-              value={score}
-              onChange={(e) => setScore(e.target.value)}
-              placeholder="80"
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
-            />
-          </div>
-          <div className="flex-1">
-            <label className="block text-sm text-gray-600 mb-1">만점</label>
-            <input
-              type="number"
-              value={maxScore}
-              onChange={(e) => setMaxScore(e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
-            />
-          </div>
-          <div className="flex-1">
-            <label className="block text-sm text-gray-600 mb-1">시험 날짜</label>
-            <input
-              type="date"
-              value={examDate}
-              onChange={(e) => setExamDate(e.target.value)}
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
-            />
-          </div>
+        {/* 입력 모드 토글 */}
+        <div className="flex rounded-lg border border-gray-200 overflow-hidden text-sm">
+          <button
+            type="button"
+            onClick={() => setScoreMode('score')}
+            className={`flex-1 py-2 font-medium transition-colors ${scoreMode === 'score' ? 'bg-blue-600 text-white' : 'bg-white text-gray-500 hover:bg-gray-50'}`}
+          >
+            점수 직접 입력
+          </button>
+          <button
+            type="button"
+            onClick={() => setScoreMode('wrong')}
+            className={`flex-1 py-2 font-medium transition-colors ${scoreMode === 'wrong' ? 'bg-blue-600 text-white' : 'bg-white text-gray-500 hover:bg-gray-50'}`}
+          >
+            틀린 개수로 계산
+          </button>
         </div>
+
+        {scoreMode === 'score' ? (
+          <div className="flex gap-3">
+            <div className="flex-1">
+              <label className="block text-sm text-gray-600 mb-1">점수</label>
+              <input
+                type="number"
+                value={score}
+                onChange={(e) => setScore(e.target.value)}
+                placeholder="80"
+                className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              />
+            </div>
+            <div className="flex-1">
+              <label className="block text-sm text-gray-600 mb-1">만점</label>
+              <input
+                type="number"
+                value={maxScore}
+                onChange={(e) => setMaxScore(e.target.value)}
+                className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              />
+            </div>
+            <div className="flex-1">
+              <label className="block text-sm text-gray-600 mb-1">시험 날짜</label>
+              <input
+                type="date"
+                value={examDate}
+                onChange={(e) => setExamDate(e.target.value)}
+                className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            <div className="flex gap-3">
+              <div className="flex-1">
+                <label className="block text-sm text-gray-600 mb-1">총 문항 수</label>
+                <input
+                  type="number"
+                  value={totalQuestions}
+                  onChange={(e) => setTotalQuestions(e.target.value)}
+                  placeholder="16"
+                  min="1"
+                  className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+                />
+              </div>
+              <div className="flex-1">
+                <label className="block text-sm text-gray-600 mb-1">틀린 개수</label>
+                <input
+                  type="number"
+                  value={wrongCount}
+                  onChange={(e) => setWrongCount(e.target.value)}
+                  placeholder="3"
+                  min="0"
+                  className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+                />
+              </div>
+              <div className="flex-1">
+                <label className="block text-sm text-gray-600 mb-1">만점</label>
+                <input
+                  type="number"
+                  value={maxScore}
+                  onChange={(e) => setMaxScore(e.target.value)}
+                  className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+                />
+              </div>
+            </div>
+
+            {/* 자동 계산 점수 표시 */}
+            {calcScore && (
+              <div className="rounded-lg bg-blue-50 border border-blue-200 px-4 py-3 flex items-center justify-between">
+                <span className="text-sm text-blue-700">
+                  자동 계산 점수: {totalQuestions}문항 중 {Number(totalQuestions) - Number(wrongCount)}개 정답
+                </span>
+                <span className="text-xl font-bold text-blue-800">{calcScore}점</span>
+              </div>
+            )}
+
+            <div>
+              <label className="block text-sm text-gray-600 mb-1">시험 날짜</label>
+              <input
+                type="date"
+                value={examDate}
+                onChange={(e) => setExamDate(e.target.value)}
+                className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              />
+            </div>
+          </div>
+        )}
 
         <button
           type="submit"
