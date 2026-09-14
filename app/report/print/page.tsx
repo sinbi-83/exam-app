@@ -11,8 +11,9 @@ async function downloadPdf(filename: string) {
     margin: 0,
     filename: `${filename}.pdf`,
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
+    html2canvas: { scale: 2, useCORS: true, logging: false },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
   }).from(el).save()
 }
 
@@ -76,10 +77,11 @@ function ReportContent() {
         * { font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; }
         @page { size: A4; margin: 0; }
         @media print {
-          body { margin: 0; }
+          body { margin: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
           .no-print { display: none !important; }
           .page { box-shadow: none !important; }
         }
+        * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       `}</style>
 
       {/* Print button */}
@@ -103,7 +105,6 @@ function ReportContent() {
         className="print-area page mx-auto bg-white shadow-lg"
         style={{
           width: '210mm',
-          minHeight: '297mm',
           padding: '14mm 16mm 12mm',
         }}
       >
