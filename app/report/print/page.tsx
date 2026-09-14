@@ -35,6 +35,57 @@ function toBullets(text: string): string[] {
     .filter(Boolean)
 }
 
+// ── 보스턴S영어 배지 로고 SVG ──
+function BostonLogoSvg({ size = 52 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      {/* 배지 외곽 (크림 테두리) */}
+      <path d="M100,4 C128,2 165,12 182,38 C194,57 190,78 182,92 C190,106 194,127 182,146 C165,172 128,182 100,180 C72,182 35,172 18,146 C6,127 10,106 18,92 C10,78 6,57 18,38 C35,12 72,2 100,4 Z" fill="#d4c5a9"/>
+      {/* 배지 내부 (네이비) */}
+      <path d="M100,10 C126,8 160,17 176,41 C187,58 183,77 176,90 C183,103 187,122 176,139 C160,163 126,173 100,171 C74,173 40,163 24,139 C13,122 17,103 24,90 C17,77 13,58 24,41 C40,17 74,8 100,10 Z" fill="#1a2744"/>
+      {/* 책 — 왼쪽 페이지 */}
+      <rect x="84" y="46" width="14" height="20" rx="1.5" fill="#1e3a6e" stroke="#90b8d8" strokeWidth="0.8"/>
+      {/* 책 — 오른쪽 페이지 */}
+      <rect x="98" y="46" width="14" height="20" rx="1.5" fill="#5fa0d0" stroke="#90c8e8" strokeWidth="0.8"/>
+      {/* 책 — 가운데 선 */}
+      <line x1="98" y1="47" x2="94" y2="66" stroke="#1a2744" strokeWidth="1"/>
+      <line x1="98" y1="47" x2="102" y2="66" stroke="#4080b0" strokeWidth="1"/>
+      {/* 월계수 왼쪽 */}
+      <path d="M80,68 Q72,72 68,78 Q74,76 80,72 Q72,80 67,87 Q73,84 80,80 Q71,88 67,96 Q74,93 81,88" fill="none" stroke="#7a8fa5" strokeWidth="1.3" strokeLinecap="round"/>
+      <ellipse cx="72" cy="72" rx="4" ry="2.5" transform="rotate(-40 72 72)" fill="#7a8fa5" opacity="0.7"/>
+      <ellipse cx="69" cy="80" rx="4" ry="2.5" transform="rotate(-50 69 80)" fill="#7a8fa5" opacity="0.7"/>
+      <ellipse cx="68" cy="89" rx="4" ry="2.5" transform="rotate(-60 68 89)" fill="#7a8fa5" opacity="0.7"/>
+      {/* 월계수 오른쪽 */}
+      <path d="M120,68 Q128,72 132,78 Q126,76 120,72 Q128,80 133,87 Q127,84 120,80 Q129,88 133,96 Q126,93 119,88" fill="none" stroke="#7a8fa5" strokeWidth="1.3" strokeLinecap="round"/>
+      <ellipse cx="128" cy="72" rx="4" ry="2.5" transform="rotate(40 128 72)" fill="#7a8fa5" opacity="0.7"/>
+      <ellipse cx="131" cy="80" rx="4" ry="2.5" transform="rotate(50 131 80)" fill="#7a8fa5" opacity="0.7"/>
+      <ellipse cx="132" cy="89" rx="4" ry="2.5" transform="rotate(60 132 89)" fill="#7a8fa5" opacity="0.7"/>
+      {/* 줄기 연결선 */}
+      <path d="M80,96 Q100,102 120,96" fill="none" stroke="#7a8fa5" strokeWidth="1"/>
+      {/* BOSTON S ENGLISH 텍스트 */}
+      <text x="100" y="132" textAnchor="middle" fill="#d4c5a9"
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontSize="13.5" fontWeight="bold" letterSpacing="1.5">
+        BOSTON S ENGLISH
+      </text>
+    </svg>
+  )
+}
+
+// ── 손글씨 서명 SVG ──
+function SignatureSvg() {
+  return (
+    <svg viewBox="0 0 145 60" xmlns="http://www.w3.org/2000/svg"
+         style={{ width: 110, height: 44, display: 'block' }}>
+      <path
+        d="M 8,52 L 26,7 Q 34,18 37,33 Q 44,17 53,13 Q 62,22 67,11 Q 76,5 84,17 L 136,12"
+        stroke="#1a2744" strokeWidth="2.3" fill="none"
+        strokeLinecap="round" strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 // 점수 백분율 바 컬러
 function barColor(pct: number) {
   if (pct >= 80) return '#4a7c59'
@@ -162,16 +213,10 @@ function ReportContent() {
 
             {/* 로고 */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <div style={{
-                width: 42, height: 42,
-                border: `2px solid ${GOLD}`,
-                borderRadius: 6,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: 22,
-              }}>🏫</div>
+              <BostonLogoSvg size={54} />
               <div>
-                <div style={{ fontSize: 10, letterSpacing: 2, color: GOLD, fontWeight: 700 }}>BOSTON&apos;S ENGLISH</div>
-                <div style={{ fontSize: 14, fontWeight: 900, color: '#fff', lineHeight: 1.1 }}>보스턴영어학원</div>
+                <div style={{ fontSize: 10, letterSpacing: 2, color: GOLD, fontWeight: 700 }}>BOSTON S ENGLISH</div>
+                <div style={{ fontSize: 14, fontWeight: 900, color: '#fff', lineHeight: 1.1 }}>보스턴S영어</div>
                 <div style={{ fontSize: 8.5, color: '#a0b4d6', marginTop: 1, letterSpacing: 0.5 }}>A HIGHER STANDARD · A BRIGHTER YOU</div>
               </div>
             </div>
@@ -441,12 +486,7 @@ function ReportContent() {
                   borderLeft: `1px solid #ede8dd`, paddingLeft: 12,
                   display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center',
                 }}>
-                  <div style={{
-                    fontSize: 22, color: DARKBLUE,
-                    fontFamily: "'Nanum Pen Script', cursive",
-                    marginBottom: 4, letterSpacing: 1,
-                    lineHeight: 1.1,
-                  }}>{teacher}</div>
+                  <SignatureSvg />
                   <div style={{ height: 1, width: 60, background: DARKBLUE, marginBottom: 4, opacity: 0.3 }} />
                   <div style={{ fontSize: 8.5, color: SUBTEXT }}>담당 교사</div>
                 </div>
@@ -461,7 +501,7 @@ function ReportContent() {
         <div style={{ borderTop: `1px solid #ddd5c0`, padding: '7px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: CREAM }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <div style={{ width: 2, height: 12, background: GOLD, borderRadius: 1 }} />
-            <span style={{ fontSize: 8.5, color: SUBTEXT }}>보스턴영어학원 · BOSTON&apos;S ENGLISH</span>
+            <span style={{ fontSize: 8.5, color: SUBTEXT }}>보스턴S영어 · BOSTON S ENGLISH</span>
             <span style={{ fontSize: 8.5, color: '#c0b9a8' }}>|</span>
             <span style={{ fontSize: 8.5, color: SUBTEXT }}>담당: {teacher}</span>
           </div>
