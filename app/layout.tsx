@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
             {/* 로고 */}
             <div className="flex items-center gap-3 px-5 py-5" style={{ borderBottom: '1px solid var(--sidebar-border)' }}>
-              <div className="w-8 h-8 rounded-xl bg-blue-500 flex items-center justify-center text-white font-bold text-base shadow-lg shadow-blue-500/30">
+              <div className="w-8 h-8 rounded-xl bg-blue-800 flex items-center justify-center text-white font-bold text-base shadow-lg shadow-blue-800/30">
                 B
               </div>
               <div>
@@ -155,9 +155,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </div>
                 {/* 우측: 로그아웃 (데스크탑에서는 사이드바에 있어서 숨김) */}
                 <div className="flex items-center gap-2">
-                  <div className="hidden md:block w-7 h-7 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-xs font-bold">
-                    선
-                  </div>
                   <form action="/logout" method="POST" className="md:hidden">
                     <button type="submit"
                       className="text-xs text-gray-500 border border-gray-200 rounded-lg px-3 py-1.5 hover:bg-gray-50">

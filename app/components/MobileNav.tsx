@@ -78,7 +78,7 @@ export default function MobileNav() {
         style={{ background: 'var(--sidebar-bg)' }}>
         <div className="flex items-center justify-between px-5 py-5 border-b" style={{ borderColor: 'var(--sidebar-border)' }}>
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+            <div className="w-7 h-7 rounded-lg bg-blue-800 flex items-center justify-center text-white font-bold text-sm">B</div>
             <span className="font-semibold text-white text-sm">보스턴S영어</span>
           </div>
           <button onClick={() => setOpen(false)} className="p-1.5 rounded-lg hover:bg-white/10 text-gray-400">
