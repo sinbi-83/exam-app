@@ -113,7 +113,7 @@ function ReportContent() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Pen+Script&display=swap');
         * { font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; }
         @page { size: A4; margin: 0; }
         @media print {
@@ -442,9 +442,10 @@ function ReportContent() {
                   display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center',
                 }}>
                   <div style={{
-                    fontSize: 15, color: DARKBLUE,
-                    fontFamily: 'Georgia, serif',
+                    fontSize: 22, color: DARKBLUE,
+                    fontFamily: "'Nanum Pen Script', cursive",
                     marginBottom: 4, letterSpacing: 1,
+                    lineHeight: 1.1,
                   }}>{teacher}</div>
                   <div style={{ height: 1, width: 60, background: DARKBLUE, marginBottom: 4, opacity: 0.3 }} />
                   <div style={{ fontSize: 8.5, color: SUBTEXT }}>담당 교사</div>
