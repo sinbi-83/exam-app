@@ -52,11 +52,40 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
+  function getActiveGroup(): string | null {
+    for (const g of menuGroups) {
+      if (g.items.some(item => pathname === item.href || pathname.startsWith(item.href + '/'))) {
+        return g.title
+      }
+    }
+    return null
+  }
+
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() => {
+    const active = getActiveGroup()
+    const defaults: Record<string, boolean> = {}
+    menuGroups.forEach(g => { defaults[g.title] = g.title === active })
+    return defaults
+  })
+
   useEffect(() => { setOpen(false) }, [pathname])
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [open])
+
+  // 메뉴 열릴 때 현재 활성 그룹 자동 열기
+  useEffect(() => {
+    if (open) {
+      const active = getActiveGroup()
+      if (active) setOpenGroups(prev => ({ ...prev, [active]: true }))
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open])
+
+  function toggleGroup(title: string) {
+    setOpenGroups(prev => ({ ...prev, [title]: !prev[title] }))
+  }
 
   return (
     <>
@@ -76,6 +105,8 @@ export default function MobileNav() {
 
       <div className={`fixed inset-y-0 left-0 z-50 w-72 transform transition-transform duration-300 ease-out ${open ? 'translate-x-0' : '-translate-x-full'}`}
         style={{ background: 'var(--sidebar-bg)' }}>
+
+        {/* 헤더 */}
         <div className="flex items-center justify-between px-5 py-5 border-b" style={{ borderColor: 'var(--sidebar-border)' }}>
           <div className="flex items-center gap-2.5">
             <div className="w-7 h-7 rounded-lg bg-blue-800 flex items-center justify-center text-white font-bold text-sm">B</div>
@@ -88,31 +119,63 @@ export default function MobileNav() {
           </button>
         </div>
 
+        {/* 네비게이션 */}
         <nav className="overflow-y-auto h-full pb-24 px-3 py-3">
-          {menuGroups.map((group) => (
-            <div key={group.title} className="mb-5">
-              <p className="px-2 mb-1.5 text-[10px] font-semibold uppercase tracking-widest" style={{ color: 'var(--sidebar-text)' }}>
-                {group.title}
-              </p>
-              {group.items.map((item) => {
-                const active = pathname === item.href
-                return (
-                  <Link key={item.href} href={item.href}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg mb-0.5 text-sm font-medium transition-all ${
-                      active
-                        ? 'text-white'
-                        : 'hover:bg-white/5'
-                    }`}
-                    style={active ? { background: 'var(--sidebar-active-bg)', color: '#60a5fa' } : { color: 'var(--sidebar-text)' }}
+          {menuGroups.map((group) => {
+            const isOpen = openGroups[group.title] ?? false
+            const hasActive = group.items.some(item => pathname === item.href || pathname.startsWith(item.href + '/'))
+
+            return (
+              <div key={group.title} className="mb-1">
+                {/* 그룹 헤더 */}
+                <button
+                  onClick={() => toggleGroup(group.title)}
+                  className="w-full flex items-center justify-between px-2 py-2 rounded-md transition-colors hover:bg-white/5"
+                >
+                  <span className="text-[10px] font-semibold uppercase tracking-widest"
+                    style={{ color: hasActive ? '#60a5fa' : 'var(--sidebar-text)' }}>
+                    {group.title}
+                  </span>
+                  <svg
+                    className="w-3 h-3 transition-transform duration-200"
+                    style={{
+                      color: 'var(--sidebar-text)',
+                      transform: isOpen ? 'rotate(0deg)' : 'rotate(-90deg)',
+                    }}
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
                   >
-                    <span className="text-base w-5 text-center">{item.icon}</span>
-                    {item.label}
-                    {active && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-400" />}
-                  </Link>
-                )
-              })}
-            </div>
-          ))}
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {/* 메뉴 아이템 */}
+                <div
+                  className="overflow-hidden transition-all duration-200"
+                  style={{ maxHeight: isOpen ? `${group.items.length * 44}px` : '0px', opacity: isOpen ? 1 : 0 }}
+                >
+                  <div className="mt-0.5 space-y-0.5 pb-1">
+                    {group.items.map((item) => {
+                      const active = pathname === item.href || pathname.startsWith(item.href + '/')
+                      return (
+                        <Link key={item.href} href={item.href}
+                          className={`flex items-center gap-3 px-3 py-2.5 rounded-lg mb-0.5 text-sm font-medium transition-all ${
+                            active ? '' : 'hover:bg-white/5'
+                          }`}
+                          style={active ? { background: 'var(--sidebar-active-bg)', color: '#93c5fd' } : { color: 'var(--sidebar-text)' }}
+                        >
+                          <span className="text-base w-5 text-center">{item.icon}</span>
+                          {item.label}
+                          {active && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />}
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+
+          {/* 레거시 */}
           <div className="mx-2 my-3 border-t" style={{ borderColor: 'var(--sidebar-border)' }} />
           <Link href="/" className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all hover:bg-white/5" style={{ color: 'var(--sidebar-text)' }}>
             <span className="text-base w-5 text-center">🕐</span>
