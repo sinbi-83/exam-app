@@ -11,7 +11,7 @@ const BASE_SYSTEM_PROMPT = `너는 영어 시험 문제 출제 전문가다.
 2. 출력은 반드시 JSON 형식으로만 응답하라. JSON 앞뒤에 어떤 설명이나 마크다운 코드블록
    표시(\`\`\`)도 붙이지 마라. 순수 JSON 텍스트만 출력하라.
 3. 아래 JSON 스키마를 정확히 따르라.
-4. 각 문제유형에 지정된 문항 수를 정확히 맞춰라.
+4. 객관식 문항 수는 반드시 정확히 20개여야 한다. 절대 19개나 18개나 16개로 줄이지 마라. 반드시 20개를 끝까지 완성하라. 출력이 길어지더라도 20개를 모두 출력해야 한다.
 5. 정답이 명확하게 하나로 판별되도록 출제하라. 애매한 정답이 나오지 않게 하라.
 
 JSON 스키마:
@@ -34,17 +34,36 @@ JSON 스키마:
 answer에는 모범답안을, explanation에는 채점기준을 넣어라.`;
 
 function buildQuestionConfigText(body: GenerateRequestBody): string {
-  const lines = body.questionConfig
-    .filter((q) => q.count > 0)
-    .map((q) => {
-      const def = QUESTION_TYPES.find((t) => t.key === q.type);
-      const label = def?.label ?? q.type;
-      return `- ${label}: ${q.count}문항`;
-    });
+  const mcTypes = body.questionConfig.filter((q) => {
+    const def = QUESTION_TYPES.find((t) => t.key === q.type);
+    return def && !def.isWrittenAnswer;
+  });
 
-  const totalCount = body.questionConfig.reduce((sum, q) => sum + q.count, 0);
+  const mcLabels = mcTypes.map((q) => {
+    const def = QUESTION_TYPES.find((t) => t.key === q.type);
+    return def?.label ?? q.type;
+  });
 
-  return `\n\n대상 학년: ${body.gradeLevel}\n요청 문항 구성 (총 ${totalCount}문항):\n${lines.join("\n")}`;
+  // 서술형은 항상 4문항 고정
+  const WRITTEN_COUNT = 4;
+  const TOTAL = 20 + WRITTEN_COUNT;
+
+  let text = `\n\n대상 학년: ${body.gradeLevel}`;
+  text += `\n\n==== 문항 구성 (절대 변경 불가) ====`;
+  text += `\n총 ${TOTAL}문항: 객관식 20문항 + 서술형 ${WRITTEN_COUNT}문항`;
+  text += `\n\n[1단계: 객관식 20문항]`;
+  text += `\n- isWrittenAnswer: false 인 문항을 정확히 20개 출제`;
+  text += `\n- choices 배열에 ①②③④⑤ 5개 선택지 필수`;
+  text += `\n- 아래 유형들을 골고루 섞어 20문항 배분 (특정 유형 편중 금지):`;
+  text += `\n${mcLabels.map((l) => `  · ${l}`).join("\n")}`;
+  text += `\n\n[2단계: 서술형 ${WRITTEN_COUNT}문항]`;
+  text += `\n- isWrittenAnswer: true 인 문항을 정확히 ${WRITTEN_COUNT}개 출제`;
+  text += `\n- choices는 빈 배열 []`;
+  text += `\n- answer에 모범답안, explanation에 채점기준`;
+  text += `\n\n★ questions 배열 순서: 객관식 20개 먼저, 서술형 ${WRITTEN_COUNT}개 마지막`;
+  text += `\n★ 객관식이 20개 미만이면 출력이 잘못된 것이다. 반드시 20개를 모두 완성하라.`;
+
+  return text;
 }
 
 export function buildSystemPrompt(body: GenerateRequestBody): string {
