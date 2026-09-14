@@ -61,5 +61,19 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  return NextResponse.json({ data, passages })
+  // DB 컬럼명(question_text, question_type, choices, correct_answer)을
+  // 프론트엔드 인터페이스(question, type, options, answer)에 맞게 변환
+  const mapped = (data || []).map((q: any) => ({
+    id: q.id,
+    type: (q.question_type ?? '').replace(/^reading_|^essay_/, '') || q.question_type,
+    question: q.question_text ?? '',
+    options: q.choices ?? [],
+    answer: q.correct_answer ?? '',
+    explanation: q.explanation ?? '',
+    grade: q.grade ?? '',
+    difficulty: q.difficulty,
+    question_set_id: q.question_set_id,
+  }))
+
+  return NextResponse.json({ data: mapped, passages })
 }

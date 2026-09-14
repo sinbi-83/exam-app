@@ -67,6 +67,7 @@ export default function ExamDetailPage() {
   const [bankGrade, setBankGrade] = useState('all')
   const [bankType, setBankType] = useState('all')
   const [adding, setAdding] = useState<string | null>(null)
+  const [addingAll, setAddingAll] = useState(false)
   const [removing, setRemoving] = useState<string | null>(null)
   const [passages, setPassages] = useState<Record<string, string>>({})
 
@@ -122,6 +123,31 @@ export default function ExamDetailPage() {
     const json = await res.json()
     if (!json.error) setExamQuestions((prev) => [...prev, json.data])
     setAdding(null)
+  }
+
+  // 전체 추가 (미추가 문항만)
+  async function addAllQuestions() {
+    const toAdd = filteredBank.filter((q) => !addedIds.has(q.id))
+    if (toAdd.length === 0) return
+    setAddingAll(true)
+    const results: ExamQuestion[] = []
+    for (let i = 0; i < toAdd.length; i++) {
+      const q = toAdd[i]
+      const res = await fetch('/api/exam-questions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          exam_id: examId,
+          question_data: { ...q, passage: q.question_set_id ? passages[q.question_set_id] : undefined },
+          sort_order: examQuestions.length + i,
+          points: 5,
+        }),
+      })
+      const json = await res.json()
+      if (!json.error) results.push(json.data)
+    }
+    setExamQuestions((prev) => [...prev, ...results])
+    setAddingAll(false)
   }
 
   async function removeQuestion(eqId: string) {
@@ -244,7 +270,16 @@ export default function ExamDetailPage() {
       {/* 문제은행 패널 */}
       {showBank && (
         <div className="rounded-lg border border-gray-200 bg-white p-5">
-          <h3 className="mb-4 text-sm font-semibold text-gray-700">문제은행</h3>
+          <div className="mb-4 flex items-center justify-between">
+            <h3 className="text-sm font-semibold text-gray-700">문제은행</h3>
+            <button
+              onClick={addAllQuestions}
+              disabled={addingAll || filteredBank.filter(q => !addedIds.has(q.id)).length === 0}
+              className="rounded bg-green-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-green-700 disabled:opacity-40"
+            >
+              {addingAll ? '추가 중…' : `✚ 전체 추가 (${filteredBank.filter(q => !addedIds.has(q.id)).length}문항)`}
+            </button>
+          </div>
           <div className="mb-4 flex gap-3">
             <select
               value={bankGrade}
@@ -252,7 +287,7 @@ export default function ExamDetailPage() {
               className="rounded border border-gray-300 px-2 py-1 text-sm"
             >
               <option value="all">전체 학년</option>
-              {['중1', '중2', '중3', '고1', '고2', '고3'].map((g) => (
+              {['중1', '중2', '중3', '고1', '고2', '고3', '초5', '초6'].map((g) => (
                 <option key={g} value={g}>{g}</option>
               ))}
             </select>
