@@ -44,6 +44,10 @@ function ReportForm() {
   const [comment, setComment] = useState('')
   const [nextSteps, setNextSteps] = useState('')
   const [strengths, setStrengths] = useState('')
+  const [teacher, setTeacher] = useState('')
+  const [vocabAnalysis, setVocabAnalysis] = useState('')
+  const [grammarAnalysis, setGrammarAnalysis] = useState('')
+  const [readingAnalysis, setReadingAnalysis] = useState('')
 
   useEffect(() => {
     Promise.all([
@@ -161,6 +165,10 @@ function ReportForm() {
       comment,
       nextSteps,
       strengths,
+      teacher,
+      vocabAnalysis,
+      grammarAnalysis,
+      readingAnalysis,
       typeScores: JSON.stringify(filteredTypeScores),
     })
 
@@ -302,34 +310,70 @@ function ReportForm() {
           </h2>
           <div className="space-y-4">
             <div>
-              <label className="mb-1 block text-xs text-gray-600">잘한 점 / 강점</label>
-              <textarea
-                value={strengths}
-                onChange={(e) => setStrengths(e.target.value)}
-                rows={2}
-                placeholder="예) 어휘력이 매우 뛰어나며 지문 파악 속도가 빠릅니다."
+              <label className="mb-1 block text-xs text-gray-600">담당 교사 이름</label>
+              <input
+                type="text"
+                value={teacher}
+                onChange={(e) => setTeacher(e.target.value)}
+                placeholder="예) Jennifer.T"
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs text-gray-600">보완이 필요한 부분</label>
+              <label className="mb-1 block text-xs text-gray-600">잘한 점 / 강점 <span className="text-gray-400">(줄바꿈으로 구분하면 목록으로 표시)</span></label>
+              <textarea
+                value={strengths}
+                onChange={(e) => setStrengths(e.target.value)}
+                rows={3}
+                placeholder={"어휘력이 매우 뛰어납니다\n지문 파악 속도가 빠릅니다\n독해 정확도가 높습니다"}
+                className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs text-gray-600">보완이 필요한 부분 <span className="text-gray-400">(줄바꿈으로 구분)</span></label>
               <textarea
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 rows={3}
-                placeholder="예) 서술형 문제에서 조건을 꼼꼼히 확인하는 습관이 필요합니다."
+                placeholder={"서술형 조건 충족 연습 필요\n어법 문제 근거 정리 필요\n조건 영작 집중 연습"}
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs text-gray-600">다음 학습 계획 / 권고사항</label>
+              <label className="mb-1 block text-xs text-gray-600">다음 학습 계획 <span className="text-gray-400">(줄바꿈으로 구분 → 체크리스트로 표시)</span></label>
               <textarea
                 value={nextSteps}
                 onChange={(e) => setNextSteps(e.target.value)}
-                rows={2}
-                placeholder="예) 매일 단어 20개 암기 + 서술형 1문제씩 연습을 권장합니다."
+                rows={3}
+                placeholder={"매일 단어 20개 암기\n서술형 1문제씩 연습\nEBS 어법 집중 복습"}
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               />
+            </div>
+          </div>
+        </section>
+
+        {/* 상세 분석 (선택) */}
+        <section className="rounded-lg border border-gray-200 bg-white p-5">
+          <h2 className="mb-1 text-sm font-semibold text-gray-700">④ 상세 분석 <span className="font-normal text-gray-400">(선택 — 비워두면 점수 기반 자동 생성)</span></h2>
+          <p className="mb-4 text-xs text-gray-400">보고서의 어휘력/이해(어법)/독해 분석 칸에 들어갈 내용입니다.</p>
+          <div className="space-y-3">
+            <div>
+              <label className="mb-1 block text-xs text-gray-600">어휘력 분석</label>
+              <textarea value={vocabAnalysis} onChange={(e) => setVocabAnalysis(e.target.value)} rows={2}
+                placeholder="예) 다양한 어휘를 문맥 속에서 정확히 이해하고 있습니다."
+                className="w-full rounded border border-gray-300 px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs text-gray-600">이해 / 어법 분석</label>
+              <textarea value={grammarAnalysis} onChange={(e) => setGrammarAnalysis(e.target.value)} rows={2}
+                placeholder="예) 핵심 문법 포인트 이해도가 높으나 심화 어법 연습이 필요합니다."
+                className="w-full rounded border border-gray-300 px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs text-gray-600">독해 & 요약 분석</label>
+              <textarea value={readingAnalysis} onChange={(e) => setReadingAnalysis(e.target.value)} rows={2}
+                placeholder="예) 지문 흐름 파악이 우수하며 핵심 내용 요약 능력을 꾸준히 키워가세요."
+                className="w-full rounded border border-gray-300 px-3 py-2 text-sm" />
             </div>
           </div>
         </section>
