@@ -13,6 +13,7 @@ async function downloadPdf(filename: string) {
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2, useCORS: true },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
   }).from(el).save()
 }
 
@@ -160,7 +161,7 @@ function PrintContent() {
                   const isShortAnswer = !isMultiple && !isEssay
 
                   return (
-                    <div key={eq.id} className="pb-3" style={{ breakInside: 'avoid', pageBreakInside: 'avoid' }}>
+                    <div key={eq.id} className="pb-3 question-block" style={{ breakInside: 'avoid', pageBreakInside: 'avoid', display: 'block' }}>
                       <div className="mb-1 flex items-start gap-2">
                         <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-800 text-[10px] font-bold text-white">
                           {num}
