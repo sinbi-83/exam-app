@@ -10,13 +10,23 @@ export async function GET() {
   const { data: { user }, error: userError } = await supabase.auth.getUser()
   if (userError || !user) return NextResponse.json({ error: '로그인이 필요합니다.' }, { status: 401 })
 
-  const { data, error } = await supabase
+  // 새 컬럼 포함해서 조회, 실패 시 기존 컬럼만으로 재시도
+  let { data, error } = await supabase
     .from('students')
     .select('id, name, grade, pin, created_at, school_name, student_phone, parent_phone, enrolled_at, notes')
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+  if (error) {
+    // 새 컬럼이 아직 없을 경우 기존 컬럼만 조회
+    const fallback = await supabase
+      .from('students')
+      .select('id, name, grade, pin, created_at')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false })
+    if (fallback.error) return NextResponse.json({ error: fallback.error.message }, { status: 500 })
+    data = fallback.data
+  }
   return NextResponse.json({ data })
 }
 
