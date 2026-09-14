@@ -41,6 +41,7 @@ interface BankQuestion {
   answer?: string
   explanation?: string
   grade?: string
+  topic?: string
   difficulty?: number
   question_set_id?: string
 }
@@ -66,6 +67,7 @@ export default function ExamDetailPage() {
   const [bankLoading, setBankLoading] = useState(false)
   const [bankGrade, setBankGrade] = useState('all')
   const [bankType, setBankType] = useState('all')
+  const [bankSearch, setBankSearch] = useState('')
   const [adding, setAdding] = useState<string | null>(null)
   const [addingAll, setAddingAll] = useState(false)
   const [removing, setRemoving] = useState<string | null>(null)
@@ -177,9 +179,18 @@ export default function ExamDetailPage() {
     document.body.removeChild(a)
   }
 
-  const filteredBank = bankType === 'all'
-    ? bankQuestions
-    : bankQuestions.filter((q) => q.type === bankType)
+  const filteredBank = bankQuestions.filter((q) => {
+    if (bankType !== 'all' && q.type !== bankType) return false
+    if (bankSearch.trim()) {
+      const kw = bankSearch.trim().toLowerCase()
+      return (
+        (q.topic ?? '').toLowerCase().includes(kw) ||
+        (q.question ?? '').toLowerCase().includes(kw) ||
+        (q.grade ?? '').toLowerCase().includes(kw)
+      )
+    }
+    return true
+  })
 
   const totalPoints = examQuestions.reduce((s, q) => s + q.points, 0)
 
@@ -280,6 +291,15 @@ export default function ExamDetailPage() {
               {addingAll ? '추가 중…' : `✚ 전체 추가 (${filteredBank.filter(q => !addedIds.has(q.id)).length}문항)`}
             </button>
           </div>
+          <div className="mb-3">
+            <input
+              type="text"
+              value={bankSearch}
+              onChange={(e) => setBankSearch(e.target.value)}
+              placeholder="🔍 주제 검색 (예: 가족, 학교, family...)"
+              className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-400 focus:outline-none"
+            />
+          </div>
           <div className="mb-4 flex gap-3">
             <select
               value={bankGrade}
@@ -287,7 +307,7 @@ export default function ExamDetailPage() {
               className="rounded border border-gray-300 px-2 py-1 text-sm"
             >
               <option value="all">전체 학년</option>
-              {['중1', '중2', '중3', '고1', '고2', '고3', '초5', '초6'].map((g) => (
+              {['초5', '초6', '중1', '중2', '중3', '고1', '고2', '고3'].map((g) => (
                 <option key={g} value={g}>{g}</option>
               ))}
             </select>
@@ -301,6 +321,14 @@ export default function ExamDetailPage() {
                 <option key={k} value={k}>{v}</option>
               ))}
             </select>
+            {bankSearch && (
+              <button
+                onClick={() => setBankSearch('')}
+                className="rounded border border-gray-200 px-2 py-1 text-xs text-gray-400 hover:text-gray-600"
+              >
+                ✕ 초기화
+              </button>
+            )}
           </div>
 
           {bankLoading ? (

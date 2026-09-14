@@ -71,6 +71,7 @@ export async function GET(request: NextRequest) {
     answer: q.correct_answer ?? '',
     explanation: q.explanation ?? '',
     grade: q.grade ?? '',
+    topic: q.topic ?? '',
     difficulty: q.difficulty,
     question_set_id: q.question_set_id,
   }))
