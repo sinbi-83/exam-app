@@ -11,6 +11,7 @@ export async function GET() {
   if (userError || !user) return NextResponse.json({ error: '로그인이 필요합니다.' }, { status: 401 })
 
   // 새 컬럼 포함해서 조회, 실패 시 기존 컬럼만으로 재시도
+  // eslint-disable-next-line prefer-const
   let { data, error } = await supabase
     .from('students')
     .select('id, name, grade, pin, created_at, school_name, student_phone, parent_phone, enrolled_at, notes')
@@ -25,7 +26,8 @@ export async function GET() {
       .eq('user_id', user.id)
       .order('created_at', { ascending: false })
     if (fallback.error) return NextResponse.json({ error: fallback.error.message }, { status: 500 })
-    data = fallback.data
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    data = fallback.data as any
   }
   return NextResponse.json({ data })
 }

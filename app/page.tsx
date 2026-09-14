@@ -20,8 +20,15 @@ export default function HomePage() {
     STYLE_PRESETS[0].name
   );
   const [gradeLevel, setGradeLevel] = useState<GradeLevel>("중2");
+  // 기본값: 주요 객관식 유형 전체 선택 (AI가 20문항 내에서 자동 배분)
   const [questionConfig, setQuestionConfig] = useState<QuestionConfigItem[]>([
-    { type: "blank", count: 3 },
+    { type: "topic", count: 0 },
+    { type: "blank", count: 0 },
+    { type: "content_match", count: 0 },
+    { type: "grammar_error", count: 0 },
+    { type: "sentence_insert", count: 0 },
+    { type: "order", count: 0 },
+    { type: "vocab_inference", count: 0 },
   ]);
 
   const [loading, setLoading] = useState(false);

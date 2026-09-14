@@ -34,17 +34,45 @@ JSON 스키마:
 answer에는 모범답안을, explanation에는 채점기준을 넣어라.`;
 
 function buildQuestionConfigText(body: GenerateRequestBody): string {
-  const lines = body.questionConfig
-    .filter((q) => q.count > 0)
-    .map((q) => {
-      const def = QUESTION_TYPES.find((t) => t.key === q.type);
-      const label = def?.label ?? q.type;
-      return `- ${label}: ${q.count}문항`;
-    });
+  // 객관식 유형과 서술형 분리
+  const mcTypes = body.questionConfig.filter((q) => {
+    const def = QUESTION_TYPES.find((t) => t.key === q.type);
+    return def && !def.isWrittenAnswer;
+  });
+  const writtenTypes = body.questionConfig.filter((q) => {
+    const def = QUESTION_TYPES.find((t) => t.key === q.type);
+    return def && def.isWrittenAnswer;
+  });
 
-  const totalCount = body.questionConfig.reduce((sum, q) => sum + q.count, 0);
+  const mcLabels = mcTypes.map((q) => {
+    const def = QUESTION_TYPES.find((t) => t.key === q.type);
+    return def?.label ?? q.type;
+  });
 
-  return `\n\n대상 학년: ${body.gradeLevel}\n요청 문항 구성 (총 ${totalCount}문항):\n${lines.join("\n")}`;
+  const writtenLines = writtenTypes.map((q) => {
+    const def = QUESTION_TYPES.find((t) => t.key === q.type);
+    return `- ${def?.label ?? q.type}: ${q.count}문항`;
+  });
+
+  const writtenCount = writtenTypes.reduce((sum, q) => sum + q.count, 0);
+  const totalCount = 20 + writtenCount;
+
+  let text = `\n\n대상 학년: ${body.gradeLevel}\n요청 문항 구성 (총 ${totalCount}문항):\n`;
+
+  // 객관식: 항상 20문항 고정, AI가 유형별 배분
+  if (mcLabels.length > 0) {
+    text += `\n[객관식 - 반드시 정확히 20문항 출제]\n`;
+    text += `다음 유형들을 골고루 섞어 총 20문항을 출제하라. 특정 유형에 편중되지 않게 다양하게 배분하라:\n`;
+    text += mcLabels.map((l) => `- ${l}`).join("\n");
+    text += `\n※ 객관식 총합이 반드시 20문항이어야 한다. 19문항이나 21문항은 절대 안 된다.`;
+  }
+
+  // 서술형
+  if (writtenLines.length > 0) {
+    text += `\n\n[서술형]\n${writtenLines.join("\n")}`;
+  }
+
+  return text;
 }
 
 export function buildSystemPrompt(body: GenerateRequestBody): string {
