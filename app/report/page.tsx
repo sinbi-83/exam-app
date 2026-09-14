@@ -24,6 +24,8 @@ function ReportForm() {
   const [exams, setExams] = useState<Exam[]>([])
   const [loading, setLoading] = useState(true)
   const [prefilled, setPrefilled] = useState(false)
+  const [aiLoading, setAiLoading] = useState(false)
+  const [aiGenerated, setAiGenerated] = useState(false)
 
   // 선택
   const [studentId, setStudentId] = useState('')
@@ -33,21 +35,29 @@ function ReportForm() {
   const [score, setScore] = useState('')
   const [maxScore, setMaxScore] = useState('100')
   const [examDate, setExamDate] = useState('')
-  const [examTitleOverride, setExamTitleOverride] = useState('') // 시험 미선택 시 직접 표시용
+  const [examTitleOverride, setExamTitleOverride] = useState('')
 
   // 영역별 점수
   const [typeScores, setTypeScores] = useState<Record<string, string>>(
     Object.fromEntries(ALL_TYPES.map((t) => [t, '']))
   )
 
-  // 선생님 코멘트
+  // 선생님 단문 메모 (AI 입력용)
+  const [strengthsMemo, setStrengthsMemo] = useState('')
+  const [commentMemo, setCommentMemo] = useState('')
+  const [nextStepsMemo, setNextStepsMemo] = useState('')
+  const [vocabMemo, setVocabMemo] = useState('')
+  const [grammarMemo, setGrammarMemo] = useState('')
+  const [readingMemo, setReadingMemo] = useState('')
+
+  // AI가 생성하거나 선생님이 직접 편집하는 최종 내용
+  const [strengths, setStrengths] = useState('')
   const [comment, setComment] = useState('')
   const [nextSteps, setNextSteps] = useState('')
-  const [strengths, setStrengths] = useState('')
-  const [teacher, setTeacher] = useState('')
   const [vocabAnalysis, setVocabAnalysis] = useState('')
   const [grammarAnalysis, setGrammarAnalysis] = useState('')
   const [readingAnalysis, setReadingAnalysis] = useState('')
+  const [teacher, setTeacher] = useState('')
 
   useEffect(() => {
     Promise.all([
@@ -61,7 +71,7 @@ function ReportForm() {
       .finally(() => setLoading(false))
   }, [])
 
-  // 학생·시험 로드 후 URL 파라미터로 자동 채우기 (오답분석 연동)
+  // 오답분석 연동 — URL 파라미터로 자동 채우기
   useEffect(() => {
     if (loading || prefilled) return
     const studentIdParam = searchParams.get('student_id')
@@ -75,7 +85,7 @@ function ReportForm() {
     const typeScoresParam = searchParams.get('typeScores')
     const examTitleParam = searchParams.get('examTitle')
 
-    if (!studentIdParam) return  // 오답분석에서 온 게 아님
+    if (!studentIdParam) return
 
     if (studentIdParam) setStudentId(studentIdParam)
     if (examIdParam)    setExamId(examIdParam)
@@ -100,7 +110,6 @@ function ReportForm() {
       } catch { /* ignore */ }
     }
 
-    // 시험이 선택됐으면 만점/날짜 맞추기
     if (examIdParam) {
       const found = exams.find(e => e.id === examIdParam)
       if (found) {
@@ -119,6 +128,64 @@ function ReportForm() {
     if (found) {
       if (found.max_score) setMaxScore(String(found.max_score))
       if (found.exam_date) setExamDate(found.exam_date)
+    }
+  }
+
+  // AI 초안 생성
+  async function handleAiGenerate() {
+    const student = students.find((s) => s.id === studentId)
+    if (!student) {
+      alert('먼저 학생을 선택해주세요.')
+      return
+    }
+    if (!score) {
+      alert('점수를 먼저 입력해주세요.')
+      return
+    }
+
+    setAiLoading(true)
+    try {
+      const filteredTypeScores = Object.fromEntries(
+        Object.entries(typeScores).filter(([, v]) => v !== '').map(([k, v]) => [k, Number(v)])
+      )
+
+      const res = await fetch('/api/generate-report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          studentName: student.name,
+          studentGrade: student.grade,
+          score: Number(score),
+          maxScore: Number(maxScore),
+          typeScores: filteredTypeScores,
+          strengthsMemo,
+          commentMemo,
+          nextStepsMemo,
+          vocabMemo,
+          grammarMemo,
+          readingMemo,
+        }),
+      })
+
+      const json = await res.json()
+      if (!json.ok) {
+        alert('AI 초안 생성 실패: ' + (json.message ?? '다시 시도해주세요.'))
+        return
+      }
+
+      const d = json.data
+      if (d.strengths)     setStrengths(d.strengths)
+      if (d.comment)       setComment(d.comment)
+      if (d.nextSteps)     setNextSteps(d.nextSteps)
+      if (d.vocabAnalysis)    setVocabAnalysis(d.vocabAnalysis)
+      if (d.grammarAnalysis)  setGrammarAnalysis(d.grammarAnalysis)
+      if (d.readingAnalysis)  setReadingAnalysis(d.readingAnalysis)
+
+      setAiGenerated(true)
+    } catch {
+      alert('네트워크 오류. 다시 시도해주세요.')
+    } finally {
+      setAiLoading(false)
     }
   }
 
@@ -149,6 +216,10 @@ function ReportForm() {
           comment,
           next_steps:    nextSteps,
           type_scores:   filteredTypeScores,
+          teacher,
+          vocab_analysis:    vocabAnalysis,
+          grammar_analysis:  grammarAnalysis,
+          reading_analysis:  readingAnalysis,
         }),
       })
     } catch {
@@ -198,7 +269,8 @@ function ReportForm() {
       )}
 
       <div className="space-y-6">
-        {/* 기본 정보 */}
+
+        {/* ① 기본 정보 */}
         <section className="rounded-lg border border-gray-200 bg-white p-5">
           <h2 className="mb-4 text-sm font-semibold text-gray-700">① 기본 정보</h2>
           <div className="grid grid-cols-2 gap-4">
@@ -264,9 +336,19 @@ function ReportForm() {
               </div>
             </div>
           </div>
+          <div className="mt-4">
+            <label className="mb-1 block text-xs text-gray-600">담당 교사 이름</label>
+            <input
+              type="text"
+              value={teacher}
+              onChange={(e) => setTeacher(e.target.value)}
+              placeholder="예) Jennifer.T"
+              className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            />
+          </div>
         </section>
 
-        {/* 영역별 점수 */}
+        {/* ② 영역별 점수 */}
         <section className="rounded-lg border border-gray-200 bg-white p-5">
           <h2 className="mb-1 text-sm font-semibold text-gray-700">
             ② 영역별 점수{' '}
@@ -298,82 +380,188 @@ function ReportForm() {
           </div>
         </section>
 
-        {/* 선생님 코멘트 */}
-        <section className="rounded-lg border border-gray-200 bg-white p-5">
-          <h2 className="mb-4 text-sm font-semibold text-gray-700">
-            ③ 선생님 코멘트
-            {fromWrongAnswers && (
-              <span className="ml-2 rounded bg-blue-100 px-2 py-0.5 text-[10px] font-normal text-blue-600">
-                오답분석 자동 채움
-              </span>
-            )}
-          </h2>
-          <div className="space-y-4">
+        {/* ③ 선생님 관찰 메모 (AI 입력용) */}
+        <section className="rounded-lg border border-amber-200 bg-amber-50 p-5">
+          <div className="mb-3 flex items-center justify-between">
             <div>
-              <label className="mb-1 block text-xs text-gray-600">담당 교사 이름</label>
-              <input
-                type="text"
-                value={teacher}
-                onChange={(e) => setTeacher(e.target.value)}
-                placeholder="예) Jennifer.T"
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              <h2 className="text-sm font-semibold text-amber-800">③ 선생님 관찰 메모</h2>
+              <p className="mt-0.5 text-xs text-amber-600">
+                짧게 키워드나 단문으로 입력하세요. AI가 완성된 문장으로 바꿔드립니다.
+              </p>
+            </div>
+            <button
+              onClick={handleAiGenerate}
+              disabled={aiLoading}
+              className={`flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold text-white shadow transition ${
+                aiLoading
+                  ? 'cursor-not-allowed bg-amber-300'
+                  : 'bg-amber-500 hover:bg-amber-600'
+              }`}
+            >
+              {aiLoading ? (
+                <>
+                  <span className="animate-spin">⏳</span> AI 생성 중…
+                </>
+              ) : (
+                <>✨ AI 초안 생성</>
+              )}
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="mb-1 block text-xs font-medium text-amber-700">강점 메모</label>
+              <textarea
+                value={strengthsMemo}
+                onChange={(e) => setStrengthsMemo(e.target.value)}
+                rows={2}
+                placeholder="예) 어휘 강함, 독해 빠름"
+                className="w-full rounded border border-amber-200 bg-white px-3 py-2 text-sm placeholder:text-gray-300"
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs text-gray-600">잘한 점 / 강점 <span className="text-gray-400">(줄바꿈으로 구분하면 목록으로 표시)</span></label>
+              <label className="mb-1 block text-xs font-medium text-amber-700">보완 메모</label>
+              <textarea
+                value={commentMemo}
+                onChange={(e) => setCommentMemo(e.target.value)}
+                rows={2}
+                placeholder="예) 서술형 조건 누락, 어법 약함"
+                className="w-full rounded border border-amber-200 bg-white px-3 py-2 text-sm placeholder:text-gray-300"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-medium text-amber-700">학습계획 메모</label>
+              <textarea
+                value={nextStepsMemo}
+                onChange={(e) => setNextStepsMemo(e.target.value)}
+                rows={2}
+                placeholder="예) 단어 20개, 서술형 연습"
+                className="w-full rounded border border-amber-200 bg-white px-3 py-2 text-sm placeholder:text-gray-300"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-medium text-amber-700">어휘/어법/독해 메모</label>
+              <textarea
+                value={`${vocabMemo ? '어휘: ' + vocabMemo : ''}${grammarMemo ? '\n어법: ' + grammarMemo : ''}${readingMemo ? '\n독해: ' + readingMemo : ''}`}
+                onChange={(e) => {
+                  const lines = e.target.value.split('\n')
+                  for (const line of lines) {
+                    if (line.startsWith('어휘:')) setVocabMemo(line.replace('어휘:', '').trim())
+                    else if (line.startsWith('어법:')) setGrammarMemo(line.replace('어법:', '').trim())
+                    else if (line.startsWith('독해:')) setReadingMemo(line.replace('독해:', '').trim())
+                  }
+                }}
+                rows={2}
+                placeholder={"어휘: 문맥 이해 우수\n어법: 심화 연습 필요\n독해: 속도 개선 필요"}
+                className="w-full rounded border border-amber-200 bg-white px-3 py-2 text-sm placeholder:text-gray-300"
+              />
+            </div>
+          </div>
+
+          <div className="mt-3 flex items-center gap-1.5 rounded bg-amber-100 px-3 py-2 text-xs text-amber-700">
+            <span>💡</span>
+            <span>메모를 비워도 됩니다 — AI가 점수 데이터만으로도 초안을 작성합니다.</span>
+          </div>
+        </section>
+
+        {/* ④ AI 초안 확인 & 편집 */}
+        <section className={`rounded-lg border p-5 transition-all ${
+          aiGenerated ? 'border-green-200 bg-green-50' : 'border-gray-200 bg-white'
+        }`}>
+          <div className="mb-4 flex items-center justify-between">
+            <div>
+              <h2 className="text-sm font-semibold text-gray-700">
+                ④ 보고서 내용 확인 & 편집
+                {aiGenerated && (
+                  <span className="ml-2 rounded bg-green-100 px-2 py-0.5 text-[10px] font-normal text-green-600">
+                    ✅ AI 초안 생성됨
+                  </span>
+                )}
+              </h2>
+              <p className="mt-0.5 text-xs text-gray-400">
+                {aiGenerated
+                  ? 'AI 초안을 확인하고 필요하면 직접 수정해주세요.'
+                  : '직접 입력하거나, 위 ③에서 AI 초안 생성 버튼을 누르세요.'}
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div>
+              <label className="mb-1 block text-xs font-medium text-gray-600">
+                강점 / 잘한 점
+                <span className="ml-1 text-gray-400 font-normal">(줄바꿈 → 목록으로 표시)</span>
+              </label>
               <textarea
                 value={strengths}
                 onChange={(e) => setStrengths(e.target.value)}
                 rows={3}
-                placeholder={"어휘력이 매우 뛰어납니다\n지문 파악 속도가 빠릅니다\n독해 정확도가 높습니다"}
+                placeholder="AI 초안 생성 후 여기에 내용이 채워집니다."
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs text-gray-600">보완이 필요한 부분 <span className="text-gray-400">(줄바꿈으로 구분)</span></label>
+              <label className="mb-1 block text-xs font-medium text-gray-600">
+                보완이 필요한 부분
+                <span className="ml-1 text-gray-400 font-normal">(줄바꿈 → 목록으로 표시)</span>
+              </label>
               <textarea
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 rows={3}
-                placeholder={"서술형 조건 충족 연습 필요\n어법 문제 근거 정리 필요\n조건 영작 집중 연습"}
+                placeholder="AI 초안 생성 후 여기에 내용이 채워집니다."
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs text-gray-600">다음 학습 계획 <span className="text-gray-400">(줄바꿈으로 구분 → 체크리스트로 표시)</span></label>
+              <label className="mb-1 block text-xs font-medium text-gray-600">
+                다음 학습 계획
+                <span className="ml-1 text-gray-400 font-normal">(줄바꿈 → 체크리스트로 표시)</span>
+              </label>
               <textarea
                 value={nextSteps}
                 onChange={(e) => setNextSteps(e.target.value)}
                 rows={3}
-                placeholder={"매일 단어 20개 암기\n서술형 1문제씩 연습\nEBS 어법 집중 복습"}
+                placeholder="AI 초안 생성 후 여기에 내용이 채워집니다."
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               />
             </div>
-          </div>
-        </section>
 
-        {/* 상세 분석 (선택) */}
-        <section className="rounded-lg border border-gray-200 bg-white p-5">
-          <h2 className="mb-1 text-sm font-semibold text-gray-700">④ 상세 분석 <span className="font-normal text-gray-400">(선택 — 비워두면 점수 기반 자동 생성)</span></h2>
-          <p className="mb-4 text-xs text-gray-400">보고서의 어휘력/이해(어법)/독해 분석 칸에 들어갈 내용입니다.</p>
-          <div className="space-y-3">
-            <div>
-              <label className="mb-1 block text-xs text-gray-600">어휘력 분석</label>
-              <textarea value={vocabAnalysis} onChange={(e) => setVocabAnalysis(e.target.value)} rows={2}
-                placeholder="예) 다양한 어휘를 문맥 속에서 정확히 이해하고 있습니다."
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm" />
-            </div>
-            <div>
-              <label className="mb-1 block text-xs text-gray-600">이해 / 어법 분석</label>
-              <textarea value={grammarAnalysis} onChange={(e) => setGrammarAnalysis(e.target.value)} rows={2}
-                placeholder="예) 핵심 문법 포인트 이해도가 높으나 심화 어법 연습이 필요합니다."
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm" />
-            </div>
-            <div>
-              <label className="mb-1 block text-xs text-gray-600">독해 & 요약 분석</label>
-              <textarea value={readingAnalysis} onChange={(e) => setReadingAnalysis(e.target.value)} rows={2}
-                placeholder="예) 지문 흐름 파악이 우수하며 핵심 내용 요약 능력을 꾸준히 키워가세요."
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm" />
+            {/* 상세 분석 */}
+            <div className="rounded border border-gray-200 bg-gray-50 p-3">
+              <div className="mb-2 text-xs font-semibold text-gray-600">상세 분석 (어휘 / 어법 / 독해)</div>
+              <div className="space-y-2">
+                <div>
+                  <label className="mb-0.5 block text-[11px] text-gray-500">어휘력 분석</label>
+                  <textarea
+                    value={vocabAnalysis}
+                    onChange={(e) => setVocabAnalysis(e.target.value)}
+                    rows={2}
+                    placeholder="AI 초안 생성 후 자동 입력"
+                    className="w-full rounded border border-gray-300 bg-white px-3 py-1.5 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="mb-0.5 block text-[11px] text-gray-500">어법 / 이해 분석</label>
+                  <textarea
+                    value={grammarAnalysis}
+                    onChange={(e) => setGrammarAnalysis(e.target.value)}
+                    rows={2}
+                    placeholder="AI 초안 생성 후 자동 입력"
+                    className="w-full rounded border border-gray-300 bg-white px-3 py-1.5 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="mb-0.5 block text-[11px] text-gray-500">독해 & 요약 분석</label>
+                  <textarea
+                    value={readingAnalysis}
+                    onChange={(e) => setReadingAnalysis(e.target.value)}
+                    rows={2}
+                    placeholder="AI 초안 생성 후 자동 입력"
+                    className="w-full rounded border border-gray-300 bg-white px-3 py-1.5 text-sm"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>

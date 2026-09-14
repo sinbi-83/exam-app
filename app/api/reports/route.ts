@@ -31,6 +31,7 @@ export async function POST(request: NextRequest) {
     score, max_score,
     strengths, comment, next_steps,
     type_scores,
+    teacher, vocab_analysis, grammar_analysis, reading_analysis,
   } = body
 
   if (!student_name || score === undefined) {
@@ -53,6 +54,10 @@ export async function POST(request: NextRequest) {
       comment: comment || null,
       next_steps: next_steps || null,
       type_scores: type_scores || {},
+      teacher: teacher || null,
+      vocab_analysis: vocab_analysis || null,
+      grammar_analysis: grammar_analysis || null,
+      reading_analysis: reading_analysis || null,
     })
     .select()
     .single()
