@@ -199,7 +199,7 @@ export default function ExamDetailPage() {
   }
 
   function openPrint() {
-    const url = `/exams/${examId}/print?title=${encodeURIComponent(exam?.title ?? '')}&date=${encodeURIComponent(exam?.exam_date ?? '')}&data=${encodeURIComponent(JSON.stringify(examQuestions))}`
+    const url = `/exams/${examId}/print?exam_id=${examId}&title=${encodeURIComponent(exam?.title ?? '')}&date=${encodeURIComponent(exam?.exam_date ?? '')}`
     const a = document.createElement('a')
     a.href = url
     a.target = '_blank'

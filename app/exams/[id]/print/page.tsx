@@ -1,7 +1,7 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 async function downloadPdf(filename: string) {
   const html2pdf = (await import('html2pdf.js')).default
@@ -42,14 +42,22 @@ const TYPE_LABELS: Record<string, string> = {
 
 function PrintContent() {
   const params = useSearchParams()
+  const examId = params.get('exam_id') ?? ''
   const title = params.get('title') ?? '시험지'
   const date = params.get('date') ?? ''
-  const dataRaw = params.get('data') ?? '[]'
 
-  let questions: ExamQuestion[] = []
-  try {
-    questions = JSON.parse(dataRaw)
-  } catch { /* ignore */ }
+  const [questions, setQuestions] = useState<ExamQuestion[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    if (!examId) { setLoading(false); return }
+    fetch(`/api/exam-questions?exam_id=${examId}`)
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.data) setQuestions(json.data)
+      })
+      .finally(() => setLoading(false))
+  }, [examId])
 
   const totalPoints = questions.reduce((s, q) => s + q.points, 0)
   const today = new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -66,6 +74,10 @@ function PrintContent() {
     }
   })
 
+  if (loading) {
+    return <div className="py-20 text-center text-sm text-gray-400">문제 불러오는 중…</div>
+  }
+
   return (
     <>
       <style>{`
@@ -79,7 +91,7 @@ function PrintContent() {
         }
       `}</style>
 
-      <div className="no-print mb-4 flex justify-center pt-6">
+      <div className="no-print mb-4 flex justify-center gap-3 pt-6">
         <button
           onClick={() => window.print()}
           className="rounded bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700"
@@ -165,7 +177,6 @@ function PrintContent() {
                         <div className="ml-7 mt-2 grid grid-cols-2 gap-1">
                           {q.options!.map((opt, i) => (
                             <div key={i} className="flex items-start gap-1.5 text-sm text-gray-700">
-                              <span className="shrink-0 font-medium">①②③④⑤⑥⑦⑧⑨⑩"[i]"</span>
                               <span>{['①','②','③','④','⑤'][i] ?? `(${i+1})`} {opt}</span>
                             </div>
                           ))}
