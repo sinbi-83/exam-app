@@ -41,6 +41,79 @@ const TYPE_LABELS: Record<string, string> = {
   summary: '지문요약',
 }
 
+const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
+
+// "따옴표로 감싼 부분" 추출 (targetText)
+function extractQuoted(text: string): string | null {
+  const match = text.match(/"([^"]+)"/)
+  return match ? match[1] : null
+}
+
+// 지문에서 밑줄 쳐야 할 단어들을 찾아 세그먼트로 분리
+function buildPassageSegments(passage: string, questions: ExamQuestion[]) {
+  type Seg = { text: string; underline?: boolean }
+
+  const matchRanges: { start: number; end: number }[] = []
+  for (const eq of questions) {
+    const q = eq.question_data
+    if (q.type !== 'vocab' && q.type !== 'grammar') continue
+    const target = extractQuoted(q.question)
+    if (!target) continue
+    const idx = passage.indexOf(target)
+    if (idx === -1) continue
+    matchRanges.push({ start: idx, end: idx + target.length })
+  }
+
+  // 겹치지 않도록 정렬 및 중복 제거
+  matchRanges.sort((a, b) => a.start - b.start)
+  const cleaned: { start: number; end: number }[] = []
+  let lastEnd = 0
+  for (const m of matchRanges) {
+    if (m.start >= lastEnd) { cleaned.push(m); lastEnd = m.end }
+  }
+
+  const segs: Seg[] = []
+  let cursor = 0
+  for (const m of cleaned) {
+    if (m.start > cursor) segs.push({ text: passage.slice(cursor, m.start) })
+    segs.push({ text: passage.slice(m.start, m.end), underline: true })
+    cursor = m.end
+  }
+  if (cursor < passage.length) segs.push({ text: passage.slice(cursor) })
+  return segs
+}
+
+// 문제 텍스트에서 "quoted" 부분을 밑줄로 렌더링
+function renderQuestionText(text: string) {
+  const parts = text.split(/("(?:[^"]+)")/)
+  return parts.map((part, i) => {
+    if (part.startsWith('"') && part.endsWith('"') && part.length > 2) {
+      return (
+        <span key={i} style={{ textDecoration: 'underline', textUnderlineOffset: '2px', fontStyle: 'italic' }}>
+          {part.slice(1, -1)}
+        </span>
+      )
+    }
+    return <span key={i}>{part}</span>
+  })
+}
+
+// 빈칸(_____)을 실제 빈칸 선으로 렌더링
+function renderWithBlanks(text: string) {
+  const parts = text.split(/(_{3,})/)
+  return parts.map((part, i) => {
+    if (/^_{3,}$/.test(part)) {
+      return (
+        <span
+          key={i}
+          style={{ display: 'inline-block', minWidth: '60px', borderBottom: '1.5px solid #333', margin: '0 2px', verticalAlign: 'bottom' }}
+        />
+      )
+    }
+    return <span key={i}>{part}</span>
+  })
+}
+
 function PrintContent() {
   const params = useSearchParams()
   const examId = params.get('exam_id') ?? ''
@@ -54,9 +127,7 @@ function PrintContent() {
     if (!examId) { setLoading(false); return }
     fetch(`/api/exam-questions?exam_id=${examId}`)
       .then((r) => r.json())
-      .then((json) => {
-        if (json.data) setQuestions(json.data)
-      })
+      .then((json) => { if (json.data) setQuestions(json.data) })
       .finally(() => setLoading(false))
   }, [examId])
 
@@ -90,7 +161,6 @@ function PrintContent() {
           .no-print { display: none !important; }
           .page { box-shadow: none !important; }
           .question-block { break-inside: avoid; page-break-inside: avoid; }
-          .passage-block { break-inside: avoid; page-break-inside: avoid; }
         }
       `}</style>
 
@@ -146,22 +216,46 @@ function PrintContent() {
             let qNum = 0
             return passageGroups.map((group, gi) => (
               <div key={gi}>
+                {/* 지문: 밑줄 칠 단어 하이라이트 */}
                 {group.passage && (
-                  <div className="mb-3 rounded border border-gray-200 bg-gray-50 p-3" style={{ breakInside: 'avoid', pageBreakInside: 'avoid' }}>
+                  <div
+                    className="mb-3 rounded border border-gray-200 bg-gray-50 p-3 question-block"
+                    style={{ breakInside: 'avoid', pageBreakInside: 'avoid' }}
+                  >
                     <p className="mb-1 text-xs font-semibold text-gray-500">【지문】</p>
-                    <p className="text-xs leading-relaxed text-gray-700 whitespace-pre-wrap">{group.passage}</p>
+                    <p className="text-xs leading-relaxed text-gray-700 whitespace-pre-wrap">
+                      {buildPassageSegments(group.passage, group.questions).map((seg, si) =>
+                        seg.underline ? (
+                          <span
+                            key={si}
+                            style={{ textDecoration: 'underline', textDecorationThickness: '1.5px', textUnderlineOffset: '2px' }}
+                          >
+                            {seg.text}
+                          </span>
+                        ) : (
+                          <span key={si}>{seg.text}</span>
+                        )
+                      )}
+                    </p>
                   </div>
                 )}
+
+                {/* 문항들 */}
                 {group.questions.map((eq) => {
                   qNum++
                   const num = qNum
                   const q = eq.question_data
                   const isMultiple = Array.isArray(q.options) && q.options.length > 0
                   const isEssay = q.type === 'essay'
-                  const isShortAnswer = !isMultiple && !isEssay
+                  const isSummary = q.type === 'summary'
+                  const isShortAnswer = !isMultiple && !isEssay && !isSummary
 
                   return (
-                    <div key={eq.id} className="pb-3 question-block" style={{ breakInside: 'avoid', pageBreakInside: 'avoid', display: 'block' }}>
+                    <div
+                      key={eq.id}
+                      className="pb-3 question-block"
+                      style={{ breakInside: 'avoid', pageBreakInside: 'avoid', display: 'block' }}
+                    >
                       <div className="mb-1 flex items-start gap-2">
                         <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-800 text-[10px] font-bold text-white">
                           {num}
@@ -172,15 +266,25 @@ function PrintContent() {
                               [{TYPE_LABELS[q.type] ?? q.type}] {eq.points}점
                             </span>
                           </div>
-                          <p className="text-sm leading-relaxed text-gray-900">{q.question}</p>
+                          {/* 지문요약 빈칸 문제 */}
+                          {isSummary ? (
+                            <p className="text-sm leading-relaxed text-gray-900">
+                              {renderWithBlanks(q.question)}
+                            </p>
+                          ) : (
+                            <p className="text-sm leading-relaxed text-gray-900">
+                              {renderQuestionText(q.question)}
+                            </p>
+                          )}
                         </div>
                       </div>
 
+                      {/* 객관식 보기 */}
                       {isMultiple && (
-                        <div className="ml-7 mt-2 grid grid-cols-2 gap-1">
+                        <div className="ml-7 mt-2 space-y-0.5">
                           {q.options!.map((opt, i) => (
-                            <div key={i} className="flex items-start gap-1.5 text-sm text-gray-700">
-                              <span>{['①','②','③','④','⑤'][i] ?? `(${i+1})`} {opt}</span>
+                            <div key={i} className="text-sm text-gray-700">
+                              {CHOICE_MARK[i] ?? `(${i + 1})`} {opt}
                             </div>
                           ))}
                         </div>
