@@ -4,8 +4,17 @@ import MobileNav from "./components/MobileNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI 영어 시험문제 출제 프로그램",
-  description: "지문을 입력하면 AI가 다양한 스타일의 영어 시험문제를 출제해줍니다.",
+  title: "보스턴S영어",
+  description: "보스턴S영어 학원 관리 시스템",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "보스턴S영어",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+  },
 };
 
 type MenuItem = {
@@ -72,6 +81,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <head>
+        <meta name="theme-color" content="#2563eb" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
+      </head>
       <body className="min-h-screen bg-gray-50">
         <div className="flex min-h-screen">
 

@@ -1,0 +1,18 @@
+{
+  "name": "보스턴S영어",
+  "short_name": "보스턴S영어",
+  "description": "보스턴S영어 학원 관리 시스템",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
