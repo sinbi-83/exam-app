@@ -36,50 +36,148 @@ function toBullets(text: string): string[] {
 }
 
 // ── 보스턴S영어 배지 로고 SVG ──
-function BostonLogoSvg({ size = 52 }: { size?: number }) {
+// 실제 로고: 네이비 badge + 크림 테두리 + 파란 책 + 월계수 + BOSTON S ENGLISH 텍스트
+function BostonLogoSvg({ size = 58 }: { size?: number }) {
+  const h = Math.round(size * 390 / 520)
   return (
-    <svg width={size} height={size} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      {/* 배지 외곽 (크림 테두리) */}
-      <path d="M100,4 C128,2 165,12 182,38 C194,57 190,78 182,92 C190,106 194,127 182,146 C165,172 128,182 100,180 C72,182 35,172 18,146 C6,127 10,106 18,92 C10,78 6,57 18,38 C35,12 72,2 100,4 Z" fill="#d4c5a9"/>
-      {/* 배지 내부 (네이비) */}
-      <path d="M100,10 C126,8 160,17 176,41 C187,58 183,77 176,90 C183,103 187,122 176,139 C160,163 126,173 100,171 C74,173 40,163 24,139 C13,122 17,103 24,90 C17,77 13,58 24,41 C40,17 74,8 100,10 Z" fill="#1a2744"/>
-      {/* 책 — 왼쪽 페이지 */}
-      <rect x="84" y="46" width="14" height="20" rx="1.5" fill="#1e3a6e" stroke="#90b8d8" strokeWidth="0.8"/>
-      {/* 책 — 오른쪽 페이지 */}
-      <rect x="98" y="46" width="14" height="20" rx="1.5" fill="#5fa0d0" stroke="#90c8e8" strokeWidth="0.8"/>
-      {/* 책 — 가운데 선 */}
-      <line x1="98" y1="47" x2="94" y2="66" stroke="#1a2744" strokeWidth="1"/>
-      <line x1="98" y1="47" x2="102" y2="66" stroke="#4080b0" strokeWidth="1"/>
-      {/* 월계수 왼쪽 */}
-      <path d="M80,68 Q72,72 68,78 Q74,76 80,72 Q72,80 67,87 Q73,84 80,80 Q71,88 67,96 Q74,93 81,88" fill="none" stroke="#7a8fa5" strokeWidth="1.3" strokeLinecap="round"/>
-      <ellipse cx="72" cy="72" rx="4" ry="2.5" transform="rotate(-40 72 72)" fill="#7a8fa5" opacity="0.7"/>
-      <ellipse cx="69" cy="80" rx="4" ry="2.5" transform="rotate(-50 69 80)" fill="#7a8fa5" opacity="0.7"/>
-      <ellipse cx="68" cy="89" rx="4" ry="2.5" transform="rotate(-60 68 89)" fill="#7a8fa5" opacity="0.7"/>
-      {/* 월계수 오른쪽 */}
-      <path d="M120,68 Q128,72 132,78 Q126,76 120,72 Q128,80 133,87 Q127,84 120,80 Q129,88 133,96 Q126,93 119,88" fill="none" stroke="#7a8fa5" strokeWidth="1.3" strokeLinecap="round"/>
-      <ellipse cx="128" cy="72" rx="4" ry="2.5" transform="rotate(40 128 72)" fill="#7a8fa5" opacity="0.7"/>
-      <ellipse cx="131" cy="80" rx="4" ry="2.5" transform="rotate(50 131 80)" fill="#7a8fa5" opacity="0.7"/>
-      <ellipse cx="132" cy="89" rx="4" ry="2.5" transform="rotate(60 132 89)" fill="#7a8fa5" opacity="0.7"/>
-      {/* 줄기 연결선 */}
-      <path d="M80,96 Q100,102 120,96" fill="none" stroke="#7a8fa5" strokeWidth="1"/>
-      {/* BOSTON S ENGLISH 텍스트 */}
-      <text x="100" y="132" textAnchor="middle" fill="#d4c5a9"
-        fontFamily="Georgia, 'Times New Roman', serif"
-        fontSize="13.5" fontWeight="bold" letterSpacing="1.5">
-        BOSTON S ENGLISH
+    <svg width={size} height={h} viewBox="0 0 520 390" xmlns="http://www.w3.org/2000/svg">
+      {/* ─ 외곽 크림 badge 형태 (plaque shape: 옆면 오목, 상하 볼록) ─ */}
+      <path d="
+        M 260,4
+        C 348,1  432,14  468,38
+        C 494,58 502,92  500,122
+        C 505,140 497,156 488,164
+        C 497,172 505,188 500,208
+        C 502,258 494,290 468,310
+        C 432,334 348,347 260,344
+        C 172,347  88,334  52,310
+        C 26,290  18,258  20,208
+        C 15,188  23,172  32,164
+        C 23,156  15,140  20,122
+        C 18,92   26,58   52,38
+        C 88,14  172,1   260,4 Z
+      " fill="#d4c8a6"/>
+
+      {/* ─ 내부 네이비 fill ─ */}
+      <path d="
+        M 260,17
+        C 344,14  424,26  458,48
+        C 482,66  489,97  487,126
+        C 491,143 484,157 476,165
+        C 484,173 491,187 487,207
+        C 489,254 482,284 458,303
+        C 424,325 344,337 260,334
+        C 176,337  96,325  62,303
+        C 38,284   31,254  33,207
+        C 29,187   36,173  44,165
+        C 36,157   29,143  33,126
+        C 31,97    38,66   62,48
+        C 96,26   176,14  260,17 Z
+      " fill="#1e3a5f"/>
+
+      {/* ─ 내부 크림 테두리 라인 (가는 선) ─ */}
+      <path d="
+        M 260,23
+        C 342,20  420,31  452,52
+        C 475,69  481,98  479,126
+        C 483,142 477,155 470,163
+        C 477,171 483,184 479,204
+        C 481,249 475,278 452,296
+        C 420,317 342,329 260,326
+        C 178,329  100,317  68,296
+        C 45,278   39,249  41,204
+        C 37,184   43,171  50,163
+        C 43,155   37,142  41,126
+        C 39,98    45,69   68,52
+        C 100,31  178,20  260,23 Z
+      " fill="none" stroke="#d4c8a6" strokeWidth="1.8" opacity="0.40"/>
+
+      {/* ─ 책: 왼쪽 페이지 ─ */}
+      <path d="M 228,78 C 226,72 233,67 246,65 L 259,65 L 259,148 L 224,152 Z"
+        fill="#1a3568" stroke="#5590c0" strokeWidth="1.4"/>
+      {/* ─ 책: 오른쪽 페이지 (하늘색) ─ */}
+      <path d="M 261,65 L 274,65 C 287,67 294,72 292,78 L 296,152 L 261,148 Z"
+        fill="#4e96cc" stroke="#88c6e8" strokeWidth="1.4"/>
+      {/* ─ 책 척추 ─ */}
+      <path d="M 259,65 Q 260,62 261,65 L 261,148 Q 260,151 259,148 Z" fill="#2a50a0"/>
+      {/* ─ 책 바닥 커브 ─ */}
+      <path d="M 224,152 Q 260,162 296,152"
+        fill="none" stroke="#2a50a0" strokeWidth="2.5" strokeLinecap="round"/>
+      {/* ─ 책 반짝임 ─ */}
+      <path d="M 234,86 Q 244,75 257,70"
+        fill="none" stroke="#a8dcf8" strokeWidth="1.5" opacity="0.75" strokeLinecap="round"/>
+
+      {/* ─ 왼쪽 월계수 줄기 ─ */}
+      <path d="M 232,158 Q 218,166 210,177 Q 206,190 208,202"
+        fill="none" stroke="#8090aa" strokeWidth="1.8" strokeLinecap="round"/>
+      {/* 왼쪽 잎 (7개) */}
+      <ellipse cx="240" cy="155" rx="7"  ry="3.2" transform="rotate(-22 240 155)" fill="#8090aa" opacity="0.78"/>
+      <ellipse cx="228" cy="160" rx="7"  ry="3.2" transform="rotate(-36 228 160)" fill="#8090aa" opacity="0.82"/>
+      <ellipse cx="218" cy="168" rx="7"  ry="3.2" transform="rotate(-50 218 168)" fill="#8090aa" opacity="0.82"/>
+      <ellipse cx="211" cy="178" rx="7"  ry="3.2" transform="rotate(-64 211 178)" fill="#8090aa" opacity="0.82"/>
+      <ellipse cx="209" cy="190" rx="6.5" ry="3"  transform="rotate(-76 209 190)" fill="#8090aa" opacity="0.78"/>
+      <ellipse cx="212" cy="201" rx="6"  ry="2.8" transform="rotate(-84 212 201)" fill="#8090aa" opacity="0.70"/>
+      <ellipse cx="249" cy="152" rx="6"  ry="2.8" transform="rotate(-12 249 152)" fill="#8090aa" opacity="0.60"/>
+
+      {/* ─ 오른쪽 월계수 줄기 ─ */}
+      <path d="M 288,158 Q 302,166 310,177 Q 314,190 312,202"
+        fill="none" stroke="#8090aa" strokeWidth="1.8" strokeLinecap="round"/>
+      {/* 오른쪽 잎 (7개, 좌우 대칭) */}
+      <ellipse cx="280" cy="155" rx="7"  ry="3.2" transform="rotate(22 280 155)"  fill="#8090aa" opacity="0.78"/>
+      <ellipse cx="292" cy="160" rx="7"  ry="3.2" transform="rotate(36 292 160)"  fill="#8090aa" opacity="0.82"/>
+      <ellipse cx="302" cy="168" rx="7"  ry="3.2" transform="rotate(50 302 168)"  fill="#8090aa" opacity="0.82"/>
+      <ellipse cx="309" cy="178" rx="7"  ry="3.2" transform="rotate(64 309 178)"  fill="#8090aa" opacity="0.82"/>
+      <ellipse cx="311" cy="190" rx="6.5" ry="3"  transform="rotate(76 311 190)"  fill="#8090aa" opacity="0.78"/>
+      <ellipse cx="308" cy="201" rx="6"  ry="2.8" transform="rotate(84 308 201)"  fill="#8090aa" opacity="0.70"/>
+      <ellipse cx="271" cy="152" rx="6"  ry="2.8" transform="rotate(12 271 152)"  fill="#8090aa" opacity="0.60"/>
+
+      {/* ─ 하단 줄기 연결 ─ */}
+      <path d="M 208,204 Q 260,216 312,204"
+        fill="none" stroke="#8090aa" strokeWidth="1.5"/>
+
+      {/* ─ BOSTON S ENGLISH 텍스트 (크림 세리프) ─ */}
+      <text x="260" y="278"
+        textAnchor="middle"
+        fill="#d4c8a6"
+        fontFamily="Georgia,'Times New Roman',serif"
+        fontSize="30"
+        fontWeight="bold"
+        letterSpacing="2.5"
+        fontVariant="small-caps">
+        Boston S English
       </text>
     </svg>
   )
 }
 
 // ── 손글씨 서명 SVG ──
+// 실제 서명: 세로 획(사선) + 가로 교차선 + 연결 루프 + 큰 D형 루프 + 긴 꼬리
 function SignatureSvg() {
   return (
-    <svg viewBox="0 0 145 60" xmlns="http://www.w3.org/2000/svg"
-         style={{ width: 110, height: 44, display: 'block' }}>
+    <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg"
+         style={{ width: 128, height: 56, display: 'block' }}>
+      {/* 첫 번째 주요 세로 획 (사선 올라가는 선) */}
       <path
-        d="M 8,52 L 26,7 Q 34,18 37,33 Q 44,17 53,13 Q 62,22 67,11 Q 76,5 84,17 L 136,12"
-        stroke="#1a2744" strokeWidth="2.3" fill="none"
+        d="M 175,258 L 228,28"
+        stroke="#1a2744" strokeWidth="3.2" fill="none"
+        strokeLinecap="round"
+      />
+      {/* 가로 교차 선 (사선을 가로지르는 바) */}
+      <path
+        d="M 82,180 L 355,158"
+        stroke="#1a2744" strokeWidth="3.0" fill="none"
+        strokeLinecap="round"
+      />
+      {/* 교차점 이후 → 첫 루프(a형) → 두 번째 루프(m형) → 큰 D형 루프 → 긴 꼬리 */}
+      <path
+        d="M 275,166
+           C 295,138 320,110 338,128
+           C 354,144 354,172 370,152
+           C 386,132 398,96  422,84
+           C 456,68  500,68  526,90
+           C 550,110 548,148 528,164
+           L 625,148"
+        stroke="#1a2744" strokeWidth="3.0" fill="none"
         strokeLinecap="round" strokeLinejoin="round"
       />
     </svg>
