@@ -75,7 +75,7 @@ function PrintContent() {
         <div className="mb-6 border-b-2 border-gray-800 pb-3">
           <div className="flex items-end justify-between">
             <div>
-              <p className="text-xs text-gray-500">보스턴S영어학원</p>
+              <p className="text-xs text-gray-500">보스턴S영어</p>
               <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
             </div>
             <p className="text-xs text-gray-400">{today}</p>
@@ -117,7 +117,7 @@ function PrintContent() {
         </div>
 
         <div className="mt-6 border-t border-gray-200 pt-3 text-center text-[10px] text-gray-400">
-          보스턴S영어학원 | 담당교사: 서향미 선생님
+          보스턴S영어 | 담당교사: 서향미 선생님
         </div>
       </div>
     </>

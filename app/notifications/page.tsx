@@ -146,7 +146,7 @@ export default function NotificationsPage() {
                 value={form.message}
                 onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                 rows={4}
-                placeholder="안녕하세요. 보스턴S영어학원입니다.&#10;{학생이름} 학생의 6월 원비 납부 안내드립니다."
+                placeholder="안녕하세요. 보스턴S영어입니다.&#10;{학생이름} 학생의 6월 원비 납부 안내드립니다."
                 className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
               />
             </div>

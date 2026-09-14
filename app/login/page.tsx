@@ -40,7 +40,7 @@ export default function LoginPage() {
         className="w-full max-w-sm rounded-lg bg-white p-8 shadow-md"
       >
         <h1 className="mb-6 text-xl font-semibold text-gray-800">
-          보스턴S영어학원 로그인
+          보스턴S영어 로그인
         </h1>
 
         <label className="mb-1 block text-sm text-gray-600">이메일</label>

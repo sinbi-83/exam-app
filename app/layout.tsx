@@ -77,7 +77,7 @@ export default function RootLayout({
         <div className="flex min-h-screen">
           <aside className="w-56 shrink-0 border-r border-gray-200 bg-white">
             <div className="px-4 py-4 border-b border-gray-200">
-              <span className="font-semibold text-gray-800">보스턴S영어학원</span>
+              <span className="font-semibold text-gray-800">보스턴S영어</span>
             </div>
             <nav className="py-2">
               {menuGroups.map((group) => (

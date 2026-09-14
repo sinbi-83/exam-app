@@ -115,7 +115,7 @@ function ReportContent() {
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-medium opacity-80">보스턴S영어학원</p>
+              <p className="text-xs font-medium opacity-80">보스턴S영어</p>
               <p className="mt-0.5 text-lg font-bold">학생 성취도 보고서</p>
             </div>
             <div className="text-right text-xs opacity-70">
@@ -198,7 +198,7 @@ function ReportContent() {
         {/* Footer */}
         <div className="mt-auto border-t border-gray-100 pt-3">
           <div className="flex items-center justify-between text-[10px] text-gray-400">
-            <span>보스턴S영어학원 | 담당 교사: 서향미 선생님</span>
+            <span>보스턴S영어 | 담당 교사: 서향미 선생님</span>
             <span>이 보고서는 AI 시험문제 출제 시스템으로 생성되었습니다.</span>
           </div>
           <div className="mt-4 grid grid-cols-2 gap-8">
