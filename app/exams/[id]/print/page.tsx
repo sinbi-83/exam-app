@@ -76,7 +76,7 @@ function PrintContent() {
       </div>
 
       <div
-        className="page mx-auto bg-white shadow-lg"
+        className="print-area page mx-auto bg-white shadow-lg"
         style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}
       >
         {/* 헤더 */}

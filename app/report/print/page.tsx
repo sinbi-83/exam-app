@@ -81,7 +81,7 @@ function ReportContent() {
 
       {/* A4 Page */}
       <div
-        className="page mx-auto bg-white shadow-lg"
+        className="print-area page mx-auto bg-white shadow-lg"
         style={{
           width: '210mm',
           minHeight: '297mm',

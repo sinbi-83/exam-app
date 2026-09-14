@@ -51,7 +51,7 @@ function PrintContent() {
       </div>
 
       {/* 시험지 */}
-      <div className="page mx-auto bg-white shadow-lg" style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}>
+      <div className="print-area page mx-auto bg-white shadow-lg" style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}>
         {/* 헤더 */}
         <div className="mb-6 border-b-2 border-gray-800 pb-3">
           <div className="flex items-end justify-between">
