@@ -41,7 +41,7 @@ function BostonLogoSvg({ size = 58 }: { size?: number }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/boston-logo-watermark.png"
+      src="/brand/logo.png"
       alt="Boston S English Logo"
       width={size}
       height={h}
@@ -171,7 +171,7 @@ function SignatureSvg() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/싸인.png"
+      src="/brand/signature.png"
       alt="서명"
       style={{
         width: 130,
