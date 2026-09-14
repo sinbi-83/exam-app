@@ -34,14 +34,9 @@ JSON 스키마:
 answer에는 모범답안을, explanation에는 채점기준을 넣어라.`;
 
 function buildQuestionConfigText(body: GenerateRequestBody): string {
-  // 객관식 유형과 서술형 분리
   const mcTypes = body.questionConfig.filter((q) => {
     const def = QUESTION_TYPES.find((t) => t.key === q.type);
     return def && !def.isWrittenAnswer;
-  });
-  const writtenTypes = body.questionConfig.filter((q) => {
-    const def = QUESTION_TYPES.find((t) => t.key === q.type);
-    return def && def.isWrittenAnswer;
   });
 
   const mcLabels = mcTypes.map((q) => {
@@ -49,28 +44,24 @@ function buildQuestionConfigText(body: GenerateRequestBody): string {
     return def?.label ?? q.type;
   });
 
-  const writtenLines = writtenTypes.map((q) => {
-    const def = QUESTION_TYPES.find((t) => t.key === q.type);
-    return `- ${def?.label ?? q.type}: ${q.count}문항`;
-  });
+  // 서술형은 항상 4문항 고정
+  const WRITTEN_COUNT = 4;
+  const TOTAL = 20 + WRITTEN_COUNT;
 
-  const writtenCount = writtenTypes.reduce((sum, q) => sum + q.count, 0);
-  const totalCount = 20 + writtenCount;
-
-  let text = `\n\n대상 학년: ${body.gradeLevel}\n요청 문항 구성 (총 ${totalCount}문항):\n`;
-
-  // 객관식: 항상 20문항 고정, AI가 유형별 배분
-  if (mcLabels.length > 0) {
-    text += `\n[객관식 - 반드시 정확히 20문항 출제]\n`;
-    text += `다음 유형들을 골고루 섞어 총 20문항을 출제하라. 특정 유형에 편중되지 않게 다양하게 배분하라:\n`;
-    text += mcLabels.map((l) => `- ${l}`).join("\n");
-    text += `\n※ 객관식 총합이 반드시 20문항이어야 한다. 19문항이나 21문항은 절대 안 된다.`;
-  }
-
-  // 서술형
-  if (writtenLines.length > 0) {
-    text += `\n\n[서술형]\n${writtenLines.join("\n")}`;
-  }
+  let text = `\n\n대상 학년: ${body.gradeLevel}`;
+  text += `\n\n==== 문항 구성 (절대 변경 불가) ====`;
+  text += `\n총 ${TOTAL}문항: 객관식 20문항 + 서술형 ${WRITTEN_COUNT}문항`;
+  text += `\n\n[1단계: 객관식 20문항]`;
+  text += `\n- isWrittenAnswer: false 인 문항을 정확히 20개 출제`;
+  text += `\n- choices 배열에 ①②③④⑤ 5개 선택지 필수`;
+  text += `\n- 아래 유형들을 골고루 섞어 20문항 배분 (특정 유형 편중 금지):`;
+  text += `\n${mcLabels.map((l) => `  · ${l}`).join("\n")}`;
+  text += `\n\n[2단계: 서술형 ${WRITTEN_COUNT}문항]`;
+  text += `\n- isWrittenAnswer: true 인 문항을 정확히 ${WRITTEN_COUNT}개 출제`;
+  text += `\n- choices는 빈 배열 []`;
+  text += `\n- answer에 모범답안, explanation에 채점기준`;
+  text += `\n\n★ questions 배열 순서: 객관식 20개 먼저, 서술형 ${WRITTEN_COUNT}개 마지막`;
+  text += `\n★ 객관식이 20개 미만이면 출력이 잘못된 것이다. 반드시 20개를 모두 완성하라.`;
 
   return text;
 }
