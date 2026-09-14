@@ -16,6 +16,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const grade = searchParams.get('grade')
   const difficultiesParam = searchParams.get('difficulties') // 예: "2,3,4"
+  const questionSetId = searchParams.get('question_set_id')
 
   let query = supabase
     .from('questions')
@@ -26,6 +27,10 @@ export async function GET(request: NextRequest) {
 
   if (grade && grade !== 'all') {
     query = query.eq('grade', grade)
+  }
+
+  if (questionSetId) {
+    query = query.eq('question_set_id', questionSetId)
   }
 
   if (difficultiesParam) {

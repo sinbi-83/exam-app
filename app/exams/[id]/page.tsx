@@ -63,11 +63,18 @@ export default function ExamDetailPage() {
   const [examQuestions, setExamQuestions] = useState<ExamQuestion[]>([])
   const [loading, setLoading] = useState(true)
   const [showBank, setShowBank] = useState(false)
+  // 세트 목록
+  const [questionSets, setQuestionSets] = useState<{id:string; grade:string; topic:string; created_at:string}[]>([])
+  const [setsLoading, setSetsLoading] = useState(false)
+  const [setSearch, setSetSearch] = useState('')
+  // 개별 문항 (세트 선택 후)
   const [bankQuestions, setBankQuestions] = useState<BankQuestion[]>([])
   const [bankLoading, setBankLoading] = useState(false)
   const [bankGrade, setBankGrade] = useState('all')
   const [bankType, setBankType] = useState('all')
   const [bankSearch, setBankSearch] = useState('')
+  const [selectedSetId, setSelectedSetId] = useState<string | null>(null)
+  const [selectedSetTopic, setSelectedSetTopic] = useState('')
   const [adding, setAdding] = useState<string | null>(null)
   const [addingAll, setAddingAll] = useState(false)
   const [removing, setRemoving] = useState<string | null>(null)
@@ -91,6 +98,29 @@ export default function ExamDetailPage() {
     if (!json.error) setExamQuestions(json.data ?? [])
   }
 
+  // 세트 목록 로드
+  async function loadSets() {
+    setSetsLoading(true)
+    const res = await fetch('/api/question-sets')
+    const json = await res.json()
+    if (!json.error) setQuestionSets(json.data ?? [])
+    setSetsLoading(false)
+  }
+
+  // 특정 세트의 문항 로드
+  async function loadSetQuestions(setId: string, topic: string) {
+    setSelectedSetId(setId)
+    setSelectedSetTopic(topic)
+    setBankLoading(true)
+    const res = await fetch(`/api/questions/search?question_set_id=${setId}`)
+    const json = await res.json()
+    if (!json.error) {
+      setBankQuestions(json.data ?? [])
+      setPassages(json.passages ?? {})
+    }
+    setBankLoading(false)
+  }
+
   async function loadBank() {
     setBankLoading(true)
     const qs = new URLSearchParams()
@@ -105,8 +135,8 @@ export default function ExamDetailPage() {
   }
 
   useEffect(() => {
-    if (showBank) loadBank()
-  }, [showBank, bankGrade, bankType])
+    if (showBank) loadSets()
+  }, [showBank])
 
   const addedIds = new Set(examQuestions.map((q) => q.question_data.id))
 
@@ -281,95 +311,110 @@ export default function ExamDetailPage() {
       {/* 문제은행 패널 */}
       {showBank && (
         <div className="rounded-lg border border-gray-200 bg-white p-5">
-          <div className="mb-4 flex items-center justify-between">
-            <h3 className="text-sm font-semibold text-gray-700">문제은행</h3>
-            <button
-              onClick={addAllQuestions}
-              disabled={addingAll || filteredBank.filter(q => !addedIds.has(q.id)).length === 0}
-              className="rounded bg-green-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-green-700 disabled:opacity-40"
-            >
-              {addingAll ? '추가 중…' : `✚ 전체 추가 (${filteredBank.filter(q => !addedIds.has(q.id)).length}문항)`}
-            </button>
-          </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              value={bankSearch}
-              onChange={(e) => setBankSearch(e.target.value)}
-              placeholder="🔍 주제 검색 (예: 가족, 학교, family...)"
-              className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-400 focus:outline-none"
-            />
-          </div>
-          <div className="mb-4 flex gap-3">
-            <select
-              value={bankGrade}
-              onChange={(e) => setBankGrade(e.target.value)}
-              className="rounded border border-gray-300 px-2 py-1 text-sm"
-            >
-              <option value="all">전체 학년</option>
-              {['초5', '초6', '중1', '중2', '중3', '고1', '고2', '고3'].map((g) => (
-                <option key={g} value={g}>{g}</option>
-              ))}
-            </select>
-            <select
-              value={bankType}
-              onChange={(e) => setBankType(e.target.value)}
-              className="rounded border border-gray-300 px-2 py-1 text-sm"
-            >
-              <option value="all">전체 유형</option>
-              {Object.entries(TYPE_LABELS).map(([k, v]) => (
-                <option key={k} value={k}>{v}</option>
-              ))}
-            </select>
-            {bankSearch && (
-              <button
-                onClick={() => setBankSearch('')}
-                className="rounded border border-gray-200 px-2 py-1 text-xs text-gray-400 hover:text-gray-600"
-              >
-                ✕ 초기화
-              </button>
-            )}
-          </div>
 
-          {bankLoading ? (
-            <div className="py-8 text-center text-sm text-gray-400">불러오는 중…</div>
-          ) : filteredBank.length === 0 ? (
-            <div className="py-8 text-center text-sm text-gray-400">문항이 없습니다.</div>
-          ) : (
-            <div className="max-h-96 overflow-y-auto space-y-2">
-              {filteredBank.map((q) => {
-                const isAdded = addedIds.has(q.id)
-                return (
-                  <div
-                    key={q.id}
-                    className={`flex items-start gap-3 rounded-lg border p-3 ${
-                      isAdded ? 'border-green-200 bg-green-50' : 'border-gray-100 hover:border-blue-200'
-                    }`}
-                  >
-                    <div className="flex-1 min-w-0">
-                      <div className="mb-1 flex items-center gap-2">
-                        <span className="rounded bg-gray-100 px-1.5 py-0.5 text-xs text-gray-500">
-                          {TYPE_LABELS[q.type] ?? q.type}
-                        </span>
-                        {q.grade && <span className="text-xs text-gray-400">{q.grade}</span>}
+          {/* ── STEP 1: 세트 선택 ── */}
+          {!selectedSetId && (
+            <>
+              <div className="mb-4 flex items-center justify-between">
+                <h3 className="text-sm font-semibold text-gray-700">📚 문제 세트 선택</h3>
+                <span className="text-xs text-gray-400">세트를 선택하면 해당 문항이 나옵니다</span>
+              </div>
+              <input
+                type="text"
+                value={setSearch}
+                onChange={(e) => setSetSearch(e.target.value)}
+                placeholder="🔍 세트 검색 (예: 가족, 학교...)"
+                className="mb-3 w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-400 focus:outline-none"
+              />
+              {setsLoading ? (
+                <div className="py-8 text-center text-sm text-gray-400">불러오는 중…</div>
+              ) : (
+                <div className="max-h-96 overflow-y-auto space-y-2">
+                  {questionSets
+                    .filter(s => !setSearch || (s.topic ?? '').includes(setSearch) || (s.grade ?? '').includes(setSearch))
+                    .map((s) => (
+                      <div key={s.id}
+                        className="flex cursor-pointer items-center justify-between rounded-lg border border-gray-100 p-3 hover:border-blue-300 hover:bg-blue-50"
+                        onClick={() => loadSetQuestions(s.id, s.topic)}
+                      >
+                        <div>
+                          <p className="text-sm font-medium text-gray-800">{s.topic || '(제목없음)'}</p>
+                          <p className="text-xs text-gray-400">{s.grade} · {new Date(s.created_at).toLocaleDateString('ko-KR')}</p>
+                        </div>
+                        <span className="rounded bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">선택 →</span>
                       </div>
-                      <p className="text-xs text-gray-700 line-clamp-2">{q.question}</p>
-                    </div>
-                    <button
-                      onClick={() => !isAdded && addQuestion(q)}
-                      disabled={isAdded || adding === q.id}
-                      className={`shrink-0 rounded px-3 py-1 text-xs font-medium ${
-                        isAdded
-                          ? 'bg-green-100 text-green-600 cursor-default'
-                          : 'bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50'
-                      }`}
-                    >
-                      {isAdded ? '✓ 추가됨' : adding === q.id ? '...' : '+ 추가'}
-                    </button>
-                  </div>
-                )
-              })}
-            </div>
+                    ))
+                  }
+                  {questionSets.length === 0 && (
+                    <div className="py-8 text-center text-sm text-gray-400">저장된 문제 세트가 없습니다.</div>
+                  )}
+                </div>
+              )}
+            </>
+          )}
+
+          {/* ── STEP 2: 선택한 세트의 문항 목록 ── */}
+          {selectedSetId && (
+            <>
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => { setSelectedSetId(null); setSelectedSetTopic(''); setBankQuestions([]) }}
+                    className="text-xs text-blue-600 hover:underline"
+                  >← 세트 목록</button>
+                  <h3 className="text-sm font-semibold text-gray-700">📖 {selectedSetTopic}</h3>
+                  <span className="text-xs text-gray-400">({filteredBank.length}문항)</span>
+                </div>
+                <button
+                  onClick={addAllQuestions}
+                  disabled={addingAll || filteredBank.filter(q => !addedIds.has(q.id)).length === 0}
+                  className="rounded bg-green-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-green-700 disabled:opacity-40"
+                >
+                  {addingAll ? '추가 중…' : `✚ 전체 추가 (${filteredBank.filter(q => !addedIds.has(q.id)).length}문항)`}
+                </button>
+              </div>
+
+              {bankLoading ? (
+                <div className="py-8 text-center text-sm text-gray-400">불러오는 중…</div>
+              ) : filteredBank.length === 0 ? (
+                <div className="py-8 text-center text-sm text-gray-400">문항이 없습니다.</div>
+              ) : (
+                <div className="max-h-96 overflow-y-auto space-y-2">
+                  {filteredBank.map((q) => {
+                    const isAdded = addedIds.has(q.id)
+                    return (
+                      <div
+                        key={q.id}
+                        className={`flex items-start gap-3 rounded-lg border p-3 ${
+                          isAdded ? 'border-green-200 bg-green-50' : 'border-gray-100 hover:border-blue-200'
+                        }`}
+                      >
+                        <div className="flex-1 min-w-0">
+                          <div className="mb-1 flex items-center gap-2">
+                            <span className="rounded bg-gray-100 px-1.5 py-0.5 text-xs text-gray-500">
+                              {TYPE_LABELS[q.type] ?? q.type}
+                            </span>
+                            {q.grade && <span className="text-xs text-gray-400">{q.grade}</span>}
+                          </div>
+                          <p className="text-xs text-gray-700 line-clamp-2">{q.question}</p>
+                        </div>
+                        <button
+                          onClick={() => !isAdded && addQuestion(q)}
+                          disabled={isAdded || adding === q.id}
+                          className={`shrink-0 rounded px-3 py-1 text-xs font-medium ${
+                            isAdded
+                              ? 'bg-green-100 text-green-600 cursor-default'
+                              : 'bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50'
+                          }`}
+                        >
+                          {isAdded ? '✓ 추가됨' : adding === q.id ? '...' : '+ 추가'}
+                        </button>
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
+            </>
           )}
         </div>
       )}
