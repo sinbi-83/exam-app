@@ -297,20 +297,27 @@ export default function WrongAnswersPage() {
     const weakComment = analysis.weakTypes.length > 0
       ? analysis.weakTypes.map(t => `${TYPE_LABELS[t.type] ?? t.type} (정답률 ${t.correctPct}%)`).join(', ') + ' 영역 집중 보완 필요'
       : '전반적으로 양호한 성취도를 보이고 있습니다.'
+    const goodTypes = analysis.typeStats.filter(t => t.correctPct >= 80)
+    const strengths = goodTypes.length > 0
+      ? goodTypes.map(t => `${TYPE_LABELS[t.type] ?? t.type} 우수 (정답률 ${t.correctPct}%)`).join(', ')
+      : ''
+    const nextSteps = analysis.weakTypes.length > 0
+      ? analysis.weakTypes.map(t => `${TYPE_LABELS[t.type] ?? t.type} 영역 추가 학습 권장`).join(' / ')
+      : '현재 수준 유지 및 심화 문제 도전 권장'
+
     const params = new URLSearchParams({
-      studentName: currentStudent.name,
-      studentGrade: currentStudent.grade,
+      student_id: selectedStudent,
+      exam_id: selectedExam || '',
       examTitle: currentExam?.title ?? '문제은행 채점',
       examDate: currentExam?.exam_date ?? scoredAt ?? '',
       score: String(analysis.score),
       maxScore: String(analysis.totalPoints),
       comment: weakComment,
+      strengths,
+      nextSteps,
       typeScores: JSON.stringify(typeScores),
     })
-    const a = document.createElement('a')
-    a.href = `/report/print?${params.toString()}`
-    a.target = '_blank'; a.rel = 'noopener noreferrer'
-    document.body.appendChild(a); a.click(); document.body.removeChild(a)
+    window.location.href = `/report?${params.toString()}`
   }
 
   const filteredBank = bankType === 'all' ? bankQuestions : bankQuestions.filter(q => q.type === bankType)
