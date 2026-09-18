@@ -68,6 +68,33 @@ public/brand/signature.png  ← 서명 (원본: 싸인.png)
 
 ---
 
+## 외부지문저장소 (API 호출 없음)
+
+- 경로: `/external-passages` (목록), `/external-passages/[id]` (상세·편집·삭제), `/external-passages/[id]/print` (인쇄)
+- DB 테이블: `passages` (Supabase, RLS로 본인 것만 접근)
+- 이 기능은 Claude API/Anthropic API를 전혀 호출하지 않는다. 지문·문제는 미리 JSON으로 만들어
+  `scripts/add-passage.ts`로 DB에 저장해두고, 화면은 저장된 데이터를 읽기/수정/삭제/인쇄만 한다.
+- 태그 마크업 규칙(`tagged_body` 필드 안에서 사용):
+  - `{{v:단어}}` → 🔵 어휘 (파란색 밑줄)
+  - `{{g:구문|설명}}` → 🔴 어법 (빨간색, 마우스 오버 시 설명)
+  - `{{t:구문}}` → 💚 주제 (초록색)
+
+### 지문 JSON 저장 방법
+
+1. `data/passages/README.md`의 형식대로 JSON 파일을 `data/passages/`에 만든다.
+2. 저장 실행: `npm run add-passage -- data/passages/파일이름.json`
+   (내부적으로 `.env.local`의 `SUPABASE_LOGIN_EMAIL` / `SUPABASE_LOGIN_PASSWORD`로 로그인한 뒤 insert)
+3. `.env.local`에 `SUPABASE_LOGIN_EMAIL`, `SUPABASE_LOGIN_PASSWORD`를 향미님이 직접 채워야 한다
+   (Claude Code는 채우지 않음). `.env.local`은 `.gitignore`에 포함되어 있어 GitHub에 올라가지 않는다.
+
+### 향미님이 "○학년 ○○ 주제 지문 만들어서 저장해줘"라고 하면
+
+지문 + 태그 마크업(`tagged_body`) + 문제 20개(`questions`) + 서술형 5개(`essays`)를
+위 JSON 형식으로 `data/passages/`에 만들고 `add-passage.ts`로 저장한다. **API는 호출하지 않는다**
+(Claude Code가 직접 JSON 내용을 작성한다).
+
+---
+
 ## 안전 규칙
 
 - 요청하지 않은 디자인 변경, 파일 삭제, 구조 변경, 라이브 배포 금지

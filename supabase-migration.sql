@@ -105,3 +105,41 @@ CREATE TABLE IF NOT EXISTS reports (
 ALTER TABLE reports ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "reports_own" ON reports
   FOR ALL USING (auth.uid() = user_id);
+
+-- =============================================
+-- 숙제 관리 테이블
+-- =============================================
+CREATE TABLE IF NOT EXISTS homework (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  student_id UUID REFERENCES students(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  due_date DATE,
+  status TEXT NOT NULL DEFAULT 'assigned' CHECK (status IN ('assigned', 'done')),
+  note TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+ALTER TABLE homework ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "homework_own" ON homework
+  FOR ALL USING (auth.uid() = user_id);
+
+-- =============================================
+-- 외부지문저장소 테이블 (API 호출 없이 미리 만든 지문/문제를 저장)
+-- =============================================
+CREATE TABLE IF NOT EXISTS passages (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  level TEXT,
+  topic TEXT,
+  body TEXT NOT NULL,
+  tagged_body TEXT NOT NULL,
+  tags JSONB DEFAULT '{}',
+  questions JSONB DEFAULT '[]',
+  essays JSONB DEFAULT '[]',
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+ALTER TABLE passages ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "passages_own" ON passages
+  FOR ALL USING (auth.uid() = user_id);

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 interface Student {
   id: string
@@ -27,6 +27,16 @@ const STATUS_CONFIG = {
 
 type StatusKey = keyof typeof STATUS_CONFIG
 
+const GRADE_GROUPS = ['초등', '중학', '고등', '기타'] as const
+type GradeGroup = (typeof GRADE_GROUPS)[number]
+
+function gradeGroup(grade: string): GradeGroup {
+  if (grade.startsWith('초')) return '초등'
+  if (grade.startsWith('중')) return '중학'
+  if (grade.startsWith('고')) return '고등'
+  return '기타'
+}
+
 function getMonthStr(d: Date) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
 }
@@ -37,10 +47,30 @@ export default function TuitionPage() {
   const [records, setRecords] = useState<Record<string, TuitionRecord>>({})
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState<string | null>(null)
-  const [defaultAmount, setDefaultAmount] = useState('250000')
+  const [defaultAmounts, setDefaultAmounts] = useState<Record<GradeGroup, string>>({
+    초등: '200000',
+    중학: '250000',
+    고등: '300000',
+    기타: '250000',
+  })
 
   useEffect(() => { loadStudents() }, [])
   useEffect(() => { if (students.length > 0) loadRecords() }, [month, students])
+
+  // 학년별 기본 원비가 바뀌면, 아직 저장되지 않은(=기본값으로 채워진) 학생 금액에만 반영
+  useEffect(() => {
+    setRecords((prev) => {
+      const next = { ...prev }
+      students.forEach((s) => {
+        const rec = next[s.id]
+        if (rec && !rec.id) {
+          next[s.id] = { ...rec, amount: Number(defaultAmounts[gradeGroup(s.grade)]) || 0 }
+        }
+      })
+      return next
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultAmounts])
 
   async function loadStudents() {
     const res = await fetch('/api/students')
@@ -53,9 +83,10 @@ export default function TuitionPage() {
     const res = await fetch(`/api/tuition?month=${month}`)
     const json = await res.json()
     const map: Record<string, TuitionRecord> = {}
-    // 기본값
+    // 기본값 (학년군별)
     students.forEach((s) => {
-      map[s.id] = { student_id: s.id, month, amount: Number(defaultAmount) || 250000, status: 'unpaid', paid_at: null, note: null }
+      const amount = Number(defaultAmounts[gradeGroup(s.grade)]) || 0
+      map[s.id] = { student_id: s.id, month, amount, status: 'unpaid', paid_at: null, note: null }
     })
     // 저장된 값 덮어쓰기
     ;(json.data ?? []).forEach((r: TuitionRecord) => {
@@ -66,7 +97,9 @@ export default function TuitionPage() {
 
   async function updateStatus(studentId: string, status: StatusKey) {
     setSaving(studentId)
-    const rec = records[studentId] ?? { student_id: studentId, month, amount: Number(defaultAmount), status, paid_at: null, note: null }
+    const student = students.find((s) => s.id === studentId)
+    const fallbackAmount = Number(defaultAmounts[gradeGroup(student?.grade ?? '')]) || 0
+    const rec = records[studentId] ?? { student_id: studentId, month, amount: fallbackAmount, status, paid_at: null, note: null }
     const newRec = {
       ...rec,
       status,
@@ -107,6 +140,11 @@ export default function TuitionPage() {
   const totalPaid = Object.values(records).filter((r) => r.status === 'paid').reduce((s, r) => s + r.amount, 0)
   const unpaidCount = Object.values(records).filter((r) => r.status !== 'paid').length
 
+  const studentsByGroup = GRADE_GROUPS.map((g) => ({
+    group: g,
+    students: students.filter((s) => gradeGroup(s.grade) === g),
+  })).filter((g) => g.students.length > 0)
+
   if (loading) return <div className="py-20 text-center text-sm text-gray-400">불러오는 중…</div>
 
   return (
@@ -118,16 +156,23 @@ export default function TuitionPage() {
         <button onClick={() => changeMonth(-1)} className="rounded border border-gray-300 px-3 py-1.5 text-sm hover:bg-gray-50">‹</button>
         <span className="text-base font-semibold text-gray-700">{year}년 {mon}월</span>
         <button onClick={() => changeMonth(1)} className="rounded border border-gray-300 px-3 py-1.5 text-sm hover:bg-gray-50">›</button>
-        <div className="ml-4 flex items-center gap-2 text-sm">
-          <span className="text-gray-500">기본 원비:</span>
-          <input
-            type="number"
-            value={defaultAmount}
-            onChange={(e) => setDefaultAmount(e.target.value)}
-            className="w-28 rounded border border-gray-300 px-2 py-1 text-sm"
-          />
-          <span className="text-gray-400">원</span>
-        </div>
+      </div>
+
+      {/* 학년별 기본 원비 */}
+      <div className="mb-6 flex flex-wrap items-center gap-4 rounded-lg border border-gray-200 bg-white p-4">
+        <span className="text-sm text-gray-500">학년별 기본 원비:</span>
+        {(['초등', '중학', '고등'] as const).map((g) => (
+          <div key={g} className="flex items-center gap-2 text-sm">
+            <span className="text-gray-600">{g}</span>
+            <input
+              type="number"
+              value={defaultAmounts[g]}
+              onChange={(e) => setDefaultAmounts((prev) => ({ ...prev, [g]: e.target.value }))}
+              className="w-28 rounded border border-gray-300 px-2 py-1 text-sm"
+            />
+            <span className="text-gray-400">원</span>
+          </div>
+        ))}
       </div>
 
       {/* 요약 카드 */}
@@ -164,45 +209,54 @@ export default function TuitionPage() {
               </tr>
             </thead>
             <tbody>
-              {students.map((s) => {
-                const rec = records[s.id]
-                return (
-                  <tr key={s.id} className="border-b border-gray-100 last:border-0 hover:bg-gray-50">
-                    <td className="px-4 py-3 font-medium text-gray-800">{s.name}</td>
-                    <td className="px-4 py-3 text-gray-500">{s.grade || '-'}</td>
-                    <td className="px-4 py-3">
-                      <input
-                        type="number"
-                        value={rec?.amount ?? Number(defaultAmount)}
-                        onChange={(e) => setRecords((prev) => ({ ...prev, [s.id]: { ...prev[s.id], amount: Number(e.target.value) } }))}
-                        onBlur={(e) => updateAmount(s.id, Number(e.target.value))}
-                        className="w-28 rounded border border-gray-200 px-2 py-1 text-sm"
-                      />
-                    </td>
-                    <td className="px-4 py-3">
-                      <div className="flex gap-1.5">
-                        {(Object.keys(STATUS_CONFIG) as StatusKey[]).map((k) => (
-                          <button
-                            key={k}
-                            onClick={() => updateStatus(s.id, k)}
-                            disabled={saving === s.id}
-                            className={`rounded-full border px-2.5 py-0.5 text-xs font-medium transition-all disabled:opacity-50 ${
-                              rec?.status === k
-                                ? STATUS_CONFIG[k].color + ' ring-2 ring-offset-1'
-                                : 'border-gray-200 text-gray-400 hover:border-gray-300'
-                            }`}
-                          >
-                            {STATUS_CONFIG[k].label}
-                          </button>
-                        ))}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 text-xs text-gray-400">
-                      {rec?.paid_at ?? '-'}
+              {studentsByGroup.map(({ group, students: groupStudents }) => (
+                <Fragment key={group}>
+                  <tr className="bg-gray-50">
+                    <td colSpan={5} className="px-4 py-2 text-xs font-semibold text-gray-500">
+                      {group} ({groupStudents.length}명)
                     </td>
                   </tr>
-                )
-              })}
+                  {groupStudents.map((s) => {
+                    const rec = records[s.id]
+                    return (
+                      <tr key={s.id} className="border-b border-gray-100 last:border-0 hover:bg-gray-50">
+                        <td className="px-4 py-3 font-medium text-gray-800">{s.name}</td>
+                        <td className="px-4 py-3 text-gray-500">{s.grade || '-'}</td>
+                        <td className="px-4 py-3">
+                          <input
+                            type="number"
+                            value={rec?.amount ?? Number(defaultAmounts[gradeGroup(s.grade)])}
+                            onChange={(e) => setRecords((prev) => ({ ...prev, [s.id]: { ...prev[s.id], amount: Number(e.target.value) } }))}
+                            onBlur={(e) => updateAmount(s.id, Number(e.target.value))}
+                            className="w-28 rounded border border-gray-200 px-2 py-1 text-sm"
+                          />
+                        </td>
+                        <td className="px-4 py-3">
+                          <div className="flex gap-1.5">
+                            {(Object.keys(STATUS_CONFIG) as StatusKey[]).map((k) => (
+                              <button
+                                key={k}
+                                onClick={() => updateStatus(s.id, k)}
+                                disabled={saving === s.id}
+                                className={`rounded-full border px-2.5 py-0.5 text-xs font-medium transition-all disabled:opacity-50 ${
+                                  rec?.status === k
+                                    ? STATUS_CONFIG[k].color + ' ring-2 ring-offset-1'
+                                    : 'border-gray-200 text-gray-400 hover:border-gray-300'
+                                }`}
+                              >
+                                {STATUS_CONFIG[k].label}
+                              </button>
+                            ))}
+                          </div>
+                        </td>
+                        <td className="px-4 py-3 text-xs text-gray-400">
+                          {rec?.paid_at ?? '-'}
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </Fragment>
+              ))}
             </tbody>
           </table>
         </div>

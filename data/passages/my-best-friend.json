@@ -1,0 +1,66 @@
+{
+  "title": "My Best Friend",
+  "level": "중1",
+  "topic": "우정",
+  "body": "Sarah is my best friend. We have been friends for five years. We met at school when we were eight years old. Now we are thirteen, and we do almost everything together.\n\nSarah is very kind and funny. She always listens to me when I have problems. She gives me good advice and makes me laugh when I feel sad. I can trust her with my secrets because she never tells anyone.\n\nWe have the same interests. We both like reading books, watching movies, and playing sports. Every weekend, we go to the library together and borrow new books. After school, we often play basketball in the park.\n\nSometimes we have small arguments, but we always say sorry and forgive each other quickly. True friendship means accepting each other's differences and being loyal to your friends.\n\nI'm very lucky to have Sarah as my best friend. She makes my life better and happier every day.",
+  "tagged_body": "Sarah is my best friend. We {{g:have been friends|현재완료(have+p.p.): 과거부터 지금까지 계속된 상태}} for five years. We met at school {{g:when we were eight years old|when+주어+동사: 시간을 나타내는 부사절}}. Now we are thirteen, and we do almost everything together.\n\nSarah is very kind and funny. She always listens to me when I have problems. She gives me good {{v:advice}} and {{g:makes me laugh|사역동사 make+목적어+동사원형: '~가 …하게 만들다'}} when I feel sad. I can {{v:trust}} her with my {{v:secrets}} because she {{g:never tells|빈도부사 never는 일반동사 앞에 위치}} anyone.\n\nWe have the same {{v:interests}}. We both like reading books, watching movies, and playing sports. Every weekend, we go to the library together and borrow new books. After school, we often play basketball in the park.\n\nSometimes we have small {{v:arguments}}, but we always say sorry and {{v:forgive}} each other quickly. {{t:True friendship means accepting each other's differences and being loyal to your friends.}}\n\n{{t:I'm very lucky to have Sarah as my best friend.}} She makes my life {{g:better and happier|비교급 형용사: good→better, happy→happier}} every day.",
+  "tags": {
+    "vocab": ["advice", "trust", "secrets", "interests", "arguments", "forgive", "loyal"],
+    "grammar": ["현재완료 (have been)", "시간 부사절 (when)", "사역동사 (make+목적어+동사원형)", "빈도부사 (never)", "비교급 (better/happier)"],
+    "topic": ["우정", "신뢰", "의리"]
+  },
+  "questions": [
+    { "type": "mc", "q": "How long have Sarah and the writer been friends?", "choices": ["Three years", "Four years", "Five years", "Six years", "Seven years"], "answer": "Five years", "explanation": "본문에 'We have been friends for five years.'라고 나와 있다." },
+    { "type": "mc", "q": "How old were they when they first met?", "choices": ["Six years old", "Seven years old", "Eight years old", "Nine years old", "Ten years old"], "answer": "Eight years old", "explanation": "'We met at school when we were eight years old.'에서 확인할 수 있다." },
+    { "type": "mc", "q": "How old are Sarah and the writer now?", "choices": ["Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen"], "answer": "Thirteen", "explanation": "'Now we are thirteen'이라고 나와 있다." },
+    { "type": "mc", "q": "What does Sarah do when the writer has problems?", "choices": ["She ignores the writer.", "She always listens to the writer.", "She tells the writer's secrets.", "She gets angry.", "She avoids the writer."], "answer": "She always listens to the writer.", "explanation": "'She always listens to me when I have problems.'에서 알 수 있다." },
+    { "type": "mc", "q": "Why can the writer trust Sarah with secrets?", "choices": ["Because Sarah is funny.", "Because Sarah never tells anyone.", "Because Sarah is smart.", "Because Sarah likes books.", "Because Sarah plays sports."], "answer": "Because Sarah never tells anyone.", "explanation": "'she never tells anyone'이라는 문장에서 알 수 있다." },
+    { "type": "mc", "q": "What do Sarah and the writer do every weekend?", "choices": ["They watch TV.", "They go to the library and borrow books.", "They go shopping.", "They clean the house.", "They study math."], "answer": "They go to the library and borrow books.", "explanation": "'Every weekend, we go to the library together and borrow new books.'" },
+    { "type": "mc", "q": "What do they often do after school?", "choices": ["Play basketball in the park.", "Go swimming.", "Watch movies at home.", "Do homework together.", "Ride bikes."], "answer": "Play basketball in the park.", "explanation": "'After school, we often play basketball in the park.'" },
+    { "type": "mc", "q": "What happens when they have small arguments?", "choices": ["They stop being friends.", "They ignore each other for weeks.", "They say sorry and forgive each other quickly.", "They tell a teacher.", "They cry."], "answer": "They say sorry and forgive each other quickly.", "explanation": "'we always say sorry and forgive each other quickly'에서 확인 가능." },
+    { "type": "mc", "q": "According to the passage, what does true friendship mean?", "choices": ["Always agreeing with each other.", "Accepting each other's differences and being loyal.", "Having the same face.", "Never having arguments.", "Giving expensive gifts."], "answer": "Accepting each other's differences and being loyal.", "explanation": "'True friendship means accepting each other's differences and being loyal to your friends.'" },
+    { "type": "mc", "q": "How does the writer feel about having Sarah as a best friend?", "choices": ["Bored", "Lucky", "Confused", "Nervous", "Jealous"], "answer": "Lucky", "explanation": "'I'm very lucky to have Sarah as my best friend.'" },
+    { "type": "blank", "q": "We have been friends for ___ years.", "answer": "five", "explanation": "본문에 'five years'라고 나와 있다." },
+    { "type": "blank", "q": "She gives me good advice and makes me ___ when I feel sad.", "answer": "laugh", "explanation": "'makes me laugh'에서 확인할 수 있다." },
+    { "type": "blank", "q": "We have the same ___.", "answer": "interests", "explanation": "'We have the same interests.'" },
+    { "type": "blank", "q": "Sometimes we have small ___, but we always say sorry.", "answer": "arguments", "explanation": "'we have small arguments'에서 확인 가능." },
+    { "type": "blank", "q": "True friendship means accepting each other's differences and being ___ to your friends.", "answer": "loyal", "explanation": "'being loyal to your friends'에서 확인할 수 있다." },
+    { "type": "tf", "q": "Sarah and the writer met at school when they were eight years old.", "answer": true, "explanation": "'We met at school when we were eight years old.'와 일치." },
+    { "type": "tf", "q": "Sarah often tells the writer's secrets to other people.", "answer": false, "explanation": "본문에는 'she never tells anyone'이라고 나와 있어 반대이다." },
+    { "type": "tf", "q": "Sarah and the writer never have arguments.", "answer": false, "explanation": "'Sometimes we have small arguments'라고 나와 있으므로 사실이 아니다." },
+    {
+      "type": "order",
+      "items": [
+        "They go to the library and borrow books every weekend.",
+        "They sometimes have small arguments but forgive each other quickly.",
+        "Sarah and the writer met at school when they were eight.",
+        "Now they are thirteen and do almost everything together."
+      ],
+      "answer": [
+        "Sarah and the writer met at school when they were eight.",
+        "Now they are thirteen and do almost everything together.",
+        "They go to the library and borrow books every weekend.",
+        "They sometimes have small arguments but forgive each other quickly."
+      ]
+    },
+    {
+      "type": "match",
+      "pairs": [
+        { "word": "advice", "meaning": "조언" },
+        { "word": "trust", "meaning": "신뢰하다" },
+        { "word": "secret", "meaning": "비밀" },
+        { "word": "interest", "meaning": "관심사, 흥미" },
+        { "word": "argument", "meaning": "말다툼, 논쟁" },
+        { "word": "forgive", "meaning": "용서하다" },
+        { "word": "loyal", "meaning": "충실한, 의리 있는" }
+      ]
+    }
+  ],
+  "essays": [
+    { "q": "Who is your best friend? Why is this person special to you? Write 3-4 sentences.", "wordLimit": 60, "sampleAnswer": "My best friend is Jimin. She is very kind and always helps me when I have problems. We have known each other for three years. I feel happy whenever I am with her.", "rubric": "① 친구 이름 언급 ② 특별한 이유 1가지 이상 설명 ③ 문장 3개 이상 완성된 형태로 작성 ④ 문법 오류 최소화" },
+    { "q": "According to the passage, what do Sarah and the writer do together? Write about two activities using complete sentences.", "wordLimit": 50, "sampleAnswer": "Sarah and the writer read books and watch movies together. They also play basketball in the park after school every week.", "rubric": "① 본문에서 언급된 활동 2가지 이상 제시 ② 완전한 문장으로 작성 ③ 본문 내용과 일치 ④ 철자/문법 정확성" },
+    { "q": "In your opinion, what makes a true friend? Explain using your own ideas, not just the passage.", "wordLimit": 80, "sampleAnswer": "In my opinion, a true friend is someone who listens to you and never judges you. A true friend also keeps your secrets and supports you during hard times. I think trust is the most important part of friendship.", "rubric": "① 자신의 의견을 명확히 제시 ② 근거나 예시 포함 ③ 본문을 단순히 베끼지 않고 자기 언어로 표현 ④ 3문장 이상 논리적으로 연결" },
+    { "q": "Describe a time when you and your friend had an argument. How did you solve the problem?", "wordLimit": 70, "sampleAnswer": "Once, my friend and I argued about a game. We didn't talk for one day. Then I said sorry first, and we became friends again. Now we laugh about it together.", "rubric": "① 구체적인 다툼 상황 서술 ② 해결 과정 설명 ③ 시제 일관성 (과거시제) ④ 4문장 이상" },
+    { "q": "The passage says 'True friendship means accepting each other's differences and being loyal to your friends.' Do you agree or disagree? Explain why.", "wordLimit": 80, "sampleAnswer": "I agree with this idea. Every person is different, so good friends should accept those differences instead of trying to change each other. Also, being loyal means staying with your friend even in difficult times. That is why I think this sentence is true.", "rubric": "① 찬성/반대 입장을 명확히 밝힘 ② 이유 2가지 이상 제시 ③ 본문 인용구를 참고하되 자신의 언어로 설명 ④ 문장 간 논리적 연결어 사용" }
+  ]
+}

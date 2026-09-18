@@ -174,8 +174,8 @@ function SignatureSvg() {
       src="/brand/signature.png"
       alt="서명"
       style={{
-        width: 130,
-        height: 58,
+        width: 176,
+        height: 78,
         objectFit: 'contain',
         display: 'block',
         mixBlendMode: 'multiply',   // 흰 배경 투명 처리
@@ -185,7 +185,7 @@ function SignatureSvg() {
         const target = e.currentTarget
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         svg.setAttribute('viewBox', '0 0 640 280')
-        svg.style.cssText = 'width:130px;height:58px;display:block'
+        svg.style.cssText = 'width:176px;height:78px;display:block'
         svg.innerHTML = `
           <path d="M 175,258 L 228,28" stroke="#1a2744" stroke-width="3.2" fill="none" stroke-linecap="round"/>
           <path d="M 82,180 L 355,158" stroke="#1a2744" stroke-width="3.0" fill="none" stroke-linecap="round"/>
@@ -325,7 +325,7 @@ function ReportContent() {
 
             {/* 로고 */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <BostonLogoSvg size={54} />
+              <BostonLogoSvg size={72} />
               <div>
                 <div style={{ fontSize: 10, letterSpacing: 2, color: GOLD, fontWeight: 700 }}>BOSTON S ENGLISH</div>
                 <div style={{ fontSize: 14, fontWeight: 900, color: '#fff', lineHeight: 1.1 }}>보스턴S영어</div>
@@ -585,7 +585,7 @@ function ReportContent() {
                 <span style={{ fontSize: 10.5, fontWeight: 700, color: DARKBLUE }}>담당 교사 코멘트</span>
                 <span style={{ fontSize: 8.5, color: SUBTEXT }}>Teacher&apos;s Comment</span>
               </div>
-              <div style={{ padding: '10px 14px', background: '#fff', display: 'flex', justifyContent: 'space-between', gap: 12, minHeight: 90 }}>
+              <div style={{ padding: '10px 14px', background: '#fff', display: 'flex', justifyContent: 'space-between', gap: 12, minHeight: 108 }}>
                 <div style={{ flex: 1, fontSize: 9.5, color: TEXT, lineHeight: 1.75 }}>
                   {comment
                     ? comment
@@ -594,7 +594,7 @@ function ReportContent() {
                 </div>
                 {/* 서명 */}
                 <div style={{
-                  textAlign: 'center', minWidth: 72,
+                  textAlign: 'center', minWidth: 96,
                   borderLeft: `1px solid #ede8dd`, paddingLeft: 12,
                   display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center',
                 }}>

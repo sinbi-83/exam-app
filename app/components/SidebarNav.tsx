@@ -26,6 +26,7 @@ const menuGroups: MenuGroup[] = [
       { label: "채점관리", href: "/grading", icon: "✏️" },
       { label: "성적분석", href: "/analytics", icon: "📈" },
       { label: "출석관리", href: "/attendance", icon: "✅" },
+      { label: "숙제관리", href: "/homework", icon: "📚" },
       { label: "오답 분석", href: "/wrong-answers", icon: "🔍" },
     ],
   },
@@ -33,6 +34,7 @@ const menuGroups: MenuGroup[] = [
     title: "학업관리",
     items: [
       { label: "AI 지문 생성", href: "/ai-passage", icon: "🤖" },
+      { label: "외부지문저장소", href: "/external-passages", icon: "🧩" },
       { label: "문제은행", href: "/questions", icon: "🏦" },
       { label: "문항 검색", href: "/question-search", icon: "🔎" },
       { label: "지문관리", href: "/passages", icon: "📄" },

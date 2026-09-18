@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import MobileNav from "./components/MobileNav";
 import SidebarNav from "./components/SidebarNav";
+import ScheduleAlertBell from "./components/ScheduleAlertBell";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -70,8 +71,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     ✨ 학원 관리 시스템
                   </span>
                 </div>
-                {/* 우측: 로그아웃 (데스크탑에서는 사이드바에 있어서 숨김) */}
+                {/* 우측: 알림 벨 + 로그아웃 (로그아웃은 데스크탑에서는 사이드바에 있어서 숨김) */}
                 <div className="flex items-center gap-2">
+                  <ScheduleAlertBell />
                   <form action="/logout" method="POST" className="md:hidden">
                     <button type="submit"
                       className="text-xs text-gray-500 border border-gray-200 rounded-lg px-3 py-1.5 hover:bg-gray-50">

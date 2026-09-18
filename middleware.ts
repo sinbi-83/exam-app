@@ -28,8 +28,10 @@ export async function middleware(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   const isLoginPage = request.nextUrl.pathname.startsWith('/login')
+  // 학부모 링크(/parent/[id])는 로그인 없이 PIN으로 접근하는 공개 페이지
+  const isPublicPage = isLoginPage || request.nextUrl.pathname.startsWith('/parent/')
 
-  if (!user && !isLoginPage) {
+  if (!user && !isPublicPage) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
     return NextResponse.redirect(url)

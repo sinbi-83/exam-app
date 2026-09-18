@@ -23,6 +23,7 @@ interface ExamResult {
   score: number
   max_score: number
   exam_date: string
+  exam_id: string | null
   students: { name: string } | null
 }
 
@@ -54,6 +55,7 @@ export default function GradingPage() {
   const [creatingExam, setCreatingExam] = useState(false)
   const [renamingExamId, setRenamingExamId] = useState('')
   const [renameValue, setRenameValue] = useState('')
+  const [deletingExamId, setDeletingExamId] = useState('')
 
   async function fetchAll() {
     setLoading(true)
@@ -175,6 +177,33 @@ export default function GradingPage() {
       fetchAll()
     } catch {
       alert('서버와 통신 중 문제가 발생했어요.')
+    }
+  }
+
+  async function handleDeleteExam(examId: string) {
+    const linkedCount = results.filter((r) => r.exam_id === examId).length
+    const confirmMsg = linkedCount > 0
+      ? `이 시험 카드에 연결된 성적 기록이 ${linkedCount}건 있습니다. 시험 카드를 삭제해도 성적 기록 자체는 남지만, 이후에는 확인해주세요. 정말 삭제하시겠습니까?`
+      : '이 시험 카드를 삭제하시겠습니까?'
+    if (!confirm(confirmMsg)) return
+
+    setDeletingExamId(examId)
+    try {
+      const res = await fetch(`/api/exams/${examId}`, { method: 'DELETE' })
+      if (!res.ok) {
+        const result = await res.json()
+        alert(result.error || '삭제에 실패했습니다.')
+        return
+      }
+      if (selectedExamId === examId) {
+        setSelectedExamId('')
+        setExamTitle('')
+      }
+      await fetchAll()
+    } catch {
+      alert('서버와 통신 중 문제가 발생했어요.')
+    } finally {
+      setDeletingExamId('')
     }
   }
 
@@ -303,15 +332,24 @@ export default function GradingPage() {
                             {exam.exam_date || '날짜 없음'} · 총 {exam.total_questions ?? '?'}문항 · 만점 {exam.max_score ?? '?'}점
                           </p>
                         </div>
-                        <button
-                          onClick={() => {
-                            setRenamingExamId(exam.id)
-                            setRenameValue(exam.title)
-                          }}
-                          className="rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 hover:bg-gray-50"
-                        >
-                          이름 수정
-                        </button>
+                        <div className="flex gap-2">
+                          <button
+                            onClick={() => {
+                              setRenamingExamId(exam.id)
+                              setRenameValue(exam.title)
+                            }}
+                            className="rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 hover:bg-gray-50"
+                          >
+                            이름 수정
+                          </button>
+                          <button
+                            onClick={() => handleDeleteExam(exam.id)}
+                            disabled={deletingExamId === exam.id}
+                            className="rounded border border-red-200 px-2 py-1 text-xs text-red-500 hover:bg-red-50 disabled:opacity-50"
+                          >
+                            {deletingExamId === exam.id ? '삭제 중...' : '삭제'}
+                          </button>
+                        </div>
                       </>
                     )}
                   </div>

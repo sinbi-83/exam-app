@@ -26,6 +26,7 @@ const menuGroups: MenuGroup[] = [
       { label: "채점관리", href: "/grading", icon: "✏️" },
       { label: "성적분석", href: "/analytics", icon: "📈" },
       { label: "출석관리", href: "/attendance", icon: "✅" },
+      { label: "숙제관리", href: "/homework", icon: "📚" },
       { label: "오답 분석", href: "/wrong-answers", icon: "🔍" },
     ],
   },

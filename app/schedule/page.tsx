@@ -66,6 +66,7 @@ export default function SchedulePage() {
       setEvents((prev) => [...prev, json.data].sort((a, b) => a.event_date.localeCompare(b.event_date)))
       setForm({ title: '', event_date: new Date().toISOString().slice(0, 10), start_time: '', end_time: '', event_type: 'class', note: '' })
       setShowForm(false)
+      window.dispatchEvent(new Event('schedule-updated'))
     }
     setSaving(false)
   }
@@ -76,6 +77,7 @@ export default function SchedulePage() {
     await fetch(`/api/schedule?id=${id}`, { method: 'DELETE' })
     setEvents((prev) => prev.filter((e) => e.id !== id))
     setDeleting(null)
+    window.dispatchEvent(new Event('schedule-updated'))
   }
 
   function changeMonth(delta: number) {
