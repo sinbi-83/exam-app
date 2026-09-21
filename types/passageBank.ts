@@ -55,6 +55,29 @@ export interface PassageTags {
   topic: string[]; // 주제 표현 목록
 }
 
+// 난이도 4단계 내부 값 (화면에는 한글로 표시)
+export type PassageVariantLevel = "school" | "academy" | "advanced" | "prestudy";
+
+export const VARIANT_LABELS: Record<PassageVariantLevel, string> = {
+  school: "학교형",
+  academy: "일반학원형",
+  advanced: "상위학원형",
+  prestudy: "선행형",
+};
+
+// 같은 주제 4단계 세트의 묶음 (passage_groups 테이블)
+export interface PassageGroupRecord {
+  id: string;
+  user_id: string;
+  title: string;
+  level: string | null;
+  topic: string | null;
+  source_body: string;
+  status: "pending" | "generating" | "completed" | "partial" | "failed";
+  created_at: string;
+  updated_at: string;
+}
+
 // data/passages/*.json 에 저장하는 원본 입력 형식.
 // scripts/add-passage.ts 가 이 형식을 읽어 그대로 passages 테이블에 넣는다.
 export interface PassageInput {
@@ -72,6 +95,8 @@ export interface PassageInput {
 export interface PassageRecord extends PassageInput {
   id: string;
   user_id: string;
+  group_id?: string | null; // 4단계 세트 소속 (기존 단독 지문은 null)
+  variant_level?: PassageVariantLevel | null;
   created_at: string;
   updated_at: string;
 }
