@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@/lib/supabaseServer";
+import { logApiUsage } from "@/lib/apiUsageLog";
+
+const MODEL = "claude-sonnet-5";
 
 export async function POST(request: NextRequest) {
   try {
@@ -59,7 +63,7 @@ export async function POST(request: NextRequest) {
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "claude-sonnet-5",
+        model: MODEL,
         max_tokens: 4096,
         system: systemPrompt,
         messages: [
@@ -84,6 +88,18 @@ export async function POST(request: NextRequest) {
     const fullText = data.content
       .map((block: any) => (block.type === "text" ? block.text : ""))
       .join("\n");
+
+    if (data.usage) {
+      const supabase = await createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      await logApiUsage(supabase, {
+        userId: user?.id ?? null,
+        route: "generate-passage",
+        model: MODEL,
+        inputTokens: data.usage.input_tokens ?? 0,
+        outputTokens: data.usage.output_tokens ?? 0,
+      });
+    }
 
     // 조교(코드)가 여기서 지문과 어휘 문제를 나눠서 정리함 (AI 재호출 없음, 무료)
     const [passagePart, vocabPart] = fullText.split("===VOCAB_QUESTIONS===");

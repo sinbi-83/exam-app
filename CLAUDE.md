@@ -44,16 +44,18 @@ npm run start    # 빌드 후 실서버 실행
 
 ## 이미지·원본 파일 표준 경로
 
+**실제 저장 위치는 Supabase Storage(`brand` 버킷, `{user_id}/logo.png`·`{user_id}/signature.png`) + `academy_settings` 테이블(`logo_url`, `signature_url`)이다.** `/settings` 페이지에서 업로드하면 이곳에 저장되고, `academy_settings`에 값이 없으면 아래 파일로 fallback한다 (기존 사용자는 재업로드 전까지 그대로 보임).
+
 ```
-public/brand/logo.png       ← 로고 (원본: boston-logo-watermark.png)
-public/brand/signature.png  ← 서명 (원본: 싸인.png)
+public/brand/logo.png       ← fallback 로고 (원본: boston-logo-watermark.png)
+public/brand/signature.png  ← fallback 서명 (원본: 싸인.png)
 ```
 
-- 모든 보고서는 위 두 파일을 동일하게 참조한다.
-- 기존 파일(`boston-logo-watermark.png`, `싸인.png`)은 삭제하지 않는다.
+- 기존 파일(`boston-logo-watermark.png`, `싸인.png`, `public/brand/*.png`)은 삭제하지 않는다 — fallback으로 계속 쓰인다.
 - 새 원본이 들어오면: 실제 위치와 적용 대상을 한 줄로 알린 뒤 연결한다.
 - 채팅 이미지는 실제 파일이 아닐 수 있다. 로컬에서 접근 가능한 파일만 복사한다.
 - 파일을 찾을 수 없으면 SVG나 대체 그림을 만들지 않는다.
+- 새로운 페이지에서 로고/서명을 써야 하면 `fs.writeFile`로 `public/brand`에 직접 쓰지 말고 `/api/settings/academy` GET으로 URL을 받아 쓴다 (Vercel 서버리스 환경에서는 `public/`에 쓰기가 반영되지 않는다).
 
 ---
 

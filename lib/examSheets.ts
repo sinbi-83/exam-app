@@ -1,4 +1,3 @@
-import { supabase } from "@/lib/supabaseClient";
 import { ExamGenerationResult } from "@/types/exam";
 import { StyleParams } from "@/config/stylePresets";
 import { GradeLevel, QuestionConfigItem } from "@/config/questionTypes";
@@ -32,54 +31,59 @@ export async function saveExamSheet(params: {
 }) {
   const title = buildAutoTitle(params.gradeLevel, params.stylePresetName);
 
-  const { data, error } = await supabase
-    .from("exam_sheets")
-    .insert({
-      title,
-      style_preset: params.stylePresetName,
-      style_params: params.styleParams,
-      grade_level: params.gradeLevel,
-      question_config: params.questionConfig,
-      questions_data: params.result,
-    })
-    .select()
-    .single();
-
-  if (error) {
-    // 저장 실패해도 화면에 이미 생성된 결과는 계속 보여줄 수 있도록,
-    // 여기서는 에러를 던지지 않고 콘솔에만 남깁니다.
-    console.error("exam_sheets 저장 실패:", error.message);
+  try {
+    const res = await fetch("/api/exam-sheets", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title,
+        style_preset: params.stylePresetName,
+        style_params: params.styleParams,
+        grade_level: params.gradeLevel,
+        question_config: params.questionConfig,
+        questions_data: params.result,
+      }),
+    });
+    const json = await res.json();
+    if (!res.ok) {
+      // 저장 실패해도 화면에 이미 생성된 결과는 계속 보여줄 수 있도록,
+      // 여기서는 에러를 던지지 않고 콘솔에만 남깁니다.
+      console.error("exam_sheets 저장 실패:", json.error);
+      return null;
+    }
+    return json.data as ExamSheetRow;
+  } catch (err) {
+    console.error("exam_sheets 저장 실패:", err);
     return null;
   }
-
-  return data as ExamSheetRow;
 }
 
 export async function listExamSheets(): Promise<ExamSheetRow[]> {
-  const { data, error } = await supabase
-    .from("exam_sheets")
-    .select("*")
-    .order("created_at", { ascending: false });
-
-  if (error) {
-    console.error("exam_sheets 목록 조회 실패:", error.message);
+  try {
+    const res = await fetch("/api/exam-sheets");
+    const json = await res.json();
+    if (!res.ok) {
+      console.error("exam_sheets 목록 조회 실패:", json.error);
+      return [];
+    }
+    return json.data as ExamSheetRow[];
+  } catch (err) {
+    console.error("exam_sheets 목록 조회 실패:", err);
     return [];
   }
-
-  return data as ExamSheetRow[];
 }
 
 export async function getExamSheetById(id: string): Promise<ExamSheetRow | null> {
-  const { data, error } = await supabase
-    .from("exam_sheets")
-    .select("*")
-    .eq("id", id)
-    .single();
-
-  if (error) {
-    console.error("exam_sheets 상세 조회 실패:", error.message);
+  try {
+    const res = await fetch(`/api/exam-sheets/${id}`);
+    const json = await res.json();
+    if (!res.ok) {
+      console.error("exam_sheets 상세 조회 실패:", json.error);
+      return null;
+    }
+    return json.data as ExamSheetRow;
+  } catch (err) {
+    console.error("exam_sheets 상세 조회 실패:", err);
     return null;
   }
-
-  return data as ExamSheetRow;
 }

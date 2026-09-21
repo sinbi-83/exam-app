@@ -53,13 +53,13 @@ CREATE TABLE IF NOT EXISTS tuition_records (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
   student_id UUID REFERENCES students(id) ON DELETE CASCADE,
-  month TEXT NOT NULL,
+  month_name TEXT NOT NULL,
   amount INTEGER NOT NULL DEFAULT 0,
   status TEXT NOT NULL DEFAULT 'unpaid' CHECK (status IN ('paid', 'unpaid', 'partial')),
   paid_at DATE,
   note TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW(),
-  UNIQUE(user_id, student_id, month)
+  UNIQUE(user_id, student_id, month_name)
 );
 ALTER TABLE tuition_records ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "tuition_records_own" ON tuition_records

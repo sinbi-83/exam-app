@@ -9,8 +9,25 @@ interface StatsData {
   monthly: { month: string; count: number }[]
 }
 
+interface UsageData {
+  totalCalls: number
+  totalInputTokens: number
+  totalOutputTokens: number
+  totalCostUsd: number
+  byRoute: Record<string, { calls: number; costUsd: number }>
+  byModel: Record<string, { calls: number; costUsd: number }>
+  monthly: { month: string; costUsd: number }[]
+}
+
+const ROUTE_LABELS: Record<string, string> = {
+  'generate-ai-passage': 'AI 지문 생성',
+  'generate-passage': '지문 생성',
+  'generate-report': '보고서 문구 생성',
+}
+
 export default function ApiUsagePage() {
   const [stats, setStats] = useState<StatsData | null>(null)
+  const [usage, setUsage] = useState<UsageData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -23,6 +40,13 @@ export default function ApiUsagePage() {
       })
       .catch(() => setError('데이터를 불러오지 못했습니다.'))
       .finally(() => setLoading(false))
+
+    fetch('/api/api-usage')
+      .then((r) => r.json())
+      .then((json) => {
+        if (!json.error) setUsage(json)
+      })
+      .catch(() => {})
   }, [])
 
   if (loading) {
@@ -53,9 +77,93 @@ export default function ApiUsagePage() {
     지문요약: 'bg-teal-400',
   }
 
+  const maxMonthlyCost = usage ? Math.max(...usage.monthly.map((m) => m.costUsd), 0.0001) : 0.0001
+  const routeEntries = usage ? Object.entries(usage.byRoute).sort((a, b) => b[1].costUsd - a[1].costUsd) : []
+
   return (
     <div>
       <h1 className="mb-6 text-xl font-semibold text-gray-800">API 사용량 &amp; 통계</h1>
+
+      {/* 실제 Claude API 비용 */}
+      <h2 className="mb-3 text-sm font-semibold text-gray-500">AI 비용 사용량 (실제 Claude API)</h2>
+      {!usage ? (
+        <p className="mb-8 text-sm text-gray-400">불러오는 중…</p>
+      ) : (
+        <>
+          <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <StatCard
+              label="이번 달 예상 비용"
+              value={Number((usage.monthly[usage.monthly.length - 1]?.costUsd ?? 0).toFixed(2))}
+              unit="달러"
+              color="text-red-600"
+            />
+            <StatCard
+              label="누적 예상 비용"
+              value={Number(usage.totalCostUsd.toFixed(2))}
+              unit="달러"
+              color="text-amber-600"
+            />
+            <StatCard
+              label="총 API 호출"
+              value={usage.totalCalls}
+              unit="회"
+              color="text-blue-600"
+            />
+            <StatCard
+              label="총 토큰 사용량"
+              value={usage.totalInputTokens + usage.totalOutputTokens}
+              unit="토큰"
+              color="text-purple-600"
+            />
+          </div>
+
+          <div className="mb-8 grid gap-6 md:grid-cols-2">
+            <div className="rounded-lg border border-gray-200 bg-white p-5">
+              <h3 className="mb-4 text-sm font-semibold text-gray-700">월별 예상 비용 (최근 6개월)</h3>
+              <div className="space-y-3">
+                {usage.monthly.map((m) => (
+                  <div key={m.month}>
+                    <div className="mb-1 flex items-center justify-between text-xs text-gray-500">
+                      <span>{m.month}</span>
+                      <span className="font-medium text-gray-700">${m.costUsd.toFixed(2)}</span>
+                    </div>
+                    <div className="h-3 w-full overflow-hidden rounded-full bg-gray-100">
+                      <div
+                        className="h-full rounded-full bg-red-400 transition-all duration-500"
+                        style={{ width: `${(m.costUsd / maxMonthlyCost) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-lg border border-gray-200 bg-white p-5">
+              <h3 className="mb-4 text-sm font-semibold text-gray-700">기능별 사용 내역</h3>
+              {routeEntries.length === 0 ? (
+                <p className="py-8 text-center text-sm text-gray-400">아직 호출 기록이 없습니다.</p>
+              ) : (
+                <div className="space-y-3">
+                  {routeEntries.map(([route, v]) => (
+                    <div key={route} className="flex items-center justify-between text-sm">
+                      <span className="text-gray-600">{ROUTE_LABELS[route] ?? route}</span>
+                      <span className="text-gray-800">
+                        {v.calls}회 · ${v.costUsd.toFixed(3)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          <p className="mb-8 text-xs text-gray-400">
+            ※ Anthropic 공식 요금표 기준 추정치이며, 실제 청구 금액은 환율·부가세 등에 따라 다를 수 있어요. 정확한 금액은 Anthropic 콘솔에서 확인해주세요.
+          </p>
+        </>
+      )}
+
+      <h2 className="mb-3 text-sm font-semibold text-gray-500">콘텐츠 생성 통계</h2>
 
       {/* 요약 카드 */}
       <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -134,7 +242,7 @@ export default function ApiUsagePage() {
       </div>
 
       <p className="mt-6 text-xs text-gray-400">
-        ※ AI 문항 생성 시마다 Anthropic Claude API가 호출됩니다. 현재 API 비용 집계는 Anthropic 콘솔에서 직접 확인해주세요.
+        ※ 위 콘텐츠 통계는 저장된 지문·문항 개수 기준이며, 실제 AI 비용은 위쪽 &quot;AI 비용 사용량&quot; 항목을 참고해주세요.
       </p>
     </div>
   )

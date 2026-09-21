@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import TimeSelect from '@/app/components/TimeSelect'
 
 interface ScheduleEvent {
   id: string
@@ -139,13 +140,11 @@ export default function SchedulePage() {
             </div>
             <div>
               <label className="mb-1 block text-xs text-gray-600">시작 시간</label>
-              <input type="time" value={form.start_time} onChange={(e) => setForm((f) => ({ ...f, start_time: e.target.value }))}
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm" />
+              <TimeSelect value={form.start_time} onChange={(v) => setForm((f) => ({ ...f, start_time: v }))} />
             </div>
             <div>
               <label className="mb-1 block text-xs text-gray-600">종료 시간</label>
-              <input type="time" value={form.end_time} onChange={(e) => setForm((f) => ({ ...f, end_time: e.target.value }))}
-                className="w-full rounded border border-gray-300 px-3 py-2 text-sm" />
+              <TimeSelect value={form.end_time} onChange={(v) => setForm((f) => ({ ...f, end_time: v }))} />
             </div>
             <div className="col-span-2">
               <label className="mb-1 block text-xs text-gray-600">메모</label>

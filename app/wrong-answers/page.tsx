@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useMemo } from 'react'
+import { TYPE_LABELS, getTypeColor, computeTypeStats } from '@/lib/analyticsShared'
 
 interface Student {
   id: string
@@ -54,21 +55,6 @@ interface PickedQuestion {
     answer?: string
     explanation?: string
   }
-}
-
-const TYPE_LABELS: Record<string, string> = {
-  vocab: '어휘',
-  grammar: '어법',
-  reading: '독해',
-  essay: '서술형',
-  summary: '지문요약',
-}
-
-function getTypeColor(pct: number) {
-  if (pct >= 80) return { bg: 'bg-green-100', text: 'text-green-700', bar: 'bg-green-400', badge: '✅ 우수' }
-  if (pct >= 60) return { bg: 'bg-blue-100', text: 'text-blue-700', bar: 'bg-blue-400', badge: '🔵 보통' }
-  if (pct >= 40) return { bg: 'bg-amber-100', text: 'text-amber-700', bar: 'bg-amber-400', badge: '⚠️ 주의' }
-  return { bg: 'bg-red-100', text: 'text-red-700', bar: 'bg-red-400', badge: '❌ 취약' }
 }
 
 type Mode = 'exam' | 'bank'
@@ -278,19 +264,7 @@ export default function WrongAnswersPage() {
     const grade = scorePct >= 90 ? 'A+' : scorePct >= 80 ? 'A' : scorePct >= 70 ? 'B+' :
       scorePct >= 60 ? 'B' : scorePct >= 50 ? 'C' : 'D'
 
-    const typeMap: Record<string, { total: number; wrong: number; points: number; wrongPoints: number }> = {}
-    for (const q of activeQuestions) {
-      const t = q.question_data.type
-      if (!typeMap[t]) typeMap[t] = { total: 0, wrong: 0, points: 0, wrongPoints: 0 }
-      typeMap[t].total++
-      typeMap[t].points += q.points
-      if (wrongIds.has(q.id)) { typeMap[t].wrong++; typeMap[t].wrongPoints += q.points }
-    }
-
-    const typeStats = Object.entries(typeMap).map(([type, stat]) => ({
-      type, ...stat,
-      correctPct: stat.total > 0 ? Math.round(((stat.total - stat.wrong) / stat.total) * 100) : 100,
-    })).sort((a, b) => a.correctPct - b.correctPct)
+    const typeStats = computeTypeStats(activeQuestions, wrongIds)
 
     const weakTypes = typeStats.filter(t => t.correctPct < 60)
     const wrongQuestions = activeQuestions.filter(q => wrongIds.has(q.id))

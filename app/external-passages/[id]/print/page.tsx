@@ -16,7 +16,7 @@ async function downloadPdf(filename: string) {
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2, useCORS: true },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'], before: '.answer-section', avoid: '.question-block' },
   }
   html2pdf().set(options).from(el).save()
 }
@@ -65,7 +65,8 @@ export default function ExternalPassagePrintPage() {
           body { margin: 0; }
           .no-print { display: none !important; }
           .page { box-shadow: none !important; }
-          .question-block { break-inside: avoid; page-break-inside: avoid; }
+          .question-block { break-inside: avoid-page; page-break-inside: avoid; }
+          .answer-section { break-before: page; page-break-before: always; }
         }
       `}</style>
 
@@ -212,7 +213,7 @@ export default function ExternalPassagePrintPage() {
 
         {/* 정답 및 해설 */}
         {showAnswers && (
-          <div className="mt-8 border-t border-dashed border-gray-300 pt-4">
+          <div className="answer-section mt-8 border-t border-dashed border-gray-300 pt-4">
             <p className="mb-2 text-xs font-semibold text-gray-400">— 정답 및 해설 (교사용 / 출력 후 제거) —</p>
             <div className="space-y-1.5">
               {record.questions.map((q, idx) => (

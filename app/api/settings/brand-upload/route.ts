@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
-import { writeFile } from 'fs/promises'
-import path from 'path'
+import { createClient } from '@/lib/supabaseServer'
 
 export const runtime = 'nodejs'
 
@@ -8,6 +7,10 @@ const ALLOWED_TYPES = ['logo', 'signature'] as const
 const MAX_SIZE = 5 * 1024 * 1024 // 5MB
 
 export async function POST(request: Request) {
+  const supabase = await createClient()
+  const { data: { user }, error: userError } = await supabase.auth.getUser()
+  if (userError || !user) return NextResponse.json({ error: '로그인이 필요합니다.' }, { status: 401 })
+
   const formData = await request.formData()
   const type = formData.get('type')
   const file = formData.get('file')
@@ -29,9 +32,31 @@ export async function POST(request: Request) {
   }
 
   const buffer = Buffer.from(await file.arrayBuffer())
-  const destPath = path.join(process.cwd(), 'public', 'brand', `${type}.png`)
+  const path = `${user.id}/${type}.png`
 
-  await writeFile(destPath, buffer)
+  const { error: uploadError } = await supabase.storage
+    .from('brand')
+    .upload(path, buffer, { contentType: 'image/png', upsert: true })
 
-  return NextResponse.json({ ok: true })
+  if (uploadError) {
+    return NextResponse.json({ error: uploadError.message }, { status: 500 })
+  }
+
+  const { data: publicUrlData } = supabase.storage.from('brand').getPublicUrl(path)
+  const url = `${publicUrlData.publicUrl}?v=${Date.now()}`
+  const urlField = type === 'logo' ? 'logo_url' : 'signature_url'
+
+  const { error: upsertError } = await supabase
+    .from('academy_settings')
+    .upsert({
+      user_id: user.id,
+      [urlField]: url,
+      updated_at: new Date().toISOString(),
+    })
+
+  if (upsertError) {
+    return NextResponse.json({ error: upsertError.message }, { status: 500 })
+  }
+
+  return NextResponse.json({ ok: true, [type === 'logo' ? 'logoUrl' : 'signatureUrl']: url })
 }

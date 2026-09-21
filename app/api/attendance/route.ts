@@ -8,6 +8,8 @@ export async function GET(request: NextRequest) {
 
   const { searchParams } = new URL(request.url)
   const date = searchParams.get('date')
+  const from = searchParams.get('from')
+  const to = searchParams.get('to')
 
   let query = supabase
     .from('attendance')
@@ -15,6 +17,8 @@ export async function GET(request: NextRequest) {
     .eq('user_id', user.id)
 
   if (date) query = query.eq('date', date)
+  if (from) query = query.gte('date', from)
+  if (to) query = query.lte('date', to)
 
   const { data, error } = await query.order('created_at', { ascending: true })
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })

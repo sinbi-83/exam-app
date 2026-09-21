@@ -12,6 +12,11 @@ import {
   buildAiPassageSystemPrompt,
   buildAiPassageUserMessage,
 } from "@/lib/aiPassagePromptBuilder";
+import { createClient } from "@/lib/supabaseServer";
+import { logApiUsage } from "@/lib/apiUsageLog";
+
+const MODEL = "claude-sonnet-4-6";
+
 export async function POST(req: NextRequest) {
   let body: AiPassageRequestBody;
 
@@ -47,7 +52,7 @@ export async function POST(req: NextRequest) {
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "claude-sonnet-4-6",
+        model: MODEL,
         max_tokens: 14000,
         system: systemPrompt,
         messages: [{ role: "user", content: userMessage }],
@@ -67,6 +72,18 @@ export async function POST(req: NextRequest) {
 
     const data = await response.json();
     const rawText = data.content?.[0]?.text ?? "";
+
+    if (data.usage) {
+      const supabase = await createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      await logApiUsage(supabase, {
+        userId: user?.id ?? null,
+        route: "generate-ai-passage",
+        model: MODEL,
+        inputTokens: data.usage.input_tokens ?? 0,
+        outputTokens: data.usage.output_tokens ?? 0,
+      });
+    }
 
     let parsed: {
       passage: string;

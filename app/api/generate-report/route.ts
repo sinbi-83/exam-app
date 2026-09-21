@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@/lib/supabaseServer'
+import { logApiUsage } from '@/lib/apiUsageLog'
+
+const MODEL = 'claude-haiku-4-5-20251001'
 
 interface GenerateReportRequestBody {
   studentName: string
@@ -131,7 +135,7 @@ export async function POST(req: NextRequest) {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
+        model: MODEL,
         max_tokens: 2000,
         system: systemPrompt,
         messages: [{ role: 'user', content: userMessage }],
@@ -145,6 +149,18 @@ export async function POST(req: NextRequest) {
 
     const data = await response.json()
     const rawText = data.content?.[0]?.text ?? ''
+
+    if (data.usage) {
+      const supabase = await createClient()
+      const { data: { user } } = await supabase.auth.getUser()
+      await logApiUsage(supabase, {
+        userId: user?.id ?? null,
+        route: 'generate-report',
+        model: MODEL,
+        inputTokens: data.usage.input_tokens ?? 0,
+        outputTokens: data.usage.output_tokens ?? 0,
+      })
+    }
 
     let parsed: GenerateReportResponse['data']
     try {

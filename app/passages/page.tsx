@@ -80,7 +80,7 @@ export default function PassagesPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-gray-800">지문관리</h1>
+        <h1 className="text-xl font-semibold text-gray-800">AI지문관리</h1>
         <Link
           href="/ai-passage"
           className="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"

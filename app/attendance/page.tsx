@@ -41,6 +41,10 @@ export default function AttendancePage() {
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
+  const [notifying, setNotifying] = useState<string | null>(null)
+  const [showMonthSummary, setShowMonthSummary] = useState(false)
+  const [monthSummary, setMonthSummary] = useState<Record<string, Record<StatusKey, number>> | null>(null)
+  const [monthSummaryLoading, setMonthSummaryLoading] = useState(false)
 
   useEffect(() => {
     loadStudents()
@@ -49,6 +53,11 @@ export default function AttendancePage() {
   useEffect(() => {
     if (students.length > 0) loadAttendance()
   }, [date, students])
+
+  useEffect(() => {
+    if (showMonthSummary) loadMonthSummary()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [date.slice(0, 7)])
 
   async function loadStudents() {
     const res = await fetch('/api/students')
@@ -102,6 +111,57 @@ export default function AttendancePage() {
     setOpenId(null)
   }
 
+  function changeDate(newDate: string) {
+    if (hasUnsaved && !confirm('저장하지 않은 변경사항이 있습니다. 날짜를 이동하면 사라집니다. 이동할까요?')) return
+    setDate(newDate)
+  }
+
+  async function sendAbsenceNotification(studentId: string) {
+    const rec = records[studentId]
+    const student = students.find((s) => s.id === studentId)
+    if (!rec || !student) return
+    setNotifying(studentId)
+    const res = await fetch('/api/notifications', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        student_ids: [studentId],
+        title: `${date} 출석 안내`,
+        message: `${date} ${STATUS_LABELS[rec.status].label} 처리되었습니다.${rec.note ? ` (사유: ${rec.note})` : ''}`,
+        notification_type: 'attendance',
+      }),
+    })
+    const json = await res.json()
+    setNotifying(null)
+    if (json.error) alert('알림 전송 실패: ' + json.error)
+    else alert(`${student.name} 학부모님께 출석 안내를 보냈습니다.`)
+  }
+
+  async function loadMonthSummary() {
+    setMonthSummaryLoading(true)
+    const [y, m] = date.split('-').map(Number)
+    const from = `${y}-${String(m).padStart(2, '0')}-01`
+    const to = new Date(y, m, 0).toISOString().slice(0, 10)
+    const res = await fetch(`/api/attendance?from=${from}&to=${to}`)
+    const json = await res.json()
+    const summary: Record<string, Record<StatusKey, number>> = {}
+    students.forEach((s) => {
+      summary[s.id] = { present: 0, absent: 0, late: 0, excused: 0 }
+    })
+    ;(json.data ?? []).forEach((r: { student_id: string; status: StatusKey }) => {
+      if (!summary[r.student_id]) summary[r.student_id] = { present: 0, absent: 0, late: 0, excused: 0 }
+      summary[r.student_id][r.status] += 1
+    })
+    setMonthSummary(summary)
+    setMonthSummaryLoading(false)
+  }
+
+  function toggleMonthSummary() {
+    const next = !showMonthSummary
+    setShowMonthSummary(next)
+    if (next && !monthSummary) loadMonthSummary()
+  }
+
   async function handleSave() {
     setSaving(true)
     const recordsList = Object.values(records).map((r) => ({ ...r, date }))
@@ -151,7 +211,7 @@ export default function AttendancePage() {
         <input
           type="date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
+          onChange={(e) => changeDate(e.target.value)}
           className="rounded border border-gray-300 px-3 py-2 text-sm"
         />
 
@@ -212,6 +272,49 @@ export default function AttendancePage() {
         </div>
       </div>
 
+      {/* 월별 요약 */}
+      <div className="mb-6">
+        <button
+          onClick={toggleMonthSummary}
+          className="text-xs font-medium text-blue-600 hover:underline"
+        >
+          {showMonthSummary ? '이번 달 요약 숨기기 ▲' : '이번 달 요약 보기 ▼'}
+        </button>
+        {showMonthSummary && (
+          <div className="mt-2 overflow-hidden rounded-lg border border-gray-200 bg-white">
+            {monthSummaryLoading || !monthSummary ? (
+              <p className="p-6 text-center text-sm text-gray-400">불러오는 중…</p>
+            ) : (
+              <table className="w-full whitespace-nowrap text-sm">
+                <thead>
+                  <tr className="border-b border-gray-100 bg-gray-50 text-left text-xs font-medium uppercase tracking-wide text-gray-500">
+                    <th className="px-4 py-2">이름</th>
+                    <th className="px-4 py-2">출석</th>
+                    <th className="px-4 py-2">결석</th>
+                    <th className="px-4 py-2">지각</th>
+                    <th className="px-4 py-2">공결</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {students.map((s) => {
+                    const sum = monthSummary[s.id] ?? { present: 0, absent: 0, late: 0, excused: 0 }
+                    return (
+                      <tr key={s.id} className="border-b border-gray-100 last:border-0">
+                        <td className="px-4 py-2 font-medium text-gray-800">{s.name}</td>
+                        <td className="px-4 py-2 text-green-600">{sum.present}</td>
+                        <td className="px-4 py-2 text-red-600">{sum.absent}</td>
+                        <td className="px-4 py-2 text-amber-600">{sum.late}</td>
+                        <td className="px-4 py-2 text-blue-600">{sum.excused}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            )}
+          </div>
+        )}
+      </div>
+
       {students.length === 0 ? (
         <div className="rounded-lg border border-gray-200 bg-white p-12 text-center">
           <p className="text-gray-500">등록된 학생이 없습니다.</p>
@@ -233,10 +336,11 @@ export default function AttendancePage() {
                   return (
                     <div
                       key={s.id}
-                      className={`flex items-center gap-3 border-b border-gray-100 px-4 py-2.5 last:border-0 ${
+                      className={`border-b border-gray-100 px-4 py-2.5 last:border-0 ${
                         isAbnormal ? 'bg-red-50/30' : ''
                       }`}
                     >
+                    <div className="flex items-center gap-3">
                       {/* 미저장 변경 표시 */}
                       <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${changed ? 'bg-orange-400' : 'bg-transparent'}`} />
 
@@ -270,6 +374,30 @@ export default function AttendancePage() {
                           ))}
                         </div>
                       )}
+                    </div>
+
+                    {isAbnormal && (
+                      <div className="mt-1.5 flex flex-wrap items-center gap-2 pl-4 text-xs text-gray-500">
+                        <span>사유:</span>
+                        <input
+                          type="text"
+                          value={rec?.note ?? ''}
+                          placeholder="사유 메모 (선택)"
+                          onChange={(e) => {
+                            setRecords((prev) => ({ ...prev, [s.id]: { ...prev[s.id], note: e.target.value } }))
+                            setSaved(false)
+                          }}
+                          className="w-48 rounded border border-gray-200 px-2 py-1 text-xs"
+                        />
+                        <button
+                          onClick={() => sendAbsenceNotification(s.id)}
+                          disabled={notifying === s.id}
+                          className="text-blue-500 hover:underline disabled:opacity-50"
+                        >
+                          {notifying === s.id ? '전송 중…' : '학부모 알림'}
+                        </button>
+                      </div>
+                    )}
                     </div>
                   )
                 })}

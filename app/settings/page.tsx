@@ -13,8 +13,12 @@ export default function SettingsPage() {
 
   const [email, setEmail] = useState<string | null>(null)
 
-  const [logoVersion, setLogoVersion] = useState(0)
-  const [signatureVersion, setSignatureVersion] = useState(0)
+  const [academyName, setAcademyName] = useState('')
+  const [academySaving, setAcademySaving] = useState(false)
+  const [academyMessage, setAcademyMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
+
+  const [logoUrl, setLogoUrl] = useState<string | null>(null)
+  const [signatureUrl, setSignatureUrl] = useState<string | null>(null)
   const [uploading, setUploading] = useState<BrandType | null>(null)
   const [uploadMessage, setUploadMessage] = useState<
     Record<BrandType, { type: 'success' | 'error'; text: string } | null>
@@ -28,7 +32,40 @@ export default function SettingsPage() {
     supabase.auth.getUser().then(({ data }) => {
       setEmail(data.user?.email ?? null)
     })
+
+    fetch('/api/settings/academy')
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.data) {
+          setAcademyName(json.data.academy_name ?? '')
+          setLogoUrl(json.data.logo_url ?? null)
+          setSignatureUrl(json.data.signature_url ?? null)
+        }
+      })
   }, [])
+
+  async function handleSaveAcademyName(e: React.FormEvent) {
+    e.preventDefault()
+    setAcademySaving(true)
+    setAcademyMessage(null)
+    try {
+      const res = await fetch('/api/settings/academy', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ academy_name: academyName }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setAcademyMessage({ type: 'error', text: data.error ?? '저장에 실패했습니다.' })
+        return
+      }
+      setAcademyMessage({ type: 'success', text: '학원 이름이 저장되었습니다.' })
+    } catch {
+      setAcademyMessage({ type: 'error', text: '서버와 통신 중 문제가 발생했어요.' })
+    } finally {
+      setAcademySaving(false)
+    }
+  }
 
   async function handleChangePassword(e: React.FormEvent) {
     e.preventDefault()
@@ -81,8 +118,8 @@ export default function SettingsPage() {
       }
 
       setUploadMessage((prev) => ({ ...prev, [type]: { type: 'success', text: '업로드가 완료되었습니다.' } }))
-      if (type === 'logo') setLogoVersion((v) => v + 1)
-      else setSignatureVersion((v) => v + 1)
+      if (type === 'logo') setLogoUrl(data.logoUrl ?? null)
+      else setSignatureUrl(data.signatureUrl ?? null)
     } catch {
       setUploadMessage((prev) => ({ ...prev, [type]: { type: 'error', text: '서버와 통신 중 문제가 발생했어요.' } }))
     } finally {
@@ -111,6 +148,32 @@ export default function SettingsPage() {
         </form>
       </div>
 
+      {/* 학원 이름 */}
+      <div className="rounded-lg border border-gray-200 bg-white p-6">
+        <h2 className="mb-4 text-sm font-medium text-gray-700">학원 이름</h2>
+        <form onSubmit={handleSaveAcademyName} className="flex items-center gap-2">
+          <input
+            type="text"
+            value={academyName}
+            onChange={(e) => setAcademyName(e.target.value)}
+            placeholder="예: 보스턴S영어"
+            className="flex-1 rounded border border-gray-300 px-3 py-2 text-sm"
+          />
+          <button
+            type="submit"
+            disabled={academySaving}
+            className="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white disabled:opacity-50"
+          >
+            {academySaving ? '저장 중...' : '저장'}
+          </button>
+        </form>
+        {academyMessage && (
+          <p className={`mt-2 text-sm ${academyMessage.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+            {academyMessage.text}
+          </p>
+        )}
+      </div>
+
       {/* 로고 / 서명 이미지 업로드 */}
       <div className="rounded-lg border border-gray-200 bg-white p-6">
         <h2 className="mb-4 text-sm font-medium text-gray-700">로고 · 서명 이미지</h2>
@@ -121,8 +184,8 @@ export default function SettingsPage() {
             <div className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                key={logoVersion}
-                src={`/brand/logo.png?v=${logoVersion}`}
+                key={logoUrl}
+                src={logoUrl ?? '/brand/logo.png'}
                 alt="현재 로고"
                 className="h-12 w-12 rounded border border-gray-200 object-contain"
                 onError={(e) => { e.currentTarget.style.visibility = 'hidden' }}
@@ -150,8 +213,8 @@ export default function SettingsPage() {
             <div className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                key={signatureVersion}
-                src={`/brand/signature.png?v=${signatureVersion}`}
+                key={signatureUrl}
+                src={signatureUrl ?? '/brand/signature.png'}
                 alt="현재 서명"
                 className="h-12 w-12 rounded border border-gray-200 object-contain"
                 onError={(e) => { e.currentTarget.style.visibility = 'hidden' }}

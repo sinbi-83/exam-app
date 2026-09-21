@@ -1,7 +1,7 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 async function downloadPdf(filename: string) {
   const html2pdf = (await import('html2pdf.js')).default
@@ -36,12 +36,12 @@ function toBullets(text: string): string[] {
 }
 
 // ── 보스턴S영어 배지 로고 (실제 PNG 이미지) ──
-function BostonLogoSvg({ size = 58 }: { size?: number }) {
+function BostonLogoSvg({ size = 58, logoUrl }: { size?: number; logoUrl?: string | null }) {
   const h = Math.round(size * 390 / 520)
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/brand/logo.png"
+      src={logoUrl ?? '/brand/logo.png'}
       alt="Boston S English Logo"
       width={size}
       height={h}
@@ -166,12 +166,12 @@ function _BostonLogoSvgFallback({ size = 58 }: { size?: number }) {
 
 // ── 손글씨 서명 ──
 // public/signature.png 가 있으면 실제 이미지 사용, 없으면 SVG fallback
-function SignatureSvg() {
+function SignatureSvg({ signatureUrl }: { signatureUrl?: string | null }) {
   // signature.png 업로드 여부 확인 (클라이언트에서 이미지 로드 시도)
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/brand/signature.png"
+      src={signatureUrl ?? '/brand/signature.png'}
       alt="서명"
       style={{
         width: 176,
@@ -207,6 +207,21 @@ function barColor(pct: number) {
 
 function ReportContent() {
   const params = useSearchParams()
+
+  const [logoUrl, setLogoUrl] = useState<string | null>(null)
+  const [signatureUrl, setSignatureUrl] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetch('/api/settings/academy')
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.data) {
+          setLogoUrl(json.data.logo_url ?? null)
+          setSignatureUrl(json.data.signature_url ?? null)
+        }
+      })
+      .catch(() => {})
+  }, [])
 
   const studentName  = params.get('studentName')  ?? ''
   const studentGrade = params.get('studentGrade') ?? ''
@@ -325,7 +340,7 @@ function ReportContent() {
 
             {/* 로고 */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <BostonLogoSvg size={72} />
+              <BostonLogoSvg size={72} logoUrl={logoUrl} />
               <div>
                 <div style={{ fontSize: 10, letterSpacing: 2, color: GOLD, fontWeight: 700 }}>BOSTON S ENGLISH</div>
                 <div style={{ fontSize: 14, fontWeight: 900, color: '#fff', lineHeight: 1.1 }}>보스턴S영어</div>
@@ -598,7 +613,7 @@ function ReportContent() {
                   borderLeft: `1px solid #ede8dd`, paddingLeft: 12,
                   display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center',
                 }}>
-                  <SignatureSvg />
+                  <SignatureSvg signatureUrl={signatureUrl} />
                   <div style={{ height: 1, width: 60, background: DARKBLUE, marginBottom: 4, opacity: 0.3 }} />
                   <div style={{ fontSize: 8.5, color: SUBTEXT }}>담당 교사</div>
                 </div>
