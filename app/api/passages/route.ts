@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
 
   let query = supabase
     .from('passages')
-    .select('id, title, level, topic, tags, created_at, updated_at')
+    .select('id, title, level, topic, tags, group_id, variant_level, created_at, updated_at')
     .eq('user_id', user.id)
 
   if (level) query = query.eq('level', level)

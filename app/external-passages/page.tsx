@@ -1,8 +1,14 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { Fragment, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import { PassageSummary } from '@/types/passageBank'
+import { PassageSummary, PassageVariantLevel, VARIANT_LABELS } from '@/types/passageBank'
+
+const VARIANT_ORDER: PassageVariantLevel[] = ['school', 'academy', 'advanced', 'prestudy']
+
+type ListRow =
+  | { kind: 'single'; item: PassageSummary }
+  | { kind: 'group'; groupId: string; items: PassageSummary[] }
 
 export default function ExternalPassagesPage() {
   const [items, setItems] = useState<PassageSummary[]>([])
@@ -12,6 +18,7 @@ export default function ExternalPassagesPage() {
 
   const [levelFilter, setLevelFilter] = useState('all')
   const [searchText, setSearchText] = useState('')
+  const [expanded, setExpanded] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     fetch('/api/passages')
@@ -40,6 +47,42 @@ export default function ExternalPassagesPage() {
       return true
     })
   }, [items, levelFilter, searchText])
+
+  // 같은 group_id 지문은 한 줄로 묶고(난이도 순서 고정), 번호표 없는 지문은 그대로 한 줄
+  const rows = useMemo<ListRow[]>(() => {
+    const result: ListRow[] = []
+    const groups = new Map<string, Extract<ListRow, { kind: 'group' }>>()
+    for (const item of filtered) {
+      if (!item.group_id) {
+        result.push({ kind: 'single', item })
+        continue
+      }
+      let row = groups.get(item.group_id)
+      if (!row) {
+        row = { kind: 'group', groupId: item.group_id, items: [] }
+        groups.set(item.group_id, row)
+        result.push(row)
+      }
+      row.items.push(item)
+    }
+    for (const row of groups.values()) {
+      row.items.sort(
+        (a, b) =>
+          VARIANT_ORDER.indexOf(a.variant_level as PassageVariantLevel) -
+          VARIANT_ORDER.indexOf(b.variant_level as PassageVariantLevel),
+      )
+    }
+    return result
+  }, [filtered])
+
+  function toggleGroup(groupId: string) {
+    setExpanded((prev) => {
+      const next = new Set(prev)
+      if (next.has(groupId)) next.delete(groupId)
+      else next.add(groupId)
+      return next
+    })
+  }
 
   async function handleDelete(id: string) {
     if (!confirm('이 지문을 삭제하시겠습니까? 저장된 문제와 서술형도 함께 삭제됩니다.')) return
@@ -128,7 +171,65 @@ export default function ExternalPassagesPage() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((item) => (
+              {rows.map((row) => {
+                if (row.kind === 'group') {
+                  const first = row.items[0]
+                  const isOpen = expanded.has(row.groupId)
+                  return (
+                    <Fragment key={row.groupId}>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50">
+                        <td className="px-4 py-3 font-medium text-gray-800">
+                          <button
+                            onClick={() => toggleGroup(row.groupId)}
+                            aria-expanded={isOpen}
+                            className="flex items-center gap-2 text-left hover:underline"
+                          >
+                            <span className="w-3 text-xs text-gray-500">{isOpen ? '▼' : '▶'}</span>
+                            {first.title || '(제목 없음)'}
+                          </button>
+                        </td>
+                        <td className="px-4 py-3 text-gray-600">{first.level || '-'}</td>
+                        <td className="px-4 py-3 text-gray-600">{first.topic || '-'}</td>
+                        <td className="px-4 py-3 text-xs text-gray-500">{row.items.length}단계</td>
+                        <td className="px-4 py-3 text-gray-500">
+                          {row.items.map((i) => i.created_at).sort()[0]?.slice(0, 10)}
+                        </td>
+                        <td className="px-4 py-3 text-center">
+                          <button
+                            onClick={() => toggleGroup(row.groupId)}
+                            className="rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 hover:bg-gray-100"
+                          >
+                            {isOpen ? '접기' : '펼치기'}
+                          </button>
+                        </td>
+                      </tr>
+                      {isOpen &&
+                        row.items.map((child) => (
+                          <tr key={child.id} className="border-b border-gray-100 bg-gray-50/60 last:border-0">
+                            <td className="py-2 pl-12 pr-4 text-gray-700">
+                              <Link href={`/external-passages/${child.id}`} className="hover:underline">
+                                {child.variant_level ? VARIANT_LABELS[child.variant_level] : '(난이도 없음)'}
+                              </Link>
+                            </td>
+                            <td className="px-4 py-2 text-gray-500">{child.level || '-'}</td>
+                            <td className="px-4 py-2 text-gray-500">{child.topic || '-'}</td>
+                            <td className="px-4 py-2 text-xs text-gray-500">{tagSummary(child)}</td>
+                            <td className="px-4 py-2 text-gray-400">{child.created_at?.slice(0, 10)}</td>
+                            <td className="px-4 py-2 text-center">
+                              <Link
+                                href={`/external-passages/${child.id}`}
+                                className="rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 hover:bg-gray-100"
+                              >
+                                보기
+                              </Link>
+                            </td>
+                          </tr>
+                        ))}
+                    </Fragment>
+                  )
+                }
+                const item = row.item
+                return (
                 <tr key={item.id} className="border-b border-gray-100 last:border-0 hover:bg-gray-50">
                   <td className="px-4 py-3 font-medium text-gray-800">
                     <Link href={`/external-passages/${item.id}`} className="hover:underline">
@@ -157,7 +258,8 @@ export default function ExternalPassagesPage() {
                     </div>
                   </td>
                 </tr>
-              ))}
+                )
+              })}
             </tbody>
           </table>
         </div>

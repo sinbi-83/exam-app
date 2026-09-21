@@ -108,6 +108,8 @@ export interface PassageSummary {
   level: string;
   topic: string;
   tags: PassageTags;
+  group_id?: string | null;
+  variant_level?: PassageVariantLevel | null;
   created_at: string;
   updated_at: string;
 }
