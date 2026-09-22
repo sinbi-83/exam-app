@@ -26,6 +26,11 @@ interface QuestionData {
   answer?: string
   explanation?: string
   passage?: string
+  // 외부지문저장소 'order' 유형 전용: 배열할 문장들 (원래 순서 그대로, 화면에서 A/B/C… 번호를 붙인다)
+  items?: string[]
+  // 외부지문저장소 'match' 유형 전용: 좌우 짝짓기
+  matchWords?: string[]
+  matchMeanings?: string[]
 }
 
 interface ExamQuestion {
@@ -41,7 +46,14 @@ const TYPE_LABELS: Record<string, string> = {
   reading: '독해',
   essay: '서술형',
   summary: '지문요약',
+  mc: '객관식',
+  blank: '빈칸',
+  tf: '참/거짓',
+  order: '순서배열',
+  match: '짝짓기',
 }
+
+const MATCH_LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
 const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
@@ -247,10 +259,12 @@ function PrintContent() {
                   qNum++
                   const num = qNum
                   const q = eq.question_data
-                  const isMultiple = Array.isArray(q.options) && q.options.length > 0
+                  const isOrder = q.type === 'order' && Array.isArray(q.items)
+                  const isMatch = q.type === 'match' && Array.isArray(q.matchWords) && Array.isArray(q.matchMeanings)
+                  const isMultiple = Array.isArray(q.options) && q.options.length > 0 && !isOrder && !isMatch
                   const isEssay = q.type === 'essay'
                   const isSummary = q.type === 'summary'
-                  const isShortAnswer = !isMultiple && !isEssay && !isSummary
+                  const isShortAnswer = !isMultiple && !isEssay && !isSummary && !isOrder && !isMatch
 
                   return (
                     <div
@@ -299,6 +313,40 @@ function PrintContent() {
                       {isShortAnswer && (
                         <div className="ml-7 mt-1">
                           <div className="inline-block min-w-32 border-b border-gray-400 pb-1" />
+                        </div>
+                      )}
+
+                      {/* 순서배열: 문장들을 A/B/C… 로 나열하고, 답을 쓸 빈칸을 준다 */}
+                      {isOrder && (
+                        <div className="ml-7 mt-2">
+                          <div className="space-y-0.5">
+                            {q.items!.map((it, i) => (
+                              <div key={i} className="text-sm text-gray-700">
+                                ({MATCH_LABELS[i] ?? i + 1}) {it}
+                              </div>
+                            ))}
+                          </div>
+                          <div className="mt-2 inline-block min-w-40 border-b border-gray-400 pb-1" />
+                        </div>
+                      )}
+
+                      {/* 짝짓기: 왼쪽은 단어(번호), 오른쪽은 뜻(A/B/C…)을 나열한다 */}
+                      {isMatch && (
+                        <div className="ml-7 mt-2 grid grid-cols-2 gap-x-6 gap-y-0.5 text-sm text-gray-700">
+                          <div>
+                            {q.matchWords!.map((w, i) => (
+                              <div key={i}>
+                                {i + 1}. {w} ( &nbsp;&nbsp; )
+                              </div>
+                            ))}
+                          </div>
+                          <div>
+                            {q.matchMeanings!.map((m, i) => (
+                              <div key={i}>
+                                {MATCH_LABELS[i] ?? i + 1}. {m}
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>

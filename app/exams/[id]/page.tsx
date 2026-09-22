@@ -1,8 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { PassageEssay, PassageQuestion, PassageRecord, PassageSummary, VARIANT_LABELS } from '@/types/passageBank'
+import { buildExternalExamQuestionData, ExamSourceKind, externalSourceKey } from '@/lib/externalPassageExam'
 
 interface Exam {
   id: string
@@ -31,6 +33,16 @@ interface QuestionData {
   grade?: string
   difficulty?: number
   passage?: string
+  // 외부지문저장소 'order' 유형 전용: 배열할 문장들
+  items?: string[]
+  // 외부지문저장소 'match' 유형 전용: 좌우 짝짓기
+  matchWords?: string[]
+  matchMeanings?: string[]
+  // 외부지문저장소 출처 (중복 추가 방지용, DB 컬럼 추가 없이 이 JSON 안에서 처리)
+  source?: 'external_passage'
+  source_passage_id?: string
+  source_kind?: ExamSourceKind
+  source_index?: number
 }
 
 interface BankQuestion {
@@ -52,6 +64,18 @@ const TYPE_LABELS: Record<string, string> = {
   reading: '독해',
   essay: '서술형',
   summary: '지문요약',
+  mc: '객관식',
+  blank: '빈칸',
+  tf: '참/거짓',
+  order: '순서배열',
+  match: '짝짓기',
+}
+
+// order/match 는 "q" 필드가 없으므로, 체크리스트에 보여줄 짧은 미리보기 문구를 따로 만든다.
+function questionPreviewText(q: PassageQuestion): string {
+  if (q.type === 'order') return `문장 배열: ${q.items[0]?.slice(0, 40) ?? ''}…`
+  if (q.type === 'match') return `짝짓기: ${q.pairs.map((p) => p.word).join(', ')}`
+  return q.q
 }
 
 export default function ExamDetailPage() {
@@ -79,6 +103,18 @@ export default function ExamDetailPage() {
   const [addingAll, setAddingAll] = useState(false)
   const [removing, setRemoving] = useState<string | null>(null)
   const [passages, setPassages] = useState<Record<string, string>>({})
+
+  // 외부지문저장소에서 문제 담기 (STEP 7)
+  const [bankSource, setBankSource] = useState<'ai' | 'external'>('ai')
+  const [extItems, setExtItems] = useState<PassageSummary[]>([])
+  const [extLoading, setExtLoading] = useState(false)
+  const [extSearch, setExtSearch] = useState('')
+  const [extSelectedId, setExtSelectedId] = useState<string | null>(null)
+  const [extRecord, setExtRecord] = useState<PassageRecord | null>(null)
+  const [extRecordLoading, setExtRecordLoading] = useState(false)
+  const [extQChecked, setExtQChecked] = useState<boolean[]>([])
+  const [extEChecked, setExtEChecked] = useState<boolean[]>([])
+  const [extAdding, setExtAdding] = useState(false)
 
   useEffect(() => {
     loadExam()
@@ -139,6 +175,123 @@ export default function ExamDetailPage() {
   }, [showBank])
 
   const addedIds = new Set(examQuestions.map((q) => q.question_data.id))
+
+  // ── 외부지문저장소에서 문제 담기 (STEP 7) ──
+
+  useEffect(() => {
+    if (showBank && bankSource === 'external' && extItems.length === 0) loadExtItems()
+  }, [showBank, bankSource])
+
+  async function loadExtItems() {
+    setExtLoading(true)
+    try {
+      const res = await fetch('/api/passages')
+      const json = await res.json()
+      if (!json.error) {
+        // 보관함으로 옮겨둔 자료는 지금 쓰는 자료가 아니므로 목록에서 뺀다.
+        const list = (json.data ?? []) as (PassageSummary & { group_archived?: boolean | null })[]
+        setExtItems(list.filter((p) => !(p.group_id ? p.group_archived : p.archived)))
+      }
+    } catch {
+      // 조용히 실패 — 목록이 비어있으면 화면에서 "저장된 외부지문이 없습니다"로 보인다.
+    } finally {
+      setExtLoading(false)
+    }
+  }
+
+  async function selectExtPassage(id: string) {
+    setExtSelectedId(id)
+    setExtRecord(null)
+    setExtRecordLoading(true)
+    try {
+      const res = await fetch(`/api/passages/${id}`)
+      const json = await res.json()
+      if (!json.error) {
+        setExtRecord(json.data)
+        setExtQChecked(new Array(json.data.questions.length).fill(true))
+        setExtEChecked(new Array(json.data.essays.length).fill(true))
+      }
+    } finally {
+      setExtRecordLoading(false)
+    }
+  }
+
+  function backToExtList() {
+    setExtSelectedId(null)
+    setExtRecord(null)
+    setExtQChecked([])
+    setExtEChecked([])
+  }
+
+  // 이 지문의 문제 중 이미 이번 시험에 담겨 있는 것 (question_data 안의 source_* 값으로 판단, DB 컬럼 추가 없음)
+  const extAddedKeySet = useMemo(() => {
+    if (!extRecord) return new Set<string>()
+    const set = new Set<string>()
+    for (const eq of examQuestions) {
+      const d = eq.question_data
+      if (d.source === 'external_passage' && d.source_passage_id === extRecord.id && d.source_kind && d.source_index !== undefined) {
+        set.add(externalSourceKey(extRecord.id, d.source_kind, d.source_index))
+      }
+    }
+    return set
+  }, [examQuestions, extRecord])
+
+  const extTotalCount = extRecord ? extRecord.questions.length + extRecord.essays.length : 0
+  const extSelectedCount = extQChecked.filter(Boolean).length + extEChecked.filter(Boolean).length
+
+  function toggleAllExt(value: boolean) {
+    if (!extRecord) return
+    setExtQChecked(
+      extRecord.questions.map((_, i) => (extAddedKeySet.has(externalSourceKey(extRecord.id, 'question', i)) ? true : value)),
+    )
+    setExtEChecked(
+      extRecord.essays.map((_, i) => (extAddedKeySet.has(externalSourceKey(extRecord.id, 'essay', i)) ? true : value)),
+    )
+  }
+
+  async function addSelectedExternal() {
+    if (!extRecord) return
+    const toAdd: { kind: ExamSourceKind; index: number; item: PassageQuestion | PassageEssay }[] = []
+    extRecord.questions.forEach((q, i) => {
+      if (extQChecked[i] && !extAddedKeySet.has(externalSourceKey(extRecord.id, 'question', i))) {
+        toAdd.push({ kind: 'question', index: i, item: q })
+      }
+    })
+    extRecord.essays.forEach((e, i) => {
+      if (extEChecked[i] && !extAddedKeySet.has(externalSourceKey(extRecord.id, 'essay', i))) {
+        toAdd.push({ kind: 'essay', index: i, item: e })
+      }
+    })
+    if (toAdd.length === 0) {
+      alert('추가할 문제를 선택해주세요.')
+      return
+    }
+    setExtAdding(true)
+    try {
+      const results: ExamQuestion[] = []
+      for (const { kind, index, item } of toAdd) {
+        const question_data = buildExternalExamQuestionData({ id: extRecord.id, body: extRecord.body }, kind, index, item)
+        const res = await fetch('/api/exam-questions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            exam_id: examId,
+            question_data,
+            sort_order: examQuestions.length + results.length,
+            points: 5,
+          }),
+        })
+        const json = await res.json()
+        if (!json.error) results.push(json.data)
+      }
+      setExamQuestions((prev) => [...prev, ...results])
+      if (results.length > 0) alert(`${results.length}개 문제를 시험에 추가했습니다.`)
+    } catch {
+      alert('추가 중 오류가 발생했습니다.')
+    } finally {
+      setExtAdding(false)
+    }
+  }
 
   async function addQuestion(q: BankQuestion) {
     setAdding(q.id)
@@ -258,7 +411,7 @@ export default function ExamDetailPage() {
           onClick={() => setShowBank(!showBank)}
           className="rounded border border-blue-300 bg-blue-50 px-3 py-1.5 text-sm text-blue-700 hover:bg-blue-100"
         >
-          {showBank ? '✕ 문제은행 닫기' : '+ 문제은행에서 추가'}
+          {showBank ? '✕ 문제 추가 닫기' : '+ 문제 추가'}
         </button>
       </div>
 
@@ -308,10 +461,30 @@ export default function ExamDetailPage() {
         </div>
       )}
 
-      {/* 문제은행 패널 */}
+      {/* 문제 추가 패널: AI 문제은행 / 외부지문저장소 */}
       {showBank && (
         <div className="rounded-lg border border-gray-200 bg-white p-5">
+          <div className="mb-4 flex gap-2 border-b border-gray-200">
+            <button
+              onClick={() => setBankSource('ai')}
+              className={`px-3 py-2 text-sm font-medium ${
+                bankSource === 'ai' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              🧠 AI 문제은행
+            </button>
+            <button
+              onClick={() => setBankSource('external')}
+              className={`px-3 py-2 text-sm font-medium ${
+                bankSource === 'external' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              📁 외부지문저장소
+            </button>
+          </div>
 
+          {bankSource === 'ai' && (
+            <>
           {/* ── STEP 1: 세트 선택 ── */}
           {!selectedSetId && (
             <>
@@ -413,6 +586,167 @@ export default function ExamDetailPage() {
                     )
                   })}
                 </div>
+              )}
+            </>
+          )}
+            </>
+          )}
+
+          {bankSource === 'external' && (
+            <>
+              {/* ── STEP 1: 외부지문 선택 ── */}
+              {!extSelectedId ? (
+                <>
+                  <div className="mb-4 flex items-center justify-between">
+                    <h3 className="text-sm font-semibold text-gray-700">📁 외부지문 선택</h3>
+                    <span className="text-xs text-gray-400">지문을 선택하면 문제 25개(일반 20 + 서술형 5)가 나옵니다</span>
+                  </div>
+                  <input
+                    type="text"
+                    value={extSearch}
+                    onChange={(e) => setExtSearch(e.target.value)}
+                    placeholder="🔍 제목·주제 검색"
+                    className="mb-3 w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-400 focus:outline-none"
+                  />
+                  {extLoading ? (
+                    <div className="py-8 text-center text-sm text-gray-400">불러오는 중…</div>
+                  ) : (
+                    <div className="max-h-96 overflow-y-auto space-y-2">
+                      {extItems
+                        .filter(
+                          (p) =>
+                            !extSearch ||
+                            `${p.title} ${p.topic}`.toLowerCase().includes(extSearch.trim().toLowerCase()),
+                        )
+                        .map((p) => (
+                          <div
+                            key={p.id}
+                            className="flex cursor-pointer items-center justify-between rounded-lg border border-gray-100 p-3 hover:border-blue-300 hover:bg-blue-50"
+                            onClick={() => selectExtPassage(p.id)}
+                          >
+                            <div>
+                              <p className="text-sm font-medium text-gray-800">{p.title || '(제목없음)'}</p>
+                              <p className="text-xs text-gray-400">
+                                {p.level} · {p.topic}
+                                {p.variant_level ? ` · ${VARIANT_LABELS[p.variant_level]}` : ' · 단일 지문'}
+                              </p>
+                            </div>
+                            <span className="rounded bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">선택 →</span>
+                          </div>
+                        ))}
+                      {extItems.length === 0 && (
+                        <div className="py-8 text-center text-sm text-gray-400">저장된 외부지문이 없습니다.</div>
+                      )}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <>
+                  {/* ── STEP 2: 선택한 지문의 문제 25개 체크리스트 ── */}
+                  <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <button onClick={backToExtList} className="text-xs text-blue-600 hover:underline">
+                        ← 지문 목록
+                      </button>
+                      <h3 className="text-sm font-semibold text-gray-700">📖 {extRecord?.title}</h3>
+                    </div>
+                    {extRecord && (
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-medium text-blue-600">
+                          선택 {extSelectedCount} / {extTotalCount}
+                        </span>
+                        <button
+                          onClick={() => toggleAllExt(true)}
+                          className="rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 hover:bg-gray-100"
+                        >
+                          전체 선택
+                        </button>
+                        <button
+                          onClick={() => toggleAllExt(false)}
+                          className="rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 hover:bg-gray-100"
+                        >
+                          전체 해제
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  {extRecordLoading || !extRecord ? (
+                    <div className="py-8 text-center text-sm text-gray-400">불러오는 중…</div>
+                  ) : (
+                    <>
+                      <div className="max-h-96 overflow-y-auto space-y-1.5">
+                        <p className="mb-1 text-xs font-semibold text-gray-500">일반문제 ({extRecord.questions.length})</p>
+                        {extRecord.questions.map((q, i) => {
+                          const key = externalSourceKey(extRecord.id, 'question', i)
+                          const already = extAddedKeySet.has(key)
+                          return (
+                            <label
+                              key={key}
+                              className={`flex items-start gap-2 rounded border p-2 text-xs ${
+                                already ? 'border-green-200 bg-green-50' : 'border-gray-100'
+                              }`}
+                            >
+                              <input
+                                type="checkbox"
+                                className="mt-0.5"
+                                checked={extQChecked[i] ?? true}
+                                disabled={already}
+                                onChange={() =>
+                                  setExtQChecked((prev) => prev.map((v, idx) => (idx === i ? !v : v)))
+                                }
+                              />
+                              <span className="flex-1">
+                                <span className="mr-1 rounded bg-gray-100 px-1 text-[10px] text-gray-500">
+                                  {TYPE_LABELS[q.type] ?? q.type}
+                                </span>
+                                {questionPreviewText(q)}
+                                {already && <span className="ml-1 text-green-600">✓ 추가됨</span>}
+                              </span>
+                            </label>
+                          )
+                        })}
+                        <p className="mb-1 mt-3 text-xs font-semibold text-gray-500">서술형 ({extRecord.essays.length})</p>
+                        {extRecord.essays.map((e, i) => {
+                          const key = externalSourceKey(extRecord.id, 'essay', i)
+                          const already = extAddedKeySet.has(key)
+                          return (
+                            <label
+                              key={key}
+                              className={`flex items-start gap-2 rounded border p-2 text-xs ${
+                                already ? 'border-green-200 bg-green-50' : 'border-gray-100'
+                              }`}
+                            >
+                              <input
+                                type="checkbox"
+                                className="mt-0.5"
+                                checked={extEChecked[i] ?? true}
+                                disabled={already}
+                                onChange={() =>
+                                  setExtEChecked((prev) => prev.map((v, idx) => (idx === i ? !v : v)))
+                                }
+                              />
+                              <span className="flex-1">
+                                <span className="mr-1 rounded bg-purple-100 px-1 text-[10px] text-purple-600">서술형</span>
+                                {e.q}
+                                {already && <span className="ml-1 text-green-600">✓ 추가됨</span>}
+                              </span>
+                            </label>
+                          )
+                        })}
+                      </div>
+                      <div className="mt-4 flex justify-end">
+                        <button
+                          onClick={addSelectedExternal}
+                          disabled={extAdding || extSelectedCount === 0}
+                          className="rounded bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-40"
+                        >
+                          {extAdding ? '추가 중…' : `선택한 문제 시험에 추가 (${extSelectedCount}개)`}
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </>
               )}
             </>
           )}
