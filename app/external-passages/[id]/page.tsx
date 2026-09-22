@@ -28,6 +28,7 @@ export default function ExternalPassageDetailPage() {
   const [draft, setDraft] = useState<PassageRecord | null>(null)
   const [saving, setSaving] = useState(false)
   const [deleting, setDeleting] = useState(false)
+  const [archiving, setArchiving] = useState(false)
 
   const [showAnswers, setShowAnswers] = useState(true)
 
@@ -112,6 +113,29 @@ export default function ExternalPassageDetailPage() {
     }
   }
 
+  // 단독 지문 보관/복원. 그룹에 속한 지문(학교형 등)은 세트 단위로만 보관하므로 이 버튼을 쓰지 않는다.
+  async function handleToggleArchive(archived: boolean) {
+    if (archived && !confirm('이 지문을 보관함으로 이동하시겠습니까?')) return
+    setArchiving(true)
+    try {
+      const res = await fetch(`/api/passages/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ archived }),
+      })
+      const json = await res.json()
+      if (json.error) {
+        alert((archived ? '보관' : '복원') + ' 실패: ' + json.error)
+        return
+      }
+      setRecord(json.data)
+    } catch {
+      alert((archived ? '보관' : '복원') + ' 중 오류가 발생했습니다.')
+    } finally {
+      setArchiving(false)
+    }
+  }
+
   function updateQuestion(idx: number, updater: (q: PassageQuestion) => PassageQuestion) {
     setDraft((prev) => {
       if (!prev) return prev
@@ -177,6 +201,16 @@ export default function ExternalPassageDetailPage() {
               >
                 편집
               </button>
+              {/* 그룹(학교형/일반학원형/상위학원형/선행형)에 속한 지문은 세트 단위로만 보관하므로 버튼을 숨긴다. */}
+              {!record.group_id && (
+                <button
+                  onClick={() => handleToggleArchive(!record.archived)}
+                  disabled={archiving}
+                  className="rounded border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-50 disabled:opacity-40"
+                >
+                  {archiving ? '처리 중…' : record.archived ? '복원' : '보관'}
+                </button>
+              )}
               <button
                 onClick={handleDelete}
                 disabled={deleting}
@@ -254,6 +288,11 @@ export default function ExternalPassageDetailPage() {
             <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
               <h1 className="text-lg font-semibold text-gray-800">{current.title}</h1>
               <div className="flex flex-wrap gap-1.5">
+                {!current.group_id && current.archived && (
+                  <span className="rounded border border-gray-300 bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">
+                    보관됨
+                  </span>
+                )}
                 <span className="rounded bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">{current.level}</span>
                 <span className="rounded bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">{current.topic}</span>
                 {current.variant_level && (

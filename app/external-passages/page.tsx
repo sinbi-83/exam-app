@@ -10,10 +10,20 @@ const FULL_QUESTIONS = 20
 const FULL_ESSAYS = 5
 
 type SortKey = 'created_desc' | 'updated_desc' | 'level' | 'title'
+type Tab = 'active' | 'archived'
 
 type ListRow =
-  | { kind: 'single'; item: PassageSummary; sortDate: string; sortLevel: string; sortTitle: string }
-  | { kind: 'group'; groupId: string; items: PassageSummary[]; sortDate: string; sortLevel: string; sortTitle: string }
+  | { kind: 'single'; item: PassageSummary; sortDate: string; sortLevel: string; sortTitle: string; archived: boolean; archivedAt: string | null }
+  | {
+      kind: 'group'
+      groupId: string
+      items: PassageSummary[]
+      sortDate: string
+      sortLevel: string
+      sortTitle: string
+      archived: boolean
+      archivedAt: string | null
+    }
 
 function isComplete(item: Pick<PassageSummary, 'question_count' | 'essay_count'>): boolean {
   return item.question_count === FULL_QUESTIONS && item.essay_count === FULL_ESSAYS
@@ -39,7 +49,7 @@ function LevelBadge({ level }: { level: string }) {
   )
 }
 
-// "⋮" 클릭 시 뜨는 작은 메뉴. 자주 안 쓰는 기능(삭제 등)을 여기 모아둔다.
+// "⋮" 클릭 시 뜨는 작은 메뉴. 자주 안 쓰는 기능(보관/삭제 등)을 여기 모아둔다.
 function ActionMenu({ items }: { items: { label: string; onClick: () => void; danger?: boolean }[] }) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -89,7 +99,10 @@ export default function ExternalPassagesPage() {
   const [error, setError] = useState('')
   const [deletingSingle, setDeletingSingle] = useState<string | null>(null)
   const [deletingGroup, setDeletingGroup] = useState<string | null>(null)
+  const [archivingSingle, setArchivingSingle] = useState<string | null>(null)
+  const [archivingGroup, setArchivingGroup] = useState<string | null>(null)
 
+  const [tab, setTab] = useState<Tab>('active')
   const [levelFilter, setLevelFilter] = useState('all')
   const [variantFilter, setVariantFilter] = useState<'all' | PassageVariantLevel>('all')
   const [searchText, setSearchText] = useState('')
@@ -112,6 +125,29 @@ export default function ExternalPassagesPage() {
     return Array.from(set).sort()
   }, [items])
 
+  // 상단에 "사용 중 N / 보관 N" 개수를 보여주기 위한 계산. 그룹은 4개 지문이 아니라 세트 1개로 센다.
+  const counts = useMemo(() => {
+    const groupArchived = new Map<string, boolean>()
+    let activeSingles = 0
+    let archivedSingles = 0
+    for (const item of items) {
+      if (item.group_id) {
+        groupArchived.set(item.group_id, !!item.group_archived)
+      } else if (item.archived) {
+        archivedSingles++
+      } else {
+        activeSingles++
+      }
+    }
+    let activeGroups = 0
+    let archivedGroups = 0
+    for (const archived of groupArchived.values()) {
+      if (archived) archivedGroups++
+      else activeGroups++
+    }
+    return { active: activeSingles + activeGroups, archived: archivedSingles + archivedGroups }
+  }, [items])
+
   const filtered = useMemo(() => {
     return items.filter((item) => {
       if (levelFilter !== 'all' && item.level !== levelFilter) return false
@@ -130,18 +166,36 @@ export default function ExternalPassagesPage() {
     })
   }, [items, levelFilter, variantFilter, searchText])
 
-  // 같은 group_id 지문은 한 줄로 묶고(난이도 순서 고정), 번호표 없는 지문은 그대로 한 줄
+  // 같은 group_id 지문은 한 줄로 묶고(난이도 순서 고정), 번호표 없는 지문은 그대로 한 줄.
+  // 보관 여부는 그룹은 passage_groups.archived, 단독 지문은 passages.archived 로 판단한다.
   const rows = useMemo<ListRow[]>(() => {
     const result: ListRow[] = []
     const groups = new Map<string, Extract<ListRow, { kind: 'group' }>>()
     for (const item of filtered) {
       if (!item.group_id) {
-        result.push({ kind: 'single', item, sortDate: item.updated_at, sortLevel: item.level, sortTitle: item.title })
+        result.push({
+          kind: 'single',
+          item,
+          sortDate: item.updated_at,
+          sortLevel: item.level,
+          sortTitle: item.title,
+          archived: !!item.archived,
+          archivedAt: item.archived_at,
+        })
         continue
       }
       let row = groups.get(item.group_id)
       if (!row) {
-        row = { kind: 'group', groupId: item.group_id, items: [], sortDate: item.updated_at, sortLevel: item.level, sortTitle: item.title }
+        row = {
+          kind: 'group',
+          groupId: item.group_id,
+          items: [],
+          sortDate: item.updated_at,
+          sortLevel: item.level,
+          sortTitle: item.title,
+          archived: !!item.group_archived,
+          archivedAt: item.group_archived_at ?? null,
+        }
         groups.set(item.group_id, row)
         result.push(row)
       }
@@ -172,6 +226,10 @@ export default function ExternalPassagesPage() {
     })
     return sorted
   }, [filtered, sortKey])
+
+  // 현재 탭(전체 자료/보관함)에 해당하는 자료만 보여준다. 검색·필터는 이미 위에서 적용된 상태라
+  // 결과적으로 "선택된 영역 안에서만" 검색이 동작한다.
+  const visibleRows = useMemo(() => rows.filter((row) => row.archived === (tab === 'archived')), [rows, tab])
 
   function toggleGroup(groupId: string) {
     setExpanded((prev) => {
@@ -213,6 +271,58 @@ export default function ExternalPassagesPage() {
     }
   }
 
+  // 단독 지문 보관/복원. 삭제와 달리 목록에서 사라질 뿐 데이터는 그대로 남는다.
+  async function handleArchiveSingle(id: string, archived: boolean) {
+    if (archived && !confirm('이 지문을 보관함으로 이동하시겠습니까?')) return
+    setArchivingSingle(id)
+    try {
+      const res = await fetch(`/api/passages/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ archived }),
+      })
+      const json = await res.json()
+      if (json.error) {
+        alert((archived ? '보관' : '복원') + ' 실패: ' + json.error)
+        return
+      }
+      setItems((prev) =>
+        prev.map((i) => (i.id === id ? { ...i, archived: json.data.archived, archived_at: json.data.archived_at } : i)),
+      )
+    } catch {
+      alert((archived ? '보관' : '복원') + ' 중 오류가 발생했습니다.')
+    } finally {
+      setArchivingSingle(null)
+    }
+  }
+
+  // 그룹(세트) 보관/복원. 그룹 아래 4개 지문(학교형 등)은 건드리지 않는다 — 항상 세트 전체가 함께 움직인다.
+  async function handleArchiveGroup(groupId: string, archived: boolean) {
+    if (archived && !confirm('이 지문 세트를 보관함으로 이동하시겠습니까?')) return
+    setArchivingGroup(groupId)
+    try {
+      const res = await fetch(`/api/passage-groups/${groupId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ archived }),
+      })
+      const json = await res.json()
+      if (json.error) {
+        alert((archived ? '보관' : '복원') + ' 실패: ' + json.error)
+        return
+      }
+      setItems((prev) =>
+        prev.map((i) =>
+          i.group_id === groupId ? { ...i, group_archived: json.data.archived, group_archived_at: json.data.archived_at } : i,
+        ),
+      )
+    } catch {
+      alert((archived ? '보관' : '복원') + ' 중 오류가 발생했습니다.')
+    } finally {
+      setArchivingGroup(null)
+    }
+  }
+
   if (loading) {
     return <div className="flex items-center justify-center py-20 text-sm text-gray-400">불러오는 중…</div>
   }
@@ -228,6 +338,25 @@ export default function ExternalPassagesPage() {
         <p className="mt-1 text-sm text-gray-500">
           미리 만들어 저장한 지문과 문제 세트를 조회·수정·인쇄합니다. (API 호출 없음)
         </p>
+      </div>
+
+      <div className="mb-4 flex gap-2 border-b border-gray-200">
+        <button
+          onClick={() => setTab('active')}
+          className={`px-3 py-2 text-sm font-medium ${
+            tab === 'active' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-500 hover:text-gray-700'
+          }`}
+        >
+          전체 자료 {counts.active}
+        </button>
+        <button
+          onClick={() => setTab('archived')}
+          className={`px-3 py-2 text-sm font-medium ${
+            tab === 'archived' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-500 hover:text-gray-700'
+          }`}
+        >
+          보관함 {counts.archived}
+        </button>
       </div>
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -270,16 +399,22 @@ export default function ExternalPassagesPage() {
         />
       </div>
 
-      {rows.length === 0 ? (
+      {visibleRows.length === 0 ? (
         <div className="rounded-lg border border-gray-200 bg-white p-12 text-center">
-          <p className="text-gray-500">저장된 지문이 없습니다.</p>
-          <p className="mt-1 text-sm text-gray-400">
-            scripts/add-passage.ts 로 지문 JSON을 저장하면 여기에 표시됩니다.
-          </p>
+          {tab === 'archived' ? (
+            <p className="text-gray-500">보관된 지문이 없습니다.</p>
+          ) : (
+            <>
+              <p className="text-gray-500">저장된 지문이 없습니다.</p>
+              <p className="mt-1 text-sm text-gray-400">
+                scripts/add-passage.ts 로 지문 JSON을 저장하면 여기에 표시됩니다.
+              </p>
+            </>
+          )}
         </div>
       ) : (
         <div className="space-y-3">
-          {rows.map((row) => {
+          {visibleRows.map((row) => {
             if (row.kind === 'group') {
               const first = row.items[0]
               const isOpen = expanded.has(row.groupId)
@@ -288,6 +423,30 @@ export default function ExternalPassagesPage() {
                 .map((i) => VARIANT_LABELS[i.variant_level as PassageVariantLevel])
               const groupComplete = row.items.every(isComplete)
               const createdAt = row.items.map((i) => i.created_at).sort()[0]?.slice(0, 10)
+              const menuItems =
+                tab === 'archived'
+                  ? [
+                      {
+                        label: archivingGroup === row.groupId ? '복원 중…' : '복원',
+                        onClick: () => handleArchiveGroup(row.groupId, false),
+                      },
+                      {
+                        label: deletingGroup === row.groupId ? '삭제 중…' : '세트 전체 삭제',
+                        danger: true,
+                        onClick: () => handleDeleteGroup(row.groupId, first.title, variantLabels),
+                      },
+                    ]
+                  : [
+                      {
+                        label: archivingGroup === row.groupId ? '보관 중…' : '보관',
+                        onClick: () => handleArchiveGroup(row.groupId, true),
+                      },
+                      {
+                        label: deletingGroup === row.groupId ? '삭제 중…' : '세트 전체 삭제',
+                        danger: true,
+                        onClick: () => handleDeleteGroup(row.groupId, first.title, variantLabels),
+                      },
+                    ]
               return (
                 <div key={row.groupId} className="overflow-hidden rounded-lg border border-gray-200 bg-white">
                   <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
@@ -311,7 +470,10 @@ export default function ExternalPassagesPage() {
                           <StatusBadge complete={groupComplete} />
                         </div>
                         <p className="mt-1.5 text-xs text-gray-500">{variantLabels.join(' · ') || '(난이도 없음)'}</p>
-                        <p className="mt-0.5 text-[11px] text-gray-400">{createdAt}</p>
+                        <p className="mt-0.5 text-[11px] text-gray-400">
+                          {createdAt}
+                          {tab === 'archived' && row.archivedAt && ` · 보관 ${row.archivedAt.slice(0, 10)}`}
+                        </p>
                       </div>
                     </button>
                     <div className="flex shrink-0 items-center gap-2 self-end sm:self-center">
@@ -327,15 +489,7 @@ export default function ExternalPassagesPage() {
                       >
                         수정
                       </Link>
-                      <ActionMenu
-                        items={[
-                          {
-                            label: deletingGroup === row.groupId ? '삭제 중…' : '세트 전체 삭제',
-                            danger: true,
-                            onClick: () => handleDeleteGroup(row.groupId, first.title, variantLabels),
-                          },
-                        ]}
-                      />
+                      <ActionMenu items={menuItems} />
                     </div>
                   </div>
 
@@ -381,6 +535,30 @@ export default function ExternalPassagesPage() {
             }
 
             const item = row.item
+            const singleMenuItems =
+              tab === 'archived'
+                ? [
+                    {
+                      label: archivingSingle === item.id ? '복원 중…' : '복원',
+                      onClick: () => handleArchiveSingle(item.id, false),
+                    },
+                    {
+                      label: deletingSingle === item.id ? '삭제 중…' : '삭제',
+                      danger: true,
+                      onClick: () => handleDeleteSingle(item.id),
+                    },
+                  ]
+                : [
+                    {
+                      label: archivingSingle === item.id ? '보관 중…' : '보관',
+                      onClick: () => handleArchiveSingle(item.id, true),
+                    },
+                    {
+                      label: deletingSingle === item.id ? '삭제 중…' : '삭제',
+                      danger: true,
+                      onClick: () => handleDeleteSingle(item.id),
+                    },
+                  ]
             return (
               <div key={item.id} className="rounded-lg border border-gray-200 bg-white p-4">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -404,7 +582,10 @@ export default function ExternalPassagesPage() {
                       문제 {item.question_count} · 서술형 {item.essay_count} · 어휘 {item.tags?.vocab?.length ?? 0} · 어법{' '}
                       {item.tags?.grammar?.length ?? 0}
                     </p>
-                    <p className="mt-0.5 text-[11px] text-gray-400">{item.created_at?.slice(0, 10)}</p>
+                    <p className="mt-0.5 text-[11px] text-gray-400">
+                      {item.created_at?.slice(0, 10)}
+                      {tab === 'archived' && item.archived_at && ` · 보관 ${item.archived_at.slice(0, 10)}`}
+                    </p>
                   </div>
                   <div className="flex shrink-0 items-center gap-2 self-end sm:self-center">
                     <Link
@@ -419,15 +600,7 @@ export default function ExternalPassagesPage() {
                     >
                       수정
                     </Link>
-                    <ActionMenu
-                      items={[
-                        {
-                          label: deletingSingle === item.id ? '삭제 중…' : '삭제',
-                          danger: true,
-                          onClick: () => handleDeleteSingle(item.id),
-                        },
-                      ]}
-                    />
+                    <ActionMenu items={singleMenuItems} />
                   </div>
                 </div>
               </div>

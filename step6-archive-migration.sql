@@ -1,32 +1,40 @@
--- STEP 6 보관함 기능을 위한 DB 준비. 아직 실행하지 마세요 — 향미님이 검토 후 실행하세요.
--- Supabase 웹사이트 > SQL Editor 에 붙여넣고 실행(Run)하면 됩니다.
--- 기존 지문 데이터는 하나도 바꾸지 않습니다 (새 칸은 전부 기본값 false로 시작 = "보관 안 됨").
--- 여러 번 실행해도 안전합니다.
---
--- 보관 상태의 기준은 한 곳입니다.
---   - 그룹(4단계 세트): passage_groups.archived 만 본다.
---   - 단독 지문(group_id 없음): passages.archived 만 본다.
---   - 그룹에 속한 지문(school/academy/advanced/prestudy)은 자기 칸을 쓰지 않고
---     항상 부모 묶음(passage_groups.archived)을 따른다. 그래서 그 칸에 값을 직접
---     넣을 수 없도록 3번에서 DB가 막는다 (부모/자식 값이 어긋나는 사고를 원천 차단).
+-- 이 파일 전체를 Supabase 웹사이트 > SQL Editor 에 붙여넣고 실행(Run)하면 됩니다.
+-- STEP 6-B: 보관함(아카이브) 기능을 위한 준비.
+-- 기존 데이터는 하나도 바꾸지 않는다 (archived 없는 기존 행은 모두 archived = false / archived_at = null 로 채워진다).
+-- 여러 번 실행해도 안전하다.
 
--- 1) 지문에 보관 칸 추가 (단독 지문 전용)
-alter table passages
-  add column if not exists archived boolean not null default false,
-  add column if not exists archived_at timestamptz;
-
--- 2) 묶음(4단계 세트)에 보관 칸 추가 (그룹 지문의 유일한 기준)
+-- 1) 그룹 보관 상태
 alter table passage_groups
   add column if not exists archived boolean not null default false,
   add column if not exists archived_at timestamptz;
 
--- 3) 안전장치: 그룹에 속한 지문(group_id 있음)은 archived를 true로 저장하는 것 자체를 막는다.
---    (단독 지문은 group_id가 없으므로 이 제약과 무관하게 자유롭게 보관 가능)
-alter table passages drop constraint if exists passages_grouped_archived_check;
+-- 2) 단독 지문(및 그룹 자식 passage 모두 컬럼은 생김) 보관 상태
 alter table passages
-  add constraint passages_grouped_archived_check
+  add column if not exists archived boolean not null default false,
+  add column if not exists archived_at timestamptz;
+
+-- 3) 그룹에 속한 passage(학교형/일반학원형/상위학원형/선행형)는
+--    개별적으로 archived = true 가 될 수 없다. 보관은 항상 부모 그룹 단위.
+alter table passages drop constraint if exists passages_group_archived_check;
+alter table passages
+  add constraint passages_group_archived_check
   check (group_id is null or archived = false);
 
--- 4) 목록 조회 속도용 색인
-create index if not exists passages_archived_idx on passages (archived);
+-- 4) archived 와 archived_at 이 서로 어긋나지 않도록 강제한다.
+--    archived = false 이면 archived_at 은 반드시 null,
+--    archived = true 이면 archived_at 은 반드시 값이 있어야 한다.
+--    (그룹 자식 passage는 3번 제약으로 항상 archived=false 이므로, 이 제약과 함께
+--     archived_at 도 항상 null 로 강제된다.)
+alter table passage_groups drop constraint if exists passage_groups_archived_pair_check;
+alter table passage_groups
+  add constraint passage_groups_archived_pair_check
+  check ((archived = false and archived_at is null) or (archived = true and archived_at is not null));
+
+alter table passages drop constraint if exists passages_archived_pair_check;
+alter table passages
+  add constraint passages_archived_pair_check
+  check ((archived = false and archived_at is null) or (archived = true and archived_at is not null));
+
+-- 5) 목록에서 archived 로 필터할 때 쓰는 색인
 create index if not exists passage_groups_archived_idx on passage_groups (archived);
+create index if not exists passages_archived_idx on passages (archived);

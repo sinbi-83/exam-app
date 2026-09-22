@@ -75,6 +75,8 @@ export interface PassageGroupRecord {
   topic: string | null;
   source_body: string;
   status: "pending" | "generating" | "completed" | "partial" | "failed";
+  archived: boolean; // 보관함 이동 여부. true면 학교형/일반학원형/상위학원형/선행형 4개 전체가 보관된 것으로 취급.
+  archived_at: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -98,6 +100,8 @@ export interface PassageRecord extends PassageInput {
   user_id: string;
   group_id?: string | null; // 4단계 세트 소속 (기존 단독 지문은 null)
   variant_level?: PassageVariantLevel | null;
+  archived: boolean; // 단독 지문일 때만 의미 있음. 그룹 소속 지문은 항상 false(부모 그룹이 보관 상태를 관리).
+  archived_at: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -111,6 +115,10 @@ export interface PassageSummary {
   tags: PassageTags;
   group_id?: string | null;
   variant_level?: PassageVariantLevel | null;
+  archived: boolean; // 단독 지문의 보관 여부
+  archived_at: string | null;
+  group_archived?: boolean | null; // group_id가 있을 때, 소속 묶음(passage_groups)의 보관 여부
+  group_archived_at?: string | null;
   created_at: string;
   updated_at: string;
   question_count: number; // questions 배열 길이 (목록에서는 문제 내용 대신 개수만 내려준다)
