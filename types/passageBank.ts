@@ -47,6 +47,7 @@ export interface PassageEssay {
   wordLimit: number;
   sampleAnswer: string;
   rubric: string;
+  answerLang?: "en" | "ko"; // 답변 언어. 없으면 영어 작문으로 간주 ("ko"는 "우리말로 쓰시오" 유형)
 }
 
 export interface PassageTags {
@@ -112,4 +113,6 @@ export interface PassageSummary {
   variant_level?: PassageVariantLevel | null;
   created_at: string;
   updated_at: string;
+  question_count: number; // questions 배열 길이 (목록에서는 문제 내용 대신 개수만 내려준다)
+  essay_count: number; // essays 배열 길이
 }

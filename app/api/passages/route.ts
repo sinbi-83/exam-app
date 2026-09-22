@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
 
   let query = supabase
     .from('passages')
-    .select('id, title, level, topic, tags, group_id, variant_level, created_at, updated_at')
+    .select('id, title, level, topic, tags, group_id, variant_level, created_at, updated_at, questions, essays')
     .eq('user_id', user.id)
 
   if (level) query = query.eq('level', level)
@@ -20,5 +20,12 @@ export async function GET(request: NextRequest) {
 
   const { data, error } = await query.order('created_at', { ascending: false })
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
-  return NextResponse.json({ data })
+
+  // 목록 화면에는 문제/서술형 "개수"만 필요하다. 본문 내용(정답 포함)을 통째로 내려보내지 않는다.
+  const summarized = (data ?? []).map(({ questions, essays, ...rest }) => ({
+    ...rest,
+    question_count: Array.isArray(questions) ? questions.length : 0,
+    essay_count: Array.isArray(essays) ? essays.length : 0,
+  }))
+  return NextResponse.json({ data: summarized })
 }

@@ -1,0 +1,64 @@
+{
+  "title": "My Uncle and the Rocket Launch",
+  "level": "초6",
+  "topic": "위로와 회복탄력성",
+  "body": "My uncle was watching a SpaceX rocket video when his girlfriend walked into the room.\n\n\"Why are you watching that again?\" she asked.\n\n\"I'm checking whether their rockets can really go up,\" he answered.\n\nShe laughed. \"You should ask them to take your investment with them next time.\"\n\nMy uncle tried not to laugh. \"I'm serious. I lost a lot.\"\n\n\"I know,\" she said. \"That's why I'm making jokes. You've looked unhappy for days.\"\n\nThen she sat next to him.\n\n\"It is normal to feel bad when something does not go as planned,\" she said. \"But one bad investment does not decide your whole future.\"\n\nMy uncle nodded slowly.\n\n\"Do you really think things will get better?\" he asked.\n\n\"I don't know,\" she answered. \"But I know worrying all day won't make them better.\"\n\nThat evening, they watched the rocket launch together, and my uncle finally enjoyed it instead of thinking only about money.",
+  "tagged_body": "My uncle was watching a SpaceX rocket video when his girlfriend walked into the room.\n\n\"Why are you watching that again?\" she asked.\n\n\"I'm checking {{g:whether their rockets can really go up|whether+주어+동사: '~인지 아닌지'를 나타내는 명사절(간접의문문)}},\" he answered.\n\nShe {{v:laughed}}. \"You {{g:should ask them to take|조동사 should + ask+목적어+to부정사(ask A to B): 'A에게 B하라고 요청하다'}} your {{v:investment}} with them next time.\"\n\nMy uncle tried not to laugh. \"I'm {{v:serious}}. I lost a lot.\"\n\n\"I know,\" she said. \"That's why I'm making jokes. You've looked {{v:unhappy}} for days.\"\n\nThen she sat next to him.\n\n\"{{g:It is normal to feel bad|가주어 It + to부정사(진주어): 'It'은 형식상 주어이고 'to feel bad'가 진짜 주어}} when something does not go as {{v:planned}},\" she said. \"But {{t:one bad investment does not decide your whole future}}.\"\n\nMy uncle {{v:nodded}} slowly.\n\n\"Do you really think things will get better?\" he asked.\n\n\"I don't know,\" she answered. \"But I know {{g:worrying all day won't make them better|동명사 주어(Worrying all day) + make+목적어+형용사(보어): '~가 …하게 만들다'}}.\"\n\n{{t:That evening, they watched the rocket launch together}}, and my uncle finally {{v:enjoyed}} it {{g:instead of thinking only about money|전치사 instead of + 동명사(thinking): '~하는 대신에'}}.",
+  "tags": {
+    "vocab": ["laughed", "investment", "serious", "unhappy", "planned", "nodded", "enjoyed"],
+    "grammar": ["간접의문문 (whether)", "ask+목적어+to부정사", "가주어 it + to부정사", "동명사 주어 + make+목적어+형용사", "전치사+동명사 (instead of)"],
+    "topic": ["실패", "위로", "회복탄력성"]
+  },
+  "questions": [
+    { "type": "mc", "q": "What was my uncle watching when his girlfriend walked into the room?", "choices": ["A SpaceX rocket video", "A movie", "A soccer game", "The news", "A cooking show"], "answer": "A SpaceX rocket video", "explanation": "'My uncle was watching a SpaceX rocket video when his girlfriend walked into the room.'" },
+    { "type": "mc", "q": "Why did my uncle say he was checking the video?", "choices": ["To see if the rockets can really go up", "To learn how to build rockets", "To buy tickets to space", "To find a job at SpaceX", "To write a school report"], "answer": "To see if the rockets can really go up", "explanation": "'I'm checking whether their rockets can really go up,' he answered." },
+    { "type": "mc", "q": "What did the girlfriend joke about?", "choices": ["Taking his investment to space", "Giving him a rocket ride", "Meeting the astronauts", "Building a rocket together", "Watching more videos"], "answer": "Taking his investment to space", "explanation": "'You should ask them to take your investment with them next time.'" },
+    { "type": "mc", "q": "Why did my uncle say 'I'm serious'?", "choices": ["Because he lost a lot of money", "Because he was angry at SpaceX", "Because he wanted to buy a rocket", "Because he was tired", "Because he didn't like the video"], "answer": "Because he lost a lot of money", "explanation": "'I'm serious. I lost a lot.'" },
+    { "type": "mc", "q": "Why did the girlfriend say she was making jokes?", "choices": ["Because my uncle had looked unhappy for days", "Because she wanted to invest too", "Because she didn't believe him", "Because she was bored", "Because the video was funny"], "answer": "Because my uncle had looked unhappy for days", "explanation": "'That's why I'm making jokes. You've looked unhappy for days.'" },
+    { "type": "mc", "q": "According to the girlfriend, what is normal?", "choices": ["Feeling bad when something does not go as planned", "Losing money every year", "Watching rocket videos every day", "Making jokes about friends", "Staying angry for a long time"], "answer": "Feeling bad when something does not go as planned", "explanation": "'It is normal to feel bad when something does not go as planned,' she said." },
+    { "type": "mc", "q": "What does the girlfriend say about one bad investment?", "choices": ["It does not decide your whole future", "It means you will always lose money", "It is the end of everything", "It should never happen again", "It makes people stop trying"], "answer": "It does not decide your whole future", "explanation": "'One bad investment does not decide your whole future.'" },
+    { "type": "mc", "q": "What does the girlfriend say about worrying all day?", "choices": ["It won't make things better", "It will fix the problem", "It helps you think clearly", "It makes money come back", "It is a good habit"], "answer": "It won't make things better", "explanation": "'I know worrying all day won't make them better.'" },
+    { "type": "mc", "q": "What did my uncle and his girlfriend do that evening?", "choices": ["They watched the rocket launch together", "They went shopping", "They argued about money", "They called SpaceX", "They read a book"], "answer": "They watched the rocket launch together", "explanation": "'That evening, they watched the rocket launch together.'" },
+    { "type": "mc", "q": "How did my uncle feel at the end of the story?", "choices": ["He finally enjoyed the launch", "He was still very angry", "He was confused", "He felt scared", "He fell asleep"], "answer": "He finally enjoyed the launch", "explanation": "'My uncle finally enjoyed it instead of thinking only about money.'" },
+    { "type": "blank", "q": "My uncle was watching a SpaceX rocket ___ when his girlfriend walked into the room.", "answer": "video", "explanation": "본문에 'a SpaceX rocket video'라고 나와 있다." },
+    { "type": "blank", "q": "\"I'm serious. I lost a ___.\"", "answer": "lot", "explanation": "'I lost a lot.'에서 확인할 수 있다." },
+    { "type": "blank", "q": "\"It is normal to feel bad when something does not go as ___,\" she said.", "answer": "planned", "explanation": "'does not go as planned'에서 확인할 수 있다." },
+    { "type": "blank", "q": "\"But one bad investment does not decide your whole ___.\"", "answer": "future", "explanation": "'your whole future'에서 확인할 수 있다." },
+    { "type": "blank", "q": "My uncle finally ___ it instead of thinking only about money.", "answer": "enjoyed", "explanation": "'my uncle finally enjoyed it'에서 확인할 수 있다." },
+    { "type": "tf", "q": "My uncle's girlfriend got angry at him for losing money.", "answer": false, "explanation": "그녀는 화를 낸 게 아니라 농담을 하며 위로해 주었다." },
+    { "type": "tf", "q": "The girlfriend believes worrying all day will make things better.", "answer": false, "explanation": "'worrying all day won't make them better'라고 나와 있어 반대이다." },
+    { "type": "tf", "q": "My uncle and his girlfriend watched the rocket launch together that evening.", "answer": true, "explanation": "'That evening, they watched the rocket launch together.'와 일치한다." },
+    {
+      "type": "order",
+      "items": [
+        "My uncle told her he was serious and had lost a lot of money.",
+        "My uncle was watching a SpaceX rocket video when his girlfriend walked in.",
+        "She sat next to him and said one bad investment does not decide his future.",
+        "That evening, they watched the rocket launch together."
+      ],
+      "answer": [
+        "My uncle was watching a SpaceX rocket video when his girlfriend walked in.",
+        "My uncle told her he was serious and had lost a lot of money.",
+        "She sat next to him and said one bad investment does not decide his future.",
+        "That evening, they watched the rocket launch together."
+      ]
+    },
+    {
+      "type": "match",
+      "pairs": [
+        { "word": "investment", "meaning": "투자" },
+        { "word": "serious", "meaning": "진지한" },
+        { "word": "unhappy", "meaning": "불행한, 속상한" },
+        { "word": "planned", "meaning": "계획된" },
+        { "word": "enjoyed", "meaning": "즐겼다" }
+      ]
+    }
+  ],
+  "essays": [
+    { "q": "How did the uncle feel after losing money on his investment, and how do you know?", "wordLimit": 60, "sampleAnswer": "The uncle felt unhappy and sad after losing money. We know this because his girlfriend said he had looked unhappy for days, and he said 'I lost a lot.'", "rubric": "① 감정 표현 언급 ② 본문 근거 제시 ③ 완전한 문장 2개 이상 ④ 문법 오류 최소화" },
+    { "q": "According to the girlfriend, what should we remember when something does not go as planned? Explain in your own words.", "wordLimit": 70, "sampleAnswer": "She believes that feeling bad is normal, but one mistake does not decide your whole future. We should not let one failure control how we think about tomorrow.", "rubric": "① 본문 핵심 메시지 이해 ② 자신의 언어로 재구성 ③ 완전한 문장 3개 이상 ④ 논리적 연결" },
+    { "q": "Do you agree that 'worrying all day won't make things better'? Give your own opinion with a reason.", "wordLimit": 80, "sampleAnswer": "I agree with this idea. Worrying does not solve problems; it only makes us feel more tired and stressed. Instead, it is better to talk to someone or take action to fix the problem.", "rubric": "① 찬성/반대 명확히 제시 ② 이유 1가지 이상 ③ 본문을 단순히 베끼지 않음 ④ 3문장 이상" },
+    { "q": "Describe a time when you felt disappointed about something that did not go as planned. What did you do?", "wordLimit": 80, "sampleAnswer": "Once, I studied hard for a test but got a low score. I felt very disappointed at first. But I talked to my teacher and made a new study plan, and my next score was much better.", "rubric": "① 구체적 상황 제시 ② 감정 표현 ③ 해결 과정 설명 ④ 시제 일관성(과거시제) ⑤ 4문장 이상" },
+    { "q": "Why do you think the uncle finally enjoyed watching the rocket launch at the end of the story?", "wordLimit": 70, "sampleAnswer": "I think he finally enjoyed it because his girlfriend helped him stop worrying about the money. She reminded him that one mistake does not decide his whole future, so he could relax and enjoy the moment with her.", "rubric": "① 이유 제시 ② 본문 내용을 근거로 설명 ③ 완전한 문장 3개 이상 ④ 논리적 연결어 사용" }
+  ]
+}

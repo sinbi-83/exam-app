@@ -1,0 +1,1110 @@
+{
+  "school": {
+    "tagged_body": "My uncle was watching a rocket video. His girlfriend came into the room.\n\n\"Why are you watching that again?\" she asked.\n\n\"I want to know. Can the rocket really fly?\" he said.\n\nShe laughed. \"Next time, send your money to space with it.\"\n\nMy uncle almost laughed. \"I'm {{v:serious}}. I lost a lot of money.\"\n\n\"I know,\" she said. \"That's why I'm making jokes. You look {{v:sad}} these days.\"\n\nThen she sat next to him.\n\n\"{{t:You feel bad, and that is normal}}. But one bad choice will not {{v:ruin}} your life,\" she said.\n\nMy uncle {{v:nodded}} slowly. \"{{g:Do you think things will get better?|미래시제(will) 의문문: 앞으로 일어날 일을 물어보는 표현}}\" he asked.\n\n\"I don't know,\" she said. \"{{g:But do not worry all day|명령문(Do not ~): '~하지 마라'는 부정 명령}}. {{g:It will not help|미래시제(will) 부정문: '~하지 않을 것이다'}}.\"\n\n{{t:That evening, they watched the rocket launch together}}. My uncle {{v:enjoyed}} it, and he did not think about money.",
+    "tags": {
+      "vocab": [
+        "serious",
+        "sad",
+        "ruin",
+        "nodded",
+        "enjoyed"
+      ],
+      "grammar": [
+        "미래시제(will) 의문문",
+        "명령문 (Do not ~)",
+        "미래시제(will) 부정문"
+      ],
+      "topic": [
+        "위로",
+        "실패",
+        "회복탄력성"
+      ]
+    },
+    "questions": [
+      {
+        "type": "mc",
+        "q": "What was my uncle watching?",
+        "choices": [
+          "A movie",
+          "A soccer game",
+          "A rocket video",
+          "The news",
+          "A cooking show"
+        ],
+        "answer": "A rocket video",
+        "explanation": "'My uncle was watching a rocket video.'"
+      },
+      {
+        "type": "mc",
+        "q": "Who came into the room?",
+        "choices": [
+          "His mother",
+          "His friend",
+          "His sister",
+          "His teacher",
+          "His girlfriend"
+        ],
+        "answer": "His girlfriend",
+        "explanation": "'His girlfriend came into the room.'"
+      },
+      {
+        "type": "mc",
+        "q": "What did my uncle say when his girlfriend asked why he was watching the video again?",
+        "choices": [
+          "\"I am bored.\"",
+          "\"I want to know. Can the rocket really fly?\"",
+          "\"I don't like rockets.\"",
+          "\"I want to buy a rocket.\"",
+          "\"This video is too long.\""
+        ],
+        "answer": "\"I want to know. Can the rocket really fly?\"",
+        "explanation": "본문의 대사를 그대로 확인한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the girlfriend joke about?",
+        "choices": [
+          "Buying a new rocket",
+          "Meeting an astronaut",
+          "Building a rocket together",
+          "Sending his money to space",
+          "Watching a different video"
+        ],
+        "answer": "Sending his money to space",
+        "explanation": "'Next time, send your money to space with it.'"
+      },
+      {
+        "type": "mc",
+        "q": "Why did my uncle say \"I'm serious\"?",
+        "choices": [
+          "Because he lost a lot of money",
+          "Because he was angry at his girlfriend",
+          "Because he wanted a new rocket",
+          "Because he was tired",
+          "Because the video was boring"
+        ],
+        "answer": "Because he lost a lot of money",
+        "explanation": "'I'm serious. I lost a lot of money.'"
+      },
+      {
+        "type": "mc",
+        "q": "How did my uncle look these days, according to his girlfriend?",
+        "choices": [
+          "Sad",
+          "Happy",
+          "Sleepy",
+          "Angry",
+          "Excited"
+        ],
+        "answer": "Sad",
+        "explanation": "'You look sad these days.'"
+      },
+      {
+        "type": "mc",
+        "q": "What did the girlfriend say about feeling bad?",
+        "choices": [
+          "That it is silly",
+          "That it never happens",
+          "That it is a big problem",
+          "That it is normal",
+          "That only adults feel it"
+        ],
+        "answer": "That it is normal",
+        "explanation": "'You feel bad, and that is normal.'"
+      },
+      {
+        "type": "mc",
+        "q": "According to the girlfriend, what will one bad choice NOT do?",
+        "choices": [
+          "Cost more money",
+          "Ruin your life",
+          "Make you laugh",
+          "Change your job",
+          "Help you learn"
+        ],
+        "answer": "Ruin your life",
+        "explanation": "'One bad choice will not ruin your life.'"
+      },
+      {
+        "type": "mc",
+        "q": "What did the girlfriend tell my uncle NOT to do all day?",
+        "choices": [
+          "Watch videos",
+          "Sleep",
+          "Talk",
+          "Eat",
+          "Worry"
+        ],
+        "answer": "Worry",
+        "explanation": "'Do not worry all day.'"
+      },
+      {
+        "type": "mc",
+        "q": "What did my uncle and his girlfriend do that evening?",
+        "choices": [
+          "Went shopping",
+          "Called a friend",
+          "Watched the rocket launch together",
+          "Read a book",
+          "Cleaned the room"
+        ],
+        "answer": "Watched the rocket launch together",
+        "explanation": "'That evening, they watched the rocket launch together.'"
+      },
+      {
+        "type": "blank",
+        "q": "My uncle was watching a rocket ___.",
+        "answer": "video",
+        "explanation": "'a rocket video'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "\"I'm serious. I lost a lot of ___.\"",
+        "answer": "money",
+        "explanation": "'I lost a lot of money.'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "\"You feel bad, and that is ___,\" she said.",
+        "answer": "normal",
+        "explanation": "'that is normal'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "\"But one bad choice will not ___ your life,\" she said.",
+        "answer": "ruin",
+        "explanation": "'will not ruin your life'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "\"But do not ___ all day. It will not help.\"",
+        "answer": "worry",
+        "explanation": "'do not worry all day'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "My uncle's girlfriend got angry at him for losing money.",
+        "answer": false,
+        "explanation": "그녀는 화를 낸 것이 아니라 농담을 하며 곁에 있어 주었다."
+      },
+      {
+        "type": "tf",
+        "q": "My uncle and his girlfriend watched the rocket launch together that evening.",
+        "answer": true,
+        "explanation": "'That evening, they watched the rocket launch together.'와 일치한다."
+      },
+      {
+        "type": "tf",
+        "q": "The girlfriend said worrying all day will help.",
+        "answer": false,
+        "explanation": "'It will not help.'라고 나와 있으므로 사실이 아니다."
+      },
+      {
+        "type": "order",
+        "items": [
+          "My uncle told her he lost a lot of money.",
+          "My uncle was watching a rocket video when his girlfriend came into the room.",
+          "That evening, they watched the rocket launch together.",
+          "She sat next to him and said one bad choice will not ruin his life."
+        ],
+        "answer": [
+          "My uncle was watching a rocket video when his girlfriend came into the room.",
+          "My uncle told her he lost a lot of money.",
+          "She sat next to him and said one bad choice will not ruin his life.",
+          "That evening, they watched the rocket launch together."
+        ]
+      },
+      {
+        "type": "match",
+        "pairs": [
+          {
+            "word": "serious",
+            "meaning": "진지한"
+          },
+          {
+            "word": "sad",
+            "meaning": "슬픈"
+          },
+          {
+            "word": "ruin",
+            "meaning": "망치다"
+          },
+          {
+            "word": "nodded",
+            "meaning": "고개를 끄덕였다"
+          },
+          {
+            "word": "enjoyed",
+            "meaning": "즐겼다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "q": "Why was the uncle sad these days? Answer using a sentence from the passage.",
+        "wordLimit": 30,
+        "sampleAnswer": "He was sad because he lost a lot of money.",
+        "rubric": "① 본문 근거 포함 ② 완전한 문장 ③ 문법 오류 없음"
+      },
+      {
+        "q": "보기의 단어를 이용하여 문장을 완성하시오. (ruin) One bad choice will not ___ your life.",
+        "wordLimit": 20,
+        "sampleAnswer": "One bad choice will not ruin your life.",
+        "rubric": "① 빈칸에 정확한 단어 ② 완전한 문장"
+      },
+      {
+        "q": "What did my uncle and his girlfriend do together in the evening? Write one sentence.",
+        "wordLimit": 30,
+        "sampleAnswer": "They watched the rocket launch together.",
+        "rubric": "① 본문 근거 포함 ② 완전한 문장 ③ 시제 일치"
+      },
+      {
+        "q": "다음 문장을 우리말로 쓰시오. \"Do not worry all day. It will not help.\"",
+        "wordLimit": 40,
+        "sampleAnswer": "하루 종일 걱정하지 마. 그건 도움이 안 될 거야.",
+        "rubric": "① 두 문장 모두 해석 ② 자연스러운 우리말 ③ 의미 왜곡 없음",
+        "answerLang": "ko"
+      },
+      {
+        "q": "Do you agree that worrying all day does not help? Write your opinion in one or two simple sentences.",
+        "wordLimit": 40,
+        "sampleAnswer": "I agree. Worrying does not solve problems. It is better to talk to someone.",
+        "rubric": "① 찬성/반대 명확히 제시 ② 이유 1가지 이상 ③ 완전한 문장 2개 이상"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "One evening, my uncle was watching a SpaceX rocket video {{g:when his girlfriend walked into the room|시간 부사절(when + 주어 + 동사): '~할 때'}}.\n\n\"Why are you watching that again?\" she asked.\n\n\"I'm {{g:checking if their rockets can really fly|명사절 if(간접의문문): '~인지 아닌지'를 나타내는 목적어절}},\" he answered.\n\nShe laughed. \"Next time, you should ask them to take your {{v:investment}} into space with them.\"\n\nMy uncle tried not to laugh because the joke was a little too true. \"I'm {{v:serious}}. I lost a lot of money.\"\n\n\"I know,\" she said. \"That's why I'm making jokes. You look {{v:unhappy}} these days, and I don't like it.\"\n\nThen she sat down next to him.\n\n\"{{g:It is normal to feel bad|가주어 It + to부정사(진주어): 'It'은 형식상 주어, 'to feel bad'가 진짜 주어}} when things do not go as {{v:planned}},\" she said {{v:gently}}. \"But {{t:one bad investment does not decide your whole future}}.\"\n\nMy uncle nodded slowly. \"Do you really think things will get better?\" he asked.\n\n\"I don't know,\" she answered {{v:honestly}}. \"But I do know that {{g:worrying all day won't make them better|동명사 주어(Worrying all day) + make + 목적어 + 형용사: '~가 …하게 만들다'}}.\"\n\n{{t:That evening, they watched the rocket launch together}}. For the first time in days, my uncle enjoyed it {{g:instead of thinking only about money|전치사 instead of + 동명사(thinking): '~하는 대신에'}}.",
+    "tags": {
+      "vocab": [
+        "investment",
+        "serious",
+        "unhappy",
+        "planned",
+        "gently",
+        "honestly"
+      ],
+      "grammar": [
+        "시간 부사절 (when)",
+        "명사절 if (간접의문문)",
+        "가주어 it + to부정사",
+        "동명사 주어 + make+목적어+형용사",
+        "전치사+동명사 (instead of)"
+      ],
+      "topic": [
+        "실패",
+        "위로",
+        "회복탄력성"
+      ]
+    },
+    "questions": [
+      {
+        "type": "mc",
+        "q": "What was my uncle watching when his girlfriend walked into the room?",
+        "choices": [
+          "A movie",
+          "A soccer game",
+          "A SpaceX rocket video",
+          "The news",
+          "A cooking show"
+        ],
+        "answer": "A SpaceX rocket video",
+        "explanation": "'my uncle was watching a SpaceX rocket video when his girlfriend walked into the room.'"
+      },
+      {
+        "type": "mc",
+        "q": "What was my uncle checking?",
+        "choices": [
+          "How much a rocket costs",
+          "Who built the rocket",
+          "When the next launch is",
+          "Where the rocket landed",
+          "If their rockets can really fly"
+        ],
+        "answer": "If their rockets can really fly",
+        "explanation": "'I'm checking if their rockets can really fly.'"
+      },
+      {
+        "type": "mc",
+        "q": "What did the girlfriend joke that he should ask the rocket company to do?",
+        "choices": [
+          "Give him a free ride",
+          "Take his investment into space",
+          "Build him a rocket",
+          "Return his ticket",
+          "Hire him as an engineer"
+        ],
+        "answer": "Take his investment into space",
+        "explanation": "'you should ask them to take your investment into space with them.'"
+      },
+      {
+        "type": "mc",
+        "q": "Why did my uncle try not to laugh at the joke?",
+        "choices": [
+          "Because he did not understand it",
+          "Because he was too tired to laugh",
+          "Because his girlfriend looked serious",
+          "Because the joke was a little too true",
+          "Because he did not like jokes"
+        ],
+        "answer": "Because the joke was a little too true",
+        "explanation": "'the joke was a little too true.'"
+      },
+      {
+        "type": "mc",
+        "q": "How did my uncle look these days, and how did his girlfriend feel about it?",
+        "choices": [
+          "Unhappy, and she did not like it",
+          "Happy, and she was glad",
+          "Bored, and she did not notice",
+          "Angry, and she was scared",
+          "Sleepy, and she laughed"
+        ],
+        "answer": "Unhappy, and she did not like it",
+        "explanation": "'You look unhappy these days, and I don't like it.'"
+      },
+      {
+        "type": "mc",
+        "q": "According to the girlfriend, when is it normal to feel bad?",
+        "choices": [
+          "When things do not go as planned",
+          "When you lose a game",
+          "When it rains all day",
+          "When you wake up early",
+          "When a video ends"
+        ],
+        "answer": "When things do not go as planned",
+        "explanation": "'It is normal to feel bad when things do not go as planned.'"
+      },
+      {
+        "type": "mc",
+        "q": "What does the girlfriend say a bad investment does NOT do?",
+        "choices": [
+          "Cost any money",
+          "Make you upset",
+          "Happen very often",
+          "Decide your whole future",
+          "Teach you a lesson"
+        ],
+        "answer": "Decide your whole future",
+        "explanation": "'one bad investment does not decide your whole future.'"
+      },
+      {
+        "type": "mc",
+        "q": "What does the girlfriend say worrying all day will do?",
+        "choices": [
+          "Will fix the problem",
+          "Won't make things better",
+          "Will bring the money back",
+          "Will help him think clearly",
+          "Will make him feel calm"
+        ],
+        "answer": "Won't make things better",
+        "explanation": "'worrying all day won't make them better.'"
+      },
+      {
+        "type": "mc",
+        "q": "What happened for the first time in days at the end of the story?",
+        "choices": [
+          "My uncle made a new investment",
+          "My uncle argued with his girlfriend",
+          "My uncle stopped watching rocket videos",
+          "My uncle called SpaceX",
+          "My uncle enjoyed something instead of thinking about money"
+        ],
+        "answer": "My uncle enjoyed something instead of thinking about money",
+        "explanation": "'For the first time in days, my uncle enjoyed it instead of thinking only about money.'"
+      },
+      {
+        "type": "mc",
+        "q": "What does \"gently\" describe in the sentence \"she said gently\"?",
+        "choices": [
+          "How loudly she spoke",
+          "How quickly she spoke",
+          "The soft, kind way she spoke",
+          "How angrily she spoke",
+          "How quietly she left the room"
+        ],
+        "answer": "The soft, kind way she spoke",
+        "explanation": "'gently'는 '부드럽게'라는 뜻으로 말하는 태도를 나타낸다."
+      },
+      {
+        "type": "blank",
+        "q": "One evening, my uncle was watching a SpaceX rocket ___ when his girlfriend walked into the room.",
+        "answer": "video",
+        "explanation": "'a SpaceX rocket video'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "Next time, you should ask them to take your ___ into space with them.",
+        "answer": "investment",
+        "explanation": "'take your investment into space'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "\"It is normal to feel bad when things do not go as ___,\" she said gently.",
+        "answer": "planned",
+        "explanation": "'as planned'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "But one bad investment does not decide your whole ___.",
+        "answer": "future",
+        "explanation": "'your whole future'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "For the first time in days, my uncle ___ it instead of thinking only about money.",
+        "answer": "enjoyed",
+        "explanation": "'my uncle enjoyed it'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "My uncle told his girlfriend the joke was completely wrong.",
+        "answer": false,
+        "explanation": "실제로는 'the joke was a little too true'라고 나와 있어 반대이다."
+      },
+      {
+        "type": "tf",
+        "q": "The girlfriend does not like seeing my uncle look unhappy.",
+        "answer": true,
+        "explanation": "'I don't like it.'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "The girlfriend believes worrying all day will make things better.",
+        "answer": false,
+        "explanation": "'worrying all day won't make them better'라고 나와 있어 반대이다."
+      },
+      {
+        "type": "order",
+        "items": [
+          "My uncle said the joke was a little too true because he lost money.",
+          "One evening, my uncle was watching a rocket video when his girlfriend walked in.",
+          "For the first time in days, my uncle enjoyed the launch instead of worrying.",
+          "She sat down and told him one bad investment does not decide his future."
+        ],
+        "answer": [
+          "One evening, my uncle was watching a rocket video when his girlfriend walked in.",
+          "My uncle said the joke was a little too true because he lost money.",
+          "She sat down and told him one bad investment does not decide his future.",
+          "For the first time in days, my uncle enjoyed the launch instead of worrying."
+        ]
+      },
+      {
+        "type": "match",
+        "pairs": [
+          {
+            "word": "investment",
+            "meaning": "투자"
+          },
+          {
+            "word": "unhappy",
+            "meaning": "불행한, 속상한"
+          },
+          {
+            "word": "planned",
+            "meaning": "계획된"
+          },
+          {
+            "word": "gently",
+            "meaning": "부드럽게"
+          },
+          {
+            "word": "honestly",
+            "meaning": "솔직하게"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "q": "Why did my uncle try not to laugh at his girlfriend's joke? Explain using a reason from the passage.",
+        "wordLimit": 50,
+        "sampleAnswer": "He tried not to laugh because the joke was a little too true — he had really lost a lot of money on his investment.",
+        "rubric": "① 이유 제시 ② 본문 근거 포함 ③ 완전한 문장 2개 이상"
+      },
+      {
+        "q": "According to the girlfriend, what should we remember when something does not go as planned? Explain in your own words.",
+        "wordLimit": 70,
+        "sampleAnswer": "She believes that feeling bad is normal, but one mistake does not decide your whole future. We should not let one failure control how we feel about tomorrow.",
+        "rubric": "① 본문 핵심 메시지 이해 ② 자신의 언어로 재구성 ③ 완전한 문장 3개 이상"
+      },
+      {
+        "q": "보기의 단어를 이용하여 문장을 완성하시오. (worrying / better) I do know that ___ all day won't make them ___.",
+        "wordLimit": 20,
+        "sampleAnswer": "I do know that worrying all day won't make them better.",
+        "rubric": "① 빈칸에 정확한 단어 ② 완전한 문장"
+      },
+      {
+        "q": "다음 문장을 우리말로 쓰시오. \"One bad investment does not decide your whole future.\"",
+        "wordLimit": 40,
+        "sampleAnswer": "나쁜 투자 하나가 네 앞날 전체를 정하지는 않아.",
+        "rubric": "① 정확한 해석 ② 자연스러운 우리말",
+        "answerLang": "ko"
+      },
+      {
+        "q": "Do you agree that \"worrying all day won't make things better\"? Give your own opinion with a reason.",
+        "wordLimit": 80,
+        "sampleAnswer": "I agree with this idea. Worrying does not solve problems; it only makes us feel more tired. Instead, it is better to talk to someone or make a new plan.",
+        "rubric": "① 찬성/반대 명확히 제시 ② 이유 1가지 이상 ③ 본문을 단순히 베끼지 않음 ④ 3문장 이상"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "My uncle was replaying a SpaceX rocket video when his girlfriend walked in. {{g:From the way he stared at the screen, it was clear that|it is clear that + 명사절: '~라는 것이 분명했다', 문맥으로 심리 상태를 드러내는 구문}} he was looking for something more than entertainment.\n\n\"Why are you watching that again?\" she asked.\n\n\"I'm checking {{g:whether their rockets can actually make it up there|whether+주어+동사: '~인지 아닌지'를 나타내는 명사절(간접의문문)}},\" he answered, {{g:although he already knew the answer|양보의 접속사 although: '비록 ~이지만'}}.\n\nShe laughed. \"Next time, you should ask them to take your {{v:investment}} with them.\"\n\nHe tried not to laugh, but {{t:the joke hit too close to home}}. \"I'm {{v:serious}}. I lost a lot.\"\n\n\"I know,\" she said. \"That's exactly why I'm making jokes. You've looked {{v:miserable}} for days, and I didn't know how else to reach you.\"\n\nThen she sat down next to him.\n\n\"It's natural to feel terrible when something doesn't go as {{v:planned}},\" she said. \"But {{t:one bad investment doesn't decide your whole future}}.\"\n\nHe nodded slowly, {{g:as if he was trying to decide whether he could believe her|as if + 절: 실제와 다른 상태를 가정하는 표현 + 명사절 whether}}. \"Do you really think things will get better?\" he asked.\n\n\"Honestly, I don't know,\" she replied. \"{{g:What I do know is that|관계대명사 what이 이끄는 명사절: '내가 아는 것은 ~이다'}} worrying all day won't make them any better.\"\n\nThat evening, they watched the rocket launch together, and for the first time in days, my uncle enjoyed it {{v:instead}} of thinking only about {{v:his losses}}.",
+    "tags": {
+      "vocab": [
+        "investment",
+        "serious",
+        "miserable",
+        "planned",
+        "reach (someone)",
+        "losses"
+      ],
+      "grammar": [
+        "it is clear that (명사절)",
+        "간접의문문 (whether)",
+        "접속사 although",
+        "as if + 가정",
+        "관계대명사 what (명사절)"
+      ],
+      "topic": [
+        "실패",
+        "위로",
+        "회복탄력성"
+      ]
+    },
+    "questions": [
+      {
+        "type": "mc",
+        "q": "What does the passage suggest my uncle was really looking for in the rocket video?",
+        "choices": [
+          "A way to fix his rocket",
+          "A new hobby",
+          "Something more than entertainment",
+          "Information for a school report",
+          "A funny moment to laugh at"
+        ],
+        "answer": "Something more than entertainment",
+        "explanation": "'it was clear that he was looking for something more than entertainment.'"
+      },
+      {
+        "type": "mc",
+        "q": "What was my uncle checking, even though he already knew the answer?",
+        "choices": [
+          "Whether his girlfriend was upset",
+          "Whether he should invest again",
+          "Whether the video was real",
+          "Whether the launch was cancelled",
+          "Whether the rockets can actually make it up there"
+        ],
+        "answer": "Whether the rockets can actually make it up there",
+        "explanation": "'I'm checking whether their rockets can actually make it up there... although he already knew the answer.'"
+      },
+      {
+        "type": "mc",
+        "q": "What does the phrase \"the joke hit too close to home\" suggest about my uncle's reaction?",
+        "choices": [
+          "The joke was about his actual house",
+          "The joke touched on something painfully true for him",
+          "The joke made no sense to him",
+          "The joke was about his girlfriend",
+          "The joke was too difficult to understand"
+        ],
+        "answer": "The joke touched on something painfully true for him",
+        "explanation": "'the joke hit too close to home'은 농담이 실제 아픈 부분을 건드렸다는 뜻이다."
+      },
+      {
+        "type": "mc",
+        "q": "Why did the girlfriend say she was making jokes?",
+        "choices": [
+          "Because she thought it was funny",
+          "Because she wanted to change the subject",
+          "Because she did not take his loss seriously",
+          "Because she didn't know how else to reach him",
+          "Because she wanted to talk about rockets"
+        ],
+        "answer": "Because she didn't know how else to reach him",
+        "explanation": "'I didn't know how else to reach you.'"
+      },
+      {
+        "type": "mc",
+        "q": "What does the girlfriend say is natural?",
+        "choices": [
+          "Feeling terrible when something doesn't go as planned",
+          "Losing money every year",
+          "Staying angry forever",
+          "Avoiding difficult topics",
+          "Making jokes about failure"
+        ],
+        "answer": "Feeling terrible when something doesn't go as planned",
+        "explanation": "'It's natural to feel terrible when something doesn't go as planned.'"
+      },
+      {
+        "type": "mc",
+        "q": "What was my uncle trying to decide as he nodded slowly?",
+        "choices": [
+          "Whether he could believe her",
+          "Whether to watch another video",
+          "Whether to invest again",
+          "Whether to apologize",
+          "Whether the launch would succeed"
+        ],
+        "answer": "Whether he could believe her",
+        "explanation": "'as if he was trying to decide whether he could believe her.'"
+      },
+      {
+        "type": "mc",
+        "q": "According to the girlfriend, what is the one thing she does know?",
+        "choices": [
+          "That the rocket will succeed",
+          "That he should invest again",
+          "That he should stop watching videos",
+          "That worrying all day won't make things any better",
+          "That the joke was unfair"
+        ],
+        "answer": "That worrying all day won't make things any better",
+        "explanation": "'What I do know is that worrying all day won't make them any better.'"
+      },
+      {
+        "type": "mc",
+        "q": "What happened for the first time in days at the end of the story?",
+        "choices": [
+          "My uncle made a new investment",
+          "My uncle enjoyed the launch instead of thinking about his losses",
+          "My uncle stopped talking to his girlfriend",
+          "My uncle deleted the video",
+          "My uncle called the rocket company"
+        ],
+        "answer": "My uncle enjoyed the launch instead of thinking about his losses",
+        "explanation": "'for the first time in days, my uncle enjoyed it instead of thinking only about his losses.'"
+      },
+      {
+        "type": "mc",
+        "q": "What can you infer about how my uncle felt right before his girlfriend sat down next to him?",
+        "choices": [
+          "He felt proud of his investment",
+          "He felt completely calm",
+          "He felt excited about the launch",
+          "He felt angry at his girlfriend",
+          "He felt miserable and alone with his worry"
+        ],
+        "answer": "He felt miserable and alone with his worry",
+        "explanation": "그가 며칠째 'miserable'해 보였다는 언급과, 여자친구가 다가가려 애썼다는 흐름에서 추론할 수 있다."
+      },
+      {
+        "type": "mc",
+        "q": "What is the main message the girlfriend wants my uncle to understand?",
+        "choices": [
+          "He should never invest in anything again",
+          "Rockets are too risky to watch",
+          "One failure does not decide his whole future, so worrying will not help",
+          "He should ask for his money back",
+          "He should stop feeling anything at all"
+        ],
+        "answer": "One failure does not decide his whole future, so worrying will not help",
+        "explanation": "'one bad investment doesn't decide your whole future'와 'worrying all day won't make them any better'를 종합한 핵심 메시지이다."
+      },
+      {
+        "type": "blank",
+        "q": "It was clear that he was looking for something more than ___.",
+        "answer": "entertainment",
+        "explanation": "'something more than entertainment'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "She laughed. \"Next time, you should ask them to take your ___ with them.\"",
+        "answer": "investment",
+        "explanation": "'take your investment with them'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "You've looked ___ for days, and I didn't know how else to reach you.",
+        "answer": "miserable",
+        "explanation": "'looked miserable for days'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "One bad investment doesn't decide your whole ___.",
+        "answer": "future",
+        "explanation": "'your whole future'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "For the first time in days, my uncle enjoyed it instead of thinking only about his ___.",
+        "answer": "losses",
+        "explanation": "'thinking only about his losses'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "My uncle already knew the answer to the question he was asking about the rockets.",
+        "answer": true,
+        "explanation": "'although he already knew the answer'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "The girlfriend made jokes because she did not care about my uncle's feelings.",
+        "answer": false,
+        "explanation": "실제로는 다가갈 방법을 몰라서 농담을 한 것이다 ('I didn't know how else to reach you')."
+      },
+      {
+        "type": "tf",
+        "q": "At the end of the story, my uncle was still only thinking about his losses.",
+        "answer": false,
+        "explanation": "'my uncle enjoyed it instead of thinking only about his losses'라고 나와 있어 반대이다."
+      },
+      {
+        "type": "order",
+        "items": [
+          "He nodded slowly, unsure whether he could believe her.",
+          "My uncle was replaying a rocket video, clearly looking for more than entertainment.",
+          "For the first time in days, he enjoyed the launch instead of thinking about his losses.",
+          "His girlfriend told him one bad investment doesn't decide his whole future."
+        ],
+        "answer": [
+          "My uncle was replaying a rocket video, clearly looking for more than entertainment.",
+          "He nodded slowly, unsure whether he could believe her.",
+          "His girlfriend told him one bad investment doesn't decide his whole future.",
+          "For the first time in days, he enjoyed the launch instead of thinking about his losses."
+        ]
+      },
+      {
+        "type": "match",
+        "pairs": [
+          {
+            "word": "investment",
+            "meaning": "투자"
+          },
+          {
+            "word": "miserable",
+            "meaning": "비참한, 몹시 괴로운"
+          },
+          {
+            "word": "planned",
+            "meaning": "계획된"
+          },
+          {
+            "word": "reach (someone)",
+            "meaning": "(마음에) 다가가다, 이해시키다"
+          },
+          {
+            "word": "losses",
+            "meaning": "손실"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "q": "What does the phrase \"the joke hit too close to home\" tell us about how my uncle felt? Explain in 1-2 sentences.",
+        "wordLimit": 60,
+        "sampleAnswer": "It tells us that the joke touched on something that was actually true and painful for him — he really had lost a lot of money, so the joke was hard to laugh at.",
+        "rubric": "① 표현의 의미 정확히 설명 ② 본문 근거 포함 ③ 완전한 문장 2개 이상"
+      },
+      {
+        "q": "Why did the girlfriend keep making jokes instead of talking seriously? Use evidence from the passage.",
+        "wordLimit": 70,
+        "sampleAnswer": "She kept making jokes because she didn't know how else to reach him. Humor was her way of showing she cared without making him feel worse.",
+        "rubric": "① 본문 근거 인용 ② 자신의 언어로 설명 ③ 완전한 문장 2개 이상"
+      },
+      {
+        "q": "In your own words, restate the girlfriend's main message to my uncle in 1-2 sentences.",
+        "wordLimit": 70,
+        "sampleAnswer": "One failure does not decide your whole future, so it is better to stop worrying and move forward.",
+        "rubric": "① 본문 핵심 메시지를 자신의 언어로 재구성 ② 원문을 그대로 베끼지 않음 ③ 완전한 문장"
+      },
+      {
+        "q": "다음 문장이 의미하는 바를 우리말로 쓰시오. \"The joke hit too close to home.\"",
+        "wordLimit": 40,
+        "sampleAnswer": "그 농담이 실제로 아픈 부분을 정확히 건드렸다(너무 사실이라 웃어넘기기 힘들었다)는 뜻이다.",
+        "rubric": "① 관용 표현의 의미를 정확히 설명 ② 직역이 아닌 자연스러운 우리말",
+        "answerLang": "ko"
+      },
+      {
+        "q": "Why do you think my uncle was finally able to enjoy the launch at the end of the story? Explain with your own reasoning.",
+        "wordLimit": 80,
+        "sampleAnswer": "I think he was able to enjoy it because his girlfriend helped him see that one investment does not define his whole future. Once he stopped worrying, he could focus on the moment instead of his losses.",
+        "rubric": "① 이유 제시 ② 본문 내용을 근거로 설명 ③ 완전한 문장 3개 이상 ④ 논리적 연결어 사용"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "My uncle, {{g:who had lost a great deal of money on an investment in SpaceX|관계대명사 who + 과거완료(had lost): 앞의 명사 my uncle을 꾸며주며, 로켓 영상을 보기 '이전에' 일어난 일임을 나타냄}}, was replaying a rocket video when his girlfriend walked into the room.\n\n\"Why are you watching that again?\" she asked.\n\n\"I'm checking whether their rockets can really make it up there,\" he answered, {{g:even though he already knew what the answer was|양보의 접속사 even though + 명사절(what the answer was)}}.\n\nShe laughed. \"Next time, you should ask them to take your {{v:investment}} with them.\"\n\n{{g:Although he tried not to laugh, the joke was uncomfortably close to the truth|접속사 Although가 이끄는 부사절: '비록 ~했지만'}}. \"I'm serious. I lost a lot.\"\n\n\"I know,\" she said. \"That's exactly why I'm making jokes. You've looked {{v:miserable}} for days, and humor was the only way I could think of to reach you.\"\n\nThen she sat down beside him.\n\n\"It's natural to feel terrible when something doesn't go as planned,\" she said. \"But {{t:one bad investment shouldn't be allowed to define your whole future}}.\"\n\nHe nodded slowly, {{g:as though he were weighing whether her words could be trusted|as though + 가정법 과거(were): 실제와 다르게 가정하는 표현 + 수동태(could be trusted)}}. \"Do you really believe things will get better?\" he asked.\n\n\"Honestly, I don't know,\" she replied. \"What I do know is that worrying all day won't change anything for the better.\"\n\n{{t:That evening, they watched the rocket launch together}}. For the first time in days, my uncle was able to enjoy it, {{g:rather than being consumed by thoughts of his losses|rather than + 동명사(being consumed): '~하는 대신에', 수동형 동명사}}.",
+    "tags": {
+      "vocab": [
+        "investment",
+        "miserable",
+        "uncomfortably",
+        "define",
+        "consumed (by)"
+      ],
+      "grammar": [
+        "관계대명사 who + 과거완료",
+        "접속사 although/even though",
+        "as though + 가정법",
+        "수동태 (shouldn't be allowed to)",
+        "rather than + 동명사"
+      ],
+      "topic": [
+        "실패",
+        "위로",
+        "회복탄력성"
+      ]
+    },
+    "questions": [
+      {
+        "type": "mc",
+        "q": "What had happened to my uncle before the story begins?",
+        "choices": [
+          "He had built his own rocket",
+          "He had visited SpaceX in person",
+          "He had lost a great deal of money on an investment in SpaceX",
+          "He had stopped liking rockets",
+          "He had won money from an investment"
+        ],
+        "answer": "He had lost a great deal of money on an investment in SpaceX",
+        "explanation": "'My uncle, who had lost a great deal of money on an investment in SpaceX...'"
+      },
+      {
+        "type": "mc",
+        "q": "What does it mean that my uncle was checking the rockets \"even though he already knew what the answer was\"?",
+        "choices": [
+          "He had forgotten the answer and needed to check again",
+          "He was testing his girlfriend's reaction",
+          "He thought the rockets would fail this time",
+          "He was actually unsure of the answer",
+          "He was going through the motions of checking something he was already certain about"
+        ],
+        "answer": "He was going through the motions of checking something he was already certain about",
+        "explanation": "'even though he already knew what the answer was'라는 표현 자체가, 그가 답을 이미 알면서도 확인 행동을 반복했다는 것을 그대로 보여준다."
+      },
+      {
+        "type": "mc",
+        "q": "What does \"the joke was uncomfortably close to the truth\" suggest?",
+        "choices": [
+          "The joke was about someone else",
+          "The joke described his real situation almost exactly",
+          "The joke was completely false",
+          "The joke was too difficult to understand",
+          "The joke was about the weather"
+        ],
+        "answer": "The joke described his real situation almost exactly",
+        "explanation": "'uncomfortably close to the truth'는 농담이 실제 상황과 거의 같아서 불편했다는 뜻이다."
+      },
+      {
+        "type": "mc",
+        "q": "Why did the girlfriend use humor instead of talking about the problem directly?",
+        "choices": [
+          "She thought the situation was funny",
+          "She did not want to seem too serious",
+          "She wanted to change the subject completely",
+          "It was the only way she could think of to reach him",
+          "She did not understand how serious it was"
+        ],
+        "answer": "It was the only way she could think of to reach him",
+        "explanation": "'humor was the only way I could think of to reach you.'"
+      },
+      {
+        "type": "mc",
+        "q": "According to the girlfriend, what shouldn't one bad investment be allowed to do?",
+        "choices": [
+          "Define his whole future",
+          "Cost him more money",
+          "Make him laugh",
+          "Change his personality",
+          "Affect his relationship"
+        ],
+        "answer": "Define his whole future",
+        "explanation": "'one bad investment shouldn't be allowed to define your whole future.'"
+      },
+      {
+        "type": "mc",
+        "q": "What was my uncle doing as he nodded, \"as though he were weighing whether her words could be trusted\"?",
+        "choices": [
+          "Silently considering whether to believe what she said",
+          "Agreeing with her completely and instantly",
+          "Falling asleep",
+          "Getting ready to argue with her",
+          "Ignoring what she said"
+        ],
+        "answer": "Silently considering whether to believe what she said",
+        "explanation": "'as though'는 실제와 다를 수 있는 상태를 가정하는 표현으로, 그가 그녀의 말을 믿을지 저울질하듯 신중히 생각했다는 뜻이다."
+      },
+      {
+        "type": "mc",
+        "q": "What is the one thing the girlfriend says she does know for certain?",
+        "choices": [
+          "That the rocket will succeed next time",
+          "That he should invest again soon",
+          "That he should stop watching the video",
+          "That worrying all day won't change anything for the better",
+          "That she was wrong to make jokes"
+        ],
+        "answer": "That worrying all day won't change anything for the better",
+        "explanation": "'What I do know is that worrying all day won't change anything for the better.'"
+      },
+      {
+        "type": "mc",
+        "q": "What does \"rather than being consumed by thoughts of his losses\" describe about the ending?",
+        "choices": [
+          "He forgot about his losses completely",
+          "He was able to enjoy the moment instead of being overwhelmed by regret",
+          "He decided to invest again immediately",
+          "He blamed his girlfriend for his losses",
+          "He stopped thinking about rockets forever"
+        ],
+        "answer": "He was able to enjoy the moment instead of being overwhelmed by regret",
+        "explanation": "'consumed by thoughts of his losses'는 손실에 대한 생각에 완전히 사로잡힌 상태를 뜻하며, 'rather than'은 그런 상태 '대신에'라는 의미이다."
+      },
+      {
+        "type": "mc",
+        "q": "What is the deeper message this story communicates about setbacks?",
+        "choices": [
+          "Investing money is always a bad idea",
+          "People should never talk about their problems",
+          "Humor should never be used in serious situations",
+          "It is best to avoid watching the news",
+          "A single failure does not have to control how someone sees their future"
+        ],
+        "answer": "A single failure does not have to control how someone sees their future",
+        "explanation": "이야기 전체(투자 실패 → 위로 → 회복)를 종합한 주제이다."
+      },
+      {
+        "type": "mc",
+        "q": "Compared to the beginning of the story, how has my uncle's state of mind changed by the end?",
+        "choices": [
+          "From being calm to becoming very angry",
+          "From being confident to becoming confused",
+          "From being weighed down by his losses to being able to enjoy the present moment",
+          "From ignoring the problem to obsessing over it more",
+          "From trusting his girlfriend to distrusting her"
+        ],
+        "answer": "From being weighed down by his losses to being able to enjoy the present moment",
+        "explanation": "처음에는 손실 생각에 사로잡혀 있었지만(consumed by thoughts of his losses의 반의어 상태), 끝에는 즐길 수 있게 된 변화를 비교한다."
+      },
+      {
+        "type": "blank",
+        "q": "My uncle, who had lost a great deal of money on an ___ in SpaceX, was replaying a rocket video.",
+        "answer": "investment",
+        "explanation": "'an investment in SpaceX'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "You've looked ___ for days, and humor was the only way I could think of to reach you.",
+        "answer": "miserable",
+        "explanation": "'looked miserable for days'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "The joke was ___ close to the truth.",
+        "answer": "uncomfortably",
+        "explanation": "'uncomfortably close to the truth'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "One bad investment shouldn't be allowed to ___ your whole future.",
+        "answer": "define",
+        "explanation": "'define your whole future'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "For the first time in days, my uncle was able to enjoy it, rather than being ___ by thoughts of his losses.",
+        "answer": "consumed",
+        "explanation": "'being consumed by thoughts of his losses'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "My uncle had lost money on an investment before the story begins.",
+        "answer": true,
+        "explanation": "'who had lost a great deal of money on an investment in SpaceX'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "The girlfriend directly told my uncle to stop watching rocket videos.",
+        "answer": false,
+        "explanation": "본문에는 그런 대사가 없다. 그녀는 농담과 위로로 다가갔다."
+      },
+      {
+        "type": "tf",
+        "q": "By the end of the story, my uncle was still completely consumed by thoughts of his losses.",
+        "answer": false,
+        "explanation": "'rather than being consumed by thoughts of his losses'라고 나와 있어 반대이다."
+      },
+      {
+        "type": "order",
+        "items": [
+          "He nodded slowly, weighing whether her words could be trusted.",
+          "My uncle, who had already lost money on an investment, was replaying a rocket video.",
+          "For the first time in days, he was able to enjoy the moment instead of dwelling on his losses.",
+          "She told him one bad investment shouldn't be allowed to define his whole future."
+        ],
+        "answer": [
+          "My uncle, who had already lost money on an investment, was replaying a rocket video.",
+          "He nodded slowly, weighing whether her words could be trusted.",
+          "She told him one bad investment shouldn't be allowed to define his whole future.",
+          "For the first time in days, he was able to enjoy the moment instead of dwelling on his losses."
+        ]
+      },
+      {
+        "type": "match",
+        "pairs": [
+          {
+            "word": "investment",
+            "meaning": "투자"
+          },
+          {
+            "word": "miserable",
+            "meaning": "비참한, 몹시 괴로운"
+          },
+          {
+            "word": "uncomfortably",
+            "meaning": "불편할 정도로"
+          },
+          {
+            "word": "define",
+            "meaning": "규정하다, 정의하다"
+          },
+          {
+            "word": "consumed (by)",
+            "meaning": "(생각 등에) 사로잡힌"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "q": "Explain in your own words what it means that \"the joke was uncomfortably close to the truth.\"",
+        "wordLimit": 70,
+        "sampleAnswer": "It means the joke described his real situation so accurately that it was painful to hear, because he really had lost a lot of money just like the joke suggested.",
+        "rubric": "① 표현의 의미를 자신의 언어로 설명 ② 본문 내용과 연결 ③ 완전한 문장 2개 이상"
+      },
+      {
+        "q": "Why might my uncle keep replaying the rocket video even though he already knew the answer? Give your own interpretation.",
+        "wordLimit": 80,
+        "sampleAnswer": "He might keep watching it because seeing the launch succeed gives him a small sense of comfort or hope, even though it does not change what happened to his money.",
+        "rubric": "① 타당한 해석 제시 ② 본문 상황과 연결 ③ 완전한 문장 2개 이상 ④ 논리적 설명"
+      },
+      {
+        "q": "In one or two sentences, restate the girlfriend's final message in your own words, without copying the passage directly.",
+        "wordLimit": 70,
+        "sampleAnswer": "A single failure should not control how you see your whole future, so it is better to let go of constant worry and live in the present.",
+        "rubric": "① 원문을 그대로 베끼지 않고 재구성 ② 핵심 의미 유지 ③ 완전한 문장"
+      },
+      {
+        "q": "다음 문장이 의미하는 바를 우리말로 쓰시오. \"He was able to enjoy it, rather than being consumed by thoughts of his losses.\"",
+        "wordLimit": 50,
+        "sampleAnswer": "그는 손실에 대한 생각에 완전히 사로잡히는 대신, 그 순간을 즐길 수 있었다는 뜻이다.",
+        "rubric": "① 'rather than'의 의미를 정확히 반영 ② 자연스러운 우리말 ③ 의미 왜곡 없음",
+        "answerLang": "ko"
+      },
+      {
+        "q": "How does my uncle's state of mind at the end of the story compare to the beginning? Explain the change with evidence from the passage.",
+        "wordLimit": 90,
+        "sampleAnswer": "At the beginning, my uncle seemed weighed down by his losses and kept checking the rocket video for comfort. By the end, he was able to enjoy the launch instead of being consumed by thoughts of his losses, showing that he had started to move past the setback.",
+        "rubric": "① 처음과 끝의 심리 상태 비교 ② 본문 근거 포함 ③ 완전한 문장 3개 이상 ④ 논리적 연결어 사용"
+      }
+    ]
+  }
+}

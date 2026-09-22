@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import {
   PassageEssay,
@@ -10,12 +10,14 @@ import {
   PassageOrderQuestion,
   PassageQuestion,
   PassageRecord,
+  VARIANT_LABELS,
 } from '@/types/passageBank'
 import { TaggedBody, stripTagMarkup } from '@/lib/passageTagRenderer'
 
 export default function ExternalPassageDetailPage() {
   const params = useParams<{ id: string }>()
   const router = useRouter()
+  const searchParams = useSearchParams()
   const id = params.id
 
   const [record, setRecord] = useState<PassageRecord | null>(null)
@@ -35,7 +37,14 @@ export default function ExternalPassageDetailPage() {
       .then((r) => r.json())
       .then((json) => {
         if (json.error) setError(json.error)
-        else setRecord(json.data)
+        else {
+          setRecord(json.data)
+          // 목록에서 "수정" 버튼(?edit=1)으로 들어온 경우 바로 편집 모드로 시작한다.
+          if (searchParams.get('edit') === '1') {
+            setDraft(JSON.parse(JSON.stringify(json.data)))
+            setEditMode(true)
+          }
+        }
       })
       .catch(() => setError('지문을 불러오지 못했습니다.'))
       .finally(() => setLoading(false))
@@ -114,6 +123,22 @@ export default function ExternalPassageDetailPage() {
     setDraft((prev) => {
       if (!prev) return prev
       return { ...prev, essays: prev.essays.map((e, i) => (i === idx ? updater(e) : e)) }
+    })
+  }
+
+  function removeQuestion(idx: number) {
+    if (!confirm('이 문제를 삭제하시겠습니까?')) return
+    setDraft((prev) => {
+      if (!prev) return prev
+      return { ...prev, questions: prev.questions.filter((_, i) => i !== idx) }
+    })
+  }
+
+  function removeEssay(idx: number) {
+    if (!confirm('이 서술형을 삭제하시겠습니까?')) return
+    setDraft((prev) => {
+      if (!prev) return prev
+      return { ...prev, essays: prev.essays.filter((_, i) => i !== idx) }
     })
   }
 
@@ -228,9 +253,23 @@ export default function ExternalPassageDetailPage() {
           <>
             <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
               <h1 className="text-lg font-semibold text-gray-800">{current.title}</h1>
-              <div className="flex gap-1.5">
+              <div className="flex flex-wrap gap-1.5">
                 <span className="rounded bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">{current.level}</span>
                 <span className="rounded bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">{current.topic}</span>
+                {current.variant_level && (
+                  <span className="rounded bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
+                    {VARIANT_LABELS[current.variant_level]}
+                  </span>
+                )}
+                <span
+                  className={
+                    current.questions.length === 20 && current.essays.length === 5
+                      ? 'rounded border border-green-100 bg-green-50 px-2 py-1 text-xs font-medium text-green-700'
+                      : 'rounded border border-amber-100 bg-amber-50 px-2 py-1 text-xs font-medium text-amber-700'
+                  }
+                >
+                  {current.questions.length === 20 && current.essays.length === 5 ? '완성' : '문제 부족'}
+                </span>
               </div>
             </div>
             <p className="whitespace-pre-wrap text-sm leading-7 text-gray-800">
@@ -252,6 +291,7 @@ export default function ExternalPassageDetailPage() {
               editMode={editMode}
               showAnswers={showAnswers}
               onChange={(updater) => updateQuestion(idx, updater)}
+              onDelete={() => removeQuestion(idx)}
             />
           ))}
         </div>
@@ -269,6 +309,7 @@ export default function ExternalPassageDetailPage() {
               editMode={editMode}
               showAnswers={showAnswers}
               onChange={(updater) => updateEssay(idx, updater)}
+              onDelete={() => removeEssay(idx)}
             />
           ))}
         </div>
@@ -291,19 +332,29 @@ function QuestionRow({
   editMode,
   showAnswers,
   onChange,
+  onDelete,
 }: {
   index: number
   question: PassageQuestion
   editMode: boolean
   showAnswers: boolean
   onChange: (updater: (q: PassageQuestion) => PassageQuestion) => void
+  onDelete: () => void
 }) {
   return (
     <div className="rounded border border-gray-200 p-3">
-      <div className="mb-1.5 flex items-center gap-2">
+      <div className="mb-1.5 flex items-center justify-between gap-2">
         <span className="rounded bg-gray-100 px-1.5 py-0.5 text-[11px] font-medium text-gray-600">
           {index + 1}. {QTYPE_LABEL[question.type]}
         </span>
+        {editMode && (
+          <button
+            onClick={onDelete}
+            className="rounded border border-red-200 px-2 py-0.5 text-[11px] text-red-500 hover:bg-red-50"
+          >
+            문제 삭제
+          </button>
+        )}
       </div>
 
       {question.type === 'mc' && (
@@ -647,21 +698,33 @@ function EssayRow({
   editMode,
   showAnswers,
   onChange,
+  onDelete,
 }: {
   index: number
   essay: PassageEssay
   editMode: boolean
   showAnswers: boolean
   onChange: (updater: (e: PassageEssay) => PassageEssay) => void
+  onDelete: () => void
 }) {
   return (
     <div className="rounded border border-gray-200 p-3">
-      <div className="mb-1.5 flex items-center gap-2">
-        <span className="rounded bg-indigo-100 px-1.5 py-0.5 text-[11px] font-medium text-indigo-800">
-          {index + 1}
-        </span>
-        {!editMode && (
-          <span className="text-[11px] text-gray-400">{essay.wordLimit}자 내외</span>
+      <div className="mb-1.5 flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <span className="rounded bg-indigo-100 px-1.5 py-0.5 text-[11px] font-medium text-indigo-800">
+            {index + 1}
+          </span>
+          {!editMode && (
+            <span className="text-[11px] text-gray-400">{essay.wordLimit}자 내외</span>
+          )}
+        </div>
+        {editMode && (
+          <button
+            onClick={onDelete}
+            className="rounded border border-red-200 px-2 py-0.5 text-[11px] text-red-500 hover:bg-red-50"
+          >
+            서술형 삭제
+          </button>
         )}
       </div>
 
