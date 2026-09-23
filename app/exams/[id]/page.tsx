@@ -1,10 +1,19 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { PassageEssay, PassageQuestion, PassageRecord, PassageSummary, VARIANT_LABELS } from '@/types/passageBank'
+import {
+  PassageEssay,
+  PassageQuestion,
+  PassageRecord,
+  PassageSummary,
+  PassageVariantLevel,
+  VARIANT_LABELS,
+} from '@/types/passageBank'
 import { buildExternalExamQuestionData, ExamSourceKind, externalSourceKey } from '@/lib/externalPassageExam'
+import { buildPickerRows, isPassageComplete, pickerLevelOptions, VARIANT_ORDER } from '@/lib/externalPassagePicker'
+import { schoolStageBadgeClass } from '@/lib/gradeLevel'
 
 interface Exam {
   id: string
@@ -109,12 +118,17 @@ export default function ExamDetailPage() {
   const [extItems, setExtItems] = useState<PassageSummary[]>([])
   const [extLoading, setExtLoading] = useState(false)
   const [extSearch, setExtSearch] = useState('')
+  const [extLevel, setExtLevel] = useState('all')
+  // 펼쳐둔 지문 그룹 (문제 화면에서 목록으로 돌아와도 유지)
+  const [extExpanded, setExtExpanded] = useState<Set<string>>(new Set())
   const [extSelectedId, setExtSelectedId] = useState<string | null>(null)
   const [extRecord, setExtRecord] = useState<PassageRecord | null>(null)
   const [extRecordLoading, setExtRecordLoading] = useState(false)
   const [extQChecked, setExtQChecked] = useState<boolean[]>([])
   const [extEChecked, setExtEChecked] = useState<boolean[]>([])
   const [extAdding, setExtAdding] = useState(false)
+  // 지문을 빠르게 바꿔 누를 때, 늦게 도착한 이전 지문 응답이 현재 화면(선택상태)을 덮어쓰지 않게 하는 번호표
+  const extRequestSeq = useRef(0)
 
   useEffect(() => {
     loadExam()
@@ -199,24 +213,31 @@ export default function ExamDetailPage() {
     }
   }
 
+  // 지문(난이도)을 바꾸면 체크 상태는 항상 새로 시작한다 — 이전 지문의 체크가 다른 지문에 옮겨붙지 않는다.
   async function selectExtPassage(id: string) {
+    const seq = ++extRequestSeq.current
     setExtSelectedId(id)
     setExtRecord(null)
+    setExtQChecked([])
+    setExtEChecked([])
     setExtRecordLoading(true)
     try {
       const res = await fetch(`/api/passages/${id}`)
       const json = await res.json()
+      if (seq !== extRequestSeq.current) return
       if (!json.error) {
         setExtRecord(json.data)
         setExtQChecked(new Array(json.data.questions.length).fill(true))
         setExtEChecked(new Array(json.data.essays.length).fill(true))
       }
     } finally {
-      setExtRecordLoading(false)
+      if (seq === extRequestSeq.current) setExtRecordLoading(false)
     }
   }
 
   function backToExtList() {
+    extRequestSeq.current++
+    setExtRecordLoading(false)
     setExtSelectedId(null)
     setExtRecord(null)
     setExtQChecked([])
@@ -236,6 +257,33 @@ export default function ExamDetailPage() {
     return set
   }, [examQuestions, extRecord])
 
+  const extRows = useMemo(
+    () => buildPickerRows(extItems, { search: extSearch, level: extLevel }),
+    [extItems, extSearch, extLevel],
+  )
+  const extLevelOptions = useMemo(() => pickerLevelOptions(extItems), [extItems])
+  // 문제 화면 상단에서 같은 그룹의 다른 난이도로 바로 이동하기 위한 목록
+  const extSiblings = useMemo(() => {
+    const current = extItems.find((p) => p.id === extSelectedId)
+    if (!current?.group_id) return []
+    return extItems
+      .filter((p) => p.group_id === current.group_id)
+      .sort(
+        (a, b) =>
+          VARIANT_ORDER.indexOf(a.variant_level as PassageVariantLevel) -
+          VARIANT_ORDER.indexOf(b.variant_level as PassageVariantLevel),
+      )
+  }, [extItems, extSelectedId])
+
+  function toggleExtGroup(groupId: string) {
+    setExtExpanded((prev) => {
+      const next = new Set(prev)
+      if (next.has(groupId)) next.delete(groupId)
+      else next.add(groupId)
+      return next
+    })
+  }
+
   const extTotalCount = extRecord ? extRecord.questions.length + extRecord.essays.length : 0
   const extSelectedCount = extQChecked.filter(Boolean).length + extEChecked.filter(Boolean).length
 
@@ -250,7 +298,7 @@ export default function ExamDetailPage() {
   }
 
   async function addSelectedExternal() {
-    if (!extRecord) return
+    if (!extRecord || extRecord.id !== extSelectedId) return
     const toAdd: { kind: ExamSourceKind; index: number; item: PassageQuestion | PassageEssay }[] = []
     extRecord.questions.forEach((q, i) => {
       if (extQChecked[i] && !extAddedKeySet.has(externalSourceKey(extRecord.id, 'question', i))) {
@@ -594,61 +642,162 @@ export default function ExamDetailPage() {
 
           {bankSource === 'external' && (
             <>
-              {/* ── STEP 1: 외부지문 선택 ── */}
+              {/* ── STEP 1: 지문 그룹 선택 → 난이도 선택 ── */}
               {!extSelectedId ? (
                 <>
                   <div className="mb-4 flex items-center justify-between">
                     <h3 className="text-sm font-semibold text-gray-700">📁 외부지문 선택</h3>
-                    <span className="text-xs text-gray-400">지문을 선택하면 문제 25개(일반 20 + 서술형 5)가 나옵니다</span>
+                    <span className="text-xs text-gray-400">지문을 펼쳐 난이도를 고르면 문제가 나옵니다</span>
                   </div>
-                  <input
-                    type="text"
-                    value={extSearch}
-                    onChange={(e) => setExtSearch(e.target.value)}
-                    placeholder="🔍 제목·주제 검색"
-                    className="mb-3 w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-400 focus:outline-none"
-                  />
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    <select
+                      value={extLevel}
+                      onChange={(e) => setExtLevel(e.target.value)}
+                      className="rounded border border-gray-300 px-2 py-2 text-sm"
+                    >
+                      <option value="all">전체 학년</option>
+                      {extLevelOptions.map((lv) => (
+                        <option key={lv} value={lv}>{lv}</option>
+                      ))}
+                    </select>
+                    <input
+                      type="text"
+                      value={extSearch}
+                      onChange={(e) => setExtSearch(e.target.value)}
+                      placeholder="🔍 제목·주제 검색"
+                      className="min-w-[200px] flex-1 rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-400 focus:outline-none"
+                    />
+                  </div>
                   {extLoading ? (
                     <div className="py-8 text-center text-sm text-gray-400">불러오는 중…</div>
                   ) : (
                     <div className="max-h-96 overflow-y-auto space-y-2">
-                      {extItems
-                        .filter(
-                          (p) =>
-                            !extSearch ||
-                            `${p.title} ${p.topic}`.toLowerCase().includes(extSearch.trim().toLowerCase()),
-                        )
-                        .map((p) => (
-                          <div
-                            key={p.id}
-                            className="flex cursor-pointer items-center justify-between rounded-lg border border-gray-100 p-3 hover:border-blue-300 hover:bg-blue-50"
-                            onClick={() => selectExtPassage(p.id)}
-                          >
-                            <div>
-                              <p className="text-sm font-medium text-gray-800">{p.title || '(제목없음)'}</p>
-                              <p className="text-xs text-gray-400">
-                                {p.level} · {p.topic}
-                                {p.variant_level ? ` · ${VARIANT_LABELS[p.variant_level]}` : ' · 단일 지문'}
-                              </p>
+                      {extRows.map((row) => {
+                        if (row.kind === 'single') {
+                          const p = row.item
+                          return (
+                            <div
+                              key={row.key}
+                              className="flex cursor-pointer items-center justify-between rounded-lg border border-gray-100 p-3 hover:border-blue-300 hover:bg-blue-50"
+                              onClick={() => selectExtPassage(p.id)}
+                            >
+                              <div>
+                                <p className="text-sm font-medium text-gray-800">{p.title || '(제목없음)'}</p>
+                                <p className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-gray-400">
+                                  <span className={`rounded border px-1.5 py-0.5 text-[11px] ${schoolStageBadgeClass(p.level)}`}>
+                                    {p.level || '학년 미정'}
+                                  </span>
+                                  {p.topic} · 단일 지문 · {p.question_count + p.essay_count}문제
+                                  {!isPassageComplete(p) && <span className="text-amber-600">· 문제 부족</span>}
+                                </p>
+                              </div>
+                              <span className="rounded bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">선택 →</span>
                             </div>
-                            <span className="rounded bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">선택 →</span>
+                          )
+                        }
+                        const first = row.items[0]
+                        const isOpen = extExpanded.has(row.groupId)
+                        const complete = row.items.every(isPassageComplete)
+                        const partialMatch = row.matchedIds.length < row.items.length
+                        return (
+                          <div key={row.key} className="overflow-hidden rounded-lg border border-gray-100">
+                            <button
+                              type="button"
+                              onClick={() => toggleExtGroup(row.groupId)}
+                              aria-expanded={isOpen}
+                              className="flex w-full items-center gap-3 p-3 text-left hover:bg-gray-50"
+                            >
+                              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-200 text-[10px] text-gray-500">
+                                {isOpen ? '▼' : '▶'}
+                              </span>
+                              <div className="min-w-0">
+                                <p className="truncate text-sm font-medium text-gray-800">{first.title || '(제목없음)'}</p>
+                                <p className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-gray-400">
+                                  <span className={`rounded border px-1.5 py-0.5 text-[11px] ${schoolStageBadgeClass(first.level)}`}>
+                                    {first.level || '학년 미정'}
+                                  </span>
+                                  {first.topic} · {row.items.length}개 유형 ·
+                                  <span className={complete ? 'text-green-600' : 'text-amber-600'}>
+                                    {complete ? '완성' : '문제 부족'}
+                                  </span>
+                                  {partialMatch && (
+                                    <span className="text-blue-500">
+                                      · 검색 일치:{' '}
+                                      {row.items
+                                        .filter((i) => row.matchedIds.includes(i.id))
+                                        .map((i) => (i.variant_level ? VARIANT_LABELS[i.variant_level] : '난이도 없음'))
+                                        .join(', ')}
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
+                            </button>
+                            {isOpen && (
+                              <div className="divide-y divide-gray-100 border-t border-gray-100 bg-gray-50/60">
+                                {row.items.map((child) => (
+                                  <div
+                                    key={child.id}
+                                    className="flex cursor-pointer items-center justify-between py-2 pl-11 pr-3 hover:bg-blue-50"
+                                    onClick={() => selectExtPassage(child.id)}
+                                  >
+                                    <p className="text-sm text-gray-700">
+                                      {child.variant_level ? VARIANT_LABELS[child.variant_level] : '(난이도 없음)'}
+                                      <span className="ml-2 text-xs text-gray-400">
+                                        {child.question_count + child.essay_count}문제 ·{' '}
+                                        <span className={isPassageComplete(child) ? 'text-green-600' : 'text-amber-600'}>
+                                          {isPassageComplete(child) ? '완성' : '문제 부족'}
+                                        </span>
+                                      </span>
+                                    </p>
+                                    <span className="rounded bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">선택 →</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
                           </div>
-                        ))}
-                      {extItems.length === 0 && (
+                        )
+                      })}
+                      {extItems.length === 0 ? (
                         <div className="py-8 text-center text-sm text-gray-400">저장된 외부지문이 없습니다.</div>
+                      ) : (
+                        extRows.length === 0 && (
+                          <div className="py-8 text-center text-sm text-gray-400">검색 결과가 없습니다.</div>
+                        )
                       )}
                     </div>
                   )}
                 </>
               ) : (
                 <>
-                  {/* ── STEP 2: 선택한 지문의 문제 25개 체크리스트 ── */}
+                  {/* ── STEP 2: 선택한 지문(난이도)의 문제 25개 체크리스트 ── */}
                   <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      <button onClick={backToExtList} className="text-xs text-blue-600 hover:underline">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <button
+                        onClick={backToExtList}
+                        disabled={extAdding}
+                        className="text-xs text-blue-600 hover:underline disabled:opacity-40"
+                      >
                         ← 지문 목록
                       </button>
                       <h3 className="text-sm font-semibold text-gray-700">📖 {extRecord?.title}</h3>
+                      {extSiblings.length > 0 && (
+                        <div className="flex flex-wrap gap-1">
+                          {extSiblings.map((s) => (
+                            <button
+                              key={s.id}
+                              onClick={() => s.id !== extSelectedId && selectExtPassage(s.id)}
+                              disabled={extAdding}
+                              className={`rounded border px-2 py-0.5 text-xs disabled:opacity-40 ${
+                                s.id === extSelectedId
+                                  ? 'border-blue-600 bg-blue-600 text-white'
+                                  : 'border-gray-300 text-gray-600 hover:bg-gray-100'
+                              }`}
+                            >
+                              {s.variant_level ? VARIANT_LABELS[s.variant_level] : '(난이도 없음)'}
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     {extRecord && (
                       <div className="flex items-center gap-2">
