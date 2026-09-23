@@ -19,6 +19,10 @@ interface Report {
   // for reprint
   student_id: string | null
   exam_id: string | null
+  teacher: string | null
+  vocab_analysis: string | null
+  grammar_analysis: string | null
+  reading_analysis: string | null
 }
 
 export default function ReportsPage() {
@@ -52,6 +56,10 @@ export default function ReportsPage() {
       comment:      r.comment ?? '',
       nextSteps:    r.next_steps ?? '',
       strengths:    r.strengths ?? '',
+      teacher:      r.teacher ?? '',
+      vocabAnalysis:   r.vocab_analysis ?? '',
+      grammarAnalysis: r.grammar_analysis ?? '',
+      readingAnalysis: r.reading_analysis ?? '',
       typeScores:   JSON.stringify(r.type_scores ?? {}),
     })
     window.open(`/report/print?${params.toString()}`, '_blank')

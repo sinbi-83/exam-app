@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, Suspense } from 'react'
+import { useEffect, useRef, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 interface Student {
@@ -26,6 +26,16 @@ function ReportForm() {
   const [prefilled, setPrefilled] = useState(false)
   const [aiLoading, setAiLoading] = useState(false)
   const [aiGenerated, setAiGenerated] = useState(false)
+
+  // STEP 2-A: 학생+시험 선택 시 exam_results/wrong_answer_records에서 자동 불러오기
+  // 'idle'=아직 학생/시험 미선택, 'loading'=조회 중, 'applied'=자동값 반영됨, 'none'=조회했지만 저장된 결과 없음
+  const [autoFillStatus, setAutoFillStatus] = useState<'idle' | 'loading' | 'applied' | 'none'>('idle')
+  const [typeAutoApplied, setTypeAutoApplied] = useState(false)
+  // "우리가(자동으로) 마지막으로 채워넣은 값"을 기억해서, 선생님이 그 값을 직접 고쳤으면 다시 덮어쓰지 않는다.
+  const autoValuesRef = useRef<{ score: string; maxScore: string; examDate: string }>({
+    score: '', maxScore: '', examDate: '',
+  })
+  const autoTypeScoresRef = useRef<Record<string, string>>({})
 
   // 선택
   const [studentId, setStudentId] = useState('')
@@ -126,10 +136,82 @@ function ReportForm() {
     setExamTitleOverride('')
     const found = exams.find((e) => e.id === id)
     if (found) {
-      if (found.max_score) setMaxScore(String(found.max_score))
-      if (found.exam_date) setExamDate(found.exam_date)
+      if (found.max_score) {
+        setMaxScore(String(found.max_score))
+        autoValuesRef.current.maxScore = String(found.max_score)
+      }
+      if (found.exam_date) {
+        setExamDate(found.exam_date)
+        autoValuesRef.current.examDate = found.exam_date
+      }
     }
   }
+
+  // STEP 2-A: 학생+시험이 모두 선택되면 이미 채점관리(exam_results)에 저장된 성적과
+  // 오답분석(wrong_answer_records) 기록을 조회해 총점/영역별 점수를 자동으로 채운다.
+  // 학생 또는 시험이 "실제로 바뀔 때"만 다시 조회하고(의존성 배열에 studentId, examId만 둠),
+  // 선생님이 이미 직접 고친 값은 덮어쓰지 않는다(아래 applyAuto 참고).
+  useEffect(() => {
+    if (!studentId || !examId) {
+      setAutoFillStatus('idle')
+      return
+    }
+
+    let cancelled = false
+    setAutoFillStatus('loading')
+    setTypeAutoApplied(false)
+
+    function applyAuto(field: 'score' | 'maxScore' | 'examDate', current: string, next: string, setter: (v: string) => void) {
+      const lastAuto = autoValuesRef.current[field]
+      // 필드가 비어 있거나, 지난번에 우리가 자동으로 넣어준 값 그대로면 새 값을 적용한다.
+      // 선생님이 그 사이에 직접 고쳤다면(현재 값 ≠ 마지막 자동값) 건드리지 않는다.
+      if (current === '' || current === lastAuto) {
+        setter(next)
+        autoValuesRef.current[field] = next
+      }
+    }
+
+    fetch(`/api/reports/autofill?student_id=${studentId}&exam_id=${examId}`)
+      .then((r) => r.json())
+      .then((json) => {
+        if (cancelled) return
+
+        const result = json.examResult as { score: number; max_score: number; exam_date: string | null } | null
+        const typeScoresAuto = json.typeScores as Record<string, number> | null
+
+        if (result) {
+          applyAuto('score', score, String(result.score), setScore)
+          applyAuto('maxScore', maxScore, String(result.max_score), setMaxScore)
+          if (result.exam_date) applyAuto('examDate', examDate, result.exam_date, setExamDate)
+          setAutoFillStatus('applied')
+        } else {
+          setAutoFillStatus('none')
+        }
+
+        if (typeScoresAuto && Object.keys(typeScoresAuto).length > 0) {
+          setTypeScores((prev) => {
+            const next = { ...prev }
+            for (const [label, value] of Object.entries(typeScoresAuto)) {
+              if (!(label in next)) continue
+              const current = next[label]
+              const lastAuto = autoTypeScoresRef.current[label] ?? ''
+              if (current === '' || current === lastAuto) {
+                next[label] = String(value)
+                autoTypeScoresRef.current[label] = String(value)
+              }
+            }
+            return next
+          })
+          setTypeAutoApplied(true)
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setAutoFillStatus('none')
+      })
+
+    return () => { cancelled = true }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [studentId, examId])
 
   // AI 초안 생성
   async function handleAiGenerate() {
@@ -198,9 +280,11 @@ function ReportForm() {
     const exam    = exams.find((e) => e.id === examId)
     const filteredTypeScores = Object.fromEntries(Object.entries(typeScores).filter(([, v]) => v !== ''))
 
-    // 보고서 DB 저장
+    // 보고서 DB 저장 — 실패해도 인쇄는 그대로 진행하되(기존 동작 유지),
+    // 저장이 안 됐다는 사실은 조용히 넘어가지 않고 선생님께 알린다.
+    let saveFailed = false
     try {
-      await fetch('/api/reports', {
+      const saveRes = await fetch('/api/reports', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -222,8 +306,18 @@ function ReportForm() {
           reading_analysis:  readingAnalysis,
         }),
       })
+      if (!saveRes.ok) {
+        saveFailed = true
+      } else {
+        const saveJson = await saveRes.json().catch(() => null)
+        if (!saveJson || saveJson.error) saveFailed = true
+      }
     } catch {
-      // 저장 실패해도 인쇄는 진행
+      saveFailed = true
+    }
+
+    if (saveFailed) {
+      alert('⚠️ 보고서 저장에 실패했습니다. 인쇄는 계속 진행하지만, "저장된 보고서" 목록에는 남지 않습니다. 잠시 후 다시 시도하거나 저장 없이 나온 인쇄물을 확인해주세요.')
     }
 
     const params = new URLSearchParams({
@@ -316,7 +410,14 @@ function ReportForm() {
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs text-gray-600">점수 *</label>
+              <label className="mb-1 flex items-center gap-1.5 text-xs text-gray-600">
+                점수 *
+                {autoFillStatus === 'applied' && (
+                  <span className="rounded bg-blue-100 px-1.5 py-0.5 text-[10px] font-normal text-blue-600">
+                    🔄 채점관리 성적에서 자동 불러옴
+                  </span>
+                )}
+              </label>
               <div className="flex gap-2">
                 <input
                   type="number"
@@ -334,6 +435,11 @@ function ReportForm() {
                   className="w-24 rounded border border-gray-300 px-3 py-2 text-sm"
                 />
               </div>
+              {autoFillStatus === 'none' && (
+                <p className="mt-1 text-[11px] text-gray-400">
+                  이 학생·시험 조합으로 채점관리에 저장된 성적이 없습니다 — 직접 입력하세요.
+                </p>
+              )}
             </div>
           </div>
           <div className="mt-4">
@@ -358,8 +464,18 @@ function ReportForm() {
                 오답분석 자동 채움
               </span>
             )}
+            {!fromWrongAnswers && typeAutoApplied && (
+              <span className="ml-2 rounded bg-blue-100 px-2 py-0.5 text-[10px] font-normal text-blue-600">
+                🔄 시험 결과에서 자동 계산됨
+              </span>
+            )}
           </h2>
-          <p className="mb-3 text-xs text-gray-400">입력하지 않으면 보고서에서 해당 영역은 생략됩니다.</p>
+          <p className="mb-3 text-xs text-gray-400">
+            입력하지 않으면 보고서에서 해당 영역은 생략됩니다.
+            {autoFillStatus === 'applied' && !typeAutoApplied && (
+              <> 이 시험은 오답분석 기록이 없어 영역별 점수는 자동 계산되지 않았습니다 — 필요하면 직접 입력하세요.</>
+            )}
+          </p>
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
             {ALL_TYPES.map((type) => (
               <div key={type}>
