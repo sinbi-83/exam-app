@@ -11,7 +11,13 @@ import {
   PassageVariantLevel,
   VARIANT_LABELS,
 } from '@/types/passageBank'
-import { buildExternalExamQuestionData, ExamSourceKind, externalSourceKey } from '@/lib/externalPassageExam'
+import {
+  buildExternalExamQuestionData,
+  ExamSourceKind,
+  externalAddedKeys,
+  isExternalItemAdded,
+} from '@/lib/externalPassageExam'
+import { bankAddedIds, buildBankExamQuestionData } from '@/lib/questionBankExam'
 import { buildPickerRows, isPassageComplete, pickerLevelOptions, VARIANT_ORDER } from '@/lib/externalPassagePicker'
 import { schoolStageBadgeClass } from '@/lib/gradeLevel'
 
@@ -47,10 +53,12 @@ interface QuestionData {
   // 외부지문저장소 'match' 유형 전용: 좌우 짝짓기
   matchWords?: string[]
   matchMeanings?: string[]
-  // 외부지문저장소 출처 (중복 추가 방지용, DB 컬럼 추가 없이 이 JSON 안에서 처리)
-  source?: 'external_passage'
+  // 출처(provenance) — 추적·중복 추가 방지용 (DB 컬럼 추가 없이 이 JSON 안에서 처리). lib/externalPassageExam.ts 참고
+  source?: 'external_passage' | 'question_bank'
   source_passage_id?: string
   source_kind?: ExamSourceKind
+  source_question_id?: string
+  source_question_set_id?: string | null
   source_index?: number
 }
 
@@ -188,7 +196,7 @@ export default function ExamDetailPage() {
     if (showBank) loadSets()
   }, [showBank])
 
-  const addedIds = new Set(examQuestions.map((q) => q.question_data.id))
+  const addedIds = bankAddedIds(examQuestions)
 
   // ── 외부지문저장소에서 문제 담기 (STEP 7) ──
 
@@ -245,17 +253,14 @@ export default function ExamDetailPage() {
   }
 
   // 이 지문의 문제 중 이미 이번 시험에 담겨 있는 것 (question_data 안의 source_* 값으로 판단, DB 컬럼 추가 없음)
-  const extAddedKeySet = useMemo(() => {
-    if (!extRecord) return new Set<string>()
-    const set = new Set<string>()
-    for (const eq of examQuestions) {
-      const d = eq.question_data
-      if (d.source === 'external_passage' && d.source_passage_id === extRecord.id && d.source_kind && d.source_index !== undefined) {
-        set.add(externalSourceKey(extRecord.id, d.source_kind, d.source_index))
-      }
-    }
-    return set
-  }, [examQuestions, extRecord])
+  // qid 가 있으면 qid 로, qid 없는 legacy 시험문항만 index 로 비교한다 (lib/externalPassageExam.ts)
+  const extAddedKeySet = useMemo(
+    () => (extRecord ? externalAddedKeys(examQuestions, extRecord.id) : new Set<string>()),
+    [examQuestions, extRecord],
+  )
+  function isExtAdded(kind: ExamSourceKind, index: number, item: PassageQuestion | PassageEssay): boolean {
+    return !!extRecord && isExternalItemAdded(extAddedKeySet, extRecord.id, kind, index, item.qid)
+  }
 
   const extRows = useMemo(
     () => buildPickerRows(extItems, { search: extSearch, level: extLevel }),
@@ -290,10 +295,10 @@ export default function ExamDetailPage() {
   function toggleAllExt(value: boolean) {
     if (!extRecord) return
     setExtQChecked(
-      extRecord.questions.map((_, i) => (extAddedKeySet.has(externalSourceKey(extRecord.id, 'question', i)) ? true : value)),
+      extRecord.questions.map((q, i) => (isExtAdded('question', i, q) ? true : value)),
     )
     setExtEChecked(
-      extRecord.essays.map((_, i) => (extAddedKeySet.has(externalSourceKey(extRecord.id, 'essay', i)) ? true : value)),
+      extRecord.essays.map((e, i) => (isExtAdded('essay', i, e) ? true : value)),
     )
   }
 
@@ -301,12 +306,12 @@ export default function ExamDetailPage() {
     if (!extRecord || extRecord.id !== extSelectedId) return
     const toAdd: { kind: ExamSourceKind; index: number; item: PassageQuestion | PassageEssay }[] = []
     extRecord.questions.forEach((q, i) => {
-      if (extQChecked[i] && !extAddedKeySet.has(externalSourceKey(extRecord.id, 'question', i))) {
+      if (extQChecked[i] && !isExtAdded('question', i, q)) {
         toAdd.push({ kind: 'question', index: i, item: q })
       }
     })
     extRecord.essays.forEach((e, i) => {
-      if (extEChecked[i] && !extAddedKeySet.has(externalSourceKey(extRecord.id, 'essay', i))) {
+      if (extEChecked[i] && !isExtAdded('essay', i, e)) {
         toAdd.push({ kind: 'essay', index: i, item: e })
       }
     })
@@ -348,7 +353,7 @@ export default function ExamDetailPage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         exam_id: examId,
-        question_data: { ...q, passage: q.question_set_id ? passages[q.question_set_id] : undefined },
+        question_data: buildBankExamQuestionData(q, q.question_set_id ? passages[q.question_set_id] : undefined),
         sort_order: examQuestions.length,
         points: 5,
       }),
@@ -371,7 +376,7 @@ export default function ExamDetailPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           exam_id: examId,
-          question_data: { ...q, passage: q.question_set_id ? passages[q.question_set_id] : undefined },
+          question_data: buildBankExamQuestionData(q, q.question_set_id ? passages[q.question_set_id] : undefined),
           sort_order: examQuestions.length + i,
           points: 5,
         }),
@@ -827,8 +832,8 @@ export default function ExamDetailPage() {
                       <div className="max-h-96 overflow-y-auto space-y-1.5">
                         <p className="mb-1 text-xs font-semibold text-gray-500">일반문제 ({extRecord.questions.length})</p>
                         {extRecord.questions.map((q, i) => {
-                          const key = externalSourceKey(extRecord.id, 'question', i)
-                          const already = extAddedKeySet.has(key)
+                          const key = q.qid ?? `question:${i}`
+                          const already = isExtAdded('question', i, q)
                           return (
                             <label
                               key={key}
@@ -857,8 +862,8 @@ export default function ExamDetailPage() {
                         })}
                         <p className="mb-1 mt-3 text-xs font-semibold text-gray-500">서술형 ({extRecord.essays.length})</p>
                         {extRecord.essays.map((e, i) => {
-                          const key = externalSourceKey(extRecord.id, 'essay', i)
-                          const already = extAddedKeySet.has(key)
+                          const key = e.qid ?? `essay:${i}`
+                          const already = isExtAdded('essay', i, e)
                           return (
                             <label
                               key={key}

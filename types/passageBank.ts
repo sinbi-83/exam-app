@@ -2,7 +2,13 @@
 // 이 기능은 AI API를 호출하지 않는다 — 지문/문제는 미리 만들어 add-passage.ts로
 // Supabase에 저장해두고, 화면은 그 저장된 데이터를 읽기/수정/삭제/인쇄만 한다.
 
-export interface PassageMultipleChoice {
+// 문항 하나의 영구 ID. 한 번 붙으면 수정·순서변경·앞 문제 삭제 후에도 바뀌지 않는다 (lib/passageQid.ts).
+// 예전(legacy) 지문에는 없을 수 있어서 optional. 새로 만드는 지문은 반드시 가진다.
+export interface PassageItemIdentity {
+  qid?: string;
+}
+
+export interface PassageMultipleChoice extends PassageItemIdentity {
   type: "mc";
   q: string;
   choices: string[]; // 5지선다
@@ -10,27 +16,27 @@ export interface PassageMultipleChoice {
   explanation: string;
 }
 
-export interface PassageBlankQuestion {
+export interface PassageBlankQuestion extends PassageItemIdentity {
   type: "blank";
   q: string;
   answer: string;
   explanation: string;
 }
 
-export interface PassageTrueFalseQuestion {
+export interface PassageTrueFalseQuestion extends PassageItemIdentity {
   type: "tf";
   q: string;
   answer: boolean;
   explanation: string;
 }
 
-export interface PassageOrderQuestion {
+export interface PassageOrderQuestion extends PassageItemIdentity {
   type: "order";
   items: string[];
   answer: string[];
 }
 
-export interface PassageMatchQuestion {
+export interface PassageMatchQuestion extends PassageItemIdentity {
   type: "match";
   pairs: { word: string; meaning: string }[];
 }
@@ -42,7 +48,7 @@ export type PassageQuestion =
   | PassageOrderQuestion
   | PassageMatchQuestion;
 
-export interface PassageEssay {
+export interface PassageEssay extends PassageItemIdentity {
   q: string;
   wordLimit: number;
   sampleAnswer: string;

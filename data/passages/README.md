@@ -32,4 +32,10 @@
 
 - `questions`는 보통 mc 10개 + blank 5개 + tf 3개 + order 1개 + match 1개, 총 20개를 한 배열에 순서대로 담습니다.
 - `essays`는 5개.
+- 문항 영구 ID(`qid`): 문제·서술형마다 `"qid": "<UUID>"`가 있어야 저장됩니다. 직접 만들지 말고
+  JSON을 다 쓴 뒤 `npm run assign-qids -- data/passages/파일이름.json`을 실행하면 없는 곳에만 붙습니다
+  (이미 있는 qid는 절대 바뀌지 않음). qid는 문제를 수정·삭제·순서변경해도 그 문제의 사용이력을 이어주는 ID입니다.
+  - ⚠️ 이미 DB에 저장된 지문의 파일에는 실행하지 않습니다 (DB 쪽 qid와 달라짐).
 - 저장: `npm run add-passage -- data/passages/파일이름.json`
+- 4단계 세트 content 파일도 같습니다: `npm run assign-qids -- data/passage-sets/파일이름.content.json`
+  → `check-passage-questions` → `add-passage-set-questions`

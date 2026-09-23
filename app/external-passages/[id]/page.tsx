@@ -136,6 +136,8 @@ export default function ExternalPassageDetailPage() {
     }
   }
 
+  // 문항 수정은 항상 { ...q, 바뀐필드 } 로 기존 객체를 펼쳐서 만든다 → qid(영구 ID)가 그대로 유지된다.
+  // 삭제는 배열에서 빼기만 하므로 남은 문항들의 qid 는 바뀌지 않는다 (위치만 당겨짐).
   function updateQuestion(idx: number, updater: (q: PassageQuestion) => PassageQuestion) {
     setDraft((prev) => {
       if (!prev) return prev
@@ -324,7 +326,7 @@ export default function ExternalPassageDetailPage() {
         <div className="space-y-3">
           {current.questions.map((q, idx) => (
             <QuestionRow
-              key={idx}
+              key={q.qid ?? idx}
               index={idx}
               question={q}
               editMode={editMode}
@@ -342,7 +344,7 @@ export default function ExternalPassageDetailPage() {
         <div className="space-y-3">
           {current.essays.map((e, idx) => (
             <EssayRow
-              key={idx}
+              key={e.qid ?? idx}
               index={idx}
               essay={e}
               editMode={editMode}

@@ -2,9 +2,13 @@
 // 저장 전에 검사한다. AI를 호출하지 않는다. DB에도 접속하지 않는다 (읽기 전용 검사).
 //
 // 실행: node scripts/check-passage-questions.ts data/passage-sets/파일이름.content.json data/passage-sets/파일이름.json
+//       [--allow-legacy]  qid(문항 영구 ID)가 없는 예전 content 파일을 검사할 때만 사용 (없으면 경고로만 표시)
+//
+// 새로 만든 content 는 모든 문제·서술형에 qid 가 있어야 한다 → 없으면 npm run assign-qids -- <content.json>
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { inspectQids, qidErrors } from '../lib/passageQid.ts'
 
 const ORDER = ['school', 'academy', 'advanced', 'prestudy'] as const
 const LABELS: Record<string, string> = {
@@ -33,6 +37,7 @@ function wordOverlap(a: string, b: string): number {
 
 const contentFile = process.argv[2]
 const setFile = process.argv[3]
+const allowLegacy = process.argv.includes('--allow-legacy')
 if (!contentFile || !setFile) {
   console.error('사용법: node scripts/check-passage-questions.ts <content.json> <원본 지문 세트.json>')
   process.exit(1)
@@ -126,6 +131,13 @@ for (const v of ORDER) {
   const maxPos = Math.max(...posCounts)
   if (maxPos >= 7) warnings.push(`${label}: mc 정답 위치가 한 자리에 ${maxPos}개나 몰려 있습니다: [${posCounts.join(', ')}]`)
 
+  // 8-1) 문항 영구 ID(qid): 같은 지문 안 중복/형식 오류는 항상 오류, qid 없음은 --allow-legacy 일 때만 경고
+  const qidReport = inspectQids(qs, es)
+  qidErrors(qidReport, !allowLegacy).forEach((m) => errors.push(`${label}: ${m}`))
+  if (allowLegacy && qidReport.questionsMissing + qidReport.essaysMissing > 0) {
+    warnings.push(`${label}: qid 없는 문항 ${qidReport.questionsMissing + qidReport.essaysMissing}개 (legacy 허용 모드)`)
+  }
+
   // 9) 태그 존재 확인
   const tagCounts = {
     vocab: c.tags?.vocab?.length ?? 0,
@@ -146,6 +158,7 @@ for (const v of ORDER) {
     '태그(어휘/어법/주제)': `${tagCounts.vocab}/${tagCounts.grammar}/${tagCounts.topic}`,
     '마크업 개수': markupCount,
     '한글답변 서술형': es.filter((e: any) => e.answerLang === 'ko').length,
+    'qid(문제/서술형)': `${qidReport.questionsWithQid}/${qidReport.essaysWithQid}`,
   })
 }
 
@@ -175,4 +188,4 @@ if (errors.length) {
   errors.forEach((e) => console.log('❌', e))
   process.exit(1)
 }
-console.log('✅ 4단계 모두 20문제+5서술형 / 정답·해설·예시답안 존재 / 근거 단어 확인 / 태그 존재')
+console.log('✅ 4단계 모두 20문제+5서술형 / 정답·해설·예시답안 존재 / 근거 단어 확인 / 태그 존재 / qid 중복 없음')

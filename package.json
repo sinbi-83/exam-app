@@ -11,7 +11,10 @@
     "check-passage-set": "node scripts/check-passage-set.ts",
     "add-passage-set": "node scripts/add-passage-set.ts",
     "check-passage-questions": "node scripts/check-passage-questions.ts",
-    "add-passage-set-questions": "node scripts/add-passage-set-questions.ts"
+    "add-passage-set-questions": "node scripts/add-passage-set-questions.ts",
+    "assign-qids": "node scripts/assign-qids.ts",
+    "backfill-passage-qids": "node scripts/backfill-passage-qids.ts",
+    "test-question-provenance": "node scripts/test-question-provenance.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",

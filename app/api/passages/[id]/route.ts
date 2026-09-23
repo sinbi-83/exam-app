@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { inspectQids, qidErrors } from '@/lib/passageQid'
 
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   const supabase = await createClient()
@@ -24,6 +25,26 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
 
   const payload = await request.json()
   const { title, level, topic, body, tagged_body, tags, questions, essays, archived } = payload
+
+  // 문항 영구 ID(qid) 보호: 이미 qid 가 있는 지문이면, 저장 후에도 모든 문항이 qid 를 가져야 한다
+  // (편집 화면 버그 등으로 qid 가 빠지면 사용이력이 끊기므로 저장을 막는다). 중복/형식 오류는 항상 막는다.
+  // qid 가 하나도 없는 legacy 지문은 예전처럼 그대로 저장된다 (qid 를 여기서 몰래 채우지 않는다).
+  if (questions !== undefined || essays !== undefined) {
+    const { data: stored, error: storedError } = await supabase
+      .from('passages')
+      .select('questions, essays')
+      .eq('id', params.id)
+      .eq('user_id', user.id)
+      .single()
+    if (storedError || !stored) return NextResponse.json({ error: '해당 지문을 찾을 수 없습니다.' }, { status: 404 })
+    const storedReport = inspectQids(stored.questions ?? [], stored.essays ?? [])
+    const storedHasQid = storedReport.questionsWithQid + storedReport.essaysWithQid > 0
+    const nextReport = inspectQids(questions ?? stored.questions ?? [], essays ?? stored.essays ?? [])
+    const errors = qidErrors(nextReport, storedHasQid)
+    if (errors.length > 0) {
+      return NextResponse.json({ error: `문항 ID(qid) 검사 실패: ${errors.join(' ')}` }, { status: 400 })
+    }
+  }
 
   const update: Record<string, unknown> = { updated_at: new Date().toISOString() }
   if (title !== undefined) update.title = title

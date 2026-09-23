@@ -84,7 +84,9 @@ public/brand/signature.png  ← fallback 서명 (원본: 싸인.png)
 ### 지문 JSON 저장 방법
 
 1. `data/passages/README.md`의 형식대로 JSON 파일을 `data/passages/`에 만든다.
-2. 저장 실행: `npm run add-passage -- data/passages/파일이름.json`
+   - JSON을 다 쓴 뒤 `npm run assign-qids -- data/passages/파일이름.json`으로 문제·서술형마다 영구 ID(qid)를 붙인다
+     (qid를 직접 지어내지 않는다. 4단계 세트 content 파일도 같은 명령). 이미 DB에 있는 지문의 파일에는 실행하지 않는다.
+2. 저장 실행: `npm run add-passage -- data/passages/파일이름.json` (qid 없으면 저장이 중단됨)
    (내부적으로 `.env.local`의 `SUPABASE_LOGIN_EMAIL` / `SUPABASE_LOGIN_PASSWORD`로 로그인한 뒤 insert)
 3. `.env.local`에 `SUPABASE_LOGIN_EMAIL`, `SUPABASE_LOGIN_PASSWORD`를 향미님이 직접 채워야 한다
    (Claude Code는 채우지 않음). `.env.local`은 `.gitignore`에 포함되어 있어 GitHub에 올라가지 않는다.

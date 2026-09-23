@@ -4,10 +4,17 @@
 // AI API를 호출하지 않는다.
 //
 // 실행: npm run add-passage-set-questions -- data/passage-sets/파일이름.content.json "묶음 제목"
+//
+// 문항 영구 ID(qid) 보호
+// - content 의 문제·서술형마다 qid 가 있어야 한다 (없으면 먼저 npm run assign-qids -- <content.json>).
+//   qid 없는 예전 content 를 일부러 저장할 때만 --allow-legacy.
+// - 이 스크립트는 questions/essays 배열을 "통째로 교체"한다. DB에 이미 있는 qid 가 content 에 없으면
+//   그 문항의 사용이력이 끊기므로 중단한다. 정말 문항을 새로 갈아끼우는 것이면 --allow-drop-qids.
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
+import { inspectQids, qidErrors } from '../lib/passageQid.ts'
 
 const ORDER = ['school', 'academy', 'advanced', 'prestudy'] as const
 
@@ -37,6 +44,19 @@ async function main() {
       console.error(`content.json에 "${v}" 데이터가 없습니다.`)
       process.exit(1)
     }
+  }
+
+  const allowLegacy = process.argv.includes('--allow-legacy')
+  const allowDropQids = process.argv.includes('--allow-drop-qids')
+  let qidFailed = false
+  for (const v of ORDER) {
+    const problems = qidErrors(inspectQids(content[v].questions ?? [], content[v].essays ?? []), !allowLegacy)
+    problems.forEach((m) => console.error(`❌ ${v}: ${m}`))
+    if (problems.length > 0) qidFailed = true
+  }
+  if (qidFailed) {
+    console.error(`먼저 실행: npm run assign-qids -- ${contentPath}`)
+    process.exit(1)
   }
 
   const env = loadEnvLocal()
@@ -71,6 +91,24 @@ async function main() {
 
   // 실패 시 되돌릴 수 있도록, 지금 상태(문제 붙이기 전)를 먼저 기억해 둔다.
   const before = new Map(rows.map((r) => [r.variant_level as string, r]))
+
+  // DB에 이미 있는 qid 가 이번 content 에서 사라지는지 확인 (통째 교체로 이력이 끊기는 것 방지)
+  const itemQids = (items: { qid?: string }[] | null | undefined) =>
+    (items ?? []).map((i) => i.qid).filter((q): q is string => !!q)
+  let dropCount = 0
+  for (const v of ORDER) {
+    const row = before.get(v)
+    if (!row) continue
+    const incoming = new Set([...itemQids(content[v].questions), ...itemQids(content[v].essays)])
+    const dropped = [...itemQids(row.questions), ...itemQids(row.essays)].filter((q) => !incoming.has(q))
+    if (dropped.length > 0) console.error(`⚠️ ${v}: DB에 있는 qid ${dropped.length}개가 이번 content 에 없습니다.`)
+    dropCount += dropped.length
+  }
+  if (dropCount > 0 && !allowDropQids) {
+    console.error('DB에 이미 저장된 문항 ID(qid)가 사라지므로 중단했습니다. 아무것도 바뀌지 않았습니다.')
+    console.error('content 파일이 DB보다 예전 것인지 먼저 확인하세요. 문항을 새로 갈아끼우는 것이 맞다면 --allow-drop-qids.')
+    process.exit(1)
+  }
   const done: string[] = []
 
   for (const v of ORDER) {

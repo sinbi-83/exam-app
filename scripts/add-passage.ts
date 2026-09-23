@@ -2,11 +2,15 @@
 // AI API를 호출하지 않는다 — 이미 만들어진 JSON 내용을 저장만 한다.
 //
 // 실행: node scripts/add-passage.ts data/passages/파일이름.json
+//
+// 문제·서술형마다 영구 ID(qid)가 있어야 저장한다. 없으면 먼저: npm run assign-qids -- <JSON 파일>
+// (qid 없는 예전 파일을 일부러 그대로 저장해야 할 때만 --allow-legacy)
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 import type { PassageInput } from '../types/passageBank'
+import { inspectQids, qidErrors } from '../lib/passageQid.ts'
 
 function loadEnvLocal(): Record<string, string> {
   const envPath = resolve(process.cwd(), '.env.local')
@@ -61,6 +65,15 @@ async function main() {
       console.error(`JSON에 "${field}" 필드가 없습니다.`)
       process.exit(1)
     }
+  }
+
+  // 문항 영구 ID(qid) 검사 — 중복/형식 오류는 항상 중단, qid 없음은 --allow-legacy 일 때만 허용
+  const allowLegacy = process.argv.includes('--allow-legacy')
+  const qidProblems = qidErrors(inspectQids(input.questions, input.essays), !allowLegacy)
+  if (qidProblems.length > 0) {
+    qidProblems.forEach((m) => console.error('❌', m))
+    console.error(`먼저 실행: npm run assign-qids -- ${filePath}`)
+    process.exit(1)
   }
 
   const supabase = createClient(supabaseUrl, supabaseAnonKey)
