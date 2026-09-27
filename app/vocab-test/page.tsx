@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import BankMode from './BankMode'
 
 interface WordPair {
   en: string
@@ -13,6 +14,8 @@ export default function VocabTestPage() {
   const [words, setWords] = useState<WordPair[]>([])
   const [parsed, setParsed] = useState(false)
   const [testType, setTestType] = useState<'en_to_ko' | 'ko_to_en' | 'mixed'>('mixed')
+  // 직접 입력(기존) / 단어은행에서 자동 생성
+  const [inputMode, setInputMode] = useState<'manual' | 'bank'>('manual')
 
   function parseWords() {
     const lines = rawInput.split('\n').filter((l) => l.trim())
@@ -47,8 +50,26 @@ export default function VocabTestPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-xl font-semibold text-gray-800">단어 테스트 생성</h1>
+      <h1 className="mb-4 text-xl font-semibold text-gray-800">단어 테스트 생성</h1>
 
+      <div className="mb-6 flex gap-2 border-b border-gray-200">
+        {[
+          { value: 'manual', label: '직접 입력' },
+          { value: 'bank', label: '단어은행에서 자동 생성' },
+        ].map((tab) => (
+          <button
+            key={tab.value}
+            onClick={() => setInputMode(tab.value as typeof inputMode)}
+            className={`-mb-px border-b-2 px-4 py-2 text-sm ${
+              inputMode === tab.value ? 'border-blue-600 font-medium text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {inputMode === 'bank' ? <BankMode /> : (
       <div className="grid gap-6 md:grid-cols-2">
         {/* 왼쪽: 입력 */}
         <div className="space-y-4">
@@ -173,6 +194,7 @@ export default function VocabTestPage() {
           )}
         </div>
       </div>
+      )}
     </div>
   )
 }

@@ -2,6 +2,8 @@
 
 import { useSearchParams } from 'next/navigation'
 import { Suspense, useEffect, useState } from 'react'
+import { isWordTestExam } from '@/lib/wordTest'
+import WordTestPrint from './WordTestPrint'
 
 async function downloadPdf(filename: string) {
   const html2pdf = (await import('html2pdf.js')).default
@@ -51,6 +53,7 @@ const TYPE_LABELS: Record<string, string> = {
   tf: '참/거짓',
   order: '순서배열',
   match: '짝짓기',
+  word: '단어',
 }
 
 const MATCH_LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
@@ -162,6 +165,11 @@ function PrintContent() {
 
   if (loading) {
     return <div className="py-20 text-center text-sm text-gray-400">문제 불러오는 중…</div>
+  }
+
+  // 단어은행 자동 단어시험(문항 전부 'word')만 전용 레이아웃. 그 밖의 시험은 아래 기존 레이아웃 그대로.
+  if (isWordTestExam(questions)) {
+    return <WordTestPrint title={title} date={date} questions={questions} onPdf={() => downloadPdf(title)} />
   }
 
   return (

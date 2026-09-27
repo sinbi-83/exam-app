@@ -60,6 +60,8 @@ interface QuestionData {
   source_question_id?: string
   source_question_set_id?: string | null
   source_index?: number
+  // 단어은행 단어시험 문항 (type 'word', lib/wordTest.ts)
+  direction?: 'en_ko' | 'ko_en'
 }
 
 interface BankQuestion {
@@ -86,6 +88,7 @@ const TYPE_LABELS: Record<string, string> = {
   tf: '참/거짓',
   order: '순서배열',
   match: '짝짓기',
+  word: '단어',
 }
 
 // order/match 는 "q" 필드가 없으므로, 체크리스트에 보여줄 짧은 미리보기 문구를 따로 만든다.
@@ -489,7 +492,17 @@ export default function ExamDetailPage() {
                       <span className="text-xs text-gray-400">{eq.question_data.grade}</span>
                     )}
                   </div>
-                  <p className="text-sm text-gray-800 line-clamp-2">{eq.question_data.question}</p>
+                  {eq.question_data.type === 'word' ? (
+                    // 단어은행 단어시험 문항: 방향 · 제시어 → 정답
+                    <p className="text-sm text-gray-800">
+                      <span className="mr-1 text-xs text-gray-400">
+                        {eq.question_data.direction === 'ko_en' ? '한→영' : '영→한'}
+                      </span>
+                      {eq.question_data.question} <span className="text-gray-400">→ {eq.question_data.answer}</span>
+                    </p>
+                  ) : (
+                    <p className="text-sm text-gray-800 line-clamp-2">{eq.question_data.question}</p>
+                  )}
                 </div>
                 <div className="flex shrink-0 items-center gap-2">
                   <input

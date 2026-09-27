@@ -1,0 +1,216 @@
+// 단어은행 규칙 모음: 형식 정규화, 입력 검사, 상태 이동, 교사값 보호.
+//
+// - 정규화는 "형식"만 정리한다 (의미 판단·lemma 추론·자동 병합 없음).
+//   DB 의 expression_key / meaning_key 계산 칸(vocabulary-bank-migration.sql)과 같은 규칙이다.
+//   최종 기준은 DB 이고, 이 함수들은 저장 전에 미리 중복을 확인하거나 검사 보고서를 만드는 데 쓴다.
+// - 제작 스크립트(공식어휘 가져오기, 백필 등)는 "새 어휘 추가 + 새 출처 추가"만 한다.
+//   기존 어휘 항목의 값을 바꿀 수 있는 유일한 예외는 planAutoFill 이 허락한 빈 칸 채우기이고,
+//   그것도 변경 예정 내용을 먼저 보고하고 승인받은 뒤에만 실행한다.
+//
+// 이 파일은 다른 모듈을 런타임 import 하지 않는다 (앱, scripts/, 테스트 스크립트에서 모두 그대로 쓰기 위해).
+
+import type {
+  VocabularyApprovalOrigin,
+  VocabularyEntryInput,
+  VocabularyEntryRecord,
+  VocabularyEntryType,
+  VocabularyPos,
+  VocabularyRejectReason,
+  VocabularySourceCreatedBy,
+  VocabularySourceInput,
+  VocabularySourceType,
+  VocabularyStatus,
+} from '../types/vocabulary'
+
+export const VOCABULARY_STATUSES: readonly VocabularyStatus[] = ['pending', 'approved', 'rejected', 'archived']
+
+export const VOCABULARY_STATUS_LABELS: Record<VocabularyStatus, string> = {
+  pending: '검토대기',
+  approved: '승인',
+  rejected: '반려',
+  archived: '아카이브',
+}
+
+export const VOCABULARY_ENTRY_TYPES: readonly VocabularyEntryType[] = ['word', 'phrasal_verb', 'collocation', 'idiom', 'phrase']
+
+export const VOCABULARY_POS: readonly VocabularyPos[] = [
+  'noun', 'pronoun', 'verb', 'auxiliary', 'adjective', 'adverb',
+  'preposition', 'conjunction', 'determiner', 'interjection', 'numeral',
+]
+
+export const VOCABULARY_REJECT_REASON_LABELS: Record<VocabularyRejectReason, string> = {
+  level_mismatch: '레벨 부적합',
+  meaning_wrong: '뜻 부적합',
+  too_easy: '너무 쉬움',
+  too_hard: '너무 어려움',
+  low_value: '시험 가치 낮음',
+  duplicate: '중복',
+  extraction_error: '잘못 추출',
+  other: '기타',
+}
+
+export const VOCABULARY_APPROVAL_ORIGINS: readonly VocabularyApprovalOrigin[] = ['individual', 'batch']
+
+export const VOCABULARY_SOURCE_TYPES: readonly VocabularySourceType[] = [
+  'official', 'external_passage', 'question_bank', 'teacher', 'manual_test',
+]
+
+export const VOCABULARY_SOURCE_CREATED_BY: readonly VocabularySourceCreatedBy[] = ['claude', 'teacher', 'import']
+
+export const DIFFICULTY_MIN = 1
+export const DIFFICULTY_MAX = 100
+
+// ── 형식 정규화 (DB 계산 칸과 같은 규칙) ──
+
+// 유니코드 따옴표 → ' "  /  hyphen·dash 변형 → -  /  특수 공백(nbsp, 전각) → 일반 공백
+const EXPRESSION_CHAR_MAP: Record<string, string> = {
+  '\u2018': "'", '\u2019': "'", '\u201C': '"', '\u201D': '"',
+  '\u2010': '-', '\u2011': '-', '\u2013': '-', '\u2014': '-', '\u2212': '-',
+  '\u00A0': ' ', '\u3000': ' ',
+}
+const EXPRESSION_CHAR_RE = /[\u2018\u2019\u201C\u201D\u2010\u2011\u2013\u2014\u2212\u00A0\u3000]/g
+const SPECIAL_SPACE_RE = /[\u00A0\u3000]/g
+// DB 쪽 정규식 '[ \t\n\r\f\v]+' 와 같은 글자 집합 (JS \s 는 더 넓어서 쓰지 않는다)
+const WHITESPACE_RUN_RE = /[ \t\n\r\f\v]+/g
+
+// 영어 표현의 중복검사/검색 key. hyphen 을 공백으로 바꾸거나 원형으로 바꾸지 않는다.
+export function normalizeExpressionKey(expression: string): string {
+  return expression
+    .replace(EXPRESSION_CHAR_RE, (ch) => EXPRESSION_CHAR_MAP[ch])
+    .replace(WHITESPACE_RUN_RE, ' ')
+    .trim()
+    .toLowerCase()
+}
+
+// 한국어 대표 뜻의 중복검사 key. 앞뒤 공백 제거 + 연속 공백 1칸만 한다 (조사·띄어쓰기·표현은 그대로).
+export function normalizeMeaningKey(meaning: string): string {
+  return meaning.replace(SPECIAL_SPACE_RE, ' ').replace(WHITESPACE_RUN_RE, ' ').trim()
+}
+
+// "완전 동일 중복" 판정 key: 기준표기 + 품사 + 대표 뜻 (DB 부분 unique 색인과 같은 조합, 삭제된 항목은 비교 대상 아님)
+export function activeDuplicateKey(entry: { expression: string; pos: string | null; meaning_ko: string }): string {
+  return [normalizeExpressionKey(entry.expression), entry.pos ?? '', normalizeMeaningKey(entry.meaning_ko)].join('\u0000')
+}
+
+// 새 후보 목록 안 / 기존 활성 항목과의 완전 동일 중복을 찾는다 (저장 전 검사 보고용). 뜻이 "비슷한" 것은 잡지 않는다.
+export function findActiveDuplicates<T extends { expression: string; pos: string | null; meaning_ko: string }>(
+  candidates: T[],
+  existing: { expression: string; pos: string | null; meaning_ko: string; deleted_at: string | null }[] = [],
+): { candidate: T; reason: 'existing' | 'within_batch' }[] {
+  const existingKeys = new Set(existing.filter((e) => e.deleted_at === null).map(activeDuplicateKey))
+  const seen = new Set<string>()
+  const dups: { candidate: T; reason: 'existing' | 'within_batch' }[] = []
+  for (const c of candidates) {
+    const key = activeDuplicateKey(c)
+    if (existingKeys.has(key)) dups.push({ candidate: c, reason: 'existing' })
+    else if (seen.has(key)) dups.push({ candidate: c, reason: 'within_batch' })
+    seen.add(key)
+  }
+  return dups
+}
+
+// ── 입력 검사 (DB 제약과 같은 내용을 저장 전에 한국어 문장으로 알려준다) ──
+
+function isDifficulty(value: unknown): boolean {
+  return value === null || (Number.isInteger(value) && (value as number) >= DIFFICULTY_MIN && (value as number) <= DIFFICULTY_MAX)
+}
+
+export function validateEntryInput(entry: VocabularyEntryInput): string[] {
+  const errors: string[] = []
+  // 정규화 후 key 가 비면 거부 (DB 의 expression_key / meaning_key 빈 값 방지 CHECK 와 같은 기준. 특수공백만 있는 입력 포함)
+  if (!entry.expression || !entry.expression.trim() || normalizeExpressionKey(entry.expression) === '') {
+    errors.push('표현이 비어 있습니다.')
+  }
+  if (!entry.meaning_ko || !entry.meaning_ko.trim() || normalizeMeaningKey(entry.meaning_ko) === '') {
+    errors.push('대표 뜻이 비어 있습니다.')
+  }
+  if (!VOCABULARY_ENTRY_TYPES.includes(entry.entry_type)) errors.push(`항목 종류가 올바르지 않습니다: ${entry.entry_type}`)
+  if (entry.pos !== null && !VOCABULARY_POS.includes(entry.pos)) errors.push(`품사가 올바르지 않습니다: ${entry.pos}`)
+  if (!VOCABULARY_STATUSES.includes(entry.status)) errors.push(`상태가 올바르지 않습니다: ${entry.status}`)
+  if (!isDifficulty(entry.base_difficulty)) errors.push('기본 난이도는 1~100 정수이거나 비어 있어야 합니다.')
+  if (!isDifficulty(entry.ko_en_difficulty)) errors.push('한→영 예외 난이도는 1~100 정수이거나 비어 있어야 합니다.')
+
+  const approvedLike = entry.status === 'approved' || entry.status === 'archived'
+  if (approvedLike && entry.base_difficulty === null) errors.push('승인/아카이브 항목은 기본 난이도가 있어야 합니다.')
+  if (approvedLike && entry.approval_origin === null) errors.push('승인/아카이브 항목은 승인 경로(개별/일괄)가 있어야 합니다.')
+  if (entry.approval_origin !== null && !VOCABULARY_APPROVAL_ORIGINS.includes(entry.approval_origin)) {
+    errors.push(`승인 경로가 올바르지 않습니다: ${entry.approval_origin}`)
+  }
+  if ((entry.status === 'archived') !== (entry.archived_at !== null)) {
+    errors.push('아카이브 상태와 archived_at 이 서로 맞지 않습니다.')
+  }
+  if (entry.status !== 'rejected' && (entry.reject_reason !== null || entry.reject_note !== null)) {
+    errors.push('반려 사유는 반려 상태에서만 남길 수 있습니다.')
+  }
+  if (entry.reject_reason !== null && !(entry.reject_reason in VOCABULARY_REJECT_REASON_LABELS)) {
+    errors.push(`반려 사유가 올바르지 않습니다: ${entry.reject_reason}`)
+  }
+  return errors
+}
+
+export function validateSourceInput(source: VocabularySourceInput): string[] {
+  const errors: string[] = []
+  if (!source.entry_id) errors.push('연결할 어휘 항목(entry_id)이 없습니다.')
+  if (!VOCABULARY_SOURCE_TYPES.includes(source.source_type)) errors.push(`출처 종류가 올바르지 않습니다: ${source.source_type}`)
+  if (!source.source_ref || !source.source_ref.trim()) errors.push('출처 식별값(source_ref)이 비어 있습니다.')
+  if (!VOCABULARY_SOURCE_CREATED_BY.includes(source.created_by)) errors.push(`작성 주체가 올바르지 않습니다: ${source.created_by}`)
+  if (!isDifficulty(source.suggested_difficulty)) errors.push('제안 난이도는 1~100 정수이거나 비어 있어야 합니다.')
+  if (source.source_type === 'official') {
+    if (!source.official_source_name || !source.official_source_version) errors.push('공식 출처는 원본명과 버전이 있어야 합니다.')
+  } else if (source.official_source_name !== null || source.official_source_version !== null || source.official_grade !== null) {
+    errors.push('공식 출처가 아닌데 공식 원본 정보가 들어 있습니다.')
+  }
+  return errors
+}
+
+// 같은 어휘 + 같은 출처 중복 연결 판정 key (DB unique 색인과 같은 조합)
+export function sourceLinkKey(source: { entry_id: string; source_type: string; source_ref: string }): string {
+  return [source.entry_id, source.source_type, source.source_ref].join('\u0000')
+}
+
+// ── 상태 이동 (교사 작업 버튼의 기준) ──
+// 삭제(deleted_at)는 상태가 아니므로 여기에 없다. 삭제/복원은 어느 상태에서든 deleted_at 만 바꾼다.
+export const VOCABULARY_STATUS_TRANSITIONS: Record<VocabularyStatus, readonly VocabularyStatus[]> = {
+  pending: ['approved', 'rejected'], // 승인 / 반려
+  approved: ['archived'], // 아카이브 (승인됐던 항목은 "반려"가 아니라 은퇴)
+  rejected: ['pending'], // 재검토
+  archived: ['approved'], // 복원 (기본값: 승인으로)
+}
+
+export function canTransition(from: VocabularyStatus, to: VocabularyStatus): boolean {
+  return VOCABULARY_STATUS_TRANSITIONS[from].includes(to)
+}
+
+// ── 교사값 보호 ──
+// 제작 스크립트가 기존 어휘 항목의 빈 칸을 채우려 할 때, 실제로 채워도 되는 칸만 골라준다.
+// - 교사가 한 번이라도 확인/수정한 항목(teacher_reviewed_at 있음)은 아무것도 채우지 않는다.
+// - 이미 값이 있는 칸은 절대 바꾸지 않는다 (빈 칸만).
+// - 상태·승인·삭제 관련 칸은 채우기 대상이 아니다.
+// 결과는 "변경 예정 내용 보고"에 쓰고, 승인받은 뒤에만 실제로 저장한다.
+export const AUTO_FILLABLE_FIELDS = ['lemma', 'pos', 'sense_note', 'example_sentence', 'base_difficulty'] as const
+export type AutoFillableField = (typeof AUTO_FILLABLE_FIELDS)[number]
+
+export function planAutoFill(
+  entry: Pick<VocabularyEntryRecord, 'teacher_reviewed_at' | AutoFillableField>,
+  proposed: Partial<Pick<VocabularyEntryRecord, AutoFillableField>>,
+): Partial<Pick<VocabularyEntryRecord, AutoFillableField>> {
+  if (entry.teacher_reviewed_at !== null) return {}
+  const plan: Partial<Record<AutoFillableField, unknown>> = {}
+  for (const field of AUTO_FILLABLE_FIELDS) {
+    const value = proposed[field]
+    if (value === undefined || value === null) continue
+    if (entry[field] !== null) continue
+    plan[field] = value
+  }
+  return plan as Partial<Pick<VocabularyEntryRecord, AutoFillableField>>
+}
+
+// ── DB 오류를 사람이 읽는 문장으로 ──
+// 부분 unique 색인에 걸리면(새 등록, 수정, 삭제 항목 복원 모두) "동일 어휘가 이미 존재합니다."
+export function vocabularyDbErrorMessage(error: { code?: string; message?: string } | null | undefined): string | null {
+  if (!error) return null
+  const message = error.message ?? ''
+  if (error.code === '23505' && message.includes('vocabulary_entries_active_unique')) return '동일 어휘가 이미 존재합니다.'
+  if (error.code === '23505' && message.includes('vocabulary_sources_entry_source_unique')) return '이미 연결된 출처입니다.'
+  return message || '저장 중 오류가 발생했습니다.'
+}

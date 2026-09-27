@@ -40,6 +40,7 @@ const menuGroups: MenuGroup[] = [
       { label: "문항 검색", href: "/question-search", icon: "🔎" },
       { label: "시험출제", href: "/exams", icon: "📋" },
       { label: "단어 테스트", href: "/vocab-test", icon: "🔤" },
+      { label: "단어은행", href: "/vocabulary", icon: "📒" },
     ],
   },
   {
