@@ -17,6 +17,10 @@ import {
   type WordTestItem,
   type WordTestMode,
 } from '@/lib/wordTest'
+import { generalTestCandidates } from '@/lib/vocabularyCalibration'
+
+// 목록 API 는 출처 식별값도 함께 준다 (Calibration 전용 단어 제외용)
+type BankEntry = VocabularyEntryRecord & { vocabulary_sources?: { source_ref: string }[] }
 
 const LEVELS: PassageVariantLevel[] = ['school', 'academy', 'advanced', 'prestudy']
 
@@ -48,8 +52,9 @@ export default function BankMode() {
     const res = await fetch('/api/vocabulary?status=approved')
     const json = await res.json()
     if (!res.ok) throw new Error(json.error ?? '단어은행을 불러오지 못했습니다.')
-    setEntries(json.data ?? [])
-    return json.data ?? []
+    const list = generalTestCandidates<BankEntry>(json.data ?? [])
+    setEntries(list)
+    return list
   }
 
   async function generate() {
@@ -66,7 +71,8 @@ export default function BankMode() {
       const res = await fetch('/api/vocabulary?status=approved')
       const json = await res.json()
       if (!res.ok) throw new Error(json.error ?? '단어은행을 불러오지 못했습니다.')
-      const list: VocabularyEntryRecord[] = json.data ?? []
+      // Calibration anchor 전용 단어(난이도 자 검수용)는 일반 단어시험 후보에서 뺀다
+      const list = generalTestCandidates<BankEntry>(json.data ?? [])
       setEntries(list)
       const result = generateWordTest(list, band, mode, n)
       setItems(result.items)

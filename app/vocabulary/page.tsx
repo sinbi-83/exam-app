@@ -11,10 +11,14 @@ import {
   CALIBRATION_ZONE_RANGES,
   calibrationZone,
   DIFFICULTY_NUDGE_STEP,
+  isCalibrationReviewed,
   isReviewNoteRef,
   nextUnreviewedId,
   nudgeDifficulty,
+  REVIEW_DONE_REF_PREFIX,
   REVIEW_REASON_LABELS,
+  REVIEW_STATE_LABELS,
+  reviewState,
   SOURCE_REF_LABELS,
   type CalibrationZone,
   type ReviewReason,
@@ -128,11 +132,12 @@ export default function VocabularyPage() {
     }
     let done = 0
     for (const e of entries) {
-      if (e.teacher_reviewed_at) done++
+      const doneReview = isCalibrationReviewed(e)
+      if (doneReview) done++
       const z = calibrationZone(e.base_difficulty)
       if (!z) continue
       zones[z].total++
-      if (e.teacher_reviewed_at) zones[z].done++
+      if (doneReview) zones[z].done++
     }
     return { done, total: entries.length, zones }
   }, [entries])
@@ -141,7 +146,7 @@ export default function VocabularyPage() {
     const q = search.trim().toLowerCase()
     const list = entries.filter((e) =>
       (status === 'all' || e.status === status) &&
-      (review === 'all' || (review === 'reviewed') === (e.teacher_reviewed_at !== null)) &&
+      (review === 'all' || (review === 'reviewed') === isCalibrationReviewed(e)) &&
       (!range || (e.base_difficulty !== null && e.base_difficulty >= range.min && e.base_difficulty <= range.max)) &&
       (!q || e.expression.toLowerCase().includes(q) || e.meaning_ko.includes(q) || e.accepted_meanings.some((m) => m.includes(q))),
     )
@@ -179,7 +184,7 @@ export default function VocabularyPage() {
     setReviewMode(true)
     setReview('unreviewed')
     const first = entries.find((e) =>
-      e.teacher_reviewed_at === null &&
+      !isCalibrationReviewed(e) &&
       (status === 'all' || e.status === status) &&
       (!range || (e.base_difficulty !== null && e.base_difficulty >= range.min && e.base_difficulty <= range.max)),
     )
@@ -202,7 +207,14 @@ export default function VocabularyPage() {
       const json = await res.json()
       if (!res.ok) throw new Error(json.error ?? '저장 실패')
       // 목록 응답의 출처 정보는 유지하고 어휘 값만 바꾼다
-      setEntries((prev) => prev.map((e) => (e.id === currentId ? { ...e, ...json.data } : e)))
+      // 검수 완료/메모 기록이 생겼으면 목록의 출처 정보에도 붙인다 (새로고침 없이 집계·필터 반영)
+      setEntries((prev) =>
+        prev.map((e) =>
+          e.id === currentId
+            ? { ...e, ...json.data, vocabulary_sources: json.record ? [...(e.vocabulary_sources ?? []), json.record] : e.vocabulary_sources }
+            : e,
+        ),
+      )
       const text = json.warning ? `${doneText} (${json.warning})` : doneText
       if (goNext) {
         if (nextId) {
@@ -450,7 +462,13 @@ export default function VocabularyPage() {
                       <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[e.status]}`}>{VOCABULARY_STATUS_LABELS[e.status]}</span>
                     </td>
                     <td className="px-3 py-1.5 text-center text-xs">
-                      {e.teacher_reviewed_at ? <span className="text-green-600">✔</span> : <span className="text-gray-400">미확인</span>}
+                      {reviewState(e) === 'reviewed' ? (
+                        <span className="text-green-600">✔</span>
+                      ) : reviewState(e) === 'edited' ? (
+                        <span className="text-amber-600" title={REVIEW_STATE_LABELS.edited}>수정</span>
+                      ) : (
+                        <span className="text-gray-400">미확인</span>
+                      )}
                     </td>
                   </tr>
                 ))}
@@ -471,8 +489,13 @@ export default function VocabularyPage() {
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-lg font-semibold text-gray-900">{selected.expression}</span>
                   <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[selected.status]}`}>{VOCABULARY_STATUS_LABELS[selected.status]}</span>
-                  <span className={`rounded px-1.5 py-0.5 text-xs ${selected.teacher_reviewed_at ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
-                    {selected.teacher_reviewed_at ? '교사 검수 완료' : '교사 미확인'}
+                  <span
+                    className={`rounded px-1.5 py-0.5 text-xs ${
+                      reviewState(selected) === 'reviewed' ? 'bg-green-50 text-green-700'
+                        : reviewState(selected) === 'edited' ? 'bg-amber-50 text-amber-700' : 'bg-gray-100 text-gray-500'
+                    }`}
+                  >
+                    {REVIEW_STATE_LABELS[reviewState(selected)]}
                   </span>
                 </div>
                 <p className="text-xs text-gray-500">
@@ -651,9 +674,10 @@ export default function VocabularyPage() {
 
               {notes.length > 0 && (
                 <div className="border-t border-gray-100 pt-2 text-xs text-gray-500">
-                  <p className="mb-1 font-medium">검수 메모</p>
+                  <p className="mb-1 font-medium">검수 기록 (✔ 검수 완료 · ✎ 수정 메모)</p>
                   {notes.map((n) => (
                     <p key={n.id}>
+                      {n.source_ref.startsWith(REVIEW_DONE_REF_PREFIX) ? '✔ ' : '✎ '}
                       {n.created_at.slice(0, 10)} · {n.rationale}
                       {n.suggested_difficulty !== null ? ` (당시 난이도 ${n.suggested_difficulty})` : ''}
                     </p>

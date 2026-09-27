@@ -11,7 +11,12 @@ import {
   isReviewNoteRef,
   nextUnreviewedId,
   nudgeDifficulty,
-  REVIEW_NOTE_REF_PREFIX,
+  REVIEW_DONE_REF_PREFIX,
+  REVIEW_NOTE_ONLY_REF_PREFIX,
+  generalTestCandidates,
+  isCalibrationOnly,
+  isCalibrationReviewed,
+  reviewState,
   reviewNoteText,
   SEED_SOURCE_REFS,
 } from '../lib/vocabularyCalibration.ts'
@@ -60,19 +65,42 @@ test('검수 메모: 이유/메모 둘 다 없으면 만들지 않는다', () =>
   assert.equal(reviewNoteText('too_easy', null), '너무 쉬움')
   assert.equal(reviewNoteText('polysemy', ' 문맥 필요 '), '다의어 문제 · 문맥 필요')
   assert.equal(reviewNoteText('unknown', 'x'), 'x')
-  assert.ok(isReviewNoteRef(`${REVIEW_NOTE_REF_PREFIX}2026-09-27T00:00:00Z`))
+  assert.ok(isReviewNoteRef(`${REVIEW_DONE_REF_PREFIX}2026-09-27T00:00:00Z`))
+  assert.ok(isReviewNoteRef(`${REVIEW_NOTE_ONLY_REF_PREFIX}2026-09-27T00:00:00Z`))
   assert.ok(!isReviewNoteRef(SEED_SOURCE_REFS.middle))
 })
-test('저장 + 다음: 현재 뒤의 첫 미검수, 없으면 앞에서, 모두 끝나면 null', () => {
+const done = [{ source_ref: `${REVIEW_DONE_REF_PREFIX}t` }]
+const noteOnly = [{ source_ref: `${REVIEW_NOTE_ONLY_REF_PREFIX}t` }]
+test('저장 + 다음: 현재 뒤의 첫 미검수(검수 완료 기록 없음), 없으면 앞에서, 모두 끝나면 null', () => {
   const l = [
-    { id: 'a', teacher_reviewed_at: null },
-    { id: 'b', teacher_reviewed_at: 'x' },
-    { id: 'c', teacher_reviewed_at: null },
-    { id: 'd', teacher_reviewed_at: null },
+    { id: 'a', vocabulary_sources: [] },
+    { id: 'b', vocabulary_sources: done },
+    { id: 'c', vocabulary_sources: noteOnly }, // 수정 메모만 있으면 아직 미검수
+    { id: 'd', vocabulary_sources: [] },
   ]
   assert.equal(nextUnreviewedId(l, 'a'), 'c')
   assert.equal(nextUnreviewedId(l, 'd'), 'a')
-  assert.equal(nextUnreviewedId([{ id: 'a', teacher_reviewed_at: null }], 'a'), null)
+  assert.equal(nextUnreviewedId([{ id: 'a', vocabulary_sources: [] }], 'a'), null)
+})
+test('수정함 ≠ 검수 완료: teacher_reviewed_at 만 있으면 "수정함", teacher-review 기록이 있어야 "검수 완료"', () => {
+  assert.equal(reviewState({ teacher_reviewed_at: null, vocabulary_sources: [] }), 'unreviewed')
+  assert.equal(reviewState({ teacher_reviewed_at: '2026-09-27', vocabulary_sources: [] }), 'edited')
+  assert.equal(reviewState({ teacher_reviewed_at: '2026-09-27', vocabulary_sources: noteOnly }), 'edited')
+  assert.equal(reviewState({ teacher_reviewed_at: '2026-09-27', vocabulary_sources: done }), 'reviewed')
+  assert.equal(isCalibrationReviewed({ vocabulary_sources: done }), true)
+})
+test('Calibration 전용 항목은 일반 자동시험 후보에서 제외, 다른 출처가 생기면 후보', () => {
+  const floorOnly = { vocabulary_sources: [{ source_ref: SEED_SOURCE_REFS.floor }] }
+  const ceilingReviewed = { vocabulary_sources: [{ source_ref: SEED_SOURCE_REFS.ceiling }, ...done] }
+  const seed = { vocabulary_sources: [{ source_ref: SEED_SOURCE_REFS.middle }] }
+  const both = { vocabulary_sources: [{ source_ref: SEED_SOURCE_REFS.floor }, { source_ref: 'passage-uuid' }] }
+  const none = { vocabulary_sources: [] }
+  assert.equal(isCalibrationOnly(floorOnly), true)
+  assert.equal(isCalibrationOnly(ceilingReviewed), true) // 검수 기록은 출처가 아니다
+  assert.equal(isCalibrationOnly(seed), false)
+  assert.equal(isCalibrationOnly(both), false)
+  assert.equal(isCalibrationOnly(none), false)
+  assert.deepEqual(generalTestCandidates([floorOnly, seed, both, ceilingReviewed, none]), [seed, both, none])
 })
 
 // ── anchor seed 파일 점검 ──

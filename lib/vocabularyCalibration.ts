@@ -40,8 +40,26 @@ export function calibrationZone(difficulty: number | null): CalibrationZone | nu
   return 'middle'
 }
 
-export function isTeacherReviewed(entry: Pick<VocabularyEntryRecord, 'teacher_reviewed_at'>): boolean {
-  return entry.teacher_reviewed_at !== null
+// ── "교사가 수정함" 과 "검수 완료" 는 다르다 ──
+// - teacher_reviewed_at: 교사가 값을 한 번이라도 저장한 시각 → 교사값 보호용 (seed/import 가 덮어쓰지 않음)
+// - 검수 완료: "현재 기준 맞음" 또는 "검수 완료 → 다음" 을 실제로 누른 항목만.
+//   새 DB 칸 없이 vocabulary_sources 에 source_ref='teacher-review:<시각>' 행이 있는지로 판단한다.
+type SourceRefOnly = { source_ref: string }
+
+export function isCalibrationReviewed(entry: { vocabulary_sources?: SourceRefOnly[] }): boolean {
+  return (entry.vocabulary_sources ?? []).some((s) => s.source_ref.startsWith(REVIEW_DONE_REF_PREFIX))
+}
+
+// 화면 표시용 3단계
+export type ReviewState = 'reviewed' | 'edited' | 'unreviewed'
+export function reviewState(entry: Pick<VocabularyEntryRecord, 'teacher_reviewed_at'> & { vocabulary_sources?: SourceRefOnly[] }): ReviewState {
+  if (isCalibrationReviewed(entry)) return 'reviewed'
+  return entry.teacher_reviewed_at !== null ? 'edited' : 'unreviewed'
+}
+export const REVIEW_STATE_LABELS: Record<ReviewState, string> = {
+  reviewed: '교사 검수 완료',
+  edited: '교사 수정함 (검수 전)',
+  unreviewed: '교사 미확인',
 }
 
 // ── 출처 식별값 (vocabulary_sources.source_type='teacher' + source_ref) ──
@@ -58,9 +76,27 @@ export const SOURCE_REF_LABELS: Record<string, string> = {
   [SEED_SOURCE_REFS.ceiling]: 'Calibration anchor · Ceiling',
 }
 
-// ── 검수 판단 이유 (가벼운 메모. 완전한 이력 시스템이 아니다) ──
-// 새 칸을 만들지 않고 vocabulary_sources 에 created_by='teacher' 인 "검수 메모" 행으로 남긴다 (추가만, 수정 없음).
-export const REVIEW_NOTE_REF_PREFIX = 'teacher-review:'
+// Calibration anchor 출처만 가진 항목 = 난이도 자 검수용 기준 데이터 → 일반 /vocab-test 자동생성 후보가 아니다.
+// 같은 항목에 공식·실제 BostonS 자료 등 다른 출처가 추가되면 그때부터 일반 출제 후보가 된다.
+// (검수 메모 행은 출처가 아니므로 판단에서 뺀다. 출처가 하나도 없는 항목은 일반 항목으로 본다.)
+export const CALIBRATION_SOURCE_REF_PREFIX = 'bostons-calibration-'
+
+export function isCalibrationOnly(entry: { vocabulary_sources?: SourceRefOnly[] }): boolean {
+  const refs = (entry.vocabulary_sources ?? []).filter((s) => !isReviewNoteRef(s.source_ref))
+  return refs.length > 0 && refs.every((s) => s.source_ref.startsWith(CALIBRATION_SOURCE_REF_PREFIX))
+}
+
+// 일반 자동 단어시험 후보 (Calibration 검수용 시험은 이 필터를 쓰지 않는다)
+export function generalTestCandidates<T extends { vocabulary_sources?: SourceRefOnly[] }>(entries: T[]): T[] {
+  return entries.filter((e) => !isCalibrationOnly(e))
+}
+
+// ── 검수 기록 / 판단 이유 (가벼운 메모. 완전한 이력 시스템이 아니다) ──
+// 새 칸을 만들지 않고 vocabulary_sources 에 created_by='teacher' 행으로 추가만 한다 (수정 없음).
+//  - teacher-review:<시각>  = 검수 완료 기록 ("현재 기준 맞음" / "검수 완료 → 다음"). 이유가 없어도 남긴다.
+//  - teacher-note:<시각>    = 검수 완료 없이 "수정만 저장" 할 때 남긴 판단 이유
+export const REVIEW_DONE_REF_PREFIX = 'teacher-review:'
+export const REVIEW_NOTE_ONLY_REF_PREFIX = 'teacher-note:'
 
 export const REVIEW_REASON_LABELS = {
   too_easy: '너무 쉬움',
@@ -74,8 +110,9 @@ export const REVIEW_REASON_LABELS = {
 } as const
 export type ReviewReason = keyof typeof REVIEW_REASON_LABELS
 
+// 검수 기록·메모 행인지 (출처 표시·anchor 판단에서 제외)
 export function isReviewNoteRef(sourceRef: string): boolean {
-  return sourceRef.startsWith(REVIEW_NOTE_REF_PREFIX)
+  return sourceRef.startsWith(REVIEW_DONE_REF_PREFIX) || sourceRef.startsWith(REVIEW_NOTE_ONLY_REF_PREFIX)
 }
 
 // 검수 메모 한 줄: "너무 쉬움 · 메모" (둘 다 없으면 null → 메모 행을 만들지 않는다)
@@ -86,12 +123,12 @@ export function reviewNoteText(reason: string | null | undefined, memo: string |
   return [label, m].filter(Boolean).join(' · ')
 }
 
-// 검수 모드 "다음 단어": 지금 목록에서 현재 항목 뒤쪽의 첫 미검수 항목, 없으면 앞쪽에서 찾는다. 없으면 null.
-export function nextUnreviewedId<T extends { id: string; teacher_reviewed_at: string | null }>(
+// 검수 모드 "다음 단어": 지금 목록에서 현재 항목 뒤쪽의 첫 미검수(검수 완료 기록 없음) 항목, 없으면 앞쪽. 없으면 null.
+export function nextUnreviewedId<T extends { id: string; vocabulary_sources?: SourceRefOnly[] }>(
   list: T[],
   currentId: string,
 ): string | null {
   const idx = list.findIndex((e) => e.id === currentId)
   const ordered = idx === -1 ? list : [...list.slice(idx + 1), ...list.slice(0, idx)]
-  return ordered.find((e) => e.id !== currentId && e.teacher_reviewed_at === null)?.id ?? null
+  return ordered.find((e) => e.id !== currentId && !isCalibrationReviewed(e))?.id ?? null
 }
