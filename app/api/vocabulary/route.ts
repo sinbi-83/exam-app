@@ -13,7 +13,8 @@ export async function GET(request: NextRequest) {
 
   let query = supabase
     .from('vocabulary_entries')
-    .select('*')
+    // 출처 식별값도 함께 (seed / Floor·Ceiling anchor 표시용)
+    .select('*, vocabulary_sources(source_type, source_ref, created_by)')
     .eq('user_id', user.id)
     .is('deleted_at', null)
     .order('expression_key', { ascending: true })

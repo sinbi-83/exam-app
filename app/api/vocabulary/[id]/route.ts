@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
 import { canTransition, VOCABULARY_REJECT_REASON_LABELS, vocabularyDbErrorMessage } from '@/lib/vocabulary'
+import { REVIEW_NOTE_REF_PREFIX, reviewNoteText } from '@/lib/vocabularyCalibration'
 import type { VocabularyEntryRecord, VocabularyRejectReason, VocabularyStatus } from '@/types/vocabulary'
 
 // GET: 어휘 하나 + 출처 기록
@@ -21,7 +22,8 @@ export async function GET(_request: NextRequest, { params }: { params: { id: str
 
 // PATCH: 교사 수정 / 상태 이동
 // body: { meaning_ko?, accepted_meanings?, base_difficulty?, ko_en_allowed?,
-//         action?: 'approve' | 'reject' | 'archive' | 'restore' | 'reopen', reject_reason?, reject_note? }
+//         action?: 'approve' | 'reject' | 'archive' | 'restore' | 'reopen', reject_reason?, reject_note?,
+//         review?: true (값 변경 없이 검수 완료만), review_reason?, review_note? (검수 판단 이유, 선택) }
 // 교사가 손댄 항목은 teacher_reviewed_at 을 남긴다 (이후 제작 스크립트가 값을 채우지 않는다).
 export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
   const supabase = await createClient()
@@ -90,7 +92,11 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
     if (action === 'restore') update.archived_at = null
   }
 
-  if (Object.keys(update).length === 0) return NextResponse.json({ error: '수정할 내용이 없습니다.' }, { status: 400 })
+  // review: true = "검수 완료 / 현재 기준 맞음" — 바꾼 값이 없어도 교사 확인만 기록한다
+  if (Object.keys(update).length === 0 && body.review !== true) {
+    return NextResponse.json({ error: '수정할 내용이 없습니다.' }, { status: 400 })
+  }
+  // 교사가 확인·수정한 시각. 이미 검수된 항목을 다시 고쳐도 검수 상태는 유지된다 (시각만 최신으로)
   update.teacher_reviewed_at = new Date().toISOString()
 
   const { data, error } = await supabase
@@ -101,5 +107,20 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
     .select('*')
     .single()
   if (error) return NextResponse.json({ error: vocabularyDbErrorMessage(error) }, { status: 400 })
+
+  // 판단 이유(선택): 출처 기록 표에 "검수 메모" 한 줄을 추가만 한다 (새 DB 칸 없이, 기존 기록은 건드리지 않음)
+  const note = reviewNoteText(body.review_reason, body.review_note)
+  if (note) {
+    const { error: noteError } = await supabase.from('vocabulary_sources').insert({
+      user_id: user.id,
+      entry_id: params.id,
+      source_type: 'teacher',
+      source_ref: `${REVIEW_NOTE_REF_PREFIX}${update.teacher_reviewed_at}`,
+      suggested_difficulty: data.base_difficulty,
+      rationale: note,
+      created_by: 'teacher',
+    })
+    if (noteError) return NextResponse.json({ data, warning: `값은 저장됐지만 검수 메모 저장 실패: ${noteError.message}` })
+  }
   return NextResponse.json({ data })
 }

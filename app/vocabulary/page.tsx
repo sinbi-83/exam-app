@@ -1,13 +1,31 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { VocabularyEntryRecord, VocabularyRejectReason, VocabularyStatus } from '@/types/vocabulary'
+import type { VocabularyEntryRecord, VocabularyRejectReason, VocabularySourceRecord, VocabularyStatus } from '@/types/vocabulary'
 import { VOCABULARY_REJECT_REASON_LABELS, VOCABULARY_STATUS_LABELS } from '@/lib/vocabulary'
 import { bandsContaining, VOCABULARY_BANDS_NOTE } from '@/config/vocabularyLevels'
 import { VARIANT_LABELS } from '@/types/passageBank'
-import { POS_LABELS_KO } from '@/lib/wordTest'
+import { generateWordTest, POS_LABELS_KO, toWordQuestionData } from '@/lib/wordTest'
+import {
+  CALIBRATION_ZONE_LABELS,
+  CALIBRATION_ZONE_RANGES,
+  calibrationZone,
+  DIFFICULTY_NUDGE_STEP,
+  isReviewNoteRef,
+  nextUnreviewedId,
+  nudgeDifficulty,
+  REVIEW_REASON_LABELS,
+  SOURCE_REF_LABELS,
+  type CalibrationZone,
+  type ReviewReason,
+} from '@/lib/vocabularyCalibration'
 
 type StatusFilter = VocabularyStatus | 'all'
+type ReviewFilter = 'all' | 'unreviewed' | 'reviewed'
+type ZoneFilter = CalibrationZone | 'all' | 'custom'
+
+type SourceRef = Pick<VocabularySourceRecord, 'source_type' | 'source_ref' | 'created_by'>
+type Entry = VocabularyEntryRecord & { vocabulary_sources?: SourceRef[] }
 
 const STATUS_BADGE: Record<VocabularyStatus, string> = {
   pending: 'bg-amber-100 text-amber-700',
@@ -16,21 +34,42 @@ const STATUS_BADGE: Record<VocabularyStatus, string> = {
   archived: 'bg-gray-200 text-gray-600',
 }
 
-// 숫자 난이도 → "중1 학교형·일반학원형" (임시 기준표 기준)
+// 검수용 시험 최대 문항 수
+const CHECK_TEST_MAX = 20
+
+// 숫자 난이도 → "중1 일반학원형·상위학원형" (임시 기준표 기준, 겹치면 모두)
 function levelText(difficulty: number | null): string {
   if (difficulty === null) return '난이도 없음'
   const bands = bandsContaining(difficulty, 'en_ko')
-  if (bands.length === 0) return '기준표 범위 밖'
+  if (bands.length === 0) return '현재 중1 기준 범위 밖'
   return `${bands[0].grade} ${bands.map((b) => VARIANT_LABELS[b.level]).join('·')}`
 }
 
+// 목록/상세에 보여줄 출처 이름 (검수 메모 행은 제외)
+function sourceLabel(e: Entry): string {
+  const refs = (e.vocabulary_sources ?? []).filter((s) => !isReviewNoteRef(s.source_ref))
+  if (refs.length === 0) return '-'
+  return refs.map((s) => SOURCE_REF_LABELS[s.source_ref] ?? `${s.source_type}: ${s.source_ref}`).join(', ')
+}
+
+function parseDifficulty(text: string): number | null {
+  if (text.trim() === '') return null
+  const n = Number(text)
+  return Number.isInteger(n) ? n : NaN
+}
+
 export default function VocabularyPage() {
-  const [entries, setEntries] = useState<VocabularyEntryRecord[]>([])
+  const [entries, setEntries] = useState<Entry[]>([])
   const [loading, setLoading] = useState(true)
   const [loadError, setLoadError] = useState('')
   const [status, setStatus] = useState<StatusFilter>('all')
+  const [review, setReview] = useState<ReviewFilter>('all')
+  const [zone, setZone] = useState<ZoneFilter>('all')
+  const [customMin, setCustomMin] = useState('')
+  const [customMax, setCustomMax] = useState('')
   const [search, setSearch] = useState('')
   const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [reviewMode, setReviewMode] = useState(false)
 
   // 상세 편집값
   const [meaning, setMeaning] = useState('')
@@ -39,8 +78,15 @@ export default function VocabularyPage() {
   const [koEn, setKoEn] = useState(false)
   const [rejectReason, setRejectReason] = useState<VocabularyRejectReason | ''>('')
   const [rejectNote, setRejectNote] = useState('')
+  const [reviewReason, setReviewReason] = useState<ReviewReason | ''>('')
+  const [reviewMemo, setReviewMemo] = useState('')
+  const [notes, setNotes] = useState<VocabularySourceRecord[]>([])
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null)
+
+  // 검수용 시험 (Floor / Ceiling 체감 확인용)
+  const [checkTest, setCheckTest] = useState<{ id: string; title: string; count: number } | null>(null)
+  const [checkTestError, setCheckTestError] = useState('')
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -59,23 +105,53 @@ export default function VocabularyPage() {
 
   useEffect(() => { load() }, [load])
 
+  const range = useMemo((): { min: number; max: number } | null => {
+    if (zone === 'all') return null
+    if (zone === 'custom') {
+      const min = Number(customMin) || 1
+      const max = Number(customMax) || 100
+      return { min: Math.max(1, Math.min(min, max)), max: Math.min(100, Math.max(min, max)) }
+    }
+    return CALIBRATION_ZONE_RANGES[zone]
+  }, [zone, customMin, customMax])
+
   const counts = useMemo(() => {
     const c: Record<StatusFilter, number> = { all: entries.length, pending: 0, approved: 0, rejected: 0, archived: 0 }
     for (const e of entries) c[e.status]++
     return c
   }, [entries])
 
+  // 진행상황: 전체 / 구간별 교사 검수 완료 수
+  const progress = useMemo(() => {
+    const zones: Record<CalibrationZone, { done: number; total: number }> = {
+      floor: { done: 0, total: 0 }, middle: { done: 0, total: 0 }, ceiling: { done: 0, total: 0 },
+    }
+    let done = 0
+    for (const e of entries) {
+      if (e.teacher_reviewed_at) done++
+      const z = calibrationZone(e.base_difficulty)
+      if (!z) continue
+      zones[z].total++
+      if (e.teacher_reviewed_at) zones[z].done++
+    }
+    return { done, total: entries.length, zones }
+  }, [entries])
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase()
-    return entries.filter((e) =>
+    const list = entries.filter((e) =>
       (status === 'all' || e.status === status) &&
+      (review === 'all' || (review === 'reviewed') === (e.teacher_reviewed_at !== null)) &&
+      (!range || (e.base_difficulty !== null && e.base_difficulty >= range.min && e.base_difficulty <= range.max)) &&
       (!q || e.expression.toLowerCase().includes(q) || e.meaning_ko.includes(q) || e.accepted_meanings.some((m) => m.includes(q))),
     )
-  }, [entries, status, search])
+    // 난이도 필터를 쓰면 난이도 순으로 (양 끝 비교가 쉽게)
+    return range ? [...list].sort((a, b) => (a.base_difficulty ?? 0) - (b.base_difficulty ?? 0)) : list
+  }, [entries, status, review, range, search])
 
   const selected = entries.find((e) => e.id === selectedId) ?? null
 
-  // 선택이 바뀌면 편집칸을 그 항목 값으로 채운다
+  // 선택이 바뀌면 편집칸을 그 항목 값으로 채우고, 검수 메모를 불러온다
   useEffect(() => {
     if (!selected) return
     setMeaning(selected.meaning_ko)
@@ -84,24 +160,61 @@ export default function VocabularyPage() {
     setKoEn(selected.ko_en_allowed)
     setRejectReason('')
     setRejectNote('')
-    setMessage(null)
+    setReviewReason('')
+    setReviewMemo('')
+    setNotes([])
+    const id = selected.id
+    fetch(`/api/vocabulary/${id}`)
+      .then((r) => r.json())
+      .then((json) => {
+        const srcs: VocabularySourceRecord[] = json.data?.vocabulary_sources ?? []
+        setNotes(srcs.filter((s) => isReviewNoteRef(s.source_ref)).sort((a, b) => b.created_at.localeCompare(a.created_at)))
+      })
+      .catch(() => {})
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedId])
 
-  async function patch(body: Record<string, unknown>, doneText: string) {
+  // 검수 모드를 켜면: 교사 미확인만 + 첫 항목 선택
+  function startReviewMode() {
+    setReviewMode(true)
+    setReview('unreviewed')
+    const first = entries.find((e) =>
+      e.teacher_reviewed_at === null &&
+      (status === 'all' || e.status === status) &&
+      (!range || (e.base_difficulty !== null && e.base_difficulty >= range.min && e.base_difficulty <= range.max)),
+    )
+    setSelectedId(first?.id ?? null)
+  }
+
+  async function patch(body: Record<string, unknown>, doneText: string, goNext = false) {
     if (!selected) return
+    const currentId = selected.id
+    // "다음"은 저장 전 목록 기준으로 정한다 (미확인 필터에서는 저장 후 현재 항목이 목록에서 빠지므로)
+    const nextId = goNext ? nextUnreviewedId(filtered, currentId) : null
     setSaving(true)
     setMessage(null)
     try {
-      const res = await fetch(`/api/vocabulary/${selected.id}`, {
+      const res = await fetch(`/api/vocabulary/${currentId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })
       const json = await res.json()
       if (!res.ok) throw new Error(json.error ?? '저장 실패')
-      setEntries((prev) => prev.map((e) => (e.id === selected.id ? json.data : e)))
-      setMessage({ ok: true, text: doneText })
+      // 목록 응답의 출처 정보는 유지하고 어휘 값만 바꾼다
+      setEntries((prev) => prev.map((e) => (e.id === currentId ? { ...e, ...json.data } : e)))
+      const text = json.warning ? `${doneText} (${json.warning})` : doneText
+      if (goNext) {
+        if (nextId) {
+          setSelectedId(nextId)
+          setMessage({ ok: true, text: `${selected.expression}: ${text} → 다음 단어` })
+        } else {
+          setMessage({ ok: true, text: `${selected.expression}: ${text} — 이 목록의 미검수 단어를 모두 마쳤습니다.` })
+          if (review === 'unreviewed') setSelectedId(null)
+        }
+      } else {
+        setMessage({ ok: true, text })
+      }
     } catch (e) {
       setMessage({ ok: false, text: e instanceof Error ? e.message : '저장 실패' })
     } finally {
@@ -117,18 +230,40 @@ export default function VocabularyPage() {
     if (m !== selected.meaning_ko) out.meaning_ko = m
     const acc = accepted.split(',').map((s) => s.trim()).filter(Boolean)
     if (acc.join('\u0000') !== selected.accepted_meanings.join('\u0000')) out.accepted_meanings = acc
-    const d = difficulty.trim() === '' ? null : Number(difficulty)
+    const d = parseDifficulty(difficulty)
     if (d !== null && !(Number.isInteger(d) && d >= 1 && d <= 100)) return '난이도는 1~100 정수로 입력하세요.'
     if (d !== selected.base_difficulty) out.base_difficulty = d
     if (koEn !== selected.ko_en_allowed) out.ko_en_allowed = koEn
     return out
   }
 
+  function reviewNoteFields() {
+    return { review_reason: reviewReason || null, review_note: reviewMemo.trim() || null }
+  }
+
   function saveEdits() {
     const f = editedFields()
     if (typeof f === 'string') return setMessage({ ok: false, text: f })
     if (Object.keys(f).length === 0) return setMessage({ ok: false, text: '바뀐 내용이 없습니다.' })
-    patch(f, '저장했습니다.')
+    patch({ ...f, ...reviewNoteFields() }, '저장했습니다.')
+  }
+
+  // 검수 완료: 편집한 값 + 검수 기록을 한 번에 저장하고 다음 미검수 단어로
+  function completeReview() {
+    const f = editedFields()
+    if (typeof f === 'string') return setMessage({ ok: false, text: f })
+    patch({ ...f, ...reviewNoteFields(), review: true }, '검수 완료', true)
+  }
+
+  // 현재 기준 맞음: 값은 그대로 두고 검수만 기록 → 다음
+  function confirmAsIs() {
+    patch({ review: true, ...reviewNoteFields() }, '현재 기준 맞음 (값 변경 없음)', true)
+  }
+
+  function nudge(delta: number) {
+    const d = parseDifficulty(difficulty)
+    const base = d === null || Number.isNaN(d) ? selected?.base_difficulty ?? 50 : d
+    setDifficulty(String(nudgeDifficulty(base, delta)))
   }
 
   // 상태 버튼은 편집 중인 값도 함께 저장한다
@@ -138,27 +273,82 @@ export default function VocabularyPage() {
     patch({ ...f, ...extra, action }, doneText)
   }
 
+  // 검수용 시험: 지금 난이도 필터 범위의 승인 단어로 영→한 최대 20문항 (고3 등 학년 기준을 새로 만들지 않는다)
+  async function createCheckTest() {
+    if (!range) return
+    setCheckTest(null)
+    setCheckTestError('')
+    const pool = entries.filter((e) => e.status === 'approved' && e.deleted_at === null)
+    const result = generateWordTest(pool, range, 'en_ko', CHECK_TEST_MAX)
+    if (result.items.length === 0) return setCheckTestError('이 범위에 승인된 단어가 없습니다.')
+    const title = `[검수용] 난이도 ${range.min}~${range.max} 단어시험`
+    try {
+      const res = await fetch('/api/vocabulary/word-test', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, exam_date: null, points_per_question: 5, questions: result.items.map(toWordQuestionData) }),
+      })
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.error ?? '저장 실패')
+      setCheckTest({ id: json.data.exam_id, title, count: result.items.length })
+    } catch (e) {
+      setCheckTestError(e instanceof Error ? e.message : '저장 실패')
+    }
+  }
+
+  const draftDifficulty = parseDifficulty(difficulty)
+  const difficultyChanged = selected !== null && draftDifficulty !== selected.base_difficulty
+  const pill = (active: boolean) =>
+    `rounded-full border px-3 py-1 text-sm ${active ? 'border-blue-600 bg-blue-600 text-white' : 'border-gray-300 text-gray-600 hover:bg-gray-50'}`
+
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-2">
+      <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
         <div>
           <h1 className="text-xl font-semibold text-gray-800">단어은행</h1>
           <p className="mt-1 text-xs text-gray-500">레벨 표시는 {VOCABULARY_BANDS_NOTE} 기준입니다.</p>
         </div>
-        <a href="/vocab-test" className="rounded border border-blue-600 px-3 py-1.5 text-sm text-blue-600 hover:bg-blue-50">
-          단어시험 만들기 →
-        </a>
+        <div className="flex gap-2">
+          {reviewMode ? (
+            <button onClick={() => setReviewMode(false)} className="rounded border border-gray-400 px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50">
+              검수 모드 끄기
+            </button>
+          ) : (
+            <button onClick={startReviewMode} className="rounded bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700">
+              🎯 검수 모드
+            </button>
+          )}
+          <a href="/vocab-test" className="rounded border border-blue-600 px-3 py-1.5 text-sm text-blue-600 hover:bg-blue-50">
+            단어시험 만들기 →
+          </a>
+        </div>
       </div>
 
-      <div className="mb-3 flex flex-wrap items-center gap-2">
+      {/* 진행상황 (작게) */}
+      <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1 rounded bg-gray-50 px-3 py-2 text-xs text-gray-600">
+        <span>
+          교사 검수 완료 <b className="text-gray-900">{progress.done}</b> / {progress.total} · 미검수 {progress.total - progress.done}
+        </span>
+        {(['floor', 'middle', 'ceiling'] as CalibrationZone[]).map((z) => (
+          <span key={z}>
+            {CALIBRATION_ZONE_LABELS[z]}: {progress.zones[z].done}/{progress.zones[z].total}
+          </span>
+        ))}
+      </div>
+
+      {reviewMode && (
+        <div className="mb-3 rounded border border-indigo-200 bg-indigo-50 px-3 py-2 text-xs leading-relaxed text-indigo-800">
+          <b>검수 모드</b> — 판단 후 “검수 완료”를 누르면 저장하고 다음 미검수 단어로 넘어갑니다. 생각해 볼 것:
+          지금 난이도가 맞는가 · 학생에게 언제부터 요구할까 · 이 뜻에서도 같은 난이도인가 · 영→한/한→영 차이가 큰가 ·
+          시험 가치가 있는가 · 고3 상위 학생이 알아야 하는가 · 보스턴S 교육 범위 밖인가.
+          난이도 숫자는 Claude 임시값이며 정답이 아닙니다.
+        </div>
+      )}
+
+      {/* 필터 */}
+      <div className="mb-2 flex flex-wrap items-center gap-2">
         {(['all', 'pending', 'approved', 'rejected', 'archived'] as StatusFilter[]).map((s) => (
-          <button
-            key={s}
-            onClick={() => setStatus(s)}
-            className={`rounded-full border px-3 py-1 text-sm ${
-              status === s ? 'border-blue-600 bg-blue-600 text-white' : 'border-gray-300 text-gray-600 hover:bg-gray-50'
-            }`}
-          >
+          <button key={s} onClick={() => setStatus(s)} className={pill(status === s)}>
             {s === 'all' ? '전체' : VOCABULARY_STATUS_LABELS[s]} {counts[s]}
           </button>
         ))}
@@ -169,10 +359,57 @@ export default function VocabularyPage() {
           className="ml-auto w-full rounded border border-gray-300 px-3 py-1.5 text-sm sm:w-64"
         />
       </div>
+      <div className="mb-3 flex flex-wrap items-center gap-2 text-sm">
+        <span className="text-xs text-gray-500">검수</span>
+        {([['all', '전체'], ['unreviewed', '교사 미확인'], ['reviewed', '교사 검수 완료']] as [ReviewFilter, string][]).map(([v, l]) => (
+          <button key={v} onClick={() => setReview(v)} className={pill(review === v)}>{l}</button>
+        ))}
+        <span className="ml-2 text-xs text-gray-500">난이도</span>
+        {(['all', 'floor', 'middle', 'ceiling'] as ZoneFilter[]).map((z) => (
+          <button key={z} onClick={() => { setZone(z); setCheckTest(null); setCheckTestError('') }} className={pill(zone === z)}>
+            {z === 'all' ? '전체' : CALIBRATION_ZONE_LABELS[z as CalibrationZone]}
+          </button>
+        ))}
+        <button onClick={() => { setZone('custom'); setCheckTest(null); setCheckTestError('') }} className={pill(zone === 'custom')}>직접</button>
+        {zone === 'custom' && (
+          <span className="flex items-center gap-1">
+            <input value={customMin} onChange={(e) => setCustomMin(e.target.value)} placeholder="1" inputMode="numeric" className="w-14 rounded border border-gray-300 px-2 py-1" />
+            ~
+            <input value={customMax} onChange={(e) => setCustomMax(e.target.value)} placeholder="100" inputMode="numeric" className="w-14 rounded border border-gray-300 px-2 py-1" />
+          </span>
+        )}
+      </div>
+
+      {/* 검수용 시험: 난이도 필터를 골랐을 때만 */}
+      {range && (
+        <div className="mb-3 flex flex-wrap items-center gap-2 rounded border border-dashed border-gray-300 px-3 py-2 text-xs text-gray-600">
+          <span>
+            난이도 {range.min}~{range.max} 승인 단어로 <b>검수용 시험</b>(영→한, 최대 {CHECK_TEST_MAX}문항)을 만들어 실제 시험지로 체감해 볼 수 있습니다.
+          </span>
+          <button onClick={createCheckTest} className="rounded border border-indigo-500 px-2 py-1 text-indigo-700 hover:bg-indigo-50">
+            검수용 시험 만들기
+          </button>
+          {checkTest && (
+            <span className="flex items-center gap-2 text-green-700">
+              ✅ {checkTest.title} ({checkTest.count}문항) 저장
+              <a
+                href={`/exams/${checkTest.id}/print?exam_id=${checkTest.id}&title=${encodeURIComponent(checkTest.title)}&date=`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                인쇄 화면
+              </a>
+              <a href={`/exams/${checkTest.id}`} className="underline">시험 열기</a>
+            </span>
+          )}
+          {checkTestError && <span className="text-red-600">{checkTestError}</span>}
+        </div>
+      )}
 
       {loadError && <div className="mb-3 rounded border border-red-200 bg-red-50 p-3 text-sm text-red-600">{loadError}</div>}
 
-      <div className="grid gap-4 lg:grid-cols-[1fr_360px]">
+      <div className="grid gap-4 lg:grid-cols-[1fr_380px]">
         {/* 목록 */}
         <div className="overflow-x-auto rounded border border-gray-200 bg-white">
           {loading ? (
@@ -190,6 +427,7 @@ export default function VocabularyPage() {
                   <th className="px-3 py-2 text-left">레벨</th>
                   <th className="px-3 py-2 text-center">한→영</th>
                   <th className="px-3 py-2 text-left">상태</th>
+                  <th className="px-3 py-2 text-center">검수</th>
                 </tr>
               </thead>
               <tbody>
@@ -197,20 +435,22 @@ export default function VocabularyPage() {
                   <tr
                     key={e.id}
                     onClick={() => setSelectedId(e.id)}
-                    className={`cursor-pointer border-b border-gray-100 last:border-0 hover:bg-blue-50 ${
-                      e.id === selectedId ? 'bg-blue-50' : ''
-                    }`}
+                    className={`cursor-pointer border-b border-gray-100 last:border-0 hover:bg-blue-50 ${e.id === selectedId ? 'bg-blue-50' : ''}`}
                   >
-                    <td className="px-3 py-1.5 font-medium text-gray-800">{e.expression}</td>
+                    <td className="px-3 py-1.5 font-medium text-gray-800">
+                      {e.expression}
+                      {e.sense_note && <span className="ml-1 text-[10px] text-gray-400">*</span>}
+                    </td>
                     <td className="px-3 py-1.5 text-gray-500">{e.pos ? POS_LABELS_KO[e.pos] : '-'}</td>
                     <td className="px-3 py-1.5 text-gray-700">{e.meaning_ko}</td>
                     <td className="px-3 py-1.5 text-right text-gray-700">{e.base_difficulty ?? '-'}</td>
                     <td className="px-3 py-1.5 text-xs text-gray-500">{levelText(e.base_difficulty)}</td>
                     <td className="px-3 py-1.5 text-center">{e.ko_en_allowed ? '○' : '–'}</td>
                     <td className="px-3 py-1.5">
-                      <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[e.status]}`}>
-                        {VOCABULARY_STATUS_LABELS[e.status]}
-                      </span>
+                      <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[e.status]}`}>{VOCABULARY_STATUS_LABELS[e.status]}</span>
+                    </td>
+                    <td className="px-3 py-1.5 text-center text-xs">
+                      {e.teacher_reviewed_at ? <span className="text-green-600">✔</span> : <span className="text-gray-400">미확인</span>}
                     </td>
                   </tr>
                 ))}
@@ -219,29 +459,33 @@ export default function VocabularyPage() {
           )}
         </div>
 
-        {/* 상세 */}
+        {/* 상세 / 검수 */}
         <div className="h-fit rounded border border-gray-200 bg-white p-4 lg:sticky lg:top-4">
           {!selected ? (
-            <p className="py-10 text-center text-sm text-gray-400">목록에서 어휘를 선택하세요.</p>
+            <p className="py-10 text-center text-sm text-gray-400">
+              {message?.ok ? message.text : '목록에서 어휘를 선택하세요.'}
+            </p>
           ) : (
             <div className="space-y-3 text-sm">
               <div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="text-lg font-semibold text-gray-900">{selected.expression}</span>
-                  <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[selected.status]}`}>
-                    {VOCABULARY_STATUS_LABELS[selected.status]}
+                  <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[selected.status]}`}>{VOCABULARY_STATUS_LABELS[selected.status]}</span>
+                  <span className={`rounded px-1.5 py-0.5 text-xs ${selected.teacher_reviewed_at ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
+                    {selected.teacher_reviewed_at ? '교사 검수 완료' : '교사 미확인'}
                   </span>
                 </div>
                 <p className="text-xs text-gray-500">
                   {selected.pos ?? '품사 없음'} · {selected.entry_type}
-                  {selected.sense_note ? ` · ${selected.sense_note}` : ''}
                 </p>
-                <p className="text-xs text-gray-400">
-                  {selected.teacher_reviewed_at ? '교사 확인됨' : '교사 미확인 (seed 값)'}
-                  {selected.status === 'rejected' && selected.reject_reason
-                    ? ` · 반려 사유: ${VOCABULARY_REJECT_REASON_LABELS[selected.reject_reason]}${selected.reject_note ? ` (${selected.reject_note})` : ''}`
-                    : ''}
-                </p>
+                {selected.sense_note && <p className="text-xs text-gray-600">의미 구분: {selected.sense_note}</p>}
+                <p className="text-xs text-gray-400">출처: {sourceLabel(selected)}</p>
+                {selected.status === 'rejected' && selected.reject_reason && (
+                  <p className="text-xs text-red-500">
+                    반려 사유: {VOCABULARY_REJECT_REASON_LABELS[selected.reject_reason]}
+                    {selected.reject_note ? ` (${selected.reject_note})` : ''}
+                  </p>
+                )}
               </div>
 
               <label className="block">
@@ -252,31 +496,88 @@ export default function VocabularyPage() {
                 <span className="mb-1 block text-xs font-medium text-gray-600">추가로 인정할 뜻 (쉼표로 구분)</span>
                 <input value={accepted} onChange={(e) => setAccepted(e.target.value)} className="w-full rounded border border-gray-300 px-2 py-1.5" />
               </label>
-              <label className="block">
+
+              <div>
                 <span className="mb-1 block text-xs font-medium text-gray-600">난이도 (1~100)</span>
-                <input
-                  value={difficulty}
-                  onChange={(e) => setDifficulty(e.target.value)}
-                  inputMode="numeric"
-                  className="w-24 rounded border border-gray-300 px-2 py-1.5"
-                />
-                <span className="ml-2 text-xs text-gray-500">
-                  {levelText(difficulty.trim() === '' ? null : Number(difficulty) || null)}
-                </span>
-              </label>
+                <div className="flex flex-wrap items-center gap-2">
+                  <button onClick={() => nudge(-DIFFICULTY_NUDGE_STEP)} className="rounded border border-gray-300 px-2 py-1 text-xs hover:bg-gray-50">
+                    조금 쉽게 −{DIFFICULTY_NUDGE_STEP}
+                  </button>
+                  <input
+                    value={difficulty}
+                    onChange={(e) => setDifficulty(e.target.value)}
+                    inputMode="numeric"
+                    className="w-16 rounded border border-gray-300 px-2 py-1 text-center"
+                  />
+                  <button onClick={() => nudge(DIFFICULTY_NUDGE_STEP)} className="rounded border border-gray-300 px-2 py-1 text-xs hover:bg-gray-50">
+                    조금 어렵게 +{DIFFICULTY_NUDGE_STEP}
+                  </button>
+                </div>
+                <p className="mt-1 text-xs text-gray-500">
+                  {difficultyChanged ? (
+                    <>
+                      <b className="text-orange-600">
+                        {selected.base_difficulty ?? '없음'} → {Number.isNaN(draftDifficulty) ? '?' : draftDifficulty ?? '없음'}
+                      </b>{' '}
+                      (저장 전) · {levelText(draftDifficulty === null || Number.isNaN(draftDifficulty) ? null : draftDifficulty)}
+                    </>
+                  ) : (
+                    levelText(selected.base_difficulty)
+                  )}
+                </p>
+              </div>
+
               <label className="flex items-center gap-2">
                 <input type="checkbox" checked={koEn} onChange={(e) => setKoEn(e.target.checked)} />
                 <span className="text-sm text-gray-700">한→영 출제 가능</span>
                 <span className="text-xs text-gray-400">(정답 영어가 하나로 정해질 때만)</span>
               </label>
 
+              <div className="grid grid-cols-[1fr_1.4fr] gap-2">
+                <select
+                  value={reviewReason}
+                  onChange={(e) => setReviewReason(e.target.value as ReviewReason | '')}
+                  className="rounded border border-gray-300 px-2 py-1.5 text-xs"
+                >
+                  <option value="">판단 이유 (선택)</option>
+                  {Object.entries(REVIEW_REASON_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+                </select>
+                <input
+                  value={reviewMemo}
+                  onChange={(e) => setReviewMemo(e.target.value)}
+                  placeholder="짧은 메모 (선택)"
+                  className="rounded border border-gray-300 px-2 py-1.5 text-xs"
+                />
+              </div>
+
+              {/* 검수 버튼 */}
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  onClick={confirmAsIs}
+                  disabled={saving}
+                  className="rounded border border-green-600 py-2 text-sm text-green-700 hover:bg-green-50 disabled:opacity-40"
+                  title="값은 그대로 두고 검수만 완료 → 다음 단어"
+                >
+                  현재 기준 맞음
+                </button>
+                <button
+                  onClick={completeReview}
+                  disabled={saving}
+                  className="rounded bg-indigo-600 py-2 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-40"
+                  title="수정한 값 저장 + 검수 완료 → 다음 단어"
+                >
+                  검수 완료 → 다음
+                </button>
+              </div>
               <button
                 onClick={saveEdits}
                 disabled={saving}
-                className="w-full rounded bg-blue-600 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-40"
+                className="w-full rounded border border-blue-600 py-1.5 text-sm text-blue-600 hover:bg-blue-50 disabled:opacity-40"
               >
-                수정 저장
+                수정만 저장 (이 단어에 머무르기)
               </button>
+
+              {message && <p className={`text-sm ${message.ok ? 'text-green-600' : 'text-red-600'}`}>{message.text}</p>}
 
               <div className="space-y-2 border-t border-gray-100 pt-3">
                 {selected.status === 'pending' && (
@@ -323,7 +624,7 @@ export default function VocabularyPage() {
                   <button
                     onClick={() => runAction('archive', '아카이브했습니다. 자동시험에 더 이상 나오지 않습니다.')}
                     disabled={saving}
-                    className="w-full rounded border border-gray-400 py-2 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-40"
+                    className="w-full rounded border border-gray-400 py-1.5 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-40"
                   >
                     아카이브 (자동시험에서 제외)
                   </button>
@@ -332,7 +633,7 @@ export default function VocabularyPage() {
                   <button
                     onClick={() => runAction('restore', '다시 승인 상태로 복원했습니다.')}
                     disabled={saving}
-                    className="w-full rounded border border-green-600 py-2 text-sm text-green-700 hover:bg-green-50 disabled:opacity-40"
+                    className="w-full rounded border border-green-600 py-1.5 text-sm text-green-700 hover:bg-green-50 disabled:opacity-40"
                   >
                     복원 (승인으로)
                   </button>
@@ -341,15 +642,23 @@ export default function VocabularyPage() {
                   <button
                     onClick={() => runAction('reopen', '검토대기로 되돌렸습니다.')}
                     disabled={saving}
-                    className="w-full rounded border border-amber-500 py-2 text-sm text-amber-700 hover:bg-amber-50 disabled:opacity-40"
+                    className="w-full rounded border border-amber-500 py-1.5 text-sm text-amber-700 hover:bg-amber-50 disabled:opacity-40"
                   >
                     재검토 (검토대기로)
                   </button>
                 )}
               </div>
 
-              {message && (
-                <p className={`text-sm ${message.ok ? 'text-green-600' : 'text-red-600'}`}>{message.text}</p>
+              {notes.length > 0 && (
+                <div className="border-t border-gray-100 pt-2 text-xs text-gray-500">
+                  <p className="mb-1 font-medium">검수 메모</p>
+                  {notes.map((n) => (
+                    <p key={n.id}>
+                      {n.created_at.slice(0, 10)} · {n.rationale}
+                      {n.suggested_difficulty !== null ? ` (당시 난이도 ${n.suggested_difficulty})` : ''}
+                    </p>
+                  ))}
+                </div>
               )}
             </div>
           )}

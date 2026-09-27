@@ -24,3 +24,9 @@
 - [ ] 일괄 승인/반려, 수정 이력, 시험 이력 탭
 - [ ] 미리보기에서 바로 단어은행 반려/난이도 수정 (현재는 /vocabulary 에서만)
 - [ ] 단어시험 채점 시 accepted_answers 활용
+
+## STEP 8 Calibration v1 (2026-09-27)
+- Floor anchor 11개(`bostons-calibration-floor-v1`) + Ceiling anchor 30개(`bostons-calibration-ceiling-v1`, 85~97) 추가. 공식어휘 아님, 난이도는 Claude 임시값, 전부 교사 미확인.
+- 검수 판단 이유는 새 DB 칸 없이 `vocabulary_sources` 에 `source_ref='teacher-review:<시각>'`, `created_by='teacher'` 행으로 추가만 한다.
+- 교사가 값을 저장하면(검수 완료가 아니어도) `teacher_reviewed_at` 이 기록된다 (교사값 보호 목적). 다시 고쳐도 검수 상태는 유지.
+- [ ] 향미 선생님 Floor/Middle/Ceiling 검수 후 1~100 척도와 중1 Cut 재평가 (자동 변경 금지, 사람이 결정)

@@ -17,7 +17,8 @@
     "test-question-provenance": "node scripts/test-question-provenance.ts",
     "test-vocabulary-rules": "node scripts/test-vocabulary-rules.ts",
     "test-word-test": "node scripts/test-word-test.ts",
-    "add-vocabulary-seed": "node scripts/add-vocabulary-seed.ts"
+    "add-vocabulary-seed": "node scripts/add-vocabulary-seed.ts",
+    "test-vocabulary-calibration": "node scripts/test-vocabulary-calibration.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",

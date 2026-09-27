@@ -47,7 +47,7 @@ async function main() {
     console.error('사용법: npm run add-vocabulary-seed -- <JSON 파일> [--dry-run]')
     process.exit(1)
   }
-  const seed: { seed_id: string; note: string; entries: SeedEntry[] } = JSON.parse(readFileSync(resolve(process.cwd(), filePath), 'utf-8'))
+  const seed: { seed_id: string; note: string; source_rationale?: string; entries: SeedEntry[] } = JSON.parse(readFileSync(resolve(process.cwd(), filePath), 'utf-8'))
   if (!seed.seed_id || !Array.isArray(seed.entries)) {
     console.error('seed_id / entries 가 필요합니다.')
     process.exit(1)
@@ -133,7 +133,8 @@ async function main() {
       source_sentence: null,
       context_meaning: null,
       suggested_difficulty: s.base_difficulty,
-      rationale: '기능 검증용 BostonS teacher seed. 난이도는 중1 임시 기준(향미 선생님 검수 전).',
+      // 파일마다 출처 성격을 남긴다 (예: BostonS calibration anchor). 없으면 기존 중1 seed 설명
+      rationale: seed.source_rationale ?? '기능 검증용 BostonS teacher seed. 난이도는 중1 임시 기준(향미 선생님 검수 전).',
       created_by: 'claude',
       official_source_name: null,
       official_source_version: null,

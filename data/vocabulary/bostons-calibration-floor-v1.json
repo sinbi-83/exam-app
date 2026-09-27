@@ -1,0 +1,18 @@
+{
+  "seed_id": "bostons-calibration-floor-v1",
+  "note": "BostonS calibration anchor (Floor, 초등 기초 비교용). 공식어휘 아님. 난이도는 Claude 임시값(provisional) — 향미 선생님 검수 전. 기존 seed 의 1~10 항목(sad 5, library 6, laugh 8, enjoy 10)과 함께 Floor 를 이룬다.",
+  "source_rationale": "BostonS calibration anchor · Floor (초등 기초 비교용). 공식어휘 아님. 난이도는 Claude 임시값(provisional), 향미 선생님 검수 전.",
+  "entries": [
+    { "expression": "cat", "lemma": "cat", "entry_type": "word", "pos": "noun", "meaning_ko": "고양이", "accepted_meanings": [], "base_difficulty": 1, "ko_en_allowed": true },
+    { "expression": "dog", "lemma": "dog", "entry_type": "word", "pos": "noun", "meaning_ko": "개", "accepted_meanings": ["강아지"], "base_difficulty": 1, "ko_en_allowed": true },
+    { "expression": "apple", "lemma": "apple", "entry_type": "word", "pos": "noun", "meaning_ko": "사과", "accepted_meanings": [], "base_difficulty": 2, "ko_en_allowed": true },
+    { "expression": "eat", "lemma": "eat", "entry_type": "word", "pos": "verb", "meaning_ko": "먹다", "accepted_meanings": [], "base_difficulty": 2, "ko_en_allowed": true },
+    { "expression": "book", "lemma": "book", "entry_type": "word", "pos": "noun", "meaning_ko": "책", "accepted_meanings": [], "base_difficulty": 2, "ko_en_allowed": true },
+    { "expression": "water", "lemma": "water", "entry_type": "word", "pos": "noun", "meaning_ko": "물", "accepted_meanings": [], "base_difficulty": 3, "ko_en_allowed": true },
+    { "expression": "school", "lemma": "school", "entry_type": "word", "pos": "noun", "meaning_ko": "학교", "accepted_meanings": [], "base_difficulty": 3, "ko_en_allowed": true },
+    { "expression": "friend", "lemma": "friend", "entry_type": "word", "pos": "noun", "meaning_ko": "친구", "accepted_meanings": [], "base_difficulty": 4, "ko_en_allowed": true },
+    { "expression": "happy", "lemma": "happy", "entry_type": "word", "pos": "adjective", "meaning_ko": "행복한", "accepted_meanings": ["기쁜"], "base_difficulty": 4, "ko_en_allowed": true },
+    { "expression": "run", "lemma": "run", "entry_type": "word", "pos": "verb", "meaning_ko": "달리다", "accepted_meanings": ["뛰다"], "base_difficulty": 5, "ko_en_allowed": true, "sense_note": "달리다 (회사를 운영하다 뜻은 별도 항목)" },
+    { "expression": "family", "lemma": "family", "entry_type": "word", "pos": "noun", "meaning_ko": "가족", "accepted_meanings": [], "base_difficulty": 5, "ko_en_allowed": true }
+  ]
+}
