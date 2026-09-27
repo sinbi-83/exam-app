@@ -14,8 +14,8 @@ export default function VocabTestPage() {
   const [words, setWords] = useState<WordPair[]>([])
   const [parsed, setParsed] = useState(false)
   const [testType, setTestType] = useState<'en_to_ko' | 'ko_to_en' | 'mixed'>('mixed')
-  // 직접 입력(기존) / 단어은행에서 자동 생성
-  const [inputMode, setInputMode] = useState<'manual' | 'bank'>('manual')
+  // 기본 = 단어은행에서 자동 생성. 직접 입력(기존 기능)은 우측 상단 보조 버튼으로 들어간다.
+  const [inputMode, setInputMode] = useState<'manual' | 'bank'>('bank')
 
   function parseWords() {
     const lines = rawInput.split('\n').filter((l) => l.trim())
@@ -50,26 +50,38 @@ export default function VocabTestPage() {
 
   return (
     <div>
-      <h1 className="mb-4 text-xl font-semibold text-gray-800">단어 테스트 생성</h1>
-
-      <div className="mb-6 flex gap-2 border-b border-gray-200">
-        {[
-          { value: 'manual', label: '직접 입력' },
-          { value: 'bank', label: '단어은행에서 자동 생성' },
-        ].map((tab) => (
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <h1 className="text-xl font-semibold text-gray-800">
+            {inputMode === 'bank' ? '단어 테스트 생성' : '직접 입력 단어 테스트'}
+          </h1>
+          <p className="mt-0.5 text-xs text-gray-500">
+            {inputMode === 'bank' ? '단어은행에서 자동 생성' : '단어를 직접 입력해서 바로 출력합니다 (저장되지 않음)'}
+          </p>
+        </div>
+        {inputMode === 'bank' ? (
           <button
-            key={tab.value}
-            onClick={() => setInputMode(tab.value as typeof inputMode)}
-            className={`-mb-px border-b-2 px-4 py-2 text-sm ${
-              inputMode === tab.value ? 'border-blue-600 font-medium text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'
-            }`}
+            onClick={() => setInputMode('manual')}
+            className="rounded border border-gray-300 px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50"
           >
-            {tab.label}
+            ✍️ 직접 입력으로 만들기
           </button>
-        ))}
+        ) : (
+          <button
+            onClick={() => setInputMode('bank')}
+            className="rounded border border-blue-600 px-3 py-1.5 text-sm text-blue-600 hover:bg-blue-50"
+          >
+            ← 단어은행 자동 생성으로
+          </button>
+        )}
       </div>
 
-      {inputMode === 'bank' ? <BankMode /> : (
+      {/* 직접 입력을 잠깐 보고 돌아와도 자동 생성 미리보기가 남도록 숨기기만 한다 */}
+      <div hidden={inputMode !== 'bank'}>
+        <BankMode />
+      </div>
+
+      {inputMode === 'manual' && (
       <div className="grid gap-6 md:grid-cols-2">
         {/* 왼쪽: 입력 */}
         <div className="space-y-4">
