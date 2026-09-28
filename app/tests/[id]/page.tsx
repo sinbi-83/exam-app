@@ -428,7 +428,7 @@ export default function ExamDetailPage() {
   }
 
   function openPrint(sheet?: 'study') {
-    const url = `/exams/${examId}/print?exam_id=${examId}&title=${encodeURIComponent(exam?.title ?? '')}&date=${encodeURIComponent(exam?.exam_date ?? '')}${sheet ? `&sheet=${sheet}` : ''}`
+    const url = `/tests/${examId}/print?exam_id=${examId}&title=${encodeURIComponent(exam?.title ?? '')}&date=${encodeURIComponent(exam?.exam_date ?? '')}${sheet ? `&sheet=${sheet}` : ''}`
     const a = document.createElement('a')
     a.href = url
     a.target = '_blank'
@@ -470,7 +470,7 @@ export default function ExamDetailPage() {
       })
       const saved = await save.json()
       if (!save.ok) throw new Error(saved.error ?? '저장 실패')
-      router.push(`/exams/${saved.data.exam_id}`)
+      router.push(`/tests/${saved.data.exam_id}`)
     } catch (e) {
       setConvertError(e instanceof Error ? e.message : '만들기 실패')
     } finally {

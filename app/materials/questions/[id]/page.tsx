@@ -156,7 +156,7 @@ export default function QuestionSetDetailPage() {
         readingQuestions: data.reading_questions || [],
       })
     )
-    window.open('/ai-passage/print', '_blank')
+    window.open('/materials/passages/ai/print', '_blank')
   }
 
   // 정답지 인쇄 (지문요약 + 독해 + 서술형 정답도 같이 포함)
@@ -174,7 +174,7 @@ export default function QuestionSetDetailPage() {
         essayQuestions: data.essay_questions || [],
       })
     )
-    window.open('/ai-passage/print', '_blank')
+    window.open('/materials/passages/ai/print', '_blank')
   }
 
   // 서술형 시험지 인쇄
@@ -190,7 +190,7 @@ export default function QuestionSetDetailPage() {
         essayQuestions: data.essay_questions || [],
       })
     )
-    window.open('/ai-passage/print', '_blank')
+    window.open('/materials/passages/ai/print', '_blank')
   }
 
   if (loading) {

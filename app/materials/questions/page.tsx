@@ -190,7 +190,7 @@ export default function QuestionsPage() {
             return (
               <Link
                 key={item.id}
-                href={`/questions/${item.id}`}
+                href={`/materials/questions/${item.id}`}
                 className="block rounded-lg border border-gray-200 bg-white p-4 hover:bg-gray-50"
               >
                 <div className="flex items-start justify-between gap-3">

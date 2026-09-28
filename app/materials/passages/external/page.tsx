@@ -478,13 +478,13 @@ export default function ExternalPassagesPage() {
                     </button>
                     <div className="flex shrink-0 items-center gap-2 self-end sm:self-center">
                       <Link
-                        href={`/external-passages/${first.id}`}
+                        href={`/materials/passages/external/${first.id}`}
                         className="rounded border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
                       >
                         보기
                       </Link>
                       <Link
-                        href={`/external-passages/${first.id}?edit=1`}
+                        href={`/materials/passages/external/${first.id}?edit=1`}
                         className="rounded bg-blue-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-700"
                       >
                         수정
@@ -514,13 +514,13 @@ export default function ExternalPassagesPage() {
                           </div>
                           <div className="flex shrink-0 items-center gap-2 self-end sm:self-center">
                             <Link
-                              href={`/external-passages/${child.id}`}
+                              href={`/materials/passages/external/${child.id}`}
                               className="rounded border border-gray-300 px-2.5 py-1 text-xs text-gray-600 hover:bg-white"
                             >
                               보기
                             </Link>
                             <Link
-                              href={`/external-passages/${child.id}?edit=1`}
+                              href={`/materials/passages/external/${child.id}?edit=1`}
                               className="rounded border border-gray-300 px-2.5 py-1 text-xs text-gray-600 hover:bg-white"
                             >
                               수정
@@ -563,7 +563,7 @@ export default function ExternalPassagesPage() {
               <div key={item.id} className="rounded-lg border border-gray-200 bg-white p-4">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div className="min-w-0 flex-1">
-                    <Link href={`/external-passages/${item.id}`} className="truncate font-medium text-gray-800 hover:underline">
+                    <Link href={`/materials/passages/external/${item.id}`} className="truncate font-medium text-gray-800 hover:underline">
                       {item.title || '(제목 없음)'}
                     </Link>
                     <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
@@ -589,13 +589,13 @@ export default function ExternalPassagesPage() {
                   </div>
                   <div className="flex shrink-0 items-center gap-2 self-end sm:self-center">
                     <Link
-                      href={`/external-passages/${item.id}`}
+                      href={`/materials/passages/external/${item.id}`}
                       className="rounded border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100"
                     >
                       보기
                     </Link>
                     <Link
-                      href={`/external-passages/${item.id}?edit=1`}
+                      href={`/materials/passages/external/${item.id}?edit=1`}
                       className="rounded bg-blue-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-700"
                     >
                       수정

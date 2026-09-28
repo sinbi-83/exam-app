@@ -249,7 +249,7 @@ export default function AiPassagePage() {
       sentences,
     }
     sessionStorage.setItem('printData', JSON.stringify(printData))
-    window.open('/ai-passage/print', '_blank')
+    window.open('/materials/passages/ai/print', '_blank')
   }
 
   const segments = passage ? buildHighlightSegments(passage, items) : []

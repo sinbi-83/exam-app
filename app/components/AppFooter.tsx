@@ -7,7 +7,7 @@
 import { usePathname } from 'next/navigation'
 import { copyrightLine } from '@/config/copyright'
 
-export const APP_FOOTER_EXCLUDED_PREFIXES = ['/external-passages', '/attendance', '/homework', '/grading', '/tuition']
+export const APP_FOOTER_EXCLUDED_PREFIXES = ['/materials/passages/external', '/attendance', '/homework', '/grading', '/tuition']
 
 export default function AppFooter() {
   const pathname = usePathname() ?? ''

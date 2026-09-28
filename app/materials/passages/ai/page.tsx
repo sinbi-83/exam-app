@@ -82,7 +82,7 @@ export default function PassagesPage() {
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-xl font-semibold text-gray-800">AI지문관리</h1>
         <Link
-          href="/ai-passage"
+          href="/materials/passages/ai/new"
           className="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
         >
           + 새 지문 생성
@@ -96,7 +96,7 @@ export default function PassagesPage() {
             AI 지문 생성에서 새 지문을 만들어보세요.
           </p>
           <Link
-            href="/ai-passage"
+            href="/materials/passages/ai/new"
             className="mt-4 inline-block rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
           >
             AI 지문 생성 바로가기
@@ -133,7 +133,7 @@ export default function PassagesPage() {
                   <td className="px-4 py-3 text-center">
                     <div className="flex items-center justify-center gap-2">
                       <Link
-                        href={`/questions/${set.id}`}
+                        href={`/materials/questions/${set.id}`}
                         className="rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 hover:bg-gray-100"
                       >
                         문항 보기

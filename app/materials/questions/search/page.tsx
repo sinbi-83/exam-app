@@ -256,7 +256,7 @@ export default function QuestionSearchPage() {
       })),
     }))
     sessionStorage.setItem('searchPrintData', JSON.stringify({ mode, groups: printGroups }))
-    window.open('/question-search/print', '_blank')
+    window.open('/materials/questions/search/print', '_blank')
   }
 
   const groups = groupByPassage(results)
@@ -382,7 +382,7 @@ export default function QuestionSearchPage() {
                   </div>
                   
                     <a
-                    href={`/questions/${group.key}`}
+                    href={`/materials/questions/${group.key}`}
                     target="_blank"
                     rel="noreferrer"
                     className="mt-1 inline-block text-[11px] text-blue-500 hover:underline"

@@ -162,7 +162,7 @@ export default function BankMode() {
   const printUrl = useMemo(
     () =>
       savedExam
-        ? `/exams/${savedExam.id}/print?exam_id=${savedExam.id}&title=${encodeURIComponent(savedExam.title)}&date=${encodeURIComponent(savedExam.date)}`
+        ? `/tests/${savedExam.id}/print?exam_id=${savedExam.id}&title=${encodeURIComponent(savedExam.title)}&date=${encodeURIComponent(savedExam.date)}`
         : '',
     [savedExam],
   )
@@ -317,7 +317,7 @@ export default function BankMode() {
               <div className="space-y-2 rounded border border-green-200 bg-green-50 p-4 text-sm text-green-700">
                 <p>✅ 시험을 저장했습니다: {savedExam.title}</p>
                 <div className="flex gap-2">
-                  <a href={`/exams/${savedExam.id}`} className="rounded border border-green-600 px-3 py-1.5 text-green-700 hover:bg-green-100">저장된 시험 열기</a>
+                  <a href={`/tests/${savedExam.id}`} className="rounded border border-green-600 px-3 py-1.5 text-green-700 hover:bg-green-100">저장된 시험 열기</a>
                   <a href={printUrl} target="_blank" rel="noopener noreferrer" className="rounded bg-green-600 px-3 py-1.5 text-white hover:bg-green-700">🖨️ 시험지 인쇄</a>
                   <a href={`${printUrl}&sheet=study`} target="_blank" rel="noopener noreferrer" className="rounded bg-indigo-600 px-3 py-1.5 text-white hover:bg-indigo-700">📘 학습지 인쇄</a>
                 </div>

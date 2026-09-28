@@ -72,7 +72,8 @@ public/brand/signature.png  ← fallback 서명 (원본: 싸인.png)
 
 ## 외부지문저장소 (API 호출 없음)
 
-- 경로: `/external-passages` (목록), `/external-passages/[id]` (상세·편집·삭제), `/external-passages/[id]/print` (인쇄)
+- 경로: `/materials/passages/external` (목록), `/materials/passages/external/[id]` (상세·편집·삭제), `/materials/passages/external/[id]/print` (인쇄)
+  (2026-09-29 메뉴 개편 전 주소 `/external-passages/...` 는 새 주소로 자동 연결됨 — `config/legacyRoutes.json`)
 - DB 테이블: `passages` (Supabase, RLS로 본인 것만 접근)
 - 이 기능은 Claude API/Anthropic API를 전혀 호출하지 않는다. 지문·문제는 미리 JSON으로 만들어
   `scripts/add-passage.ts`로 DB에 저장해두고, 화면은 저장된 데이터를 읽기/수정/삭제/인쇄만 한다.

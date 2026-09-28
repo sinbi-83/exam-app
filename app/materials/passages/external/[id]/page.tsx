@@ -105,7 +105,7 @@ export default function ExternalPassageDetailPage() {
         alert('삭제 실패: ' + json.error)
         return
       }
-      router.push('/external-passages')
+      router.push('/materials/passages/external')
     } catch {
       alert('삭제 중 오류가 발생했습니다.')
     } finally {
@@ -177,7 +177,7 @@ export default function ExternalPassageDetailPage() {
   return (
     <div className="mx-auto max-w-[900px]">
       <div className="mb-4 flex items-center justify-between">
-        <Link href="/external-passages" className="text-sm text-gray-500 hover:underline">
+        <Link href="/materials/passages/external" className="text-sm text-gray-500 hover:underline">
           ← 목록으로
         </Link>
         <div className="flex items-center gap-2">
@@ -192,7 +192,7 @@ export default function ExternalPassageDetailPage() {
                 정답·해설 표시
               </label>
               <Link
-                href={`/external-passages/${id}/print`}
+                href={`/materials/passages/external/${id}/print`}
                 className="rounded border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-50"
               >
                 🖨️ 인쇄

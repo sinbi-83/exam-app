@@ -448,7 +448,7 @@ export default function VocabularyPage() {
               🎯 검수 모드
             </button>
           )}
-          <a href="/vocab-test" className="rounded border border-blue-600 px-3 py-1.5 text-sm text-blue-600 hover:bg-blue-50">
+          <a href="/create/word" className="rounded border border-blue-600 px-3 py-1.5 text-sm text-blue-600 hover:bg-blue-50">
             단어시험 만들기 →
           </a>
         </div>
@@ -551,14 +551,14 @@ export default function VocabularyPage() {
             <span className="flex items-center gap-2 text-green-700">
               ✅ {checkTest.title} ({checkTest.count}문항) 저장
               <a
-                href={`/exams/${checkTest.id}/print?exam_id=${checkTest.id}&title=${encodeURIComponent(checkTest.title)}&date=`}
+                href={`/tests/${checkTest.id}/print?exam_id=${checkTest.id}&title=${encodeURIComponent(checkTest.title)}&date=`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
               >
                 인쇄 화면
               </a>
-              <a href={`/exams/${checkTest.id}`} className="underline">시험 열기</a>
+              <a href={`/tests/${checkTest.id}`} className="underline">시험 열기</a>
             </span>
           )}
           {checkTestError && <span className="text-red-600">{checkTestError}</span>}

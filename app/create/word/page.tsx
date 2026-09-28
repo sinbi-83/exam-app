@@ -38,7 +38,7 @@ export default function VocabTestPage() {
   }
 
   function openPrint() {
-    const url = `/vocab-test/print?title=${encodeURIComponent(title || '단어 테스트')}&type=${encodeURIComponent(testType)}&data=${encodeURIComponent(JSON.stringify(words))}`
+    const url = `/create/word/print?title=${encodeURIComponent(title || '단어 테스트')}&type=${encodeURIComponent(testType)}&data=${encodeURIComponent(JSON.stringify(words))}`
     const a = document.createElement('a')
     a.href = url
     a.target = '_blank'

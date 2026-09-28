@@ -1,0 +1,21 @@
+{
+  "note": "5단계 메뉴 개편(2026-09-28): 옛 주소 → 새 주소. next.config.js redirects() 와 scripts/test-legacy-routes.ts 가 이 파일을 읽는다. 주소 뒤 ?값(exam_id, title, view …)은 그대로 넘어간다. 순서: 긴 주소(하위)부터.",
+  "redirects": [
+    { "source": "/ai-passage/print", "destination": "/materials/passages/ai/print" },
+    { "source": "/ai-passage", "destination": "/materials/passages/ai/new" },
+    { "source": "/passages", "destination": "/materials/passages/ai" },
+    { "source": "/external-passages/:id/print", "destination": "/materials/passages/external/:id/print" },
+    { "source": "/external-passages/:id", "destination": "/materials/passages/external/:id" },
+    { "source": "/external-passages", "destination": "/materials/passages/external" },
+    { "source": "/question-search/print", "destination": "/materials/questions/search/print" },
+    { "source": "/question-search", "destination": "/materials/questions/search" },
+    { "source": "/questions/:id", "destination": "/materials/questions/:id" },
+    { "source": "/questions", "destination": "/materials/questions" },
+    { "source": "/exams/:id/print", "destination": "/tests/:id/print" },
+    { "source": "/exams/:id", "destination": "/tests/:id" },
+    { "source": "/exams", "destination": "/tests" },
+    { "source": "/vocabulary", "destination": "/materials/vocabulary" },
+    { "source": "/vocab-test/print", "destination": "/create/word/print" },
+    { "source": "/vocab-test", "destination": "/create/word" }
+  ]
+}

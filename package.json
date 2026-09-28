@@ -20,6 +20,7 @@
     "test-word-test-draft": "node scripts/test-word-test-draft.ts",
     "test-supabase-paging": "node scripts/test-supabase-paging.ts",
     "test-copyright": "node scripts/test-copyright.ts",
+    "test-legacy-routes": "node scripts/test-legacy-routes.ts",
     "test-print-view": "node scripts/test-print-view.ts",
     "test-exam-type": "node scripts/test-exam-type.ts",
     "test-official-vocabulary": "node scripts/test-official-vocabulary.ts",
