@@ -1,9 +1,9 @@
-// 3단계 보고서 만들기 (읽기만 한다. DB 값을 바꾸지 않는다. AI 호출 없음)
-//   1) docs/stage3-reanchor-proposal.md / .csv — 기존 단어 난이도 재조정 제안표
-//   2) docs/stage3-pool-status.md — 학년 × 레벨별 쓸 수 있는 단어 수 / 부족분, 공식 기준표 대조
+// 단어 수 현황 보고서 (읽기만 한다. DB 값을 바꾸지 않는다. AI 호출 없음)
+//   docs/stage3-pool-status.md — 학년 × 레벨별 쓸 수 있는 단어 수 / 부족분, 공식 기준표 대조 (현재 DB 값 기준)
+//   --proposal: 재조정 제안표(docs/stage3-reanchor-proposal.md / .csv)도 만든다 — 재조정 적용 "전"에만 의미가 있다
 // 공식 기준표는 CSV 원본(data/vocabulary/…)으로 대조한다 (DB 기준표와 같은 파일).
 //
-// 실행: node scripts/stage3-report.ts
+// 실행: node scripts/stage3-report.ts [--proposal]
 
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
@@ -18,11 +18,12 @@ import {
   type OfficialTier,
 } from '../lib/officialVocabulary.ts'
 import { normalizeExpressionKey } from '../lib/vocabulary.ts'
-import { countableSources, generalTestCandidates, SEED_SOURCE_REFS } from '../lib/vocabularyCalibration.ts'
-import { proposeReanchor, type ReanchorGroup } from '../lib/vocabularyReanchor.ts'
+import { generalTestCandidates } from '../lib/vocabularyCalibration.ts'
+import { proposeReanchor, reanchorGroupOf, type ReanchorGroup } from '../lib/vocabularyReanchor.ts'
 import { isEligible, type WordTestEntry } from '../lib/wordTest.ts'
 import { anchorLabels, DIFFICULTY_ANCHORS, gradesWithBands, findDifficultyBand, VOCABULARY_GRADES } from '../config/vocabularyLevels.ts'
 
+const PROPOSAL = process.argv.includes('--proposal')
 const TARGET = 40 // 4단계 목표: 학년·레벨마다 40개 이상
 const LEVELS = ['school', 'academy', 'advanced', 'prestudy'] as const
 const LEVEL_NAMES: Record<(typeof LEVELS)[number], string> = { school: '학교형', academy: '일반학원형', advanced: '상위학원형', prestudy: '선행형' }
@@ -44,12 +45,7 @@ function loadEnv(): Record<string, string> {
   return env
 }
 
-function groupOf(e: Row): ReanchorGroup {
-  const refs = countableSources(e.vocabulary_sources).map((s) => s.source_ref)
-  if (refs.includes(SEED_SOURCE_REFS.floor)) return 'floor'
-  if (refs.includes(SEED_SOURCE_REFS.ceiling)) return 'ceiling'
-  return 'middle'
-}
+const groupOf = (e: Row): ReanchorGroup => reanchorGroupOf(e.vocabulary_sources)
 const GROUP_NAMES: Record<ReanchorGroup, string> = { floor: '하한 기준점', ceiling: '상한 기준점', middle: '중1 기초 단어' }
 
 async function main() {
@@ -110,28 +106,39 @@ async function main() {
     const q = (s: string) => `"${s.replace(/"/g, '""')}"`
     csv.push([i + 1, q(p.e.expression), p.e.pos ?? '', q(p.e.meaning_ko), GROUP_NAMES[p.group], tierName, p.e.base_difficulty, p.proposed, anchor, q(p.reason)].join(','))
   })
-  writeFileSync(resolve(process.cwd(), 'docs/stage3-reanchor-proposal.md'), md.join('\n') + '\n')
-  writeFileSync(resolve(process.cwd(), 'docs/stage3-reanchor-proposal.csv'), '﻿' + csv.join('\n') + '\n')
+  if (PROPOSAL) {
+    writeFileSync(resolve(process.cwd(), 'docs/stage3-reanchor-proposal.md'), md.join('\n') + '\n')
+    writeFileSync(resolve(process.cwd(), 'docs/stage3-reanchor-proposal.csv'), '﻿' + csv.join('\n') + '\n')
+  }
 
   // ── 2) 단어 수 현황 ──
-  const pool = generalTestCandidates(entries.filter((e) => e.status === 'approved'))
-  const withProposed = pool.map((e) => ({ ...e, base_difficulty: proposedById.get(e.id) ?? e.base_difficulty }))
+  // 사용 중 단어 (지금 시험에 나오는 것) / 확인 필요까지 모두 '사용하기' 했다고 가정한 것
+  const approvedPool = generalTestCandidates(entries.filter((e) => e.status === 'approved'))
+  const pool = PROPOSAL ? approvedPool.map((e) => ({ ...e, base_difficulty: proposedById.get(e.id) ?? e.base_difficulty })) : approvedPool
+  const pendingCount = entries.filter((e) => e.status === 'pending').length
+  const ifApproved = generalTestCandidates(entries.filter((e) => e.status === 'approved' || e.status === 'pending')).map((e) => ({
+    ...e,
+    status: 'approved' as const,
+    base_difficulty: PROPOSAL ? proposedById.get(e.id) ?? e.base_difficulty : e.base_difficulty,
+  }))
+  const withProposed = ifApproved
   const count = (list: WordTestEntry[], grade: (typeof VOCABULARY_GRADES)[number], level: (typeof LEVELS)[number], dir: 'en_ko' | 'ko_en') => {
     const band = findDifficultyBand(grade, level, dir)
     return band ? list.filter((e) => isEligible(e, dir, band)).length : null
   }
 
   const out: string[] = [
-    '# 3단계: 학년 × 레벨별 단어 수 현황',
+    '# 학년 × 레벨별 단어 수 현황',
     '',
     `- 만든 날: ${new Date().toISOString().slice(0, 10)} · 읽기 전용`,
     `- "쓸 수 있는 단어" = 사용 중 + 난이도 기준점 전용 단어 제외 + 그 학년·레벨 범위 안. 일반 시험 후보 ${pool.length}개 (사용 중 ${entries.filter((e) => e.status === 'approved').length}개 중).`,
-    `- 목표: 학년·레벨마다 ${TARGET}개 이상 (4단계 기대값). 부족분 = ${TARGET} − 현재.`,
-    '- **현재 값**은 예전 중1 기준 난이도 그대로, **제안 적용 시**는 재조정 제안표 값으로 센 것.',
+    `- "확인 필요 승인 시" = 확인 필요 ${pendingCount}개를 모두 '사용하기' 했다고 가정한 수 (일반 시험 후보 ${ifApproved.length}개).`,
+    `- 목표: 학년·레벨마다 ${TARGET}개 이상 (4단계 기대값). 부족분은 "확인 필요 승인 시" 영→한 기준.`,
+    PROPOSAL ? '- 난이도는 재조정 **제안값**으로 센 것.' : '- 난이도는 **현재 DB 값**으로 센 것.',
     '',
     '## 1. 학년 × 레벨 (영→한 / 한→영)',
     '',
-    '| 학년 | 레벨 | 범위 | 현재 값 영→한 | 현재 값 한→영 | 제안 적용 시 영→한 | 제안 적용 시 한→영 | 부족분(제안, 영→한) |',
+    '| 학년 | 레벨 | 범위 | 사용 중 영→한 | 사용 중 한→영 | 확인 필요 승인 시 영→한 | 확인 필요 승인 시 한→영 | 부족분 |',
     '|---|---|---|---|---|---|---|---|',
   ]
   for (const g of VOCABULARY_GRADES) {
@@ -149,7 +156,7 @@ async function main() {
     }
   }
 
-  // 초5 / 중3 자세히: 제안 적용 시 기준점별 분포 + 공식 기준표에서 채울 수 있는 후보 수
+  // 초5 / 중3 자세히: 확인 필요 승인 시 레벨별 수 + 공식 기준표에서 채울 수 있는 후보 수
   // 기준표 한 줄(표제어)이 단어은행에 있는가: 표제어·다른 철자가 있으면 "있음", 괄호 안 파생어만 있으면 "파생어만 있음"
   const bankKeys = new Set(entries.map((e) => normalizeExpressionKey(e.expression)))
   const missingByTier: Record<OfficialTier, number> = { elementary: 0, common: 0, elective: 0 }
@@ -163,7 +170,7 @@ async function main() {
     else missingByTier[r.tier_code]++
   }
 
-  out.push('', '## 2. 초5 · 중3 자세히 (제안 적용 시)', '')
+  out.push('', '## 2. 초5 · 중3 자세히 (확인 필요 승인 시)', '')
   for (const g of ['초5', '중3'] as const) {
     out.push(`### ${g}`, '')
     out.push('| 레벨 | 범위 | 쓸 수 있는 단어 (영→한) | 단어 예 | 부족분 |', '|---|---|---|---|---|')
@@ -183,7 +190,7 @@ async function main() {
   )
 
   // 기준점별 분포
-  out.push('## 3. 새 자 기준점별 단어 수 (일반 시험 후보, 제안 적용 시 / 겹치는 구간은 모두 셈)', '', '| 기준점 | 범위 | 단어 수 |', '|---|---|---|')
+  out.push('## 3. 새 자 기준점별 단어 수 (일반 시험 후보, 확인 필요 승인 시 / 겹치는 구간은 모두 셈)', '', '| 기준점 | 범위 | 단어 수 |', '|---|---|---|')
   for (const a of DIFFICULTY_ANCHORS) {
     out.push(`| ${a.label} | ${a.min}~${a.max} | ${withProposed.filter((e) => e.base_difficulty !== null && e.base_difficulty >= a.min && e.base_difficulty <= a.max).length} |`)
   }

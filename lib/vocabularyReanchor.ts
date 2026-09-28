@@ -1,12 +1,21 @@
 // 기존 단어 난이도 → 새 절대 난이도 자(1~100)에 맞춘 "제안값" 계산 (3단계).
 // DB 값을 바꾸지 않는다. 제안표를 만들 때만 쓰고, 적용은 향미 선생님 확인 후 따로 한다.
 // AI 호출 없음. 규칙은 아래 주석이 전부다 (기계적 초안 → 선생님 판단이 우선).
-// 이 파일은 다른 모듈을 런타임 import 하지 않는다.
+// 이 파일은 lib 안의 순수 함수만 import 한다 (앱, scripts/, 테스트에서 그대로 쓰기 위해).
 
 import type { OfficialMatch, OfficialTier } from './officialVocabulary.ts'
+import { countableSources, SEED_SOURCE_REFS } from './vocabularyCalibration.ts'
 
 // 단어가 어떤 묶음으로 들어왔는지 (출처 source_ref 로 판단)
 export type ReanchorGroup = 'floor' | 'ceiling' | 'middle'
+
+// 출처로 묶음 판단: 하한/상한 기준점 파일에서 왔으면 그 묶음, 아니면 중1 기초 단어
+export function reanchorGroupOf(sources: { source_ref: string }[] | undefined): ReanchorGroup {
+  const refs = countableSources(sources).map((s) => s.source_ref)
+  if (refs.includes(SEED_SOURCE_REFS.floor)) return 'floor'
+  if (refs.includes(SEED_SOURCE_REFS.ceiling)) return 'ceiling'
+  return 'middle'
+}
 
 export interface ReanchorInput {
   current: number // 지금 base_difficulty (예전 중1 기준으로 매긴 값)
