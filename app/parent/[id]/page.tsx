@@ -72,7 +72,7 @@ export default function ParentReportPage() {
         <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white p-8 text-center">
           <h1 className="mb-2 text-lg font-semibold text-gray-800">성적 조회</h1>
           <p className="mb-6 text-sm text-gray-500">
-            학원에서 받으신 PIN 번호 4자리를 입력해주세요.
+            보스턴S영어에서 받으신 PIN 번호 4자리를 입력해주세요.
           </p>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input

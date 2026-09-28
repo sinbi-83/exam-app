@@ -7,6 +7,8 @@ import { useState } from 'react'
 import { POS_LABELS_KO, studySheetRows, studySheetTitle, type StudySheetRow } from '@/lib/wordTest'
 import { includesAnswers, includesQuestions, printFileName, type PrintView } from '@/lib/printView'
 import PrintViewToggle from './PrintViewToggle'
+import { copyrightNotice } from '@/config/copyright'
+import { PRINT_PAGE_MIN_HEIGHT, printPageCss } from '@/lib/printCopyright'
 
 interface WordQuestion {
   id: string
@@ -60,7 +62,7 @@ export default function WordTestPrint({
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
         * { font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; }
-        @page { size: A4; margin: 0; }
+        ${printPageCss(copyrightNotice('exam'))}
         @media print {
           body { margin: 0; }
           .no-print { display: none !important; }
@@ -96,7 +98,7 @@ export default function WordTestPrint({
       ) : (
       <div className="print-area">
         {includesQuestions(view) && (
-        <div className="page mx-auto bg-white shadow-lg" style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}>
+        <div className="page mx-auto bg-white shadow-lg" style={{ width: '210mm', minHeight: PRINT_PAGE_MIN_HEIGHT, padding: '14mm 16mm 12mm' }}>
           {/* 헤더 */}
           <div className="mb-5 border-b-2 border-gray-800 pb-3">
             <p className="text-xs text-gray-500">보스턴S영어</p>
@@ -145,7 +147,7 @@ export default function WordTestPrint({
 
         {/* 정답: 교사용(문제 뒤 새 장) / 답안지만. 학생용에서는 그리지 않는다 */}
         {includesAnswers(view) && (
-          <div className={`${includesQuestions(view) ? 'answer-page mt-6' : ''} page mx-auto bg-white shadow-lg`} style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}>
+          <div className={`${includesQuestions(view) ? 'answer-page mt-6' : ''} page mx-auto bg-white shadow-lg`} style={{ width: '210mm', minHeight: PRINT_PAGE_MIN_HEIGHT, padding: '14mm 16mm 12mm' }}>
             <h2 className="mb-4 border-b-2 border-gray-800 pb-2 text-lg font-bold text-gray-900">{title} — 정답 (선생님용)</h2>
             <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-sm">
               {numbered.map(({ q, num }) => (
@@ -176,7 +178,7 @@ function StudySheet({ title, date, rows }: { title: string; date: string; rows: 
 
   return (
     <div className="print-area">
-      <div className="page mx-auto bg-white shadow-lg" style={{ width: '210mm', minHeight: '297mm', padding: '12mm 14mm 10mm' }}>
+      <div className="page mx-auto bg-white shadow-lg" style={{ width: '210mm', minHeight: PRINT_PAGE_MIN_HEIGHT, padding: '12mm 14mm 10mm' }}>
         {/* 헤더 */}
         <div className="mb-3 border-b-2 border-gray-800 pb-2">
           <p className="text-xs text-gray-500">보스턴S영어</p>

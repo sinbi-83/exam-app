@@ -59,7 +59,7 @@ export default function SettingsPage() {
         setAcademyMessage({ type: 'error', text: data.error ?? '저장에 실패했습니다.' })
         return
       }
-      setAcademyMessage({ type: 'success', text: '학원 이름이 저장되었습니다.' })
+      setAcademyMessage({ type: 'success', text: '교습소 이름이 저장되었습니다.' })
     } catch {
       setAcademyMessage({ type: 'error', text: '서버와 통신 중 문제가 발생했어요.' })
     } finally {
@@ -148,9 +148,9 @@ export default function SettingsPage() {
         </form>
       </div>
 
-      {/* 학원 이름 */}
+      {/* 교습소 이름 (교습소는 "학원" 명칭을 쓸 수 없다) */}
       <div className="rounded-lg border border-gray-200 bg-white p-6">
-        <h2 className="mb-4 text-sm font-medium text-gray-700">학원 이름</h2>
+        <h2 className="mb-4 text-sm font-medium text-gray-700">교습소 이름</h2>
         <form onSubmit={handleSaveAcademyName} className="flex items-center gap-2">
           <input
             type="text"

@@ -1,5 +1,5 @@
 -- 이 파일 전체를 Supabase 웹사이트 > SQL Editor 에 붙여넣고 실행(Run)하면 됩니다.
--- 학원 이름 + 로고/서명 이미지를 파일시스템(public/brand) 대신 DB + Storage로 옮긴다.
+-- 교습소 이름 + 로고/서명 이미지를 파일시스템(public/brand) 대신 DB + Storage로 옮긴다.
 
 create table if not exists academy_settings (
   user_id uuid references auth.users(id) on delete cascade primary key,

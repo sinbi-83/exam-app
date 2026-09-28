@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import MobileNav from "./components/MobileNav";
 import SidebarNav from "./components/SidebarNav";
 import ScheduleAlertBell from "./components/ScheduleAlertBell";
+import AppFooter from "./components/AppFooter";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "보스턴S영어",
-  description: "보스턴S영어 학원 관리 시스템",
+  description: "보스턴S영어 관리 시스템",
   manifest: "/manifest.json",
   appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "보스턴S영어" },
   other: { "mobile-web-app-capable": "yes" },
@@ -34,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
               <div>
                 <p className="text-white font-semibold text-sm leading-tight">보스턴S영어</p>
-                <p className="text-[11px]" style={{ color: 'var(--sidebar-text)' }}>학원 관리 시스템</p>
+                <p className="text-[11px]" style={{ color: 'var(--sidebar-text)' }}>관리 시스템</p>
               </div>
             </div>
 
@@ -68,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {/* 데스크탑: 빈 공간 */}
                 <div className="hidden md:flex items-center gap-2">
                   <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-100">
-                    ✨ 학원 관리 시스템
+                    ✨ 보스턴S영어 관리 시스템
                   </span>
                 </div>
                 {/* 우측: 알림 벨 + 로그아웃 (로그아웃은 데스크탑에서는 사이드바에 있어서 숨김) */}
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <main className="flex-1 px-5 py-6 md:px-8 md:py-8">
               {children}
             </main>
+            <AppFooter />
           </div>
         </div>
 

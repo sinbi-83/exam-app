@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { getDifficultyLabel, getDifficultyBadgeClass, computeSetStats } from '@/lib/tagDisplay'
+import { CopyrightBelow, CopyrightInline } from '@/app/components/CopyrightNotice'
 
 interface QuestionLike {
   type: string
@@ -106,7 +107,11 @@ export default function QuestionsPage() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="mb-4 text-lg font-bold">문제은행</h1>
+      {/* 이 화면은 폭이 좁아 필터 줄 오른쪽(정렬 선택)에 자리가 없다 → 제목 줄 오른쪽 빈 공간에 둔다 */}
+      <div className="mb-4 flex items-baseline gap-3">
+        <h1 className="text-lg font-bold">문제은행</h1>
+        <CopyrightInline target="questions" />
+      </div>
 
       <div className="mb-5 space-y-3 rounded-lg border border-gray-200 bg-white p-4">
         <input
@@ -221,6 +226,7 @@ export default function QuestionsPage() {
           })}
         </div>
       )}
+      <CopyrightBelow target="questions" />
     </div>
   )
 }

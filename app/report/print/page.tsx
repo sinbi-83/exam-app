@@ -2,6 +2,7 @@
 
 import { useSearchParams } from 'next/navigation'
 import { Suspense, useEffect, useState } from 'react'
+import { copyrightNotice } from '@/config/copyright'
 
 async function downloadPdf(filename: string) {
   const html2pdf = (await import('html2pdf.js')).default
@@ -635,6 +636,10 @@ function ReportContent() {
           <span style={{ fontSize: 8.5, color: SUBTEXT }}>
             발행일: {today} &nbsp;·&nbsp; <strong style={{ color: DARKBLUE }}>기밀 문서</strong>
           </span>
+        </div>
+        {/* 카피라이트 (config/copyright.ts). 보고서는 한 장짜리라 쪽 맨 아래에 한 줄로 둔다 */}
+        <div style={{ padding: '0 24px 5px', background: CREAM, textAlign: 'center', fontSize: 7, color: '#9ca3af' }}>
+          {copyrightNotice('report')}
         </div>
 
       </div>{/* end page */}

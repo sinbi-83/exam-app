@@ -1,7 +1,7 @@
 {
   "name": "보스턴S영어",
   "short_name": "보스턴S영어",
-  "description": "보스턴S영어 학원 관리 시스템",
+  "description": "보스턴S영어 관리 시스템",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f9fafb",

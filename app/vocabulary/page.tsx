@@ -16,6 +16,7 @@ import {
   type VocabularyViewState,
 } from '@/lib/vocabulary'
 import { exclusionConfirmText } from '@/lib/vocabularyExclusion'
+import { CopyrightBelow, CopyrightInline } from '@/app/components/CopyrightNotice'
 import {
   anchorLabels,
   GRADE_RANGE_POSITION_LABELS,
@@ -534,6 +535,7 @@ export default function VocabularyPage() {
             <input value={customMax} onChange={(e) => setCustomMax(e.target.value)} placeholder="100" inputMode="numeric" className="w-14 rounded border border-gray-300 px-2 py-1" />
           </span>
         )}
+        <CopyrightInline target="vocabulary" />
       </div>
 
       {/* 검수용 시험: 난이도 필터를 골랐을 때만 */}
@@ -902,6 +904,7 @@ export default function VocabularyPage() {
           )}
         </div>
       </div>
+      <CopyrightBelow target="vocabulary" />
     </div>
   )
 }

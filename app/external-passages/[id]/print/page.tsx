@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { PassageRecord } from '@/types/passageBank'
 import { TaggedBody, stripTagMarkup } from '@/lib/passageTagRenderer'
+import { copyrightNotice } from '@/config/copyright'
+import { PRINT_PAGE_MIN_HEIGHT, printPageCss, savePdfWithFooter } from '@/lib/printCopyright'
 
 async function downloadPdf(filename: string) {
-  const html2pdf = (await import('html2pdf.js')).default
   const el = document.querySelector('.print-area') as HTMLElement
   if (!el) return
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,7 +19,8 @@ async function downloadPdf(filename: string) {
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     pagebreak: { mode: ['avoid-all', 'css', 'legacy'], before: '.answer-section', avoid: '.question-block' },
   }
-  html2pdf().set(options).from(el).save()
+  // 모든 쪽 아래에 카피라이트 문구 (lib/printCopyright.ts)
+  await savePdfWithFooter(el, options, copyrightNotice('exam'))
 }
 
 const QTYPE_LABEL: Record<string, string> = {
@@ -61,7 +63,7 @@ export default function ExternalPassagePrintPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
         * { font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; }
-        @page { size: A4; margin: 0; }
+        ${printPageCss(copyrightNotice('exam'))}
         @media print {
           body { margin: 0; }
           .no-print { display: none !important; }
@@ -101,7 +103,7 @@ export default function ExternalPassagePrintPage() {
 
       <div
         className="print-area page mx-auto bg-white shadow-lg"
-        style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}
+        style={{ width: '210mm', minHeight: PRINT_PAGE_MIN_HEIGHT, padding: '14mm 16mm 12mm' }}
       >
         {/* 헤더 */}
         <div className="mb-6 border-b-2 border-gray-800 pb-3">

@@ -9,7 +9,7 @@ type MenuGroup = { title: string; items: MenuItem[] }
 
 const menuGroups: MenuGroup[] = [
   {
-    title: "학원관리",
+    title: "운영관리",
     items: [
       { label: "설정", href: "/settings", icon: "⚙️" },
       { label: "API 사용량", href: "/api-usage", icon: "📊" },

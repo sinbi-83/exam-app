@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 import { EssayQuestion, PassageSentence } from '@/types/aiPassage'
+import { copyrightNotice } from '@/config/copyright'
+import { PRINT_MARGIN_WITH_BROWSER_DEFAULT, printPageCss, stampPdfFooter } from '@/lib/printCopyright'
 
 interface MultipleChoiceQuestion {
   targetText: string
@@ -282,6 +284,9 @@ export default function PrintPage() {
         pdf.addImage(pageCanvas.toDataURL('image/png'), 'PNG', 0, 0, pageWidthMm, pageHeightMm)
       }
 
+      // 모든 쪽 아래 여백(12mm)에 카피라이트 문구 (lib/printCopyright.ts)
+      stampPdfFooter(pdf, copyrightNotice('exam'))
+
       const modeLabel =
         data?.mode === 'answer' ? '정답지' : data?.mode === 'essay' ? '서술형시험지' : '시험지'
       pdf.save(`${data?.grade || ''}${modeLabel}.pdf`)
@@ -305,6 +310,8 @@ export default function PrintPage() {
 
   return (
     <div className="relative mx-auto max-w-2xl p-8 print-area">
+      {/* 인쇄: 모든 쪽 아래 여백에 카피라이트 문구 */}
+      <style>{printPageCss(copyrightNotice('exam'), PRINT_MARGIN_WITH_BROWSER_DEFAULT)}</style>
       {/* 배경 워터마크 로고: 아주 연하게, 화면과 인쇄물 모두에 표시됨 (PDF 다운로드에서는 제외) */}
       <img
         src="/boston-logo-watermark.png"

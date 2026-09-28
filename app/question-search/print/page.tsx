@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { copyrightNotice } from '@/config/copyright'
+import { PRINT_MARGIN_WITH_BROWSER_DEFAULT, printPageCss } from '@/lib/printCopyright'
 
 interface EssayMeta {
   wordBank?: string[] | null
@@ -95,6 +97,8 @@ export default function SearchPrintPage() {
   return (
     // print-area: 전체 인쇄 규칙(globals.css)이 print-area 밖을 모두 숨기므로, 이 클래스가 없으면 빈 종이가 나온다 (2026-09-28 추가)
     <div className="print-area mx-auto max-w-2xl p-8">
+      {/* 인쇄: 모든 쪽 아래 여백에 카피라이트 문구 */}
+      <style>{printPageCss(copyrightNotice('exam'), PRINT_MARGIN_WITH_BROWSER_DEFAULT)}</style>
       <div className="mb-4 flex justify-end print:hidden">
         <button
           onClick={() => window.print()}
