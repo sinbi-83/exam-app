@@ -8,3 +8,7 @@ node_modules/
 .DS_Store
 supabase/.temp/
 .claude/settings.local.json
+
+# 1단계 데이터 백업 (DB 값이 들어 있음) / 빌드 캐시
+backups/
+tsconfig.tsbuildinfo
