@@ -3,7 +3,17 @@
 import { useSearchParams } from 'next/navigation'
 import { Suspense, useEffect, useState } from 'react'
 import { isWordTestExam } from '@/lib/wordTest'
+import {
+  formatAnswer,
+  formatExplanation,
+  includesAnswers,
+  includesQuestions,
+  parsePrintView,
+  printFileName,
+  type PrintView,
+} from '@/lib/printView'
 import WordTestPrint from './WordTestPrint'
+import PrintViewToggle from './PrintViewToggle'
 
 async function downloadPdf(filename: string) {
   const html2pdf = (await import('html2pdf.js')).default
@@ -16,7 +26,8 @@ async function downloadPdf(filename: string) {
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2, useCORS: true },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+    // 교사용: 정답·해설 장(.answer-page)은 항상 새 장에서 시작한다
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'], before: '.answer-page' },
   }
   html2pdf().set(options).from(el).save()
 }
@@ -139,6 +150,17 @@ function PrintContent() {
 
   const [questions, setQuestions] = useState<ExamQuestion[]>([])
   const [loading, setLoading] = useState(true)
+  // 출력 방식: 주소에 ?view= 가 없으면 학생용(문제만)
+  const [view, setView] = useState<PrintView>(parsePrintView(params.get('view')))
+
+  // 고른 출력 방식을 주소에도 남긴다 (새로고침해도 유지). 다른 주소값(exam_id, title, date, sheet)은 그대로.
+  function changeView(next: PrintView) {
+    setView(next)
+    const url = new URL(window.location.href)
+    if (next === 'student') url.searchParams.delete('view')
+    else url.searchParams.set('view', next)
+    window.history.replaceState(null, '', url.toString())
+  }
 
   useEffect(() => {
     if (!examId) { setLoading(false); return }
@@ -175,6 +197,8 @@ function PrintContent() {
         date={date}
         questions={questions}
         initialSheet={params.get('sheet') === 'study' ? 'study' : 'test'}
+        view={view}
+        onViewChange={changeView}
         onPdf={(name) => downloadPdf(name)}
       />
     )
@@ -191,10 +215,12 @@ function PrintContent() {
           .no-print { display: none !important; }
           .page { box-shadow: none !important; }
           .question-block { break-inside: avoid; page-break-inside: avoid; }
+          .answer-page { break-before: page; page-break-before: always; }
         }
       `}</style>
 
-      <div className="no-print mb-4 flex justify-center gap-3 pt-6">
+      <div className="no-print mb-4 flex flex-wrap items-start justify-center gap-3 pt-6">
+        <PrintViewToggle view={view} onChange={changeView} />
         <button
           onClick={() => window.print()}
           className="rounded bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700"
@@ -202,15 +228,17 @@ function PrintContent() {
           🖨️ 인쇄
         </button>
         <button
-          onClick={() => downloadPdf(title)}
+          onClick={() => downloadPdf(printFileName(title, view))}
           className="rounded bg-red-600 px-6 py-2 text-sm font-medium text-white hover:bg-red-700"
         >
           📄 PDF 저장
         </button>
       </div>
 
+      <div className="print-area">
+      {includesQuestions(view) && (
       <div
-        className="print-area page mx-auto bg-white shadow-lg"
+        className="page mx-auto bg-white shadow-lg"
         style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}
       >
         {/* 헤더 */}
@@ -373,25 +401,48 @@ function PrintContent() {
           })()}
         </div>
 
-        {/* 정답란 */}
-        <div className="mt-8 border-t border-dashed border-gray-300 pt-4">
-          <p className="mb-2 text-xs font-semibold text-gray-400">— 정답 (선생님용 / 출력 후 제거) —</p>
-          <div className="grid grid-cols-5 gap-2">
-            {questions.map((eq, idx) => (
-              <div key={eq.id} className="text-xs text-gray-600">
-                <span className="font-medium">{idx + 1}.</span>{' '}
-                {eq.question_data.answer ?? '-'}
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* 하단 */}
         <div className="mt-6 border-t border-gray-200 pt-3 text-[10px] text-gray-400 text-center">
           보스턴S영어 | 담당교사: 서향미 선생님
         </div>
       </div>
+      )}
+
+      {/* 정답·해설: 교사용(문제 뒤 새 장) / 답안지만. 학생용에서는 그리지 않는다 */}
+      {includesAnswers(view) && <AnswerPage title={title} questions={questions} newPage={includesQuestions(view)} />}
+      </div>
     </>
+  )
+}
+
+// newPage: 교사용처럼 문제 뒤에 붙을 때만 새 장 표시(.answer-page). 답안지만일 때 붙이면 PDF 앞에 빈 장이 생긴다.
+function AnswerPage({ title, questions, newPage }: { title: string; questions: ExamQuestion[]; newPage: boolean }) {
+  return (
+    <div
+      className={`${newPage ? 'answer-page mt-6' : ''} page mx-auto bg-white shadow-lg`}
+      style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}
+    >
+      <div className="mb-4 border-b-2 border-gray-800 pb-2">
+        <p className="text-xs text-gray-500">보스턴S영어 · 교사용</p>
+        <h2 className="text-lg font-bold text-gray-900">{title} — 정답 및 해설</h2>
+      </div>
+      <div className="space-y-2">
+        {questions.map((eq, idx) => {
+          const q = eq.question_data
+          const explanation = formatExplanation(q)
+          return (
+            <div key={eq.id} className="question-block text-sm" style={{ breakInside: 'avoid', pageBreakInside: 'avoid' }}>
+              <p className="text-gray-900">
+                <span className="mr-1 font-semibold">{idx + 1}.</span>
+                <span className="mr-1 text-[10px] text-gray-400">[{TYPE_LABELS[q.type] ?? q.type}]</span>
+                {formatAnswer(q)}
+              </p>
+              {explanation && <p className="ml-5 mt-0.5 whitespace-pre-wrap text-xs text-gray-600">{explanation}</p>}
+            </div>
+          )
+        })}
+      </div>
+    </div>
   )
 }
 

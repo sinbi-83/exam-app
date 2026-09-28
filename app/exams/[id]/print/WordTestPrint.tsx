@@ -5,6 +5,8 @@
 
 import { useState } from 'react'
 import { POS_LABELS_KO, studySheetRows, studySheetTitle, type StudySheetRow } from '@/lib/wordTest'
+import { includesAnswers, includesQuestions, printFileName, type PrintView } from '@/lib/printView'
+import PrintViewToggle from './PrintViewToggle'
 
 interface WordQuestion {
   id: string
@@ -33,16 +35,19 @@ export default function WordTestPrint({
   date,
   questions,
   initialSheet = 'test',
+  view,
+  onViewChange,
   onPdf,
 }: {
   title: string
   date: string
   questions: WordQuestion[]
   initialSheet?: WordSheet
+  view: PrintView // 시험지의 출력 방식 (학생용 / 교사용 / 답안지만). 학습지에는 적용하지 않는다
+  onViewChange: (v: PrintView) => void
   onPdf: (filename: string) => void
 }) {
   const [sheet, setSheet] = useState<WordSheet>(initialSheet)
-  const [showAnswers, setShowAnswers] = useState(false)
   const totalPoints = questions.reduce((s, q) => s + q.points, 0)
   const numbered = questions.map((q, i) => ({ q, num: i + 1 }))
   const sections = SECTIONS.map((s) => ({
@@ -65,7 +70,7 @@ export default function WordTestPrint({
         }
       `}</style>
 
-      <div className="no-print mb-4 flex flex-wrap items-center justify-center gap-3 pt-6">
+      <div className="no-print mb-4 flex flex-wrap items-start justify-center gap-3 pt-6">
         <div className="flex overflow-hidden rounded border border-gray-300 text-sm">
           {([['test', '📝 시험지'], ['study', '📘 학습지']] as const).map(([k, label]) => (
             <button
@@ -80,21 +85,17 @@ export default function WordTestPrint({
         <button onClick={() => window.print()} className="rounded bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700">
           🖨️ 인쇄
         </button>
-        <button onClick={() => onPdf(sheet === 'study' ? studySheetTitle(title) : title)} className="rounded bg-red-600 px-6 py-2 text-sm font-medium text-white hover:bg-red-700">
+        {sheet === 'test' && <PrintViewToggle view={view} onChange={onViewChange} />}
+        <button onClick={() => onPdf(sheet === 'study' ? studySheetTitle(title) : printFileName(title, view))} className="rounded bg-red-600 px-6 py-2 text-sm font-medium text-white hover:bg-red-700">
           📄 PDF 저장
         </button>
-        {sheet === 'test' && (
-          <label className="flex items-center gap-1 text-sm text-gray-600">
-            <input type="checkbox" checked={showAnswers} onChange={(e) => setShowAnswers(e.target.checked)} />
-            정답지 포함 (다음 장)
-          </label>
-        )}
       </div>
 
       {sheet === 'study' ? (
         <StudySheet title={studySheetTitle(title)} date={date} rows={studySheetRows(questions)} />
       ) : (
       <div className="print-area">
+        {includesQuestions(view) && (
         <div className="page mx-auto bg-white shadow-lg" style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}>
           {/* 헤더 */}
           <div className="mb-5 border-b-2 border-gray-800 pb-3">
@@ -140,9 +141,11 @@ export default function WordTestPrint({
             보스턴S영어 | 담당교사: 서향미 선생님
           </div>
         </div>
+        )}
 
-        {showAnswers && (
-          <div className="answer-page page mx-auto mt-6 bg-white shadow-lg" style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}>
+        {/* 정답: 교사용(문제 뒤 새 장) / 답안지만. 학생용에서는 그리지 않는다 */}
+        {includesAnswers(view) && (
+          <div className={`${includesQuestions(view) ? 'answer-page mt-6' : ''} page mx-auto bg-white shadow-lg`} style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}>
             <h2 className="mb-4 border-b-2 border-gray-800 pb-2 text-lg font-bold text-gray-900">{title} — 정답 (선생님용)</h2>
             <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-sm">
               {numbered.map(({ q, num }) => (
