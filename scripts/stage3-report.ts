@@ -215,7 +215,7 @@ async function main() {
   out.push('- 같은 철자의 다른 뜻(plan 명사/동사 등)은 단어은행에서 여러 줄이지만 기준표에서는 한 표제어로 센다.')
   writeFileSync(resolve(process.cwd(), 'docs/stage3-pool-status.md'), out.join('\n') + '\n')
 
-  console.log(`제안표 ${proposals.length}개, 일반 시험 후보 ${pool.length}개`)
+  console.log(`${PROPOSAL ? `제안표 ${proposals.length}개, ` : ''}일반 시험 후보 ${pool.length}개`)
   console.log('공식 기준표 있음/파생어만/없음:', presentByTier, derivativeOnlyByTier, missingByTier)
   console.log('단어은행 등급:', bankTier)
 }

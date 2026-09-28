@@ -4,7 +4,8 @@
 // 실행: npm run add-vocabulary-seed -- data/vocabulary/bostons-teacher-seed-v1.json [--dry-run]
 //
 // - 새 어휘 추가 + 새 출처 추가만 한다. 이미 같은 활성 어휘가 있으면 건너뛴다 (기존 항목은 바꾸지 않는다).
-// - 출처는 source_type='teacher' (BostonS teacher seed). 공식어휘(official)로 표시하지 않는다.
+// - 출처: 파일에 source 가 없으면 source_type='teacher', source_ref=seed_id (BostonS teacher seed).
+//   source.type='official' 이면 공식 기본어휘로 연결한다 (source_ref='kr-curriculum-2022' + 원본명·버전·등급).
 // - '확인 필요'(status='pending')로만 넣는다 (설계도 C-1). 승인 경로·교사 확인 시각은 비워 둔다
 //   → 향미 선생님이 /vocabulary 에서 '사용하기'를 눌러야 시험에 나온다.
 
@@ -47,7 +48,17 @@ async function main() {
     console.error('사용법: npm run add-vocabulary-seed -- <JSON 파일> [--dry-run]')
     process.exit(1)
   }
-  const seed: { seed_id: string; note: string; source_rationale?: string; entries: SeedEntry[] } = JSON.parse(readFileSync(resolve(process.cwd(), filePath), 'utf-8'))
+  const seed: {
+    seed_id: string
+    note?: string
+    source_rationale?: string
+    source?: { type: 'official'; ref: string; official_source_name: string; official_source_version: string; official_grade?: string }
+    entries: SeedEntry[]
+  } = JSON.parse(readFileSync(resolve(process.cwd(), filePath), 'utf-8'))
+  if (seed.source && (seed.source.type !== 'official' || !seed.source.ref || !seed.source.official_source_name || !seed.source.official_source_version)) {
+    console.error('source 는 type=official + ref + official_source_name + official_source_version 가 필요합니다.')
+    process.exit(1)
+  }
   if (!seed.seed_id || !Array.isArray(seed.entries)) {
     console.error('seed_id / entries 가 필요합니다.')
     process.exit(1)
@@ -121,8 +132,8 @@ async function main() {
     const { error: sourceError } = await supabase.from('vocabulary_sources').insert({
       user_id: userId,
       entry_id: entry.id,
-      source_type: 'teacher',
-      source_ref: seed.seed_id,
+      source_type: seed.source ? 'official' : 'teacher',
+      source_ref: seed.source ? seed.source.ref : seed.seed_id,
       surface_form: s.surface_form ?? null,
       source_sentence: null,
       context_meaning: null,
@@ -130,9 +141,9 @@ async function main() {
       // 파일마다 출처 성격을 남긴다 (예: BostonS calibration anchor). 없으면 기존 중1 seed 설명
       rationale: seed.source_rationale ?? '기능 검증용 BostonS teacher seed. 난이도는 중1 임시 기준(향미 선생님 검수 전).',
       created_by: 'claude',
-      official_source_name: null,
-      official_source_version: null,
-      official_grade: null,
+      official_source_name: seed.source?.official_source_name ?? null,
+      official_source_version: seed.source?.official_source_version ?? null,
+      official_grade: seed.source?.official_grade ?? null,
     })
     if (sourceError) {
       // 출처 없이 어휘만 남지 않게 되돌린다

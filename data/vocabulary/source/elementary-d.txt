@@ -1,0 +1,134 @@
+# 4단계 초등 권장 어휘 제작 원본 (계속). 형식은 elementary-a.txt 와 같다.
+swim|v|수영하다|헤엄치다|4|y||
+table|n|탁자|식탁;표|4|n||
+tail|n|꼬리||6|y||
+take|v|가져가다|잡다;타다;데려가다|8|n||
+talk|v|이야기하다|말하다|6|n||say, speak, tell 과 구분
+tall|adj|키가 큰|높은|4|y||
+tape|n|테이프||8|y||
+taste|v|맛보다|맛이 나다;맛|10|n||
+taxi|n|택시||4|y||
+teach|v|가르치다||6|y||
+team|n|팀|조|6|y||
+telephone|n|전화|전화기|6|n||phone 과 같은 말
+television|n|텔레비전|TV|6|y||
+tell|v|말하다|알려 주다|8|n||say, speak, talk 와 구분
+ten|num|10|열;십|2|y||
+tennis|n|테니스||6|y||
+tent|n|텐트|천막|8|y||
+test|n|시험|검사;테스트|6|n||
+textbook|n|교과서||10|y||
+-than|접속사·전치사 (비교 문법 요소)
+thank|v|감사하다|고마워하다|4|y||
+-that|지시어·접속사 (문법 요소)
+-the|관사 (문법 요소)
+there|adv|거기에|그곳에;저기에|6|n||
+-they|대명사 (문법 요소)
+thing|n|것|물건;일|6|n||
+think|v|생각하다||6|y||
+third|num|세 번째|셋째;3분의 1|10|n||
+thirst|n|갈증|목마름|18|y||파생어 thirsty 가 더 흔함
+thirteen|num|13|열셋;십삼|6|y||
+thirty|num|30|서른;삼십|6|y||
+-this|지시어 (문법 요소)
+three|num|3|셋;삼|1|y||
+ticket|n|표|티켓;입장권|8|n||
+tiger|n|호랑이||3|y||
+time|n|시간|때;~번|4|n||
+tire|v|피곤하게 하다|지치다;타이어|18|n||파생어 tired 가 더 흔함|
+-to|전치사 (문법 요소)
+today|n|오늘||3|y||
+together|adv|함께|같이|8|y||
+tomato|n|토마토||4|y||
+tomorrow|n|내일||5|y||
+tonight|n|오늘 밤||6|y||
+too|adv|너무|또한;역시|8|n||
+tooth|n|이|이빨;치아|6|n||
+top|n|꼭대기|맨 위;정상|10|n||
+touch|v|만지다|닿다|8|y||
+town|n|마을|읍;동네|8|n||village 와 구분
+toy|n|장난감||3|y||
+track|n|길|선로;트랙;경주로|18|n||
+train|n|기차|열차|4|y||동사 '훈련하다'도 있음
+travel|v|여행하다||10|y||
+tree|n|나무||2|y||
+trip|n|여행||8|n||travel 과 구분
+truck|n|트럭||4|y||
+true|adj|사실인|참인;진짜의|12|n||
+try|v|노력하다|시도하다;해 보다|10|n||
+turn|v|돌다|돌리다;차례|10|n||
+twelve|num|12|열둘;십이|4|y||
+twenty|num|20|스물;이십|4|y||
+twenty-first|num|스물한 번째|21번째;제21의|18|n||
+twenty-second|num|스물두 번째|22번째;제22의|18|n||
+twenty-third|num|스물세 번째|23번째;제23의|18|n||
+twice|adv|두 번|두 배로|12|y||
+two|num|2|둘;이|1|y||
+type|n|유형|종류;타입|16|n||kind 와 같은 뜻
+ugly|adj|못생긴|추한|10|y||
+umbrella|n|우산||4|y||
+uncle|n|삼촌|아저씨;외삼촌;이모부;고모부|6|n||
+under|prep|~ 아래에|~ 밑에|6|n||
+understand|v|이해하다|알다|10|n||
+up|adv|위로|위에|4|n||down 과 짝
+use|v|사용하다|쓰다;이용하다|6|n||
+vegetable|n|채소|야채|8|y||
+very|adv|매우|아주;정말|4|n||
+video|n|비디오|영상;동영상|6|n||
+violin|n|바이올린||6|y||
+visit|v|방문하다|찾아가다|8|y||
+voice|n|목소리|음성|10|y||
+wait|v|기다리다||6|y||
+wake|v|깨다|깨우다;일어나다|8|n||
+walk|v|걷다|산책하다|4|y||
+wall|n|벽|담|6|n||
+want|v|원하다|~하고 싶다|4|y||
+war|n|전쟁||10|y||
+warm|adj|따뜻한||6|y||
+wash|v|씻다|닦다;빨다|6|n||
+watch|v|보다|지켜보다;구경하다|6|n|동사: 보다|see, look 과 구분
+watch|n|손목시계|시계|8|n|명사: 손목시계|clock 과 구분
+watermelon|n|수박||6|y||
+way|n|길|방법;방식|10|n||
+-we|대명사 (문법 요소)
+wear|v|입다|쓰다;신다;착용하다|8|n||
+weather|n|날씨||6|y||
+website|n|웹사이트||12|y||
+wedding|n|결혼식||12|y||
+week|n|주|일주일|6|y||
+weekend|n|주말||6|y||
+weight|n|무게|체중|16|y||
+welcome|v|환영하다|어서 오세요|6|y||
+well|adv|잘|좋게;우물|8|n||
+west|n|서쪽|서|8|y||
+wet|adj|젖은|축축한|10|y||
+what|pron|무엇|무슨;어떤|3|n||
+when|adv|언제|~할 때|4|n||
+where|adv|어디에|어디;어디서|4|n||
+white|adj|흰|하얀;흰색|3|y||
+who|pron|누구|누가|4|n||
+why|adv|왜||4|y||
+wife|n|아내|부인|10|y||
+-will|조동사 (문법 요소)
+win|v|이기다|우승하다;얻다|8|y||
+wind|n|바람||6|y||
+window|n|창문|창|4|y||
+wine|n|포도주|와인|14|y||
+winter|n|겨울||3|y||
+wish|v|바라다|소원;원하다|10|n||hope, want 와 구분
+-with|전치사 (문법 요소)
+woman|n|여자|여성|3|n||
+wood|n|나무|목재;숲|10|n||tree 와 구분
+word|n|단어|말;낱말|6|n||
+work|v|일하다|작동하다;일|6|n||
+world|n|세계|세상|8|y||
+worry|v|걱정하다||10|y||
+write|v|쓰다|적다|4|n||
+wrong|adj|틀린|잘못된|8|n||
+year|n|해|년;연도;살|4|n||
+yellow|adj|노란|노란색의;노랑|3|y||
+-yes|대답말 (yeah, yep 포함)
+yesterday|n|어제||5|y||
+-you|대명사 (문법 요소)
+young|adj|어린|젊은|6|n||
+zoo|n|동물원||4|y||

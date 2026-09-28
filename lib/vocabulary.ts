@@ -97,7 +97,7 @@ export const VOCABULARY_APPROVAL_ORIGINS: readonly VocabularyApprovalOrigin[] = 
 
 export const VOCABULARY_APPROVAL_ORIGIN_LABELS: Record<VocabularyApprovalOrigin, string> = {
   individual: '교사 개별 승인',
-  batch: '스크립트 일괄 승인',
+  batch: '일괄 승인',
   legacy_review: '기존 검수 인정',
   owner_approval: '소유자 명시 승인',
 }
@@ -245,6 +245,33 @@ export function scriptEntryStateErrors(entry: Pick<VocabularyEntryInput, 'status
   if (entry.teacher_reviewed_at !== null) errors.push('스크립트는 교사 확인 시각을 채울 수 없습니다.')
   if (entry.deferred_at !== null) errors.push("스크립트는 '나중에 결정' 표시를 채울 수 없습니다.")
   return errors
+}
+
+// ── 일괄 사용하기 (교사가 '확인 필요' 목록에서 여러 개를 골라 누름) ──
+// '확인 필요'(나중에 결정 포함) + 난이도 있음 + 삭제 안 됨 → 사용하기. 나머지는 이유와 함께 건너뛴다.
+export type BulkSkipReason = 'not_found' | 'not_pending' | 'no_difficulty'
+
+export const BULK_SKIP_REASON_LABELS: Record<BulkSkipReason, string> = {
+  not_found: '찾을 수 없음',
+  not_pending: '확인 필요 상태가 아님',
+  no_difficulty: '난이도 없음',
+}
+
+export function planBulkApprove(
+  ids: string[],
+  rows: Pick<VocabularyEntryRecord, 'id' | 'status' | 'base_difficulty' | 'deleted_at'>[],
+): { approve: string[]; skipped: { id: string; reason: BulkSkipReason }[] } {
+  const byId = new Map(rows.map((r) => [r.id, r]))
+  const approve: string[] = []
+  const skipped: { id: string; reason: BulkSkipReason }[] = []
+  for (const id of [...new Set(ids)]) {
+    const r = byId.get(id)
+    if (!r || r.deleted_at !== null) skipped.push({ id, reason: 'not_found' })
+    else if (r.status !== 'pending') skipped.push({ id, reason: 'not_pending' })
+    else if (r.base_difficulty === null) skipped.push({ id, reason: 'no_difficulty' })
+    else approve.push(id)
+  }
+  return { approve, skipped }
 }
 
 // ('나중에 결정'은 상태 이동이 아니라 pending 안에서 보류 표시만 켠다 → 여기에 없음)

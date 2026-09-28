@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { VocabularyEntryRecord, VocabularyRejectReason, VocabularySourceRecord } from '@/types/vocabulary'
 import {
+  BULK_SKIP_REASON_LABELS,
+  type BulkSkipReason,
   undecidedCount,
   VOCABULARY_APPROVAL_ORIGIN_LABELS,
   VOCABULARY_REJECT_REASON_LABELS,
@@ -97,6 +99,10 @@ export default function VocabularyPage() {
   const [customMax, setCustomMax] = useState('')
   const [search, setSearch] = useState('')
   const [selectedId, setSelectedId] = useState<string | null>(null)
+  // 일괄 사용하기: '확인 필요'(나중에 결정 포함) 단어만 고를 수 있다
+  const [checked, setChecked] = useState<Set<string>>(new Set())
+  const [bulkSaving, setBulkSaving] = useState(false)
+  const [bulkMessage, setBulkMessage] = useState<{ ok: boolean; text: string } | null>(null)
   const [reviewMode, setReviewMode] = useState(false)
 
   // 상세 편집값
@@ -188,6 +194,9 @@ export default function VocabularyPage() {
   }, [entries, status, matchesGrade, review, range, search])
 
   const selected = entries.find((e) => e.id === selectedId) ?? null
+  // 지금 보이는 목록 중 '확인 필요'(나중에 결정 포함) — 일괄 사용하기 대상
+  const selectablePending = useMemo(() => filtered.filter((e) => e.status === 'pending'), [filtered])
+  const checkedPendingCount = useMemo(() => selectablePending.filter((e) => checked.has(e.id)).length, [selectablePending, checked])
 
   // 선택이 바뀌면 편집칸을 그 항목 값으로 채우고, 검수 메모를 불러온다
   useEffect(() => {
@@ -317,6 +326,38 @@ export default function VocabularyPage() {
     const f = editedFields()
     if (typeof f === 'string') return setMessage({ ok: false, text: f })
     patch({ ...f, ...extra, action }, doneText)
+  }
+
+  // 여러 개를 한 번에 '사용하기' — 개수를 한 번 더 확인받는다. 승인 경로는 '일괄 승인'(batch)
+  async function bulkApprove() {
+    // 화면에 보이는 개수와 같게: 지금 목록의 확인 필요 중 선택한 것만
+    const ids = selectablePending.filter((e) => checked.has(e.id)).map((e) => e.id)
+    if (ids.length === 0) return
+    if (!window.confirm(`선택한 ${ids.length}개를 '사용 중'으로 바꿉니다.\n바로 단어시험에 나올 수 있게 됩니다. (승인 경로: 일괄 승인)\n\n진행할까요?`)) return
+    setBulkSaving(true)
+    setBulkMessage(null)
+    try {
+      const res = await fetch('/api/vocabulary/bulk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'approve', ids }),
+      })
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.error ?? '일괄 사용하기 실패')
+      const updated = new Map<string, VocabularyEntryRecord>((json.data.entries ?? []).map((u: VocabularyEntryRecord) => [u.id, u]))
+      // 목록의 출처 정보는 유지하고 어휘 값만 바꾼다
+      setEntries((prev) => prev.map((e) => (updated.has(e.id) ? { ...e, ...updated.get(e.id)!, vocabulary_sources: e.vocabulary_sources } : e)))
+      setChecked(new Set())
+      const skipped: { reason: BulkSkipReason }[] = json.data.skipped ?? []
+      const skipText = skipped.length
+        ? ` · 건너뜀 ${skipped.length}개 (${[...new Set(skipped.map((x) => BULK_SKIP_REASON_LABELS[x.reason]))].join(', ')})`
+        : ''
+      setBulkMessage({ ok: true, text: `${json.data.approved}개를 사용 중으로 바꿨습니다${skipText}.` })
+    } catch (e) {
+      setBulkMessage({ ok: false, text: e instanceof Error ? e.message : '일괄 사용하기 실패' })
+    } finally {
+      setBulkSaving(false)
+    }
   }
 
   // 영구 제외: 사유 필수 + DB 조회로 만든 경고를 보여주고 한 번 더 확인받는다
@@ -525,6 +566,29 @@ export default function VocabularyPage() {
 
       {loadError && <div className="mb-3 rounded border border-red-200 bg-red-50 p-3 text-sm text-red-600">{loadError}</div>}
 
+      {/* 일괄 사용하기: 지금 보이는 목록에 '확인 필요' 단어가 있을 때만 */}
+      {selectablePending.length > 0 && (
+        <div className="mb-2 flex flex-wrap items-center gap-2 rounded border border-green-200 bg-green-50 px-3 py-2 text-sm">
+          <span className="text-green-800">
+            확인 필요 단어 <b>{checkedPendingCount}</b>개 선택됨 (이 목록의 확인 필요 {selectablePending.length}개 중)
+          </span>
+          <button
+            onClick={bulkApprove}
+            disabled={bulkSaving || checkedPendingCount === 0}
+            className="rounded bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-40"
+          >
+            선택한 {checkedPendingCount}개 사용하기
+          </button>
+          {checkedPendingCount > 0 && (
+            <button onClick={() => setChecked(new Set())} className="text-xs text-gray-500 underline">선택 해제</button>
+          )}
+          {bulkMessage && <span className={`text-xs ${bulkMessage.ok ? 'text-green-700' : 'text-red-600'}`}>{bulkMessage.text}</span>}
+        </div>
+      )}
+      {selectablePending.length === 0 && bulkMessage && (
+        <p className={`mb-2 text-xs ${bulkMessage.ok ? 'text-green-700' : 'text-red-600'}`}>{bulkMessage.text}</p>
+      )}
+
       <div className="grid gap-4 lg:grid-cols-[1fr_380px]">
         {/* 목록 */}
         <div className="overflow-x-auto rounded border border-gray-200 bg-white">
@@ -536,6 +600,16 @@ export default function VocabularyPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-200 bg-gray-50 text-xs text-gray-500">
+                  <th className="w-8 px-2 py-2 text-center">
+                    {selectablePending.length > 0 && (
+                      <input
+                        type="checkbox"
+                        title="이 목록의 확인 필요 단어 모두 선택"
+                        checked={checkedPendingCount === selectablePending.length}
+                        onChange={(ev) => setChecked(ev.target.checked ? new Set(selectablePending.map((e) => e.id)) : new Set())}
+                      />
+                    )}
+                  </th>
                   <th className="px-3 py-2 text-left">표현</th>
                   <th className="px-3 py-2 text-left">품사</th>
                   <th className="px-3 py-2 text-left">대표 뜻</th>
@@ -553,6 +627,22 @@ export default function VocabularyPage() {
                     onClick={() => setSelectedId(e.id)}
                     className={`cursor-pointer border-b border-gray-100 last:border-0 hover:bg-blue-50 ${e.id === selectedId ? 'bg-blue-50' : ''}`}
                   >
+                    <td className="px-2 py-1.5 text-center" onClick={(ev) => ev.stopPropagation()}>
+                      {e.status === 'pending' && (
+                        <input
+                          type="checkbox"
+                          checked={checked.has(e.id)}
+                          onChange={(ev) =>
+                            setChecked((prev) => {
+                              const next = new Set(prev)
+                              if (ev.target.checked) next.add(e.id)
+                              else next.delete(e.id)
+                              return next
+                            })
+                          }
+                        />
+                      )}
+                    </td>
                     <td className="px-3 py-1.5 font-medium text-gray-800">
                       {e.expression}
                       {e.sense_note && <span className="ml-1 text-[10px] text-gray-400">*</span>}

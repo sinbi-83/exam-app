@@ -96,4 +96,39 @@ test('3단계 migration: 새 표 official_vocabulary 만 만든다 (기존 표 �
   assert.match(code, /enable row level security/)
 })
 
+// ── 4단계 초등 권장 seed JSON ──
+const seeds = ['01', '02', '03', '04'].map((n) =>
+  JSON.parse(readFileSync(resolve(process.cwd(), `data/vocabulary/kr-curriculum-2022-elementary-${n}.json`), 'utf-8')),
+)
+const seedEntries = seeds.flatMap((s) => s.entries)
+test('4단계 seed: 200개 단위 4개 파일, 공식 출처(kr-curriculum-2022), 초등 권장 표제어만', () => {
+  assert.deepEqual(seeds.map((s) => s.entries.length), [200, 200, 200, 143])
+  for (const s of seeds) {
+    assert.equal(s.source.type, 'official')
+    assert.equal(s.source.ref, 'kr-curriculum-2022')
+    assert.equal(s.source.official_source_version, 'kr-curriculum-2022')
+  }
+  const elementaryKeys = new Set(rows.filter((r) => r.tier_code === 'elementary').map((r) => r.headword.toLowerCase()))
+  assert.ok(seedEntries.every((e) => elementaryKeys.has(e.expression.toLowerCase())))
+})
+test('4단계 seed: 난이도 1~30(초등 구간), 대표 뜻 있음, 승인·상태 칸 없음(등록 스크립트가 확인 필요로만 넣음)', () => {
+  assert.ok(seedEntries.every((e) => Number.isInteger(e.base_difficulty) && e.base_difficulty >= 1 && e.base_difficulty <= 30))
+  assert.ok(seedEntries.every((e) => e.meaning_ko.trim() !== ''))
+  assert.ok(seedEntries.every((e) => !('status' in e) && !('approval_origin' in e)))
+})
+test('4단계 seed: 기능어(a, the, I …)는 넣지 않았고, 이미 단어은행에 있던 21개도 넣지 않았다', () => {
+  const words = new Set(seedEntries.map((e) => e.expression))
+  for (const w of ['a', 'the', 'I', 'you', 'and', 'to', 'of', 'can', 'will']) assert.ok(!words.has(w), w)
+  for (const w of ['apple', 'book', 'cat', 'dog', 'plan', 'school', 'water']) assert.ok(!words.has(w), w)
+})
+test('4단계 seed: 두 항목으로 나눈 단어는 품사가 다르고, 한→영 가능 항목끼리 같은 뜻이 없다', () => {
+  const byWord = new Map<string, string[]>()
+  for (const e of seedEntries) byWord.set(e.expression, [...(byWord.get(e.expression) ?? []), e.pos])
+  const doubles = [...byWord].filter(([, p]) => p.length > 1)
+  assert.deepEqual(doubles.map(([w]) => w).sort(), ['close', 'fall', 'kind', 'light', 'right', 'second', 'watch'])
+  assert.ok(doubles.every(([, p]) => new Set(p).size === p.length))
+  const koEn = seedEntries.filter((e) => e.ko_en_allowed).map((e) => e.meaning_ko)
+  assert.equal(new Set(koEn).size, koEn.length)
+})
+
 console.log(`\n모두 통과: ${passed}개`)

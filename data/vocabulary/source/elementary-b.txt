@@ -1,0 +1,243 @@
+# 4단계 초등 권장 어휘 제작 원본 (계속). 형식은 elementary-a.txt 와 같다.
+cry|v|울다|외치다|6|n||
+culture|n|문화||24|y||
+cup|n|컵|잔|3|y||
+curtain|n|커튼||8|y||
+customer|n|손님|고객|18|n||
+cut|v|자르다|베다|8|n||
+dance|v|춤추다||4|n||명사 '춤'도 흔함
+danger|n|위험||14|y||
+dark|adj|어두운|캄캄한|8|y||
+date|n|날짜|데이트|12|n||
+daughter|n|딸||10|y||
+day|n|날|하루;낮|3|n||
+dead|adj|죽은||14|y||
+death|n|죽음||18|y||
+deep|adj|깊은||12|y||
+delicious|adj|맛있는||10|y||
+design|n|디자인|설계|20|n||
+desk|n|책상||3|y||
+dialogue|n|대화||22|n||conversation 과 같은 뜻
+die|v|죽다||10|y||
+difficult|adj|어려운|힘든|10|n||hard 와 같은 뜻
+dinner|n|저녁 식사|저녁밥|6|y||
+discuss|v|논의하다|토론하다;의논하다|24|n||
+-do|조동사·대동사 (문법 요소)
+doctor|n|의사||4|y||
+doll|n|인형||4|y||
+door|n|문||2|y||
+double|adj|두 배의|두 개의;이중의|20|n||
+doughnut|n|도넛||6|y||
+down|adv|아래로|아래에|6|n||up 과 짝
+draw|v|그리다|끌다;뽑다|8|n||
+dream|n|꿈||6|y||
+dress|n|드레스|원피스;옷|8|n||
+drink|v|마시다||4|y||
+drive|v|운전하다|몰다|10|y||
+drop|v|떨어뜨리다|떨어지다|14|n||
+drum|n|북|드럼|6|y||
+dry|adj|마른|건조한;말리다|10|n||
+duck|n|오리||4|y||
+during|prep|~ 동안|~ 중에|18|n||for 와 구분
+ear|n|귀||2|y||
+early|adv|일찍|이른;초기의|10|n||
+earth|n|지구|땅;흙|10|n||
+east|n|동쪽|동|8|y||
+egg|n|달걀|계란;알|3|y||
+eight|num|8|여덟;팔|2|y||
+elephant|n|코끼리||4|y||
+eleven|num|11|열하나;십일|4|y||
+end|n|끝|마지막;결말|10|n||
+energy|n|에너지|힘;기운|18|n||
+enough|adj|충분한||16|y||
+enter|v|들어가다|입장하다;입력하다|16|n||
+evening|n|저녁||5|y||
+every|det|모든|매;~마다|12|n||all 과 구분
+example|n|예|보기;예시|16|y||
+exercise|n|운동|연습;연습 문제|12|n||
+eye|n|눈||2|n||snow 와 구분 필요
+face|n|얼굴||3|y||
+fact|n|사실||20|y||
+fail|v|실패하다|떨어지다|18|y||
+fall|v|떨어지다|넘어지다|10|n|동사: 떨어지다|
+fall|n|가을||10|n|명사: 가을 (미국식)|autumn 과 같은 뜻
+fan|n|팬|선풍기;부채;열성 지지자|8|n||팬(지지자)과 선풍기 중 대표 뜻
+far|adv|멀리|먼|10|n||
+farm|n|농장||6|y||
+fast|adj|빠른|빨리|6|n||quick 과 같은 뜻
+fat|adj|뚱뚱한|살찐;지방|10|n||
+father|n|아버지|아빠|2|y||
+favorite|adj|가장 좋아하는||10|y||
+feel|v|느끼다||10|y||
+festival|n|축제||12|y||
+field|n|들판|밭;분야;경기장|18|n||
+fight|v|싸우다||10|y||
+file|n|파일|서류철|20|n||
+fill|v|채우다||14|y||
+film|n|영화|필름|12|n||movie 와 같은 뜻
+find|v|찾다|발견하다|8|n||
+fine|adj|좋은|괜찮은;건강한;벌금|10|n||
+finger|n|손가락||4|y||
+finish|v|끝내다|마치다|10|n||
+fire|n|불|화재|6|y||
+first|num|첫 번째|첫째;처음;최초의|6|n||
+fish|n|물고기|생선|2|n||
+five|num|5|다섯;오|1|y||
+fix|v|고치다|수리하다;고정하다|14|n||repair 와 같은 뜻
+floor|n|바닥|층|10|n||
+flower|n|꽃||2|y||
+fly|v|날다|비행하다|6|n||명사 '파리'도 있음
+focus|v|집중하다|초점을 맞추다|26|n||
+food|n|음식|식량|3|y||
+fool|n|바보||14|y||
+foot|n|발||4|y||
+football|n|축구|미식축구|6|n||soccer 와 구분
+-for|전치사 (문법 요소)
+forest|n|숲||10|y||
+forget|v|잊다|잊어버리다|12|y||
+fork|n|포크||4|y||
+form|n|형태|모양;양식;서식|24|n||
+four|num|4|넷;사|1|y||
+fox|n|여우||5|y||
+free|adj|자유로운|무료의;한가한|14|n||
+fresh|adj|신선한|새로운|14|y||
+-from|전치사 (문법 요소)
+front|n|앞|앞면;정면|12|y||
+fruit|n|과일|열매|4|y||
+full|adj|가득 찬|배부른|12|n||
+fun|n|재미|재미있는 일|6|n||
+future|n|미래|장래|16|y||
+game|n|게임|경기;놀이|4|n||
+garden|n|정원|뜰|8|y||
+gas|n|가스|기체;휘발유|14|n||
+gentleman|n|신사||16|y||
+get|v|얻다|받다;가져오다;~이 되다|8|n||
+girl|n|소녀|여자아이|2|y||
+give|v|주다||4|y||
+glad|adj|기쁜|반가운|10|n||happy 와 같은 뜻
+glass|n|유리|유리잔;잔|8|n||
+go|v|가다||1|y||
+goal|n|목표|골;득점|16|n||
+god|n|신|하느님|16|n||
+gold|n|금|황금|8|y||
+good|adj|좋은|착한;잘하는|2|n||
+goodbye|int|안녕|잘 가;작별 인사|4|n||헤어질 때 인사|인사말이라 시험 가치가 낮을 수 있음
+grandfather|n|할아버지||5|y||
+grape|n|포도||4|y||
+grass|n|풀|잔디|6|y||
+gray|adj|회색의|회색|6|y||
+great|adj|훌륭한|큰;대단한;멋진|10|n||
+green|adj|초록색의|초록;녹색|3|y||
+ground|n|땅|지면;운동장|10|n||
+group|n|무리|집단;모둠;그룹|12|n||
+grow|v|자라다|기르다;키우다|10|n||
+guess|v|추측하다|짐작하다;알아맞히다|16|n||
+guitar|n|기타||4|y||
+gum|n|껌||4|y||
+guy|n|남자|녀석;사람|16|n||
+habit|n|습관||20|y||
+hair|n|머리카락|머리;털|4|y||
+hamburger|n|햄버거||3|y||
+hand|n|손||2|y||
+hang|v|걸다|매달다;매달리다|16|n||
+hard|adj|어려운|딱딱한;단단한;열심히|10|n||
+hat|n|모자||3|n||cap 과 구분
+hate|v|싫어하다|미워하다|10|y||
+have|v|가지다|가지고 있다;먹다|4|n||
+-he|대명사 (문법 요소)
+head|n|머리||3|y||
+heart|n|심장|마음;하트|10|n||
+heat|n|열|더위;열기|16|n||
+heavy|adj|무거운||8|y||
+-hello|인사말 (hey, hi 포함)
+helmet|n|헬멧||8|y||
+help|v|돕다|도와주다|4|y||
+here|adv|여기에|여기;이곳에|4|y||
+hero|n|영웅||10|y||
+high|adj|높은||6|y||
+hike|v|하이킹하다|도보 여행하다|16|n||
+hill|n|언덕||8|y||
+history|n|역사||14|y||
+hit|v|치다|때리다|8|n||
+hobby|n|취미||8|y||
+hold|v|잡다|쥐다;들다;개최하다|12|n||
+holiday|n|휴일|공휴일;휴가|10|n||
+home|n|집|가정|3|n||house 와 구분
+homework|n|숙제||5|y||
+honest|adj|정직한|솔직한|14|y||
+hope|v|바라다|희망하다|10|n||명사 '희망'도 흔함
+horse|n|말||3|y||
+hospital|n|병원||6|y||
+hot|adj|더운|뜨거운;매운|4|n||
+hour|n|시간|1시간|8|n||time 과 구분
+house|n|집|주택|3|n||home 과 구분
+how|adv|어떻게|얼마나|4|n||
+however|adv|그러나|하지만|24|n||but 과 같은 뜻
+human|n|인간|사람|14|n||
+hundred|num|100|백|8|y||
+hunt|v|사냥하다||16|y||
+hurry|v|서두르다||12|y||
+husband|n|남편||12|y||
+-I|대명사 (문법 요소)
+ice|n|얼음||4|y||
+idea|n|생각|아이디어;발상|10|n||
+-if|접속사 (문법 요소)
+image|n|이미지|모습;영상;그림|20|n||
+-in|전치사 (문법 요소)
+inside|prep|~ 안에|안쪽에;내부에|10|n||
+internet|n|인터넷||8|y||
+-into|전치사 (문법 요소)
+introduce|v|소개하다||14|y||
+issue|n|문제|쟁점;발행;호|28|n||
+-it|대명사 (문법 요소)
+jacket|n|재킷|웃옷|8|y||
+jam|n|잼|혼잡|8|n||
+job|n|직업|일;일자리|8|n||
+join|v|가입하다|참여하다;합류하다|14|n||
+juice|n|주스||3|y||
+jump|v|뛰다|점프하다;뛰어오르다|6|n||
+just|adv|단지|방금;딱;그냥|14|n||
+keep|v|유지하다|지키다;보관하다;계속하다|16|n||
+key|n|열쇠|키;핵심|6|n||
+kick|v|차다|발로 차다|8|y||
+kid|n|아이|어린이|6|n||child 와 같은 뜻
+kill|v|죽이다||12|y||
+kind|adj|친절한||8|y|형용사: 친절한|
+kind|n|종류||14|n|명사: 종류|
+king|n|왕||4|y||
+kiss|v|입맞추다|키스하다;뽀뽀하다|10|n||
+kitchen|n|부엌|주방|6|y||
+knife|n|칼||6|y||
+know|v|알다||4|y||
+lady|n|숙녀|여성;부인|10|n||
+lake|n|호수||8|y||
+land|n|땅|육지;토지|12|n||
+large|adj|큰|넓은|10|n||big 과 같은 뜻
+laser|n|레이저||22|y||
+last|adj|마지막의|지난;최후의|10|n||
+late|adj|늦은|늦게|8|n||
+lazy|adj|게으른||10|y||
+learn|v|배우다||8|n||study 와 같은 뜻
+left|n|왼쪽|왼편|6|y||
+leg|n|다리||3|n||bridge 와 구분 필요
+letter|n|편지|글자;문자|6|n||
+lie|v|거짓말하다|눕다;거짓말|14|n||눕다와 거짓말하다 두 동사가 같은 철자|대표 뜻을 무엇으로 할지
+life|n|삶|생명;인생;생활|12|n||
+light|n|빛|불;전등|8|n|명사: 빛|
+light|adj|가벼운|밝은|12|n|형용사: 가벼운|
+like|v|좋아하다||2|y||
+line|n|선|줄|8|n||
+lion|n|사자||4|y||
+lip|n|입술||6|y||
+listen|v|듣다||6|n||hear 와 구분
+little|adj|작은|어린;조금|6|n||small 과 같은 뜻
+live|v|살다|거주하다|6|y||
+long|adj|긴|오래|4|y||
+look|v|보다|~처럼 보이다|4|n||see, watch 와 구분
+love|v|사랑하다||2|y||
+low|adj|낮은||8|y||
+luck|n|운|행운|10|y||
+lunch|n|점심 식사|점심|4|y||
+mad|adj|화난|미친|14|n||angry 와 같은 뜻
+mail|n|우편|우편물;메일|12|n||
+make|v|만들다||4|y||

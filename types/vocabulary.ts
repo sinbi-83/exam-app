@@ -29,7 +29,8 @@ export type VocabularyRejectReason =
   | "extraction_error"
   | "other";
 
-// individual = 교사가 화면에서 개별 승인 / batch = 스크립트 일괄 승인(예전 방식, 새로 쓰지 않음)
+// individual = 교사가 화면에서 한 단어씩 승인 / batch = 교사가 화면에서 여러 개를 골라 일괄 승인
+// (1단계 전에는 스크립트 일괄 승인에 썼지만 그 101개는 legacy_review / owner_approval 로 바뀌었다)
 // legacy_review = 기존 검수 인정 (스크립트 승인 + 교사 검수 완료 기록) / owner_approval = 소유자 명시 승인
 export type VocabularyApprovalOrigin = "individual" | "batch" | "legacy_review" | "owner_approval";
 

@@ -13,6 +13,7 @@ import {
   normalizeExpressionKey,
   normalizeMeaningKey,
   planAutoFill,
+  planBulkApprove,
   SCRIPT_ENTRY_STATE,
   scriptEntryStateErrors,
   sourceLinkKey,
@@ -401,6 +402,24 @@ test('migration 의 형식 정리 글자표가 lib 정규화와 같다', () => {
   const input = fromChars.join('')
   // DB: 각 글자를 ' ' " " - - - - - 공백 공백 으로 → 연속 공백 정리 → trim → 소문자
   assert.equal(normalizeExpressionKey(`a${input}b`), `a''""----- b`)
+})
+
+// ── 일괄 사용하기 ──
+test('일괄 사용하기: 확인 필요 + 난이도 있음만, 나머지는 이유와 함께 건너뜀, 중복 id 는 한 번', () => {
+  const rows = [
+    { id: 'a', status: 'pending' as const, base_difficulty: 10, deleted_at: null },
+    { id: 'b', status: 'pending' as const, base_difficulty: null, deleted_at: null },
+    { id: 'c', status: 'approved' as const, base_difficulty: 10, deleted_at: null },
+    { id: 'd', status: 'pending' as const, base_difficulty: 10, deleted_at: '2026-09-28T00:00:00Z' },
+  ]
+  const plan = planBulkApprove(['a', 'a', 'b', 'c', 'd', 'x'], rows)
+  assert.deepEqual(plan.approve, ['a'])
+  assert.deepEqual(plan.skipped, [
+    { id: 'b', reason: 'no_difficulty' },
+    { id: 'c', reason: 'not_pending' },
+    { id: 'd', reason: 'not_found' },
+    { id: 'x', reason: 'not_found' },
+  ])
 })
 
 console.log(`\n모두 통과: ${passed}개`)
