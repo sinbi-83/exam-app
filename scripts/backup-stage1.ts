@@ -3,6 +3,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
+import { selectAllPages } from '../lib/supabasePaging.ts'
 
 const env: Record<string, string> = {}
 for (const line of readFileSync(resolve(process.cwd(), '.env.local'), 'utf-8').split('\n')) {
@@ -20,10 +21,15 @@ const { error: loginError } = await supabase.auth.signInWithPassword({
 })
 if (loginError) throw new Error(`로그인 실패: ${loginError.message}`)
 
-const vocab = await supabase
-  .from('vocabulary_entries')
-  .select('id, expression, status, archived_at, approval_origin, teacher_reviewed_at, updated_at')
-  .order('created_at')
+// 1,000행 제한 → 나눠 읽기 (lib/supabasePaging.ts)
+const vocab = await selectAllPages<{ status: string }>((from, to) =>
+  supabase
+    .from('vocabulary_entries')
+    .select('id, expression, status, archived_at, approval_origin, teacher_reviewed_at, updated_at')
+    .order('created_at')
+    .order('id')
+    .range(from, to),
+)
 if (vocab.error) throw new Error(vocab.error.message)
 
 // exam_type 칸은 migration 전에는 없다 → 없으면 null 로 기록

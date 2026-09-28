@@ -12,6 +12,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 import { inferExamType } from '../lib/examType.ts'
+import { selectAllPages } from '../lib/supabasePaging.ts'
 import { OWNER_APPROVAL_REF_PREFIX } from '../lib/vocabularyCalibration.ts'
 
 const APPLY = process.argv.includes('--apply')
@@ -62,10 +63,15 @@ async function main() {
   const userId = login.user.id
 
   const load = async () => {
-    const entries = await supabase
-      .from('vocabulary_entries')
-      .select('id, expression, status, archived_at, approval_origin, deferred_at, deleted_at, base_difficulty, teacher_reviewed_at, updated_at')
-      .order('created_at')
+    // 1,000행 제한 → 나눠 읽기 (lib/supabasePaging.ts)
+    const entries = await selectAllPages((from, to) =>
+      supabase
+        .from('vocabulary_entries')
+        .select('id, expression, status, archived_at, approval_origin, deferred_at, deleted_at, base_difficulty, teacher_reviewed_at, updated_at')
+        .order('created_at')
+        .order('id')
+        .range(from, to),
+    )
     if (entries.error) throw new Error(`단어 조회 실패 (migration 실행 전이면 deferred_at 칸이 없습니다): ${entries.error.message}`)
     const exams = await supabase.from('exams').select('id, title, exam_type').order('created_at')
     if (exams.error) throw new Error(`시험 조회 실패 (migration 실행 전이면 exam_type 칸이 없습니다): ${exams.error.message}`)

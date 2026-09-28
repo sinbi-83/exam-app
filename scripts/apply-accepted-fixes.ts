@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
+import { chunk, selectAllPages } from '../lib/supabasePaging.ts'
 
 const args = process.argv.slice(2)
 const APPLY = args.includes('--apply')
@@ -48,13 +49,21 @@ async function main() {
     fixes: { expression: string; pos: string; remove: string[]; why: string }[]
   }
 
-  const { data, error } = await supabase
-    .from('vocabulary_entries')
-    .select('id, expression, pos, status, teacher_reviewed_at, accepted_meanings')
-    .is('deleted_at', null)
-    .in('expression', [...new Set(fixes.map((f) => f.expression))])
-  if (error) throw new Error(error.message)
-  const rows = data as Row[]
+  // 표현 목록은 100개씩, 결과는 1,000행 제한 → 나눠 읽기 (lib/supabasePaging.ts)
+  const rows: Row[] = []
+  for (const part of chunk([...new Set(fixes.map((f) => f.expression))], 100)) {
+    const { data, error } = await selectAllPages<Row>((from, to) =>
+      supabase
+        .from('vocabulary_entries')
+        .select('id, expression, pos, status, teacher_reviewed_at, accepted_meanings')
+        .is('deleted_at', null)
+        .in('expression', part)
+        .order('id')
+        .range(from, to),
+    )
+    if (error) throw new Error(error.message)
+    rows.push(...data)
+  }
 
   const plan: { row: Row; next: string[]; removed: string[] }[] = []
   const skipped: string[] = []

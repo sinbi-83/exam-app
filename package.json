@@ -18,6 +18,7 @@
     "test-vocabulary-rules": "node scripts/test-vocabulary-rules.ts",
     "test-word-test": "node scripts/test-word-test.ts",
     "test-word-test-draft": "node scripts/test-word-test-draft.ts",
+    "test-supabase-paging": "node scripts/test-supabase-paging.ts",
     "test-print-view": "node scripts/test-print-view.ts",
     "test-exam-type": "node scripts/test-exam-type.ts",
     "test-official-vocabulary": "node scripts/test-official-vocabulary.ts",

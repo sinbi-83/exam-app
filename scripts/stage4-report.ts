@@ -10,6 +10,7 @@ import { createClient } from '@supabase/supabase-js'
 import { generalTestCandidates } from '../lib/vocabularyCalibration.ts'
 import { generateWordTest, POS_LABELS_KO, WORD_TEST_MODE_LABELS, type WordTestEntry, type WordTestMode } from '../lib/wordTest.ts'
 import { findDifficultyBand } from '../config/vocabularyLevels.ts'
+import { selectAllPages } from '../lib/supabasePaging.ts'
 
 const SAMPLE_SIZE = 40
 const LEVELS = ['school', 'academy', 'advanced', 'prestudy'] as const
@@ -68,7 +69,10 @@ async function main() {
   })
   const { error: loginError } = await supabase.auth.signInWithPassword({ email: env.SUPABASE_LOGIN_EMAIL, password: env.SUPABASE_LOGIN_PASSWORD })
   if (loginError) throw new Error(`로그인 실패: ${loginError.message}`)
-  const { data, error } = await supabase.from('vocabulary_entries').select('*, vocabulary_sources(source_type, source_ref)').is('deleted_at', null)
+  // 1,000행 제한 → 나눠 읽기 (lib/supabasePaging.ts)
+  const { data, error } = await selectAllPages((from, to) =>
+    supabase.from('vocabulary_entries').select('*, vocabulary_sources(source_type, source_ref)').is('deleted_at', null).order('id').range(from, to),
+  )
   if (error) throw new Error(error.message)
   type Row = WordTestEntry & { vocabulary_sources: { source_type: string; source_ref: string }[] }
   const rows = data as Row[]

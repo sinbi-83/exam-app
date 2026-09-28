@@ -22,6 +22,7 @@ import { generalTestCandidates } from '../lib/vocabularyCalibration.ts'
 import { proposeReanchor, reanchorGroupOf, type ReanchorGroup } from '../lib/vocabularyReanchor.ts'
 import { isEligible, type WordTestEntry } from '../lib/wordTest.ts'
 import { anchorLabels, DIFFICULTY_ANCHORS, gradesWithBands, findDifficultyBand, VOCABULARY_GRADES } from '../config/vocabularyLevels.ts'
+import { selectAllPages } from '../lib/supabasePaging.ts'
 
 const PROPOSAL = process.argv.includes('--proposal')
 const TARGET = 40 // 4단계 목표: 학년·레벨마다 40개 이상
@@ -59,11 +60,16 @@ async function main() {
   })
   if (loginError) throw new Error(`로그인 실패: ${loginError.message}`)
 
-  const { data, error } = await supabase
-    .from('vocabulary_entries')
-    .select('*, vocabulary_sources(source_type, source_ref)')
-    .is('deleted_at', null)
-    .order('base_difficulty')
+  // 1,000행 제한 → 나눠 읽기 (lib/supabasePaging.ts). 같은 난이도끼리 순서가 흔들리지 않게 id 도 정렬
+  const { data, error } = await selectAllPages((from, to) =>
+    supabase
+      .from('vocabulary_entries')
+      .select('*, vocabulary_sources(source_type, source_ref)')
+      .is('deleted_at', null)
+      .order('base_difficulty')
+      .order('id')
+      .range(from, to),
+  )
   if (error) throw new Error(error.message)
   const entries = data as Row[]
 

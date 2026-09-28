@@ -14,6 +14,7 @@ import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 import { findActiveDuplicates, SCRIPT_ENTRY_STATE, scriptEntryStateErrors, validateEntryInput, vocabularyDbErrorMessage } from '../lib/vocabulary.ts'
 import type { VocabularyEntryInput, VocabularyEntryType, VocabularyPos } from '../types/vocabulary'
+import { selectAllPages } from '../lib/supabasePaging.ts'
 
 interface SeedEntry {
   expression: string
@@ -105,9 +106,10 @@ async function main() {
   }
   const userId = login.user.id
 
-  const { data: existing, error: existingError } = await supabase
-    .from('vocabulary_entries')
-    .select('expression, pos, meaning_ko, deleted_at')
+  // 1,000행 제한 → 나눠 읽기 (lib/supabasePaging.ts). 다 못 읽으면 이미 있는 단어를 중복으로 넣게 된다.
+  const { data: existing, error: existingError } = await selectAllPages<{ expression: string; pos: VocabularyPos | null; meaning_ko: string; deleted_at: string | null }>((from, to) =>
+    supabase.from('vocabulary_entries').select('expression, pos, meaning_ko, deleted_at').order('id').range(from, to),
+  )
   if (existingError) {
     console.error('기존 어휘 조회 실패:', existingError.message)
     process.exit(1)

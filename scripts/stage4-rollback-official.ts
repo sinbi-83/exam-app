@@ -8,6 +8,7 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 import { OFFICIAL_LIST_VERSION } from '../lib/officialVocabulary.ts'
+import { selectAllPages } from '../lib/supabasePaging.ts'
 
 const since = process.argv[2]
 const APPLY = process.argv.includes('--apply')
@@ -34,10 +35,15 @@ async function main() {
   })
   if (loginError) throw new Error(`로그인 실패: ${loginError.message}`)
 
-  const { data, error } = await supabase
-    .from('vocabulary_entries')
-    .select('id, expression, status, teacher_reviewed_at, created_at, vocabulary_sources(source_type, source_ref, created_by)')
-    .gte('created_at', since)
+  // 1,000행 제한 → 나눠 읽기 (lib/supabasePaging.ts)
+  const { data, error } = await selectAllPages((from, to) =>
+    supabase
+      .from('vocabulary_entries')
+      .select('id, expression, status, teacher_reviewed_at, created_at, vocabulary_sources(source_type, source_ref, created_by)')
+      .gte('created_at', since)
+      .order('id')
+      .range(from, to),
+  )
   if (error) throw new Error(error.message)
   type Row = { id: string; expression: string; status: string; teacher_reviewed_at: string | null; vocabulary_sources: { source_type: string; source_ref: string; created_by: string }[] }
   const rows = data as Row[]

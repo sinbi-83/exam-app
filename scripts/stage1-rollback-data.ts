@@ -9,6 +9,7 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
+import { selectAllPages } from '../lib/supabasePaging.ts'
 
 const file = process.argv[2]
 const APPLY = process.argv.includes('--apply')
@@ -42,7 +43,10 @@ async function main() {
   })
   if (loginError) throw new Error(`로그인 실패: ${loginError.message}`)
 
-  const cur = await supabase.from('vocabulary_entries').select('id, status, archived_at, approval_origin, deferred_at')
+  // 1,000행 제한 → 나눠 읽기 (lib/supabasePaging.ts)
+  const cur = await selectAllPages((from, to) =>
+    supabase.from('vocabulary_entries').select('id, status, archived_at, approval_origin, deferred_at').order('id').range(from, to),
+  )
   if (cur.error) throw new Error(cur.error.message)
   const now = new Map((cur.data as BackupEntry[]).map((e) => [e.id, e]))
   const changed = backup.vocabulary_entries.filter((b) => {

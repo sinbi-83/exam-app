@@ -12,6 +12,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 import { parseCsv } from '../lib/officialVocabulary.ts'
+import { selectAllPages } from '../lib/supabasePaging.ts'
 import { OWNER_APPROVAL_REF_PREFIX } from '../lib/vocabularyCalibration.ts'
 
 const APPLY = process.argv.includes('--apply')
@@ -56,10 +57,15 @@ async function main() {
   })
   if (loginError || !login.user) throw new Error(`로그인 실패: ${loginError?.message}`)
 
-  const { data, error } = await supabase
-    .from('vocabulary_entries')
-    .select('id, expression, pos, meaning_ko, base_difficulty, status, deleted_at')
-    .is('deleted_at', null)
+  // 1,000행 제한 → 나눠 읽기 (lib/supabasePaging.ts)
+  const { data, error } = await selectAllPages((from, to) =>
+    supabase
+      .from('vocabulary_entries')
+      .select('id, expression, pos, meaning_ko, base_difficulty, status, deleted_at')
+      .is('deleted_at', null)
+      .order('id')
+      .range(from, to),
+  )
   if (error) throw new Error(error.message)
   const entries = data as Entry[]
 
