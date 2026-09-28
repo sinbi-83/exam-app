@@ -1,9 +1,29 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { VocabularyEntryRecord, VocabularyRejectReason, VocabularySourceRecord, VocabularyStatus } from '@/types/vocabulary'
-import { VOCABULARY_REJECT_REASON_LABELS, VOCABULARY_STATUS_LABELS } from '@/lib/vocabulary'
-import { bandsContaining, VOCABULARY_BANDS_NOTE } from '@/config/vocabularyLevels'
+import type { VocabularyEntryRecord, VocabularyRejectReason, VocabularySourceRecord } from '@/types/vocabulary'
+import {
+  undecidedCount,
+  VOCABULARY_APPROVAL_ORIGIN_LABELS,
+  VOCABULARY_REJECT_REASON_LABELS,
+  VOCABULARY_SELECTABLE_REJECT_REASONS,
+  VOCABULARY_VIEW_STATE_HINTS,
+  VOCABULARY_VIEW_STATE_LABELS,
+  VOCABULARY_VIEW_STATES,
+  vocabularyViewState,
+  type VocabularyViewState,
+} from '@/lib/vocabulary'
+import { exclusionConfirmText } from '@/lib/vocabularyExclusion'
+import {
+  bandsContaining,
+  GRADE_RANGE_POSITION_LABELS,
+  gradeDifficultyRange,
+  gradeRangePosition,
+  VOCABULARY_BANDS_NOTE,
+  VOCABULARY_GRADES,
+  type GradeRangePosition,
+  type VocabularyGrade,
+} from '@/config/vocabularyLevels'
 import { VARIANT_LABELS } from '@/types/passageBank'
 import { generateWordTest, POS_LABELS_KO, toWordQuestionData } from '@/lib/wordTest'
 import {
@@ -15,6 +35,7 @@ import {
   isReviewNoteRef,
   nextUnreviewedId,
   nudgeDifficulty,
+  OWNER_APPROVAL_REF_PREFIX,
   REVIEW_DONE_REF_PREFIX,
   REVIEW_REASON_LABELS,
   REVIEW_STATE_LABELS,
@@ -24,15 +45,17 @@ import {
   type ReviewReason,
 } from '@/lib/vocabularyCalibration'
 
-type StatusFilter = VocabularyStatus | 'all'
+type StatusFilter = VocabularyViewState | 'all'
+type GradeRangeFilter = GradeRangePosition | 'all'
 type ReviewFilter = 'all' | 'unreviewed' | 'reviewed'
 type ZoneFilter = CalibrationZone | 'all' | 'custom'
 
 type SourceRef = Pick<VocabularySourceRecord, 'source_type' | 'source_ref' | 'created_by'>
 type Entry = VocabularyEntryRecord & { vocabulary_sources?: SourceRef[] }
 
-const STATUS_BADGE: Record<VocabularyStatus, string> = {
+const STATUS_BADGE: Record<VocabularyViewState, string> = {
   pending: 'bg-amber-100 text-amber-700',
+  deferred: 'bg-orange-100 text-orange-700',
   approved: 'bg-green-100 text-green-700',
   rejected: 'bg-red-100 text-red-700',
   archived: 'bg-gray-200 text-gray-600',
@@ -69,6 +92,8 @@ export default function VocabularyPage() {
   const [status, setStatus] = useState<StatusFilter>('all')
   const [review, setReview] = useState<ReviewFilter>('all')
   const [zone, setZone] = useState<ZoneFilter>('all')
+  const [grade, setGrade] = useState<VocabularyGrade>('중1')
+  const [gradeFilter, setGradeFilter] = useState<GradeRangeFilter>('all')
   const [customMin, setCustomMin] = useState('')
   const [customMax, setCustomMax] = useState('')
   const [search, setSearch] = useState('')
@@ -120,10 +145,18 @@ export default function VocabularyPage() {
   }, [zone, customMin, customMax])
 
   const counts = useMemo(() => {
-    const c: Record<StatusFilter, number> = { all: entries.length, pending: 0, approved: 0, rejected: 0, archived: 0 }
-    for (const e of entries) c[e.status]++
+    const c: Record<StatusFilter, number> = { all: entries.length, pending: 0, deferred: 0, approved: 0, rejected: 0, archived: 0 }
+    for (const e of entries) c[vocabularyViewState(e)]++
     return c
   }, [entries])
+  const undecided = useMemo(() => undecidedCount(entries), [entries])
+
+  // 학년 범위 (C-2): 고른 학년의 기준표 구간. 기준표가 없으면 null → "기준 미설정"
+  const gradeRange = useMemo(() => gradeDifficultyRange(grade), [grade])
+  const matchesGrade = useCallback(
+    (e: Entry) => gradeFilter === 'all' || (gradeRange !== null && gradeRangePosition(e.base_difficulty, gradeRange) === gradeFilter),
+    [gradeFilter, gradeRange],
+  )
 
   // 진행상황: 전체 / 구간별 교사 검수 완료 수
   const progress = useMemo(() => {
@@ -145,14 +178,15 @@ export default function VocabularyPage() {
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase()
     const list = entries.filter((e) =>
-      (status === 'all' || e.status === status) &&
+      (status === 'all' || vocabularyViewState(e) === status) &&
+      matchesGrade(e) &&
       (review === 'all' || (review === 'reviewed') === isCalibrationReviewed(e)) &&
       (!range || (e.base_difficulty !== null && e.base_difficulty >= range.min && e.base_difficulty <= range.max)) &&
       (!q || e.expression.toLowerCase().includes(q) || e.meaning_ko.includes(q) || e.accepted_meanings.some((m) => m.includes(q))),
     )
     // 난이도 필터를 쓰면 난이도 순으로 (양 끝 비교가 쉽게)
     return range ? [...list].sort((a, b) => (a.base_difficulty ?? 0) - (b.base_difficulty ?? 0)) : list
-  }, [entries, status, review, range, search])
+  }, [entries, status, matchesGrade, review, range, search])
 
   const selected = entries.find((e) => e.id === selectedId) ?? null
 
@@ -185,7 +219,8 @@ export default function VocabularyPage() {
     setReview('unreviewed')
     const first = entries.find((e) =>
       !isCalibrationReviewed(e) &&
-      (status === 'all' || e.status === status) &&
+      (status === 'all' || vocabularyViewState(e) === status) &&
+      matchesGrade(e) &&
       (!range || (e.base_difficulty !== null && e.base_difficulty >= range.min && e.base_difficulty <= range.max)),
     )
     setSelectedId(first?.id ?? null)
@@ -285,6 +320,37 @@ export default function VocabularyPage() {
     patch({ ...f, ...extra, action }, doneText)
   }
 
+  // 영구 제외: 사유 필수 + DB 조회로 만든 경고를 보여주고 한 번 더 확인받는다
+  async function excludePermanently() {
+    if (!selected) return
+    if (!rejectReason) return setMessage({ ok: false, text: '영구 제외 사유를 선택하세요.' })
+    setSaving(true)
+    let warnings: string[] = []
+    try {
+      const res = await fetch(`/api/vocabulary/${selected.id}/exclusion-check`)
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.error ?? '확인 정보를 불러오지 못했습니다.')
+      warnings = json.data.warnings ?? []
+    } catch (e) {
+      setSaving(false)
+      return setMessage({ ok: false, text: e instanceof Error ? e.message : '확인 정보를 불러오지 못했습니다.' })
+    }
+    setSaving(false)
+    if (!window.confirm(exclusionConfirmText(selected.expression, VOCABULARY_REJECT_REASON_LABELS[rejectReason], warnings))) return
+    runAction('reject', '영구 제외했습니다.', { reject_reason: rejectReason, reject_note: rejectNote })
+  }
+
+  // 영구 제외 → 다시 검토하기: 경고 확인 후 '확인 필요'로
+  function reopenRejected() {
+    if (!selected) return
+    const ok = window.confirm(
+      `'${selected.expression}'을(를) 다시 '확인 필요'로 돌립니다.
+` +
+      "영구 제외 사유는 지워집니다. 시험에 다시 쓰려면 확인 후 '사용하기'를 눌러야 합니다.",
+    )
+    if (ok) runAction('reopen', "'확인 필요'로 되돌렸습니다.")
+  }
+
   // 검수용 시험: 지금 난이도 필터 범위의 승인 단어로 영→한 최대 20문항 (고3 등 학년 기준을 새로 만들지 않는다)
   async function createCheckTest() {
     if (!range) return
@@ -317,7 +383,16 @@ export default function VocabularyPage() {
     <div>
       <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
         <div>
-          <h1 className="text-xl font-semibold text-gray-800">단어은행</h1>
+          <div className="flex flex-wrap items-center gap-2">
+            <h1 className="text-xl font-semibold text-gray-800">단어은행</h1>
+            {/* 결정 안 된 단어 = 확인 필요 + 나중에 결정 */}
+            <span
+              title="확인 필요 + 나중에 결정"
+              className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${undecided > 0 ? 'bg-yellow-300 text-yellow-900' : 'bg-gray-100 text-gray-500'}`}
+            >
+              결정 안 된 단어 {undecided}개
+            </span>
+          </div>
           <p className="mt-1 text-xs text-gray-500">레벨 표시는 {VOCABULARY_BANDS_NOTE} 기준입니다.</p>
         </div>
         <div className="flex gap-2">
@@ -359,9 +434,9 @@ export default function VocabularyPage() {
 
       {/* 필터 */}
       <div className="mb-2 flex flex-wrap items-center gap-2">
-        {(['all', 'pending', 'approved', 'rejected', 'archived'] as StatusFilter[]).map((s) => (
+        {(['all', ...VOCABULARY_VIEW_STATES] as StatusFilter[]).map((s) => (
           <button key={s} onClick={() => setStatus(s)} className={pill(status === s)}>
-            {s === 'all' ? '전체' : VOCABULARY_STATUS_LABELS[s]} {counts[s]}
+            {s === 'all' ? '전체' : VOCABULARY_VIEW_STATE_LABELS[s]} {counts[s]}
           </button>
         ))}
         <input
@@ -371,12 +446,39 @@ export default function VocabularyPage() {
           className="ml-auto w-full rounded border border-gray-300 px-3 py-1.5 text-sm sm:w-64"
         />
       </div>
+      {status !== 'all' && <p className="mb-2 text-xs text-gray-500">{VOCABULARY_VIEW_STATE_HINTS[status]}</p>}
+
+      {/* 학년 범위 (C-2): 고른 학년 기준으로 그때그때 계산한다 */}
+      <div className="mb-2 flex flex-wrap items-center gap-2 text-sm">
+        <span className="text-xs text-gray-500">학년</span>
+        <select
+          value={grade}
+          onChange={(e) => setGrade(e.target.value as VocabularyGrade)}
+          className="rounded border border-gray-300 px-2 py-1 text-sm"
+        >
+          {VOCABULARY_GRADES.map((g) => <option key={g} value={g}>{g}</option>)}
+        </select>
+        {gradeRange ? (
+          <>
+            <button onClick={() => setGradeFilter('all')} className={pill(gradeFilter === 'all')}>전체</button>
+            {(['below', 'within', 'above'] as GradeRangePosition[]).map((p) => (
+              <button key={p} onClick={() => setGradeFilter(p)} className={pill(gradeFilter === p)}>
+                {GRADE_RANGE_POSITION_LABELS[p]}
+              </button>
+            ))}
+            <span className="text-xs text-gray-400">({grade} 난이도 {gradeRange.min}~{gradeRange.max})</span>
+          </>
+        ) : (
+          <span className="text-xs text-amber-700">기준 미설정 — {grade} 학년 범위가 아직 없습니다.</span>
+        )}
+      </div>
+
       <div className="mb-3 flex flex-wrap items-center gap-2 text-sm">
         <span className="text-xs text-gray-500">검수</span>
         {([['all', '전체'], ['unreviewed', '교사 미확인'], ['reviewed', '교사 검수 완료']] as [ReviewFilter, string][]).map(([v, l]) => (
           <button key={v} onClick={() => setReview(v)} className={pill(review === v)}>{l}</button>
         ))}
-        <span className="ml-2 text-xs text-gray-500">난이도</span>
+        <span className="ml-2 text-xs text-gray-500">난이도 구간(검수용)</span>
         {(['all', 'floor', 'middle', 'ceiling'] as ZoneFilter[]).map((z) => (
           <button key={z} onClick={() => { setZone(z); setCheckTest(null); setCheckTestError('') }} className={pill(zone === z)}>
             {z === 'all' ? '전체' : CALIBRATION_ZONE_LABELS[z as CalibrationZone]}
@@ -459,7 +561,7 @@ export default function VocabularyPage() {
                     <td className="px-3 py-1.5 text-xs text-gray-500">{levelText(e.base_difficulty)}</td>
                     <td className="px-3 py-1.5 text-center">{e.ko_en_allowed ? '○' : '–'}</td>
                     <td className="px-3 py-1.5">
-                      <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[e.status]}`}>{VOCABULARY_STATUS_LABELS[e.status]}</span>
+                      <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[vocabularyViewState(e)]}`}>{VOCABULARY_VIEW_STATE_LABELS[vocabularyViewState(e)]}</span>
                     </td>
                     <td className="px-3 py-1.5 text-center text-xs">
                       {reviewState(e) === 'reviewed' ? (
@@ -488,7 +590,7 @@ export default function VocabularyPage() {
               <div>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-lg font-semibold text-gray-900">{selected.expression}</span>
-                  <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[selected.status]}`}>{VOCABULARY_STATUS_LABELS[selected.status]}</span>
+                  <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_BADGE[vocabularyViewState(selected)]}`}>{VOCABULARY_VIEW_STATE_LABELS[vocabularyViewState(selected)]}</span>
                   <span
                     className={`rounded px-1.5 py-0.5 text-xs ${
                       reviewState(selected) === 'reviewed' ? 'bg-green-50 text-green-700'
@@ -503,9 +605,12 @@ export default function VocabularyPage() {
                 </p>
                 {selected.sense_note && <p className="text-xs text-gray-600">의미 구분: {selected.sense_note}</p>}
                 <p className="text-xs text-gray-400">출처: {sourceLabel(selected)}</p>
+                {selected.approval_origin && (
+                  <p className="text-xs text-gray-400">승인 경로: {VOCABULARY_APPROVAL_ORIGIN_LABELS[selected.approval_origin]}</p>
+                )}
                 {selected.status === 'rejected' && selected.reject_reason && (
                   <p className="text-xs text-red-500">
-                    반려 사유: {VOCABULARY_REJECT_REASON_LABELS[selected.reject_reason]}
+                    영구 제외 사유: {VOCABULARY_REJECT_REASON_LABELS[selected.reject_reason]}
                     {selected.reject_note ? ` (${selected.reject_note})` : ''}
                   </p>
                 )}
@@ -603,81 +708,99 @@ export default function VocabularyPage() {
               {message && <p className={`text-sm ${message.ok ? 'text-green-600' : 'text-red-600'}`}>{message.text}</p>}
 
               <div className="space-y-2 border-t border-gray-100 pt-3">
-                {selected.status === 'pending' && (
-                  <>
+                {/* 상태 버튼 (설계도 C-1) */}
+                {vocabularyViewState(selected) === 'pending' && (
+                  <div className="grid grid-cols-2 gap-2">
                     <button
-                      onClick={() => runAction('approve', '승인했습니다.')}
+                      onClick={() => runAction('approve', '사용 중으로 바꿨습니다. 이제 시험에 나옵니다.')}
                       disabled={saving}
-                      className="w-full rounded bg-green-600 py-2 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-40"
+                      className="rounded bg-green-600 py-2 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-40"
                     >
-                      승인
+                      사용하기
                     </button>
+                    <button
+                      onClick={() => runAction('defer', '나중에 결정으로 미뤘습니다.')}
+                      disabled={saving}
+                      className="rounded border border-orange-400 py-2 text-sm text-orange-700 hover:bg-orange-50 disabled:opacity-40"
+                    >
+                      나중에 결정
+                    </button>
+                  </div>
+                )}
+                {vocabularyViewState(selected) === 'deferred' && (
+                  <button
+                    onClick={() => runAction('approve', '사용 중으로 바꿨습니다. 이제 시험에 나옵니다.')}
+                    disabled={saving}
+                    className="w-full rounded bg-green-600 py-2 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-40"
+                  >
+                    사용하기
+                  </button>
+                )}
+                {selected.status === 'approved' && (
+                  <button
+                    onClick={() => runAction('archive', '사용 중단했습니다. 시험에 더 이상 나오지 않습니다.')}
+                    disabled={saving}
+                    className="w-full rounded border border-gray-400 py-1.5 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-40"
+                  >
+                    사용 중단
+                  </button>
+                )}
+                {selected.status === 'archived' && (
+                  <button
+                    onClick={() => runAction('restore', '다시 사용 중으로 바꿨습니다.')}
+                    disabled={saving}
+                    className="w-full rounded border border-green-600 py-1.5 text-sm text-green-700 hover:bg-green-50 disabled:opacity-40"
+                  >
+                    다시 사용하기
+                  </button>
+                )}
+                {/* 영구 제외: 확인 필요 / 나중에 결정 / 사용 중단에서만. 사유 필수 + 경고 확인 */}
+                {(selected.status === 'pending' || selected.status === 'archived') && (
+                  <div className="space-y-2 rounded border border-red-100 bg-red-50/40 p-2">
                     <div className="flex gap-2">
                       <select
                         value={rejectReason}
                         onChange={(e) => setRejectReason(e.target.value as VocabularyRejectReason | '')}
                         className="flex-1 rounded border border-gray-300 px-2 py-1.5 text-sm"
                       >
-                        <option value="">반려 사유 선택</option>
-                        {Object.entries(VOCABULARY_REJECT_REASON_LABELS).map(([k, v]) => (
-                          <option key={k} value={k}>{v}</option>
+                        <option value="">영구 제외 사유 선택 (필수)</option>
+                        {VOCABULARY_SELECTABLE_REJECT_REASONS.map((k) => (
+                          <option key={k} value={k}>{VOCABULARY_REJECT_REASON_LABELS[k]}</option>
                         ))}
                       </select>
                       <button
-                        onClick={() =>
-                          rejectReason
-                            ? runAction('reject', '반려했습니다.', { reject_reason: rejectReason, reject_note: rejectNote })
-                            : setMessage({ ok: false, text: '반려 사유를 선택하세요.' })
-                        }
+                        onClick={excludePermanently}
                         disabled={saving}
                         className="rounded border border-red-500 px-3 py-1.5 text-sm text-red-600 hover:bg-red-50 disabled:opacity-40"
                       >
-                        반려
+                        영구 제외
                       </button>
                     </div>
                     <input
                       value={rejectNote}
                       onChange={(e) => setRejectNote(e.target.value)}
-                      placeholder="반려 메모 (선택)"
+                      placeholder="메모 (선택)"
                       className="w-full rounded border border-gray-300 px-2 py-1.5 text-sm"
                     />
-                  </>
-                )}
-                {selected.status === 'approved' && (
-                  <button
-                    onClick={() => runAction('archive', '아카이브했습니다. 자동시험에 더 이상 나오지 않습니다.')}
-                    disabled={saving}
-                    className="w-full rounded border border-gray-400 py-1.5 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-40"
-                  >
-                    아카이브 (자동시험에서 제외)
-                  </button>
-                )}
-                {selected.status === 'archived' && (
-                  <button
-                    onClick={() => runAction('restore', '다시 승인 상태로 복원했습니다.')}
-                    disabled={saving}
-                    className="w-full rounded border border-green-600 py-1.5 text-sm text-green-700 hover:bg-green-50 disabled:opacity-40"
-                  >
-                    복원 (승인으로)
-                  </button>
+                  </div>
                 )}
                 {selected.status === 'rejected' && (
                   <button
-                    onClick={() => runAction('reopen', '검토대기로 되돌렸습니다.')}
+                    onClick={reopenRejected}
                     disabled={saving}
                     className="w-full rounded border border-amber-500 py-1.5 text-sm text-amber-700 hover:bg-amber-50 disabled:opacity-40"
                   >
-                    재검토 (검토대기로)
+                    다시 검토하기 (확인 필요로)
                   </button>
                 )}
               </div>
 
               {notes.length > 0 && (
                 <div className="border-t border-gray-100 pt-2 text-xs text-gray-500">
-                  <p className="mb-1 font-medium">검수 기록 (✔ 검수 완료 · ✎ 수정 메모)</p>
+                  <p className="mb-1 font-medium">검수 기록 (✔ 검수 완료 · ★ 소유자 승인 · ✎ 수정 메모)</p>
                   {notes.map((n) => (
                     <p key={n.id}>
-                      {n.source_ref.startsWith(REVIEW_DONE_REF_PREFIX) ? '✔ ' : '✎ '}
+                      {n.source_ref.startsWith(REVIEW_DONE_REF_PREFIX) ? '✔ ' : n.source_ref.startsWith(OWNER_APPROVAL_REF_PREFIX) ? '★ ' : '✎ '}
                       {n.created_at.slice(0, 10)} · {n.rationale}
                       {n.suggested_difficulty !== null ? ` (당시 난이도 ${n.suggested_difficulty})` : ''}
                     </p>

@@ -35,6 +35,7 @@ export async function POST(request: NextRequest) {
       exam_date: body.exam_date || null,
       total_questions: questions.length,
       max_score: questions.length * points,
+      exam_type: 'word',
     })
     .select('id')
     .single()

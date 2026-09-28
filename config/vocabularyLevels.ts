@@ -74,3 +74,32 @@ export function bandsContaining(
 ): DifficultyBand[] {
   return bands.filter((b) => b.direction === direction && difficulty >= b.min && difficulty <= b.max)
 }
+
+// ── 학년 범위 필터 (설계도 C-2): 학년 범위 아래 / 안 / 위 ──
+// 학년의 모든 레벨 범위를 합친 구간. 기준표가 없는 학년은 null → 화면에 "기준 미설정".
+// '범위 밖'은 상태로 저장하지 않고 항상 이 함수로 그때그때 계산한다.
+export function gradeDifficultyRange(
+  grade: VocabularyGrade,
+  direction: VocabularyDirection = 'en_ko',
+  bands: readonly DifficultyBand[] = VOCABULARY_DIFFICULTY_BANDS,
+): { min: number; max: number } | null {
+  const list = bands.filter((b) => b.grade === grade && b.direction === direction)
+  if (list.length === 0) return null
+  return { min: Math.min(...list.map((b) => b.min)), max: Math.max(...list.map((b) => b.max)) }
+}
+
+export type GradeRangePosition = 'below' | 'within' | 'above'
+
+export const GRADE_RANGE_POSITION_LABELS: Record<GradeRangePosition, string> = {
+  below: '학년 범위 아래',
+  within: '학년 범위 안',
+  above: '학년 범위 위',
+}
+
+// 난이도가 없으면 null (어느 쪽에도 넣지 않는다)
+export function gradeRangePosition(difficulty: number | null, range: { min: number; max: number }): GradeRangePosition | null {
+  if (difficulty === null) return null
+  if (difficulty < range.min) return 'below'
+  if (difficulty > range.max) return 'above'
+  return 'within'
+}

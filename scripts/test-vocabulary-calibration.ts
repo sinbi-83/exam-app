@@ -114,7 +114,7 @@ const asInput = (e: SeedEntry): VocabularyEntryInput => ({
   lemma: e.lemma ?? null, entry_type: e.entry_type ?? 'word', pos: e.pos ?? null, accepted_meanings: e.accepted_meanings ?? [],
   sense_note: e.sense_note ?? null, example_sentence: null, ko_en_difficulty: null, ko_en_allowed: e.ko_en_allowed ?? false,
   expression: e.expression, meaning_ko: e.meaning_ko, base_difficulty: e.base_difficulty,
-  reject_reason: null, reject_note: null, teacher_reviewed_at: null, archived_at: null, deleted_at: null,
+  reject_reason: null, reject_note: null, teacher_reviewed_at: null, archived_at: null, deferred_at: null, deleted_at: null,
   status: 'approved', approval_origin: 'batch',
 })
 

@@ -5,13 +5,13 @@
 //
 // - 새 어휘 추가 + 새 출처 추가만 한다. 이미 같은 활성 어휘가 있으면 건너뛴다 (기존 항목은 바꾸지 않는다).
 // - 출처는 source_type='teacher' (BostonS teacher seed). 공식어휘(official)로 표시하지 않는다.
-// - 기능 검증용으로 status='approved', approval_origin='batch' 로 넣는다. teacher_reviewed_at 은 비워 둔다
-//   (향미 선생님이 /vocabulary 에서 확인·수정하면 그때 기록된다).
+// - '확인 필요'(status='pending')로만 넣는다 (설계도 C-1). 승인 경로·교사 확인 시각은 비워 둔다
+//   → 향미 선생님이 /vocabulary 에서 '사용하기'를 눌러야 시험에 나온다.
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
-import { findActiveDuplicates, validateEntryInput, vocabularyDbErrorMessage } from '../lib/vocabulary.ts'
+import { findActiveDuplicates, SCRIPT_ENTRY_STATE, scriptEntryStateErrors, validateEntryInput, vocabularyDbErrorMessage } from '../lib/vocabulary.ts'
 import type { VocabularyEntryInput, VocabularyEntryType, VocabularyPos } from '../types/vocabulary'
 
 interface SeedEntry {
@@ -65,18 +65,12 @@ async function main() {
     base_difficulty: s.base_difficulty,
     ko_en_difficulty: null,
     ko_en_allowed: s.ko_en_allowed,
-    status: 'approved',
-    reject_reason: null,
-    reject_note: null,
-    approval_origin: 'batch',
-    teacher_reviewed_at: null,
-    archived_at: null,
-    deleted_at: null,
+    ...SCRIPT_ENTRY_STATE,
   }))
 
   let invalid = 0
   inputs.forEach((input, i) => {
-    const errors = validateEntryInput(input)
+    const errors = [...validateEntryInput(input), ...scriptEntryStateErrors(input)]
     if (errors.length) {
       invalid++
       console.error(`❌ ${i + 1}. ${input.expression}: ${errors.join(' / ')}`)

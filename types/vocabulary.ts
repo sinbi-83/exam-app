@@ -29,7 +29,9 @@ export type VocabularyRejectReason =
   | "extraction_error"
   | "other";
 
-export type VocabularyApprovalOrigin = "individual" | "batch";
+// individual = 교사가 화면에서 개별 승인 / batch = 스크립트 일괄 승인(예전 방식, 새로 쓰지 않음)
+// legacy_review = 기존 검수 인정 (스크립트 승인 + 교사 검수 완료 기록) / owner_approval = 소유자 명시 승인
+export type VocabularyApprovalOrigin = "individual" | "batch" | "legacy_review" | "owner_approval";
 
 export type VocabularySourceType = "official" | "external_passage" | "question_bank" | "teacher" | "manual_test";
 
@@ -61,6 +63,7 @@ export interface VocabularyEntryRecord {
   approval_origin: VocabularyApprovalOrigin | null;
   teacher_reviewed_at: string | null;
   archived_at: string | null;
+  deferred_at: string | null; // '나중에 결정' 보류 표시 (status = 'pending' 일 때만)
   deleted_at: string | null;
   created_at: string;
   updated_at: string;

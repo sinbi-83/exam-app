@@ -16,7 +16,7 @@ export async function GET() {
 
   const { data, error } = await supabase
     .from('exams')
-    .select('id, title, exam_date, total_questions, max_score, question_set_id, created_at')
+    .select('id, title, exam_date, total_questions, max_score, question_set_id, exam_type, created_at')
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
@@ -56,6 +56,8 @@ export async function POST(request: NextRequest) {
       total_questions: total_questions || null,
       max_score: max_score || null,
       question_set_id: question_set_id || null,
+      // 이 경로(시험출제·채점관리 시험카드)로 만드는 시험은 문제 시험. 단어 시험은 /api/vocabulary/word-test 에서 'word' 로 만든다
+      exam_type: 'problem',
     })
     .select()
     .single()

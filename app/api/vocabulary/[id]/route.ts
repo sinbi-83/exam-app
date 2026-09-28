@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
-import { canTransition, VOCABULARY_REJECT_REASON_LABELS, vocabularyDbErrorMessage } from '@/lib/vocabulary'
+import { canTransition, isSelectableRejectReason, vocabularyDbErrorMessage } from '@/lib/vocabulary'
 import { REVIEW_DONE_REF_PREFIX, REVIEW_NOTE_ONLY_REF_PREFIX, reviewNoteText } from '@/lib/vocabularyCalibration'
 import type { VocabularyEntryRecord, VocabularyRejectReason, VocabularyStatus } from '@/types/vocabulary'
 
@@ -22,7 +22,8 @@ export async function GET(_request: NextRequest, { params }: { params: { id: str
 
 // PATCH: 교사 수정 / 상태 이동
 // body: { meaning_ko?, accepted_meanings?, base_difficulty?, ko_en_allowed?,
-//         action?: 'approve' | 'reject' | 'archive' | 'restore' | 'reopen', reject_reason?, reject_note?,
+//         action?: 'approve'(사용하기) | 'defer'(나중에 결정) | 'reject'(영구 제외) | 'archive'(사용 중단)
+//                | 'restore'(다시 사용하기) | 'reopen'(다시 검토하기), reject_reason?, reject_note?,
 //         review?: true (값 변경 없이 검수 완료만), review_reason?, review_note? (검수 판단 이유, 선택) }
 // 교사가 손댄 항목은 teacher_reviewed_at 을 남긴다 (이후 제작 스크립트가 값을 채우지 않는다).
 export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
@@ -60,7 +61,13 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
   if (body.ko_en_allowed !== undefined) update.ko_en_allowed = Boolean(body.ko_en_allowed)
 
   const action: string | undefined = body.action
-  if (action) {
+  if (action === 'defer') {
+    // 나중에 결정: 상태는 '확인 필요' 그대로, 보류 표시만 켠다
+    if (current.status !== 'pending' || current.deferred_at !== null) {
+      return NextResponse.json({ error: '확인 필요 상태의 단어만 나중에 결정으로 미룰 수 있습니다.' }, { status: 400 })
+    }
+    update.deferred_at = new Date().toISOString()
+  } else if (action) {
     const to: Record<string, VocabularyStatus> = {
       approve: 'approved', reject: 'rejected', archive: 'archived', restore: 'approved', reopen: 'pending',
     }
@@ -69,24 +76,30 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
       return NextResponse.json({ error: '지금 상태에서는 할 수 없는 작업입니다.' }, { status: 400 })
     }
     update.status = next
+    // 보류 표시는 확인 필요 상태에서만 남는다 → 다른 상태로 가면 지운다
+    if (next !== 'pending') update.deferred_at = null
     if (action === 'approve') {
       const difficulty = update.base_difficulty !== undefined ? update.base_difficulty : current.base_difficulty
-      if (difficulty === null) return NextResponse.json({ error: '승인하려면 난이도를 먼저 입력하세요.' }, { status: 400 })
+      if (difficulty === null) return NextResponse.json({ error: '사용하려면 난이도를 먼저 입력하세요.' }, { status: 400 })
       update.approval_origin = 'individual'
       update.reject_reason = null
       update.reject_note = null
     }
     if (action === 'reject') {
+      // 영구 제외 이중 안전장치 1: 사유 필수 (새 사유 목록만. '너무 쉬움' 등 예전 사유는 새로 고를 수 없다)
       const reason = body.reject_reason as VocabularyRejectReason
-      if (!reason || !(reason in VOCABULARY_REJECT_REASON_LABELS)) {
-        return NextResponse.json({ error: '반려 사유를 선택하세요.' }, { status: 400 })
+      if (!isSelectableRejectReason(reason)) {
+        return NextResponse.json({ error: '영구 제외 사유를 선택하세요.' }, { status: 400 })
       }
       update.reject_reason = reason
       update.reject_note = body.reject_note ? String(body.reject_note).trim() || null : null
+      // 사용 중단 → 영구 제외: 아카이브 표시를 지운다 (DB: archived 상태와 archived_at 은 짝)
+      update.archived_at = null
     }
     if (action === 'reopen') {
       update.reject_reason = null
       update.reject_note = null
+      update.deferred_at = null
     }
     if (action === 'archive') update.archived_at = new Date().toISOString()
     if (action === 'restore') update.archived_at = null

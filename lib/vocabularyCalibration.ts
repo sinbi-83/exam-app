@@ -97,6 +97,8 @@ export function generalTestCandidates<T extends { vocabulary_sources?: SourceRef
 //  - teacher-note:<시각>    = 검수 완료 없이 "수정만 저장" 할 때 남긴 판단 이유
 export const REVIEW_DONE_REF_PREFIX = 'teacher-review:'
 export const REVIEW_NOTE_ONLY_REF_PREFIX = 'teacher-note:'
+//  - owner-approval:<시각>  = 소유자(향미 선생님) 명시 승인 기록 (예: 1단계 상태 바로잡기). 검수 완료로 세지 않는다
+export const OWNER_APPROVAL_REF_PREFIX = 'owner-approval:'
 
 export const REVIEW_REASON_LABELS = {
   too_easy: '너무 쉬움',
@@ -110,9 +112,13 @@ export const REVIEW_REASON_LABELS = {
 } as const
 export type ReviewReason = keyof typeof REVIEW_REASON_LABELS
 
-// 검수 기록·메모 행인지 (출처 표시·anchor 판단에서 제외)
+// 검수·승인 기록 행인지 (출처가 아니다 → 출처 표시·출처 수·anchor 판단에서 제외)
 export function isReviewNoteRef(sourceRef: string): boolean {
-  return sourceRef.startsWith(REVIEW_DONE_REF_PREFIX) || sourceRef.startsWith(REVIEW_NOTE_ONLY_REF_PREFIX)
+  return (
+    sourceRef.startsWith(REVIEW_DONE_REF_PREFIX) ||
+    sourceRef.startsWith(REVIEW_NOTE_ONLY_REF_PREFIX) ||
+    sourceRef.startsWith(OWNER_APPROVAL_REF_PREFIX)
+  )
 }
 
 // 검수 메모 한 줄: "너무 쉬움 · 메모" (둘 다 없으면 null → 메모 행을 만들지 않는다)

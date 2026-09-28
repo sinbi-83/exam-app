@@ -24,11 +24,45 @@ import type {
 
 export const VOCABULARY_STATUSES: readonly VocabularyStatus[] = ['pending', 'approved', 'rejected', 'archived']
 
+// 화면 이름 (설계도 C-1). 내부 값은 그대로 두고 이름만 바꾼다.
 export const VOCABULARY_STATUS_LABELS: Record<VocabularyStatus, string> = {
-  pending: '검토대기',
-  approved: '승인',
-  rejected: '반려',
-  archived: '아카이브',
+  pending: '확인 필요',
+  approved: '사용 중',
+  rejected: '영구 제외',
+  archived: '사용 중단',
+}
+
+// ── 화면 상태 (탭) ──
+// '나중에 결정'은 별도 상태가 아니라 pending + deferred_at(보류 표시)이다.
+export type VocabularyViewState = 'pending' | 'deferred' | 'approved' | 'archived' | 'rejected'
+
+export const VOCABULARY_VIEW_STATES: readonly VocabularyViewState[] = ['pending', 'deferred', 'approved', 'archived', 'rejected']
+
+export const VOCABULARY_VIEW_STATE_LABELS: Record<VocabularyViewState, string> = {
+  pending: '확인 필요',
+  deferred: '나중에 결정',
+  approved: '사용 중',
+  archived: '사용 중단',
+  rejected: '영구 제외',
+}
+
+// 탭 아래 설명
+export const VOCABULARY_VIEW_STATE_HINTS: Record<VocabularyViewState, string> = {
+  pending: '아직 아무도 안 본 단어 · 시험에 안 나옴',
+  deferred: '봤지만 판단을 미룬 단어 · 시험에 안 나옴',
+  approved: '시험에 나오는 단어',
+  archived: '쓰다가 멈춤, 언제든 다시 사용 가능 · 시험에 안 나옴',
+  rejected: '쓸모없음 · 시험에 안 나오고, 같은 표현+품사+뜻은 다시 자동으로 들어오지 않음',
+}
+
+export function vocabularyViewState(entry: { status: VocabularyStatus; deferred_at: string | null }): VocabularyViewState {
+  if (entry.status === 'pending') return entry.deferred_at ? 'deferred' : 'pending'
+  return entry.status
+}
+
+// "결정 안 된 단어" = 확인 필요 + 나중에 결정 (삭제된 항목 제외)
+export function undecidedCount(entries: { status: VocabularyStatus; deleted_at: string | null }[]): number {
+  return entries.filter((e) => e.status === 'pending' && e.deleted_at === null).length
 }
 
 export const VOCABULARY_ENTRY_TYPES: readonly VocabularyEntryType[] = ['word', 'phrasal_verb', 'collocation', 'idiom', 'phrase']
@@ -38,18 +72,35 @@ export const VOCABULARY_POS: readonly VocabularyPos[] = [
   'preposition', 'conjunction', 'determiner', 'interjection', 'numeral',
 ]
 
+// 영구 제외 사유 이름. 예전 값(레벨 부적합·너무 쉬움 등)은 기존 기록 표시용으로만 남긴다.
 export const VOCABULARY_REJECT_REASON_LABELS: Record<VocabularyRejectReason, string> = {
   level_mismatch: '레벨 부적합',
-  meaning_wrong: '뜻 부적합',
+  meaning_wrong: '뜻 오류',
   too_easy: '너무 쉬움',
   too_hard: '너무 어려움',
-  low_value: '시험 가치 낮음',
+  low_value: '고유명사·시험 가치 없음',
   duplicate: '중복',
   extraction_error: '잘못 추출',
   other: '기타',
 }
 
-export const VOCABULARY_APPROVAL_ORIGINS: readonly VocabularyApprovalOrigin[] = ['individual', 'batch']
+// 새로 영구 제외할 때 고를 수 있는 사유 (설계도 C-1). 쉬움·어려움은 학년 범위가 처리하므로 사유가 아니다.
+export const VOCABULARY_SELECTABLE_REJECT_REASONS: readonly VocabularyRejectReason[] = [
+  'meaning_wrong', 'duplicate', 'low_value', 'other',
+]
+
+export function isSelectableRejectReason(value: unknown): value is VocabularyRejectReason {
+  return typeof value === 'string' && (VOCABULARY_SELECTABLE_REJECT_REASONS as readonly string[]).includes(value)
+}
+
+export const VOCABULARY_APPROVAL_ORIGINS: readonly VocabularyApprovalOrigin[] = ['individual', 'batch', 'legacy_review', 'owner_approval']
+
+export const VOCABULARY_APPROVAL_ORIGIN_LABELS: Record<VocabularyApprovalOrigin, string> = {
+  individual: '교사 개별 승인',
+  batch: '스크립트 일괄 승인',
+  legacy_review: '기존 검수 인정',
+  owner_approval: '소유자 명시 승인',
+}
 
 export const VOCABULARY_SOURCE_TYPES: readonly VocabularySourceType[] = [
   'official', 'external_passage', 'question_bank', 'teacher', 'manual_test',
@@ -145,6 +196,9 @@ export function validateEntryInput(entry: VocabularyEntryInput): string[] {
   if (entry.reject_reason !== null && !(entry.reject_reason in VOCABULARY_REJECT_REASON_LABELS)) {
     errors.push(`반려 사유가 올바르지 않습니다: ${entry.reject_reason}`)
   }
+  if (entry.deferred_at !== null && entry.status !== 'pending') {
+    errors.push("'나중에 결정' 표시는 확인 필요 상태에서만 남길 수 있습니다.")
+  }
   return errors
 }
 
@@ -170,11 +224,35 @@ export function sourceLinkKey(source: { entry_id: string; source_type: string; s
 
 // ── 상태 이동 (교사 작업 버튼의 기준) ──
 // 삭제(deleted_at)는 상태가 아니므로 여기에 없다. 삭제/복원은 어느 상태에서든 deleted_at 만 바꾼다.
+// ── 등록 스크립트 규칙 (설계도 C-1) ──
+// 가져오기·등록 스크립트는 '확인 필요'로만 넣는다. 사용 여부(승인)는 교사가 화면에서 정한다.
+export const SCRIPT_ENTRY_STATE = {
+  status: 'pending',
+  approval_origin: null,
+  reject_reason: null,
+  reject_note: null,
+  teacher_reviewed_at: null,
+  archived_at: null,
+  deferred_at: null,
+  deleted_at: null,
+} as const satisfies Partial<VocabularyEntryInput>
+
+// 스크립트 입력이 규칙을 지키는지 (어기면 오류 문장)
+export function scriptEntryStateErrors(entry: Pick<VocabularyEntryInput, 'status' | 'approval_origin' | 'teacher_reviewed_at' | 'deferred_at'>): string[] {
+  const errors: string[] = []
+  if (entry.status !== 'pending') errors.push(`스크립트는 '확인 필요'로만 넣을 수 있습니다 (지금: ${entry.status}).`)
+  if (entry.approval_origin !== null) errors.push('스크립트는 승인 경로를 채울 수 없습니다.')
+  if (entry.teacher_reviewed_at !== null) errors.push('스크립트는 교사 확인 시각을 채울 수 없습니다.')
+  if (entry.deferred_at !== null) errors.push("스크립트는 '나중에 결정' 표시를 채울 수 없습니다.")
+  return errors
+}
+
+// ('나중에 결정'은 상태 이동이 아니라 pending 안에서 보류 표시만 켠다 → 여기에 없음)
 export const VOCABULARY_STATUS_TRANSITIONS: Record<VocabularyStatus, readonly VocabularyStatus[]> = {
-  pending: ['approved', 'rejected'], // 승인 / 반려
-  approved: ['archived'], // 아카이브 (승인됐던 항목은 "반려"가 아니라 은퇴)
-  rejected: ['pending'], // 재검토
-  archived: ['approved'], // 복원 (기본값: 승인으로)
+  pending: ['approved', 'rejected'], // 사용하기 / 영구 제외
+  approved: ['archived'], // 사용 중단 (사용 중인 단어는 바로 영구 제외하지 않는다)
+  rejected: ['pending'], // 다시 검토하기
+  archived: ['approved', 'rejected'], // 다시 사용하기 / 영구 제외
 }
 
 export function canTransition(from: VocabularyStatus, to: VocabularyStatus): boolean {

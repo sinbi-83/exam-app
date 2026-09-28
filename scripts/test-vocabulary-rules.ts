@@ -13,12 +13,25 @@ import {
   normalizeExpressionKey,
   normalizeMeaningKey,
   planAutoFill,
+  SCRIPT_ENTRY_STATE,
+  scriptEntryStateErrors,
   sourceLinkKey,
+  undecidedCount,
   validateEntryInput,
   validateSourceInput,
+  VOCABULARY_SELECTABLE_REJECT_REASONS,
+  VOCABULARY_STATUS_LABELS,
   vocabularyDbErrorMessage,
+  vocabularyViewState,
 } from '../lib/vocabulary.ts'
-import { effectiveDifficulty, findDifficultyBand, VOCABULARY_DIFFICULTY_BANDS } from '../config/vocabularyLevels.ts'
+import {
+  effectiveDifficulty,
+  findDifficultyBand,
+  gradeDifficultyRange,
+  gradeRangePosition,
+  VOCABULARY_DIFFICULTY_BANDS,
+} from '../config/vocabularyLevels.ts'
+import { exclusionConfirmText, exclusionWarnings, type ExclusionFacts } from '../lib/vocabularyExclusion.ts'
 import type { VocabularyEntryInput, VocabularySourceInput } from '../types/vocabulary'
 
 let passed = 0
@@ -52,6 +65,7 @@ function entry(overrides: Partial<VocabularyEntryInput> = {}): VocabularyEntryIn
     approval_origin: null,
     teacher_reviewed_at: null,
     archived_at: null,
+    deferred_at: null,
     deleted_at: null,
     ...overrides,
   }
@@ -185,14 +199,95 @@ test('출처 검사: 공식 출처는 원본명·버전 필수, 비공식 출처
 })
 
 // ── 상태 이동 ──
-test('상태 이동: 승인 항목은 반려가 아니라 아카이브, 아카이브 복원은 승인으로', () => {
+test('상태 이동 (C-1): 사용 중은 사용 중단만, 사용 중단은 다시 사용하기·영구 제외', () => {
   assert.ok(canTransition('pending', 'approved'))
   assert.ok(canTransition('pending', 'rejected'))
+  assert.ok(!canTransition('pending', 'archived'))
   assert.ok(!canTransition('approved', 'rejected'))
   assert.ok(canTransition('approved', 'archived'))
   assert.ok(canTransition('archived', 'approved'))
+  assert.ok(canTransition('archived', 'rejected'))
   assert.ok(canTransition('rejected', 'pending'))
   assert.ok(!canTransition('rejected', 'approved'))
+})
+test('화면 이름 (C-1)', () => {
+  assert.deepEqual(VOCABULARY_STATUS_LABELS, { pending: '확인 필요', approved: '사용 중', rejected: '영구 제외', archived: '사용 중단' })
+})
+test("'나중에 결정' = pending + 보류 표시, 결정 안 된 단어 = 확인 필요 + 나중에 결정", () => {
+  assert.equal(vocabularyViewState({ status: 'pending', deferred_at: null }), 'pending')
+  assert.equal(vocabularyViewState({ status: 'pending', deferred_at: '2026-09-28T00:00:00Z' }), 'deferred')
+  assert.equal(vocabularyViewState({ status: 'approved', deferred_at: null }), 'approved')
+  const list = [
+    { status: 'pending' as const, deleted_at: null },
+    { status: 'pending' as const, deleted_at: null },
+    { status: 'pending' as const, deleted_at: '2026-09-28T00:00:00Z' },
+    { status: 'approved' as const, deleted_at: null },
+    { status: 'archived' as const, deleted_at: null },
+  ]
+  assert.equal(undecidedCount(list), 2)
+})
+test('보류 표시는 확인 필요 상태에서만', () => {
+  assert.deepEqual(validateEntryInput(entry({ deferred_at: '2026-09-28T00:00:00Z' })), [])
+  assert.ok(validateEntryInput(entry({ status: 'approved', base_difficulty: 40, approval_origin: 'individual', deferred_at: '2026-09-28T00:00:00Z' })).length > 0)
+})
+test("영구 제외 사유: 4개만 고를 수 있고 '너무 쉬움'·'너무 어려움'은 없다", () => {
+  assert.deepEqual([...VOCABULARY_SELECTABLE_REJECT_REASONS], ['meaning_wrong', 'duplicate', 'low_value', 'other'])
+  assert.ok(!VOCABULARY_SELECTABLE_REJECT_REASONS.includes('too_easy'))
+  assert.ok(!VOCABULARY_SELECTABLE_REJECT_REASONS.includes('too_hard'))
+})
+test('승인 경로 새 값: 기존 검수 인정 / 소유자 명시 승인', () => {
+  assert.deepEqual(validateEntryInput(entry({ status: 'approved', base_difficulty: 40, approval_origin: 'legacy_review' })), [])
+  assert.deepEqual(validateEntryInput(entry({ status: 'approved', base_difficulty: 40, approval_origin: 'owner_approval' })), [])
+})
+test("등록 스크립트는 '확인 필요'로만 넣는다", () => {
+  assert.equal(SCRIPT_ENTRY_STATE.status, 'pending')
+  assert.equal(SCRIPT_ENTRY_STATE.approval_origin, null)
+  assert.deepEqual(scriptEntryStateErrors(entry({ ...SCRIPT_ENTRY_STATE, base_difficulty: 40 })), [])
+  assert.ok(scriptEntryStateErrors(entry({ status: 'approved', approval_origin: 'batch' })).length >= 2)
+  assert.ok(scriptEntryStateErrors(entry({ teacher_reviewed_at: '2026-09-28T00:00:00Z' })).length > 0)
+})
+test('등록 스크립트 파일이 approved 로 넣는 코드를 갖고 있지 않다', () => {
+  const seedScript = readFileSync(resolve(process.cwd(), 'scripts/add-vocabulary-seed.ts'), 'utf-8')
+  assert.ok(!/status:\s*'approved'/.test(seedScript))
+  assert.ok(/SCRIPT_ENTRY_STATE/.test(seedScript))
+  assert.ok(/scriptEntryStateErrors/.test(seedScript))
+})
+
+// ── 학년 범위 (C-2) ──
+test('학년 범위: 중1은 레벨 전체 합친 구간, 기준 없는 학년은 null(기준 미설정)', () => {
+  assert.deepEqual(gradeDifficultyRange('중1'), { min: 1, max: 75 })
+  assert.equal(gradeDifficultyRange('초5'), null)
+  assert.equal(gradeRangePosition(80, { min: 1, max: 75 }), 'above')
+  assert.equal(gradeRangePosition(75, { min: 1, max: 75 }), 'within')
+  assert.equal(gradeRangePosition(1, { min: 10, max: 75 }), 'below')
+  assert.equal(gradeRangePosition(null, { min: 1, max: 75 }), null)
+})
+
+// ── 영구 제외 경고 (C-1) ──
+const noFacts: ExclusionFacts = {
+  base_difficulty: null, official_source_count: 0, grade_bands: [], exam_count: 0, exam_question_count: 0,
+  same_spelling_meanings: [], source_count: 0, approval_origin_label: null,
+}
+test('영구 제외 경고: 해당하는 것만', () => {
+  assert.deepEqual(exclusionWarnings(noFacts), [])
+  const w = exclusionWarnings({
+    ...noFacts, base_difficulty: 20, official_source_count: 1, grade_bands: ['중1 학교형'], exam_count: 2, exam_question_count: 3,
+    same_spelling_meanings: ['계획하다'], source_count: 2, approval_origin_label: '기존 검수 인정',
+  })
+  assert.equal(w.length, 6)
+  assert.match(w[0], /공식 기본어휘/)
+  assert.match(w[1], /중1 학교형/)
+  assert.match(w[2], /시험 2개\(3문항\)/)
+  assert.match(w[3], /계획하다/)
+  assert.match(w[4], /출처가 2개/)
+  assert.match(w[5], /기존 검수 인정/)
+  assert.deepEqual(exclusionWarnings({ ...noFacts, base_difficulty: 90 }), [])
+})
+test('영구 제외 확인 문구에 사유와 경고가 들어간다', () => {
+  const text = exclusionConfirmText('plan', '중복', ['출처가 1개 있습니다.'])
+  assert.match(text, /plan/)
+  assert.match(text, /사유: 중복/)
+  assert.match(text, /• 출처가 1개 있습니다\./)
 })
 
 // ── 교사값 보호 ──
