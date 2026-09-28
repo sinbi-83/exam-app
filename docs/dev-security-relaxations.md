@@ -19,6 +19,7 @@
 | 3 | 2026-09-28 | **Claude Code 가 향미 선생님 계정으로 DB 에 직접 접속**: 스크립트가 `.env.local` 의 `SUPABASE_LOGIN_EMAIL` / `SUPABASE_LOGIN_PASSWORD` 로 로그인해 읽기·쓰기 (1단계 상태 바로잡기, 3단계 기준표 넣기, 조사용 읽기) | migration 뒤 데이터 적용·검증을 사람 손 없이 하기 위해 | 개발 끝나면 Supabase 비밀번호 변경 → `.env.local` 의 두 줄 삭제 (스크립트가 필요할 때만 다시 넣기) |
 | 4 | 2026-09-28 | **Claude Code 가 GitHub push → Vercel 배포 실행** (이 PC 에 저장된 git 인증 사용) | "배포해줘" 요청 시 바로 반영하기 위해 | 필요하면 GitHub 토큰 권한 축소·재발급. 배포는 계속 "요청이 있을 때만" 규칙 유지 |
 | 5 | 이전부터 | `.claude/settings.json` 의 **SessionStart hook** — 세션 시작 때 `npm run dev` 자동 실행 | 개발 서버 자동 시작 | 해당 hook 삭제. (참고: 경로가 `/home/user/exam-app` 로 되어 있어 이 Windows PC 에서는 실제로 동작하지 않는다) |
+| 6 | 2026-09-29 | **셸 명령 허락 창 생략**: `.claude/settings.local.json` 의 `permissions.allow` 에 `Bash(git:*)`, `Bash(npm:*)`, `Bash(npx:*)`, `Bash(node:*)` 추가 — git(push 포함)·npm·npx·node 명령을 묻지 않고 실행 | 자동 모드를 쓸 수 없어 허락 창이 너무 자주 떠서 (향미 선생님 요청) | `.claude/settings.local.json` 의 `allow` 에서 이 네 줄 삭제 |
 
 ## 2. 개발 중이라 느슨하게 두었지만 "풀어 둔 설정"은 아닌 것 (보안 점검 때 같이 볼 것)
 
