@@ -36,11 +36,11 @@ drink|v|마시다||4|y||
 drive|v|운전하다|몰다|10|y||
 drop|v|떨어뜨리다|떨어지다|14|n||
 drum|n|북|드럼|6|y||
-dry|adj|마른|건조한;말리다|10|n||
+dry|adj|마른|건조한|10|n||
 duck|n|오리||4|y||
 during|prep|~ 동안|~ 중에|18|n||for 와 구분
 ear|n|귀||2|y||
-early|adv|일찍|이른;초기의|10|n||
+early|adv|일찍||10|n||
 earth|n|지구|땅;흙|10|n||
 east|n|동쪽|동|8|y||
 egg|n|달걀|계란;알|3|y||
@@ -62,10 +62,10 @@ fail|v|실패하다|떨어지다|18|y||
 fall|v|떨어지다|넘어지다|10|n|동사: 떨어지다|
 fall|n|가을||10|n|명사: 가을 (미국식)|autumn 과 같은 뜻
 fan|n|팬|선풍기;부채;열성 지지자|8|n||팬(지지자)과 선풍기 중 대표 뜻
-far|adv|멀리|먼|10|n||
+far|adv|멀리||10|n||
 farm|n|농장||6|y||
-fast|adj|빠른|빨리|6|n||quick 과 같은 뜻
-fat|adj|뚱뚱한|살찐;지방|10|n||
+fast|adj|빠른||6|n||quick 과 같은 뜻
+fat|adj|뚱뚱한|살찐|10|n||
 father|n|아버지|아빠|2|y||
 favorite|adj|가장 좋아하는||10|y||
 feel|v|느끼다||10|y||
@@ -76,7 +76,7 @@ file|n|파일|서류철|20|n||
 fill|v|채우다||14|y||
 film|n|영화|필름|12|n||movie 와 같은 뜻
 find|v|찾다|발견하다|8|n||
-fine|adj|좋은|괜찮은;건강한;벌금|10|n||
+fine|adj|좋은|괜찮은;건강한|10|n||
 finger|n|손가락||4|y||
 finish|v|끝내다|마치다|10|n||
 fire|n|불|화재|6|y||
@@ -125,9 +125,9 @@ goodbye|int|안녕|잘 가;작별 인사|4|n||헤어질 때 인사|인사말이�
 grandfather|n|할아버지||5|y||
 grape|n|포도||4|y||
 grass|n|풀|잔디|6|y||
-gray|adj|회색의|회색|6|y||
+gray|adj|회색의||6|y||
 great|adj|훌륭한|큰;대단한;멋진|10|n||
-green|adj|초록색의|초록;녹색|3|y||
+green|adj|초록색의||3|y||
 ground|n|땅|지면;운동장|10|n||
 group|n|무리|집단;모둠;그룹|12|n||
 grow|v|자라다|기르다;키우다|10|n||
@@ -140,7 +140,7 @@ hair|n|머리카락|머리;털|4|y||
 hamburger|n|햄버거||3|y||
 hand|n|손||2|y||
 hang|v|걸다|매달다;매달리다|16|n||
-hard|adj|어려운|딱딱한;단단한;열심히|10|n||
+hard|adj|어려운|딱딱한;단단한|10|n||
 hat|n|모자||3|n||cap 과 구분
 hate|v|싫어하다|미워하다|10|y||
 have|v|가지다|가지고 있다;먹다|4|n||
@@ -215,13 +215,13 @@ land|n|땅|육지;토지|12|n||
 large|adj|큰|넓은|10|n||big 과 같은 뜻
 laser|n|레이저||22|y||
 last|adj|마지막의|지난;최후의|10|n||
-late|adj|늦은|늦게|8|n||
+late|adj|늦은||8|n||
 lazy|adj|게으른||10|y||
 learn|v|배우다||8|n||study 와 같은 뜻
 left|n|왼쪽|왼편|6|y||
 leg|n|다리||3|n||bridge 와 구분 필요
 letter|n|편지|글자;문자|6|n||
-lie|v|거짓말하다|눕다;거짓말|14|n||눕다와 거짓말하다 두 동사가 같은 철자|대표 뜻을 무엇으로 할지
+lie|v|거짓말하다|눕다|14|n||눕다와 거짓말하다 두 동사가 같은 철자|대표 뜻을 무엇으로 할지
 life|n|삶|생명;인생;생활|12|n||
 light|n|빛|불;전등|8|n|명사: 빛|
 light|adj|가벼운|밝은|12|n|형용사: 가벼운|
@@ -230,9 +230,9 @@ line|n|선|줄|8|n||
 lion|n|사자||4|y||
 lip|n|입술||6|y||
 listen|v|듣다||6|n||hear 와 구분
-little|adj|작은|어린;조금|6|n||small 과 같은 뜻
+little|adj|작은|어린|6|n||small 과 같은 뜻
 live|v|살다|거주하다|6|y||
-long|adj|긴|오래|4|y||
+long|adj|긴||4|y||
 look|v|보다|~처럼 보이다|4|n||see, watch 와 구분
 love|v|사랑하다||2|y||
 low|adj|낮은||8|y||

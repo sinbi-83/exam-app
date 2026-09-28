@@ -130,8 +130,7 @@
       "pos": "verb",
       "meaning_ko": "멈추다",
       "accepted_meanings": [
-        "그만두다",
-        "정류장"
+        "그만두다"
       ],
       "base_difficulty": 6,
       "ko_en_allowed": false,
@@ -271,8 +270,7 @@
       "pos": "adjective",
       "meaning_ko": "확실한",
       "accepted_meanings": [
-        "확신하는",
-        "물론"
+        "확신하는"
       ],
       "base_difficulty": 12,
       "ko_en_allowed": false,
@@ -376,8 +374,7 @@
       "pos": "verb",
       "meaning_ko": "맛보다",
       "accepted_meanings": [
-        "맛이 나다",
-        "맛"
+        "맛이 나다"
       ],
       "base_difficulty": 10,
       "ko_en_allowed": false,
@@ -690,8 +687,7 @@
       "pos": "verb",
       "meaning_ko": "피곤하게 하다",
       "accepted_meanings": [
-        "지치다",
-        "타이어"
+        "지치다"
       ],
       "base_difficulty": 18,
       "ko_en_allowed": false,
@@ -945,8 +941,7 @@
       "pos": "verb",
       "meaning_ko": "돌다",
       "accepted_meanings": [
-        "돌리다",
-        "차례"
+        "돌리다"
       ],
       "base_difficulty": 10,
       "ko_en_allowed": false,
@@ -1483,9 +1478,7 @@
       "entry_type": "word",
       "pos": "verb",
       "meaning_ko": "환영하다",
-      "accepted_meanings": [
-        "어서 오세요"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 6,
       "ko_en_allowed": true,
       "official_no": 2929
@@ -1497,8 +1490,7 @@
       "pos": "adverb",
       "meaning_ko": "잘",
       "accepted_meanings": [
-        "좋게",
-        "우물"
+        "좋게"
       ],
       "base_difficulty": 8,
       "ko_en_allowed": false,
@@ -1578,8 +1570,7 @@
       "pos": "adjective",
       "meaning_ko": "흰",
       "accepted_meanings": [
-        "하얀",
-        "흰색"
+        "하얀"
       ],
       "base_difficulty": 3,
       "ko_en_allowed": true,
@@ -1691,7 +1682,6 @@
       "pos": "verb",
       "meaning_ko": "바라다",
       "accepted_meanings": [
-        "소원",
         "원하다"
       ],
       "base_difficulty": 10,
@@ -1748,8 +1738,7 @@
       "pos": "verb",
       "meaning_ko": "일하다",
       "accepted_meanings": [
-        "작동하다",
-        "일"
+        "작동하다"
       ],
       "base_difficulty": 6,
       "ko_en_allowed": false,
@@ -1827,8 +1816,7 @@
       "pos": "adjective",
       "meaning_ko": "노란",
       "accepted_meanings": [
-        "노란색의",
-        "노랑"
+        "노란색의"
       ],
       "base_difficulty": 3,
       "ko_en_allowed": true,

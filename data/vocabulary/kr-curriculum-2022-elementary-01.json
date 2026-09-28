@@ -16,9 +16,7 @@
       "pos": "preposition",
       "meaning_ko": "~에 관하여",
       "accepted_meanings": [
-        "~에 대해",
-        "약",
-        "대략"
+        "~에 대해"
       ],
       "base_difficulty": 12,
       "ko_en_allowed": false,
@@ -263,7 +261,6 @@
       "pos": "adjective",
       "meaning_ko": "혼자",
       "accepted_meanings": [
-        "홀로",
         "외로운"
       ],
       "base_difficulty": 14,
@@ -431,9 +428,7 @@
       "pos": "preposition",
       "meaning_ko": "~ 주위에",
       "accepted_meanings": [
-        "둘레에",
-        "약",
-        "대략"
+        "둘레에"
       ],
       "base_difficulty": 14,
       "ko_en_allowed": false,
@@ -989,8 +984,7 @@
       "pos": "adjective",
       "meaning_ko": "검은",
       "accepted_meanings": [
-        "검은색의",
-        "검정"
+        "검은색의"
       ],
       "base_difficulty": 3,
       "ko_en_allowed": true,
@@ -1016,8 +1010,7 @@
       "pos": "adjective",
       "meaning_ko": "파란",
       "accepted_meanings": [
-        "파란색의",
-        "파랑"
+        "파란색의"
       ],
       "base_difficulty": 3,
       "ko_en_allowed": true,
@@ -1248,9 +1241,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "갈색의",
-      "accepted_meanings": [
-        "갈색"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 4,
       "ko_en_allowed": true,
       "official_no": 354
@@ -1761,9 +1752,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "깨끗한",
-      "accepted_meanings": [
-        "청소하다"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 6,
       "ko_en_allowed": false,
       "official_no": 492
@@ -1920,8 +1909,7 @@
       "pos": "adjective",
       "meaning_ko": "추운",
       "accepted_meanings": [
-        "차가운",
-        "감기"
+        "차가운"
       ],
       "base_difficulty": 4,
       "ko_en_allowed": false,

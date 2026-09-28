@@ -3,7 +3,7 @@
 # 제외(단어시험 가치 낮은 기능어): -단어|이유
 # 품사: n 명사, v 동사, adj 형용사, adv 부사, prep 전치사, conj 접속사, det 한정사, num 수사, int 감탄사, pron 대명사
 -a|관사 (문법 요소)
-about|prep|~에 관하여|~에 대해;약;대략|12|n||
+about|prep|~에 관하여|~에 대해|12|n||
 above|prep|~ 위에|~보다 위에|14|n||below와 짝, 전치사
 across|prep|~을 가로질러|건너서;맞은편에|20|n||
 act|v|행동하다|연기하다|18|n||
@@ -22,7 +22,7 @@ airplane|n|비행기||5|y||
 album|n|앨범|사진첩|10|y||
 all|det|모든|모두;전부|6|n||
 almost|adv|거의||16|y||
-alone|adj|혼자|홀로;외로운|14|n||
+alone|adj|혼자|외로운|14|n||
 along|prep|~을 따라||18|y||
 already|adv|이미|벌써|16|y||
 alright|adj|괜찮은|좋은|12|n||all right 표기
@@ -36,7 +36,7 @@ any|det|어떤|어느;무슨|14|n||
 apartment|n|아파트||10|y||
 area|n|지역|구역;분야|22|n||
 arm|n|팔||4|y||
-around|prep|~ 주위에|둘레에;약;대략|14|n||
+around|prep|~ 주위에|둘레에|14|n||
 arrive|v|도착하다||14|y||
 art|n|미술|예술|8|n||
 -as|접속사·전치사 (문법 요소)
@@ -84,9 +84,9 @@ bill|n|계산서|청구서;지폐|22|n||
 bird|n|새||2|y||
 birth|n|탄생|출생|18|y||
 biscuit|n|비스킷||8|y||
-black|adj|검은|검은색의;검정|3|y||
+black|adj|검은|검은색의|3|y||
 blood|n|피|혈액|12|y||
-blue|adj|파란|파란색의;파랑|3|y||
+blue|adj|파란|파란색의|3|y||
 board|n|판자|게시판;칠판|16|n||
 boat|n|배|보트|5|n||ship 과 구분
 body|n|몸|신체|6|y||
@@ -104,7 +104,7 @@ bridge|n|다리||10|n||leg 와 구분 필요
 bright|adj|밝은|빛나는;똑똑한|14|y||
 bring|v|가져오다|데려오다|12|n||
 brother|n|형제|형;오빠;남동생|3|n||
-brown|adj|갈색의|갈색|4|y||
+brown|adj|갈색의||4|y||
 brush|n|붓|솔;빗;칫솔|10|n||
 build|v|짓다|세우다;건설하다|12|n||
 burn|v|타다|태우다;데다|16|n||
@@ -147,7 +147,7 @@ church|n|교회||8|y||
 circle|n|원|동그라미|10|y||
 city|n|도시||6|y||
 class|n|수업|학급;반|6|n||
-clean|adj|깨끗한|청소하다|6|n||
+clean|adj|깨끗한||6|n||
 clear|adj|맑은|분명한;깨끗한|16|n||
 clever|adj|영리한|똑똑한|14|n||smart 와 같은 뜻
 climb|v|오르다|올라가다;등산하다|12|n||
@@ -159,7 +159,7 @@ cloud|n|구름||6|y||
 club|n|동아리|클럽;모임|10|n||
 coat|n|코트|외투|6|y||
 coffee|n|커피||4|y||
-cold|adj|추운|차가운;감기|4|n||
+cold|adj|추운|차가운|4|n||
 collect|v|모으다|수집하다|14|y||
 college|n|대학|대학교|18|n||university 와 구분
 color|n|색|색깔;색상|4|y||

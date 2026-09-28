@@ -451,9 +451,7 @@
       "entry_type": "word",
       "pos": "determiner",
       "meaning_ko": "많은",
-      "accepted_meanings": [
-        "많이"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 10,
       "ko_en_allowed": false,
       "official_no": 1736,
@@ -516,7 +514,6 @@
       "pos": "preposition",
       "meaning_ko": "~ 가까이에",
       "accepted_meanings": [
-        "가까운",
         "근처에"
       ],
       "base_difficulty": 10,
@@ -843,8 +840,7 @@
       "pos": "adverb",
       "meaning_ko": "오직",
       "accepted_meanings": [
-        "단지",
-        "유일한"
+        "단지"
       ],
       "base_difficulty": 12,
       "ko_en_allowed": false,
@@ -856,9 +852,7 @@
       "entry_type": "word",
       "pos": "verb",
       "meaning_ko": "열다",
-      "accepted_meanings": [
-        "열린"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 4,
       "ko_en_allowed": false,
       "official_no": 1839,
@@ -898,8 +892,7 @@
       "meaning_ko": "~ 위에",
       "accepted_meanings": [
         "~을 넘어",
-        "~ 이상",
-        "끝난"
+        "~ 이상"
       ],
       "base_difficulty": 14,
       "ko_en_allowed": false,
@@ -925,8 +918,7 @@
       "pos": "verb",
       "meaning_ko": "칠하다",
       "accepted_meanings": [
-        "그리다",
-        "페인트"
+        "그리다"
       ],
       "base_difficulty": 10,
       "ko_en_allowed": false,
@@ -1153,10 +1145,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "분홍색의",
-      "accepted_meanings": [
-        "분홍",
-        "핑크"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 4,
       "ko_en_allowed": true,
       "official_no": 1965
@@ -1204,8 +1193,7 @@
       "meaning_ko": "놀다",
       "accepted_meanings": [
         "경기하다",
-        "연주하다",
-        "연극"
+        "연주하다"
       ],
       "base_difficulty": 4,
       "ko_en_allowed": false,
@@ -1298,9 +1286,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "예쁜",
-      "accepted_meanings": [
-        "꽤"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 6,
       "ko_en_allowed": false,
       "official_no": 2041
@@ -1560,8 +1546,7 @@
       "pos": "adjective",
       "meaning_ko": "빨간",
       "accepted_meanings": [
-        "빨간색의",
-        "빨강"
+        "빨간색의"
       ],
       "base_difficulty": 2,
       "ko_en_allowed": true,
@@ -1767,9 +1752,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "안전한",
-      "accepted_meanings": [
-        "금고"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 12,
       "ko_en_allowed": true,
       "official_no": 2287
@@ -2020,8 +2003,7 @@
       "meaning_ko": "놓다",
       "accepted_meanings": [
         "차리다",
-        "맞추다",
-        "세트"
+        "맞추다"
       ],
       "base_difficulty": 18,
       "ko_en_allowed": false,
@@ -2112,10 +2094,7 @@
       "entry_type": "word",
       "pos": "verb",
       "meaning_ko": "보여 주다",
-      "accepted_meanings": [
-        "쇼",
-        "공연"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 8,
       "ko_en_allowed": false,
       "official_no": 2392
@@ -2246,9 +2225,7 @@
       "entry_type": "word",
       "pos": "verb",
       "meaning_ko": "스키를 타다",
-      "accepted_meanings": [
-        "스키"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 8,
       "ko_en_allowed": true,
       "official_no": 2420
@@ -2297,8 +2274,7 @@
       "pos": "verb",
       "meaning_ko": "자다",
       "accepted_meanings": [
-        "잠자다",
-        "잠"
+        "잠자다"
       ],
       "base_difficulty": 4,
       "ko_en_allowed": true,
@@ -2334,8 +2310,7 @@
       "pos": "verb",
       "meaning_ko": "냄새가 나다",
       "accepted_meanings": [
-        "냄새 맡다",
-        "냄새"
+        "냄새 맡다"
       ],
       "base_difficulty": 10,
       "ko_en_allowed": false,
@@ -2348,8 +2323,7 @@
       "pos": "verb",
       "meaning_ko": "미소 짓다",
       "accepted_meanings": [
-        "웃다",
-        "미소"
+        "웃다"
       ],
       "base_difficulty": 6,
       "ko_en_allowed": false,
@@ -2470,9 +2444,7 @@
       "entry_type": "word",
       "pos": "noun",
       "meaning_ko": "소리",
-      "accepted_meanings": [
-        "~하게 들리다"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 8,
       "ko_en_allowed": false,
       "official_no": 2472

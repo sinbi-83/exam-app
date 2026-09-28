@@ -155,8 +155,7 @@
       "pos": "adjective",
       "meaning_ko": "마른",
       "accepted_meanings": [
-        "건조한",
-        "말리다"
+        "건조한"
       ],
       "base_difficulty": 10,
       "ko_en_allowed": false,
@@ -204,10 +203,7 @@
       "entry_type": "word",
       "pos": "adverb",
       "meaning_ko": "일찍",
-      "accepted_meanings": [
-        "이른",
-        "초기의"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 10,
       "ko_en_allowed": false,
       "official_no": 886
@@ -495,9 +491,7 @@
       "entry_type": "word",
       "pos": "adverb",
       "meaning_ko": "멀리",
-      "accepted_meanings": [
-        "먼"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 10,
       "ko_en_allowed": false,
       "official_no": 1037
@@ -519,9 +513,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "빠른",
-      "accepted_meanings": [
-        "빨리"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 6,
       "ko_en_allowed": false,
       "official_no": 1042,
@@ -534,8 +526,7 @@
       "pos": "adjective",
       "meaning_ko": "뚱뚱한",
       "accepted_meanings": [
-        "살찐",
-        "지방"
+        "살찐"
       ],
       "base_difficulty": 10,
       "ko_en_allowed": false,
@@ -672,8 +663,7 @@
       "meaning_ko": "좋은",
       "accepted_meanings": [
         "괜찮은",
-        "건강한",
-        "벌금"
+        "건강한"
       ],
       "base_difficulty": 10,
       "ko_en_allowed": false,
@@ -1282,9 +1272,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "회색의",
-      "accepted_meanings": [
-        "회색"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 6,
       "ko_en_allowed": true,
       "official_no": 1241
@@ -1310,10 +1298,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "초록색의",
-      "accepted_meanings": [
-        "초록",
-        "녹색"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 3,
       "ko_en_allowed": true,
       "official_no": 1244
@@ -1480,8 +1465,7 @@
       "meaning_ko": "어려운",
       "accepted_meanings": [
         "딱딱한",
-        "단단한",
-        "열심히"
+        "단단한"
       ],
       "base_difficulty": 10,
       "ko_en_allowed": false,
@@ -2346,9 +2330,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "늦은",
-      "accepted_meanings": [
-        "늦게"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 8,
       "ko_en_allowed": false,
       "official_no": 1530
@@ -2422,8 +2404,7 @@
       "pos": "verb",
       "meaning_ko": "거짓말하다",
       "accepted_meanings": [
-        "눕다",
-        "거짓말"
+        "눕다"
       ],
       "base_difficulty": 14,
       "ko_en_allowed": false,
@@ -2540,8 +2521,7 @@
       "pos": "adjective",
       "meaning_ko": "작은",
       "accepted_meanings": [
-        "어린",
-        "조금"
+        "어린"
       ],
       "base_difficulty": 6,
       "ko_en_allowed": false,
@@ -2567,9 +2547,7 @@
       "entry_type": "word",
       "pos": "adjective",
       "meaning_ko": "긴",
-      "accepted_meanings": [
-        "오래"
-      ],
+      "accepted_meanings": [],
       "base_difficulty": 4,
       "ko_en_allowed": true,
       "official_no": 1596

@@ -6,7 +6,7 @@ take|v|가져가다|잡다;타다;데려가다|8|n||
 talk|v|이야기하다|말하다|6|n||say, speak, tell 과 구분
 tall|adj|키가 큰|높은|4|y||
 tape|n|테이프||8|y||
-taste|v|맛보다|맛이 나다;맛|10|n||
+taste|v|맛보다|맛이 나다|10|n||
 taxi|n|택시||4|y||
 teach|v|가르치다||6|y||
 team|n|팀|조|6|y||
@@ -35,7 +35,7 @@ three|num|3|셋;삼|1|y||
 ticket|n|표|티켓;입장권|8|n||
 tiger|n|호랑이||3|y||
 time|n|시간|때;~번|4|n||
-tire|v|피곤하게 하다|지치다;타이어|18|n||파생어 tired 가 더 흔함|
+tire|v|피곤하게 하다|지치다|18|n||파생어 tired 가 더 흔함|
 -to|전치사 (문법 요소)
 today|n|오늘||3|y||
 together|adv|함께|같이|8|y||
@@ -56,7 +56,7 @@ trip|n|여행||8|n||travel 과 구분
 truck|n|트럭||4|y||
 true|adj|사실인|참인;진짜의|12|n||
 try|v|노력하다|시도하다;해 보다|10|n||
-turn|v|돌다|돌리다;차례|10|n||
+turn|v|돌다|돌리다|10|n||
 twelve|num|12|열둘;십이|4|y||
 twenty|num|20|스물;이십|4|y||
 twenty-first|num|스물한 번째|21번째;제21의|18|n||
@@ -98,14 +98,14 @@ wedding|n|결혼식||12|y||
 week|n|주|일주일|6|y||
 weekend|n|주말||6|y||
 weight|n|무게|체중|16|y||
-welcome|v|환영하다|어서 오세요|6|y||
-well|adv|잘|좋게;우물|8|n||
+welcome|v|환영하다||6|y||
+well|adv|잘|좋게|8|n||
 west|n|서쪽|서|8|y||
 wet|adj|젖은|축축한|10|y||
 what|pron|무엇|무슨;어떤|3|n||
 when|adv|언제|~할 때|4|n||
 where|adv|어디에|어디;어디서|4|n||
-white|adj|흰|하얀;흰색|3|y||
+white|adj|흰|하얀|3|y||
 who|pron|누구|누가|4|n||
 why|adv|왜||4|y||
 wife|n|아내|부인|10|y||
@@ -115,18 +115,18 @@ wind|n|바람||6|y||
 window|n|창문|창|4|y||
 wine|n|포도주|와인|14|y||
 winter|n|겨울||3|y||
-wish|v|바라다|소원;원하다|10|n||hope, want 와 구분
+wish|v|바라다|원하다|10|n||hope, want 와 구분
 -with|전치사 (문법 요소)
 woman|n|여자|여성|3|n||
 wood|n|나무|목재;숲|10|n||tree 와 구분
 word|n|단어|말;낱말|6|n||
-work|v|일하다|작동하다;일|6|n||
+work|v|일하다|작동하다|6|n||
 world|n|세계|세상|8|y||
 worry|v|걱정하다||10|y||
 write|v|쓰다|적다|4|n||
 wrong|adj|틀린|잘못된|8|n||
 year|n|해|년;연도;살|4|n||
-yellow|adj|노란|노란색의;노랑|3|y||
+yellow|adj|노란|노란색의|3|y||
 -yes|대답말 (yeah, yep 포함)
 yesterday|n|어제||5|y||
 -you|대명사 (문법 요소)

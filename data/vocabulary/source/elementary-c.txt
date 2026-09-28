@@ -29,13 +29,13 @@ mouse|n|쥐|생쥐;마우스|4|y||
 mouth|n|입||3|y||
 move|v|움직이다|옮기다;이사하다|10|n||
 movie|n|영화||4|n||film 과 같은 뜻
-much|det|많은|많이|10|n||many 와 구분 (셀 수 없는 것)
+much|det|많은||10|n||many 와 구분 (셀 수 없는 것)
 music|n|음악||3|y||
 -must|조동사 (문법 요소)
 name|n|이름||2|y||
 nation|n|국가|나라;국민|22|n||country 와 구분
 nature|n|자연|본성|14|y||
-near|prep|~ 가까이에|가까운;근처에|10|n||
+near|prep|~ 가까이에|근처에|10|n||
 neck|n|목||6|y||
 need|v|필요하다|필요로 하다|8|y||
 never|adv|결코 ~않다|절대 ~않다|14|n||
@@ -65,14 +65,14 @@ oil|n|기름|석유|10|n||
 old|adj|늙은|나이 든;오래된;낡은|4|n||
 -on|전치사 (문법 요소)
 one|num|1|하나;일|1|y||
-only|adv|오직|단지;유일한|12|n||
-open|v|열다|열린|4|n||close 와 짝
+only|adv|오직|단지|12|n||
+open|v|열다||4|n||close 와 짝
 -or|접속사 (문법 요소)
 orange|n|오렌지|주황색|3|n||
 out|adv|밖으로|밖에|8|n||
-over|prep|~ 위에|~을 넘어;~ 이상;끝난|14|n||
+over|prep|~ 위에|~을 넘어;~ 이상|14|n||
 page|n|쪽|페이지|6|y||
-paint|v|칠하다|그리다;페인트|10|n||
+paint|v|칠하다|그리다|10|n||
 pants|n|바지||6|y||
 paper|n|종이||4|y||
 parent|n|부모|어버이|8|n||
@@ -90,11 +90,11 @@ pick|v|고르다|줍다;따다|12|n||
 picture|n|그림|사진|4|n||
 pig|n|돼지||3|y||
 pilot|n|조종사|비행기 조종사;파일럿|10|y||
-pink|adj|분홍색의|분홍;핑크|4|y||
+pink|adj|분홍색의||4|y||
 pizza|n|피자||2|y||
 place|n|장소|곳|8|n||
 plastic|n|플라스틱||14|y||
-play|v|놀다|경기하다;연주하다;연극|4|n||
+play|v|놀다|경기하다;연주하다|4|n||
 -please|부탁·감탄 표현 (문법 요소에 가까움)
 point|n|점|점수;요점;지점|14|n||
 police|n|경찰||6|y||
@@ -102,7 +102,7 @@ poor|adj|가난한|불쌍한;서투른|10|n||
 potato|n|감자||4|y||
 power|n|힘|권력;동력;전력|16|n||
 present|n|선물|현재|8|n||gift 와 같은 뜻|현재(시간) 뜻을 따로 둘지
-pretty|adj|예쁜|꽤|6|n||
+pretty|adj|예쁜||6|n||
 prince|n|왕자||8|y||
 print|v|인쇄하다|출력하다|16|y||
 problem|n|문제||10|n||question 과 구분
@@ -123,7 +123,7 @@ rain|n|비||4|y||
 read|v|읽다||3|y||
 ready|adj|준비된||10|y||
 recreation|n|레크리에이션|오락;휴양|26|n||
-red|adj|빨간|빨간색의;빨강|2|y||
+red|adj|빨간|빨간색의|2|y||
 remember|v|기억하다||10|y||
 restaurant|n|식당|음식점;레스토랑|10|n||
 restroom|n|화장실||8|n||bathroom 과 같은 뜻
@@ -139,7 +139,7 @@ robot|n|로봇||4|y||
 rock|n|바위|돌;록 음악|8|n||stone 과 구분
 room|n|방|공간|4|n||
 rose|n|장미||6|y||
-safe|adj|안전한|금고|12|y||
+safe|adj|안전한||12|y||
 salad|n|샐러드||6|y||
 sale|n|판매|세일;할인 판매|14|n||
 salt|n|소금||8|y||
@@ -159,7 +159,7 @@ see|v|보다|알다;만나다|3|n||look, watch 와 구분
 sell|v|팔다||8|y||
 send|v|보내다||8|y||
 service|n|서비스|봉사;근무|22|n||
-set|v|놓다|차리다;맞추다;세트|18|n||
+set|v|놓다|차리다;맞추다|18|n||
 seven|num|7|일곱;칠|2|y||
 -she|대명사 (문법 요소)
 ship|n|배|선박|6|n||boat 와 구분
@@ -168,7 +168,7 @@ shoe|n|신발|구두|3|y||
 shop|n|가게|상점|6|n||store 와 같은 뜻
 short|adj|짧은|키가 작은|6|n||
 -should|조동사 (문법 요소)
-show|v|보여 주다|쇼;공연|8|n||
+show|v|보여 주다||8|n||
 shy|adj|수줍어하는|부끄러워하는|10|y||
 sick|adj|아픈|병든|6|n||ill 과 같은 뜻
 side|n|옆|쪽;측면;편|12|n||
@@ -178,15 +178,15 @@ sit|v|앉다||3|y||
 six|num|6|여섯;육|1|y||
 size|n|크기|사이즈;치수|8|y||
 skate|v|스케이트를 타다||8|y||
-ski|v|스키를 타다|스키|8|y||
+ski|v|스키를 타다||8|y||
 skin|n|피부|껍질|12|y||
 skirt|n|치마|스커트|6|y||
 sky|n|하늘||4|y||
-sleep|v|자다|잠자다;잠|4|y||
+sleep|v|자다|잠자다|4|y||
 slow|adj|느린||6|y||
 small|adj|작은||3|n||little 과 같은 뜻
-smell|v|냄새가 나다|냄새 맡다;냄새|10|n||
-smile|v|미소 짓다|웃다;미소|6|n||laugh 와 구분
+smell|v|냄새가 나다|냄새 맡다|10|n||
+smile|v|미소 짓다|웃다|6|n||laugh 와 구분
 snow|n|눈||4|n||eye 와 구분 필요
 -so|접속사·부사 (문법 요소)
 soccer|n|축구||4|n||football 과 구분
@@ -197,7 +197,7 @@ some|det|약간의|몇몇의;어떤|10|n||
 son|n|아들||6|y||
 song|n|노래||3|y||
 sorry|adj|미안한|유감스러운|4|y||
-sound|n|소리|~하게 들리다|8|n||
+sound|n|소리||8|n||
 soup|n|수프|국|4|n||
 south|n|남쪽|남|8|y||
 space|n|우주|공간;자리|14|n||
@@ -214,7 +214,7 @@ start|v|시작하다|출발하다|6|n||begin 과 같은 뜻
 stay|v|머무르다|지내다|12|n||
 steak|n|스테이크||8|y||
 stone|n|돌||6|n||rock 과 구분
-stop|v|멈추다|그만두다;정류장|6|n||
+stop|v|멈추다|그만두다|6|n||
 store|n|가게|상점|6|n||shop 과 같은 뜻
 story|n|이야기|층|6|n||
 street|n|거리|길|6|n||road 와 구분
@@ -225,4 +225,4 @@ subway|n|지하철||8|y||
 sugar|n|설탕||6|y||
 summer|n|여름||3|y||
 sun|n|태양|해|3|y||
-sure|adj|확실한|확신하는;물론|12|n||
+sure|adj|확실한|확신하는|12|n||
