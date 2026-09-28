@@ -35,7 +35,7 @@ three|num|3|셋;삼|1|y||
 ticket|n|표|티켓;입장권|8|n||
 tiger|n|호랑이||3|y||
 time|n|시간|때;~번|4|n||
-tire|v|피곤하게 하다|지치다|18|n||파생어 tired 가 더 흔함|
+tire|v|지치다|피곤하게 하다|18|n||파생어 tired 가 더 흔함|
 -to|전치사 (문법 요소)
 today|n|오늘||3|y||
 together|adv|함께|같이|8|y||

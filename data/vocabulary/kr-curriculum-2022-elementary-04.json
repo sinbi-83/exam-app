@@ -685,9 +685,9 @@
       "lemma": "tire",
       "entry_type": "word",
       "pos": "verb",
-      "meaning_ko": "피곤하게 하다",
+      "meaning_ko": "지치다",
       "accepted_meanings": [
-        "지치다"
+        "피곤하게 하다"
       ],
       "base_difficulty": 18,
       "ko_en_allowed": false,

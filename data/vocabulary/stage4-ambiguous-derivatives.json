@@ -1,0 +1,46 @@
+{
+  "seed_id": "kr-curriculum-2022-elementary-derivatives-01",
+  "source": {
+    "type": "official",
+    "ref": "kr-curriculum-2022",
+    "official_source_name": "2022 개정 영어과 교육과정 [별표 3] 기본어휘",
+    "official_source_version": "kr-curriculum-2022",
+    "official_grade": "초등학교 권장(*)"
+  },
+  "source_rationale": "docs/stage4-report.md 7-2 애매한 단어 추천안: 기준표 괄호 안 파생어(compute→computer, thirst→thirsty, tire→tired)를 따로 넣는다. 뜻·난이도는 Claude Code 제작 초안(교사 확인 전). 전부 '확인 필요'.",
+  "entries": [
+    {
+      "expression": "computer",
+      "lemma": "computer",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "컴퓨터",
+      "accepted_meanings": [],
+      "base_difficulty": 6,
+      "ko_en_allowed": true,
+      "sense_note": "기준표 compute 의 괄호 안 파생어"
+    },
+    {
+      "expression": "thirsty",
+      "lemma": "thirsty",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "목마른",
+      "accepted_meanings": ["목이 마른", "갈증 나는"],
+      "base_difficulty": 10,
+      "ko_en_allowed": true,
+      "sense_note": "기준표 thirst 의 괄호 안 파생어"
+    },
+    {
+      "expression": "tired",
+      "lemma": "tired",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "피곤한",
+      "accepted_meanings": ["지친"],
+      "base_difficulty": 8,
+      "ko_en_allowed": true,
+      "sense_note": "기준표 tire 의 괄호 안 파생어"
+    }
+  ]
+}
