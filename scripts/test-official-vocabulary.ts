@@ -22,7 +22,7 @@ function test(name: string, fn: () => void) {
   console.log(`✅ ${name}`)
 }
 
-const csvText = readFileSync(resolve(process.cwd(), 'data/official/kr-curriculum-2022-basic-vocabulary-3000.csv'), 'utf-8')
+const csvText = readFileSync(resolve(process.cwd(), 'data/vocabulary/kr-curriculum-2022-basic-vocabulary-3000.csv'), 'utf-8')
 const { rows, errors } = parseOfficialCsv(csvText)
 
 test('원본 CSV: 3,000개, 초등 권장 800 / 중·고 공통 1,200 / 그 외 1,000, 버전 kr-curriculum-2022', () => {

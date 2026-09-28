@@ -1,7 +1,7 @@
 // 3단계 보고서 만들기 (읽기만 한다. DB 값을 바꾸지 않는다. AI 호출 없음)
 //   1) docs/stage3-reanchor-proposal.md / .csv — 기존 단어 난이도 재조정 제안표
 //   2) docs/stage3-pool-status.md — 학년 × 레벨별 쓸 수 있는 단어 수 / 부족분, 공식 기준표 대조
-// 공식 기준표는 CSV 원본(data/official/…)으로 대조한다 (DB 기준표와 같은 파일).
+// 공식 기준표는 CSV 원본(data/vocabulary/…)으로 대조한다 (DB 기준표와 같은 파일).
 //
 // 실행: node scripts/stage3-report.ts
 
@@ -72,7 +72,7 @@ async function main() {
   const entries = data as Row[]
 
   const { rows: official, errors } = parseOfficialCsv(
-    readFileSync(resolve(process.cwd(), 'data/official/kr-curriculum-2022-basic-vocabulary-3000.csv'), 'utf-8'),
+    readFileSync(resolve(process.cwd(), 'data/vocabulary/kr-curriculum-2022-basic-vocabulary-3000.csv'), 'utf-8'),
   )
   if (errors.length) throw new Error(errors.join('\n'))
   const index = buildOfficialIndex(official)

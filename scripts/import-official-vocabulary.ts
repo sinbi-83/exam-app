@@ -1,4 +1,4 @@
-// 공식 기본어휘 기준표 가져오기: data/official/kr-curriculum-2022-basic-vocabulary-3000.csv → official_vocabulary 표
+// 공식 기본어휘 기준표 가져오기: data/vocabulary/kr-curriculum-2022-basic-vocabulary-3000.csv → official_vocabulary 표
 // (원본: 향미 선생님이 준 영어과기본어휘3000.csv 를 그대로 복사한 파일. 내용을 보태거나 고치지 않는다.)
 // 단어은행(vocabulary_entries)에는 아무것도 넣지 않는다. AI API 호출 없음.
 //
@@ -18,7 +18,7 @@ import {
 } from '../lib/officialVocabulary.ts'
 
 const APPLY = process.argv.includes('--apply')
-const CSV = resolve(process.cwd(), 'data/official/kr-curriculum-2022-basic-vocabulary-3000.csv')
+const CSV = resolve(process.cwd(), 'data/vocabulary/kr-curriculum-2022-basic-vocabulary-3000.csv')
 
 function sameCounts(a: Record<OfficialTier, number>): boolean {
   return OFFICIAL_TIERS.every((t) => a[t] === OFFICIAL_TIER_EXPECTED[t])
@@ -59,7 +59,7 @@ async function main() {
 
   const existing = await supabase
     .from('official_vocabulary')
-    .select('id', { count: 'exact', head: true })
+    .select('id', { count: 'exact' }).limit(1) // head 요청은 표가 없어도 오류를 안 줄 수 있어 실제 조회로 센다
     .eq('list_version', OFFICIAL_LIST_VERSION)
   if (existing.error) throw new Error(`기준표 조회 실패 (migration 실행 전이면 표가 없습니다): ${existing.error.message}`)
   if ((existing.count ?? 0) > 0) {
@@ -78,7 +78,7 @@ async function main() {
   for (const t of OFFICIAL_TIERS) {
     const { count, error } = await supabase
       .from('official_vocabulary')
-      .select('id', { count: 'exact', head: true })
+      .select('id', { count: 'exact' }).limit(1) // head 요청은 표가 없어도 오류를 안 줄 수 있어 실제 조회로 센다
       .eq('list_version', OFFICIAL_LIST_VERSION)
       .eq('tier_code', t)
     if (error) throw new Error(error.message)
