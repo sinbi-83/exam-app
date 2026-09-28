@@ -1,0 +1,209 @@
+# 4단계 2차 중·고 공통 어휘 제작 원본 (계속). 형식은 elementary-a.txt 와 같다.
+chip|n|조각|칩;감자칩|40|n||
+choice|n|선택||40|y||
+chop|v|썰다|자르다;패다|48|n||
+cigarette|n|담배||45|y||
+cinema|n|영화관|극장|40|n||theater 와 구분
+circumstance|n|상황|환경;사정|68|n||situation 과 같은 뜻
+citizen|n|시민|국민|50|n||
+civil|adj|시민의|민간의;정중한|62|n||
+claim|v|주장하다|요구하다|60|n||
+clerk|n|점원|직원;사무원|45|n||
+click|v|클릭하다|딸깍 소리를 내다|35|n||
+client|n|고객|의뢰인|58|n||customer 와 같은 뜻
+cliff|n|절벽||48|y||
+climate|n|기후||48|y||
+clip|n|클립|짧은 영상|42|n||
+clue|n|단서|실마리|48|y||
+coach|n|코치|감독|38|n||
+coal|n|석탄||45|y||
+coast|n|해안|바닷가|45|n||
+code|n|암호|규칙;코드|45|n||
+coin|n|동전||30|y||
+combine|v|결합하다|합치다|55|n||
+comedy|n|코미디|희극|40|n||
+comfort|n|편안함|위로;안락|48|n||
+command|n|명령|지휘|52|n||
+comment|n|논평|의견;댓글|48|n||
+commerce|n|상업|무역|65|n||
+committee|n|위원회||62|y||
+common|adj|흔한|공통의;일반적인|42|n||
+communicate|v|의사소통하다|전달하다|50|n||
+community|n|공동체|지역 사회|52|n||
+compare|v|비교하다||45|y||
+complain|v|불평하다|항의하다|45|n||
+complete|adj|완전한|완성된;완벽한|48|n||
+complex|adj|복잡한||55|n||complicated 와 같은 뜻
+complicate|v|복잡하게 하다||62|n||파생어 complicated 가 더 흔함|
+concentrate|v|집중하다||52|n||focus 와 같은 뜻
+concept|n|개념||62|y||
+concern|n|걱정|관심;우려|55|n||
+concert|n|음악회|콘서트;연주회|32|n||
+confirm|v|확인하다|확정하다|58|n||check 와 구분
+conflict|n|갈등|충돌|60|n||
+confuse|v|혼란스럽게 하다|헷갈리게 하다;혼동하다|52|n||
+connect|v|연결하다|잇다|45|y||
+conscious|adj|의식하는|의식이 있는;자각하는|65|n||
+constant|adj|끊임없는|지속적인;일정한|62|n||
+consume|v|소비하다|먹다;소모하다|62|n||
+contact|n|연락|접촉|48|n||
+contain|v|포함하다|들어 있다;담다|55|n||
+content|n|내용|내용물;목차|52|n|명사: 내용|
+content|adj|만족하는|만족한|62|n|형용사: 만족하는|satisfied 와 같은 뜻
+contest|n|대회|시합;경연|40|n||
+context|n|문맥|맥락;상황|65|n||
+continue|v|계속하다|계속되다|42|n||
+contract|n|계약|계약서|60|n||
+converse|v|대화하다||65|n||파생어 conversation 이 더 흔함|
+convince|v|확신시키다|설득하다|62|n||
+cop|n|경찰관|경찰|45|n||police officer 와 같은 뜻
+cope|v|대처하다|극복하다|65|n||
+copy|v|복사하다|베끼다|35|n||
+correct|adj|정확한|옳은;맞는|42|n||right 와 같은 뜻
+cottage|n|오두막|작은 집|50|n||
+cotton|n|면|목화;솜|45|n||
+cough|v|기침하다||42|y||
+council|n|의회|위원회|62|n||
+count|v|세다|계산하다;중요하다|35|n||
+countryside|n|시골|전원 지역|45|n||
+county|n|군|자치주|58|n||
+crack|n|금|틈;갈라진 곳|52|n||
+crash|n|충돌|추락;사고|48|n||
+crawl|v|기어가다|기다|48|y||
+create|v|창조하다|만들다;창작하다|45|n||
+credit|n|신용|신용 거래;학점|55|n||
+crime|n|범죄||48|y||
+crisis|n|위기||60|y||
+crisp|adj|바삭바삭한|상쾌한|55|n||
+crowd|n|군중|사람들;무리|45|n||
+crown|n|왕관||42|y||
+cruel|adj|잔인한|잔혹한|48|n||
+cure|v|치료하다|낫게 하다|48|n||treat 와 같은 뜻
+curl|v|곱슬곱슬하게 하다|말다;감다|55|n||
+current|adj|현재의|지금의;최신의|55|n||
+cute|adj|귀여운||25|y||
+cycle|n|순환|주기;자전거|52|n||
+damage|n|손상|피해;손해|50|n||
+dare|v|감히 ~하다|~할 용기가 있다|58|n||
+darling|n|여보|자기;사랑하는 사람|45|n||
+dawn|n|새벽|동틀 녘|50|y||
+deal|v|다루다|처리하다;거래하다|52|n||
+debate|n|토론|논쟁|52|n||
+debt|n|빚|부채|55|y||
+deck|n|갑판|덱|55|n||
+decorate|v|장식하다|꾸미다|45|n||
+defense|n|방어|수비;국방|55|n||defence 로도 씀
+define|v|정의하다|규정하다|58|y||
+definite|adj|분명한|확실한;명확한|62|n||
+degree|n|정도|도;학위|52|n||
+delay|v|미루다|지연시키다;연기하다|52|n||
+delight|n|기쁨|즐거움|52|n||
+deliver|v|배달하다|전달하다|45|n||
+demand|v|요구하다||55|n||require 와 구분
+demonstrate|v|보여 주다|증명하다;시위하다|65|n||
+dentist|n|치과 의사||35|y||
+deny|v|부인하다|거부하다;부정하다|58|n||
+depend|v|의존하다|~에 달려 있다;의지하다|50|n||
+depress|v|우울하게 하다|낙담시키다|60|n||파생어 depressed 가 더 흔함|
+describe|v|묘사하다|설명하다|48|n||
+desert|n|사막||40|y||
+deserve|v|~을 받을 만하다|~할 자격이 있다|60|n||
+desire|n|욕구|욕망;바람|55|n||
+desperate|adj|절박한|필사적인;자포자기한|65|n||
+despite|prep|~에도 불구하고||60|n||although 와 같은 뜻
+destroy|v|파괴하다|망가뜨리다|48|y||
+detail|n|세부 사항|자세한 내용|50|n||
+detect|v|감지하다|발견하다;알아내다|62|n||
+determine|v|결정하다|알아내다|62|n||decide 와 같은 뜻
+develop|v|발전시키다|개발하다;발달하다|50|n||
+diary|n|일기|일기장|30|y||
+dictionary|n|사전||32|y||
+diet|n|식단|다이어트;식습관|45|n||
+dig|v|파다|캐다|40|y||
+direct|adj|직접적인|직행의|55|n||
+dirt|n|먼지|흙;때|45|n||
+disappoint|v|실망시키다||50|y||
+disc|n|원반|디스크|50|n||disk 로도 씀
+discipline|n|규율|훈육;학문 분야|65|n||
+disgust|n|혐오감|역겨움|62|n||
+dish|n|접시|요리|35|n||
+display|v|전시하다|보여 주다;진열하다|52|n||
+distance|n|거리||45|y||
+district|n|구역|지역;지구|55|n||
+disturb|v|방해하다|어지럽히다|55|n||
+dive|v|다이빙하다|뛰어들다;잠수하다|42|n||
+divide|v|나누다|분할하다|45|n||
+divorce|n|이혼||55|y||
+document|n|문서|서류|55|n||
+dolphin|n|돌고래||30|y||
+domestic|adj|국내의|가정의|65|n||
+donate|v|기부하다|기증하다|50|n||
+doubt|n|의심|의문|55|n||
+dozen|n|12개|한 다스|45|n||
+drag|v|끌다|끌고 가다|52|n||
+drama|n|드라마|연극|35|n||
+drug|n|약|마약;약물|48|n||medicine 과 구분
+due|adj|~하기로 되어 있는|예정인;마감인|60|n||
+dump|v|버리다|내버리다|55|n||
+dust|n|먼지||40|y||
+duty|n|의무|임무;관세|52|n||
+each|det|각각의|각자의|30|n||
+earn|v|벌다|얻다|45|n||
+ease|n|쉬움|편안함;용이함|60|n||
+economy|n|경제||55|y||
+edge|n|가장자리|끝;모서리|50|n||
+edit|v|편집하다|수정하다|50|n||
+educate|v|교육하다|가르치다|52|n||
+effect|n|효과|영향;결과|50|n||
+effort|n|노력||45|y||
+either|det|둘 중 하나의|어느 한쪽의|48|n||
+elect|v|선출하다|뽑다|55|n||
+electric|adj|전기의|전기로 움직이는|45|n||
+element|n|요소|원소|58|n||
+else|adv|그 밖에||42|n||
+embarrass|v|당황하게 하다|창피하게 하다|55|n||파생어 embarrassed 가 더 흔함|
+emotion|n|감정||50|y||
+emphasize|v|강조하다||60|y||
+empire|n|제국||55|y||
+employ|v|고용하다|쓰다|58|n||hire 와 같은 뜻
+empty|adj|빈|비어 있는|40|n||
+enemy|n|적||42|y||
+engage|v|관여하다|참여하다;약혼하다|65|n||
+engine|n|엔진|기관|40|y||
+engineer|n|기술자|엔지니어|42|n||
+enormous|adj|거대한|막대한|58|n||huge 와 같은 뜻
+entertain|v|즐겁게 하다|접대하다|55|n||
+entire|adj|전체의|온;모든|55|n||whole 과 같은 뜻
+envelope|n|봉투||45|y||
+equal|adj|같은|동등한;평등한|48|n||
+escape|v|탈출하다|달아나다;벗어나다|48|n||
+especial|adj|특별한||65|n||파생어 especially 가 훨씬 흔함|
+essay|n|에세이|수필;글|48|n||
+establish|v|설립하다|세우다;확립하다|62|n||
+estimate|v|추정하다|어림잡다;견적하다|65|n||
+even|adv|심지어|~조차;훨씬|42|n||
+event|n|행사|사건|42|n||
+ever|adv|언젠가|지금까지;한 번이라도|42|n||
+evidence|n|증거||60|y||
+evil|adj|사악한|나쁜|52|n||
+exact|adj|정확한|정밀한|50|n||
+examine|v|조사하다|검사하다;진찰하다|55|n||
+except|prep|~을 제외하고|~ 외에는|48|n||
+exchange|v|교환하다|바꾸다|48|n||
+excite|v|흥분시키다|신나게 하다|42|n||파생어 excited, exciting 이 더 흔함|
+excuse|n|변명|핑계|45|n||
+exhaust|v|기진맥진하게 하다|다 써 버리다|62|n||파생어 exhausted 가 더 흔함|
+exist|v|존재하다|있다|55|n||
+exit|n|출구||40|y||
+expand|v|확대하다|확장하다;넓히다|60|n||
+expect|v|기대하다|예상하다|45|n||
+expense|n|비용|지출|58|n||cost 와 같은 뜻
+experience|n|경험||45|y||
+experiment|n|실험||50|y||
+expert|n|전문가||52|y||
+explain|v|설명하다||40|y||
+expose|v|드러내다|노출시키다|62|n||
+express|v|표현하다|나타내다|48|n||
+extend|v|연장하다|늘리다;확장하다|60|n||
+extra|adj|추가의|여분의|45|n||
+extreme|adj|극도의|극단적인|60|n||

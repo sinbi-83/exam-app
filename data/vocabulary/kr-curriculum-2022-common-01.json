@@ -1,0 +1,2622 @@
+{
+  "seed_id": "kr-curriculum-2022-common-01",
+  "source": {
+    "type": "official",
+    "ref": "kr-curriculum-2022",
+    "official_source_name": "2022 개정 영어과 교육과정 [별표 3] 기본어휘",
+    "official_source_version": "kr-curriculum-2022",
+    "official_grade": "중학교·고등 공통과목 권장(**)"
+  },
+  "source_rationale": "공식 기본어휘(중·고 공통). 뜻·품사·인정 뜻·난이도·한→영 가능 여부는 Claude Code 제작 초안(교사 확인 전), 난이도는 새 절대 자 기준.",
+  "entries": [
+    {
+      "expression": "able",
+      "lemma": "able",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "할 수 있는",
+      "accepted_meanings": [
+        "능력 있는"
+      ],
+      "base_difficulty": 28,
+      "ko_en_allowed": false,
+      "official_no": 3
+    },
+    {
+      "expression": "absolute",
+      "lemma": "absolute",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "절대적인",
+      "accepted_meanings": [
+        "완전한"
+      ],
+      "base_difficulty": 58,
+      "ko_en_allowed": false,
+      "official_no": 11
+    },
+    {
+      "expression": "accent",
+      "lemma": "accent",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "억양",
+      "accepted_meanings": [
+        "말투",
+        "강세"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 18
+    },
+    {
+      "expression": "accept",
+      "lemma": "accept",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "받아들이다",
+      "accepted_meanings": [
+        "수락하다"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 19
+    },
+    {
+      "expression": "access",
+      "lemma": "access",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "접근",
+      "accepted_meanings": [
+        "이용",
+        "출입"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 20
+    },
+    {
+      "expression": "accident",
+      "lemma": "accident",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "사고",
+      "accepted_meanings": [],
+      "base_difficulty": 32,
+      "ko_en_allowed": true,
+      "official_no": 21
+    },
+    {
+      "expression": "account",
+      "lemma": "account",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "계좌",
+      "accepted_meanings": [
+        "설명",
+        "계정"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 26
+    },
+    {
+      "expression": "accuse",
+      "lemma": "accuse",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "고발하다",
+      "accepted_meanings": [
+        "비난하다"
+      ],
+      "base_difficulty": 60,
+      "ko_en_allowed": false,
+      "official_no": 29
+    },
+    {
+      "expression": "adapt",
+      "lemma": "adapt",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "적응하다",
+      "accepted_meanings": [
+        "맞추다",
+        "각색하다"
+      ],
+      "base_difficulty": 58,
+      "ko_en_allowed": false,
+      "official_no": 38
+    },
+    {
+      "expression": "admire",
+      "lemma": "admire",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "존경하다",
+      "accepted_meanings": [
+        "감탄하다"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 45
+    },
+    {
+      "expression": "admit",
+      "lemma": "admit",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "인정하다",
+      "accepted_meanings": [
+        "입장을 허락하다"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 46
+    },
+    {
+      "expression": "adopt",
+      "lemma": "adopt",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "입양하다",
+      "accepted_meanings": [
+        "채택하다"
+      ],
+      "base_difficulty": 58,
+      "ko_en_allowed": false,
+      "official_no": 48
+    },
+    {
+      "expression": "advance",
+      "lemma": "advance",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "발전",
+      "accepted_meanings": [
+        "진보",
+        "전진"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 50
+    },
+    {
+      "expression": "advantage",
+      "lemma": "advantage",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "이점",
+      "accepted_meanings": [
+        "유리한 점",
+        "장점"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 51
+    },
+    {
+      "expression": "adventure",
+      "lemma": "adventure",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "모험",
+      "accepted_meanings": [],
+      "base_difficulty": 35,
+      "ko_en_allowed": true,
+      "official_no": 52
+    },
+    {
+      "expression": "advertize",
+      "lemma": "advertize",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "광고하다",
+      "accepted_meanings": [],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 54,
+      "teacher_note": "advertise 로도 씀"
+    },
+    {
+      "expression": "advise",
+      "lemma": "advise",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "충고하다",
+      "accepted_meanings": [
+        "조언하다"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 56
+    },
+    {
+      "expression": "affair",
+      "lemma": "affair",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "일",
+      "accepted_meanings": [
+        "사건",
+        "업무"
+      ],
+      "base_difficulty": 60,
+      "ko_en_allowed": false,
+      "official_no": 59
+    },
+    {
+      "expression": "affect",
+      "lemma": "affect",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "영향을 미치다",
+      "accepted_meanings": [
+        "영향을 주다"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": true,
+      "official_no": 60
+    },
+    {
+      "expression": "afford",
+      "lemma": "afford",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "~할 여유가 있다",
+      "accepted_meanings": [
+        "감당하다"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 61
+    },
+    {
+      "expression": "agent",
+      "lemma": "agent",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "대리인",
+      "accepted_meanings": [
+        "요원",
+        "중개인"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 70
+    },
+    {
+      "expression": "aid",
+      "lemma": "aid",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "도움",
+      "accepted_meanings": [
+        "원조",
+        "지원"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 76
+    },
+    {
+      "expression": "aim",
+      "lemma": "aim",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "목표",
+      "accepted_meanings": [
+        "목적"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 77
+    },
+    {
+      "expression": "airline",
+      "lemma": "airline",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "항공사",
+      "accepted_meanings": [],
+      "base_difficulty": 42,
+      "ko_en_allowed": true,
+      "official_no": 79
+    },
+    {
+      "expression": "airport",
+      "lemma": "airport",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "공항",
+      "accepted_meanings": [],
+      "base_difficulty": 28,
+      "ko_en_allowed": true,
+      "official_no": 81
+    },
+    {
+      "expression": "alarm",
+      "lemma": "alarm",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "경보",
+      "accepted_meanings": [
+        "알람",
+        "자명종"
+      ],
+      "base_difficulty": 35,
+      "ko_en_allowed": false,
+      "official_no": 82
+    },
+    {
+      "expression": "alcohol",
+      "lemma": "alcohol",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "술",
+      "accepted_meanings": [
+        "알코올"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 84
+    },
+    {
+      "expression": "alive",
+      "lemma": "alive",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "살아 있는",
+      "accepted_meanings": [],
+      "base_difficulty": 35,
+      "ko_en_allowed": true,
+      "official_no": 88
+    },
+    {
+      "expression": "allow",
+      "lemma": "allow",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "허락하다",
+      "accepted_meanings": [
+        "허용하다"
+      ],
+      "base_difficulty": 42,
+      "ko_en_allowed": false,
+      "official_no": 91
+    },
+    {
+      "expression": "aloud",
+      "lemma": "aloud",
+      "entry_type": "word",
+      "pos": "adverb",
+      "meaning_ko": "소리 내어",
+      "accepted_meanings": [
+        "큰 소리로"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 97
+    },
+    {
+      "expression": "alter",
+      "lemma": "alter",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "바꾸다",
+      "accepted_meanings": [
+        "변경하다"
+      ],
+      "base_difficulty": 62,
+      "ko_en_allowed": false,
+      "official_no": 101
+    },
+    {
+      "expression": "although",
+      "lemma": "although",
+      "entry_type": "word",
+      "pos": "conjunction",
+      "meaning_ko": "비록 ~이지만",
+      "accepted_meanings": [
+        "~에도 불구하고"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 103
+    },
+    {
+      "expression": "altogether",
+      "lemma": "altogether",
+      "entry_type": "word",
+      "pos": "adverb",
+      "meaning_ko": "완전히",
+      "accepted_meanings": [
+        "전부",
+        "모두 합쳐"
+      ],
+      "base_difficulty": 60,
+      "ko_en_allowed": false,
+      "official_no": 104
+    },
+    {
+      "expression": "amaze",
+      "lemma": "amaze",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "놀라게 하다",
+      "accepted_meanings": [],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 106,
+      "teacher_note": "surprise 와 같은 뜻"
+    },
+    {
+      "expression": "ambulance",
+      "lemma": "ambulance",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "구급차",
+      "accepted_meanings": [],
+      "base_difficulty": 35,
+      "ko_en_allowed": true,
+      "official_no": 109
+    },
+    {
+      "expression": "among",
+      "lemma": "among",
+      "entry_type": "word",
+      "pos": "preposition",
+      "meaning_ko": "~ 사이에",
+      "accepted_meanings": [
+        "~ 중에"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 110,
+      "teacher_note": "between 과 구분"
+    },
+    {
+      "expression": "amount",
+      "lemma": "amount",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "양",
+      "accepted_meanings": [
+        "액수",
+        "총액"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 111
+    },
+    {
+      "expression": "amuse",
+      "lemma": "amuse",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "즐겁게 하다",
+      "accepted_meanings": [
+        "재미있게 하다"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 112
+    },
+    {
+      "expression": "analysis",
+      "lemma": "analysis",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "분석",
+      "accepted_meanings": [],
+      "base_difficulty": 65,
+      "ko_en_allowed": true,
+      "official_no": 113
+    },
+    {
+      "expression": "angel",
+      "lemma": "angel",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "천사",
+      "accepted_meanings": [],
+      "base_difficulty": 30,
+      "ko_en_allowed": true,
+      "official_no": 118
+    },
+    {
+      "expression": "anger",
+      "lemma": "anger",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "분노",
+      "accepted_meanings": [
+        "화"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 119
+    },
+    {
+      "expression": "announce",
+      "lemma": "announce",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "발표하다",
+      "accepted_meanings": [
+        "알리다"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 123
+    },
+    {
+      "expression": "annoy",
+      "lemma": "annoy",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "짜증 나게 하다",
+      "accepted_meanings": [
+        "귀찮게 하다"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 124
+    },
+    {
+      "expression": "annual",
+      "lemma": "annual",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "매년의",
+      "accepted_meanings": [
+        "연간의",
+        "해마다의"
+      ],
+      "base_difficulty": 60,
+      "ko_en_allowed": false,
+      "official_no": 125
+    },
+    {
+      "expression": "ant",
+      "lemma": "ant",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "개미",
+      "accepted_meanings": [],
+      "base_difficulty": 25,
+      "ko_en_allowed": true,
+      "official_no": 128
+    },
+    {
+      "expression": "anxious",
+      "lemma": "anxious",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "불안해하는",
+      "accepted_meanings": [
+        "걱정하는",
+        "열망하는"
+      ],
+      "base_difficulty": 58,
+      "ko_en_allowed": false,
+      "official_no": 131
+    },
+    {
+      "expression": "apart",
+      "lemma": "apart",
+      "entry_type": "word",
+      "pos": "adverb",
+      "meaning_ko": "떨어져",
+      "accepted_meanings": [
+        "따로"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 133
+    },
+    {
+      "expression": "appeal",
+      "lemma": "appeal",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "호소하다",
+      "accepted_meanings": [
+        "관심을 끌다"
+      ],
+      "base_difficulty": 62,
+      "ko_en_allowed": false,
+      "official_no": 137
+    },
+    {
+      "expression": "appear",
+      "lemma": "appear",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "나타나다",
+      "accepted_meanings": [
+        "~인 것 같다"
+      ],
+      "base_difficulty": 42,
+      "ko_en_allowed": false,
+      "official_no": 138
+    },
+    {
+      "expression": "apply",
+      "lemma": "apply",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "지원하다",
+      "accepted_meanings": [
+        "신청하다",
+        "적용하다"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 140
+    },
+    {
+      "expression": "appoint",
+      "lemma": "appoint",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "임명하다",
+      "accepted_meanings": [
+        "정하다"
+      ],
+      "base_difficulty": 62,
+      "ko_en_allowed": false,
+      "official_no": 141
+    },
+    {
+      "expression": "appreciate",
+      "lemma": "appreciate",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "감사하다",
+      "accepted_meanings": [
+        "고마워하다",
+        "감상하다"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 142
+    },
+    {
+      "expression": "approach",
+      "lemma": "approach",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "다가가다",
+      "accepted_meanings": [
+        "접근하다"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 143
+    },
+    {
+      "expression": "appropriate",
+      "lemma": "appropriate",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "적절한",
+      "accepted_meanings": [
+        "알맞은"
+      ],
+      "base_difficulty": 65,
+      "ko_en_allowed": false,
+      "official_no": 144
+    },
+    {
+      "expression": "argue",
+      "lemma": "argue",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "논쟁하다",
+      "accepted_meanings": [
+        "주장하다",
+        "다투다"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 149
+    },
+    {
+      "expression": "army",
+      "lemma": "army",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "군대",
+      "accepted_meanings": [
+        "육군"
+      ],
+      "base_difficulty": 38,
+      "ko_en_allowed": true,
+      "official_no": 152
+    },
+    {
+      "expression": "arrange",
+      "lemma": "arrange",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "정리하다",
+      "accepted_meanings": [
+        "배열하다",
+        "준비하다"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 154
+    },
+    {
+      "expression": "arrest",
+      "lemma": "arrest",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "체포하다",
+      "accepted_meanings": [],
+      "base_difficulty": 55,
+      "ko_en_allowed": true,
+      "official_no": 155
+    },
+    {
+      "expression": "article",
+      "lemma": "article",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "기사",
+      "accepted_meanings": [
+        "글",
+        "물품"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 159
+    },
+    {
+      "expression": "aside",
+      "lemma": "aside",
+      "entry_type": "word",
+      "pos": "adverb",
+      "meaning_ko": "옆에",
+      "accepted_meanings": [
+        "따로"
+      ],
+      "base_difficulty": 58,
+      "ko_en_allowed": false,
+      "official_no": 162
+    },
+    {
+      "expression": "asleep",
+      "lemma": "asleep",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "잠든",
+      "accepted_meanings": [
+        "자고 있는"
+      ],
+      "base_difficulty": 38,
+      "ko_en_allowed": true,
+      "official_no": 164
+    },
+    {
+      "expression": "assess",
+      "lemma": "assess",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "평가하다",
+      "accepted_meanings": [],
+      "base_difficulty": 68,
+      "ko_en_allowed": false,
+      "official_no": 170,
+      "teacher_note": "evaluate 와 같은 뜻"
+    },
+    {
+      "expression": "assign",
+      "lemma": "assign",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "배정하다",
+      "accepted_meanings": [
+        "할당하다",
+        "맡기다"
+      ],
+      "base_difficulty": 60,
+      "ko_en_allowed": false,
+      "official_no": 172
+    },
+    {
+      "expression": "assist",
+      "lemma": "assist",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "돕다",
+      "accepted_meanings": [
+        "보조하다"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 173,
+      "teacher_note": "help 와 같은 뜻"
+    },
+    {
+      "expression": "associate",
+      "lemma": "associate",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "연관 짓다",
+      "accepted_meanings": [
+        "연상하다",
+        "어울리다"
+      ],
+      "base_difficulty": 65,
+      "ko_en_allowed": false,
+      "official_no": 174
+    },
+    {
+      "expression": "assume",
+      "lemma": "assume",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "가정하다",
+      "accepted_meanings": [
+        "추정하다",
+        "맡다"
+      ],
+      "base_difficulty": 65,
+      "ko_en_allowed": false,
+      "official_no": 175
+    },
+    {
+      "expression": "attach",
+      "lemma": "attach",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "붙이다",
+      "accepted_meanings": [
+        "첨부하다"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 182
+    },
+    {
+      "expression": "attack",
+      "lemma": "attack",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "공격하다",
+      "accepted_meanings": [],
+      "base_difficulty": 42,
+      "ko_en_allowed": true,
+      "official_no": 183
+    },
+    {
+      "expression": "attempt",
+      "lemma": "attempt",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "시도",
+      "accepted_meanings": [],
+      "base_difficulty": 58,
+      "ko_en_allowed": true,
+      "official_no": 184
+    },
+    {
+      "expression": "attend",
+      "lemma": "attend",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "참석하다",
+      "accepted_meanings": [
+        "다니다"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 185
+    },
+    {
+      "expression": "attention",
+      "lemma": "attention",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "주의",
+      "accepted_meanings": [
+        "관심",
+        "주목"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 186
+    },
+    {
+      "expression": "attitude",
+      "lemma": "attitude",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "태도",
+      "accepted_meanings": [],
+      "base_difficulty": 52,
+      "ko_en_allowed": true,
+      "official_no": 187
+    },
+    {
+      "expression": "attract",
+      "lemma": "attract",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "끌다",
+      "accepted_meanings": [
+        "끌어들이다",
+        "매혹하다"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 188
+    },
+    {
+      "expression": "audience",
+      "lemma": "audience",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "청중",
+      "accepted_meanings": [
+        "관객",
+        "시청자"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 191
+    },
+    {
+      "expression": "automatic",
+      "lemma": "automatic",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "자동의",
+      "accepted_meanings": [
+        "자동적인"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": true,
+      "official_no": 195
+    },
+    {
+      "expression": "average",
+      "lemma": "average",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "평균",
+      "accepted_meanings": [],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 198
+    },
+    {
+      "expression": "avoid",
+      "lemma": "avoid",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "피하다",
+      "accepted_meanings": [
+        "회피하다"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 199
+    },
+    {
+      "expression": "awake",
+      "lemma": "awake",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "깨어 있는",
+      "accepted_meanings": [],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 201
+    },
+    {
+      "expression": "award",
+      "lemma": "award",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "상",
+      "accepted_meanings": [
+        "상금"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 202,
+      "teacher_note": "prize 와 같은 뜻"
+    },
+    {
+      "expression": "aware",
+      "lemma": "aware",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "알고 있는",
+      "accepted_meanings": [
+        "의식하는",
+        "알아차린"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 203
+    },
+    {
+      "expression": "awkward",
+      "lemma": "awkward",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "어색한",
+      "accepted_meanings": [
+        "서투른",
+        "곤란한"
+      ],
+      "base_difficulty": 60,
+      "ko_en_allowed": false,
+      "official_no": 206
+    },
+    {
+      "expression": "background",
+      "lemma": "background",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "배경",
+      "accepted_meanings": [],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 209
+    },
+    {
+      "expression": "bacon",
+      "lemma": "bacon",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "베이컨",
+      "accepted_meanings": [],
+      "base_difficulty": 30,
+      "ko_en_allowed": true,
+      "official_no": 210
+    },
+    {
+      "expression": "balance",
+      "lemma": "balance",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "균형",
+      "accepted_meanings": [
+        "잔고"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 215
+    },
+    {
+      "expression": "balloon",
+      "lemma": "balloon",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "풍선",
+      "accepted_meanings": [],
+      "base_difficulty": 28,
+      "ko_en_allowed": true,
+      "official_no": 217
+    },
+    {
+      "expression": "band",
+      "lemma": "band",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "밴드",
+      "accepted_meanings": [
+        "악단",
+        "띠"
+      ],
+      "base_difficulty": 35,
+      "ko_en_allowed": false,
+      "official_no": 220
+    },
+    {
+      "expression": "bang",
+      "lemma": "bang",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "쾅 하는 소리",
+      "accepted_meanings": [
+        "쾅"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 221
+    },
+    {
+      "expression": "bar",
+      "lemma": "bar",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "막대",
+      "accepted_meanings": [
+        "술집",
+        "바"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 224
+    },
+    {
+      "expression": "bare",
+      "lemma": "bare",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "벌거벗은",
+      "accepted_meanings": [
+        "맨",
+        "드러난"
+      ],
+      "base_difficulty": 58,
+      "ko_en_allowed": false,
+      "official_no": 225
+    },
+    {
+      "expression": "bark",
+      "lemma": "bark",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "짖다",
+      "accepted_meanings": [],
+      "base_difficulty": 40,
+      "ko_en_allowed": true,
+      "official_no": 227
+    },
+    {
+      "expression": "basis",
+      "lemma": "basis",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "기초",
+      "accepted_meanings": [
+        "근거",
+        "기반"
+      ],
+      "base_difficulty": 62,
+      "ko_en_allowed": false,
+      "official_no": 231
+    },
+    {
+      "expression": "battery",
+      "lemma": "battery",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "건전지",
+      "accepted_meanings": [
+        "배터리"
+      ],
+      "base_difficulty": 38,
+      "ko_en_allowed": false,
+      "official_no": 236
+    },
+    {
+      "expression": "battle",
+      "lemma": "battle",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "전투",
+      "accepted_meanings": [
+        "싸움"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 237
+    },
+    {
+      "expression": "bay",
+      "lemma": "bay",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "만",
+      "accepted_meanings": [],
+      "base_difficulty": 55,
+      "ko_en_allowed": true,
+      "official_no": 238,
+      "teacher_note": "바다가 육지로 들어간 곳"
+    },
+    {
+      "expression": "bean",
+      "lemma": "bean",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "콩",
+      "accepted_meanings": [],
+      "base_difficulty": 30,
+      "ko_en_allowed": true,
+      "official_no": 242
+    },
+    {
+      "expression": "beat",
+      "lemma": "beat",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "이기다",
+      "accepted_meanings": [
+        "때리다",
+        "두드리다"
+      ],
+      "base_difficulty": 42,
+      "ko_en_allowed": false,
+      "official_no": 246
+    },
+    {
+      "expression": "beer",
+      "lemma": "beer",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "맥주",
+      "accepted_meanings": [],
+      "base_difficulty": 35,
+      "ko_en_allowed": true,
+      "official_no": 253
+    },
+    {
+      "expression": "beg",
+      "lemma": "beg",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "간청하다",
+      "accepted_meanings": [
+        "구걸하다",
+        "빌다"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 255
+    },
+    {
+      "expression": "belief",
+      "lemma": "belief",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "믿음",
+      "accepted_meanings": [
+        "신념"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 260
+    },
+    {
+      "expression": "belong",
+      "lemma": "belong",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "속하다",
+      "accepted_meanings": [
+        "~의 것이다"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 263
+    },
+    {
+      "expression": "bench",
+      "lemma": "bench",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "벤치",
+      "accepted_meanings": [
+        "긴 의자"
+      ],
+      "base_difficulty": 30,
+      "ko_en_allowed": true,
+      "official_no": 266
+    },
+    {
+      "expression": "bend",
+      "lemma": "bend",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "구부리다",
+      "accepted_meanings": [
+        "숙이다",
+        "굽히다"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 267
+    },
+    {
+      "expression": "beneath",
+      "lemma": "beneath",
+      "entry_type": "word",
+      "pos": "preposition",
+      "meaning_ko": "~ 아래에",
+      "accepted_meanings": [
+        "~ 밑에"
+      ],
+      "base_difficulty": 62,
+      "ko_en_allowed": false,
+      "official_no": 268,
+      "teacher_note": "under 와 같은 뜻"
+    },
+    {
+      "expression": "benefit",
+      "lemma": "benefit",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "이익",
+      "accepted_meanings": [
+        "혜택",
+        "이득"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 269
+    },
+    {
+      "expression": "bet",
+      "lemma": "bet",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "내기하다",
+      "accepted_meanings": [
+        "돈을 걸다",
+        "틀림없다"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 271
+    },
+    {
+      "expression": "beyond",
+      "lemma": "beyond",
+      "entry_type": "word",
+      "pos": "preposition",
+      "meaning_ko": "~ 너머",
+      "accepted_meanings": [
+        "~을 넘어서",
+        "~ 이상"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 274
+    },
+    {
+      "expression": "billion",
+      "lemma": "billion",
+      "entry_type": "word",
+      "pos": "numeral",
+      "meaning_ko": "10억",
+      "accepted_meanings": [
+        "십억"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": true,
+      "official_no": 279
+    },
+    {
+      "expression": "bin",
+      "lemma": "bin",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "쓰레기통",
+      "accepted_meanings": [
+        "통"
+      ],
+      "base_difficulty": 42,
+      "ko_en_allowed": false,
+      "official_no": 280
+    },
+    {
+      "expression": "bind",
+      "lemma": "bind",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "묶다",
+      "accepted_meanings": [
+        "결속시키다"
+      ],
+      "base_difficulty": 62,
+      "ko_en_allowed": false,
+      "official_no": 281
+    },
+    {
+      "expression": "bit",
+      "lemma": "bit",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "조금",
+      "accepted_meanings": [
+        "약간",
+        "작은 조각"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 287
+    },
+    {
+      "expression": "bite",
+      "lemma": "bite",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "물다",
+      "accepted_meanings": [
+        "깨물다"
+      ],
+      "base_difficulty": 35,
+      "ko_en_allowed": true,
+      "official_no": 288
+    },
+    {
+      "expression": "bitter",
+      "lemma": "bitter",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "쓴",
+      "accepted_meanings": [
+        "쓰라린",
+        "혹독한"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 289
+    },
+    {
+      "expression": "blame",
+      "lemma": "blame",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "비난하다",
+      "accepted_meanings": [
+        "탓하다"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 291
+    },
+    {
+      "expression": "blank",
+      "lemma": "blank",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "빈칸",
+      "accepted_meanings": [
+        "공백"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 292
+    },
+    {
+      "expression": "blanket",
+      "lemma": "blanket",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "담요",
+      "accepted_meanings": [],
+      "base_difficulty": 38,
+      "ko_en_allowed": true,
+      "official_no": 293
+    },
+    {
+      "expression": "bless",
+      "lemma": "bless",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "축복하다",
+      "accepted_meanings": [],
+      "base_difficulty": 50,
+      "ko_en_allowed": true,
+      "official_no": 296
+    },
+    {
+      "expression": "blind",
+      "lemma": "blind",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "눈이 먼",
+      "accepted_meanings": [
+        "앞을 못 보는"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 297
+    },
+    {
+      "expression": "block",
+      "lemma": "block",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "블록",
+      "accepted_meanings": [
+        "덩어리",
+        "구역"
+      ],
+      "base_difficulty": 42,
+      "ko_en_allowed": false,
+      "official_no": 299
+    },
+    {
+      "expression": "blonde",
+      "lemma": "blonde",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "금발의",
+      "accepted_meanings": [],
+      "base_difficulty": 42,
+      "ko_en_allowed": true,
+      "official_no": 300
+    },
+    {
+      "expression": "bloom",
+      "lemma": "bloom",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "꽃이 피다",
+      "accepted_meanings": [
+        "피다"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": true,
+      "official_no": 302
+    },
+    {
+      "expression": "blow",
+      "lemma": "blow",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "불다",
+      "accepted_meanings": [
+        "날리다"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 304
+    },
+    {
+      "expression": "boil",
+      "lemma": "boil",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "끓다",
+      "accepted_meanings": [
+        "끓이다",
+        "삶다"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 309
+    },
+    {
+      "expression": "bomb",
+      "lemma": "bomb",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "폭탄",
+      "accepted_meanings": [],
+      "base_difficulty": 42,
+      "ko_en_allowed": true,
+      "official_no": 311
+    },
+    {
+      "expression": "bond",
+      "lemma": "bond",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "유대",
+      "accepted_meanings": [
+        "결속",
+        "채권"
+      ],
+      "base_difficulty": 62,
+      "ko_en_allowed": false,
+      "official_no": 312
+    },
+    {
+      "expression": "boom",
+      "lemma": "boom",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "붐",
+      "accepted_meanings": [
+        "호황",
+        "쾅 하는 소리"
+      ],
+      "base_difficulty": 60,
+      "ko_en_allowed": false,
+      "official_no": 315
+    },
+    {
+      "expression": "boot",
+      "lemma": "boot",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "부츠",
+      "accepted_meanings": [
+        "장화"
+      ],
+      "base_difficulty": 35,
+      "ko_en_allowed": true,
+      "official_no": 317
+    },
+    {
+      "expression": "bore",
+      "lemma": "bore",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "지루하게 하다",
+      "accepted_meanings": [],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 319,
+      "ambiguity": "파생어 bored, boring 이 더 흔함"
+    },
+    {
+      "expression": "boss",
+      "lemma": "boss",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "상사",
+      "accepted_meanings": [
+        "사장",
+        "두목"
+      ],
+      "base_difficulty": 38,
+      "ko_en_allowed": false,
+      "official_no": 321
+    },
+    {
+      "expression": "bother",
+      "lemma": "bother",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "귀찮게 하다",
+      "accepted_meanings": [
+        "괴롭히다",
+        "신경 쓰다"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 323
+    },
+    {
+      "expression": "bounce",
+      "lemma": "bounce",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "튀다",
+      "accepted_meanings": [
+        "튀기다"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 326
+    },
+    {
+      "expression": "bow",
+      "lemma": "bow",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "절하다",
+      "accepted_meanings": [
+        "고개를 숙이다"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 328,
+      "teacher_note": "명사 '활'도 있음"
+    },
+    {
+      "expression": "bowl",
+      "lemma": "bowl",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "그릇",
+      "accepted_meanings": [
+        "사발",
+        "볼"
+      ],
+      "base_difficulty": 35,
+      "ko_en_allowed": false,
+      "official_no": 329
+    },
+    {
+      "expression": "brain",
+      "lemma": "brain",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "뇌",
+      "accepted_meanings": [
+        "두뇌"
+      ],
+      "base_difficulty": 38,
+      "ko_en_allowed": true,
+      "official_no": 332
+    },
+    {
+      "expression": "brake",
+      "lemma": "brake",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "브레이크",
+      "accepted_meanings": [
+        "제동 장치"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": true,
+      "official_no": 333
+    },
+    {
+      "expression": "branch",
+      "lemma": "branch",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "나뭇가지",
+      "accepted_meanings": [
+        "지점",
+        "분야"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 334
+    },
+    {
+      "expression": "brand",
+      "lemma": "brand",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "상표",
+      "accepted_meanings": [
+        "브랜드"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 335
+    },
+    {
+      "expression": "breast",
+      "lemma": "breast",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "가슴",
+      "accepted_meanings": [
+        "유방"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 340
+    },
+    {
+      "expression": "breath",
+      "lemma": "breath",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "숨",
+      "accepted_meanings": [
+        "호흡"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 341
+    },
+    {
+      "expression": "breathe",
+      "lemma": "breathe",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "숨 쉬다",
+      "accepted_meanings": [
+        "호흡하다"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 342
+    },
+    {
+      "expression": "brick",
+      "lemma": "brick",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "벽돌",
+      "accepted_meanings": [],
+      "base_difficulty": 40,
+      "ko_en_allowed": true,
+      "official_no": 345
+    },
+    {
+      "expression": "brief",
+      "lemma": "brief",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "짧은",
+      "accepted_meanings": [
+        "간단한",
+        "잠시의"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 347
+    },
+    {
+      "expression": "brilliant",
+      "lemma": "brilliant",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "훌륭한",
+      "accepted_meanings": [
+        "뛰어난",
+        "눈부신"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 349
+    },
+    {
+      "expression": "broad",
+      "lemma": "broad",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "넓은",
+      "accepted_meanings": [
+        "폭넓은"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 351,
+      "teacher_note": "wide 와 같은 뜻"
+    },
+    {
+      "expression": "bubble",
+      "lemma": "bubble",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "거품",
+      "accepted_meanings": [
+        "비눗방울"
+      ],
+      "base_difficulty": 38,
+      "ko_en_allowed": true,
+      "official_no": 357
+    },
+    {
+      "expression": "budget",
+      "lemma": "budget",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "예산",
+      "accepted_meanings": [],
+      "base_difficulty": 60,
+      "ko_en_allowed": true,
+      "official_no": 358
+    },
+    {
+      "expression": "bug",
+      "lemma": "bug",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "벌레",
+      "accepted_meanings": [
+        "곤충",
+        "오류"
+      ],
+      "base_difficulty": 35,
+      "ko_en_allowed": false,
+      "official_no": 359
+    },
+    {
+      "expression": "bump",
+      "lemma": "bump",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "부딪치다",
+      "accepted_meanings": [
+        "충돌하다"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 364
+    },
+    {
+      "expression": "bunch",
+      "lemma": "bunch",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "다발",
+      "accepted_meanings": [
+        "묶음",
+        "송이"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 365
+    },
+    {
+      "expression": "burst",
+      "lemma": "burst",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "터지다",
+      "accepted_meanings": [
+        "터뜨리다",
+        "파열하다"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 369
+    },
+    {
+      "expression": "bury",
+      "lemma": "bury",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "묻다",
+      "accepted_meanings": [
+        "매장하다"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 370
+    },
+    {
+      "expression": "bush",
+      "lemma": "bush",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "덤불",
+      "accepted_meanings": [
+        "관목"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 372
+    },
+    {
+      "expression": "cable",
+      "lemma": "cable",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "케이블",
+      "accepted_meanings": [
+        "전선"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 382
+    },
+    {
+      "expression": "cage",
+      "lemma": "cage",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "우리",
+      "accepted_meanings": [
+        "새장"
+      ],
+      "base_difficulty": 38,
+      "ko_en_allowed": true,
+      "official_no": 383
+    },
+    {
+      "expression": "calculate",
+      "lemma": "calculate",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "계산하다",
+      "accepted_meanings": [],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 385,
+      "teacher_note": "compute 와 같은 뜻"
+    },
+    {
+      "expression": "calendar",
+      "lemma": "calendar",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "달력",
+      "accepted_meanings": [
+        "일정표"
+      ],
+      "base_difficulty": 30,
+      "ko_en_allowed": true,
+      "official_no": 386
+    },
+    {
+      "expression": "calm",
+      "lemma": "calm",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "침착한",
+      "accepted_meanings": [
+        "차분한",
+        "고요한"
+      ],
+      "base_difficulty": 42,
+      "ko_en_allowed": false,
+      "official_no": 388
+    },
+    {
+      "expression": "capable",
+      "lemma": "capable",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "~할 수 있는",
+      "accepted_meanings": [
+        "유능한"
+      ],
+      "base_difficulty": 58,
+      "ko_en_allowed": false,
+      "official_no": 399
+    },
+    {
+      "expression": "cape",
+      "lemma": "cape",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "망토",
+      "accepted_meanings": [
+        "곶"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 400
+    },
+    {
+      "expression": "capital",
+      "lemma": "capital",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "수도",
+      "accepted_meanings": [
+        "자본",
+        "대문자"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 401
+    },
+    {
+      "expression": "captain",
+      "lemma": "captain",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "선장",
+      "accepted_meanings": [
+        "주장",
+        "대위"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 402
+    },
+    {
+      "expression": "career",
+      "lemma": "career",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "직업",
+      "accepted_meanings": [
+        "경력",
+        "진로"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 407
+    },
+    {
+      "expression": "carpet",
+      "lemma": "carpet",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "카펫",
+      "accepted_meanings": [
+        "양탄자"
+      ],
+      "base_difficulty": 35,
+      "ko_en_allowed": true,
+      "official_no": 408
+    },
+    {
+      "expression": "cart",
+      "lemma": "cart",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "수레",
+      "accepted_meanings": [
+        "카트"
+      ],
+      "base_difficulty": 38,
+      "ko_en_allowed": true,
+      "official_no": 411
+    },
+    {
+      "expression": "cast",
+      "lemma": "cast",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "던지다",
+      "accepted_meanings": [
+        "배역을 정하다"
+      ],
+      "base_difficulty": 60,
+      "ko_en_allowed": false,
+      "official_no": 415
+    },
+    {
+      "expression": "castle",
+      "lemma": "castle",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "성",
+      "accepted_meanings": [],
+      "base_difficulty": 32,
+      "ko_en_allowed": true,
+      "official_no": 416
+    },
+    {
+      "expression": "catalogue",
+      "lemma": "catalogue",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "목록",
+      "accepted_meanings": [
+        "카탈로그"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 418,
+      "teacher_note": "catalog 로도 씀"
+    },
+    {
+      "expression": "category",
+      "lemma": "category",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "범주",
+      "accepted_meanings": [
+        "분류",
+        "카테고리"
+      ],
+      "base_difficulty": 58,
+      "ko_en_allowed": false,
+      "official_no": 420
+    },
+    {
+      "expression": "cause",
+      "lemma": "cause",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "원인",
+      "accepted_meanings": [],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 423,
+      "teacher_note": "동사 '일으키다'도 흔함"
+    },
+    {
+      "expression": "ceiling",
+      "lemma": "ceiling",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "천장",
+      "accepted_meanings": [],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 427
+    },
+    {
+      "expression": "cell",
+      "lemma": "cell",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "세포",
+      "accepted_meanings": [
+        "감방",
+        "칸"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 430
+    },
+    {
+      "expression": "century",
+      "lemma": "century",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "세기",
+      "accepted_meanings": [
+        "100년"
+      ],
+      "base_difficulty": 42,
+      "ko_en_allowed": true,
+      "official_no": 433
+    },
+    {
+      "expression": "chain",
+      "lemma": "chain",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "사슬",
+      "accepted_meanings": [
+        "쇠사슬",
+        "체인"
+      ],
+      "base_difficulty": 42,
+      "ko_en_allowed": false,
+      "official_no": 436
+    },
+    {
+      "expression": "chairman",
+      "lemma": "chairman",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "의장",
+      "accepted_meanings": [
+        "회장"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 438
+    },
+    {
+      "expression": "challenge",
+      "lemma": "challenge",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "도전",
+      "accepted_meanings": [
+        "과제"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 439
+    },
+    {
+      "expression": "champion",
+      "lemma": "champion",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "챔피언",
+      "accepted_meanings": [
+        "우승자",
+        "선수권 보유자"
+      ],
+      "base_difficulty": 38,
+      "ko_en_allowed": false,
+      "official_no": 441
+    },
+    {
+      "expression": "channel",
+      "lemma": "channel",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "채널",
+      "accepted_meanings": [
+        "경로",
+        "해협"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 444
+    },
+    {
+      "expression": "character",
+      "lemma": "character",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "성격",
+      "accepted_meanings": [
+        "등장인물",
+        "특징",
+        "문자"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 446
+    },
+    {
+      "expression": "characteristic",
+      "lemma": "characteristic",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "특징",
+      "accepted_meanings": [
+        "특성"
+      ],
+      "base_difficulty": 65,
+      "ko_en_allowed": false,
+      "official_no": 447
+    },
+    {
+      "expression": "charge",
+      "lemma": "charge",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "요금",
+      "accepted_meanings": [
+        "책임",
+        "담당"
+      ],
+      "base_difficulty": 55,
+      "ko_en_allowed": false,
+      "official_no": 448
+    },
+    {
+      "expression": "charm",
+      "lemma": "charm",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "매력",
+      "accepted_meanings": [],
+      "base_difficulty": 55,
+      "ko_en_allowed": true,
+      "official_no": 450
+    },
+    {
+      "expression": "chart",
+      "lemma": "chart",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "도표",
+      "accepted_meanings": [
+        "차트",
+        "그래프"
+      ],
+      "base_difficulty": 42,
+      "ko_en_allowed": false,
+      "official_no": 451
+    },
+    {
+      "expression": "chase",
+      "lemma": "chase",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "뒤쫓다",
+      "accepted_meanings": [
+        "추격하다"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 452
+    },
+    {
+      "expression": "chat",
+      "lemma": "chat",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "수다를 떨다",
+      "accepted_meanings": [
+        "잡담하다",
+        "채팅하다"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 453
+    },
+    {
+      "expression": "cheek",
+      "lemma": "cheek",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "볼",
+      "accepted_meanings": [
+        "뺨"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": true,
+      "official_no": 456
+    },
+    {
+      "expression": "cheer",
+      "lemma": "cheer",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "응원하다",
+      "accepted_meanings": [
+        "환호하다"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 457
+    },
+    {
+      "expression": "chest",
+      "lemma": "chest",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "가슴",
+      "accepted_meanings": [
+        "상자"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 461
+    },
+    {
+      "expression": "chew",
+      "lemma": "chew",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "씹다",
+      "accepted_meanings": [],
+      "base_difficulty": 42,
+      "ko_en_allowed": true,
+      "official_no": 462
+    },
+    {
+      "expression": "chief",
+      "lemma": "chief",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "우두머리",
+      "accepted_meanings": [
+        "장",
+        "최고위자"
+      ],
+      "base_difficulty": 52,
+      "ko_en_allowed": false,
+      "official_no": 464
+    },
+    {
+      "expression": "chip",
+      "lemma": "chip",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "조각",
+      "accepted_meanings": [
+        "칩",
+        "감자칩"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 468
+    },
+    {
+      "expression": "choice",
+      "lemma": "choice",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "선택",
+      "accepted_meanings": [],
+      "base_difficulty": 40,
+      "ko_en_allowed": true,
+      "official_no": 470
+    },
+    {
+      "expression": "chop",
+      "lemma": "chop",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "썰다",
+      "accepted_meanings": [
+        "자르다",
+        "패다"
+      ],
+      "base_difficulty": 48,
+      "ko_en_allowed": false,
+      "official_no": 473
+    },
+    {
+      "expression": "cigarette",
+      "lemma": "cigarette",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "담배",
+      "accepted_meanings": [],
+      "base_difficulty": 45,
+      "ko_en_allowed": true,
+      "official_no": 477
+    },
+    {
+      "expression": "cinema",
+      "lemma": "cinema",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "영화관",
+      "accepted_meanings": [
+        "극장"
+      ],
+      "base_difficulty": 40,
+      "ko_en_allowed": false,
+      "official_no": 478,
+      "teacher_note": "theater 와 구분"
+    },
+    {
+      "expression": "circumstance",
+      "lemma": "circumstance",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "상황",
+      "accepted_meanings": [
+        "환경",
+        "사정"
+      ],
+      "base_difficulty": 68,
+      "ko_en_allowed": false,
+      "official_no": 481,
+      "teacher_note": "situation 과 같은 뜻"
+    },
+    {
+      "expression": "citizen",
+      "lemma": "citizen",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "시민",
+      "accepted_meanings": [
+        "국민"
+      ],
+      "base_difficulty": 50,
+      "ko_en_allowed": false,
+      "official_no": 483
+    },
+    {
+      "expression": "civil",
+      "lemma": "civil",
+      "entry_type": "word",
+      "pos": "adjective",
+      "meaning_ko": "시민의",
+      "accepted_meanings": [
+        "민간의",
+        "정중한"
+      ],
+      "base_difficulty": 62,
+      "ko_en_allowed": false,
+      "official_no": 485
+    },
+    {
+      "expression": "claim",
+      "lemma": "claim",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "주장하다",
+      "accepted_meanings": [
+        "요구하다"
+      ],
+      "base_difficulty": 60,
+      "ko_en_allowed": false,
+      "official_no": 486
+    },
+    {
+      "expression": "clerk",
+      "lemma": "clerk",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "점원",
+      "accepted_meanings": [
+        "직원",
+        "사무원"
+      ],
+      "base_difficulty": 45,
+      "ko_en_allowed": false,
+      "official_no": 494
+    },
+    {
+      "expression": "click",
+      "lemma": "click",
+      "entry_type": "word",
+      "pos": "verb",
+      "meaning_ko": "클릭하다",
+      "accepted_meanings": [
+        "딸깍 소리를 내다"
+      ],
+      "base_difficulty": 35,
+      "ko_en_allowed": false,
+      "official_no": 496
+    },
+    {
+      "expression": "client",
+      "lemma": "client",
+      "entry_type": "word",
+      "pos": "noun",
+      "meaning_ko": "고객",
+      "accepted_meanings": [
+        "의뢰인"
+      ],
+      "base_difficulty": 58,
+      "ko_en_allowed": false,
+      "official_no": 497,
+      "teacher_note": "customer 와 같은 뜻"
+    }
+  ]
+}

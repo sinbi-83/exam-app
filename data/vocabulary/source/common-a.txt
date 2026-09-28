@@ -1,0 +1,190 @@
+# 4단계 2차 중·고 공통 어휘 제작 원본 (Claude Code 작성, 교사 확인 전). 형식은 elementary-a.txt 와 같다.
+# 단어|품사|대표 뜻|인정 뜻(;, 같은 품사만)|난이도(새 자 25~80)|한→영 가능(y/n)|의미 구분 메모|참고 메모·애매한 점
+able|adj|할 수 있는|능력 있는|28|n||
+absolute|adj|절대적인|완전한|58|n||
+accent|n|억양|말투;강세|45|n||
+accept|v|받아들이다|수락하다|40|n||
+access|n|접근|이용;출입|55|n||
+accident|n|사고||32|y||
+account|n|계좌|설명;계정|50|n||
+accuse|v|고발하다|비난하다|60|n||
+adapt|v|적응하다|맞추다;각색하다|58|n||
+admire|v|존경하다|감탄하다|48|n||
+admit|v|인정하다|입장을 허락하다|52|n||
+adopt|v|입양하다|채택하다|58|n||
+advance|n|발전|진보;전진|55|n||
+advantage|n|이점|유리한 점;장점|48|n||
+adventure|n|모험||35|y||
+advertize|v|광고하다||45|y||advertise 로도 씀
+advise|v|충고하다|조언하다|45|n||
+affair|n|일|사건;업무|60|n||
+affect|v|영향을 미치다|영향을 주다|52|y||
+afford|v|~할 여유가 있다|감당하다|55|n||
+agent|n|대리인|요원;중개인|55|n||
+aid|n|도움|원조;지원|52|n||
+aim|n|목표|목적|48|n||
+airline|n|항공사||42|y||
+airport|n|공항||28|y||
+alarm|n|경보|알람;자명종|35|n||
+alcohol|n|술|알코올|45|n||
+alive|adj|살아 있는||35|y||
+allow|v|허락하다|허용하다|42|n||
+aloud|adv|소리 내어|큰 소리로|45|n||
+alter|v|바꾸다|변경하다|62|n||
+although|conj|비록 ~이지만|~에도 불구하고|45|n||
+altogether|adv|완전히|전부;모두 합쳐|60|n||
+amaze|v|놀라게 하다||45|n||surprise 와 같은 뜻
+ambulance|n|구급차||35|y||
+among|prep|~ 사이에|~ 중에|40|n||between 과 구분
+amount|n|양|액수;총액|48|n||
+amuse|v|즐겁게 하다|재미있게 하다|52|n||
+analysis|n|분석||65|y||
+angel|n|천사||30|y||
+anger|n|분노|화|40|n||
+announce|v|발표하다|알리다|48|n||
+annoy|v|짜증 나게 하다|귀찮게 하다|50|n||
+annual|adj|매년의|연간의;해마다의|60|n||
+ant|n|개미||25|y||
+anxious|adj|불안해하는|걱정하는;열망하는|58|n||
+apart|adv|떨어져|따로|52|n||
+appeal|v|호소하다|관심을 끌다|62|n||
+appear|v|나타나다|~인 것 같다|42|n||
+apply|v|지원하다|신청하다;적용하다|50|n||
+appoint|v|임명하다|정하다|62|n||
+appreciate|v|감사하다|고마워하다;감상하다|55|n||
+approach|v|다가가다|접근하다|55|n||
+appropriate|adj|적절한|알맞은|65|n||
+argue|v|논쟁하다|주장하다;다투다|48|n||
+army|n|군대|육군|38|y||
+arrange|v|정리하다|배열하다;준비하다|52|n||
+arrest|v|체포하다||55|y||
+article|n|기사|글;물품|48|n||
+aside|adv|옆에|따로|58|n||
+asleep|adj|잠든|자고 있는|38|y||
+assess|v|평가하다||68|n||evaluate 와 같은 뜻
+assign|v|배정하다|할당하다;맡기다|60|n||
+assist|v|돕다|보조하다|55|n||help 와 같은 뜻
+associate|v|연관 짓다|연상하다;어울리다|65|n||
+assume|v|가정하다|추정하다;맡다|65|n||
+attach|v|붙이다|첨부하다|55|n||
+attack|v|공격하다||42|y||
+attempt|n|시도||58|y||
+attend|v|참석하다|다니다|50|n||
+attention|n|주의|관심;주목|45|n||
+attitude|n|태도||52|y||
+attract|v|끌다|끌어들이다;매혹하다|55|n||
+audience|n|청중|관객;시청자|50|n||
+automatic|adj|자동의|자동적인|55|y||
+average|n|평균||45|y||
+avoid|v|피하다|회피하다|48|n||
+awake|adj|깨어 있는||45|y||
+award|n|상|상금|45|n||prize 와 같은 뜻
+aware|adj|알고 있는|의식하는;알아차린|55|n||
+awkward|adj|어색한|서투른;곤란한|60|n||
+background|n|배경||45|y||
+bacon|n|베이컨||30|y||
+balance|n|균형|잔고|48|n||
+balloon|n|풍선||28|y||
+band|n|밴드|악단;띠|35|n||
+bang|n|쾅 하는 소리|쾅|48|n||
+bar|n|막대|술집;바|45|n||
+bare|adj|벌거벗은|맨;드러난|58|n||
+bark|v|짖다||40|y||
+basis|n|기초|근거;기반|62|n||
+battery|n|건전지|배터리|38|n||
+battle|n|전투|싸움|45|n||
+bay|n|만||55|y||바다가 육지로 들어간 곳
+bean|n|콩||30|y||
+beat|v|이기다|때리다;두드리다|42|n||
+beer|n|맥주||35|y||
+beg|v|간청하다|구걸하다;빌다|52|n||
+belief|n|믿음|신념|50|n||
+belong|v|속하다|~의 것이다|45|n||
+bench|n|벤치|긴 의자|30|y||
+bend|v|구부리다|숙이다;굽히다|45|n||
+beneath|prep|~ 아래에|~ 밑에|62|n||under 와 같은 뜻
+benefit|n|이익|혜택;이득|52|n||
+bet|v|내기하다|돈을 걸다;틀림없다|52|n||
+beyond|prep|~ 너머|~을 넘어서;~ 이상|55|n||
+billion|num|10억|십억|48|y||
+bin|n|쓰레기통|통|42|n||
+bind|v|묶다|결속시키다|62|n||
+bit|n|조금|약간;작은 조각|40|n||
+bite|v|물다|깨물다|35|y||
+bitter|adj|쓴|쓰라린;혹독한|48|n||
+blame|v|비난하다|탓하다|50|n||
+blank|n|빈칸|공백|45|y||
+blanket|n|담요||38|y||
+bless|v|축복하다||50|y||
+blind|adj|눈이 먼|앞을 못 보는|45|n||
+block|n|블록|덩어리;구역|42|n||
+blonde|adj|금발의||42|y||
+bloom|v|꽃이 피다|피다|48|y||
+blow|v|불다|날리다|40|n||
+boil|v|끓다|끓이다;삶다|40|n||
+bomb|n|폭탄||42|y||
+bond|n|유대|결속;채권|62|n||
+boom|n|붐|호황;쾅 하는 소리|60|n||
+boot|n|부츠|장화|35|y||
+bore|v|지루하게 하다||45|n||파생어 bored, boring 이 더 흔함|
+boss|n|상사|사장;두목|38|n||
+bother|v|귀찮게 하다|괴롭히다;신경 쓰다|48|n||
+bounce|v|튀다|튀기다|50|n||
+bow|v|절하다|고개를 숙이다|45|n||명사 '활'도 있음
+bowl|n|그릇|사발;볼|35|n||
+brain|n|뇌|두뇌|38|y||
+brake|n|브레이크|제동 장치|48|y||
+branch|n|나뭇가지|지점;분야|48|n||
+brand|n|상표|브랜드|45|n||
+breast|n|가슴|유방|50|n||
+breath|n|숨|호흡|45|n||
+breathe|v|숨 쉬다|호흡하다|45|n||
+brick|n|벽돌||40|y||
+brief|adj|짧은|간단한;잠시의|55|n||
+brilliant|adj|훌륭한|뛰어난;눈부신|55|n||
+broad|adj|넓은|폭넓은|52|n||wide 와 같은 뜻
+bubble|n|거품|비눗방울|38|y||
+budget|n|예산||60|y||
+bug|n|벌레|곤충;오류|35|n||
+bump|v|부딪치다|충돌하다|48|n||
+bunch|n|다발|묶음;송이|48|n||
+burst|v|터지다|터뜨리다;파열하다|55|n||
+bury|v|묻다|매장하다|52|n||
+bush|n|덤불|관목|45|y||
+cable|n|케이블|전선|45|y||
+cage|n|우리|새장|38|y||
+calculate|v|계산하다||50|n||compute 와 같은 뜻
+calendar|n|달력|일정표|30|y||
+calm|adj|침착한|차분한;고요한|42|n||
+capable|adj|~할 수 있는|유능한|58|n||
+cape|n|망토|곶|55|n||
+capital|n|수도|자본;대문자|48|n||
+captain|n|선장|주장;대위|40|n||
+career|n|직업|경력;진로|50|n||
+carpet|n|카펫|양탄자|35|y||
+cart|n|수레|카트|38|y||
+cast|v|던지다|배역을 정하다|60|n||
+castle|n|성||32|y||
+catalogue|n|목록|카탈로그|50|n||catalog 로도 씀
+category|n|범주|분류;카테고리|58|n||
+cause|n|원인||45|y||동사 '일으키다'도 흔함
+ceiling|n|천장||45|y||
+cell|n|세포|감방;칸|52|n||
+century|n|세기|100년|42|y||
+chain|n|사슬|쇠사슬;체인|42|n||
+chairman|n|의장|회장|55|n||
+challenge|n|도전|과제|45|n||
+champion|n|챔피언|우승자;선수권 보유자|38|n||
+channel|n|채널|경로;해협|45|n||
+character|n|성격|등장인물;특징;문자|48|n||
+characteristic|n|특징|특성|65|n||
+charge|n|요금|책임;담당|55|n||
+charm|n|매력||55|y||
+chart|n|도표|차트;그래프|42|n||
+chase|v|뒤쫓다|추격하다|45|n||
+chat|v|수다를 떨다|잡담하다;채팅하다|40|n||
+cheek|n|볼|뺨|40|y||
+cheer|v|응원하다|환호하다|40|n||
+chest|n|가슴|상자|45|n||
+chew|v|씹다||42|y||
+chief|n|우두머리|장;최고위자|52|n||

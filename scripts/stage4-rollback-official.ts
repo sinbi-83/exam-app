@@ -1,8 +1,8 @@
-// 4단계 초등 권장 어휘 등록 되돌리기: 이번에 넣은 '확인 필요' 항목만 지운다 (출처 행은 CASCADE 로 함께 삭제).
+// 4단계 공식 기본어휘(초등 권장·중·고 공통) 등록 되돌리기: 이번에 넣은 '확인 필요' 항목만 지운다 (출처 행은 CASCADE 로 함께 삭제).
 // 대상 = 공식 출처(official, kr-curriculum-2022, created_by claude) + status 'pending' + 교사가 아직 손대지 않음(teacher_reviewed_at 없음)
 //        + 주어진 시각 이후에 만들어진 항목. 교사가 이미 사용하기/수정한 항목은 건드리지 않는다.
-// 실행: node scripts/stage4-rollback-elementary.ts 2026-09-28T10:56:00Z          → 미리보기
-//       node scripts/stage4-rollback-elementary.ts 2026-09-28T10:56:00Z --apply  → 삭제
+// 실행: node scripts/stage4-rollback-official.ts 2026-09-28T10:56:00Z          → 미리보기
+//       node scripts/stage4-rollback-official.ts 2026-09-28T10:56:00Z --apply  → 삭제
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'

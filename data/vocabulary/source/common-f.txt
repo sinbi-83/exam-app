@@ -1,0 +1,107 @@
+# 4단계 2차 중·고 공통 어휘 제작 원본 (계속). 형식은 elementary-a.txt 와 같다.
+sight|n|시력|시야;광경|52|n||
+sign|n|표지판|신호;징후;기호|40|n||
+silly|adj|어리석은|바보 같은|42|n||
+silver|n|은|은색|38|n||
+similar|adj|비슷한|유사한|45|n||
+simple|adj|간단한|단순한;쉬운|35|n||
+since|prep|~ 이후로|~부터|45|n||
+single|adj|단 하나의|독신의;1인용의|45|n||
+sink|v|가라앉다|침몰하다|48|n||명사 '싱크대'도 있음
+site|n|장소|부지;현장;사이트|52|n||
+situate|v|위치시키다|두다|68|n||파생어 situation 이 훨씬 흔함|
+skill|n|기술|솜씨;능력|42|n||
+slave|n|노예||52|y||
+slide|v|미끄러지다|미끄러뜨리다|45|n||
+slight|adj|약간의|조금의;가벼운|58|n||
+slip|v|미끄러지다|빠져나가다|48|n||slide 와 같은 뜻
+smart|adj|똑똑한|영리한;맵시 있는|35|n||clever 와 같은 뜻
+smash|v|박살 내다|부수다;세게 치다|58|n||
+smoke|n|연기||40|n||동사 '담배를 피우다'도 흔함
+smooth|adj|매끄러운|부드러운;순조로운|52|n||
+snack|n|간식|과자|32|y||
+snake|n|뱀||30|y||
+snap|v|딱 부러지다|탁 소리를 내다|58|n||
+social|adj|사회의|사회적인;사교적인|52|n||
+society|n|사회||55|y||
+soil|n|흙|토양|50|n||
+soldier|n|군인|병사|42|y||
+solid|adj|단단한|고체의;견고한|55|n||
+solve|v|풀다|해결하다|45|n||
+somewhat|adv|다소|약간|62|n||
+soon|adv|곧|머지않아|30|y||
+sore|adj|아픈|쑤시는|52|n||
+sort|n|종류|유형|50|n||kind 와 같은 뜻
+soul|n|영혼|정신|55|y||
+sour|adj|신|시큼한|42|y||
+source|n|근원|원천;출처|58|n||
+spare|adj|여분의|남는;예비의|55|n||
+species|n|종|종류|65|n||
+specific|adj|구체적인|특정한|62|n||
+speech|n|연설|말;담화|48|n||
+spell|v|철자를 말하다|철자를 쓰다|40|n||
+spend|v|쓰다|보내다;소비하다|40|n||
+spin|v|돌다|회전하다;돌리다|52|n||
+spirit|n|정신|영혼;기분|55|n||
+spoil|v|망치다|상하다;버릇없게 키우다|55|n||
+sponsor|n|후원자|스폰서;광고주|58|n||
+spot|n|장소|점;얼룩|50|n||
+spray|v|뿌리다|분무하다|50|n||
+spread|v|퍼지다|펼치다;바르다|50|n||
+spy|n|스파이|간첩|42|y||
+square|n|정사각형|광장|42|n||
+stable|adj|안정된|안정적인|58|n||
+stage|n|무대|단계|45|n||
+stairs|n|계단||35|y||
+stamp|n|우표|도장|38|n||
+standard|n|기준|표준;수준|58|n||
+stare|v|빤히 보다|응시하다|52|n||
+state|n|상태|국가;주|55|n||
+station|n|역|정거장;방송국|32|n||
+steady|adj|꾸준한|안정된;한결같은|58|n||
+steal|v|훔치다||45|y||
+steam|n|증기|김|50|n||
+steel|n|강철||52|y||
+step|n|걸음|단계;계단|40|n||
+stick|n|막대기|지팡이;나뭇가지|40|n||
+still|adv|아직도|여전히;그런데도|40|n||
+stir|v|젓다|휘젓다;자극하다|55|n||
+stock|n|재고|주식;비축|62|n||
+stomach|n|배|위;복부|42|n||
+storm|n|폭풍|폭풍우|42|y||
+straight|adv|곧장|똑바로;곧바로|45|n||
+strange|adj|이상한|낯선|35|n||odd 와 같은 뜻
+strategy|n|전략||68|y||
+strawberry|n|딸기||28|y||
+stream|n|개울|시내;흐름|50|n||
+stress|n|스트레스|압박;강세|45|n||
+stretch|v|늘이다|쭉 펴다;늘어나다|52|n||
+strike|v|치다|파업하다;부딪치다|58|n||
+string|n|끈|줄;현|48|n||
+structure|n|구조|건축물|62|n||
+struggle|v|애쓰다|투쟁하다;몸부림치다|60|n||
+studio|n|스튜디오|작업실|45|n||
+stuff|n|것|물건;재료|48|n||
+subject|n|과목|주제;주어|40|n||
+succeed|v|성공하다|뒤를 잇다|50|n||
+success|n|성공||45|y||
+such|det|그러한|그런|45|n||
+sudden|adj|갑작스러운||50|y||
+suffer|v|고통받다|겪다;시달리다|55|n||
+suggest|v|제안하다|암시하다|52|n||propose 와 같은 뜻
+suit|n|정장|옷 한 벌;소송|45|n||
+sum|n|합계|총합;금액|55|n||
+super|adj|최고의|굉장한|40|n||
+supper|n|저녁 식사|저녁밥|42|n||dinner 와 같은 뜻
+supply|n|공급|보급품;물자|58|n||
+support|v|지지하다|지원하다;부양하다|50|n||
+suppose|v|생각하다|가정하다;추측하다|55|n||
+surface|n|표면|겉|55|y||
+surprise|v|놀라게 하다||38|n||amaze 와 같은 뜻. 명사 '놀람'도 흔함
+surround|v|둘러싸다|에워싸다|55|n||
+survey|n|설문 조사|조사|55|n||
+survive|v|살아남다|생존하다|52|n||
+suspect|v|의심하다|수상히 여기다|60|n||
+swallow|v|삼키다||52|y||명사 '제비'도 있음
+sweater|n|스웨터||32|y||
+sweep|v|쓸다|청소하다|48|n||

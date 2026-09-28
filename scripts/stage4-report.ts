@@ -4,7 +4,7 @@
 //
 // 실행: node scripts/stage4-report.ts
 
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 import { generalTestCandidates } from '../lib/vocabularyCalibration.ts'
@@ -48,6 +48,8 @@ const esc = (s: string) => s.replace(/\|/g, '\\|')
 async function main() {
   const seeds = ['01', '02', '03', '04'].map((n) => JSON.parse(readFileSync(resolve(process.cwd(), `data/vocabulary/kr-curriculum-2022-elementary-${n}.json`), 'utf-8')))
   const made: SeedEntry[] = seeds.flatMap((s) => s.entries)
+  const commonFiles = readdirSync(resolve(process.cwd(), 'data/vocabulary')).filter((f) => /^kr-curriculum-2022-common-\d\d\.json$/.test(f)).sort()
+  const madeCommon: SeedEntry[] = commonFiles.flatMap((f) => JSON.parse(readFileSync(resolve(process.cwd(), 'data/vocabulary', f), 'utf-8')).entries)
 
   // 제외한 기능어: 제작 원본의 '-단어|이유' 줄
   const excluded: { word: string; reason: string }[] = []
@@ -80,7 +82,9 @@ async function main() {
     `- 새로 만든 항목 **${made.length}개** (공식 초등 권장 800개 중 단어은행에 없던 779개 표제어 − 제외 기능어 ${excluded.length}개 + 두 항목으로 나눈 단어 7개). 전부 **확인 필요**.`,
     `- 단어은행 지금: 사용 중 ${rows.filter((e) => e.status === 'approved').length} / 확인 필요 ${rows.filter((e) => e.status === 'pending').length}`,
     '',
-    '## 1. 초5 단어시험: 몇 문제까지 낼 수 있나',
+    '## 1. 단어시험: 몇 문제까지 낼 수 있나 (초5 / 중1 / 중3)',
+    '',
+    '### 초5',
     '',
     '문항 수 = 그 레벨 범위에서 한 시험에 겹치지 않게 뽑을 수 있는 최대 개수 (같은 철자 다른 뜻 1번만, 한→영은 같은 뜻 1번만).',
     '',
@@ -94,6 +98,15 @@ async function main() {
     const now = MODES.map((m) => capacity(approvedPool, band, m)).join(' / ')
     const after = MODES.map((m) => capacity(ifApproved, band, m)).join(' / ')
     out.push(`| ${LEVEL_NAMES[l]} | ${band.min}~${band.max} | ${now} | **${after}** |`)
+  }
+
+  // 중1 · 중3 도 같은 표 (중·고 공통 보강 결과 확인용)
+  for (const g of ['중1', '중3'] as const) {
+    out.push('', `### ${g}`, '', '| 레벨 | 범위 | 지금(사용 중만) 영→한 / 한→영 / 혼합 | 확인 필요 모두 사용하기 후 영→한 / 한→영 / 혼합 |', '|---|---|---|---|')
+    for (const l of LEVELS) {
+      const b = findDifficultyBand(g, l, 'en_ko')!
+      out.push(`| ${LEVEL_NAMES[l]} | ${b.min}~${b.max} | ${MODES.map((m) => capacity(approvedPool, b, m)).join(' / ')} | **${MODES.map((m) => capacity(ifApproved, b, m)).join(' / ')}** |`)
+    }
   }
 
   // 시험지 예시: 초5 일반학원형 영→한 40문항 (확인 필요를 모두 사용하기 했다고 가정)
@@ -129,9 +142,9 @@ async function main() {
     out.push(`| ${i + 1} | ${esc(e.expression)} | ${POS_LABELS_KO[e.pos] ?? e.pos} | ${esc(e.meaning_ko)} | ${esc(e.accepted_meanings.join(', ') || '-')} | ${e.base_difficulty} | ${e.ko_en_allowed ? '○' : '–'} | ${esc(note || '-')} |`)
   })
 
-  // 애매한 단어
-  const ambiguous = made.filter((e) => e.ambiguity)
-  out.push('', `## 3. 제작하면서 애매했던 단어 (${ambiguous.length}개)`, '', '| 단어 | 품사 | 지금 대표 뜻 | 인정 뜻 | 애매한 점 |', '|---|---|---|---|---|')
+  // 애매한 단어 (초등 권장 + 중·고 공통)
+  const ambiguous = [...made, ...madeCommon].filter((e) => e.ambiguity)
+  out.push('', `## 3. 제작하면서 애매했던 단어 (${ambiguous.length}개: 초등 권장 ${made.filter((e) => e.ambiguity).length} + 중·고 공통 ${madeCommon.filter((e) => e.ambiguity).length})`, '', '| 단어 | 품사 | 지금 대표 뜻 | 인정 뜻 | 애매한 점 |', '|---|---|---|---|---|')
   for (const e of ambiguous) out.push(`| ${esc(e.expression)} | ${POS_LABELS_KO[e.pos] ?? e.pos} | ${esc(e.meaning_ko)} | ${esc(e.accepted_meanings.join(', ') || '-')} | ${esc(e.ambiguity!)} |`)
 
   // 제외 기능어

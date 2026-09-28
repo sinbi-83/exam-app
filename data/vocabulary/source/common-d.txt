@@ -1,0 +1,210 @@
+# 4단계 2차 중·고 공통 어휘 제작 원본 (계속). 형식은 elementary-a.txt 와 같다.
+machine|n|기계||32|y||
+magazine|n|잡지||40|y||
+magic|n|마법|마술|35|n||
+main|adj|주된|주요한|42|n||
+maintain|v|유지하다|지속하다;주장하다|62|n||
+major|adj|주요한|중대한;큰|55|n||
+male|adj|남성의|수컷의|48|n||
+manage|v|관리하다|운영하다;간신히 해내다|55|n||
+manner|n|방식|태도;예절|55|n||
+manufacture|v|제조하다|생산하다|65|n||
+mark|n|표시|자국;점수|45|n||
+marvel|v|경탄하다|놀라다|65|n||파생어 marvelous 가 더 흔함|
+mask|n|가면|마스크|35|n||
+mass|n|덩어리|대량;질량|60|n||
+master|n|주인|달인;석사|50|n||
+match|n|경기|시합;성냥|40|n||
+mate|n|친구|짝;동료|48|n||
+matter|n|문제|일;물질|50|n||
+maximum|n|최대|최대한도;최고|58|n||
+maybe|adv|아마|어쩌면|30|n||perhaps 와 같은 뜻
+meal|n|식사|끼니|35|y||
+mean|v|의미하다|뜻하다|40|n|동사: 의미하다|
+mean|adj|못된|심술궂은;비열한|52|n|형용사: 못된|
+measure|v|측정하다|재다|52|n||
+medical|adj|의학의|의료의|52|n||
+medicine|n|약|의학|40|n||drug 와 구분
+melon|n|멜론||30|y||
+melt|v|녹다|녹이다|42|n||
+mental|adj|정신의|정신적인|58|n||
+mention|v|언급하다|말하다|55|n||
+menu|n|메뉴|차림표;식단|30|n||
+mess|n|엉망|혼란;어질러진 상태|50|n||
+message|n|메시지|전갈;메세지|32|n||
+metal|n|금속||45|y||
+method|n|방법|방식|55|n||way 와 같은 뜻
+microwave|n|전자레인지|극초단파|45|n||
+military|adj|군사의|군대의|60|n||
+mill|n|방앗간|공장;제분소|60|n||
+minor|adj|사소한|작은;미성년의|58|n||
+minute|n|분|잠깐;순간|30|n||
+mirror|n|거울||32|y||
+mission|n|임무|사명;선교|52|n||
+mix|v|섞다|섞이다;혼합하다|40|n||
+modern|adj|현대의|현대적인;근대의|45|n||
+moment|n|순간|잠깐;때|42|n||
+monitor|n|모니터|화면;감시 장치|48|n||
+mood|n|기분|분위기|45|n||
+moral|adj|도덕적인|도덕의|60|n||
+moreover|adv|게다가|더욱이|65|n||
+motion|n|움직임|동작;운동|58|n||movement 와 같은 뜻
+motor|n|모터|전동기|48|n||
+mount|v|오르다|올라타다;설치하다|62|n||
+mud|n|진흙||42|y||
+muscle|n|근육||45|y||
+museum|n|박물관|미술관|32|n||
+mushroom|n|버섯||35|y||
+mystery|n|수수께끼|미스터리;신비|45|n||
+nail|n|손톱|못;발톱|42|n||
+narrow|adj|좁은||45|y||
+native|adj|태어난 곳의|원주민의;모국의|55|n||
+navy|n|해군||55|y||
+neat|adj|깔끔한|정돈된;말끔한|48|n||
+necessary|adj|필요한||45|y||
+neighbor|n|이웃|이웃 사람|35|y||neighbour 로도 씀
+neither|det|어느 쪽도 아닌|둘 다 아닌|55|n||
+nerve|n|신경|용기|58|n||파생어 nervous 가 더 흔함|
+nest|n|둥지||40|y||
+net|n|그물|망|42|n||
+noise|n|소음|소리|35|n||
+none|pron|아무도 ~않다|아무것도 ~않다|52|n||
+noon|n|정오|낮 12시|35|y||
+-nor|접속사 (neither A nor B 문법 요소)
+notice|v|알아차리다|주목하다|48|n||
+nowadays|adv|요즘|오늘날|42|y||
+nowhere|adv|아무 데도 ~않다|어디에도 ~않다|52|n||
+nut|n|견과|너트;호두|42|n||
+oak|n|참나무|오크|52|y||
+object|n|물체|물건;목적;대상|50|n|명사: 물체|
+object|v|반대하다|이의를 제기하다|62|n|동사: 반대하다|
+observe|v|관찰하다|지켜보다;준수하다|58|n||
+obvious|adj|분명한|명백한|58|n||clear 와 같은 뜻
+occasion|n|경우|때;행사|60|n||
+occur|v|일어나다|발생하다;떠오르다|60|n||happen 과 같은 뜻
+ocean|n|대양|바다|35|n||sea 와 구분
+odd|adj|이상한|홀수의;특이한|52|n||strange 와 같은 뜻
+offer|v|제안하다|제공하다|48|n||
+officer|n|장교|경찰관;공무원|48|n||
+once|adv|한 번|한때;옛날에|38|n||
+opera|n|오페라||40|y||
+operate|v|작동하다|수술하다;운영하다|58|n||
+opinion|n|의견|견해|45|y||
+oppose|v|반대하다||60|n||object 와 같은 뜻
+order|n|주문|명령;순서;질서|40|n||
+ordinary|adj|평범한|보통의;일상적인|52|n||
+other|adj|다른|그 밖의|28|n||
+otherwise|adv|그렇지 않으면|달리|62|n||
+-ought|조동사 (ought to 문법 요소)
+oven|n|오븐||35|y||
+overall|adj|전반적인|전체의|62|n||
+own|adj|자신의|자기 자신의|40|n||
+pack|v|싸다|꾸리다;포장하다|42|n||
+pain|n|고통|통증;아픔|42|n||
+pair|n|한 쌍|짝;켤레|38|n||
+palace|n|궁전|궁궐|40|y||
+pan|n|냄비|팬;프라이팬|38|n||
+panic|n|공황|공포;극심한 공포|55|n||
+parade|n|행진|퍼레이드|42|n||
+paragraph|n|단락|문단|48|y||
+pardon|n|용서|사면|55|n||Pardon? (다시 말해 주세요)로 자주 씀
+particular|adj|특정한|특별한;까다로운|58|n||
+past|n|과거|지난날|38|y||
+path|n|길|오솔길;경로|42|n||
+pattern|n|무늬|양식;패턴|48|n||
+pause|v|잠시 멈추다|중단하다|52|n||
+peace|n|평화||38|y||
+pear|n|배||32|n||과일 배. ship/boat 와 구분 필요
+pepper|n|후추|고추|38|n||
+-per|전치사 (~당, 단위 표현 문법 요소)
+perfect|adj|완벽한|완전한|38|n||
+perform|v|공연하다|수행하다;연주하다|52|n||
+perhaps|adv|아마|어쩌면|48|n||maybe 와 같은 뜻
+period|n|기간|시대;마침표|52|n||
+person|n|사람|개인|30|n||
+pet|n|애완동물|반려동물|28|n||
+photograph|n|사진||35|y||photo 로 줄여 씀
+physical|adj|신체의|육체적인;물리적인|58|n||
+picnic|n|소풍|피크닉|30|n||
+pie|n|파이||28|y||
+piece|n|조각|한 개;부분|38|n||
+pile|n|더미|무더기|55|n||
+pin|n|핀|옷핀|42|n||
+pine|n|소나무||50|y||
+pipe|n|관|파이프;배관|45|n||
+pitch|v|던지다|(텐트를) 치다|58|n||
+pity|n|연민|동정;유감|55|n||
+plain|adj|평범한|분명한;수수한|55|n||
+plane|n|비행기|평면|35|n||airplane 과 같은 뜻
+planet|n|행성||40|y||
+plant|n|식물|공장|35|n||
+plate|n|접시|판|35|n||dish 와 같은 뜻
+plenty|n|많음|풍부함|55|n||plenty of 로 주로 씀
+plus|prep|~을 더하여|~ 외에|42|n||
+pocket|n|주머니||32|y||
+poem|n|시||40|y||
+poet|n|시인||45|y||
+poison|n|독|독약|45|y||
+pole|n|막대기|기둥;극|52|n||
+policy|n|정책|방침|60|y||
+polite|adj|예의 바른|공손한;정중한|42|n||
+politics|n|정치|정치학|60|y||
+pollute|v|오염시키다||55|y||
+pool|n|수영장|웅덩이|35|n||
+pop|v|펑 터지다|불쑥 나타나다|50|n||
+popular|adj|인기 있는|대중적인|38|n||
+pork|n|돼지고기||38|y||
+port|n|항구||48|y||
+possess|v|소유하다|가지다|62|n||own 과 같은 뜻
+possible|adj|가능한||40|y||
+post|n|우편|기둥;직책;게시물|48|n||
+pot|n|냄비|솥;화분|42|n||pan 과 구분
+potential|n|잠재력|가능성|68|n||
+pour|v|붓다|따르다;퍼붓다|48|n||
+powder|n|가루|분말|48|n||
+practical|adj|실용적인|현실적인;실제적인|58|n||
+practice|v|연습하다|실천하다|38|n||practise 로도 씀
+pray|v|기도하다|빌다|45|n||
+prefer|v|더 좋아하다|선호하다|45|n||
+pregnant|adj|임신한||55|y||
+presence|n|존재|출석;있음|62|n||
+press|v|누르다|압박하다|45|n||
+pretend|v|~인 척하다|가장하다|48|n||
+prevent|v|막다|예방하다;방지하다|55|n||
+previous|adj|이전의|앞의|58|n||
+price|n|가격|값|35|n||cost 와 구분
+pride|n|자부심|자존심;자랑|52|n||
+prime|adj|주요한|최고의;기본적인|65|n||
+principle|n|원리|원칙|65|n||
+prison|n|감옥|교도소|50|n||
+privacy|n|사생활|프라이버시|58|y||
+private|adj|개인적인|사적인;사립의|52|n||
+probable|adj|있을 법한|개연성 있는|65|n||파생어 probably 가 훨씬 흔함|
+proceed|v|진행하다|계속하다;나아가다|68|n||
+process|n|과정|절차|58|n||
+produce|v|생산하다|만들다;제작하다|52|n||
+profession|n|직업|전문직|62|n||job 과 같은 뜻
+profit|n|이익|수익|60|n||benefit 과 구분
+progress|n|진보|발전;진행|58|n||
+promise|v|약속하다||38|y||
+promote|v|홍보하다|촉진하다;승진시키다|62|n||
+pronounce|v|발음하다||52|y||
+proper|adj|적절한|올바른|58|n||appropriate 와 같은 뜻
+property|n|재산|소유물;부동산;특성|62|n||
+propose|v|제안하다|청혼하다|62|n||suggest 와 같은 뜻
+protect|v|보호하다|지키다|45|n||
+protest|n|항의|시위|60|n||
+proud|adj|자랑스러운|자부심이 있는|40|y||
+prove|v|증명하다|입증하다|55|n||
+provide|v|제공하다|공급하다|52|n||offer 와 같은 뜻
+pub|n|술집|펍|50|n||bar 와 같은 뜻
+public|adj|공공의|대중의;공적인|50|n||
+pull|v|당기다|끌다|35|n||
+pump|n|펌프|양수기|48|n||
+punch|v|주먹으로 치다|구멍을 뚫다|48|n||
+punish|v|벌하다|처벌하다|52|n||
+purchase|v|구매하다|사다|62|n||buy 와 같은 뜻
+pure|adj|순수한|깨끗한|52|n||
+purple|adj|보라색의|자주색의|30|y||
+purpose|n|목적|의도|52|n||aim 과 같은 뜻
+puzzle|n|퍼즐|수수께끼|35|n||

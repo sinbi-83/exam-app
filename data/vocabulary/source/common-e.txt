@@ -1,0 +1,139 @@
+# 4단계 2차 중·고 공통 어휘 제작 원본 (계속). 형식은 elementary-a.txt 와 같다.
+quality|n|질|품질;특성|52|n||
+quarter|n|4분의 1|15분;분기|48|n||
+quit|v|그만두다|끊다|45|n||
+quite|adv|꽤|상당히;완전히|42|n||
+quote|v|인용하다|견적을 내다|62|n||
+rail|n|철도|난간;레일|52|n||
+rainbow|n|무지개||30|y||
+raise|v|올리다|들어 올리다;기르다;모금하다|48|n||
+range|n|범위|다양성|60|n||
+rapid|adj|빠른|급속한|55|n||fast 와 같은 뜻
+rare|adj|드문|희귀한;덜 익은|52|n||
+rat|n|쥐||40|n||mouse 와 구분
+rate|n|비율|속도;요금|58|n||
+rather|adv|다소|오히려;차라리|58|n||
+reach|v|도달하다|닿다;이르다|45|n||
+react|v|반응하다||55|y||
+real|adj|진짜의|실제의;현실의|35|n||
+reason|n|이유|까닭;이성|40|n||
+receive|v|받다||40|n||get 과 같은 뜻
+recent|adj|최근의||50|y||
+recipe|n|요리법|레시피|45|n||
+recognize|v|알아보다|인정하다;인식하다|55|n||
+record|v|기록하다|녹음하다|45|n||
+recover|v|회복하다|되찾다|58|n||
+reduce|v|줄이다|감소시키다|55|n||
+refer|v|언급하다|참고하다;가리키다|62|n||
+reflect|v|반사하다|반영하다;숙고하다|62|n||
+refuse|v|거절하다|거부하다|50|n||
+regard|v|여기다|간주하다|65|n||
+region|n|지역|지방|58|n||area 와 같은 뜻
+register|v|등록하다|신고하다|58|n||
+regular|adj|규칙적인|정기적인;보통의|50|n||
+relate|v|관련시키다|관계가 있다|62|n||
+relax|v|휴식을 취하다|긴장을 풀다;쉬다|40|n||
+release|v|풀어 주다|발표하다;개봉하다|62|n||
+relief|n|안도|안심;구호|62|n||
+rely|v|의지하다|믿다;의존하다|62|n||depend 와 같은 뜻
+remain|v|남아 있다|여전히 ~이다|58|n||
+remark|n|발언|말;의견|62|n||
+remind|v|상기시키다|생각나게 하다|52|n||
+remove|v|제거하다|없애다;치우다|52|n||
+rent|v|빌리다|임대하다|48|n||borrow 와 구분
+repair|v|수리하다|고치다|42|n||fix 와 같은 뜻
+repeat|v|반복하다|되풀이하다|40|n||
+replace|v|대신하다|교체하다|55|n||
+reply|v|대답하다|답장하다|42|n||answer 와 같은 뜻
+report|n|보고서|보도;보고|42|n||
+represent|v|대표하다|나타내다|62|n||
+request|n|요청|부탁|55|n||
+require|v|필요로 하다|요구하다|62|n||need 와 같은 뜻
+research|n|연구|조사|55|n||
+reserve|v|예약하다|남겨 두다|55|n||book 과 같은 뜻
+resist|v|저항하다|참다|62|n||
+resource|n|자원|자료;재원|62|n||
+respect|v|존경하다|존중하다|45|n||
+respond|v|응답하다|반응하다|60|n||
+responsible|adj|책임이 있는|책임감 있는|55|n||
+rest|n|휴식|나머지|40|n||
+result|n|결과||45|y||
+retire|v|은퇴하다|퇴직하다|55|n||
+rice|n|쌀|밥|28|n||
+ride|v|타다|타고 가다|30|n||
+rise|v|오르다|일어나다;떠오르다|48|n||
+risk|n|위험|위험 요소|55|n||danger 와 같은 뜻
+rob|v|강탈하다|털다|55|n||steal 과 구분
+rocket|n|로켓||35|y||
+role|n|역할|배역|50|n||
+roll|v|구르다|굴리다;말다|45|n||
+roof|n|지붕||35|y||
+root|n|뿌리|근원|45|n||
+rope|n|밧줄|로프|42|n||
+rough|adj|거친|대략적인;힘든|55|n||
+round|adj|둥근|원형의|35|n||
+route|n|경로|길;노선|55|n||
+row|n|줄|열|48|n||
+royal|adj|왕실의|왕의|52|n||
+rub|v|문지르다|비비다|52|n||
+rude|adj|무례한|버릇없는|45|n||
+rule|n|규칙|통치|40|n||
+rush|v|서두르다|돌진하다|48|n||hurry 와 같은 뜻
+sail|v|항해하다||48|y||
+salary|n|월급|급여;봉급|55|n||wage 와 같은 뜻
+sample|n|견본|표본;샘플|50|n||
+satisfy|v|만족시키다|충족시키다|58|n||
+sauce|n|소스|양념|35|n||
+scale|n|규모|저울;눈금|60|n||
+scare|v|겁주다|놀라게 하다|48|n||파생어 scared 가 더 흔함|
+scarf|n|스카프|목도리|35|n||
+scene|n|장면|현장;경치|50|n||
+schedule|n|일정|시간표;스케줄|45|n||
+scratch|v|긁다|할퀴다|52|n||
+scream|v|비명을 지르다|소리치다|48|n||
+screen|n|화면|스크린|40|n||
+seal|n|물개|도장;봉인|55|n||
+search|v|찾다|검색하다;수색하다|45|n||
+seat|n|좌석|자리|35|n||
+secretary|n|비서|장관|55|n||
+section|n|부분|구역;부문|55|n||
+secure|adj|안전한|안정된|62|n||safe 와 같은 뜻
+seed|n|씨앗|씨|40|y||
+seek|v|찾다|추구하다;구하다|62|n||search 와 같은 뜻
+seem|v|~인 것 같다|~처럼 보이다|45|n||
+select|v|선택하다|고르다|52|n||choose 와 같은 뜻
+self|n|자신|자아;자기|55|n||
+senior|adj|연장자의|상급의;고위의|52|n||
+sense|n|감각|의미;분별|52|n||
+sentence|n|문장|형벌;판결|42|n||
+separate|v|분리하다|나누다;헤어지다|55|n||
+series|n|시리즈|연속;일련|55|n||
+serve|v|제공하다|봉사하다;음식을 내다|52|n||
+session|n|시간|회기;수업|62|n||
+settle|v|해결하다|정착하다;자리 잡다|62|n||
+several|det|몇몇의|여러|45|n||
+sew|v|바느질하다|꿰매다|52|n||
+sex|n|성|성별|55|n||
+shade|n|그늘|색조|55|n||shadow 와 구분
+shadow|n|그림자||45|y||
+shake|v|흔들다|떨다;흔들리다|40|n||
+-shall|조동사 (문법 요소)
+shame|n|부끄러움|수치심;유감|55|n||
+shape|n|모양|형태;상태|40|n||
+share|v|나누다|공유하다;함께 쓰다|40|n||
+sharp|adj|날카로운|뾰족한;예리한|45|n||
+shave|v|면도하다|깎다|48|n||
+sheep|n|양||30|y||
+sheet|n|시트|한 장;침대 시트|42|n||
+shelf|n|선반|책꽂이|42|n||
+shell|n|껍데기|조개껍데기;포탄|45|n||
+shelter|n|피난처|쉼터;보호소|55|n||
+shift|v|옮기다|바꾸다;이동하다|62|n||
+shine|v|빛나다|비추다|40|n||
+shock|n|충격||45|y||
+shoot|v|쏘다|슈팅하다;촬영하다|45|n||
+shore|n|해안|물가;기슭|52|n||coast 와 같은 뜻
+shoulder|n|어깨||35|y||
+shout|v|소리치다|외치다|40|n||
+shower|n|샤워|소나기|35|n||
+shut|v|닫다|잠그다|42|n||close 와 같은 뜻

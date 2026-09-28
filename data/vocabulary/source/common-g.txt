@@ -1,0 +1,130 @@
+# 4단계 2차 중·고 공통 어휘 제작 원본 (계속). 형식은 elementary-a.txt 와 같다.
+sweet|adj|달콤한|단;상냥한|30|n||
+swing|v|흔들다|흔들리다;휘두르다|45|n||
+switch|n|스위치|전환|42|n||
+system|n|체계|제도;시스템|52|n||
+tale|n|이야기|설화|48|n||story 와 같은 뜻
+tank|n|탱크|통;수조|45|n||
+tap|v|톡톡 두드리다|가볍게 치다|50|n||
+target|n|목표|표적;과녁|52|n||
+tax|n|세금||52|y||
+tea|n|차|홍차|28|n||car 와 구분 필요
+tear|n|눈물||40|y|명사: 눈물|
+tear|v|찢다|찢어지다|48|n|동사: 찢다|
+technique|n|기술|기법|58|n||technic 으로도 씀
+technology|n|기술|과학 기술|52|n||technique 와 구분
+teenage|adj|십대의||45|y||
+temperature|n|온도|기온;체온|45|n||
+tend|v|~하는 경향이 있다|돌보다|60|n||
+tense|adj|긴장한|팽팽한|58|n||
+term|n|용어|기간;학기;조건|60|n||
+text|n|본문|글;문자 메시지|42|n||
+theater|n|극장|연극|40|n||theatre 로도 씀. cinema 와 구분
+then|adv|그때|그러고 나서;그러면|30|n||
+theory|n|이론||60|y||
+therefore|adv|그러므로|따라서|60|n||thus 와 같은 뜻
+thick|adj|두꺼운|짙은;굵은|42|n||
+thief|n|도둑||45|y||
+thin|adj|얇은|마른;가는|40|n||
+though|conj|비록 ~이지만||50|n||although 와 같은 뜻
+thousand|num|1,000|천|35|y||
+threat|n|위협|협박|58|n||
+throat|n|목구멍|목|45|n||
+through|prep|~을 통해|~을 지나서|40|n||
+throw|v|던지다||35|y||
+thus|adv|따라서|그러므로;이렇게|62|n||therefore 와 같은 뜻
+tide|n|조수|밀물과 썰물;흐름|55|n||
+tie|v|묶다|매다|42|n||
+tight|adj|꽉 끼는|단단한;빠듯한|48|n||
+-till|전치사·접속사 (until 과 같은 말, 문법 요소)
+tin|n|주석|깡통|55|n||
+tiny|adj|아주 작은|조그마한|40|y||
+tip|n|팁|조언;끝|45|n||
+title|n|제목|직함;칭호|40|n||
+toast|n|토스트|건배|38|n||
+toe|n|발가락||38|y||
+toilet|n|변기|화장실|40|n||restroom 과 같은 뜻
+tone|n|어조|음색;색조|58|n||
+tongue|n|혀|언어|45|n||
+tool|n|도구|연장|42|y||
+topic|n|주제|화제|45|n||subject 와 같은 뜻
+total|adj|전체의|총;완전한|48|n||
+tough|adj|힘든|강인한;질긴|50|n||
+tour|n|여행|관광;순회|40|n||trip 과 구분
+toward|prep|~ 쪽으로|~을 향하여|48|n||towards 로도 씀
+towel|n|수건|타월|32|y||
+tower|n|탑|타워|35|y||
+trace|n|흔적|자취|62|n||
+trade|n|무역|거래;교역|55|n||
+tradition|n|전통||48|y||
+traffic|n|교통|교통량|42|y||
+transfer|v|옮기다|갈아타다;전학 가다|60|n||
+transport|v|수송하다|운송하다|58|n||
+trap|n|덫|함정|48|n||
+tray|n|쟁반||45|y||
+treat|v|대하다|치료하다;대접하다|55|n||
+triangle|n|삼각형||40|y||
+trick|n|속임수|묘기;장난|45|n||
+trouble|n|문제|곤란;고생|40|n||
+trunk|n|트렁크|나무줄기;코끼리 코|52|n||
+truth|n|진실|사실|45|n||
+tune|n|곡|곡조;선율|52|n||
+twin|n|쌍둥이||38|y||
+twist|v|비틀다|꼬다;구부리다|55|n||
+uniform|n|제복|교복;유니폼|38|n||
+unit|n|단위|단원;부대|48|n||
+unite|v|통합하다|결합하다;단결하다|60|n||
+university|n|대학교|대학|40|n||college 와 구분
+unless|conj|~하지 않는 한|만약 ~이 아니라면|55|n||
+until|prep|~까지|~할 때까지|40|n||
+-upon|전치사 (on 과 같은 뜻, 문법 요소)
+upper|adj|위쪽의|상부의;상류의|52|n||
+upset|adj|속상한|화가 난;당황한|48|n||
+valley|n|계곡|골짜기|45|n||
+value|n|가치|값|55|n||
+van|n|승합차|밴|45|n||
+various|adj|다양한|여러 가지의|55|n||
+vary|v|다르다|달라지다;다양하다|62|n||
+vehicle|n|차량|탈것;운송 수단|58|n||
+version|n|버전|판;형태|55|n||
+victim|n|피해자|희생자|58|n||
+view|n|경치|전망;견해|48|n||
+villa|n|별장|빌라|55|n||
+village|n|마을|촌락|35|n||town 과 구분
+violent|adj|폭력적인|격렬한|55|n||
+vision|n|시력|비전;통찰력|58|n||
+volume|n|음량|부피;권|55|n||
+vote|v|투표하다||50|y||
+wage|n|임금|급료|62|n||salary 와 같은 뜻
+warn|v|경고하다|주의를 주다|50|n||
+waste|v|낭비하다|허비하다|48|n||
+wave|n|파도|물결;손 흔들기|40|n||
+weak|adj|약한|허약한|35|y||
+weapon|n|무기||52|y||
+weigh|v|무게가 ~이다|무게를 달다|48|n||
+whale|n|고래||32|y||
+wheel|n|바퀴|핸들|42|n||
+-whether|접속사 (문법 요소)
+-which|의문사·관계대명사 (문법 요소)
+while|conj|~하는 동안|~인 반면|45|n||
+whisper|v|속삭이다||48|y||
+whistle|n|호루라기|휘파람|48|n||
+whole|adj|전체의|모든;온|45|n||entire 와 같은 뜻
+wide|adj|넓은|폭이 넓은|38|n||broad 와 같은 뜻
+wild|adj|야생의|거친;사나운|45|n||
+wing|n|날개||38|y||
+wipe|v|닦다|훔치다|48|n||
+wire|n|철사|전선|48|n||
+wise|adj|현명한|지혜로운|45|n||
+within|prep|~ 이내에|~ 안에|55|n||
+without|prep|~ 없이|~하지 않고|40|n||
+wonder|v|궁금해하다|놀라다|45|n||
+wool|n|양털|털실;모직|48|n||
+worth|adj|~의 가치가 있는|~할 만한|55|n||
+-would|조동사 (문법 요소)
+wound|n|상처|부상|55|n||
+wrap|v|싸다|포장하다;감싸다|48|n||
+yell|v|소리치다|고함치다|48|n||shout 와 같은 뜻
+yet|adv|아직|벌써;그래도|42|n||
+zebra|n|얼룩말||30|y||
+zero|num|0|영;제로|28|n||

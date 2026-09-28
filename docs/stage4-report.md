@@ -18,12 +18,12 @@
 
 - 대상: 공식 초등 권장 800개 중 단어은행에 없던 표제어 **779개** (이미 있던 21개는 건드리지 않음).
 - 만든 것: **743개 항목** = 779 − 기능어 43개 + 두 항목으로 나눈 단어 7개(right, light, watch, fall, close, kind, second — 품사가 다르고 둘 다 초등 필수).
-- 제작: Claude Code 가 직접 작성 (런타임 AI API 호출 없음). 원본 `data/vocabulary/source/elementary-a~d.txt` → `scripts/build-elementary-seed.ts` 가 검사·변환 → `data/vocabulary/kr-curriculum-2022-elementary-01~04.json` (200 / 200 / 200 / 143).
+- 제작: Claude Code 가 직접 작성 (런타임 AI API 호출 없음). 원본 `data/vocabulary/source/elementary-a~d.txt` → `scripts/build-official-seed.ts elementary` 가 검사·변환 → `data/vocabulary/kr-curriculum-2022-elementary-01~04.json` (200 / 200 / 200 / 143).
 - 등록: `add-vocabulary-seed.ts` 로 저장. **전부 '확인 필요'**(승인 경로·교사 확인 시각 없음). 출처 `official` / `kr-curriculum-2022` / 원본명·버전·등급 "초등학교 권장(*)".
 - 난이도(새 절대 자, 초등 구간 1~30): 1~8 444개 / 9~15 203개 / 16~22 78개 / 23~30 18개.
 - 한→영 가능 388개 / 불가 355개. 불가 기준: 같은 뜻의 영어 단어가 여럿(big/large, shop/store …)이거나 뜻이 여러 개인 단어.
 - 백업(등록 전): `backups/stage1-before-2026-09-28T10-56-02-901Z.json` (단어 101개 상태).
-- 되돌리기: `node scripts/stage4-rollback-elementary.ts 2026-09-28T10:56:00Z --apply` — 이번 등록분 중 **아직 확인 필요이고 교사가 손대지 않은 것만** 삭제 (미리보기: 743개).
+- 되돌리기: `node scripts/stage4-rollback-official.ts 2026-09-28T10:56:00Z --apply` — 이번 등록분 중 **아직 확인 필요이고 교사가 손대지 않은 것만** 삭제 (미리보기: 743개).
 
 ### 초5 단어시험 (확인 필요를 모두 사용하기 한 뒤 기준, 영→한)
 

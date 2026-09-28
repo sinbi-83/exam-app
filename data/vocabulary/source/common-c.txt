@@ -1,0 +1,206 @@
+# 4단계 2차 중·고 공통 어휘 제작 원본 (계속). 형식은 elementary-a.txt 와 같다.
+factor|n|요인|요소|62|n||
+factory|n|공장||38|y||
+faint|v|기절하다|실신하다|55|n||
+fair|adj|공정한|공평한;타당한|48|n|형용사: 공정한|
+fair|n|박람회|품평회;축제|55|n|명사: 박람회|
+faith|n|믿음|신념;신앙|58|n||
+familiar|adj|익숙한|친숙한;잘 아는|52|n||
+fancy|adj|화려한|고급의;장식이 많은|52|n||
+fantastic|adj|환상적인|멋진|40|n||
+fascinate|v|매료시키다|마음을 사로잡다|60|n||파생어 fascinating 이 더 흔함|
+fashion|n|패션|유행;방식|42|n||
+fault|n|잘못|결점;책임|52|n||
+favor|n|부탁|호의;친절|50|n||favour 로도 씀
+fear|n|두려움|공포|42|n||
+feature|n|특징|특색;기능|58|n||
+fee|n|요금|수수료;회비|55|n||
+feed|v|먹이를 주다|먹이다|42|n||
+fellow|n|동료|친구;녀석|55|n||
+female|adj|여성의|암컷의|48|n||
+fence|n|울타리|담|42|y||
+fever|n|열|고열;열병|42|y||
+few|det|몇몇의|거의 없는|38|n||
+figure|n|숫자|인물;모양;도표|55|n||
+final|adj|마지막의|최종의;결승의|42|n||
+finance|n|재정|금융;재무|65|n||
+firm|n|회사|기업|58|n||형용사 '단단한'도 있음
+fit|v|꼭 맞다|어울리다;맞추다|45|n||
+flag|n|깃발|국기|35|y||
+flame|n|불꽃|불길;화염|52|y||
+flash|n|섬광|번쩍임;플래시|50|n||
+flat|adj|평평한|납작한;바람이 빠진|48|n||
+flight|n|비행|항공편|48|n||
+float|v|뜨다|떠다니다|48|n||
+flood|n|홍수||48|y||
+flow|v|흐르다||50|y||
+fog|n|안개||42|y||
+fold|v|접다|개다|45|y||
+folk|n|사람들|민속|55|n||
+follow|v|따라가다|따르다;뒤따르다|40|n||
+force|n|힘|무력;군대|55|n||
+foreign|adj|외국의|낯선|45|y||
+forever|adv|영원히||40|y||
+forth|adv|앞으로|밖으로|62|n||back and forth 같은 표현으로 쓰임
+fortunate|adj|운이 좋은|다행스러운|55|n||lucky 와 같은 뜻
+fortune|n|운|재산;행운|55|n||
+forward|adv|앞으로|앞쪽으로|48|n||
+found|v|설립하다|세우다|60|n||find 의 과거형과 철자가 같음
+frame|n|틀|액자;뼈대|50|n||
+frankly|adv|솔직히|솔직하게|58|y||
+freeze|v|얼다|얼리다;꼼짝 않다|45|n||
+fright|n|공포|놀람|58|n||파생어 frighten, frightened 가 더 흔함|
+frog|n|개구리||28|y||
+frustrate|v|좌절시키다|실망시키다|62|n||파생어 frustrated 가 더 흔함|
+fry|v|튀기다|볶다|42|n||
+function|n|기능|역할;함수|58|n||
+fund|n|기금|자금;재원|60|n||
+fur|n|털|모피|48|n||
+furniture|n|가구||45|y||
+gain|v|얻다|늘리다;증가하다|55|n||
+garage|n|차고|정비소|42|n||
+gate|n|대문|문;출입구;탑승구|38|n||door 와 구분
+gather|v|모으다|모이다|48|n||collect 와 구분
+gear|n|장비|기어;도구|55|n||
+general|adj|일반적인|전반적인|52|n||
+gentle|adj|온화한|부드러운;상냥한|48|n||
+gesture|n|몸짓|제스처|52|y||
+ghost|n|유령|귀신|35|y||
+giant|n|거인||38|y||
+gift|n|선물|재능|30|n||present 와 같은 뜻
+giraffe|n|기린||28|y||
+glance|v|흘끗 보다|힐끗 보다|58|n||
+glory|n|영광|영예|58|y||
+glove|n|장갑||32|y||
+glue|n|풀|접착제|38|n||
+golf|n|골프||30|y||
+gorgeous|adj|아주 멋진|아름다운;화려한|58|n||
+govern|v|통치하다|다스리다|62|n||파생어 government 가 더 흔함|
+grab|v|붙잡다|움켜잡다|48|n||
+grace|n|우아함|품위;은혜|62|n||
+grade|n|성적|학년;등급|40|n||
+grand|adj|웅장한|원대한;큰|55|n||
+grant|v|주다|허락하다;인정하다|65|n||
+graph|n|그래프|도표|40|n||
+greet|v|맞이하다|인사하다|42|n||
+grocery|n|식료품|식료품점|50|n||
+guarantee|v|보장하다|보증하다|62|n||
+guard|n|경비원|보초;경호원|45|n||
+guest|n|손님|초대받은 사람;투숙객|35|n||customer 와 구분
+guide|n|안내인|가이드;안내서|38|n||
+guilt|n|죄책감|유죄|60|n||파생어 guilty 가 더 흔함|
+gun|n|총||38|y||
+half|n|절반|반|35|y||
+hall|n|홀|복도;회관|40|n||
+handle|v|다루다|처리하다|50|n||
+handsome|adj|잘생긴||35|y||
+happen|v|일어나다|발생하다;생기다|38|n||
+harm|n|해|피해;손해|55|n||
+health|n|건강||35|y||
+hear|v|듣다|들리다|28|n||listen 과 구분
+heaven|n|천국|하늘|48|y||
+height|n|높이|키|48|n||
+helicopter|n|헬리콥터||38|y||
+hell|n|지옥||48|y||
+hesitate|v|망설이다|주저하다|58|n||
+hide|v|숨다|숨기다|40|n||
+highway|n|고속도로||42|y||
+hint|n|힌트|암시;단서|42|n||
+hire|v|고용하다|빌리다|55|n||employ 와 같은 뜻
+hole|n|구멍||38|y||
+honey|n|꿀|여보|35|n||
+honor|n|명예|영광;존경|55|n||honour 로도 씀
+hotel|n|호텔||28|y||
+hug|v|껴안다|포옹하다|38|n||
+huge|adj|거대한|엄청난;막대한|42|n||enormous 와 같은 뜻
+humor|n|유머|익살|45|y||humour 로도 씀
+hunger|n|배고픔|굶주림;기아|48|n||파생어 hungry 가 더 흔함|
+hurt|v|다치게 하다|아프다;상처 입히다|40|n||
+identity|n|정체성|신원;신분|65|n||
+ignore|v|무시하다||52|y||
+ill|adj|아픈|병든|42|n||sick 과 같은 뜻
+illustrate|v|설명하다|삽화를 넣다;보여 주다|65|n||
+imagine|v|상상하다||45|y||
+immediate|adj|즉각적인|즉시의;당면한|60|n||
+impress|v|감명을 주다|깊은 인상을 주다|55|n||
+improve|v|향상시키다|개선하다;나아지다|50|n||
+include|v|포함하다||50|n||contain 과 같은 뜻
+income|n|소득|수입|60|y||
+increase|v|증가하다|늘다;늘리다|50|n||
+indeed|adv|정말로|실제로;참으로|58|n||
+indicate|v|나타내다|가리키다;보여 주다|62|n||
+individual|adj|개인의|개별적인;각각의|60|n||
+industry|n|산업|공업|55|y||
+influence|n|영향|영향력|58|n||
+inform|v|알리다|통지하다|58|n||
+injure|v|다치게 하다|부상을 입히다|55|n||hurt 와 같은 뜻
+innocent|adj|무죄의|순진한;결백한|55|n||
+insist|v|주장하다|고집하다|58|n||claim 과 같은 뜻
+inspect|v|검사하다|점검하다;조사하다|62|n||
+instance|n|예|사례;경우|62|n||example 과 같은 뜻
+instant|adj|즉각적인|즉석의|55|n||
+instruct|v|지시하다|가르치다|62|n||
+instrument|n|악기|기구;도구|48|n||
+insure|v|보험에 들다|보장하다|62|n||파생어 insurance 가 더 흔함|
+intend|v|의도하다|~할 작정이다|60|n||
+intense|adj|강렬한|극심한;치열한|65|n||
+intent|n|의도|목적|68|n||파생어 intention 이 더 흔함|
+internal|adj|내부의|체내의;국내의|65|n||
+interrupt|v|방해하다|중단시키다;끼어들다|58|n||
+invent|v|발명하다||48|y||
+invest|v|투자하다||60|y||
+investigate|v|조사하다|수사하다|65|n||examine 과 같은 뜻
+involve|v|포함하다|관련시키다;참여시키다|62|n||
+iron|n|철|다리미|45|n||
+island|n|섬||32|y||
+item|n|물품|항목;품목|45|n||
+jaw|n|턱||52|y||
+jeans|n|청바지||30|y||
+joke|n|농담||35|y||
+journey|n|여행|여정|48|n||trip, travel 과 구분
+joy|n|기쁨|즐거움|42|n||delight 와 같은 뜻
+judge|n|판사|심판;심사위원|50|n||
+junior|adj|하급의|손아래의;청소년의|50|n||
+justice|n|정의|공정;사법|60|y||
+knee|n|무릎||35|y||
+knock|v|두드리다|노크하다|38|n||
+knowledge|n|지식||52|y||
+label|n|상표|라벨;꼬리표|48|n||
+labor|n|노동|근로|60|y||labour 로도 씀
+laboratory|n|실험실|연구실|55|n||lab 으로 줄여 씀
+lack|n|부족|결핍|58|n||
+lamb|n|새끼 양|양고기|45|n||
+lamp|n|램프|등|35|n||
+lane|n|좁은 길|차선|52|n||
+language|n|언어|말|35|n||
+law|n|법|법률|45|n||
+lawn|n|잔디밭|잔디|52|n||
+lawyer|n|변호사||45|y||
+lay|v|놓다|눕히다;알을 낳다|52|n||lie 와 헷갈리기 쉬움
+lead|v|이끌다|안내하다;앞서다|48|n||
+leaf|n|잎|나뭇잎|32|y||
+league|n|리그|연맹|55|n||
+lean|v|기대다|기울다|55|n||
+leap|v|뛰다|도약하다;뛰어오르다|55|n||jump 와 같은 뜻
+leave|v|떠나다|남기다;두고 오다|38|n||
+legal|adj|합법적인|법률의|60|n||
+lemon|n|레몬||28|y||
+let|v|~하게 하다|허락하다|38|n||
+level|n|수준|단계;높이|45|n||
+license|n|면허|면허증;허가|52|n||licence 로도 씀
+lid|n|뚜껑||50|y||
+lift|v|들어 올리다|올리다|45|n||
+limit|n|한계|제한|52|n||
+link|n|연결|관련;링크|50|n||
+list|n|목록|명단;리스트|38|n||
+livingroom|n|거실||32|y||living room 으로 띄어 씀
+load|n|짐|적재량;부담|55|n||
+loan|n|대출|융자|62|y||
+local|adj|지역의|현지의;지방의|48|n||
+locate|v|위치를 찾다|두다;위치하다|60|n||
+lock|v|잠그다||38|y||
+log|n|통나무|기록|52|n||
+loose|adj|헐거운|느슨한;풀린|52|n||
+lose|v|잃다|지다;잃어버리다|38|n||
+lot|n|많음|부지;제비|38|n||a lot of 로 주로 씀
+loud|adj|시끄러운|큰;목소리가 큰|35|n||
