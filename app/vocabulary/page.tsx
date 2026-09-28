@@ -428,14 +428,13 @@ export default function VocabularyPage() {
             {/* 결정 안 된 단어 = 확인 필요 + 나중에 결정 */}
             <span
               title="확인 필요 + 나중에 결정"
-              className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${undecided > 0 ? 'bg-yellow-300 text-yellow-900' : 'bg-gray-100 text-gray-500'}`}
+              className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${undecided > 0 ? 'undecided-glow bg-yellow-300 text-yellow-900' : 'bg-gray-100 text-gray-500'}`}
             >
               결정 안 된 단어 {undecided}개
             </span>
           </div>
           <p className="mt-1 text-xs text-gray-500">
             수준 표시는 1~100 절대 난이도 기준점(초안), 학년 범위는 {VOCABULARY_BANDS_NOTE} 기준입니다.
-            기존 단어 난이도는 예전 중1 기준 값이라 재조정 전입니다.
           </p>
         </div>
         <div className="flex gap-2">

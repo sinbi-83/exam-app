@@ -37,3 +37,21 @@ body {
   .print-area { position: absolute; left: 0; top: 0; width: 100%; }
   .no-print { display: none !important; }
 }
+
+/* 단어은행 "결정 안 된 단어 N개" 배지: 숨 쉬듯 천천히 빛나는 효과 (깜빡임 없음, 크기·글자 고정).
+   N = 0 이면 클래스를 붙이지 않는다. 마우스를 올리면 멈추고, 움직임 줄이기 설정 사용자에게는 끈다. */
+@keyframes undecided-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+  50% { box-shadow: 0 0 10px 3px rgba(250, 204, 21, 0.55); }
+}
+.undecided-glow {
+  animation: undecided-glow 3s ease-in-out infinite;
+}
+.undecided-glow:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .undecided-glow {
+    animation: none;
+  }
+}

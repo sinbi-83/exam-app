@@ -44,7 +44,7 @@ export default function BankMode() {
   const [busy, setBusy] = useState(false)
   const [savedExam, setSavedExam] = useState<{ id: string; title: string; date: string } | null>(null)
 
-  // 현재 임시 기준표는 영→한/한→영 범위가 같다. 방향별로 달라지면 이 부분을 방향별 범위로 바꾼다.
+  // 지금 기준표(초안)는 영→한/한→영 범위가 같다. 방향별로 달라지면 이 부분을 방향별 범위로 바꾼다.
   const band = findDifficultyBand(grade, level, 'en_ko')
   const defaultTitle = `${grade} ${VARIANT_LABELS[level]} 단어시험 (${WORD_TEST_MODE_LABELS[mode]})`
 

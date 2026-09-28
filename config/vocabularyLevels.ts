@@ -6,8 +6,7 @@
 //
 // ⚠️ 기준점과 범위표는 모두 "향미 선생님 승인 전 초안"이다 (3단계, 2026-09-28).
 //    표에 없는 학년은 findDifficultyBand 가 null → 자동시험·학년 범위 필터가 "기준 미설정"으로 멈춘다 (임의 범위로 출제 금지).
-//    기존 101개 단어의 난이도는 예전 중1 기준으로 매긴 값이다. 새 자에 맞춘 값은 제안표(docs/stage3-reanchor-proposal.md)로만 두고,
-//    선생님 확인 후 적용한다. 적용 전에는 이 표와 단어 값의 기준이 다르다는 점에 주의.
+//    기존 101개 단어의 난이도는 2026-09-28 에 새 자로 재조정됐다 (docs/stage3-reanchor-proposal.csv, 소유자 승인).
 
 import type { PassageVariantLevel } from '@/types/passageBank'
 import type { VocabularyDirection } from '@/types/vocabulary'
