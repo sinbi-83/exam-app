@@ -3,7 +3,7 @@
 // 단어은행에서 자동 생성 → 미리보기(빼기/교체) → 시험 저장(exams + exam_questions) → 인쇄
 // "이번 시험에서 빼기"는 이 시험 초안에서만 빠진다. 단어은행의 상태(반려 등)는 바꾸지 않는다 → 반려는 /vocabulary 에서.
 
-import { useMemo, useState } from 'react'
+import { useMemo, useReducer, useRef, useState } from 'react'
 import type { VocabularyEntryRecord } from '@/types/vocabulary'
 import type { PassageVariantLevel } from '@/types/passageBank'
 import { VARIANT_LABELS } from '@/types/passageBank'
@@ -14,10 +14,10 @@ import {
   POS_LABELS_KO,
   toWordQuestionData,
   WORD_TEST_MODE_LABELS,
-  type WordTestItem,
   type WordTestMode,
 } from '@/lib/wordTest'
 import { generalTestCandidates } from '@/lib/vocabularyCalibration'
+import { draftIsCurrent, initialWordTestDraft, wordTestDraftReducer, type WordTestConditions } from '@/lib/wordTestDraft'
 
 // 목록 API 는 출처 식별값도 함께 준다 (Calibration 전용 단어 제외용)
 type BankEntry = VocabularyEntryRecord & { vocabulary_sources?: { source_ref: string }[] }
@@ -27,33 +27,57 @@ const COUNT_PRESETS = [20, 40, 60, 80]
 
 export default function BankMode() {
   const grades = gradesWithBands()
-  const [grade, setGrade] = useState<VocabularyGrade>(grades[0] ?? '중1')
-  const [level, setLevel] = useState<PassageVariantLevel>('school')
+  // 학년·레벨·방향 + 미리보기 문항은 한 덩어리(초안)로 관리한다 → 조건이 바뀌면 미리보기가 반드시 비워진다 (lib/wordTestDraft.ts)
+  const [draft, dispatch] = useReducer(
+    wordTestDraftReducer,
+    { grade: grades[0] ?? '중1', level: 'school', mode: 'en_ko' },
+    initialWordTestDraft,
+  )
+  const grade = draft.conditions.grade as VocabularyGrade
+  const level = draft.conditions.level as PassageVariantLevel
+  const mode = draft.conditions.mode
+  const items = draft.items
+  const generated = draft.generatedFor !== null
   const [count, setCount] = useState('40')
-  const [mode, setMode] = useState<WordTestMode>('en_ko')
+  // 직접 입력한 제목만 보관한다. 비어 있으면 "만들 때의 조건"으로 기본 제목을 쓴다 (예전엔 첫 생성 제목이 고정됐음)
   const [title, setTitle] = useState('')
   const [examDate, setExamDate] = useState('')
   const [points, setPoints] = useState('5')
 
   const [entries, setEntries] = useState<VocabularyEntryRecord[] | null>(null)
-  const [items, setItems] = useState<WordTestItem[]>([])
-  const [excluded, setExcluded] = useState<Set<string>>(new Set())
-  const [generated, setGenerated] = useState(false)
   const [notice, setNotice] = useState<string>('')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
   const [savedExam, setSavedExam] = useState<{ id: string; title: string; date: string } | null>(null)
+  // 가장 최근 초안 번호 (비동기 결과가 늦게 와도 최신 번호와 비교해 버린다)
+  const seqRef = useRef(draft.seq)
+  seqRef.current = draft.seq
 
   // 지금 기준표(초안)는 영→한/한→영 범위가 같다. 방향별로 달라지면 이 부분을 방향별 범위로 바꾼다.
   const band = findDifficultyBand(grade, level, 'en_ko')
-  const defaultTitle = `${grade} ${VARIANT_LABELS[level]} 단어시험 (${WORD_TEST_MODE_LABELS[mode]})`
+  const titleFor = (c: WordTestConditions) =>
+    `${c.grade} ${VARIANT_LABELS[c.level as PassageVariantLevel]} 단어시험 (${WORD_TEST_MODE_LABELS[c.mode]})`
+  const defaultTitle = titleFor(draft.generatedFor ?? draft.conditions)
+
+  function changeConditions(patch: Partial<WordTestConditions>) {
+    dispatch({ type: 'setConditions', patch })
+    // 이전 기준의 결과·안내·저장 표시를 모두 지운다
+    setNotice('')
+    setError('')
+    setSavedExam(null)
+  }
+
+  async function fetchCandidates(): Promise<VocabularyEntryRecord[]> {
+    const res = await fetch('/api/vocabulary?status=approved', { cache: 'no-store' })
+    const json = await res.json()
+    if (!res.ok) throw new Error(json.error ?? '단어은행을 불러오지 못했습니다.')
+    // Calibration anchor 전용 단어(난이도 자 검수용)는 일반 단어시험 후보에서 뺀다
+    return generalTestCandidates<BankEntry>(json.data ?? [])
+  }
 
   async function loadEntries(): Promise<VocabularyEntryRecord[]> {
     if (entries) return entries
-    const res = await fetch('/api/vocabulary?status=approved')
-    const json = await res.json()
-    if (!res.ok) throw new Error(json.error ?? '단어은행을 불러오지 못했습니다.')
-    const list = generalTestCandidates<BankEntry>(json.data ?? [])
+    const list = await fetchCandidates()
     setEntries(list)
     return list
   }
@@ -65,24 +89,23 @@ export default function BankMode() {
     const n = Number(count)
     if (!Number.isInteger(n) || n < 1 || n > 100) return setError('문제 수는 1~100 사이로 입력하세요.')
     if (!band) return setError(`${grade} ${VARIANT_LABELS[level]} 난이도 기준이 아직 없습니다.`)
+    // 누른 순간의 조건과 범위를 고정해서 쓴다
+    const conditions = draft.conditions
+    const bandAtClick = band
+    const seq = draft.seq + 1
+    dispatch({ type: 'generateStart' })
+    seqRef.current = seq
     setBusy(true)
     try {
       // 새로 만들 때마다 최신 단어은행을 다시 읽는다
-      setEntries(null)
-      const res = await fetch('/api/vocabulary?status=approved')
-      const json = await res.json()
-      if (!res.ok) throw new Error(json.error ?? '단어은행을 불러오지 못했습니다.')
-      // Calibration anchor 전용 단어(난이도 자 검수용)는 일반 단어시험 후보에서 뺀다
-      const list = generalTestCandidates<BankEntry>(json.data ?? [])
+      const list = await fetchCandidates()
       setEntries(list)
-      const result = generateWordTest(list, band, mode, n)
-      setItems(result.items)
-      setExcluded(new Set())
-      setGenerated(true)
+      if (seqRef.current !== seq) return // 기다리는 동안 조건이 바뀌었다 → 옛 결과는 버린다
+      const result = generateWordTest(list, bandAtClick, conditions.mode, n)
+      dispatch({ type: 'generateDone', seq, conditions, items: result.items })
       if (result.shortage) {
         setNotice(`조건에 맞는 단어가 ${result.items.length}개입니다. (요청 ${n}개 — 다른 레벨 단어로 채우지 않았습니다)`)
       }
-      if (!title.trim()) setTitle(defaultTitle)
     } catch (e) {
       setError(e instanceof Error ? e.message : '생성 실패')
     } finally {
@@ -91,22 +114,19 @@ export default function BankMode() {
   }
 
   function removeItem(i: number) {
-    const id = items[i].entry.id
-    setExcluded((prev) => new Set(prev).add(id))
-    setItems((prev) => prev.filter((_, idx) => idx !== i))
+    dispatch({ type: 'remove', index: i })
     setNotice('')
   }
 
   async function replaceItem(i: number) {
-    if (!band) return
+    if (!band || !draftIsCurrent(draft)) return
     const list = await loadEntries()
-    const next = pickReplacement(list, band, items, i, excluded)
+    const next = pickReplacement(list, band, items, i, new Set(draft.excluded))
     if (!next) {
       setNotice(`${i + 1}번을 바꿀 수 있는 다른 단어가 없습니다.`)
       return
     }
-    setExcluded((prev) => new Set(prev).add(items[i].entry.id))
-    setItems((prev) => prev.map((it, idx) => (idx === i ? next : it)))
+    dispatch({ type: 'replace', index: i, item: next })
     setNotice('')
   }
 
@@ -114,6 +134,7 @@ export default function BankMode() {
     setError('')
     const p = Number(points)
     if (!Number.isInteger(p) || p < 1 || p > 100) return setError('문항당 배점은 1~100 정수로 입력하세요.')
+    if (!draftIsCurrent(draft)) return setError('조건이 바뀌었습니다. “단어 자동 선택”을 다시 눌러 주세요.')
     if (items.length === 0) return setError('저장할 문항이 없습니다.')
     const finalTitle = title.trim() || defaultTitle
     setBusy(true)
@@ -156,7 +177,7 @@ export default function BankMode() {
         <p className="rounded bg-amber-50 px-3 py-2 text-xs text-amber-700">레벨 범위: {VOCABULARY_BANDS_NOTE}</p>
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">학년</label>
-          <select value={grade} onChange={(e) => setGrade(e.target.value as VocabularyGrade)} className="w-full rounded border border-gray-300 px-3 py-2 text-sm">
+          <select value={grade} onChange={(e) => changeConditions({ grade: e.target.value })} className="w-full rounded border border-gray-300 px-3 py-2 text-sm">
             {grades.map((g) => <option key={g} value={g}>{g}</option>)}
           </select>
         </div>
@@ -166,7 +187,7 @@ export default function BankMode() {
             {LEVELS.map((l) => {
               const b = findDifficultyBand(grade, l, 'en_ko')
               return (
-                <button key={l} onClick={() => setLevel(l)} className={pill(level === l)}>
+                <button key={l} onClick={() => changeConditions({ level: l })} className={pill(level === l)}>
                   {VARIANT_LABELS[l]}{b ? <span className="ml-1 text-[10px] opacity-70">{b.min}~{b.max}</span> : null}
                 </button>
               )
@@ -186,7 +207,7 @@ export default function BankMode() {
           <label className="mb-1 block text-sm font-medium text-gray-700">방향</label>
           <div className="flex gap-2">
             {(['en_ko', 'ko_en', 'mixed'] as WordTestMode[]).map((m) => (
-              <button key={m} onClick={() => setMode(m)} className={pill(mode === m)}>{WORD_TEST_MODE_LABELS[m]}</button>
+              <button key={m} onClick={() => changeConditions({ mode: m })} className={pill(mode === m)}>{WORD_TEST_MODE_LABELS[m]}</button>
             ))}
           </div>
           {mode === 'mixed' && <p className="mt-1 text-xs text-gray-400">한→영 가능한 단어로 절반까지 한→영, 나머지는 영→한</p>}
@@ -212,7 +233,14 @@ export default function BankMode() {
             {notice && <div className="rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-700">{notice}</div>}
             <div>
               <p className="mb-2 text-sm font-medium text-gray-700">
-                미리보기 ({items.length}문항) <span className="text-xs font-normal text-gray-400">— 아직 저장되지 않았습니다</span>
+                미리보기 ({items.length}문항)
+                {draft.generatedFor && (
+                  <span className="ml-1 rounded bg-blue-50 px-1.5 py-0.5 text-xs font-normal text-blue-700">
+                    {draft.generatedFor.grade} {VARIANT_LABELS[draft.generatedFor.level as PassageVariantLevel]} · {WORD_TEST_MODE_LABELS[draft.generatedFor.mode]} 기준
+                    {band ? ` (난이도 ${band.min}~${band.max})` : ''}
+                  </span>
+                )}{' '}
+                <span className="text-xs font-normal text-gray-400">— 아직 저장되지 않았습니다</span>
               </p>
               <p className="mb-2 text-xs text-gray-400">“빼기”는 이번 시험에서만 빠집니다. 단어은행에는 그대로 남습니다 (반려는 단어은행 화면에서).</p>
               {items.length === 0 ? (

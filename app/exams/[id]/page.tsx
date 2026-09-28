@@ -151,6 +151,7 @@ export default function ExamDetailPage() {
   const [extAdding, setExtAdding] = useState(false)
   // 지문을 빠르게 바꿔 누를 때, 늦게 도착한 이전 지문 응답이 현재 화면(선택상태)을 덮어쓰지 않게 하는 번호표
   const extRequestSeq = useRef(0)
+  const bankRequestSeq = useRef(0)
 
   useEffect(() => {
     loadExam()
@@ -180,17 +181,25 @@ export default function ExamDetailPage() {
   }
 
   // 특정 세트의 문항 로드
+  // 세트를 빠르게 바꿔 누르면 늦게 도착한 이전 세트의 문항이 새 세트 제목 아래 보일 수 있었다 → 이전 결과를 지우고, 늦은 응답은 버린다 (2026-09-28)
   async function loadSetQuestions(setId: string, topic: string) {
+    const seq = ++bankRequestSeq.current
     setSelectedSetId(setId)
     setSelectedSetTopic(topic)
+    setBankQuestions([])
+    setPassages({})
     setBankLoading(true)
-    const res = await fetch(`/api/questions/search?question_set_id=${setId}`)
-    const json = await res.json()
-    if (!json.error) {
-      setBankQuestions(json.data ?? [])
-      setPassages(json.passages ?? {})
+    try {
+      const res = await fetch(`/api/questions/search?question_set_id=${setId}`)
+      const json = await res.json()
+      if (seq !== bankRequestSeq.current) return
+      if (!json.error) {
+        setBankQuestions(json.data ?? [])
+        setPassages(json.passages ?? {})
+      }
+    } finally {
+      if (seq === bankRequestSeq.current) setBankLoading(false)
     }
-    setBankLoading(false)
   }
 
   async function loadBank() {
@@ -679,7 +688,7 @@ export default function ExamDetailPage() {
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <button
-                    onClick={() => { setSelectedSetId(null); setSelectedSetTopic(''); setBankQuestions([]) }}
+                    onClick={() => { bankRequestSeq.current++; setBankLoading(false); setSelectedSetId(null); setSelectedSetTopic(''); setBankQuestions([]) }}
                     className="text-xs text-blue-600 hover:underline"
                   >← 세트 목록</button>
                   <h3 className="text-sm font-semibold text-gray-700">📖 {selectedSetTopic}</h3>

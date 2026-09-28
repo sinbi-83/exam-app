@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { getTypeHighlightClass } from '@/lib/tagDisplay'
 
 const GRADE_OPTIONS = [
@@ -169,8 +169,25 @@ export default function QuestionSearchPage() {
   const [passages, setPassages] = useState<Record<string, string>>({})
   const [loading, setLoading] = useState(false)
   const [searched, setSearched] = useState(false)
+  // 검색할 때마다 1씩 증가. 늦게 도착한 옛 검색 결과는 버린다
+  const searchSeq = useRef(0)
+
+  // 조건을 바꾸면 이전 조건의 결과를 지운다 (옛 결과가 그대로 인쇄되지 않게. /vocab-test 와 같은 버그 예방, 2026-09-28)
+  function clearResults() {
+    searchSeq.current++
+    setResults([])
+    setPassages({})
+    setSearched(false)
+    setLoading(false)
+  }
+
+  function changeGrade(value: string) {
+    setGrade(value)
+    clearResults()
+  }
 
   function toggleDifficulty(value: number) {
+    clearResults()
     setSelectedDifficulties((prev) => {
       const next = new Set(prev)
       if (next.has(value)) next.delete(value)
@@ -180,6 +197,7 @@ export default function QuestionSearchPage() {
   }
 
   function toggleCategory(value: string) {
+    clearResults()
     setSelectedCategories((prev) => {
       const next = new Set(prev)
       if (next.has(value)) next.delete(value)
@@ -189,6 +207,8 @@ export default function QuestionSearchPage() {
   }
 
   async function handleSearch() {
+    const seq = ++searchSeq.current
+    const categories = selectedCategories // 누른 순간의 조건으로 거른다
     setLoading(true)
     setSearched(true)
     try {
@@ -198,8 +218,9 @@ export default function QuestionSearchPage() {
         params.set('difficulties', Array.from(selectedDifficulties).join(','))
       }
 
-      const res = await fetch(`/api/questions/search?${params.toString()}`)
+      const res = await fetch(`/api/questions/search?${params.toString()}`, { cache: 'no-store' })
       const data = await res.json()
+      if (seq !== searchSeq.current) return // 그 사이 조건이 바뀌었거나 다시 검색함
 
       if (!res.ok) {
         alert(data.error || '검색에 실패했습니다.')
@@ -209,14 +230,14 @@ export default function QuestionSearchPage() {
       }
 
       const filtered = (data.data || []).filter((q: QuestionRow) =>
-        matchesCategory(q.question_type, selectedCategories)
+        matchesCategory(q.question_type, categories)
       )
       setResults(filtered)
       setPassages(data.passages || {})
     } catch {
-      alert('서버와 통신 중 문제가 발생했어요.')
+      if (seq === searchSeq.current) alert('서버와 통신 중 문제가 발생했어요.')
     } finally {
-      setLoading(false)
+      if (seq === searchSeq.current) setLoading(false)
     }
   }
 
@@ -252,7 +273,7 @@ export default function QuestionSearchPage() {
           <label className="mb-1 block text-sm text-gray-600">학년</label>
           <select
             value={grade}
-            onChange={(e) => setGrade(e.target.value)}
+            onChange={(e) => changeGrade(e.target.value)}
             className="w-full rounded border border-gray-300 px-3 py-2 text-sm"
           >
             {GRADE_OPTIONS.map((g) => (

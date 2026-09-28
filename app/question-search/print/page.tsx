@@ -93,7 +93,8 @@ export default function SearchPrintPage() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl p-8">
+    // print-area: 전체 인쇄 규칙(globals.css)이 print-area 밖을 모두 숨기므로, 이 클래스가 없으면 빈 종이가 나온다 (2026-09-28 추가)
+    <div className="print-area mx-auto max-w-2xl p-8">
       <div className="mb-4 flex justify-end print:hidden">
         <button
           onClick={() => window.print()}
