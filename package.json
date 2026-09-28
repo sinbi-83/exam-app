@@ -19,6 +19,7 @@
     "test-word-test": "node scripts/test-word-test.ts",
     "test-print-view": "node scripts/test-print-view.ts",
     "test-exam-type": "node scripts/test-exam-type.ts",
+    "test-official-vocabulary": "node scripts/test-official-vocabulary.ts",
     "add-vocabulary-seed": "node scripts/add-vocabulary-seed.ts",
     "test-vocabulary-calibration": "node scripts/test-vocabulary-calibration.ts"
   },

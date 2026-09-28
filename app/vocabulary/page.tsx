@@ -15,7 +15,7 @@ import {
 } from '@/lib/vocabulary'
 import { exclusionConfirmText } from '@/lib/vocabularyExclusion'
 import {
-  bandsContaining,
+  anchorLabels,
   GRADE_RANGE_POSITION_LABELS,
   gradeDifficultyRange,
   gradeRangePosition,
@@ -24,7 +24,6 @@ import {
   type GradeRangePosition,
   type VocabularyGrade,
 } from '@/config/vocabularyLevels'
-import { VARIANT_LABELS } from '@/types/passageBank'
 import { generateWordTest, POS_LABELS_KO, toWordQuestionData } from '@/lib/wordTest'
 import {
   CALIBRATION_ZONE_LABELS,
@@ -65,12 +64,11 @@ const STATUS_BADGE: Record<VocabularyViewState, string> = {
 // 검수용 시험 최대 문항 수
 const CHECK_TEST_MAX = 20
 
-// 숫자 난이도 → "중1 일반학원형·상위학원형" (임시 기준표 기준, 겹치면 모두)
+// 숫자 난이도 → "중1~2·중3 수준" (절대 난이도 자의 기준점 초안, 겹치면 모두)
 function levelText(difficulty: number | null): string {
   if (difficulty === null) return '난이도 없음'
-  const bands = bandsContaining(difficulty, 'en_ko')
-  if (bands.length === 0) return '현재 중1 기준 범위 밖'
-  return `${bands[0].grade} ${bands.map((b) => VARIANT_LABELS[b.level]).join('·')}`
+  const labels = anchorLabels(difficulty)
+  return labels.length ? `${labels.join('·')} 수준` : '기준점 밖'
 }
 
 // 목록/상세에 보여줄 출처 이름 (검수 메모 행은 제외)
@@ -394,7 +392,10 @@ export default function VocabularyPage() {
               결정 안 된 단어 {undecided}개
             </span>
           </div>
-          <p className="mt-1 text-xs text-gray-500">레벨 표시는 {VOCABULARY_BANDS_NOTE} 기준입니다.</p>
+          <p className="mt-1 text-xs text-gray-500">
+            수준 표시는 1~100 절대 난이도 기준점(초안), 학년 범위는 {VOCABULARY_BANDS_NOTE} 기준입니다.
+            기존 단어 난이도는 예전 중1 기준 값이라 재조정 전입니다.
+          </p>
         </div>
         <div className="flex gap-2">
           {reviewMode ? (

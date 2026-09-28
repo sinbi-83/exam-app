@@ -5,6 +5,7 @@
 export interface ExclusionFacts {
   base_difficulty: number | null
   official_source_count: number // source_type = 'official' 출처 수
+  official_tier_label: string | null // 공식 기본어휘 기준표 등급 (기준표에 없으면 null)
   grade_bands: string[] // 이 난이도가 들어가는 학년 범위 이름 (예: '중1 학교형')
   exam_count: number // 이 단어가 출제된 저장 시험 수
   exam_question_count: number // 출제된 문항 수
@@ -15,7 +16,9 @@ export interface ExclusionFacts {
 
 export function exclusionWarnings(f: ExclusionFacts): string[] {
   const out: string[] = []
-  if (f.official_source_count > 0) {
+  if (f.official_tier_label) {
+    out.push(`공식 기본어휘(${f.official_tier_label})에 포함된 단어입니다.`)
+  } else if (f.official_source_count > 0) {
     out.push('공식 기본어휘에 포함된 단어입니다.')
   }
   if (f.base_difficulty !== null && f.grade_bands.length > 0) {

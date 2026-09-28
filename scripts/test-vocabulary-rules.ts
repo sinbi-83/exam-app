@@ -25,6 +25,8 @@ import {
   vocabularyViewState,
 } from '../lib/vocabulary.ts'
 import {
+  anchorLabels,
+  DIFFICULTY_ANCHORS,
   effectiveDifficulty,
   findDifficultyBand,
   gradeDifficultyRange,
@@ -254,9 +256,11 @@ test('등록 스크립트 파일이 approved 로 넣는 코드를 갖고 있지 
 })
 
 // ── 학년 범위 (C-2) ──
-test('학년 범위: 중1은 레벨 전체 합친 구간, 기준 없는 학년은 null(기준 미설정)', () => {
-  assert.deepEqual(gradeDifficultyRange('중1'), { min: 1, max: 75 })
-  assert.equal(gradeDifficultyRange('초5'), null)
+test('학년 범위: 레벨 전체 합친 구간, 초5·중3도 기준 있음, 기준 없는 학년은 null(기준 미설정)', () => {
+  assert.deepEqual(gradeDifficultyRange('중1'), { min: 15, max: 58 })
+  assert.deepEqual(gradeDifficultyRange('초5'), { min: 1, max: 40 })
+  assert.deepEqual(gradeDifficultyRange('중3'), { min: 30, max: 72 })
+  assert.equal(gradeDifficultyRange('중2'), null)
   assert.equal(gradeRangePosition(80, { min: 1, max: 75 }), 'above')
   assert.equal(gradeRangePosition(75, { min: 1, max: 75 }), 'within')
   assert.equal(gradeRangePosition(1, { min: 10, max: 75 }), 'below')
@@ -265,7 +269,7 @@ test('학년 범위: 중1은 레벨 전체 합친 구간, 기준 없는 학년�
 
 // ── 영구 제외 경고 (C-1) ──
 const noFacts: ExclusionFacts = {
-  base_difficulty: null, official_source_count: 0, grade_bands: [], exam_count: 0, exam_question_count: 0,
+  base_difficulty: null, official_source_count: 0, official_tier_label: null, grade_bands: [], exam_count: 0, exam_question_count: 0,
   same_spelling_meanings: [], source_count: 0, approval_origin_label: null,
 }
 test('영구 제외 경고: 해당하는 것만', () => {
@@ -275,7 +279,8 @@ test('영구 제외 경고: 해당하는 것만', () => {
     same_spelling_meanings: ['계획하다'], source_count: 2, approval_origin_label: '기존 검수 인정',
   })
   assert.equal(w.length, 6)
-  assert.match(w[0], /공식 기본어휘/)
+  assert.match(w[0], /공식 기본어휘에 포함/)
+  assert.match(exclusionWarnings({ ...noFacts, official_tier_label: '중·고 공통(**)' })[0], /공식 기본어휘\(중·고 공통\(\*\*\)\)/)
   assert.match(w[1], /중1 학교형/)
   assert.match(w[2], /시험 2개\(3문항\)/)
   assert.match(w[3], /계획하다/)
@@ -313,11 +318,31 @@ test('활성 중복/출처 중복 오류를 사람이 읽는 문장으로', () =
 })
 
 // ── 변환표 ──
-test('변환표는 중1 임시 기준만 있고, 기준이 없는 학년은 null (임의 범위 출제 금지)', () => {
-  assert.equal(VOCABULARY_DIFFICULTY_BANDS.length, 8)
-  assert.ok(VOCABULARY_DIFFICULTY_BANDS.every((b) => b.grade === '중1' && b.min >= 1 && b.max <= 100 && b.min <= b.max))
-  assert.deepEqual(findDifficultyBand('중1', 'advanced', 'en_ko'), { grade: '중1', level: 'advanced', direction: 'en_ko', min: 30, max: 60 })
+test('변환표는 초5·중1·중3 초안, 기준이 없는 학년은 null (임의 범위 출제 금지)', () => {
+  assert.equal(VOCABULARY_DIFFICULTY_BANDS.length, 24)
+  assert.deepEqual([...new Set(VOCABULARY_DIFFICULTY_BANDS.map((b) => b.grade))], ['초5', '중1', '중3'])
+  assert.ok(VOCABULARY_DIFFICULTY_BANDS.every((b) => b.min >= 1 && b.max <= 100 && b.min <= b.max))
+  assert.deepEqual(findDifficultyBand('중1', 'advanced', 'en_ko'), { grade: '중1', level: 'advanced', direction: 'en_ko', min: 25, max: 50 })
+  assert.deepEqual(findDifficultyBand('초5', 'school', 'ko_en'), { grade: '초5', level: 'school', direction: 'ko_en', min: 1, max: 20 })
   assert.equal(findDifficultyBand('중2', 'advanced', 'en_ko'), null)
+})
+test('레벨 범위는 학년 기준점(초안)과 맞물린다: 상위학원형 = 학년 기준점 전체', () => {
+  const anchor = (label: string) => DIFFICULTY_ANCHORS.find((a) => a.label === label)!
+  for (const [grade, label] of [['초5', '초5~6'], ['중1', '중1~2'], ['중3', '중3']] as const) {
+    const b = findDifficultyBand(grade, 'advanced', 'en_ko')!
+    assert.deepEqual([b.min, b.max], [anchor(label).min, anchor(label).max], grade)
+    // 학교형 < 일반학원형 < 상위학원형 < 선행형 (시작점 기준)
+    const starts = (['school', 'academy', 'advanced', 'prestudy'] as const).map((l) => findDifficultyBand(grade, l, 'en_ko')!.min)
+    assert.deepEqual([...starts].sort((x, y) => x - y), starts)
+  }
+})
+test('절대 난이도 기준점 (설계도 C-2 초안)', () => {
+  assert.deepEqual(DIFFICULTY_ANCHORS.map((a) => [a.label, a.min, a.max]), [
+    ['초3~4', 1, 15], ['초5~6', 10, 30], ['중1~2', 25, 50], ['중3', 40, 65], ['고1~2', 55, 80], ['고3·고난도', 75, 100],
+  ])
+  assert.deepEqual(anchorLabels(42), ['중1~2', '중3'])
+  assert.deepEqual(anchorLabels(1), ['초3~4'])
+  assert.deepEqual(anchorLabels(null), [])
 })
 test('한→영은 예외 난이도가 있으면 그것을 쓴다', () => {
   assert.equal(effectiveDifficulty({ base_difficulty: 40, ko_en_difficulty: null }, 'ko_en'), 40)
