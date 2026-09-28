@@ -31,6 +31,7 @@ import {
   CALIBRATION_ZONE_RANGES,
   calibrationZone,
   DIFFICULTY_NUDGE_STEP,
+  countableSources,
   isCalibrationReviewed,
   isReviewNoteRef,
   nextUnreviewedId,
@@ -74,7 +75,7 @@ function levelText(difficulty: number | null): string {
 
 // 목록/상세에 보여줄 출처 이름 (검수 메모 행은 제외)
 function sourceLabel(e: Entry): string {
-  const refs = (e.vocabulary_sources ?? []).filter((s) => !isReviewNoteRef(s.source_ref))
+  const refs = countableSources(e.vocabulary_sources)
   if (refs.length === 0) return '-'
   return refs.map((s) => SOURCE_REF_LABELS[s.source_ref] ?? `${s.source_type}: ${s.source_ref}`).join(', ')
 }
@@ -113,7 +114,7 @@ export default function VocabularyPage() {
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null)
 
-  // 검수용 시험 (Floor / Ceiling 체감 확인용)
+  // 검수용 시험 (하한 / 상한 기준 체감 확인용)
   const [checkTest, setCheckTest] = useState<{ id: string; title: string; count: number } | null>(null)
   const [checkTestError, setCheckTestError] = useState('')
 

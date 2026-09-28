@@ -13,6 +13,10 @@ import {
   nudgeDifficulty,
   REVIEW_DONE_REF_PREFIX,
   REVIEW_NOTE_ONLY_REF_PREFIX,
+  OWNER_APPROVAL_REF_PREFIX,
+  CALIBRATION_ZONE_LABELS,
+  SOURCE_REF_LABELS,
+  countableSources,
   generalTestCandidates,
   isCalibrationOnly,
   isCalibrationReviewed,
@@ -43,7 +47,7 @@ test('조금 쉽게/어렵게: 기본 폭 5, 1~100 을 넘지 않는다', () => 
   assert.equal(nudgeDifficulty(3, -5), 1)
   assert.equal(nudgeDifficulty(98, 5), 100)
 })
-test('구간: Floor 1~10 / 중간 / Ceiling 80+', () => {
+test('구간: 하한 기준 1~10 / 중간 / 상한 기준 80+', () => {
   assert.equal(FLOOR_MAX, 10)
   assert.equal(CEILING_MIN, 80)
   assert.equal(calibrationZone(1), 'floor')
@@ -145,6 +149,38 @@ test('같은 철자 다른 뜻은 별도 항목·별도 난이도 (account for)'
   assert.equal(af.length, 2)
   assert.notEqual(af[0].meaning_ko, af[1].meaning_ko)
   assert.notEqual(af[0].base_difficulty, af[1].base_difficulty)
+})
+
+// ── 소유자 승인 기록 행 (1단계) ──
+const ownerRef = `${OWNER_APPROVAL_REF_PREFIX}2026-09-28T00:00:00.000Z`
+// c3d0fc7(현재 배포본)의 isReviewNoteRef 그대로 — 배포된 예전 코드도 이 행을 출처로 세지 않는지 확인용
+const deployedIsReviewNoteRef = (ref: string) => ref.startsWith('teacher-review:') || ref.startsWith('teacher-note:')
+test('소유자 승인 기록은 출처가 아니다 (새 코드·배포된 예전 코드 모두)', () => {
+  assert.ok(isReviewNoteRef(ownerRef))
+  assert.ok(deployedIsReviewNoteRef(ownerRef))
+  assert.ok(!isCalibrationReviewed({ vocabulary_sources: [{ source_ref: ownerRef }] }), '검수 완료로 세지 않는다')
+})
+test('소유자 승인 기록이 붙어도 기준점 단어는 일반 시험 후보에서 빠진다', () => {
+  const anchor = { vocabulary_sources: [{ source_ref: SEED_SOURCE_REFS.ceiling }, { source_ref: ownerRef }] }
+  assert.ok(isCalibrationOnly(anchor))
+  assert.deepEqual(generalTestCandidates([anchor]), [])
+})
+test('출처 수·공식 출처는 기록 행을 빼고 센다', () => {
+  const sources = [
+    { source_type: 'official', source_ref: 'kr-curriculum-2022' },
+    { source_type: 'teacher', source_ref: SEED_SOURCE_REFS.middle },
+    { source_type: 'teacher', source_ref: ownerRef },
+    { source_type: 'teacher', source_ref: `${REVIEW_DONE_REF_PREFIX}t` },
+    { source_type: 'teacher', source_ref: `${REVIEW_NOTE_ONLY_REF_PREFIX}t` },
+  ]
+  const counted = countableSources(sources)
+  assert.equal(counted.length, 2)
+  assert.equal(counted.filter((s) => s.source_type === 'official').length, 1)
+  assert.deepEqual(countableSources(undefined), [])
+})
+test('화면 이름에 영어 구간명(Floor/Ceiling/Calibration)이 남아 있지 않다', () => {
+  const shown = [...Object.values(CALIBRATION_ZONE_LABELS), ...Object.values(SOURCE_REF_LABELS)].join(' ')
+  assert.ok(!/floor|ceiling|calibration|anchor|seed/i.test(shown), shown)
 })
 
 console.log(`\n모두 통과: ${passed}개`)

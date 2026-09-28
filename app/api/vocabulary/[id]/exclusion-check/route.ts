@@ -3,7 +3,7 @@ import { createClient } from '@/lib/supabaseServer'
 import { bandsContaining } from '@/config/vocabularyLevels'
 import { VARIANT_LABELS } from '@/types/passageBank'
 import { VOCABULARY_APPROVAL_ORIGIN_LABELS } from '@/lib/vocabulary'
-import { isReviewNoteRef } from '@/lib/vocabularyCalibration'
+import { countableSources } from '@/lib/vocabularyCalibration'
 import { exclusionWarnings, type ExclusionFacts } from '@/lib/vocabularyExclusion'
 import type { VocabularyEntryRecord } from '@/types/vocabulary'
 
@@ -38,7 +38,7 @@ export async function GET(_request: NextRequest, { params }: { params: { id: str
   if (usage.error) return NextResponse.json({ error: usage.error.message }, { status: 500 })
   if (siblings.error) return NextResponse.json({ error: siblings.error.message }, { status: 500 })
 
-  const sources = (entry.vocabulary_sources ?? []).filter((s) => !isReviewNoteRef(s.source_ref))
+  const sources = countableSources(entry.vocabulary_sources)
   const bands = entry.base_difficulty === null ? [] : bandsContaining(entry.base_difficulty, 'en_ko')
 
   const facts: ExclusionFacts = {

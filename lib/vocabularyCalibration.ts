@@ -21,10 +21,11 @@ export type CalibrationZone = 'floor' | 'middle' | 'ceiling'
 export const FLOOR_MAX = 10
 export const CEILING_MIN = 80
 
+// 화면 이름 (한글). 내부 값 floor / middle / ceiling 은 그대로 둔다.
 export const CALIBRATION_ZONE_LABELS: Record<CalibrationZone, string> = {
-  floor: `Floor 1~${FLOOR_MAX}`,
+  floor: `하한 기준 1~${FLOOR_MAX}`,
   middle: `중간 ${FLOOR_MAX + 1}~${CEILING_MIN - 1}`,
-  ceiling: `Ceiling ${CEILING_MIN}+`,
+  ceiling: `상한 기준 ${CEILING_MIN}+`,
 }
 
 export const CALIBRATION_ZONE_RANGES: Record<CalibrationZone, { min: number; max: number }> = {
@@ -70,10 +71,11 @@ export const SEED_SOURCE_REFS = {
   ceiling: 'bostons-calibration-ceiling-v1', // BostonS calibration anchor (Ceiling)
 } as const
 
+// 화면 이름 (한글). source_ref 값 자체는 DB 에 저장된 식별값이라 바꾸지 않는다.
 export const SOURCE_REF_LABELS: Record<string, string> = {
-  [SEED_SOURCE_REFS.middle]: 'BostonS seed (중1 기능검증)',
-  [SEED_SOURCE_REFS.floor]: 'Calibration anchor · Floor',
-  [SEED_SOURCE_REFS.ceiling]: 'Calibration anchor · Ceiling',
+  [SEED_SOURCE_REFS.middle]: '보스턴S 기초 단어 (중1 기능검증)',
+  [SEED_SOURCE_REFS.floor]: '난이도 기준점 · 하한',
+  [SEED_SOURCE_REFS.ceiling]: '난이도 기준점 · 상한',
 }
 
 // Calibration anchor 출처만 가진 항목 = 난이도 자 검수용 기준 데이터 → 일반 /vocab-test 자동생성 후보가 아니다.
@@ -82,7 +84,7 @@ export const SOURCE_REF_LABELS: Record<string, string> = {
 export const CALIBRATION_SOURCE_REF_PREFIX = 'bostons-calibration-'
 
 export function isCalibrationOnly(entry: { vocabulary_sources?: SourceRefOnly[] }): boolean {
-  const refs = (entry.vocabulary_sources ?? []).filter((s) => !isReviewNoteRef(s.source_ref))
+  const refs = countableSources(entry.vocabulary_sources)
   return refs.length > 0 && refs.every((s) => s.source_ref.startsWith(CALIBRATION_SOURCE_REF_PREFIX))
 }
 
@@ -97,8 +99,10 @@ export function generalTestCandidates<T extends { vocabulary_sources?: SourceRef
 //  - teacher-note:<시각>    = 검수 완료 없이 "수정만 저장" 할 때 남긴 판단 이유
 export const REVIEW_DONE_REF_PREFIX = 'teacher-review:'
 export const REVIEW_NOTE_ONLY_REF_PREFIX = 'teacher-note:'
-//  - owner-approval:<시각>  = 소유자(향미 선생님) 명시 승인 기록 (예: 1단계 상태 바로잡기). 검수 완료로 세지 않는다
-export const OWNER_APPROVAL_REF_PREFIX = 'owner-approval:'
+//  - teacher-note:owner-approval:<시각> = 소유자(향미 선생님) 명시 승인 기록 (예: 1단계 상태 바로잡기). 검수 완료로 세지 않는다
+//    일부러 'teacher-note:' 로 시작한다 → 이 규칙을 모르는 예전 배포 코드도 이 행을 출처가 아닌 메모로 보고
+//    출처 표시·기준점(anchor) 판단에서 뺀다. (새 접두어였다면 예전 코드에서 기준점 단어가 일반 시험 후보로 새어 나간다)
+export const OWNER_APPROVAL_REF_PREFIX = `${REVIEW_NOTE_ONLY_REF_PREFIX}owner-approval:`
 
 export const REVIEW_REASON_LABELS = {
   too_easy: '너무 쉬움',
@@ -113,12 +117,14 @@ export const REVIEW_REASON_LABELS = {
 export type ReviewReason = keyof typeof REVIEW_REASON_LABELS
 
 // 검수·승인 기록 행인지 (출처가 아니다 → 출처 표시·출처 수·anchor 판단에서 제외)
+// 소유자 승인 기록(OWNER_APPROVAL_REF_PREFIX)도 teacher-note: 로 시작하므로 여기에 포함된다.
 export function isReviewNoteRef(sourceRef: string): boolean {
-  return (
-    sourceRef.startsWith(REVIEW_DONE_REF_PREFIX) ||
-    sourceRef.startsWith(REVIEW_NOTE_ONLY_REF_PREFIX) ||
-    sourceRef.startsWith(OWNER_APPROVAL_REF_PREFIX)
-  )
+  return sourceRef.startsWith(REVIEW_DONE_REF_PREFIX) || sourceRef.startsWith(REVIEW_NOTE_ONLY_REF_PREFIX)
+}
+
+// 실제 출처만 (검수·승인 기록 행 제외). 출처 수·공식 출처 판정·출처 표시는 모두 이 목록으로 센다.
+export function countableSources<T extends SourceRefOnly>(sources: T[] | undefined): T[] {
+  return (sources ?? []).filter((s) => !isReviewNoteRef(s.source_ref))
 }
 
 // 검수 메모 한 줄: "너무 쉬움 · 메모" (둘 다 없으면 null → 메모 행을 만들지 않는다)
