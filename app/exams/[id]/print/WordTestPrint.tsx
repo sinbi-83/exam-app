@@ -4,6 +4,7 @@
 // 기존 시험지는 이 컴포넌트를 쓰지 않는다 (문항이 전부 type 'word' 일 때만 print/page.tsx 에서 선택).
 
 import { useState } from 'react'
+import { POS_LABELS_KO, studySheetRows, studySheetTitle, type StudySheetRow } from '@/lib/wordTest'
 
 interface WordQuestion {
   id: string
@@ -14,8 +15,13 @@ interface WordQuestion {
     question: string
     answer?: string
     accepted_answers?: string[]
+    expression?: string
+    meaning_ko?: string
+    pos?: string | null
   }
 }
+
+export type WordSheet = 'test' | 'study'
 
 const SECTIONS = [
   { direction: 'en_ko', title: '영어 → 우리말', guide: '다음 영어 단어의 뜻을 우리말로 쓰시오.' },
@@ -26,13 +32,16 @@ export default function WordTestPrint({
   title,
   date,
   questions,
+  initialSheet = 'test',
   onPdf,
 }: {
   title: string
   date: string
   questions: WordQuestion[]
-  onPdf: () => void
+  initialSheet?: WordSheet
+  onPdf: (filename: string) => void
 }) {
+  const [sheet, setSheet] = useState<WordSheet>(initialSheet)
   const [showAnswers, setShowAnswers] = useState(false)
   const totalPoints = questions.reduce((s, q) => s + q.points, 0)
   const numbered = questions.map((q, i) => ({ q, num: i + 1 }))
@@ -57,18 +66,34 @@ export default function WordTestPrint({
       `}</style>
 
       <div className="no-print mb-4 flex flex-wrap items-center justify-center gap-3 pt-6">
+        <div className="flex overflow-hidden rounded border border-gray-300 text-sm">
+          {([['test', '📝 시험지'], ['study', '📘 학습지']] as const).map(([k, label]) => (
+            <button
+              key={k}
+              onClick={() => setSheet(k)}
+              className={`px-4 py-2 ${sheet === k ? 'bg-gray-800 text-white' : 'bg-white text-gray-600 hover:bg-gray-50'}`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
         <button onClick={() => window.print()} className="rounded bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700">
           🖨️ 인쇄
         </button>
-        <button onClick={onPdf} className="rounded bg-red-600 px-6 py-2 text-sm font-medium text-white hover:bg-red-700">
+        <button onClick={() => onPdf(sheet === 'study' ? studySheetTitle(title) : title)} className="rounded bg-red-600 px-6 py-2 text-sm font-medium text-white hover:bg-red-700">
           📄 PDF 저장
         </button>
-        <label className="flex items-center gap-1 text-sm text-gray-600">
-          <input type="checkbox" checked={showAnswers} onChange={(e) => setShowAnswers(e.target.checked)} />
-          정답지 포함 (다음 장)
-        </label>
+        {sheet === 'test' && (
+          <label className="flex items-center gap-1 text-sm text-gray-600">
+            <input type="checkbox" checked={showAnswers} onChange={(e) => setShowAnswers(e.target.checked)} />
+            정답지 포함 (다음 장)
+          </label>
+        )}
       </div>
 
+      {sheet === 'study' ? (
+        <StudySheet title={studySheetTitle(title)} date={date} rows={studySheetRows(questions)} />
+      ) : (
       <div className="print-area">
         <div className="page mx-auto bg-white shadow-lg" style={{ width: '210mm', minHeight: '297mm', padding: '14mm 16mm 12mm' }}>
           {/* 헤더 */}
@@ -133,6 +158,68 @@ export default function WordTestPrint({
           </div>
         )}
       </div>
+      )}
     </>
+  )
+}
+
+// 학습지: 시험 형태와 상관없이 영어 철자 + 품사 + 뜻. 2단(왼쪽 앞 절반, 오른쪽 뒤 절반)으로 40단어가 A4 한 장에 들어가게.
+function StudySheet({ title, date, rows }: { title: string; date: string; rows: StudySheetRow[] }) {
+  const half = Math.ceil(rows.length / 2)
+  const columns = [rows.slice(0, half), rows.slice(half)]
+  // 단어가 많으면 줄 간격·글자를 줄여 한 장에 맞춘다 (한 단에 20줄 넘을 때)
+  const dense = half > 20
+  const rowClass = dense ? 'py-[3px] text-[11.5px]' : 'py-[5px] text-[13px]'
+
+  return (
+    <div className="print-area">
+      <div className="page mx-auto bg-white shadow-lg" style={{ width: '210mm', minHeight: '297mm', padding: '12mm 14mm 10mm' }}>
+        {/* 헤더 */}
+        <div className="mb-3 border-b-2 border-gray-800 pb-2">
+          <p className="text-xs text-gray-500">보스턴S영어</p>
+          <h1 className="text-xl font-bold text-gray-900">{title}</h1>
+          <div className="mt-2 grid grid-cols-[1fr_1fr_auto] gap-4 text-sm">
+            <div className="border-b border-gray-400 pb-1">
+              <span className="mr-2 text-xs text-gray-400">이름:</span>
+            </div>
+            <div className="border-b border-gray-400 pb-1">
+              <span className="mr-2 text-xs text-gray-400">시험일:</span>
+              {date}
+            </div>
+            <div className="self-end text-xs text-gray-500">총 {rows.length}단어</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-x-6">
+          {columns.map((col, ci) => (
+            <div key={ci}>
+              <div className="flex gap-2 border-b border-gray-400 pb-1 text-[10px] font-semibold text-gray-500">
+                <span className="w-5 shrink-0 text-right">#</span>
+                <span className="w-[30mm] shrink-0">영어</span>
+                <span className="w-4 shrink-0">품사</span>
+                <span className="flex-1 pl-1">뜻</span>
+              </div>
+              {col.map((r, i) => (
+                <div key={r.id} className={`word-row flex items-baseline gap-2 border-b border-gray-200 ${rowClass}`}>
+                  <span className="w-5 shrink-0 text-right text-gray-400">{ci * half + i + 1}</span>
+                  <span className="w-[30mm] shrink-0 font-semibold text-gray-900">{r.expression}</span>
+                  <span className="w-4 shrink-0 text-[10px] text-gray-400">{r.pos ? POS_LABELS_KO[r.pos] ?? '' : ''}</span>
+                  <span className="flex-1 pl-1 text-gray-800">
+                    {r.meaning}
+                    {r.other_meanings.length > 0 && (
+                      <span className="ml-1 text-[10px] text-gray-500">({r.other_meanings.join(', ')})</span>
+                    )}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 border-t border-gray-200 pt-2 text-center text-[10px] text-gray-400">
+          보스턴S영어 | 담당교사: 서향미 선생님
+        </div>
+      </div>
+    </div>
   )
 }

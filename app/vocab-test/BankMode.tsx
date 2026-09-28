@@ -23,12 +23,13 @@ import { generalTestCandidates } from '@/lib/vocabularyCalibration'
 type BankEntry = VocabularyEntryRecord & { vocabulary_sources?: { source_ref: string }[] }
 
 const LEVELS: PassageVariantLevel[] = ['school', 'academy', 'advanced', 'prestudy']
+const COUNT_PRESETS = [20, 40, 60, 80]
 
 export default function BankMode() {
   const grades = gradesWithBands()
   const [grade, setGrade] = useState<VocabularyGrade>(grades[0] ?? '중1')
   const [level, setLevel] = useState<PassageVariantLevel>('school')
-  const [count, setCount] = useState('20')
+  const [count, setCount] = useState('40')
   const [mode, setMode] = useState<WordTestMode>('en_ko')
   const [title, setTitle] = useState('')
   const [examDate, setExamDate] = useState('')
@@ -174,7 +175,12 @@ export default function BankMode() {
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">문제 수</label>
-          <input value={count} onChange={(e) => setCount(e.target.value)} inputMode="numeric" className="w-24 rounded border border-gray-300 px-3 py-2 text-sm" />
+          <div className="flex flex-wrap items-center gap-2">
+            <input value={count} onChange={(e) => setCount(e.target.value)} inputMode="numeric" className="w-20 rounded border border-gray-300 px-3 py-2 text-sm" />
+            {COUNT_PRESETS.map((c) => (
+              <button key={c} onClick={() => setCount(String(c))} className={pill(count === String(c))}>{c}</button>
+            ))}
+          </div>
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">방향</label>
@@ -284,7 +290,8 @@ export default function BankMode() {
                 <p>✅ 시험을 저장했습니다: {savedExam.title}</p>
                 <div className="flex gap-2">
                   <a href={`/exams/${savedExam.id}`} className="rounded border border-green-600 px-3 py-1.5 text-green-700 hover:bg-green-100">저장된 시험 열기</a>
-                  <a href={printUrl} target="_blank" rel="noopener noreferrer" className="rounded bg-green-600 px-3 py-1.5 text-white hover:bg-green-700">🖨️ 인쇄 화면</a>
+                  <a href={printUrl} target="_blank" rel="noopener noreferrer" className="rounded bg-green-600 px-3 py-1.5 text-white hover:bg-green-700">🖨️ 시험지 인쇄</a>
+                  <a href={`${printUrl}&sheet=study`} target="_blank" rel="noopener noreferrer" className="rounded bg-indigo-600 px-3 py-1.5 text-white hover:bg-indigo-700">📘 학습지 인쇄</a>
                 </div>
               </div>
             ) : (

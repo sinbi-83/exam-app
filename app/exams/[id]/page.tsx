@@ -20,6 +20,14 @@ import {
 import { bankAddedIds, buildBankExamQuestionData } from '@/lib/questionBankExam'
 import { buildPickerRows, isPassageComplete, pickerLevelOptions, VARIANT_ORDER } from '@/lib/externalPassagePicker'
 import { schoolStageBadgeClass } from '@/lib/gradeLevel'
+import {
+  convertWordTest,
+  isWordTestExam,
+  WORD_TEST_MODE_LABELS,
+  type WordQuestionData,
+  type WordTestEntry,
+  type WordTestMode,
+} from '@/lib/wordTest'
 
 interface Exam {
   id: string
@@ -107,6 +115,9 @@ export default function ExamDetailPage() {
   const [examQuestions, setExamQuestions] = useState<ExamQuestion[]>([])
   const [loading, setLoading] = useState(true)
   const [showBank, setShowBank] = useState(false)
+  // 단어시험: 같은 단어로 다른 형태 시험 만들기
+  const [converting, setConverting] = useState(false)
+  const [convertError, setConvertError] = useState('')
   // 세트 목록
   const [questionSets, setQuestionSets] = useState<{id:string; grade:string; topic:string; created_at:string}[]>([])
   const [setsLoading, setSetsLoading] = useState(false)
@@ -407,8 +418,8 @@ export default function ExamDetailPage() {
     setExamQuestions((prev) => prev.map((q) => q.id === eqId ? { ...q, points } : q))
   }
 
-  function openPrint() {
-    const url = `/exams/${examId}/print?exam_id=${examId}&title=${encodeURIComponent(exam?.title ?? '')}&date=${encodeURIComponent(exam?.exam_date ?? '')}`
+  function openPrint(sheet?: 'study') {
+    const url = `/exams/${examId}/print?exam_id=${examId}&title=${encodeURIComponent(exam?.title ?? '')}&date=${encodeURIComponent(exam?.exam_date ?? '')}${sheet ? `&sheet=${sheet}` : ''}`
     const a = document.createElement('a')
     a.href = url
     a.target = '_blank'
@@ -417,6 +428,48 @@ export default function ExamDetailPage() {
     a.click()
     document.body.removeChild(a)
   }
+
+  // 같은 단어로 다른 형태(영→한/한→영/혼합) 새 시험 만들기. 원래 시험은 그대로 둔다.
+  async function convertTo(mode: WordTestMode) {
+    if (!exam) return
+    setConvertError('')
+    setConverting(true)
+    try {
+      // 한→영 가능 여부는 현재 단어은행 값으로 판단한다
+      const res = await fetch('/api/vocabulary')
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.error ?? '단어은행을 불러오지 못했습니다.')
+      const source = examQuestions.map((q) => q.question_data as unknown as WordQuestionData)
+      const result = convertWordTest(source, (json.data ?? []) as WordTestEntry[], mode)
+      const enKo = result.questions.length - result.koEnCount
+      const kept = result.koEnWanted - result.koEnCount
+      const msg =
+        `같은 단어 ${result.questions.length}개로 새 시험을 만듭니다.\n` +
+        `영→한 ${enKo}문항 · 한→영 ${result.koEnCount}문항 (문제 순서는 섞입니다)` +
+        (kept > 0 ? `\n\n※ ${kept}개는 한→영 불가 단어(또는 같은 뜻 중복)라서 영→한으로 남깁니다.` : '')
+      if (!window.confirm(msg)) return
+      const baseTitle = exam.title.replace(/\s*\((영→한|한→영|혼합)\)\s*$/, '').trim()
+      const save = await fetch('/api/vocabulary/word-test', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: `${baseTitle} (${WORD_TEST_MODE_LABELS[mode]})`,
+          exam_date: exam.exam_date,
+          points_per_question: examQuestions[0]?.points ?? 5,
+          questions: result.questions,
+        }),
+      })
+      const saved = await save.json()
+      if (!save.ok) throw new Error(saved.error ?? '저장 실패')
+      router.push(`/exams/${saved.data.exam_id}`)
+    } catch (e) {
+      setConvertError(e instanceof Error ? e.message : '만들기 실패')
+    } finally {
+      setConverting(false)
+    }
+  }
+
+  const isWordExam = isWordTestExam(examQuestions)
 
   const filteredBank = bankQuestions.filter((q) => {
     if (bankType !== 'all' && q.type !== bankType) return false
@@ -443,8 +496,16 @@ export default function ExamDetailPage() {
         <button onClick={() => router.back()} className="text-gray-400 hover:text-gray-600">← 목록</button>
         <h1 className="text-xl font-semibold text-gray-800">{exam.title}</h1>
         <div className="flex-1" />
+        {isWordExam && (
+          <button
+            onClick={() => openPrint('study')}
+            className="rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+          >
+            📘 학습지 출력
+          </button>
+        )}
         <button
-          onClick={openPrint}
+          onClick={() => openPrint()}
           disabled={examQuestions.length === 0}
           className="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-40"
         >
@@ -459,6 +520,26 @@ export default function ExamDetailPage() {
         <span>📝 선택된 문항: <strong className="text-blue-600">{examQuestions.length}문항</strong></span>
         <span>합계 배점: <strong className="text-green-600">{totalPoints}점</strong></span>
       </div>
+
+      {isWordExam && (
+        <div className="mb-6 rounded-lg border border-indigo-200 bg-indigo-50 p-4 text-sm">
+          <p className="mb-2 font-medium text-indigo-800">같은 단어로 다른 형태 시험 만들기</p>
+          <p className="mb-3 text-xs text-indigo-600">이 시험의 단어 그대로, 형태만 바꾼 새 시험을 저장합니다. 지금 시험은 바뀌지 않습니다.</p>
+          <div className="flex flex-wrap gap-2">
+            {(['en_ko', 'ko_en', 'mixed'] as WordTestMode[]).map((m) => (
+              <button
+                key={m}
+                onClick={() => convertTo(m)}
+                disabled={converting}
+                className="rounded border border-indigo-300 bg-white px-3 py-1.5 text-indigo-700 hover:bg-indigo-100 disabled:opacity-40"
+              >
+                {WORD_TEST_MODE_LABELS[m]}으로 만들기
+              </button>
+            ))}
+          </div>
+          {convertError && <p className="mt-2 text-xs text-red-600">{convertError}</p>}
+        </div>
+      )}
 
       {/* 선택된 문항 목록 */}
       <div className="mb-4 flex items-center justify-between">

@@ -173,6 +173,101 @@ export function isWordTestExam(questions: { question_data: { type: string } }[])
   return questions.length > 0 && questions.every((q) => q.question_data.type === 'word')
 }
 
+// ── 학습지 (시험 보기 전 미리 외우는 단어 목록) ──
+// 저장된 snapshot 만으로 만든다. 시험 형태와 상관없이 영어 철자 + 뜻을 모두 보여준다.
+export interface StudySheetRow {
+  id: string
+  expression: string
+  pos: string | null
+  meaning: string // 대표 뜻
+  other_meanings: string[] // 정답으로 인정되는 다른 뜻 (영→한 문항에만 저장돼 있다)
+}
+
+type StoredWordQuestion = {
+  id: string
+  question_data: {
+    direction?: string
+    question: string
+    answer?: string
+    accepted_answers?: string[]
+    expression?: string
+    meaning_ko?: string
+    pos?: string | null
+  }
+}
+
+// 학습지 순서는 알파벳순 → 시험지 순서와 달라서 위치로 외우지 않게 된다
+export function studySheetRows(questions: StoredWordQuestion[]): StudySheetRow[] {
+  return questions
+    .map(({ id, question_data: q }) => {
+      const koEn = q.direction === 'ko_en'
+      const expression = q.expression ?? (koEn ? q.answer ?? '' : q.question)
+      const meaning = q.meaning_ko ?? (koEn ? q.question : q.answer ?? '')
+      const others = koEn ? [] : (q.accepted_answers ?? []).filter((m) => m !== meaning)
+      return { id, expression, pos: q.pos ?? null, meaning, other_meanings: others }
+    })
+    .sort((a, b) => a.expression.toLowerCase().localeCompare(b.expression.toLowerCase()))
+}
+
+// "중1 일반학원형 단어시험 (영→한)" → "중1 일반학원형 단어 학습지"
+export function studySheetTitle(title: string): string {
+  const base = title.replace(/\s*\((영→한|한→영|혼합)\)\s*$/, '').trim()
+  if (base.includes('단어시험')) return base.replace('단어시험', '단어 학습지')
+  return `${base} — 단어 학습지`
+}
+
+// ── 같은 단어로 다른 형태 시험 만들기 ──
+// 저장된 시험의 단어(snapshot)는 그대로 쓰고 방향만 다시 정한다. 문제 순서는 섞는다.
+// 한→영 가능 여부·뜻 기준값은 현재 단어은행에서 읽는다 (없거나 삭제된 단어는 영→한으로 남긴다).
+export interface ConvertResult {
+  questions: WordQuestionData[]
+  koEnWanted: number // 한→영으로 바꾸려던 개수
+  koEnCount: number // 실제 한→영 개수
+}
+
+export function convertWordTest(
+  source: WordQuestionData[],
+  bank: WordTestEntry[],
+  mode: WordTestMode,
+  random: () => number = Math.random,
+): ConvertResult {
+  const byId = new Map(bank.filter((b) => b.deleted_at === null).map((b) => [b.id, b]))
+  const entries: WordTestEntry[] = source.map((q) => {
+    const b = byId.get(q.source_vocabulary_entry_id)
+    return {
+      id: q.source_vocabulary_entry_id,
+      expression: q.expression,
+      expression_key: b?.expression_key ?? q.expression.toLowerCase(),
+      meaning_ko: q.meaning_ko,
+      meaning_key: b?.meaning_key ?? q.meaning_ko,
+      // 영→한 문항은 인정 뜻이 snapshot 에 있다. 한→영 문항은 단어은행 값을 쓴다.
+      accepted_meanings: q.direction === 'en_ko' ? q.accepted_answers : b?.accepted_meanings ?? [],
+      pos: (q.pos ?? null) as WordTestEntry['pos'],
+      entry_type: q.entry_type as WordTestEntry['entry_type'],
+      base_difficulty: b?.base_difficulty ?? null,
+      ko_en_difficulty: b?.ko_en_difficulty ?? null,
+      ko_en_allowed: b?.ko_en_allowed ?? false,
+      status: b?.status ?? 'approved',
+      deleted_at: null,
+    }
+  })
+
+  const koEnWanted = mode === 'ko_en' ? entries.length : mode === 'mixed' ? Math.floor(entries.length / 2) : 0
+  const items: WordTestItem[] = []
+  let koEnCount = 0
+  for (const entry of shuffle(entries, random)) {
+    const canKoEn =
+      koEnCount < koEnWanted &&
+      entry.ko_en_allowed &&
+      !items.some((p) => p.direction === 'ko_en' && p.entry.meaning_key === entry.meaning_key)
+    if (canKoEn) koEnCount++
+    items.push({ entry, direction: canKoEn ? 'ko_en' : 'en_ko' })
+  }
+  // 인쇄 구역(영→한, 한→영) 순서에 맞춰 영→한 먼저
+  const sorted = [...items.filter((i) => i.direction === 'en_ko'), ...items.filter((i) => i.direction === 'ko_en')]
+  return { questions: sorted.map(toWordQuestionData), koEnWanted, koEnCount }
+}
+
 export const POS_LABELS_KO: Record<string, string> = {
   noun: '명', pronoun: '대', verb: '동', auxiliary: '조', adjective: '형', adverb: '부',
   preposition: '전', conjunction: '접', determiner: '한', interjection: '감', numeral: '수',

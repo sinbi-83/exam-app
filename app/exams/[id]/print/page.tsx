@@ -169,7 +169,15 @@ function PrintContent() {
 
   // 단어은행 자동 단어시험(문항 전부 'word')만 전용 레이아웃. 그 밖의 시험은 아래 기존 레이아웃 그대로.
   if (isWordTestExam(questions)) {
-    return <WordTestPrint title={title} date={date} questions={questions} onPdf={() => downloadPdf(title)} />
+    return (
+      <WordTestPrint
+        title={title}
+        date={date}
+        questions={questions}
+        initialSheet={params.get('sheet') === 'study' ? 'study' : 'test'}
+        onPdf={(name) => downloadPdf(name)}
+      />
+    )
   }
 
   return (
