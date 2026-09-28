@@ -36,7 +36,8 @@ export default function ExternalPassagePrintPage() {
   const [record, setRecord] = useState<PassageRecord | null>(null)
   const [loading, setLoading] = useState(true)
 
-  const [showAnswers, setShowAnswers] = useState(true)
+  // 정답·해설은 기본으로 끈다 (그냥 인쇄하면 문제만). 필요하면 화면에서 켠다.
+  const [showAnswers, setShowAnswers] = useState(false)
   const [showEssays, setShowEssays] = useState(true)
   const [showTags, setShowTags] = useState(true)
 
