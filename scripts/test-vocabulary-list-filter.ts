@@ -85,16 +85,20 @@ test('화면 연결: 학년 변경 시 자동 전환, 개수 표시, 요약 표�
   assert.doesNotMatch(page, />\s*검색\s*</)
 })
 
-test('은은한 표시: 공용 .undecided-glow 가 3곳(배지·단어은행 초안·단어시험 초안)에만, 2.5초·멈춤 없음·움직임 줄이기·인쇄 제외', () => {
+test('은은한 표시: 공용 .undecided-glow 가 4곳(배지·확인 필요 칸·단어은행 초안·단어시험 초안)에만, 2.5초·노란 배경+빛·멈춤 없음·움직임 줄이기 진한 테두리·인쇄 제외', () => {
   const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8')
   assert.match(css, /\.undecided-glow \{\s*animation: undecided-glow 2\.5s ease-in-out infinite;/)
   assert.doesNotMatch(css, /undecided-glow:hover|animation-play-state/)
-  assert.match(css, /prefers-reduced-motion: reduce\) \{\s*\.undecided-glow \{\s*animation: none;\s*box-shadow: [^;]+;/)
-  assert.match(css, /@media print \{\s*\.undecided-glow \{\s*animation: none !important;\s*box-shadow: none !important;/)
+  // 배경이 연한 노랑 ↔ 진한 노랑, 바깥 노란 빛이 퍼졌다 줄어든다
+  assert.match(css, /0%, 100% \{ background-color: #fef9c3; box-shadow: 0 0 0 0 [^}]+\}/)
+  assert.match(css, /50% \{ background-color: #fde047; box-shadow: 0 0 14px 5px [^}]+\}/)
+  assert.match(css, /prefers-reduced-motion: reduce\) \{\s*\.undecided-glow \{\s*animation: none;\s*box-shadow: 0 0 0 3px #ca8a04;/)
+  assert.match(css, /@media print \{\s*\.undecided-glow \{\s*animation: none !important;\s*box-shadow: none !important;\s*background-color: transparent !important;/)
   const vocab = readFileSync(new URL('../app/materials/vocabulary/page.tsx', import.meta.url), 'utf8')
   const bank = readFileSync(new URL('../app/create/word/BankMode.tsx', import.meta.url), 'utf8')
-  assert.equal((vocab.match(/undecided-glow/g) ?? []).length, 2) // 결정 안 된 단어 배지 + 초안 안내
+  assert.equal((vocab.match(/undecided-glow/g) ?? []).length, 3) // 결정 안 된 단어 배지 + 확인 필요 칸 + 초안 안내
   assert.match(vocab, /undecided > 0 \? 'undecided-glow/) // N = 0 이면 없음
+  assert.match(vocab, /s === 'pending' && counts\.pending > 0\s*\? `undecided-glow/) // 확인 필요 0 이면 없음
   assert.match(vocab, /undecided-glow[^"]*">\{grade\} 범위표: \{DRAFT_BAND_LABEL\}/)
   assert.equal((bank.match(/undecided-glow/g) ?? []).length, 1)
   assert.match(bank, /undecided-glow[^"]*">\{grade\} 레벨 범위는 \{DRAFT_BAND_LABEL\}/)

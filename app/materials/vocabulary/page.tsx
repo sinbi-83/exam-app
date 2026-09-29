@@ -511,7 +511,16 @@ export default function VocabularyPage() {
       {/* 필터 */}
       <div className="mb-2 flex flex-wrap items-center gap-2">
         {(['all', ...VOCABULARY_VIEW_STATES] as StatusFilter[]).map((s) => (
-          <button key={s} onClick={() => setStatus(s)} className={pill(status === s)}>
+          <button
+            key={s}
+            onClick={() => setStatus(s)}
+            className={
+              // '확인 필요 N' 칸은 N > 0 이면 은은한 표시. 반짝이는 노란 배경 위에서도 선택 여부가 보이도록 파란 테두리로 표시
+              s === 'pending' && counts.pending > 0
+                ? `undecided-glow rounded-full border px-3 py-1 text-sm text-yellow-900 ${status === s ? 'border-blue-600 font-semibold ring-2 ring-blue-600' : 'border-yellow-400'}`
+                : pill(status === s)
+            }
+          >
             {s === 'all' ? '전체' : VOCABULARY_VIEW_STATE_LABELS[s]} {counts[s]}
           </button>
         ))}
