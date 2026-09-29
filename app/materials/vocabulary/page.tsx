@@ -24,7 +24,6 @@ import {
   gradeRangePosition,
   VOCABULARY_BANDS_NOTE,
   VOCABULARY_GRADES,
-  type GradeRangePosition,
   type VocabularyGrade,
 } from '@/config/vocabularyLevels'
 import { generateWordTest, POS_LABELS_KO, toWordQuestionData } from '@/lib/wordTest'
@@ -47,9 +46,16 @@ import {
   type CalibrationZone,
   type ReviewReason,
 } from '@/lib/vocabularyCalibration'
+import {
+  countByGradePosition,
+  GRADE_RANGE_POSITIONS,
+  gradeFilterAfterGradeChange,
+  vocabularyFilterKey,
+  vocabularyFilterSummary,
+  type GradeRangeFilter,
+} from '@/lib/vocabularyListFilter'
 
 type StatusFilter = VocabularyViewState | 'all'
-type GradeRangeFilter = GradeRangePosition | 'all'
 type ReviewFilter = 'all' | 'unreviewed' | 'reviewed'
 type ZoneFilter = CalibrationZone | 'all' | 'custom'
 
@@ -181,18 +187,43 @@ export default function VocabularyPage() {
     return { done, total: entries.length, zones }
   }, [entries])
 
-  const filtered = useMemo(() => {
+  // 상태 탭 + 검색어 기준 목록 (학년 범위 아래/안/위 개수는 이것으로 센다)
+  const statusSearchMatched = useMemo(() => {
     const q = search.trim().toLowerCase()
-    const list = entries.filter((e) =>
+    return entries.filter((e) =>
       (status === 'all' || vocabularyViewState(e) === status) &&
+      (!q || e.expression.toLowerCase().includes(q) || e.meaning_ko.includes(q) || e.accepted_meanings.some((m) => m.includes(q))),
+    )
+  }, [entries, status, search])
+  const gradePositionCounts = useMemo(
+    () => countByGradePosition(statusSearchMatched, (e) => (gradeRange ? gradeRangePosition(e.base_difficulty, gradeRange) : null)),
+    [statusSearchMatched, gradeRange],
+  )
+
+  const filtered = useMemo(() => {
+    const list = statusSearchMatched.filter((e) =>
       matchesGrade(e) &&
       (review === 'all' || (review === 'reviewed') === isCalibrationReviewed(e)) &&
-      (!range || (e.base_difficulty !== null && e.base_difficulty >= range.min && e.base_difficulty <= range.max)) &&
-      (!q || e.expression.toLowerCase().includes(q) || e.meaning_ko.includes(q) || e.accepted_meanings.some((m) => m.includes(q))),
+      (!range || (e.base_difficulty !== null && e.base_difficulty >= range.min && e.base_difficulty <= range.max)),
     )
     // 난이도 필터를 쓰면 난이도 순으로 (양 끝 비교가 쉽게)
     return range ? [...list].sort((a, b) => (a.base_difficulty ?? 0) - (b.base_difficulty ?? 0)) : list
-  }, [entries, status, matchesGrade, review, range, search])
+  }, [statusSearchMatched, matchesGrade, review, range])
+
+  // 필터를 하나라도 바꾸면 체크해 둔 단어를 비운다 (안 보이는 단어가 선택된 채 일괄 사용되지 않게)
+  const filterKey = vocabularyFilterKey({ grade, status, gradeFilter, review, zone, customMin, customMax, search })
+  useEffect(() => { setChecked(new Set()) }, [filterKey])
+
+  const filterSummary = vocabularyFilterSummary({
+    grade,
+    hasGradeRange: gradeRange !== null,
+    gradeRangeLabel: gradeFilter === 'all' ? null : GRADE_RANGE_POSITION_LABELS[gradeFilter],
+    statusLabel: status === 'all' ? null : VOCABULARY_VIEW_STATE_LABELS[status],
+    reviewLabel: review === 'all' ? null : review === 'reviewed' ? '교사 검수 완료' : '교사 미확인',
+    zoneLabel: range ? `${range.min}~${range.max}` : null,
+    search,
+    count: filtered.length,
+  })
 
   const selected = entries.find((e) => e.id === selectedId) ?? null
   // 지금 보이는 목록 중 '확인 필요'(나중에 결정 포함) — 일괄 사용하기 대상
@@ -496,7 +527,12 @@ export default function VocabularyPage() {
         <span className="text-xs text-gray-500">학년</span>
         <select
           value={grade}
-          onChange={(e) => setGrade(e.target.value as VocabularyGrade)}
+          onChange={(e) => {
+            // 학년을 바꾸면 '학년 범위 안'으로 바꿔 목록이 바로 그 학년 단어로 바뀌게 한다
+            const g = e.target.value as VocabularyGrade
+            setGrade(g)
+            setGradeFilter(gradeFilterAfterGradeChange(gradeDifficultyRange(g) !== null))
+          }}
           className="rounded border border-gray-300 px-2 py-1 text-sm"
         >
           {VOCABULARY_GRADES.map((g) => <option key={g} value={g}>{g}</option>)}
@@ -504,9 +540,9 @@ export default function VocabularyPage() {
         {gradeRange ? (
           <>
             <button onClick={() => setGradeFilter('all')} className={pill(gradeFilter === 'all')}>전체</button>
-            {(['below', 'within', 'above'] as GradeRangePosition[]).map((p) => (
+            {GRADE_RANGE_POSITIONS.map((p) => (
               <button key={p} onClick={() => setGradeFilter(p)} className={pill(gradeFilter === p)}>
-                {GRADE_RANGE_POSITION_LABELS[p]}
+                {GRADE_RANGE_POSITION_LABELS[p]} {gradePositionCounts[p]}
               </button>
             ))}
             <span className="text-xs text-gray-400">({grade} 난이도 {gradeRange.min}~{gradeRange.max})</span>
@@ -589,6 +625,9 @@ export default function VocabularyPage() {
       {selectablePending.length === 0 && bulkMessage && (
         <p className={`mb-2 text-xs ${bulkMessage.ok ? 'text-green-700' : 'text-red-600'}`}>{bulkMessage.text}</p>
       )}
+
+      {/* 무엇으로 걸러진 목록인지 한 줄 요약 */}
+      {!loading && <p className="mb-1 text-xs font-medium text-gray-600">{filterSummary}</p>}
 
       <div className="grid gap-4 lg:grid-cols-[1fr_380px]">
         {/* 목록 */}
