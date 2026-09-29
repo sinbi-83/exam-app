@@ -303,14 +303,6 @@ export function buildExamBlocks({
         blocks.push({ key: `q-${eq.id}`, gapMm: 3.5, node: <QuestionBlock eq={eq} num={num} /> })
       })
     })
-    if (nonWord.length > 0) {
-      blocks.push({
-        key: 'questions-end',
-        gapMm: 0,
-        node: <p className="border-t border-gray-200 pt-2 text-center text-[10px] text-gray-400">보스턴S영어 | 담당교사: 서향미 선생님</p>,
-      })
-    }
-
     if (words.length > 0) {
       // 단어 구역: 새 쪽을 강제하지 않는다 — 앞 쪽 남은 자리에 제목 + 첫 단어 줄이 들어가면 이어서, 모자라면 그때만 새 쪽
       // (제목은 keepWithNext 로 첫 단어 줄과 붙어 다닌다). 여러 열, 배점은 구역 제목에 한 번만
@@ -338,6 +330,15 @@ export function buildExamBlocks({
             </div>
           ),
         })
+      })
+    }
+
+    // 본문 끝 문구: 시험지 맨 끝(마지막 구역 뒤)에 한 번만 — 지문 문항과 단어 구역 사이에 끼지 않게
+    if (questions.length > 0) {
+      blocks.push({
+        key: 'questions-end',
+        gapMm: 0,
+        node: <p className="border-t border-gray-200 pt-2 text-center text-[10px] text-gray-400">보스턴S영어 | 담당교사: 서향미 선생님</p>,
       })
     }
   }

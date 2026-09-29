@@ -144,3 +144,27 @@ export function resolvePassageSource(
   const best = [...row.levels].sort((a, b) => levelRank(a.difficulty, level) - levelRank(b.difficulty, level))[0]
   return { kind: 'external', id: best.passageId, levelLabel: best.label }
 }
+
+// ── 100점 만점 자동 배점 ──
+// n 문항에 total 점을 정수로 나누고, 남는 점수는 앞쪽 문항부터 1점씩 더한다 (39문항 → 3점 22개 + 2점 17개 = 100).
+// 문항이 total 보다 많으면 1점씩도 줄 수 없으므로 null.
+export const MIXED_TOTAL_POINTS = 100
+export function allocatePoints(n: number, total: number = MIXED_TOTAL_POINTS): number[] | null {
+  if (!Number.isInteger(n) || n < 1 || n > total) return null
+  const base = Math.floor(total / n)
+  const extra = total - base * n
+  return Array.from({ length: n }, (_, i) => base + (i < extra ? 1 : 0))
+}
+
+// 화면 안내: "3점 × 22문항 + 2점 × 17문항 = 100점"
+export function pointsSummary(points: readonly number[]): string {
+  if (points.length === 0) return ''
+  const groups: { p: number; n: number }[] = []
+  for (const p of points) {
+    const g = groups.find((x) => x.p === p)
+    if (g) g.n++
+    else groups.push({ p, n: 1 })
+  }
+  const sum = points.reduce((s, p) => s + p, 0)
+  return `${groups.sort((a, b) => b.p - a.p).map((g) => `${g.p}점 × ${g.n}문항`).join(' + ')} = ${sum}점`
+}

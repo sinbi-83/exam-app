@@ -81,6 +81,14 @@ test('단어 구역 이어 붙이기: 앞 쪽 남은 자리에 제목+첫 줄이
   assert.deepEqual(moved.pages, [[0], [1, 2]])
 })
 
+test('본문 끝 문구는 시험지 맨 끝(단어 구역 뒤)에 한 번만, 정답 구역보다 앞', () => {
+  const endAt = sheet.indexOf("key: 'questions-end'")
+  assert.equal(sheet.split("key: 'questions-end'").length - 1, 1)
+  assert.ok(endAt > sheet.indexOf('key: `wrow-${ri}`'), '단어 줄 뒤')
+  assert.ok(endAt > sheet.indexOf("key: 'words-title'"), '단어 구역 제목 뒤')
+  assert.ok(endAt < sheet.indexOf('if (includesAnswers(view)) {'), '정답 구역 앞 (문제지 끝)')
+})
+
 test('쪽 나누기: 덩어리는 자르지 않고, 넘치면 다음 쪽으로', () => {
   const r = paginate([{ height: 60 }, { height: 30 }, { height: 20 }], 100)
   assert.deepEqual(r.pages, [[0, 1], [2]])

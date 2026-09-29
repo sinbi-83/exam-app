@@ -29,7 +29,10 @@ import {
   expectedShortages,
   MIXED_CATEGORIES,
   MIXED_CATEGORY_LABELS,
+  allocatePoints,
+  MIXED_TOTAL_POINTS,
   pickPassageReplacement,
+  pointsSummary,
   resolvePassageSource,
   selectPassageItems,
   type CategoryCounts,
@@ -129,6 +132,7 @@ export default function MixedTestPage() {
   const [title, setTitle] = useState('')
   const [examDate, setExamDate] = useState('')
   const [points, setPoints] = useState('5')
+  const [pointMode, setPointMode] = useState<'hundred' | 'fixed'>('hundred') // 기본: 100점으로 맞추기
   const [saving, setSaving] = useState(false)
 
   function change(patch: Extract<MixedDraftAction, { type: 'setConditions' }>['patch']) {
@@ -216,8 +220,17 @@ export default function MixedTestPage() {
 
   async function save() {
     if (!mixedDraftIsCurrent(draft)) return setError('조건이 바뀌었습니다. 다시 뽑아 주세요.')
-    const p = Number(points)
-    if (!Number.isInteger(p) || p < 1 || p > 100) return setError('문항당 배점은 1~100 정수로 입력하세요.')
+    // 배점: 기본은 100점으로 맞추기 (앞쪽 문항부터 1점씩 더 줌), 또는 문항당 같은 배점
+    let pointList: number[]
+    if (pointMode === 'hundred') {
+      const auto = allocatePoints(draft.items.length)
+      if (!auto) return setError(`문항이 ${MIXED_TOTAL_POINTS}개보다 많아 100점으로 맞출 수 없습니다. '문항당 같은 배점'을 고르세요.`)
+      pointList = auto
+    } else {
+      const p = Number(points)
+      if (!Number.isInteger(p) || p < 1 || p > 100) return setError('문항당 배점은 1~100 정수로 입력하세요.')
+      pointList = draft.items.map(() => p)
+    }
     const t = title.trim() || `${row?.title ?? ''} 혼합 시험`
     setSaving(true)
     setError('')
@@ -226,7 +239,7 @@ export default function MixedTestPage() {
       const res = await fetch('/api/exams/mixed', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title: t, exam_date: examDate || null, points_per_question: p, questions }),
+        body: JSON.stringify({ title: t, exam_date: examDate || null, points: pointList, questions }),
       })
       const json = await res.json()
       if (!res.ok) throw new Error(json.error ?? '저장 실패')
@@ -432,10 +445,33 @@ export default function MixedTestPage() {
               시험일
               <input type="date" value={examDate} onChange={(e) => setExamDate(e.target.value)} className="mt-1 w-full rounded border border-gray-300 px-3 py-2 text-sm" />
             </label>
-            <label className="text-xs text-gray-600">
-              문항당 배점
-              <input value={points} onChange={(e) => setPoints(e.target.value)} inputMode="numeric" className="mt-1 w-full rounded border border-gray-300 px-3 py-2 text-sm" />
-            </label>
+            <div className="text-xs text-gray-600 sm:col-span-2">
+              배점
+              <div className="mt-1 space-y-1">
+                <label className="flex items-center gap-1.5">
+                  <input type="radio" name="pointMode" checked={pointMode === 'hundred'} onChange={() => setPointMode('hundred')} />
+                  100점으로 맞추기 (기본)
+                  <span className="text-gray-500">
+                    {allocatePoints(draft.items.length)
+                      ? `— ${pointsSummary(allocatePoints(draft.items.length)!)} (앞쪽 문항부터 1점씩 더)`
+                      : `— 문항이 ${MIXED_TOTAL_POINTS}개보다 많아 쓸 수 없음`}
+                  </span>
+                </label>
+                <label className="flex items-center gap-1.5">
+                  <input type="radio" name="pointMode" checked={pointMode === 'fixed'} onChange={() => setPointMode('fixed')} />
+                  문항당 같은 배점
+                  <input
+                    value={points}
+                    onChange={(e) => setPoints(e.target.value)}
+                    onFocus={() => setPointMode('fixed')}
+                    inputMode="numeric"
+                    className="w-16 rounded border border-gray-300 px-2 py-1 text-sm"
+                  />
+                  점
+                </label>
+                <p className="text-gray-400">저장한 뒤 시험 화면에서 문항별 배점을 따로 고칠 수 있습니다.</p>
+              </div>
+            </div>
           </div>
           <button onClick={save} disabled={saving || !current} className="mt-3 rounded bg-green-600 px-5 py-2 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-40">
             {saving ? '저장 중…' : `시험 저장 (${draft.items.length}문항) → 인쇄 화면`}

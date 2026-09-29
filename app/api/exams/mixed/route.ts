@@ -4,7 +4,7 @@ import { chunk } from '@/lib/supabasePaging'
 import { inferExamType } from '@/lib/examType'
 
 // POST: 혼합 시험(7단계) 저장 → 기존 exams + exam_questions (새 저장소·새 칸을 만들지 않는다)
-// body: { title, exam_date?, points_per_question, questions: question_data[] }
+// body: { title, exam_date?, questions: question_data[], points?: number[] (문항별 배점, 100점 맞추기) | points_per_question }
 // - exam_type 은 새 값을 만들지 않고 문항으로 추론한 값과 같게 저장한다 (지문 문항이 있으면 'problem', 단어만이면 'word')
 // - 단어 문항은 단어은행의 '사용 중'(approved, 삭제 안 됨) 단어만 받는다 — DB 로 한 번 더 확인
 // - 문항은 화면에서 만든 snapshot 그대로. 문항 저장이 실패하면 빈 시험 카드가 남지 않게 되돌린다
@@ -17,14 +17,17 @@ export async function POST(request: NextRequest) {
 
   const body = await request.json()
   const title = String(body.title ?? '').trim()
-  const points = Number(body.points_per_question)
   const questions: QD[] = Array.isArray(body.questions) ? body.questions : []
 
   if (!title) return NextResponse.json({ error: '시험 제목을 입력하세요.' }, { status: 400 })
-  if (!Number.isInteger(points) || points < 1 || points > 100) {
-    return NextResponse.json({ error: '문항당 배점은 1~100 정수여야 합니다.' }, { status: 400 })
-  }
   if (questions.length === 0) return NextResponse.json({ error: '저장할 문항이 없습니다.' }, { status: 400 })
+  // 문항별 배점: points 배열(100점 맞추기 등)이 있으면 그것, 없으면 문항당 같은 배점(points_per_question)
+  const perQuestion: number[] = Array.isArray(body.points)
+    ? body.points.map((p: unknown) => Number(p))
+    : questions.map(() => Number(body.points_per_question))
+  if (perQuestion.length !== questions.length || perQuestion.some((p) => !Number.isInteger(p) || p < 1 || p > 100)) {
+    return NextResponse.json({ error: '문항별 배점은 문항 수만큼, 1~100 정수여야 합니다.' }, { status: 400 })
+  }
   if (questions.length > 200) return NextResponse.json({ error: '문항은 200개까지 저장할 수 있습니다.' }, { status: 400 })
 
   const bad = questions.find((q) => {
@@ -68,14 +71,14 @@ export async function POST(request: NextRequest) {
       title,
       exam_date: body.exam_date || null,
       total_questions: questions.length,
-      max_score: questions.length * points,
+      max_score: perQuestion.reduce((s, p) => s + p, 0),
       exam_type: examType,
     })
     .select('id')
     .single()
   if (examError || !exam) return NextResponse.json({ error: examError?.message ?? '시험 저장 실패' }, { status: 500 })
 
-  const rows = questions.map((q, i) => ({ exam_id: exam.id, user_id: user.id, question_data: q, sort_order: i, points }))
+  const rows = questions.map((q, i) => ({ exam_id: exam.id, user_id: user.id, question_data: q, sort_order: i, points: perQuestion[i] }))
   const { error: qError } = await supabase.from('exam_questions').insert(rows)
   if (qError) {
     await supabase.from('exams').delete().eq('id', exam.id).eq('user_id', user.id)

@@ -6,6 +6,8 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import {
   aiCategory,
+  allocatePoints,
+  pointsSummary,
   availability,
   expectedShortages,
   externalCategory,
@@ -208,6 +210,32 @@ test('혼합 시험 인쇄: 일반 인쇄(A4 쪽 나누기)로 가고, 학생용
   assert.match(page, /router\.push\(`\/tests\/\$\{id\}\/print\?exam_id=\$\{id\}&title=[^`]*&date=[^`]*`\)/)
   assert.doesNotMatch(page, /view=teacher|view=answers/)
 })
+test('100점 자동 배점: 정수로 나누고 남는 점수는 앞쪽 문항부터 1점씩, 합계는 정확히 100', () => {
+  const p39 = allocatePoints(39)!
+  assert.equal(p39.length, 39)
+  assert.equal(p39.reduce((s, x) => s + x, 0), 100)
+  assert.deepEqual([p39.filter((x) => x === 3).length, p39.filter((x) => x === 2).length], [22, 17])
+  assert.ok(p39.every((x, i) => i === 0 || x <= p39[i - 1]), '앞쪽이 더 크거나 같다')
+  assert.equal(pointsSummary(p39), '3점 × 22문항 + 2점 × 17문항 = 100점')
+  for (const n of [1, 3, 7, 20, 25, 33, 50, 99, 100]) assert.equal(allocatePoints(n)!.reduce((s, x) => s + x, 0), 100, String(n))
+  assert.deepEqual(allocatePoints(20), Array(20).fill(5))
+  assert.equal(allocatePoints(101), null) // 100문항 넘으면 1점씩도 못 줌
+  assert.equal(allocatePoints(0), null)
+})
+
+test('100점 맞추기가 기본, 저장 API 는 문항별 배점을 받고 총점 = 합계 (문항당 같은 배점도 그대로 가능)', () => {
+  const page = readFileSync(new URL('../app/create/mixed/page.tsx', import.meta.url), 'utf8')
+  assert.match(page, /useState<'hundred' \| 'fixed'>\('hundred'\)/)
+  assert.match(page, /const auto = allocatePoints\(draft\.items\.length\)/)
+  assert.match(page, /points: pointList, questions/)
+  assert.match(page, /100점으로 맞추기 \(기본\)/)
+  const api = readFileSync(new URL('../app/api/exams/mixed/route.ts', import.meta.url), 'utf8')
+  assert.match(api, /Array\.isArray\(body\.points\)/)
+  assert.match(api, /max_score: perQuestion\.reduce\(\(s, p\) => s \+ p, 0\)/)
+  assert.match(api, /points: perQuestion\[i\]/)
+  assert.match(api, /questions\.map\(\(\) => Number\(body\.points_per_question\)\)/) // 예전 방식도 그대로
+})
+
 test('옛 시험 영향 없음: exam_type 은 새 값 없이 추론값과 같게, 문제/단어 시험 판단 그대로', () => {
   assert.equal(inferExamType([{ question_data: { type: 'mc' } }, { question_data: { type: 'word' } }]), 'problem')
   assert.equal(inferExamType([{ question_data: { type: 'word' } }]), 'word')
