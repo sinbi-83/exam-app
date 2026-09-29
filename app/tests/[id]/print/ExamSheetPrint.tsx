@@ -298,12 +298,12 @@ export function buildExamBlocks({
     }
 
     if (words.length > 0) {
-      // 단어 구역: 새 쪽에서 시작, 여러 열. 배점은 구역 제목에 한 번만
+      // 단어 구역: 새 쪽을 강제하지 않는다 — 앞 쪽 남은 자리에 제목 + 첫 단어 줄이 들어가면 이어서, 모자라면 그때만 새 쪽
+      // (제목은 keepWithNext 로 첫 단어 줄과 붙어 다닌다). 여러 열, 배점은 구역 제목에 한 번만
       blocks.push({
         key: 'words-title',
         gapMm: 3,
         keepWithNext: true,
-        breakBefore: nonWord.length > 0,
         node: (
           <div className="section-title flex items-end justify-between border-b-2 border-gray-800 pb-1.5">
             <p className="text-sm font-bold text-gray-900">

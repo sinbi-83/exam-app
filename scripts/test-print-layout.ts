@@ -61,7 +61,24 @@ test('단어 구역은 지문 문항 뒤 (번호도 이어서), 단어가 없는
   assert.match(sheet, /const nonWord = questions\.filter\(\(q\) => q\.question_data\.type !== 'word'\)/)
   assert.match(sheet, /const start = nonWord\.length/)
   assert.ok(sheet.indexOf("key: 'words-title'") > sheet.indexOf('key: `q-${eq.id}`'))
-  assert.match(sheet, /key: 'words-title',[\s\S]{0,80}keepWithNext: true,\s*breakBefore: nonWord\.length > 0/)
+  // 단어 구역은 새 쪽을 강제하지 않는다 (제목은 첫 단어 줄과 붙어 다님), 교사용 정답은 새 쪽
+  const wordsTitle = sheet.slice(sheet.indexOf("key: 'words-title'"), sheet.indexOf("key: 'words-title'") + 120)
+  assert.match(wordsTitle, /keepWithNext: true/)
+  assert.doesNotMatch(wordsTitle, /breakBefore/)
+  const answersTitle = sheet.slice(sheet.indexOf("key: 'answers-title'"), sheet.indexOf("key: 'answers-title'") + 150)
+  assert.match(answersTitle, /breakBefore: includesQuestions\(view\)/)
+})
+
+test('단어 구역 이어 붙이기: 앞 쪽 남은 자리에 제목+첫 줄이 들어가면 같은 쪽, 모자라면 그때만 새 쪽', () => {
+  // [문항들 60] [단어 제목 8 keep] [단어 줄 15] [단어 줄 15] — 쪽 100
+  const fits = paginate([{ height: 60 }, { height: 8, keepWithNext: true }, { height: 15 }, { height: 15 }], 100)
+  assert.deepEqual(fits.pages, [[0, 1, 2, 3]])
+  // 제목+첫 줄(23)은 들어가고 둘째 줄부터 다음 쪽
+  const partial = paginate([{ height: 70 }, { height: 8, keepWithNext: true }, { height: 15 }, { height: 15 }], 100)
+  assert.deepEqual(partial.pages, [[0, 1, 2], [3]])
+  // 남은 자리(15)에 제목+첫 줄(23)이 안 들어가면 제목도 새 쪽 (제목만 쪽 끝에 남지 않음)
+  const moved = paginate([{ height: 85 }, { height: 8, keepWithNext: true }, { height: 15 }], 100)
+  assert.deepEqual(moved.pages, [[0], [1, 2]])
 })
 
 test('쪽 나누기: 덩어리는 자르지 않고, 넘치면 다음 쪽으로', () => {
