@@ -31,6 +31,8 @@ export interface ExamQuestionData {
   source_question_set_id?: string | null
   // 추가 당시 배열 위치. 기록용으로만 남긴다 — 문항 식별에는 qid 없는 legacy 자료에서만 fallback 으로 쓴다.
   source_index?: number
+  // qid 없는 예전 문항을 혼합 시험(7단계)에 담을 때만: 위치 기반 임시 키 (lib/mixedTest.ts externalItemKey). qid 가 아니다
+  source_legacy_key?: string
 }
 
 type ExternalSourceFields = Pick<

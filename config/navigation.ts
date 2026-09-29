@@ -38,6 +38,7 @@ export const NAV_GROUPS: NavGroup[] = [
     items: [
       { label: '문제 시험', href: '/create/problem', icon: '📋' },
       { label: '단어 시험', href: '/create/word', icon: '🔤' },
+      { label: '혼합 시험', href: '/create/mixed', icon: '🧪' },
     ],
   },
   {

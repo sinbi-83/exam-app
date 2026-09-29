@@ -84,6 +84,7 @@ export interface UnifiedLevel {
   difficulty: UnifiedDifficulty
   label: string // 학교형 / 일반학원형 …
   href: string // 그 단계 지문의 원래 화면
+  passageId: string // 그 단계 지문 (passages.id)
 }
 
 export interface UnifiedPassageRow {
@@ -190,7 +191,7 @@ export function externalRows(passages: readonly ExternalPassageLike[]): UnifiedP
     const first = rows[0]
     const levels = rows
       .filter((r) => r.difficulty !== null)
-      .map((r) => ({ difficulty: r.difficulty as UnifiedDifficulty, label: r.difficultyRaw ?? '', href: r.href }))
+      .map((r) => ({ difficulty: r.difficulty as UnifiedDifficulty, label: r.difficultyRaw ?? '', href: r.href, passageId: r.id }))
     const difficulties = [...new Set(levels.map((l) => l.difficulty))]
     return {
       kind: 'external',

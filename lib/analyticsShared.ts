@@ -4,6 +4,7 @@ export const TYPE_LABELS: Record<string, string> = {
   reading: '독해',
   essay: '서술형',
   summary: '지문요약',
+  word: '단어',
 }
 
 export function getTypeColor(pct: number) {

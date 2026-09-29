@@ -46,6 +46,8 @@ interface QuestionData {
   // 외부지문저장소 'match' 유형 전용: 좌우 짝짓기
   matchWords?: string[]
   matchMeanings?: string[]
+  // 단어 문항 (혼합 시험): 영→한 / 한→영
+  direction?: 'en_ko' | 'ko_en'
 }
 
 interface ExamQuestion {
@@ -336,6 +338,12 @@ function PrintContent() {
                           ) : (
                             <p className="text-sm leading-relaxed text-gray-900">
                               {renderQuestionText(q.question)}
+                              {/* 혼합 시험(7단계)의 단어 문항: 제시어 + 무엇을 쓸지 안내 (정답은 쓰지 않는다) */}
+                              {q.type === 'word' && (
+                                <span className="ml-2 text-xs text-gray-500">
+                                  {q.direction === 'ko_en' ? '(영어로 쓰시오)' : '(뜻을 쓰시오)'}
+                                </span>
+                              )}
                             </p>
                           )}
                         </div>
