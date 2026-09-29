@@ -57,10 +57,12 @@ test('구간: 하한 기준 1~10 / 중간 / 상한 기준 80+', () => {
   assert.equal(calibrationZone(80), 'ceiling')
   assert.equal(calibrationZone(null), null)
 })
-test('레벨 표시: 겹치는 구간 모두, 80+ 는 초5·중1·중3 범위 밖', () => {
+test('레벨 표시: 겹치는 구간 모두, 80+ 는 초5·중1·중3 범위 밖 (고1~고3 초안 범위에는 들어감)', () => {
+  const approved = (d: number) => bandsContaining(d, 'en_ko').filter((b) => ['초5', '중1', '중3'].includes(b.grade))
   assert.deepEqual(bandsContaining(42, 'en_ko').filter((b) => b.grade === '중1').map((b) => b.level), ['academy', 'advanced', 'prestudy'])
-  assert.deepEqual(bandsContaining(20, 'en_ko').map((b) => `${b.grade}:${b.level}`), ['초5:school', '초5:academy', '초5:advanced', '중1:school'])
-  assert.equal(bandsContaining(85, 'en_ko').length, 0)
+  assert.deepEqual(approved(20).map((b) => `${b.grade}:${b.level}`), ['초5:school', '초5:academy', '초5:advanced', '중1:school'])
+  assert.equal(approved(85).length, 0)
+  assert.deepEqual([...new Set(bandsContaining(85, 'en_ko').map((b) => b.grade))], ['고1', '고2', '고3'])
   const cuts = VOCABULARY_DIFFICULTY_BANDS.filter((b) => b.grade === '중1' && b.direction === 'en_ko').map((b) => [b.level, b.min, b.max])
   assert.deepEqual(cuts, [['school', 15, 35], ['academy', 22, 42], ['advanced', 25, 50], ['prestudy', 38, 58]])
 })

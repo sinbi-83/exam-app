@@ -1,0 +1,175 @@
+# 4단계 3차 그 외(고등 선택과목) 어휘 제작 원본 — 네 번째 묶음 (haunt ~ novel)
+haunt|v|귀신이 나오다|계속 떠오르다;괴롭히다|76|n||
+hazard|n|위험|위험 요소|74|n||
+headquarters|n|본부|본사|68|n||
+heal|v|치유하다|낫게 하다;낫다|60|n||
+heel|n|발뒤꿈치|굽;뒤꿈치|58|n||
+heir|n|상속인|후계자|82|n||
+hence|adv|그러므로|따라서;이런 이유로|80|n||
+heritage|n|유산|전통;문화유산|72|n||
+hierarchy|n|계층|위계;계급 제도|86|n||
+highlight|v|강조하다|두드러지게 하다|64|n||
+holy|adj|신성한|성스러운|62|n||
+hook|n|갈고리|고리;낚싯바늘|58|n||
+horizon|n|수평선|지평선;시야|62|n||
+horror|n|공포|무서움;참사|60|n||
+host|n|주인|주최자;진행자|56|n||
+hostile|adj|적대적인|적의가 있는|78|n||
+household|n|가정|가구;식구|66|n||
+hut|n|오두막|오두막집|55|n||
+hypothesis|n|가설||84|y||
+ideal|adj|이상적인|가장 알맞은|62|n||
+identical|adj|똑같은|동일한|72|n||
+ideology|n|이념|사상;이데올로기|86|n||
+-illude|표제어 자체는 거의 쓰지 않음 (파생어 illusion 착각 으로 가르침)
+imitate|v|모방하다|흉내 내다|68|n||
+immense|adj|엄청난|막대한;거대한|76|n||
+immigrate|v|이민 오다|이주해 오다|72|n||
+immune|adj|면역의|면역성이 있는;영향을 받지 않는|80|n||
+impact|n|영향|충격;효과|66|n||
+imperial|adj|제국의|황제의|80|n||
+implement|v|시행하다|실행하다;이행하다|84|n||
+imply|v|암시하다|의미하다;함축하다|78|n||
+import|n|수입|수입품|58|n||파생어 importance(중요성), important(중요한)
+impose|v|부과하다|강요하다;지우다|80|n||
+incentive|n|장려책|유인;동기|82|n||
+incident|n|사건|일;사고|70|n||
+incline|v|마음이 기울게 하다|기울다;경사지게 하다|84|n||be inclined to(~하는 경향이 있다)
+incorporate|v|포함하다|통합하다;법인으로 만들다|86|n||
+index|n|지수|색인;지표|76|n||
+induce|v|유도하다|설득하다;유발하다|86|n||
+infant|n|유아|아기;젖먹이|64|n||
+infect|v|감염시키다|오염시키다|70|n||
+infer|v|추론하다|추측하다|82|n||파생어 inference(추론)
+inflate|v|부풀리다|팽창시키다;물가를 올리다|80|n||
+ingredient|n|재료|성분;요소|66|n||
+inhabit|v|거주하다|살다;서식하다|78|n||
+inhibit|v|억제하다|방해하다;못 하게 하다|86|n||
+initial|adj|처음의|초기의|72|n||
+inject|v|주사하다|주입하다|76|n||
+inn|n|여관|숙소|58|n||
+innovate|v|혁신하다||80|y||
+input|n|입력|투입;조언|66|n||
+inquire|v|묻다|문의하다;조사하다|76|n||enquire 로도 씀
+insect|n|곤충|벌레|42|n||
+insert|v|삽입하다|넣다;끼우다|68|n||
+insight|n|통찰력|통찰;식견|76|n||
+inspire|v|영감을 주다|고무하다;격려하다|66|n||
+install|v|설치하다|장치하다|62|n||
+instinct|n|본능|직감|72|n||
+institute|n|연구소|협회;기관|74|n||파생어 institution(기관)
+insult|v|모욕하다|창피를 주다|70|n||
+integrate|v|통합하다|결합하다|82|n||
+intellect|n|지성|지적 능력;지식인|82|n||파생어 intellectual(지적인)
+intelligent|adj|지적인|총명한;똑똑한|60|n||
+interfere|v|간섭하다|방해하다|74|n||
+interior|n|내부|실내;인테리어|70|n||
+intermediate|adj|중간의|중급의|76|n||
+interpret|v|해석하다|통역하다;이해하다|76|n||
+interval|n|간격|휴식 시간;사이|76|n||
+intervene|v|개입하다|중재하다;끼어들다|84|n||
+intimate|adj|친밀한|사적인;깊은|80|n||
+intrigue|v|흥미를 불러일으키다|호기심을 자아내다|84|n||
+invade|v|침략하다|침입하다|70|n||
+irony|n|아이러니|반어;역설|80|n||
+irritate|v|짜증 나게 하다|자극하다;화나게 하다|74|n||
+isolate|v|고립시키다|격리하다;분리하다|74|n||
+jail|n|감옥|교도소|60|n||
+jar|n|병|단지;항아리|55|n|잼 병 같은 유리 용기|
+jog|v|조깅하다|천천히 달리다|45|n||
+joint|n|관절|이음매|68|n||
+journal|n|잡지|학술지;일기|66|n||
+jury|n|배심원단|심사원단|80|n||
+keen|adj|열망하는|예리한;열정적인|76|n||
+kit|n|도구 세트|장비 한 벌;용품 세트|56|n||
+knight|n|기사|나이트|58|n|중세의 기사|
+knot|n|매듭||62|y||
+ladder|n|사다리||48|y||
+landscape|n|풍경|경치;지형|64|n||
+lap|n|무릎|트랙의 한 바퀴|64|n|앉았을 때 허벅지 윗부분|
+latter|adj|후자의|마지막의;후반의|76|n||
+launch|v|출시하다|시작하다;발사하다|68|n||
+laundry|n|세탁물|빨래;세탁소|58|n||
+leak|v|새다|누설하다|68|n||
+lease|n|임대차 계약|임대|82|n||
+leather|n|가죽||56|y||
+lecture|n|강의|강연;잔소리|62|n||
+legend|n|전설|전설적인 인물|58|n||
+legislate|v|법률을 제정하다|입법하다|90|n||
+legitimate|adj|합법적인|정당한;타당한|86|n||
+leisure|n|여가|레저;여가 시간|62|n||
+liberal|adj|자유주의의|진보적인;관대한|80|n||
+liberty|n|자유|해방|72|n||
+likewise|adv|마찬가지로|똑같이|76|n||
+linguistic|adj|언어의|언어학의|84|n||
+liquid|n|액체||62|y||
+literature|n|문학|문헌|64|n||
+logic|n|논리|논리학;타당성|68|n||
+lone|adj|혼자의|외로운;단독의|66|n||
+loyal|adj|충성스러운|충실한|66|n||
+lump|n|덩어리|혹;응어리|70|n||
+luxury|n|사치|사치품;호화로움|66|n||
+magnet|n|자석||55|y||
+magnificent|adj|웅장한|훌륭한;장엄한|70|n||
+manifest|v|나타내다|드러내다;표명하다|88|n||
+manipulate|v|조종하다|조작하다;다루다|84|n||
+margin|n|여백|차이;이윤|76|n||
+marine|adj|바다의|해양의;해군의|70|n||
+mature|adj|성숙한|다 자란;숙성한|68|n||
+mayor|n|시장|시장님|60|n|도시의 시장(市長)|
+meanwhile|adv|그동안에|한편;그 사이에|68|n||
+mechanic|n|정비공|수리공|62|n||
+mechanism|n|기계 장치|메커니즘;구조|80|n||
+mediate|v|중재하다|조정하다|86|n||
+medieval|adj|중세의||78|y||
+medium|n|매체|수단;중간|72|n||복수형 media(대중 매체)
+merchant|n|상인|무역상|68|n||
+mere|adj|단순한|~에 불과한;단지 ~의|76|n||
+merge|v|합병하다|합치다;융합하다|80|n||
+merit|n|장점|가치;우수함|74|n||
+metropolitan|adj|대도시의|수도의|82|n||
+microphone|n|마이크|마이크로폰|45|n||
+migrate|v|이주하다|이동하다|74|n||파생어 migrant(이주자)
+mild|adj|온화한|순한;가벼운|62|n||
+million|num|100만|백만|40|n||
+mine|n|광산|지뢰|62|n||파생어 miner(광부). 대명사 mine(나의 것)과 다른 말
+mineral|n|광물|미네랄;무기물|66|n||
+minimal|adj|최소의|아주 적은|78|n||
+minimum|n|최소|최저;최소한|62|n||
+ministry|n|부|부처;성직|80|n|정부의 부처|
+miracle|n|기적||58|y||
+missile|n|미사일|유도탄|62|n||
+mobile|adj|이동하는|휴대용의;움직이기 쉬운|62|n||
+mock|v|조롱하다|놀리다;흉내 내다|76|n||
+mode|n|방식|양식;모드|66|n||
+modify|v|수정하다|변경하다;바꾸다|76|n||
+moderate|adj|적당한|보통의;온건한|76|n||
+modest|adj|겸손한|적당한;수수한|70|n||
+moist|adj|촉촉한|축축한|68|n||파생어 moisture(습기)
+molecule|n|분자||80|y||
+monster|n|괴물||40|y||
+monument|n|기념물|기념비;유적|66|n||
+mortal|adj|죽을 운명의|치명적인;인간의|82|n||
+motive|n|동기|이유;목적|74|n||
+multiple|adj|다수의|여러;복합적인|72|n||
+murder|n|살인||66|y||
+mutual|adj|상호의|서로의;공통의|78|n||
+myth|n|신화|근거 없는 믿음;통념|66|n||
+naive|adj|순진한|천진난만한;고지식한|74|n||
+naked|adj|벌거벗은|알몸의;맨|68|n||
+narrate|v|이야기하다|서술하다;내레이션을 하다|78|n||
+nasty|adj|끔찍한|불쾌한;심술궂은|68|n||
+needle|n|바늘|주삿바늘|56|n||
+negate|v|무효로 하다|부정하다|88|n||파생어 negative(부정적인)
+neglect|v|방치하다|소홀히 하다;무시하다|74|n||
+negotiate|v|협상하다|교섭하다|76|n||
+nephew|n|조카|남자 조카|62|n||
+network|n|네트워크|망;관계망|56|n||
+neutral|adj|중립의|중립적인;중성의|76|n||
+nevertheless|adv|그럼에도 불구하고|그렇지만|78|n||
+nightmare|n|악몽||60|y||
+noble|adj|고귀한|귀족의;숭고한|70|n||
+nominate|v|지명하다|추천하다;임명하다|80|n||
+nonetheless|adv|그렇기는 하지만|그럼에도 불구하고|82|n||
+norm|n|규범|표준;기준|82|n||파생어 normal(보통의)
+novel|n|소설|장편 소설|55|n||

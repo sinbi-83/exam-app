@@ -1,0 +1,129 @@
+# 4단계 3차 그 외(고등 선택과목) 어휘 제작 원본 — 두 번째 묶음 (confront ~ dwell)
+confront|v|직면하다|맞서다;대면하다|76|n||
+congress|n|의회|국회;회의|72|n||
+conscience|n|양심||76|y||
+consent|n|동의|허락;승낙|76|n||
+conserve|v|보존하다|아끼다;절약하다|74|n||
+consist|v|구성되다|이루어져 있다|66|n||consist of(~로 구성되다), 파생어 consistent(일관된)
+constitute|v|구성하다|이루다;~이 되다|84|n||파생어 constitution(헌법)
+construct|v|건설하다|세우다;구성하다|66|n||파생어 construction(건설)
+consult|v|상담하다|상의하다;참고하다|68|n||
+contemporary|adj|현대의|동시대의;당대의|80|n||
+contend|v|주장하다|다투다;겨루다|86|n||
+continent|n|대륙||58|y||
+contradict|v|모순되다|반박하다;부정하다|82|n||
+contrary|adj|반대의|정반대의;상반된|72|n||
+contrast|n|대조|차이;대비|70|n||
+controversy|n|논란|논쟁;논의|80|n||
+convene|v|소집하다|모이다;회합하다|90|n||파생어 convenient(편리한), convention(협약·대회)
+convert|v|전환하다|바꾸다;개종하다|74|n||
+convey|v|전달하다|나르다;운반하다|74|n||
+convict|v|유죄를 선고하다||86|y||
+cooperate|v|협력하다|협조하다|62|n||
+coordinate|v|조정하다|조화시키다;협력하다|82|n||
+copyright|n|저작권||66|y||
+cord|n|끈|줄;전선|60|n||
+core|n|핵심|중심;속|68|n||
+corn|n|옥수수||42|y||
+corporate|adj|기업의|법인의;회사의|78|n||파생어 corporation(기업)
+correspond|v|일치하다|해당하다;서신을 주고받다|80|n||
+corridor|n|복도|통로|64|n||
+corrupt|adj|부패한|타락한|76|n||
+costume|n|의상|복장;분장|55|n||
+counsel|v|상담하다|조언하다;충고하다|76|n||
+counterpart|n|상대|대응하는 것;상대방|86|n||
+coupon|n|쿠폰|할인권|45|n||
+courage|n|용기||52|n||파생어 discourage(낙담시키다), encourage(격려하다)
+craft|n|공예|기술;수공예|62|n||
+craze|n|대유행|열풍|78|n||파생어 crazy(미친)
+credible|adj|믿을 수 있는|신뢰할 수 있는|82|n||파생어 incredible(믿을 수 없는)
+creep|v|살금살금 걷다|기다;몰래 다가가다|70|n||
+crew|n|승무원|선원;팀|60|n||
+criterion|n|기준|표준;척도|86|n||복수형 criteria
+critic|n|비평가|평론가|66|n||파생어 criticize(비판하다), criticism(비판)
+crop|n|농작물|작물;수확량|62|n||
+crucial|adj|중대한|결정적인;매우 중요한|76|n||
+cruise|n|유람선 여행|크루즈|60|n||
+crush|v|으깨다|눌러 부수다;짓밟다|66|n||
+crystal|n|수정|결정;크리스털|58|n||
+cultivate|v|경작하다|재배하다;기르다|80|n||
+currency|n|통화|화폐|76|n||
+curriculum|n|교육과정|교과 과정|70|y||
+curry|n|카레||40|y||
+curse|n|저주|욕설|70|n||
+curve|n|곡선|커브;굽이|56|n||
+custody|n|양육권|보호;구금|86|n||
+custom|n|관습|풍습;관례|60|n||
+cynical|adj|냉소적인||86|y||
+dairy|n|유제품|낙농업|66|n||
+damp|adj|축축한|습한|68|n||
+dash|v|돌진하다|서둘러 가다;내던지다|62|n||
+database|n|데이터베이스||58|y||
+-datum|표제어 자체는 거의 쓰지 않음 (복수형 data 자료 로 가르침)
+decade|n|10년|십 년|58|y||
+decay|v|썩다|부패하다;쇠퇴하다|72|n||
+decent|adj|괜찮은|품위 있는;적절한|74|n||
+declare|v|선언하다|공표하다;신고하다|68|n||
+decline|v|감소하다|거절하다;쇠퇴하다|70|n||
+dedicate|v|바치다|헌신하다;전념하다|74|n||
+defeat|v|패배시키다|물리치다;이기다|60|n||
+defend|v|방어하다|지키다;변호하다|60|n||파생어 defendant(피고)
+deficiency|n|결핍|부족;결함|86|n||
+deficit|n|적자|부족액|86|y||
+delegate|n|대표|대리인;사절|82|n||
+delete|v|삭제하다|지우다|55|n||
+deliberate|adj|고의의|의도적인;신중한|84|n||
+delicate|adj|섬세한|연약한;미묘한|70|n||
+democracy|n|민주주의||66|y||
+democrat|n|민주주의자|민주당원|74|n||
+demon|n|악마|악령;귀신|68|n||
+dense|adj|빽빽한|밀집한;짙은|74|n||
+depart|v|출발하다|떠나다|66|n||파생어 department(부서), departure(출발)
+depict|v|묘사하다|그리다|80|n||
+deposit|n|예금|보증금;침전물|72|n||
+deprive|v|빼앗다|박탈하다|82|n||
+derive|v|유래하다|끌어내다;얻다|82|n||
+descend|v|내려가다|하강하다|72|n||
+designate|v|지정하다|지명하다|84|n||
+despair|n|절망|자포자기|72|y||
+destine|v|운명 짓다|예정해 두다|86|n||주로 be destined to(~할 운명이다), 파생어 destination(목적지)
+destiny|n|운명|숙명|66|n||
+-destruct|표제어 자체는 거의 쓰지 않음 (파생어 destruction 파괴 로 가르침)
+detach|v|떼어 내다|분리하다|78|n||
+device|n|장치|기기;고안|60|n||
+devil|n|악마|마귀|60|n||
+devise|v|고안하다|궁리하다;만들어 내다|82|n||
+devote|v|바치다|헌신하다;쏟다|70|n||
+diabetes|n|당뇨병||80|y||
+dictate|v|받아쓰게 하다|지시하다;좌우하다|80|n||
+differ|v|다르다|의견이 다르다|62|n||파생어 different(다른)
+dignity|n|존엄성|품위;위엄|78|n||
+dimension|n|차원|치수;규모|78|n||
+diminish|v|줄어들다|감소하다;약화시키다|82|n||
+dine|v|식사하다|정찬을 먹다|62|n||
+dip|v|살짝 담그다|적시다;내려가다|62|n||
+diplomat|n|외교관||74|y||
+disaster|n|재난|재해;참사|58|n||
+discourse|n|담화|담론;대화|88|n||
+discriminate|v|차별하다|구별하다|80|n||
+dispute|n|분쟁|논쟁;논란|76|n||
+disrupt|v|방해하다|지장을 주다;혼란에 빠뜨리다|80|n||
+distinct|adj|뚜렷한|별개의;구별되는|78|n||
+distinguish|v|구별하다|구분하다;식별하다|74|n||
+distort|v|왜곡하다|비틀다|82|n||
+distract|v|산만하게 하다|주의를 딴 데로 돌리다|74|n||
+distribute|v|분배하다|나누어 주다;유통하다|74|n||
+diverse|adj|다양한|여러 가지의|72|n||
+divine|adj|신의|신성한;아주 멋진|80|n||
+domain|n|영역|분야;범위;도메인|82|n||
+dominate|v|지배하다|우세하다;장악하다|74|n||파생어 dominant(지배적인)
+dose|n|복용량|투여량;1회분|78|n||
+dot|n|점|점무늬|48|n||
+draft|n|초안|원고;징병|72|n||
+drain|v|물을 빼다|배수하다;고갈시키다|70|n||
+dread|v|몹시 두려워하다|두려워하다|80|n||
+drill|n|훈련|드릴;송곳;연습|60|n||
+drown|v|물에 빠지다|익사하다;잠기게 하다|62|n||
+dual|adj|이중의|두 부분으로 된|78|n||
+dull|adj|지루한|둔한;흐릿한|60|n||
+dwell|v|살다|거주하다;곰곰이 생각하다|78|n||

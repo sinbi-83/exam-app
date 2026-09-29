@@ -1,10 +1,11 @@
 // 4단계 공식 기본어휘 보강: 제작 원본(data/vocabulary/source/<묶음>-*.txt) → 200개 단위 seed JSON
 //   elementary: 초등 권장 → data/vocabulary/kr-curriculum-2022-elementary-01.json …
 //   common:     중·고 공통 → data/vocabulary/kr-curriculum-2022-common-01.json …
+//   elective:   그 외(고등 선택과목) → data/vocabulary/kr-curriculum-2022-elective-01.json …
 // 원본은 Claude Code 가 직접 쓴 것 (AI API 호출 없음). 여기서는 형식 검사 + 공식 기준표 대조 + JSON 변환만 한다.
 // DB 에 접속하지 않는다. 저장은 add-vocabulary-seed.ts 로 ('확인 필요'로만).
 //
-// 실행: node scripts/build-official-seed.ts elementary | common
+// 실행: node scripts/build-official-seed.ts elementary | common | elective
 
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
@@ -16,10 +17,11 @@ import type { VocabularyPos } from '../types/vocabulary'
 const TIERS: Record<string, { tier: OfficialTier; min: number; max: number; grade: string; label: string }> = {
   elementary: { tier: 'elementary', min: 1, max: 30, grade: '초등학교 권장(*)', label: '초등 권장' },
   common: { tier: 'common', min: 25, max: 80, grade: '중학교·고등 공통과목 권장(**)', label: '중·고 공통' },
+  elective: { tier: 'elective', min: 40, max: 100, grade: '그 외 과목', label: '그 외(고등 선택과목)' },
 }
 const GROUP = process.argv[2]
 if (!GROUP || !TIERS[GROUP]) {
-  console.error('사용법: node scripts/build-official-seed.ts elementary | common')
+  console.error('사용법: node scripts/build-official-seed.ts elementary | common | elective')
   process.exit(1)
 }
 const CFG = TIERS[GROUP]

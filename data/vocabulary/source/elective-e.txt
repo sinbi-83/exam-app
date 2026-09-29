@@ -1,0 +1,154 @@
+# 4단계 3차 그 외(고등 선택과목) 어휘 제작 원본 — 다섯 번째 묶음 (nuclear ~ reveal)
+nuclear|adj|핵의|원자력의;원자핵의|70|n||
+numerous|adj|수많은|다수의|70|n||
+obey|v|복종하다|따르다;순종하다|60|n||
+oblige|v|의무를 지우다|강요하다;돕다|82|n||be obliged to(~해야 한다)
+obsess|v|사로잡다|집착하게 하다|82|n||
+obtain|v|얻다|획득하다;입수하다|72|n||
+occupy|v|차지하다|점령하다;거주하다|72|n||파생어 occupation(직업)
+offend|v|기분을 상하게 하다|불쾌하게 하다;범죄를 저지르다|74|n||
+-opportune|표제어 자체는 거의 쓰지 않음 (파생어 opportunity 기회 로 가르침)
+opt|v|선택하다|고르다|82|n||opt for(~을 택하다), 파생어 option(선택)
+optimist|n|낙천주의자|낙관론자|74|n||
+oral|adj|구두의|입의;말로 하는|72|n||
+orbit|n|궤도|공전|74|n||
+orchestra|n|오케스트라|관현악단|55|n||
+organ|n|장기|기관;오르간|68|n||파생어 organic(유기농의), organize(조직하다)
+orient|v|지향하게 하다|방향을 맞추다;적응시키다|86|n||파생어 orientation(방향·예비 교육)
+origin|n|기원|근원;출신|66|n||파생어 original(원래의)
+outcome|n|결과|성과|72|n||
+outline|n|개요|윤곽;요점|68|n||
+output|n|생산량|출력;산출|70|n||
+outrage|n|격분|분노;잔학 행위|82|n||
+outstanding|adj|뛰어난|두드러진;미해결의|72|n||
+overcome|v|극복하다|이겨 내다|64|n||
+overhead|adv|머리 위에|하늘 높이|74|n||
+overlap|v|겹치다|중복되다|78|n||
+overlook|v|간과하다|내려다보다;눈감아 주다|78|n||
+overnight|adv|밤사이에|하룻밤 사이에;밤새|64|n||
+oversea|adj|해외의|외국의|60|n||보통 overseas 로 씀
+overwhelm|v|압도하다|제압하다;당황하게 하다|80|n||
+owe|v|빚지다|신세를 지다;덕분이다|68|n||
+pace|n|속도|걸음;페이스|68|n||
+pad|n|패드|메모장;덧대는 것|55|n||
+pale|adj|창백한|옅은;흐릿한|62|n||
+palm|n|손바닥|야자나무|60|n||
+panel|n|토론자단|판;패널|70|n||
+parallel|adj|평행한|유사한|76|n||
+parliament|n|의회|국회|78|n||
+participate|v|참여하다|참가하다|64|n||
+particle|n|입자|극소량;미립자|80|n||
+passage|n|구절|통로;통과|66|n||
+passenger|n|승객||50|y||
+passion|n|열정|격정;열중|60|n||
+passport|n|여권||45|y||
+pat|v|쓰다듬다|토닥거리다|60|n||
+patch|n|조각|헝겊 조각;부분|68|n||
+patent|n|특허|특허권|80|y||
+pave|v|포장하다|길을 닦다|76|n||pave the way(길을 열다)
+peak|n|절정|정상;최고점|66|n||
+peasant|n|농부|소작농|78|n||
+peel|v|껍질을 벗기다|벗기다;벗겨지다|60|n||
+peer|n|또래|동료;동등한 사람|76|n||
+penalty|n|벌|처벌;벌금|66|n||
+perceive|v|인지하다|감지하다;여기다|80|n||파생어 perception(인식)
+permanent|adj|영구적인|영원한;상설의|72|n||
+permit|v|허락하다|허가하다;가능하게 하다|70|n||
+persist|v|지속되다|고집하다;끈질기게 계속하다|80|n||
+perspective|n|관점|시각;원근법|78|n||
+persuade|v|설득하다|납득시키다|66|n||
+phase|n|단계|국면;시기|76|n||
+phenomenon|n|현상|사건|78|n||복수형 phenomena
+philosophy|n|철학||70|y||
+phrase|n|구|구절;표현|60|n|문법의 구|
+physics|n|물리학|물리|64|n||
+pill|n|알약|정제|56|n||
+pinch|v|꼬집다|꽉 집다|64|n||
+pioneer|n|개척자|선구자|72|n||
+platform|n|승강장|연단;플랫폼|60|n||
+plot|n|줄거리|음모;구성|68|n||
+polish|v|닦다|윤을 내다;다듬다|64|n||
+poll|n|여론 조사|투표;선거|76|n||
+pond|n|연못||48|y||
+populate|v|거주하다|살다;채우다|80|n||파생어 population(인구)
+portion|n|부분|몫;1인분|72|n||
+portrait|n|초상화|인물 사진;묘사|64|n||
+pose|v|자세를 취하다|제기하다;일으키다|70|n||파생어 dispose(처리하다)
+-posit|표제어 자체는 거의 쓰지 않음 (파생어 position 위치, positive 긍정적인 으로 가르침)
+praise|v|칭찬하다|찬양하다|60|n||
+preach|v|설교하다|전도하다;설파하다|76|n||
+precede|v|앞서다|선행하다;먼저 일어나다|84|n||파생어 unprecedented(전례 없는)
+precise|adj|정확한|정밀한;꼼꼼한|72|n||
+predator|n|포식자|약탈자|78|y||
+predict|v|예측하다|예언하다;예상하다|64|n||
+prejudice|n|편견|선입관|76|n||
+premium|n|할증금|보험료;프리미엄|80|n||
+prescribe|v|처방하다|규정하다;지시하다|82|n||
+preserve|v|보존하다|지키다;유지하다|72|n||
+preside|v|주재하다|사회를 보다|88|n||파생어 president(대통령)
+presume|v|추정하다|가정하다;여기다|84|n||
+prevail|v|만연하다|우세하다;이기다|84|n||
+prey|n|먹이|사냥감;희생자|74|n||
+priest|n|성직자|신부;사제|66|n||
+primitive|adj|원시의|원시적인;초기의|74|n||
+principal|n|교장|학장;장|70|n||
+prior|adj|이전의|사전의;우선하는|78|n||
+privilege|n|특권|특혜;영광|78|n||
+professor|n|교수||55|y||
+profile|n|옆얼굴|프로필;개요|70|n||
+profound|adj|깊은|심오한;엄청난|82|n||
+prohibit|v|금지하다|막다|76|n||
+prominent|adj|저명한|두드러진;중요한|80|n||
+prompt|v|촉발하다|유도하다;재촉하다|80|n||
+proof|n|증거|입증;증명|66|n||
+proportion|n|비율|부분;균형|80|n||
+prospect|n|전망|가망;예상|78|n||
+prosper|v|번영하다|번창하다;성공하다|78|n||
+protein|n|단백질||66|y||
+province|n|주|도;지방|76|n|행정 구역|
+provoke|v|유발하다|화나게 하다;자극하다|82|n||
+psychology|n|심리학|심리|72|n||
+publish|v|출판하다|발행하다;발표하다|62|n||파생어 publisher(출판사)
+pupil|n|학생|제자;동공|60|n||
+pursue|v|추구하다|뒤쫓다;계속하다|74|n||
+quantity|n|양|수량;분량|66|n||
+questionnaire|n|설문지|질문지|72|n||
+rage|n|분노|격노;격분|68|n||
+rally|n|집회|대회;회복|76|n||
+random|adj|무작위의|임의의;닥치는 대로의|68|n||
+rank|n|계급|지위;등급|66|n||
+rational|adj|합리적인|이성적인|78|n||
+raw|adj|날것의|익히지 않은;가공하지 않은|64|n||
+rear|n|뒤쪽|후방;뒷부분|70|n||
+rebel|n|반역자|반군;반항아|72|n||
+receipt|n|영수증|수령|60|y||
+recruit|v|모집하다|채용하다|76|n||
+refine|v|정제하다|다듬다;개선하다|80|n||
+reform|n|개혁|개선;쇄신|74|n||
+refrigerate|v|냉장하다|냉장 보관하다|72|n||파생어 refrigerator(냉장고)
+regret|v|후회하다|유감스럽게 생각하다|60|n||
+regulate|v|규제하다|조절하다;통제하다|78|n||
+reinforce|v|강화하다|보강하다|80|n||
+reject|v|거절하다|거부하다;불합격시키다|66|n||
+relevant|adj|관련 있는|적절한;의미 있는|78|n||
+relieve|v|덜어 주다|안도하게 하다;완화하다|72|n||
+religion|n|종교|신앙|62|n||
+reluctant|adj|꺼리는|마지못한|78|n||
+remedy|n|치료법|해결책;구제책|76|n||
+remote|adj|외딴|먼;원격의|66|n||
+republic|n|공화국||70|y||
+reputation|n|평판|명성|72|n||
+rescue|v|구조하다|구하다|60|n||
+resemble|v|닮다|비슷하다|72|n||
+reside|v|거주하다|살다;존재하다|80|n||파생어 resident(주민)
+resign|v|사임하다|물러나다;그만두다|76|n||
+resolve|v|해결하다|결심하다;풀다|74|n||
+resort|n|휴양지|리조트;수단|66|n||
+restore|v|복원하다|회복시키다;되찾다|74|n||
+restrain|v|억제하다|제지하다;참다|82|n||
+restrict|v|제한하다|한정하다;방해하다|76|n||
+resume|v|재개하다|다시 시작하다|80|n||
+retail|n|소매|소매업|78|y||
+retain|v|유지하다|보유하다;간직하다|80|n||
+retreat|v|후퇴하다|물러나다;피하다|76|n||
+reveal|v|드러내다|밝히다;폭로하다|70|n||

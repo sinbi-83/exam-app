@@ -1,0 +1,145 @@
+# 4단계 3차 그 외(고등 선택과목) 어휘 제작 원본 — 세 번째 묶음 (dynamic ~ harvest)
+dynamic|adj|역동적인|활발한;동적인|72|n||
+eager|adj|열망하는|간절히 바라는;열심인|64|n||
+efficient|adj|효율적인|능률적인|68|n||
+elaborate|adj|정교한|공들인;복잡한|82|n||
+electronic|adj|전자의|전자적인|56|n||
+elegant|adj|우아한|품위 있는;고상한|66|n||
+elevate|v|올리다|높이다;승진시키다|80|n||파생어 elevator(승강기)
+eliminate|v|제거하다|없애다;탈락시키다|74|n||
+elite|n|엘리트|정예;상류층|70|n||
+embassy|n|대사관||74|y||
+embrace|v|받아들이다|포옹하다;수용하다|74|n||
+emerge|v|나타나다|드러나다;부상하다|72|n||파생어 emergence(출현)
+emergency|n|비상사태|응급;긴급 상황|58|n||
+emit|v|방출하다|내뿜다;내다|82|n||파생어 emission(배출)
+emphasis|n|강조|중점|72|n||
+encounter|v|마주치다|맞닥뜨리다;직면하다|72|n||
+endure|v|견디다|참다;지속되다|72|n||
+enhance|v|향상시키다|높이다;강화하다|76|n||
+enterprise|n|기업|사업;진취성|78|n||
+enthusiastic|adj|열정적인|열렬한;열광적인|68|n||
+entry|n|입장|출입;참가;항목|62|n||
+-environ|표제어 자체는 거의 쓰지 않음 (파생어 environment 환경 으로 가르침)
+envy|n|부러움|질투;시기|62|n||
+equip|v|장비를 갖추다|갖추다;설비하다|70|n||파생어 equipment(장비)
+era|n|시대|연대;시기|70|n||
+erase|v|지우다|삭제하다|55|n||파생어 eraser(지우개)
+erect|v|세우다|건립하다|82|n||
+-err|표제어 자체는 거의 쓰지 않음 (파생어 error 오류 로 가르침)
+essence|n|본질|핵심;정수|78|n||파생어 essential(필수적인)
+estate|n|부동산|토지;재산|74|n||
+ethic|n|윤리|도덕;윤리관|78|n||파생어 ethical(윤리적인)
+ethnic|adj|민족의|인종의;민족 특유의|78|n||
+evacuate|v|대피시키다|피난시키다;비우다|82|n||
+evaluate|v|평가하다|감정하다|72|n||
+-evitable|표제어 자체는 거의 쓰지 않음 (파생어 inevitable 불가피한 으로 가르침)
+evolution|n|진화|발전;전개|70|n||
+evolve|v|진화하다|발전하다|72|n||
+exaggerate|v|과장하다||72|y||
+exceed|v|초과하다|넘다;능가하다|78|n||
+excel|v|뛰어나다|탁월하다;능가하다|76|n||파생어 excellent(훌륭한)
+excess|n|초과|과잉;지나침|78|n||
+exclude|v|제외하다|배제하다;차단하다|72|n||파생어 exclusive(독점적인)
+executive|n|임원|경영진;간부|76|n||
+exhibit|v|전시하다|보이다;나타내다|70|n||
+exotic|adj|이국적인|외래의|72|n||
+expertise|n|전문 지식|전문 기술|80|n||
+explicit|adj|명백한|분명한;노골적인|84|n||
+explode|v|폭발하다|터지다|58|n||
+explore|v|탐험하다|탐구하다;조사하다|56|n||
+export|n|수출|수출품|58|n||
+extent|n|정도|범위;규모|74|n||
+external|adj|외부의|바깥의;외적인|74|n||
+extinct|adj|멸종된|사라진|72|y||
+extract|v|추출하다|뽑다;발췌하다|80|n||
+extraordinary|adj|비범한|놀라운;특별한|72|n||
+eyebrow|n|눈썹||45|y||
+fabric|n|천|직물;구조|70|n||
+facilitate|v|용이하게 하다|촉진하다;돕다|86|n||
+facility|n|시설|설비;기능|72|n||
+faculty|n|교수진|능력;학부|84|n||
+fade|v|희미해지다|바래다;사라지다|68|n||
+false|adj|거짓의|틀린;잘못된|55|n||
+fame|n|명성|명예|58|n||파생어 famous(유명한)
+fare|n|요금|운임;교통 요금|64|n||
+fasten|v|매다|고정하다;잠그다|60|n||
+fate|n|운명|숙명|62|n||파생어 fatal(치명적인)
+federal|adj|연방의|연방 정부의|80|y||
+ferry|n|여객선|나룻배;페리|62|n||
+fertile|adj|비옥한|기름진;생식력 있는|80|n||
+fiber|n|섬유|섬유질|72|n||fibre 로도 씀
+fiction|n|소설|허구;지어낸 이야기|62|n||
+fierce|adj|사나운|격렬한;맹렬한|70|n||
+filter|n|필터|여과 장치;거르개|60|n||
+finite|adj|유한한|한정된|84|y||
+flavor|n|맛|풍미;향|60|n||flavour 로도 씀
+flaw|n|결점|결함;흠|78|n||
+flee|v|달아나다|도망치다;피하다|72|n||
+flesh|n|살|고기;살점|70|n||
+flexible|adj|유연한|융통성 있는;탄력적인|68|n||
+flip|v|뒤집다|휙 넘기다;튀기다|60|n||
+flock|n|떼|무리|66|n||
+flourish|v|번창하다|번성하다;잘 자라다|80|n||
+flush|v|물을 내리다|붉어지다;씻어 내다|70|n||
+fond|adj|좋아하는|애정 있는|62|n||be fond of(~을 좋아하다)
+forbid|v|금지하다|못 하게 하다|66|n||
+forecast|n|예보|예측;예상|64|n||
+forehead|n|이마||48|y||
+format|n|형식|구성;포맷|64|n||
+former|adj|이전의|과거의;전자의|66|n||
+formula|n|공식|방식;분유|72|n||
+foster|v|기르다|육성하다;조성하다|82|n||
+fountain|n|분수|샘|56|n||
+fraction|n|분수|일부;부분|72|n|수학의 분수|
+framework|n|틀|체제;뼈대|80|n||
+frequent|adj|빈번한|잦은;자주 일어나는|66|n||
+frost|n|서리|결빙|62|y||
+frown|v|얼굴을 찡그리다|눈살을 찌푸리다|66|n||
+fuel|n|연료||58|y||
+fulfil|v|이행하다|성취하다;실현하다|76|n||fulfill 로도 씀
+fundamental|adj|근본적인|기본적인;필수적인|78|n||
+funeral|n|장례식||66|y||
+furnish|v|가구를 비치하다|제공하다;공급하다|78|n||
+furthermore|adv|게다가|더욱이;뿐만 아니라|70|n||
+fury|n|분노|격노|76|n||파생어 furious(격노한)
+fuse|v|융합하다|녹이다;결합하다|82|n||
+gallery|n|미술관|화랑;갤러리|55|n||
+gamble|v|도박하다|내기하다;모험을 하다|66|n||
+gang|n|무리|갱단;패거리|60|n||
+gap|n|차이|틈;격차|58|n||
+gasoline|n|휘발유|가솔린|60|n||petrol 로도 씀
+gaze|v|응시하다|바라보다;가만히 보다|72|n||
+gender|n|성별|성|66|n||
+gene|n|유전자||70|y||파생어 genetic(유전의)
+generate|v|발생시키다|만들어 내다;생성하다|70|n||파생어 generation(세대)
+generous|adj|관대한|너그러운;후한|62|n||
+genius|n|천재|천재성;비범한 재능|58|n||
+genuine|adj|진짜의|진실한;진정한|74|n||
+geography|n|지리학|지리|62|n||
+geology|n|지질학||80|y||
+glare|v|노려보다|눈부시게 빛나다|74|n||
+globe|n|지구|세계;지구본|60|n||파생어 global(세계적인)
+glow|v|빛나다|타다;달아오르다|64|n||
+goat|n|염소||42|y||
+graduate|v|졸업하다||55|y||
+grain|n|곡물|낟알;알갱이|62|n||
+grasp|v|꽉 잡다|움켜잡다;이해하다|72|n||
+grateful|adj|감사하는|고마워하는|60|n||
+grave|n|무덤|묘|62|n||
+greed|n|탐욕|욕심|68|n||
+grief|n|슬픔|비탄;비통|70|n||
+grip|v|꽉 잡다|움켜쥐다;사로잡다|66|n||
+gross|adj|총계의|전체의;역겨운|80|n||
+guardian|n|보호자|후견인;수호자|66|n||
+guideline|n|지침|가이드라인|68|n||
+gulf|n|만|격차;틈|76|n|바다의 만|
+gymnasium|n|체육관||50|y||gym 으로 줄여 씀
+habitat|n|서식지|거주지|72|n||
+halt|v|멈추다|중단시키다;정지하다|76|n||
+hammer|n|망치||48|y||
+handicap|n|장애|불리한 조건|70|n||
+harbor|n|항구|항만;피난처|64|n||harbour 로도 씀
+harmony|n|조화|화합;화음|60|n||파생어 harmonious(조화로운)
+harsh|adj|가혹한|혹독한;거친|72|n||
+harvest|n|수확|추수;수확량|62|n||

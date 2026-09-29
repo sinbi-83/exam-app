@@ -7,7 +7,7 @@ import { useMemo, useReducer, useRef, useState } from 'react'
 import type { VocabularyEntryRecord } from '@/types/vocabulary'
 import type { PassageVariantLevel } from '@/types/passageBank'
 import { VARIANT_LABELS } from '@/types/passageBank'
-import { findDifficultyBand, gradesWithBands, VOCABULARY_BANDS_NOTE, type VocabularyGrade } from '@/config/vocabularyLevels'
+import { DRAFT_BAND_LABEL, findDifficultyBand, gradesWithBands, isDraftBandGrade, VOCABULARY_BANDS_NOTE, type VocabularyGrade } from '@/config/vocabularyLevels'
 import {
   generateWordTest,
   pickReplacement,
@@ -30,7 +30,8 @@ export default function BankMode() {
   // 학년·레벨·방향 + 미리보기 문항은 한 덩어리(초안)로 관리한다 → 조건이 바뀌면 미리보기가 반드시 비워진다 (lib/wordTestDraft.ts)
   const [draft, dispatch] = useReducer(
     wordTestDraftReducer,
-    { grade: grades[0] ?? '중1', level: 'school', mode: 'en_ko' },
+    // 처음 고른 학년은 승인된 범위표 학년 중 첫째 (초안 학년이 늘어도 기본값은 그대로)
+    { grade: grades.find((g) => !isDraftBandGrade(g)) ?? grades[0] ?? '중1', level: 'school', mode: 'en_ko' },
     initialWordTestDraft,
   )
   const grade = draft.conditions.grade as VocabularyGrade
@@ -178,8 +179,11 @@ export default function BankMode() {
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">학년</label>
           <select value={grade} onChange={(e) => changeConditions({ grade: e.target.value })} className="w-full rounded border border-gray-300 px-3 py-2 text-sm">
-            {grades.map((g) => <option key={g} value={g}>{g}</option>)}
+            {grades.map((g) => <option key={g} value={g}>{g}{isDraftBandGrade(g) ? ' (승인 전 초안)' : ''}</option>)}
           </select>
+          {isDraftBandGrade(grade) && (
+            <p className="mt-1 text-xs text-amber-700">{grade} 레벨 범위는 {DRAFT_BAND_LABEL}입니다.</p>
+          )}
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-gray-700">레벨</label>

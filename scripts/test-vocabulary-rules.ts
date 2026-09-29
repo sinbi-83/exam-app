@@ -32,7 +32,13 @@ import {
   findDifficultyBand,
   gradeDifficultyRange,
   gradeRangePosition,
+  DRAFT_BAND_GRADES,
+  DRAFT_BAND_LABEL,
+  gradesWithBands,
+  isDraftBandGrade,
   VOCABULARY_DIFFICULTY_BANDS,
+  VOCABULARY_GRADES,
+  type VocabularyGrade,
 } from '../config/vocabularyLevels.ts'
 import { exclusionConfirmText, exclusionWarnings, type ExclusionFacts } from '../lib/vocabularyExclusion.ts'
 import type { VocabularyEntryInput, VocabularySourceInput } from '../types/vocabulary'
@@ -257,11 +263,13 @@ test('등록 스크립트 파일이 approved 로 넣는 코드를 갖고 있지 
 })
 
 // ── 학년 범위 (C-2) ──
-test('학년 범위: 레벨 전체 합친 구간, 초5·중3도 기준 있음, 기준 없는 학년은 null(기준 미설정)', () => {
+test('학년 범위: 레벨 전체 합친 구간, 초3~고3 모두 기준 있음, 기준 없는 학년은 null(기준 미설정)', () => {
   assert.deepEqual(gradeDifficultyRange('중1'), { min: 15, max: 58 })
   assert.deepEqual(gradeDifficultyRange('초5'), { min: 1, max: 40 })
   assert.deepEqual(gradeDifficultyRange('중3'), { min: 30, max: 72 })
-  assert.equal(gradeDifficultyRange('중2'), null)
+  assert.deepEqual(gradeDifficultyRange('중2'), { min: 20, max: 63 })
+  assert.deepEqual(gradeDifficultyRange('고3'), { min: 65, max: 100 })
+  assert.equal(gradeDifficultyRange('중2', 'en_ko', []), null)
   assert.equal(gradeRangePosition(80, { min: 1, max: 75 }), 'above')
   assert.equal(gradeRangePosition(75, { min: 1, max: 75 }), 'within')
   assert.equal(gradeRangePosition(1, { min: 10, max: 75 }), 'below')
@@ -319,17 +327,47 @@ test('활성 중복/출처 중복 오류를 사람이 읽는 문장으로', () =
 })
 
 // ── 변환표 ──
-test('변환표는 초5·중1·중3 초안, 기준이 없는 학년은 null (임의 범위 출제 금지)', () => {
-  assert.equal(VOCABULARY_DIFFICULTY_BANDS.length, 24)
-  assert.deepEqual([...new Set(VOCABULARY_DIFFICULTY_BANDS.map((b) => b.grade))], ['초5', '중1', '중3'])
+test('변환표는 초3~고3 10개 학년, 기준이 없으면 null (임의 범위 출제 금지)', () => {
+  assert.equal(VOCABULARY_DIFFICULTY_BANDS.length, 80)
+  assert.deepEqual(gradesWithBands(), [...VOCABULARY_GRADES])
   assert.ok(VOCABULARY_DIFFICULTY_BANDS.every((b) => b.min >= 1 && b.max <= 100 && b.min <= b.max))
   assert.deepEqual(findDifficultyBand('중1', 'advanced', 'en_ko'), { grade: '중1', level: 'advanced', direction: 'en_ko', min: 25, max: 50 })
   assert.deepEqual(findDifficultyBand('초5', 'school', 'ko_en'), { grade: '초5', level: 'school', direction: 'ko_en', min: 1, max: 20 })
-  assert.equal(findDifficultyBand('중2', 'advanced', 'en_ko'), null)
+  assert.equal(findDifficultyBand('중2', 'advanced', 'en_ko', []), null)
+})
+test('승인된 초5·중1·중3 범위는 그대로 (학교형/일반학원형/상위학원형/선행형)', () => {
+  const r = (g: VocabularyGrade) => (['school', 'academy', 'advanced', 'prestudy'] as const).map((l) => {
+    const b = findDifficultyBand(g, l, 'en_ko')!
+    return [b.min, b.max]
+  })
+  assert.deepEqual(r('초5'), [[1, 20], [8, 25], [10, 30], [22, 40]])
+  assert.deepEqual(r('중1'), [[15, 35], [22, 42], [25, 50], [38, 58]])
+  assert.deepEqual(r('중3'), [[30, 50], [38, 58], [40, 65], [52, 72]])
+  assert.ok(!isDraftBandGrade('초5') && !isDraftBandGrade('중1') && !isDraftBandGrade('중3'))
+})
+test('초안 학년 7개는 "승인 전 초안" 표시 대상, 한→영도 같은 범위', () => {
+  assert.deepEqual([...DRAFT_BAND_GRADES], ['초3', '초4', '초6', '중2', '고1', '고2', '고3'])
+  for (const g of DRAFT_BAND_GRADES) {
+    assert.ok(isDraftBandGrade(g))
+    for (const l of ['school', 'academy', 'advanced', 'prestudy'] as const) {
+      const en = findDifficultyBand(g, l, 'en_ko')!
+      const ko = findDifficultyBand(g, l, 'ko_en')!
+      assert.deepEqual([en.min, en.max], [ko.min, ko.max], `${g} ${l}`)
+    }
+  }
+  assert.match(DRAFT_BAND_LABEL, /승인 전 초안/)
+})
+test('학년이 올라가면 레벨 범위도 내려가지 않는다 (초3 → 고3)', () => {
+  for (const l of ['school', 'academy', 'advanced', 'prestudy'] as const) {
+    const bands = VOCABULARY_GRADES.map((g) => findDifficultyBand(g, l, 'en_ko')!)
+    for (let i = 1; i < bands.length; i++) {
+      assert.ok(bands[i].min >= bands[i - 1].min && bands[i].max >= bands[i - 1].max, `${l} ${bands[i - 1].grade}→${bands[i].grade}`)
+    }
+  }
 })
 test('레벨 범위는 학년 기준점(초안)과 맞물린다: 상위학원형 = 학년 기준점 전체', () => {
   const anchor = (label: string) => DIFFICULTY_ANCHORS.find((a) => a.label === label)!
-  for (const [grade, label] of [['초5', '초5~6'], ['중1', '중1~2'], ['중3', '중3']] as const) {
+  for (const [grade, label] of [['초3', '초3~4'], ['초5', '초5~6'], ['중1', '중1~2'], ['중3', '중3'], ['고1', '고1~2'], ['고3', '고3·고난도']] as const) {
     const b = findDifficultyBand(grade, 'advanced', 'en_ko')!
     assert.deepEqual([b.min, b.max], [anchor(label).min, anchor(label).max], grade)
     // 학교형 < 일반학원형 < 상위학원형 < 선행형 (시작점 기준)

@@ -22,6 +22,8 @@ import {
   GRADE_RANGE_POSITION_LABELS,
   gradeDifficultyRange,
   gradeRangePosition,
+  DRAFT_BAND_LABEL,
+  isDraftBandGrade,
   VOCABULARY_BANDS_NOTE,
   VOCABULARY_GRADES,
   type VocabularyGrade,
@@ -546,6 +548,9 @@ export default function VocabularyPage() {
               </button>
             ))}
             <span className="text-xs text-gray-400">({grade} 난이도 {gradeRange.min}~{gradeRange.max})</span>
+            {isDraftBandGrade(grade) && (
+              <span className="rounded bg-amber-100 px-1.5 py-0.5 text-xs text-amber-800">{grade} 범위표: {DRAFT_BAND_LABEL}</span>
+            )}
           </>
         ) : (
           <span className="text-xs text-amber-700">기준 미설정 — {grade} 학년 범위가 아직 없습니다.</span>
