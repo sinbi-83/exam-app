@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { selectAllPages } from '@/lib/supabasePaging'
+import { GRAMMAR_QUESTION_TYPES, isGrammarLeak } from '@/lib/grammarLeak'
 
 export async function GET() {
   const supabase = await createClient()
@@ -23,5 +25,21 @@ export async function GET() {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
-  return NextResponse.json({ data })
+  // 세트별 "정답 노출 의심" 어법 문항 수 (문제은행 questions 기준, 읽기만 — lib/grammarLeak.ts)
+  const { data: grammarRows } = await selectAllPages<{ question_set_id: string | null; question_type: string; question_text: string; choices: string[] | null; correct_answer: string | null }>(
+    (from, to) =>
+      supabase
+        .from('questions')
+        .select('id, question_set_id, question_type, question_text, choices, correct_answer')
+        .eq('user_id', user.id)
+        .in('question_type', [...GRAMMAR_QUESTION_TYPES])
+        .order('id')
+        .range(from, to),
+  )
+  const leakBySet = new Map<string, number>()
+  for (const q of grammarRows) {
+    if (q.question_set_id && isGrammarLeak(q)) leakBySet.set(q.question_set_id, (leakBySet.get(q.question_set_id) ?? 0) + 1)
+  }
+
+  return NextResponse.json({ data: (data ?? []).map((s) => ({ ...s, grammar_leak_count: leakBySet.get(s.id) ?? 0 })) })
 }

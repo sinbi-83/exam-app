@@ -88,7 +88,7 @@ export default function MixedTestPage() {
   const sourceKey = source ? `${source.kind}:${source.id}` : null
 
   // ── 고른 지문의 문항 후보 (지문·레벨이 바뀌면 다시 읽고, 늦게 온 응답은 버린다) ──
-  const [cands, setCands] = useState<{ key: string; list: MixedCandidate[] } | null>(null)
+  const [cands, setCands] = useState<{ key: string; list: MixedCandidate[]; excludedLeak: number } | null>(null)
   const [candsError, setCandsError] = useState('')
   const candSeq = useRef(0)
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function MixedTestPage() {
       .then((json) => {
         if (seq !== candSeq.current) return
         if (json.error) setCandsError(json.error)
-        else setCands({ key: sourceKey, list: json.data ?? [] })
+        else setCands({ key: sourceKey, list: json.data ?? [], excludedLeak: json.excluded_leak ?? 0 })
       })
       .catch(() => seq === candSeq.current && setCandsError('문항을 불러오지 못했습니다.'))
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -329,6 +329,11 @@ export default function MixedTestPage() {
           ))}
         </div>
         {candsError && <p className="mt-2 text-sm text-red-600">{candsError}</p>}
+        {cands && cands.key === sourceKey && cands.excludedLeak > 0 && (
+          <p className="mt-2 text-xs text-red-700">
+            정답이 문제에 드러나는 어법 문항 {cands.excludedLeak}개는 후보에서 뺐습니다 (정답 노출 의심).
+          </p>
+        )}
         {row && !candList && !candsError && <p className="mt-2 text-xs text-gray-400">문항 불러오는 중…</p>}
         {preShort.length > 0 && (
           <p className="mt-2 rounded bg-amber-50 px-3 py-2 text-xs text-amber-800">

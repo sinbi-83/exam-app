@@ -17,7 +17,8 @@ type Q = {
 
 const passageQs: Omit<Q, 'sort_order'>[] = [
   { id: 's1', points: 4, question_data: { type: 'vocab', question: '"quiet"의 의미로 가장 알맞은 것은?', options: ['조용한', '시끄러운', '빠른', '넓은', '어두운'], answer: '조용한', explanation: 'quiet = 조용한', passage: PASSAGE } },
-  { id: 's2', points: 4, question_data: { type: 'grammar', question: '밑줄 친 "to join"의 쓰임이 어법상 가장 적절한 것은?', options: ['ask + 목적어 + to부정사', 'ask + 목적어 + 동사원형', 'ask + 동명사', 'ask + that절만 가능', 'ask + 과거분사'], answer: 'ask + 목적어 + to부정사', explanation: 'ask A to B', passage: PASSAGE } },
+  { id: 's2', points: 4, question_data: { type: 'grammar', question: '다음 문장의 빈칸에 들어갈 말로 어법상 알맞은 것은?\n\n"She asked her classmates _____ her, and soon twenty students were cleaning the riverbank every Saturday."', options: ['to join', 'join', 'joining', 'to joining', 'joined'], answer: 'to join', explanation: 'ask + 목적어 + to부정사', passage: PASSAGE } },
+  { id: 's2b', points: 4, question_data: { type: 'grammar', question: '다음 문장의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?\n\nThe students ①"who joined" the project ②"were" proud because the river ③"looked" much ④"more clean" than ⑤"before".', options: ['who joined', 'were', 'looked', 'more clean', 'before'], answer: 'more clean', explanation: 'clean 의 비교급은 cleaner', passage: PASSAGE } },
   { id: 's3', points: 4, question_data: { type: 'reading', question: '이 글의 주제로 가장 알맞은 것은?', options: ['강을 깨끗하게 만든 학생들의 활동이 마을을 바꾸었다', '아침 산책은 공부에 도움이 된다', '신문 기자가 되는 방법', '플라스틱 병을 만드는 과정', '토요일마다 해야 할 숙제'], answer: '강을 깨끗하게 만든 학생들의 활동이 마을을 바꾸었다', explanation: '글 전체 흐름', passage: PASSAGE } },
   { id: 's4', points: 4, question_data: { type: 'tf', question: '미나는 방과 후에 개를 산책시킨다.', options: ['참', '거짓'], answer: '거짓', explanation: 'before school', passage: PASSAGE } },
   { id: 's5', points: 4, question_data: { type: 'blank', question: '미나의 반 친구들은 매주 ______ 에 강가를 청소했다. (요일을 영어로)', answer: 'Saturday', explanation: 'every Saturday', passage: PASSAGE } },

@@ -16,6 +16,7 @@ interface QuestionSetSummary {
   topic: string
   created_at: string
   questions: QuestionLike[] | null
+  grammar_leak_count?: number // 정답 노출 의심 어법 문항 수 (lib/grammarLeak.ts)
 }
 
 type SortOption = 'newest' | 'oldest' | 'title'
@@ -203,6 +204,11 @@ export default function QuestionsPage() {
                       문제 {stats.total}개
                       {vocabCount > 0 && ` · 어휘 ${vocabCount}`}
                       {grammarCount > 0 && ` · 어법 ${grammarCount}`}
+                      {(item.grammar_leak_count ?? 0) > 0 && (
+                        <span className="ml-2 rounded bg-red-50 px-1.5 py-0.5 text-[11px] font-medium text-red-700" title="문제 문장·보기에 정답이 드러나는 어법 문항 (docs/grammar-leak-audit.md)">
+                          정답 노출 의심 {item.grammar_leak_count}
+                        </span>
+                      )}
                     </p>
                     {tagPreview.length > 0 && (
                       <p className="mt-1.5 truncate text-xs text-gray-400">

@@ -1,5 +1,6 @@
 'use client'
 
+import { grammarItemStem } from '@/lib/grammarLeak'
 import { useState } from 'react'
 import {
   buildMultipleChoiceQuestions,
@@ -36,7 +37,7 @@ const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
 function buildQuestionPrompt(q: MultipleChoiceQuestion): string {
   if (q.type === 'grammar') {
-    return `밑줄 친 "${q.targetText}"의 쓰임이 어법상 가장 적절한 것은?`
+    return grammarItemStem(q)
   }
   return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
 }

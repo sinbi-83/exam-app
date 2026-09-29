@@ -1,5 +1,6 @@
 'use client'
 
+import { grammarItemStem, isGrammarLeak } from '@/lib/grammarLeak'
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { PassageHighlightItem, EssayQuestion, PassageSentence } from '@/types/aiPassage'
@@ -15,6 +16,7 @@ import {
 } from '@/lib/tagDisplay'
 
 interface MultipleChoiceQuestion {
+  stem?: string // 새 어법 형식(빈칸형·틀린 것 찾기) 문제 문장
   targetText: string
   type: string
   difficulty: 'beginner' | 'intermediate' | 'advanced'
@@ -53,7 +55,7 @@ const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
 function buildQuestionPrompt(q: MultipleChoiceQuestion): string {
   if (q.type === 'grammar') {
-    return `밑줄 친 "${q.targetText}"의 쓰임이 어법상 가장 적절한 것은?`
+    return grammarItemStem(q)
   }
   return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
 }
@@ -289,6 +291,12 @@ export default function QuestionSetDetailPage() {
                 <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getTypeBadgeClass(q.type)}`}>
                   {getTypeLabel(q.type)}
                 </span>
+                {q.type === 'grammar' &&
+                  isGrammarLeak({ question_type: 'grammar', question_text: buildQuestionPrompt(q), choices: q.choices, correct_answer: q.choices[q.correctIndex] }) && (
+                    <span className="rounded bg-red-50 px-1.5 py-0.5 text-[11px] font-medium text-red-700" title="문제 문장에 정답이 드러나는 어법 문항 (docs/grammar-leak-audit.md)">
+                      정답 노출 의심
+                    </span>
+                  )}
                 <span
                   className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(q.difficulty)}`}
                 >

@@ -35,6 +35,12 @@ export interface PassageHighlightItem {
   sentenceNumber?: number;
   detailTags?: DetailTags;
   excerpt?: ExcerptInfo;
+  // grammar 전용 (정답 노출 금지 형식, lib/grammarLeak.ts): blank = 빈칸형, find_error = 밑줄 ①~⑤ 중 틀린 것
+  grammarFormat?: "blank" | "find_error";
+  errorSentence?: string;
+  segments?: string[];
+  wrongIndex?: number;
+  correction?: string;
 }
 
 // 지문을 문장 단위로 쪼갠 것 하나

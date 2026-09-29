@@ -23,6 +23,7 @@ import {
   type WordColumns,
 } from '@/lib/printPagination'
 import PrintViewToggle from './PrintViewToggle'
+import { isBlankFormat, isFindErrorFormat, maskBlankAnswersInPassage } from '@/lib/grammarLeak'
 
 export interface QuestionData {
   type: string
@@ -72,12 +73,19 @@ function extractQuoted(text: string): string | null {
 }
 
 // 지문에서 밑줄 쳐야 할 단어들을 찾아 세그먼트로 분리
-function buildPassageSegments(passage: string, questions: ExamQuestion[]) {
+function buildPassageSegments(rawPassage: string, questions: ExamQuestion[]) {
   type Seg = { text: string; underline?: boolean }
+  // 빈칸형 어법 문항의 정답이 같은 지문에 그대로 보이지 않게, 지문의 그 자리도 빈칸으로 (화면·인쇄만, lib/grammarLeak.ts)
+  const passage = maskBlankAnswersInPassage(
+    rawPassage,
+    questions.filter((eq) => eq.question_data.type === 'grammar').map((eq) => eq.question_data.question),
+  )
   const matchRanges: { start: number; end: number }[] = []
   for (const eq of questions) {
     const q = eq.question_data
     if (q.type !== 'vocab' && q.type !== 'grammar') continue
+    // 새 어법 형식(빈칸형·틀린 것 찾기)은 지문에 밑줄을 긋지 않는다
+    if (q.type === 'grammar' && (isBlankFormat(q.question) || isFindErrorFormat(q.question))) continue
     const target = extractQuoted(q.question)
     if (!target) continue
     const idx = passage.indexOf(target)
@@ -153,7 +161,13 @@ function QuestionBlock({ eq, num }: { eq: ExamQuestion; num: number }) {
         <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-800 text-[10px] font-bold text-white">{num}</span>
         <div className="flex-1">
           <span className="mr-1 text-[10px] text-gray-400">[{TYPE_LABELS[q.type] ?? q.type}] {eq.points}점</span>
-          <span className="text-[13px] leading-relaxed text-gray-900">{isSummary ? renderWithBlanks(q.question) : renderQuestionText(q.question)}</span>
+          <span className="whitespace-pre-line text-[13px] leading-relaxed text-gray-900">
+            {isSummary
+              ? renderWithBlanks(q.question)
+              : q.type === 'grammar' && isBlankFormat(q.question)
+                ? renderWithBlanks(q.question.replace(/"/g, '')) // 빈칸형: 문장의 빈칸을 선으로
+                : renderQuestionText(q.question)}
+          </span>
         </div>
       </div>
       {isMultiple && (

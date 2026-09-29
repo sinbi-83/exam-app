@@ -1,4 +1,5 @@
 import { SummaryQuestion, ReadingQuestion } from "@/types/aiPassage";
+import { buildBlankStem, buildFindErrorStem } from "@/lib/grammarLeak";
 
 // 문제 포인트 하나의 원본 재료 모양 (AI가 준 데이터)
 export interface DetailTags {
@@ -29,6 +30,12 @@ export interface PassageHighlightItem {
   sentenceNumber?: number;
   detailTags?: DetailTags;
   excerpt?: ExcerptInfo;
+  // grammar 전용: blank(빈칸형) / find_error(밑줄 ①~⑤ 중 틀린 것) — lib/grammarLeak.ts
+  grammarFormat?: "blank" | "find_error";
+  errorSentence?: string;
+  segments?: string[];
+  wrongIndex?: number;
+  correction?: string;
 }
 
 // 실제 시험 문제로 조립된 후의 모양
@@ -43,6 +50,9 @@ export interface MultipleChoiceQuestion {
   sentenceNumber?: number;
   detailTags?: DetailTags;
   excerpt?: ExcerptInfo;
+  // grammar: 시험지에 쓸 문제 문장 (빈칸형·틀린 것 찾기). 정답이 드러나지 않는 형식만
+  grammarFormat?: "blank" | "find_error";
+  stem?: string;
 }
 
 // 배열 순서를 무작위로 섞어주는 함수
@@ -61,6 +71,45 @@ export function buildOneMultipleChoice(
 ): MultipleChoiceQuestion | null {
   if (!item.answer || !item.wrongAnswers || item.wrongAnswers.length === 0) {
     return null;
+  }
+
+  // 어법: 정답이 드러나지 않는 두 형식만 (예전 "밑줄 친 (정답)" 형식은 만들지 않는다 — lib/grammarLeak.ts)
+  if (item.type === "grammar") {
+    if (item.grammarFormat === "find_error") {
+      const segments = item.segments ?? [];
+      const stem = item.errorSentence ? buildFindErrorStem(item.errorSentence, segments) : null;
+      const wi = item.wrongIndex;
+      if (!stem || typeof wi !== "number" || wi < 0 || wi > 4) return null;
+      return {
+        targetText: segments[wi],
+        type: item.type,
+        difficulty: item.difficulty,
+        choices: segments, // ①~⑤ 순서 그대로 (섞지 않는다)
+        correctIndex: wi,
+        explanation: item.explanation || "",
+        detailTags: item.detailTags,
+        grammarFormat: "find_error",
+        stem,
+      };
+    }
+    if (item.grammarFormat !== "blank") return null;
+    const stem = item.targetSentence ? buildBlankStem(item.targetSentence, item.targetText) : null;
+    if (!stem) return null;
+    const choices = shuffleArray([item.answer, ...item.wrongAnswers.slice(0, 4)]);
+    return {
+      targetText: item.targetText,
+      type: item.type,
+      difficulty: item.difficulty,
+      choices,
+      correctIndex: choices.indexOf(item.answer),
+      explanation: item.explanation || "",
+      targetSentence: item.targetSentence,
+      sentenceNumber: item.sentenceNumber,
+      detailTags: item.detailTags,
+      excerpt: item.excerpt,
+      grammarFormat: "blank",
+      stem,
+    };
   }
 
   const usedWrongAnswers = item.wrongAnswers.slice(0, 4);

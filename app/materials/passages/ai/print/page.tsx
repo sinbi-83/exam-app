@@ -14,6 +14,9 @@ interface MultipleChoiceQuestion {
   choices: string[]
   correctIndex: number
   explanation: string
+  // 새 어법 형식: find_error(밑줄 ①~⑤ 중 틀린 것)는 지문에 빈칸을 만들지 않고 자기 문장(stem)으로 푼다
+  grammarFormat?: 'blank' | 'find_error'
+  stem?: string
 }
 
 interface SummaryMultipleChoiceQuestion {
@@ -46,6 +49,7 @@ interface PrintData {
 const CHOICE_MARK = ['①', '②', '③', '④', '⑤']
 
 function buildQuestionPrompt(q: MultipleChoiceQuestion, displayNumber: number): string {
+  if (q.type === 'grammar' && q.grammarFormat === 'find_error' && q.stem) return q.stem
   if (q.type === 'grammar') {
     return `빈칸 (${displayNumber})에 들어갈 말로 가장 적절한 것은?`
   }
@@ -70,7 +74,8 @@ function findWordBoundaryIndex(passage: string, target: string): number {
 // 시험지와 정답지가 항상 같은 번호를 쓰도록 여기서 한 번만 순서를 정한다
 function buildExamOrder(passage: string, questions: MultipleChoiceQuestion[]) {
   const items = questions.map((q, qIndex) => {
-    const idx = q.targetText ? findWordBoundaryIndex(passage, q.targetText) : -1
+    // 틀린 것 찾기 형식은 지문 속 자리가 없다 (지문에 없는 새 문장) → 지문에 빈칸을 만들지 않는다
+    const idx = q.targetText && q.grammarFormat !== 'find_error' ? findWordBoundaryIndex(passage, q.targetText) : -1
     return { q, qIndex, start: idx === -1 ? Number.MAX_SAFE_INTEGER : idx }
   })
   items.sort((a, b) => a.start - b.start)

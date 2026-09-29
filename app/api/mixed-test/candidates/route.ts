@@ -5,6 +5,7 @@ import { buildBankExamQuestionData } from '@/lib/questionBankExam'
 import { buildExternalExamQuestionData } from '@/lib/externalPassageExam'
 import { aiCategory, externalCategory, externalItemKey, type MixedCandidate } from '@/lib/mixedTest'
 import { aiItemDifficulty, externalDifficulty } from '@/lib/passageUnified'
+import { isGrammarLeak } from '@/lib/grammarLeak'
 import type { PassageEssay, PassageQuestion } from '@/types/passageBank'
 
 // GET: 혼합 시험(7단계)용 — 지문 1개의 문항 후보 (읽기 전용). ?kind=ai&id=<question_sets.id> | ?kind=external&id=<passages.id>
@@ -35,7 +36,12 @@ export async function GET(request: NextRequest) {
     )
     if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
-    const candidates: MixedCandidate[] = data.map((q) => {
+    // 정답이 문제 문장·보기에 드러나는 어법 문항은 후보에서 뺀다 (lib/grammarLeak.ts, docs/grammar-leak-audit.md)
+    const safe = data.filter(
+      (q) => !isGrammarLeak({ question_type: String(q.question_type ?? ''), question_text: String(q.question_text ?? ''), choices: q.choices as string[] | null, correct_answer: q.correct_answer as string | null }),
+    )
+    const excludedLeak = data.length - safe.length
+    const candidates: MixedCandidate[] = safe.map((q) => {
       const rawType = String(q.question_type ?? '')
       const options = Array.isArray(q.choices) ? (q.choices as string[]) : []
       // /api/questions/search 와 같은 모양 (문제 시험에서 문제은행 문항을 담을 때와 같게)
@@ -59,7 +65,7 @@ export async function GET(request: NextRequest) {
         question_data: buildBankExamQuestionData(mapped, set.passage as string),
       }
     })
-    return NextResponse.json({ data: candidates })
+    return NextResponse.json({ data: candidates, excluded_leak: excludedLeak })
   }
 
   const { data: p, error } = await supabase

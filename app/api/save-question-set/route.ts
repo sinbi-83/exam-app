@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
 import { buildReadingQuestionPrompt } from '@/lib/buildMultipleChoice'
+import { grammarItemStem } from '@/lib/grammarLeak'
 
 // 난이도 문자열 → 숫자 변환 (1~5 척도, 3=표준 기준)
 const DIFFICULTY_TO_NUMBER: Record<string, number> = {
@@ -12,7 +13,8 @@ const DIFFICULTY_TO_NUMBER: Record<string, number> = {
 // 어휘/어법 문제에 맞는 질문 문구 생성
 function buildQuestionText(q: any): string {
   if (q.type === 'grammar') {
-    return `밑줄 친 "${q.targetText}"의 쓰임이 어법상 가장 적절한 것은?`
+    // 새 형식(빈칸형·틀린 것 찾기)은 화면에서 만든 stem 을 그대로 저장한다 (lib/grammarLeak.ts)
+    return grammarItemStem(q)
   }
   return `"${q.targetText}"의 의미로 가장 알맞은 것은?`
 }

@@ -161,12 +161,23 @@ type이 "vocab"인 문제는 다음 규칙을 반드시 따른다:
 - "answer"가 targetText와 철자/표기가 같아서는 절대 안 된다.
 - "wrongAnswers" 4개도 모두 그럴듯하지만 틀린 한국어 뜻으로 작성하라.
 
-type이 "grammar"인 문제는 다음 규칙을 따른다:
-- "answer"와 "wrongAnswers"는 모두 영어 표현(문법 형태)으로 작성하라.
-- "answer"는 지문 속 targetText와 동일한, 문법적으로 올바른 표현이어야 한다.
-- "wrongAnswers" 4개는 실제 한국 학생들이 자주 헷갈리는 문법 포인트
-  (수일치, 시제, 능동/수동태, 관계대명사, to부정사/동명사 등)를 반영하여,
-  그럴듯하지만 문법적으로 틀린 표현으로 작성하라.
+type이 "grammar"인 문제는 다음 규칙을 따른다 (매우 중요: 정답 노출 금지):
+- 허용 형식은 딱 두 가지다. 모든 grammar 항목에 "grammarFormat"을 반드시 채워라.
+  (가) "blank" — 문장 속 빈칸에 알맞은 형태 고르기:
+    - targetSentence는 지문 속 문장 원문 그대로, targetText는 그 문장 안에 정확히 한 번 나오는 표현.
+      시험지에서는 targetText 자리가 빈칸(_____)으로 바뀌고 지문의 그 자리도 가려진다.
+    - "answer"는 targetText와 똑같은 올바른 표현, "wrongAnswers" 4개는 그럴듯하지만
+      문법적으로 틀린 표현(수일치·시제·태·준동사 등). 보기 5개는 서로 달라야 하고,
+      오답 중 문맥상 정답이 될 수 있는 것이 있으면 안 된다.
+  (나) "find_error" — 밑줄 친 ①~⑤ 중 어법상 틀린 것 고르기:
+    - "errorSentence": 지문 문장을 그대로 베끼지 말고, 같은 주제·문법 포인트로 새로 쓴 문장.
+      밑줄 5곳 중 정확히 한 곳만 문법적으로 틀리게 쓴다. (지문 문장과 거의 같으면 지문과 비교해 답이 보인다)
+    - "segments": errorSentence 안에 순서대로 나오는 밑줄 조각 5개 (문장 원문과 글자 그대로).
+    - "wrongIndex": 틀린 조각의 번호(0~4), "correction": 그 조각을 바르게 고친 표현.
+    - 이때 targetText는 틀린 조각, answer는 그 조각(틀린 표현), wrongAnswers는 나머지 조각 4개로 채운다.
+- 절대 금지: 문제 문장에 정답을 그대로 쓰기, 정답만 밑줄·괄호·따옴표로 표시하기,
+  "밑줄 친 (정답)의 쓰임이 어법상 가장 적절한 것은?" 같은 형식.
+- 생성 직후 코드가 이 규칙을 검사하고, 어기면 문제를 다시 만들게 한다.
 ===================================================
 
 ===== 새로 추가된 규칙: 상세 태그(detailTags)와 발췌 정보(excerpt) =====
@@ -247,7 +258,9 @@ type이 "grammar"인 문제는 다음 규칙을 따른다:
   문장에서 딱 한 군데만, 난이도(level) 기준에 맞는 문법 오류를 의도적으로
   넣은 "변형 문장"을 prompt 안에 큰따옴표로 넣어야 한다.
 - modelAnswer에는 그 오류가 올바르게 고쳐진 문장 전체를 적어라.
-- 변형 문장과 원본 문장이 완전히 똑같으면 절대 안 된다.
+- 변형 문장과 원본 문장이 완전히 똑같으면 절대 안 된다. prompt 속 문장(큰따옴표)이
+  modelAnswer와 같으면 틀린 곳이 없는 문제가 되므로 절대 안 된다.
+- prompt에 고칠 답을 알려 주는 말('A'를 'B'로 바꾸라, → 등)을 절대 넣지 마라.
 - 너무 사소한 오류만 반복해서 만들지 말고, 난이도별 기준에 맞는 다양한
   문법 포인트를 사용하라.
 
@@ -370,6 +383,11 @@ type이 "grammar"인 문제는 다음 규칙을 따른다:
       "explanation": "한국어 해설",
       "targetSentence": "문장 전체",
       "sentenceNumber": 1,
+      "grammarFormat": "grammar일 때만: blank 또는 find_error",
+      "errorSentence": "find_error일 때만: 새로 쓴 문장 (밑줄 5곳 중 한 곳만 틀림)",
+      "segments": ["find_error일 때만: 밑줄 조각 5개"],
+      "wrongIndex": 0,
+      "correction": "find_error일 때만: 틀린 조각을 바르게 고친 표현",
       "detailTags": {
         "partOfSpeech": "예: 동사",
         "grammarPoint": "예: 수일치",
@@ -441,7 +459,8 @@ items 배열은 반드시 정확히 14개여야 하고, vocab 최소 6개, gramm
 포함되어야 한다. 단, 개수를 채우기 위해 억지스럽거나 정답이 애매한 문제를
 만들지 마라. wrongAnswers는 각 문제마다 반드시 정확히 4개씩이어야 한다.
 vocab 문제의 answer/wrongAnswers는 한국어 뜻으로, grammar 문제는 영어
-표현으로 작성하라. 각 문제 항목에는 targetSentence, sentenceNumber,
+표현으로 작성하라. grammar 문제는 grammarFormat을 "blank"(빈칸형) 또는
+"find_error"(밑줄 ①~⑤ 중 틀린 것)로 정하고, 정답이 문제 문장에 드러나지 않게 하라. 각 문제 항목에는 targetSentence, sentenceNumber,
 detailTags, excerpt도 빠짐없이 채우고, detailTags의 grammarPoint,
 vocabPoint, thinkingType은 14개 문제 전체에 걸쳐 다양하게 분포시켜라.
 
