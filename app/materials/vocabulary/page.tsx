@@ -462,7 +462,7 @@ export default function VocabularyPage() {
             {/* 결정 안 된 단어 = 확인 필요 + 나중에 결정 */}
             <span
               title="확인 필요 + 나중에 결정"
-              className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${undecided > 0 ? 'undecided-glow bg-yellow-300 text-yellow-900' : 'bg-gray-100 text-gray-500'}`}
+              className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${undecided > 0 ? 'undecided-glow text-yellow-900' : 'bg-gray-100 text-gray-500'}`}
             >
               결정 안 된 단어 {undecided}개
             </span>
@@ -511,16 +511,9 @@ export default function VocabularyPage() {
       {/* 필터 */}
       <div className="mb-2 flex flex-wrap items-center gap-2">
         {(['all', ...VOCABULARY_VIEW_STATES] as StatusFilter[]).map((s) => (
-          <button
-            key={s}
-            onClick={() => setStatus(s)}
-            className={
-              // '확인 필요 N' 칸은 N > 0 이면 은은한 표시. 반짝이는 노란 배경 위에서도 선택 여부가 보이도록 파란 테두리로 표시
-              s === 'pending' && counts.pending > 0
-                ? `undecided-glow rounded-full border px-3 py-1 text-sm text-yellow-900 ${status === s ? 'border-blue-600 font-semibold ring-2 ring-blue-600' : 'border-yellow-400'}`
-                : pill(status === s)
-            }
-          >
+          <button key={s} onClick={() => setStatus(s)} className={pill(status === s)}>
+            {/* '확인 필요 N' 칸: N > 0 이면 글자 앞 노란 점만 은은하게 (칸 자체는 원래 스타일) */}
+            {s === 'pending' && counts.pending > 0 && <span className="undecided-dot" aria-hidden="true" />}
             {s === 'all' ? '전체' : VOCABULARY_VIEW_STATE_LABELS[s]} {counts[s]}
           </button>
         ))}
@@ -558,7 +551,7 @@ export default function VocabularyPage() {
             ))}
             <span className="text-xs text-gray-400">({grade} 난이도 {gradeRange.min}~{gradeRange.max})</span>
             {isDraftBandGrade(grade) && (
-              <span className="undecided-glow rounded bg-amber-100 px-1.5 py-0.5 text-xs text-amber-800">{grade} 범위표: {DRAFT_BAND_LABEL}</span>
+              <span className="undecided-glow rounded px-1.5 py-0.5 text-xs text-amber-800">{grade} 범위표: {DRAFT_BAND_LABEL}</span>
             )}
           </>
         ) : (

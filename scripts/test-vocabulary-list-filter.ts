@@ -85,23 +85,37 @@ test('화면 연결: 학년 변경 시 자동 전환, 개수 표시, 요약 표�
   assert.doesNotMatch(page, />\s*검색\s*</)
 })
 
-test('은은한 표시: 공용 .undecided-glow 가 4곳(배지·확인 필요 칸·단어은행 초안·단어시험 초안)에만, 2.5초·노란 배경+빛·멈춤 없음·움직임 줄이기 진한 테두리·인쇄 제외', () => {
+test('은은한 표시: 배지·초안 안내는 배경색만 2.5초로 오가고, 확인 필요 칸은 노란 점만. 빛 번짐·굵은 테두리 없음, 움직임 줄이기·인쇄 규칙', () => {
   const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8')
-  assert.match(css, /\.undecided-glow \{\s*animation: undecided-glow 2\.5s ease-in-out infinite;/)
-  assert.doesNotMatch(css, /undecided-glow:hover|animation-play-state/)
-  // 배경이 연한 노랑 ↔ 진한 노랑, 바깥 노란 빛이 퍼졌다 줄어든다
-  assert.match(css, /0%, 100% \{ background-color: #fef9c3; box-shadow: 0 0 0 0 [^}]+\}/)
-  assert.match(css, /50% \{ background-color: #fde047; box-shadow: 0 0 14px 5px [^}]+\}/)
-  assert.match(css, /prefers-reduced-motion: reduce\) \{\s*\.undecided-glow \{\s*animation: none;\s*box-shadow: 0 0 0 3px #ca8a04;/)
-  assert.match(css, /@media print \{\s*\.undecided-glow \{\s*animation: none !important;\s*box-shadow: none !important;\s*background-color: transparent !important;/)
+  // 배경색만 연한 노랑 ↔ 조금 진한 노랑, 1px 연한 노랑 테두리
+  assert.match(css, /@keyframes undecided-glow \{\s*0%, 100% \{ background-color: #fef9c3; \}\s*50% \{ background-color: #fef08a; \}\s*\}/)
+  assert.match(css, /\.undecided-glow \{\s*border: 1px solid #fde68a;\s*background-color: #fef9c3;\s*animation: undecided-glow 2\.5s ease-in-out infinite;\s*\}/)
+  // 점: 8px, 흐려졌다 진해진다
+  assert.match(css, /@keyframes undecided-dot \{\s*0%, 100% \{ opacity: 0\.35; \}\s*50% \{ opacity: 1; \}\s*\}/)
+  assert.match(css, /\.undecided-dot \{[^}]*width: 8px;[^}]*height: 8px;[^}]*animation: undecided-dot 2\.5s ease-in-out infinite;/)
+  // 빛 번짐·굵은 테두리·멈춤 없음
+  const block = css.slice(css.indexOf("/* '교사 확인이 필요한 곳'"))
+  assert.doesNotMatch(block.slice(0, block.indexOf('@media print')), /box-shadow|3px|:hover|animation-play-state/)
+  // 움직임 줄이기: 움직이지 않고 진한 쪽 노랑 고정 (테두리 추가 없음)
+  assert.match(css, /prefers-reduced-motion: reduce\) \{\s*\.undecided-glow \{\s*animation: none;\s*background-color: #fef08a;\s*\}\s*\.undecided-dot \{\s*animation: none;\s*opacity: 1;\s*\}/)
+  // 인쇄: 효과·점·배경색 모두 없음
+  assert.match(css, /@media print \{\s*\.undecided-glow \{\s*animation: none !important;\s*background-color: transparent !important;\s*border-color: transparent !important;\s*\}\s*\.undecided-dot \{\s*display: none !important;/)
+
   const vocab = readFileSync(new URL('../app/materials/vocabulary/page.tsx', import.meta.url), 'utf8')
   const bank = readFileSync(new URL('../app/create/word/BankMode.tsx', import.meta.url), 'utf8')
-  assert.equal((vocab.match(/undecided-glow/g) ?? []).length, 3) // 결정 안 된 단어 배지 + 확인 필요 칸 + 초안 안내
-  assert.match(vocab, /undecided > 0 \? 'undecided-glow/) // N = 0 이면 없음
-  assert.match(vocab, /s === 'pending' && counts\.pending > 0\s*\? `undecided-glow/) // 확인 필요 0 이면 없음
+  const mixed = readFileSync(new URL('../app/create/mixed/page.tsx', import.meta.url), 'utf8')
+  assert.equal((vocab.match(/undecided-glow/g) ?? []).length, 2) // 결정 안 된 단어 배지 + 초안 안내
+  assert.match(vocab, /undecided > 0 \? 'undecided-glow text-yellow-900'/) // N = 0 이면 없음, 진한 배경 클래스 없음
   assert.match(vocab, /undecided-glow[^"]*">\{grade\} 범위표: \{DRAFT_BAND_LABEL\}/)
-  assert.equal((bank.match(/undecided-glow/g) ?? []).length, 1)
-  assert.match(bank, /undecided-glow[^"]*">\{grade\} 레벨 범위는 \{DRAFT_BAND_LABEL\}/)
+  assert.doesNotMatch(vocab, /undecided-glow[^"']*bg-/) // 배경은 공용 효과로 통일
+  // 확인 필요 칸: 원래 필터 스타일 + 점 (N = 0 이면 점 없음)
+  assert.match(vocab, /<button key=\{s\} onClick=\{\(\) => setStatus\(s\)\} className=\{pill\(status === s\)\}>/)
+  assert.match(vocab, /\{s === 'pending' && counts\.pending > 0 && <span className="undecided-dot" aria-hidden="true" \/>\}/)
+  assert.equal((vocab.match(/undecided-dot/g) ?? []).length, 1)
+  for (const [name, code] of [['단어시험', bank], ['혼합 시험', mixed]] as const) {
+    assert.equal((code.match(/undecided-glow/g) ?? []).length, 1, name)
+    assert.match(code, /undecided-glow[^"]*">\{[^}]+\} 레벨 범위는 \{DRAFT_BAND_LABEL\}/, name)
+  }
 })
 
 console.log(`\n모두 통과: ${passed}개`)
