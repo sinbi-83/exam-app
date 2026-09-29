@@ -125,29 +125,6 @@ export default function ExternalPassagesPage() {
     return Array.from(set).sort()
   }, [items])
 
-  // 상단에 "사용 중 N / 보관 N" 개수를 보여주기 위한 계산. 그룹은 4개 지문이 아니라 세트 1개로 센다.
-  const counts = useMemo(() => {
-    const groupArchived = new Map<string, boolean>()
-    let activeSingles = 0
-    let archivedSingles = 0
-    for (const item of items) {
-      if (item.group_id) {
-        groupArchived.set(item.group_id, !!item.group_archived)
-      } else if (item.archived) {
-        archivedSingles++
-      } else {
-        activeSingles++
-      }
-    }
-    let activeGroups = 0
-    let archivedGroups = 0
-    for (const archived of groupArchived.values()) {
-      if (archived) archivedGroups++
-      else activeGroups++
-    }
-    return { active: activeSingles + activeGroups, archived: archivedSingles + archivedGroups }
-  }, [items])
-
   const filtered = useMemo(() => {
     return items.filter((item) => {
       if (levelFilter !== 'all' && item.level !== levelFilter) return false
@@ -230,6 +207,13 @@ export default function ExternalPassagesPage() {
   // 현재 탭(전체 자료/보관함)에 해당하는 자료만 보여준다. 검색·필터는 이미 위에서 적용된 상태라
   // 결과적으로 "선택된 영역 안에서만" 검색이 동작한다.
   const visibleRows = useMemo(() => rows.filter((row) => row.archived === (tab === 'archived')), [rows, tab])
+
+  // 탭 옆 "전체 자료 N / 보관함 N" = 그 탭을 누르면 실제로 보이는 줄 수 (검색·필터 반영, 4단계 세트는 1줄).
+  // 예전에는 검색·필터와 상관없이 전체 개수를 세어, 검색하면 개수와 목록이 달랐다 (2026-09-29).
+  const counts = useMemo(
+    () => ({ active: rows.filter((row) => !row.archived).length, archived: rows.filter((row) => row.archived).length }),
+    [rows],
+  )
 
   function toggleGroup(groupId: string) {
     setExpanded((prev) => {

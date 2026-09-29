@@ -82,21 +82,26 @@ export default function TestsArchivePage() {
     }
   }
 
+  // 검색어로 먼저 거른 목록. 탭 옆 개수와 보이는 목록이 모두 이것에서 나온다
+  // (예전에는 개수만 검색어와 상관없이 전체를 세어, 검색하면 개수와 목록이 달랐다 — 2026-09-29)
+  const searched = useMemo(() => {
+    const q = search.trim().toLowerCase()
+    return exams.filter((e) => !q || e.title.toLowerCase().includes(q))
+  }, [exams, search])
+
   const counts = useMemo(
     () => ({
-      all: exams.length,
-      problem: exams.filter((e) => e.exam_type === 'problem').length,
-      word: exams.filter((e) => e.exam_type === 'word').length,
+      all: searched.length,
+      problem: searched.filter((e) => e.exam_type === 'problem').length,
+      word: searched.filter((e) => e.exam_type === 'word').length,
     }),
-    [exams],
+    [searched],
   )
 
-  const shown = useMemo(() => {
-    const q = search.trim().toLowerCase()
-    return exams.filter(
-      (e) => (typeFilter === 'all' || e.exam_type === typeFilter) && (!q || e.title.toLowerCase().includes(q)),
-    )
-  }, [exams, typeFilter, search])
+  const shown = useMemo(
+    () => searched.filter((e) => typeFilter === 'all' || e.exam_type === typeFilter),
+    [searched, typeFilter],
+  )
 
   const printUrl = (e: Exam) =>
     `/tests/${e.id}/print?exam_id=${e.id}&title=${encodeURIComponent(e.title)}&date=${encodeURIComponent(e.exam_date ?? '')}`
