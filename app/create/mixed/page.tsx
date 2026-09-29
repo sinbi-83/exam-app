@@ -11,6 +11,7 @@ import Link from 'next/link'
 import type { VocabularyEntryRecord } from '@/types/vocabulary'
 import { VARIANT_LABELS, type PassageVariantLevel } from '@/types/passageBank'
 import {
+  DEFAULT_TEST_GRADE,
   DRAFT_BAND_LABEL,
   findDifficultyBand,
   gradesWithBands,
@@ -81,7 +82,7 @@ export default function MixedTestPage() {
       passageKey: null,
       level: 2,
       counts: { mc: 10, subjective: 3, grammar: 2 },
-      word: { count: 10, grade: wordGrades.find((g) => !isDraftBandGrade(g)) ?? wordGrades[0] ?? '중1', level: 'academy', direction: 'en_ko' },
+      word: { count: 10, grade: wordGrades.includes(DEFAULT_TEST_GRADE) ? DEFAULT_TEST_GRADE : wordGrades.find((g) => !isDraftBandGrade(g)) ?? wordGrades[0] ?? '중1', level: 'academy', direction: 'en_ko' },
     } as MixedConditions,
     initialMixedDraft,
   )

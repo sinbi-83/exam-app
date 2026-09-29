@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { getTypeHighlightClass } from '@/lib/tagDisplay'
+import { isGrammarLeak } from '@/lib/grammarLeak'
 
 const GRADE_OPTIONS = [
   '전체',
@@ -403,6 +404,11 @@ export default function QuestionSearchPage() {
                       >
                         {getCategoryLabel(q.question_type)}
                       </span>
+                      {isGrammarLeak(q) && (
+                        <span className="rounded bg-red-50 px-1.5 py-0.5 text-[11px] font-medium text-red-700" title="문제 문장에 정답이 드러나는 어법 문항 (docs/grammar-leak-audit.md)">
+                          정답 노출 의심
+                        </span>
+                      )}
                       <span
                         className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${getDifficultyBadgeClass(
                           q.difficulty

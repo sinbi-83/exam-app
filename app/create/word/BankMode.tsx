@@ -7,7 +7,7 @@ import { useMemo, useReducer, useRef, useState } from 'react'
 import type { VocabularyEntryRecord } from '@/types/vocabulary'
 import type { PassageVariantLevel } from '@/types/passageBank'
 import { VARIANT_LABELS } from '@/types/passageBank'
-import { DRAFT_BAND_LABEL, findDifficultyBand, gradesWithBands, isDraftBandGrade, VOCABULARY_BANDS_NOTE, type VocabularyGrade } from '@/config/vocabularyLevels'
+import { DEFAULT_TEST_GRADE, DRAFT_BAND_LABEL, findDifficultyBand, gradesWithBands, isDraftBandGrade, VOCABULARY_BANDS_NOTE, type VocabularyGrade } from '@/config/vocabularyLevels'
 import {
   generateWordTest,
   pickReplacement,
@@ -31,7 +31,7 @@ export default function BankMode() {
   const [draft, dispatch] = useReducer(
     wordTestDraftReducer,
     // 처음 고른 학년은 승인된 범위표 학년 중 첫째 (초안 학년이 늘어도 기본값은 그대로)
-    { grade: grades.find((g) => !isDraftBandGrade(g)) ?? grades[0] ?? '중1', level: 'school', mode: 'en_ko' },
+    { grade: grades.includes(DEFAULT_TEST_GRADE) ? DEFAULT_TEST_GRADE : grades.find((g) => !isDraftBandGrade(g)) ?? grades[0] ?? '중1', level: 'school', mode: 'en_ko' },
     initialWordTestDraft,
   )
   const grade = draft.conditions.grade as VocabularyGrade

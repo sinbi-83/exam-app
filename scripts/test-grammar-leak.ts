@@ -138,6 +138,19 @@ test('안전장치: 혼합 시험 후보에서 제외, 문제은행 목록·세�
   assert.match(read('../app/materials/questions/[id]/page.tsx'), /정답 노출 의심/)
 })
 
+test('문항 검색: API 가 화면이 읽는 원래 칸 이름도 돌려주고(검색 오류 수정), 결과에 정답 노출 배지', () => {
+  const api = read('../app/api/questions/search/route.ts')
+  for (const f of ['question_type: q.question_type', 'question_text: q.question_text', 'choices: q.choices', 'correct_answer: q.correct_answer', 'essay_meta: q.essay_meta']) {
+    assert.ok(api.includes(f), f)
+  }
+  // 다른 화면이 쓰는 이름(type·question·options·answer)도 그대로
+  assert.match(api, /type: \(q\.question_type \?\? ''\)\.replace/)
+  assert.match(api, /options: q\.choices \?\? \[\]/)
+  const page = read('../app/materials/questions/search/page.tsx')
+  assert.match(page, /matchesCategory\(q\.question_type, categories\)/)
+  assert.match(page, /\{isGrammarLeak\(q\) && \(/)
+})
+
 test('검사·수정 스크립트: 검사는 읽기만, 수정안 적용은 승인(O) 줄만·--apply 때만·백업 먼저', () => {
   const audit = read('./grammar-leak-audit.ts')
   assert.doesNotMatch(audit, /\.(insert|update|delete|upsert)\(/)

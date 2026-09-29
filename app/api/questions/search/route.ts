@@ -79,6 +79,13 @@ export async function GET(request: NextRequest) {
     topic: q.topic ?? '',
     difficulty: q.difficulty,
     question_set_id: q.question_set_id,
+    // 문항 검색 화면(/materials/questions/search)은 DB 원래 칸 이름으로 읽는다 → 같이 돌려준다 (다른 화면은 위 이름을 그대로 씀)
+    question_type: q.question_type ?? '',
+    question_text: q.question_text ?? '',
+    choices: q.choices ?? null,
+    correct_answer: q.correct_answer ?? null,
+    essay_meta: q.essay_meta ?? null,
+    created_at: q.created_at,
   }))
 
   return NextResponse.json({ data: mapped, passages })

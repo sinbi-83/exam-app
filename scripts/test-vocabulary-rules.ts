@@ -345,10 +345,10 @@ test('승인된 초5·중1·중3 범위는 그대로 (학교형/일반학원형/
   assert.deepEqual(r('중3'), [[30, 50], [38, 58], [40, 65], [52, 72]])
   assert.ok(!isDraftBandGrade('초5') && !isDraftBandGrade('중1') && !isDraftBandGrade('중3'))
 })
-test('초안 학년 7개는 "승인 전 초안" 표시 대상, 한→영도 같은 범위', () => {
-  assert.deepEqual([...DRAFT_BAND_GRADES], ['초3', '초4', '초6', '중2', '고1', '고2', '고3'])
-  for (const g of DRAFT_BAND_GRADES) {
-    assert.ok(isDraftBandGrade(g))
+test('범위표 10개 학년 모두 승인 (2026-09-29, 초안 7개 승인) — "승인 전 초안" 표시 대상 없음, 한→영도 같은 범위', () => {
+  assert.deepEqual([...DRAFT_BAND_GRADES], [])
+  for (const g of ['초3', '초4', '초6', '중2', '고1', '고2', '고3'] as const) {
+    assert.ok(!isDraftBandGrade(g))
     for (const l of ['school', 'academy', 'advanced', 'prestudy'] as const) {
       const en = findDifficultyBand(g, l, 'en_ko')!
       const ko = findDifficultyBand(g, l, 'ko_en')!
@@ -356,9 +356,12 @@ test('초안 학년 7개는 "승인 전 초안" 표시 대상, 한→영도 같�
     }
   }
   assert.match(DRAFT_BAND_LABEL, /승인 전 초안/)
-  // 고3 선행형은 80~100 (85~100 에서 넓힘, 2026-09-29), 여전히 초안
+  // 고3 선행형은 80~100 (85~100 에서 넓힘, 2026-09-29), 승인됨
   assert.deepEqual(findDifficultyBand('고3', 'prestudy', 'en_ko'), { grade: '고3', level: 'prestudy', direction: 'en_ko', min: 80, max: 100 })
-  assert.ok(isDraftBandGrade('고3'))
+  assert.ok(!isDraftBandGrade('고3'))
+  // 승인된 숫자는 그대로 (초안 때와 같은 값)
+  assert.deepEqual(findDifficultyBand('초3', 'school', 'en_ko'), { grade: '초3', level: 'school', direction: 'en_ko', min: 1, max: 8 })
+  assert.deepEqual(findDifficultyBand('고1', 'prestudy', 'en_ko'), { grade: '고1', level: 'prestudy', direction: 'en_ko', min: 72, max: 92 })
 })
 test('학년이 올라가면 레벨 범위도 내려가지 않는다 (초3 → 고3)', () => {
   for (const l of ['school', 'academy', 'advanced', 'prestudy'] as const) {
