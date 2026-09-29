@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import HubCard from '@/app/components/HubCard'
 
-// 자료 > 지문 첫 화면. AI 지문(question_sets)과 외부지문(passages)은 저장 방식이 달라서 아직 따로 본다 (합치기는 6단계).
+// 자료 > 지문 첫 화면. AI 지문(question_sets)과 외부지문(passages)은 저장 방식이 달라서 따로 관리한다.
+// 함께 보기만 하는 통합 목록(읽기 전용)은 /materials/passages/all (6단계 B).
 export default function PassagesHubPage() {
   return (
     <div className="mx-auto max-w-4xl">
@@ -21,6 +23,9 @@ export default function PassagesHubPage() {
           href="/materials/passages/external"
         />
       </div>
+      <Link href="/materials/passages/all" className="mt-4 inline-block text-sm text-blue-600 hover:underline">
+        📚 AI 지문과 외부지문을 한 목록에서 보기 (통합 목록, 보기 전용) →
+      </Link>
     </div>
   )
 }

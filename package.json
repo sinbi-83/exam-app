@@ -26,7 +26,8 @@
     "test-official-vocabulary": "node scripts/test-official-vocabulary.ts",
     "add-vocabulary-seed": "node scripts/add-vocabulary-seed.ts",
     "test-vocabulary-calibration": "node scripts/test-vocabulary-calibration.ts",
-    "test-vocabulary-list-filter": "node scripts/test-vocabulary-list-filter.ts"
+    "test-vocabulary-list-filter": "node scripts/test-vocabulary-list-filter.ts",
+    "test-passage-unified": "node scripts/test-passage-unified.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
