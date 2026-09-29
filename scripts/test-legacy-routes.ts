@@ -9,7 +9,7 @@
 import assert from 'node:assert/strict'
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { join, relative, resolve } from 'node:path'
-import { NAV_GROUPS, NAV_LEGACY } from '../config/navigation.ts'
+import { activeNavGroup, isNavItemActive, NAV_GROUPS, NAV_LEGACY } from '../config/navigation.ts'
 
 const ROOT = process.cwd()
 const legacy = JSON.parse(readFileSync(resolve(ROOT, 'config/legacyRoutes.json'), 'utf-8')) as {
@@ -136,6 +136,40 @@ test('코드 안에 옛 주소로 가는 직접 링크가 없다', () => {
   walk(resolve(ROOT, 'app'))
   walk(resolve(ROOT, 'lib'))
   assert.deepEqual(hits, [])
+})
+
+test('6단계 A: 문항 검색·외부지문저장소가 자료 메뉴 안에 있고, 옛 주소가 그리로 연결된다', () => {
+  const materials = NAV_GROUPS.find((g) => g.title === '자료')!
+  const hrefs = materials.items.map((i) => i.href)
+  assert.ok(hrefs.includes('/materials/questions/search'))
+  assert.ok(hrefs.includes('/materials/passages/external'))
+  assert.equal(redirectOf('/question-search'), '/materials/questions/search')
+  assert.equal(redirectOf('/question-search/print'), '/materials/questions/search/print')
+  assert.ok(pageExists('/materials/questions/search') && pageExists('/materials/questions/search/print'))
+  // 모바일·데스크탑 모두 같은 목록(NAV_GROUPS)을 그리므로 모바일에도 나온다
+  for (const f of ['app/components/SidebarNav.tsx', 'app/components/MobileNav.tsx']) {
+    assert.match(readFileSync(resolve(ROOT, f), 'utf-8'), /NAV_GROUPS\.map/, f)
+  }
+})
+
+test('지금 화면 표시는 가장 구체적인 메뉴 하나만', () => {
+  const item = (href: string) => NAV_GROUPS.flatMap((g) => g.items).find((i) => i.href === href)!
+  const activeOn = (path: string) => NAV_GROUPS.flatMap((g) => g.items).filter((i) => isNavItemActive(i, path)).map((i) => i.label)
+  assert.deepEqual(activeOn('/materials/questions/search'), ['문항 검색'])
+  assert.deepEqual(activeOn('/materials/questions/search/print'), ['문항 검색'])
+  assert.deepEqual(activeOn('/materials/questions/abc'), ['문제은행'])
+  assert.deepEqual(activeOn('/materials/passages/external/abc'), ['외부지문저장소'])
+  assert.deepEqual(activeOn('/materials/passages/ai'), ['지문'])
+  assert.deepEqual(activeOn('/tests/abc/print'), ['시험지 보관함'])
+  assert.equal(activeNavGroup('/materials/questions/search'), '자료')
+  assert.ok(!isNavItemActive(item('/materials/questions'), '/materials/questions/search'))
+})
+
+test('문항 검색 화면의 오래된 결과 무시 처리와 인쇄 키는 그대로', () => {
+  const code = readFileSync(resolve(ROOT, 'app/materials/questions/search/page.tsx'), 'utf-8')
+  assert.match(code, /searchSeq/)
+  assert.match(code, /if \(seq !== searchSeq\.current\) return/)
+  assert.match(code, /sessionStorage\.setItem\('searchPrintData'/)
 })
 
 test('sessionStorage 키 2개: 쓰는 곳과 읽는 곳이 짝이 맞다', () => {
