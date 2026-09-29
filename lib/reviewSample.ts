@@ -96,9 +96,32 @@ export type Verdict = 'O' | 'X' | ''
 export function normalizeVerdict(v: string | undefined): Verdict | null {
   const s = (v ?? '').trim().toUpperCase()
   if (s === '') return ''
-  if (['O', '○', 'ㅇ', '0'].includes(s)) return 'O'
-  if (['X', '×', '✕'].includes(s)) return 'X'
+  // 한글 입력기로 쓰면 전각 Ｏ/Ｘ 가 들어온다 (엑셀에서 흔함)
+  if (['O', 'Ｏ', 'ｏ', '○', '◯', 'ㅇ', '0'].includes(s)) return 'O'
+  if (['X', 'Ｘ', 'ｘ', '×', '✕'].includes(s)) return 'X'
   return null // 알아볼 수 없는 값
+}
+
+// 엑셀에서 "텍스트(탭으로 분리)" 로 저장하면 칸이 탭으로 나뉜다 → 따옴표 밖의 탭을 쉼표로 바꿔 CSV 로 읽는다
+export function tabbedToCsv(text: string): string {
+  const firstLine = text.split(/\r?\n/, 1)[0] ?? ''
+  if (!firstLine.includes('\t') || firstLine.includes(',')) return text
+  let out = ''
+  let quoted = false
+  for (const ch of text) {
+    if (ch === '"') quoted = !quoted
+    out += !quoted && ch === '\t' ? ',' : ch
+  }
+  return out
+}
+
+// 파일 바이트 → 글자. UTF-8 이 아니면(엑셀이 한글 윈도우 기본 인코딩 CP949 로 저장) euc-kr 로 읽는다
+export function decodeReviewFile(bytes: Uint8Array): string {
+  try {
+    return new TextDecoder('utf-8', { fatal: true }).decode(bytes)
+  } catch {
+    return new TextDecoder('euc-kr').decode(bytes)
+  }
 }
 
 export interface ReviewResult {
@@ -116,7 +139,7 @@ export interface ReviewResult {
 export const REVIEW_X_LIMIT = 2
 
 export function judgeReviewCsv(text: string): ReviewResult {
-  const rows = parseCsv(text.replace(/^﻿/, ''))
+  const rows = parseCsv(tabbedToCsv(text.replace(/^﻿/, '')))
   const header = rows[0]?.map((h) => h.trim()) ?? []
   const col = (name: string) => header.indexOf(name)
   const [cNo, cWord, cVerdict, cMemo] = [col('번호'), col('단어'), col('판정'), col('메모')]

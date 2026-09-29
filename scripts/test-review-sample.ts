@@ -4,7 +4,7 @@
 
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
-import { allocate, buildReviewCsv, bucketIndex, judgeReviewCsv, normalizeVerdict, REVIEW_CSV_HEADER, stratifiedSample } from '../lib/reviewSample.ts'
+import { allocate, buildReviewCsv, bucketIndex, decodeReviewFile, judgeReviewCsv, normalizeVerdict, REVIEW_CSV_HEADER, stratifiedSample, tabbedToCsv } from '../lib/reviewSample.ts'
 import { parseCsv } from '../lib/officialVocabulary.ts'
 
 let passed = 0
@@ -92,7 +92,21 @@ test('채점: X 3개 이상 → 난이도 구간별로 나눠 다시 검토, 빈
   assert.deepEqual(['O', 'o', '○', 'ㅇ', 'X', '×', ' x ', ''].map(normalizeVerdict), ['O', 'O', 'O', 'O', 'X', 'X', 'X', ''])
 })
 
-test('만든 샘플표: 두 파일 모두 BOM · 40줄 · 판정/메모 빈칸 · 번호 1~40', () => {
+test('엑셀로 다시 저장한 파일도 읽는다: 탭 구분 · CP949(euc-kr) · 전각 Ｏ/Ｘ', () => {
+  const tsv = '번호\t단어\t품사\t대표 뜻\t인정 뜻\t난이도\t한→영 가능\t판정\t메모\r\n' +
+    '1\tpencil\t명\t연필\t\t2\t가능\tＯ\t\r\n' +
+    '2\ttest\t명\t시험\t"검사, 테스트"\t6\t불가\tＸ\t뜻 확인\r\n'
+  assert.equal(tabbedToCsv('a,b\tc'), 'a,b\tc') // 쉼표 CSV 는 그대로
+  const r = judgeReviewCsv(tsv)
+  assert.deepEqual([r.total, r.o, r.x], [2, 1, 1])
+  assert.deepEqual(r.xWords, [{ no: '2', word: 'test', memo: '뜻 확인' }])
+  // CP949 바이트: "번호" = b9 f8 c8 a3, 전각 Ｏ = a3 cf
+  const cp949 = new Uint8Array([0xb9, 0xf8, 0xc8, 0xa3, 0x09, 0xa3, 0xcf])
+  assert.equal(decodeReviewFile(cp949), '번호\tＯ')
+  assert.equal(decodeReviewFile(new TextEncoder().encode('﻿' + 'ab,cd')), 'ab,cd') // UTF-8 BOM 은 읽을 때 빠진다
+})
+
+test('샘플표 파일: 두 파일 모두 UTF-8 BOM 쉼표 CSV · 40줄 · 번호 1~40 · 판정은 빈칸 또는 O/X', () => {
   for (const f of ['A', 'B']) {
     const text = readFileSync(new URL(`../docs/review-sample-${f}.csv`, import.meta.url), 'utf8')
     assert.ok(text.startsWith('﻿'), f)
@@ -100,9 +114,10 @@ test('만든 샘플표: 두 파일 모두 BOM · 40줄 · 판정/메모 빈칸 �
     assert.deepEqual(rows[0], [...REVIEW_CSV_HEADER], f)
     assert.equal(rows.length - 1, 40, f)
     assert.deepEqual(rows.slice(1).map((r) => r[0]), Array.from({ length: 40 }, (_, i) => String(i + 1)), f)
-    assert.ok(rows.slice(1).every((r) => r[7] === '' && r[8] === ''), f)
-    // 빈 판정표를 채점하면 판정 보류
-    assert.match(judgeReviewCsv(text).decision, /^아직 판정할 수 없음: 빈칸 40개/, f)
+    assert.ok(rows.slice(1).every((r) => r.length === REVIEW_CSV_HEADER.length), f)
+    // 판정은 선생님이 채운 O/X 또는 아직 빈칸
+    assert.ok(rows.slice(1).every((r) => ['', 'O', 'X'].includes(r[7])), f)
+    assert.equal(judgeReviewCsv(text).total, 40, f)
   }
 })
 

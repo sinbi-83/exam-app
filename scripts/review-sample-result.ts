@@ -6,7 +6,7 @@
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { judgeReviewCsv, REVIEW_X_LIMIT } from '../lib/reviewSample.ts'
+import { decodeReviewFile, judgeReviewCsv, REVIEW_X_LIMIT } from '../lib/reviewSample.ts'
 
 const files = process.argv.slice(2).filter((a) => !a.startsWith('-'))
 if (files.length === 0) {
@@ -15,7 +15,8 @@ if (files.length === 0) {
 }
 
 for (const f of files) {
-  const r = judgeReviewCsv(readFileSync(resolve(process.cwd(), f), 'utf-8'))
+  // 엑셀이 CP949·탭 구분으로 저장한 파일도 읽는다
+  const r = judgeReviewCsv(decodeReviewFile(readFileSync(resolve(process.cwd(), f))))
   console.log(`\n■ ${f}`)
   console.log(`  단어 ${r.total}개 · O ${r.o}개 · X ${r.x}개 · 빈칸 ${r.blank}개 · X 비율 ${(r.xRate * 100).toFixed(1)}% (O+X 기준)`)
   if (r.unknown.length) console.log(`  알아볼 수 없는 판정값: ${r.unknown.map((u) => `${u.no}.${u.word}("${u.value}")`).join(', ')}`)
