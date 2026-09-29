@@ -549,7 +549,7 @@ export default function VocabularyPage() {
             ))}
             <span className="text-xs text-gray-400">({grade} 난이도 {gradeRange.min}~{gradeRange.max})</span>
             {isDraftBandGrade(grade) && (
-              <span className="rounded bg-amber-100 px-1.5 py-0.5 text-xs text-amber-800">{grade} 범위표: {DRAFT_BAND_LABEL}</span>
+              <span className="undecided-glow rounded bg-amber-100 px-1.5 py-0.5 text-xs text-amber-800">{grade} 범위표: {DRAFT_BAND_LABEL}</span>
             )}
           </>
         ) : (

@@ -182,7 +182,7 @@ export default function BankMode() {
             {grades.map((g) => <option key={g} value={g}>{g}{isDraftBandGrade(g) ? ' (승인 전 초안)' : ''}</option>)}
           </select>
           {isDraftBandGrade(grade) && (
-            <p className="mt-1 text-xs text-amber-700">{grade} 레벨 범위는 {DRAFT_BAND_LABEL}입니다.</p>
+            <p className="undecided-glow mt-1 inline-block rounded px-1.5 py-0.5 text-xs text-amber-700">{grade} 레벨 범위는 {DRAFT_BAND_LABEL}입니다.</p>
           )}
         </div>
         <div>
