@@ -93,8 +93,8 @@ const LEVEL_RANGES: { grade: VocabularyGrade; ranges: Record<PassageVariantLevel
   { grade: '고1', ranges: { school: [45, 65], academy: [53, 73], advanced: [55, 80], prestudy: [72, 92] } },
   // 고2 (초안): 고1 +5
   { grade: '고2', ranges: { school: [50, 70], academy: [58, 78], advanced: [60, 85], prestudy: [77, 97] } },
-  // 고3 (초안): 이전 고1~2(55~80) / 이 학년 고3(75~100) / 다음 없음 → 선행형은 최상단 85~100
-  { grade: '고3', ranges: { school: [65, 85], academy: [73, 93], advanced: [75, 100], prestudy: [85, 100] } },
+  // 고3 (초안): 이전 고1~2(55~80) / 이 학년 고3(75~100) / 다음 없음 → 선행형은 최상단 80~100 (2026-09-29 85~100 에서 넓힘: 91~100 단어가 없어 문항 부족)
+  { grade: '고3', ranges: { school: [65, 85], academy: [73, 93], advanced: [75, 100], prestudy: [80, 100] } },
 ]
 
 const LEVEL_ORDER: readonly PassageVariantLevel[] = ['school', 'academy', 'advanced', 'prestudy']

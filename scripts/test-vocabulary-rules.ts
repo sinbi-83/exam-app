@@ -356,6 +356,9 @@ test('초안 학년 7개는 "승인 전 초안" 표시 대상, 한→영도 같�
     }
   }
   assert.match(DRAFT_BAND_LABEL, /승인 전 초안/)
+  // 고3 선행형은 80~100 (85~100 에서 넓힘, 2026-09-29), 여전히 초안
+  assert.deepEqual(findDifficultyBand('고3', 'prestudy', 'en_ko'), { grade: '고3', level: 'prestudy', direction: 'en_ko', min: 80, max: 100 })
+  assert.ok(isDraftBandGrade('고3'))
 })
 test('학년이 올라가면 레벨 범위도 내려가지 않는다 (초3 → 고3)', () => {
   for (const l of ['school', 'academy', 'advanced', 'prestudy'] as const) {
