@@ -79,14 +79,24 @@ export function aiSetDifficulty(itemDifficulties: (string | number | null | unde
 }
 
 // ── 통합 목록 한 줄 ──
+// 외부지문 4단계 세트(같은 group_id)는 한 줄로 묶는다 → levels 에 가진 단계들이 들어간다.
+export interface UnifiedLevel {
+  difficulty: UnifiedDifficulty
+  label: string // 학교형 / 일반학원형 …
+  href: string // 그 단계 지문의 원래 화면
+}
+
 export interface UnifiedPassageRow {
   kind: PassageKind
-  id: string
+  id: string // AI = question_sets.id, 외부 단독 = passages.id, 외부 세트 = passage_groups.id
+  isGroup: boolean
   title: string
   grade: string | null // 통합 표기 (중1). 알아볼 수 없으면 null
   gradeRaw: string | null // 원래 저장된 학년 글자
-  difficulty: UnifiedDifficulty | null
+  difficulty: UnifiedDifficulty | null // 대표 난이도 (세트는 가장 낮은 단계)
+  difficulties: UnifiedDifficulty[] // 난이도 필터용: 이 중 하나라도 맞으면 보인다
   difficultyRaw: string | null // 원래 체계의 이름 (상위학원형 / 대부분 intermediate …)
+  levels: UnifiedLevel[] // 외부 세트의 단계 배지 (단독·AI 는 빈 배열)
   questionCount: number
   archived: boolean // 외부지문 보관 여부 (AI 는 보관 기능이 없어 항상 false)
   createdAt: string
@@ -107,6 +117,8 @@ export interface AiSetLike {
 
 export interface ExternalPassageLike {
   id: string
+  group_id?: string | null
+  group_title?: string | null
   title: string | null
   level: string | null
   variant_level: string | null
@@ -127,11 +139,14 @@ export function aiSetToRow(s: AiSetLike): UnifiedPassageRow {
   return {
     kind: 'ai',
     id: s.id,
+    isGroup: false,
     title: s.topic || '(제목 없음)',
     grade: normalizeGrade(s.grade),
     gradeRaw: s.grade,
     difficulty,
+    difficulties: difficulty ? [difficulty] : [],
     difficultyRaw: difficulty ? `문항 대부분 ${AI_RAW_LABEL[difficulty]}` : null,
+    levels: [],
     questionCount: all.length,
     archived: false,
     createdAt: s.created_at,
@@ -140,20 +155,61 @@ export function aiSetToRow(s: AiSetLike): UnifiedPassageRow {
 }
 
 export function externalToRow(p: ExternalPassageLike): UnifiedPassageRow {
+  const difficulty = externalDifficulty(p.variant_level)
   return {
     kind: 'external',
     id: p.id,
+    isGroup: false,
     title: p.title || '(제목 없음)',
     grade: normalizeGrade(p.level),
     gradeRaw: p.level,
-    difficulty: externalDifficulty(p.variant_level),
+    difficulty,
+    difficulties: difficulty ? [difficulty] : [],
     difficultyRaw: p.variant_level ? VARIANT_RAW_LABEL[p.variant_level] ?? p.variant_level : null,
+    levels: [],
     questionCount: p.question_count + p.essay_count,
     // 그룹 소속 지문은 그룹의 보관 여부를 따른다 (외부지문 목록 화면과 같은 규칙)
     archived: p.group_archived ?? !!p.archived,
     createdAt: p.created_at,
     href: `/materials/passages/external/${p.id}`,
   }
+}
+
+// 외부지문 목록: 같은 group_id 는 한 줄로 묶는다 (외부지문 목록 화면과 같은 방식). group_id 없는 지문은 한 줄씩.
+// 세트 한 줄: 제목 = 묶음 제목, 단계 배지 = 가진 단계(쉬운 순), 열기 = 가장 쉬운 단계 지문, 문항 수 = 합계,
+// 만든 날 = 가장 이른 지문, 보관 = 묶음 보관 여부.
+export function externalRows(passages: readonly ExternalPassageLike[]): UnifiedPassageRow[] {
+  const singles: UnifiedPassageRow[] = []
+  const groups = new Map<string, ExternalPassageLike[]>()
+  for (const p of passages) {
+    if (p.group_id) groups.set(p.group_id, [...(groups.get(p.group_id) ?? []), p])
+    else singles.push(externalToRow(p))
+  }
+  const grouped = [...groups.entries()].map(([groupId, members]): UnifiedPassageRow => {
+    const rows = members.map(externalToRow).sort((a, b) => (a.difficulty ?? 9) - (b.difficulty ?? 9) || a.id.localeCompare(b.id))
+    const first = rows[0]
+    const levels = rows
+      .filter((r) => r.difficulty !== null)
+      .map((r) => ({ difficulty: r.difficulty as UnifiedDifficulty, label: r.difficultyRaw ?? '', href: r.href }))
+    const difficulties = [...new Set(levels.map((l) => l.difficulty))]
+    return {
+      kind: 'external',
+      id: groupId,
+      isGroup: true,
+      title: members.find((m) => m.group_title)?.group_title || first.title,
+      grade: first.grade,
+      gradeRaw: first.gradeRaw,
+      difficulty: difficulties[0] ?? null,
+      difficulties,
+      difficultyRaw: levels.map((l) => l.label).join(' · ') || null,
+      levels,
+      questionCount: rows.reduce((n, r) => n + r.questionCount, 0),
+      archived: rows.some((r) => r.archived),
+      createdAt: rows.map((r) => r.createdAt).sort()[0],
+      href: first.href,
+    }
+  })
+  return [...singles, ...grouped]
 }
 
 export interface UnifiedFilter {
@@ -168,7 +224,7 @@ export function filterUnifiedRows(rows: readonly UnifiedPassageRow[], f: Unified
     (r) =>
       (f.kind === 'all' || r.kind === f.kind) &&
       (f.grade === 'all' || (f.grade === 'unknown' ? r.grade === null : r.grade === f.grade)) &&
-      (f.difficulty === 'all' || (f.difficulty === 'unknown' ? r.difficulty === null : r.difficulty === f.difficulty)) &&
+      (f.difficulty === 'all' || (f.difficulty === 'unknown' ? r.difficulties.length === 0 : r.difficulties.includes(f.difficulty))) &&
       (f.includeArchived || !r.archived),
   )
 }

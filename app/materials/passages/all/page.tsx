@@ -60,6 +60,7 @@ export default function UnifiedPassagesPage() {
       </div>
       <p className="mb-4 text-xs text-gray-500">
         보기 전용입니다. 수정·삭제·보관은 각 지문의 &lsquo;열기&rsquo;로 원래 화면에서 하세요.
+        외부지문 4단계 세트는 한 줄로 묶어 가진 단계를 배지로 보여줍니다 (배지를 누르면 그 단계 지문).
         난이도는 두 체계를 한 눈금으로 맞춘 값입니다 (기초 = 학교형·AI 쉬움, 표준 = 일반학원형·AI 보통, 심화 = 상위학원형·AI 어려움, 선행 = 선행형).
       </p>
 
@@ -118,16 +119,38 @@ export default function UnifiedPassagesPage() {
             </thead>
             <tbody>
               {shown.map((r) => (
-                <tr key={`${r.kind}:${r.id}`} className="border-b border-gray-100 last:border-0 hover:bg-gray-50">
+                <tr key={`${r.kind}:${r.isGroup ? 'group' : 'one'}:${r.id}`} className="border-b border-gray-100 last:border-0 hover:bg-gray-50">
                   <td className="px-3 py-2">
                     <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${KIND_BADGE[r.kind]}`}>{PASSAGE_KIND_LABELS[r.kind]}</span>
                     {r.archived && <span className="ml-1 rounded bg-gray-200 px-1.5 py-0.5 text-[11px] text-gray-600">보관</span>}
                   </td>
                   <td className="px-3 py-2 text-gray-600" title={r.gradeRaw ?? ''}>{r.grade ?? r.gradeRaw ?? '학년 미정'}</td>
-                  <td className="px-3 py-2 font-medium text-gray-800">{r.title}</td>
+                  <td className="px-3 py-2 font-medium text-gray-800">
+                    {r.title}
+                    {/* 외부지문 4단계 세트: 가진 단계를 배지로 (누르면 그 단계 지문의 원래 화면) */}
+                    {r.isGroup && (
+                      <span className="ml-2 inline-flex flex-wrap gap-1 align-middle">
+                        {r.levels.map((l) => (
+                          <Link
+                            key={l.href}
+                            href={l.href}
+                            className="rounded border border-teal-200 bg-teal-50 px-1.5 py-0.5 text-[11px] font-normal text-teal-700 hover:bg-teal-100"
+                          >
+                            {l.label}
+                          </Link>
+                        ))}
+                      </span>
+                    )}
+                  </td>
                   <td className="px-3 py-2 text-gray-600">
-                    {r.difficulty ? UNIFIED_DIFFICULTY_LABELS[r.difficulty] : '미정'}
-                    {r.difficultyRaw && <span className="ml-1 text-[11px] text-gray-400">({r.difficultyRaw})</span>}
+                    {r.isGroup
+                      ? r.difficulties.length
+                        ? r.difficulties.map((d) => UNIFIED_DIFFICULTY_LABELS[d]).join('·')
+                        : '미정'
+                      : r.difficulty
+                        ? UNIFIED_DIFFICULTY_LABELS[r.difficulty]
+                        : '미정'}
+                    {!r.isGroup && r.difficultyRaw && <span className="ml-1 text-[11px] text-gray-400">({r.difficultyRaw})</span>}
                   </td>
                   <td className="px-3 py-2 text-center text-gray-600">{r.questionCount}</td>
                   <td className="px-3 py-2 text-gray-500">{r.createdAt.slice(0, 10)}</td>

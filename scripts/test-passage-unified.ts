@@ -8,6 +8,7 @@ import {
   aiSetDifficulty,
   aiSetToRow,
   externalDifficulty,
+  externalRows,
   externalToRow,
   filterUnifiedRows,
   normalizeGrade,
@@ -99,6 +100,44 @@ test('필터: 종류 · 학년 · 난이도 · 보관 포함', () => {
   assert.deepEqual(filterUnifiedRows(rows, { ...base, difficulty: 3 }).map((r) => r.id), ['e1'])
   const unknown = aiSetToRow({ id: 'a2', grade: '기타', topic: null, created_at: '2026-07-01T00:00:00Z', questions: [] })
   assert.deepEqual(filterUnifiedRows([unknown], { ...base, grade: 'unknown', difficulty: 'unknown' }).map((r) => r.id), ['a2'])
+})
+
+test('외부지문 4단계 세트는 한 줄: 단계 배지·열기·문항 수 합계·난이도 필터(하나라도 맞으면)', () => {
+  const member = (id: string, v: string | null, extra: object = {}) => ({
+    id, group_id: 'g1', group_title: '로켓 삼촌', title: `로켓 삼촌 (${v})`, level: '초6', variant_level: v, archived: false,
+    group_archived: false, created_at: `2026-09-0${id.slice(-1)}T00:00:00Z`, question_count: 10, essay_count: 2, ...extra,
+  })
+  const rows = externalRows([
+    member('p3', 'advanced'),
+    member('p1', 'school'),
+    member('p2', 'academy'),
+    { id: 's1', title: '단독 지문', level: '중1', variant_level: null, archived: false, created_at: '2026-09-05T00:00:00Z', question_count: 5, essay_count: 0 },
+  ])
+  assert.equal(rows.length, 2)
+  const g = rows.find((r) => r.isGroup)!
+  assert.equal(g.id, 'g1')
+  assert.equal(g.title, '로켓 삼촌')
+  assert.equal(g.grade, '초6')
+  assert.deepEqual(g.levels.map((l) => [l.label, l.href]), [
+    ['학교형', '/materials/passages/external/p1'],
+    ['일반학원형', '/materials/passages/external/p2'],
+    ['상위학원형', '/materials/passages/external/p3'],
+  ])
+  assert.deepEqual(g.difficulties, [1, 2, 3])
+  assert.equal(g.href, '/materials/passages/external/p1') // 열기 = 가장 쉬운 단계 지문
+  assert.equal(g.questionCount, 36)
+  assert.equal(g.createdAt, '2026-09-01T00:00:00Z')
+  const single = rows.find((r) => !r.isGroup)!
+  assert.deepEqual([single.id, single.difficulties, single.levels], ['s1', [], []])
+
+  const base = { kind: 'all', grade: 'all', difficulty: 'all', includeArchived: false } as const
+  assert.deepEqual(filterUnifiedRows(rows, { ...base, difficulty: 2 }).map((r) => r.id), ['g1']) // 가진 단계 중 하나
+  assert.deepEqual(filterUnifiedRows(rows, { ...base, difficulty: 4 }).map((r) => r.id), [])
+  assert.deepEqual(filterUnifiedRows(rows, { ...base, difficulty: 'unknown' }).map((r) => r.id), ['s1'])
+  // 묶음이 보관되면 한 줄 전체가 보관
+  const archived = externalRows([member('p1', 'school', { group_archived: true }), member('p2', 'academy', { group_archived: true })])
+  assert.equal(archived[0].archived, true)
+  assert.deepEqual(filterUnifiedRows(archived, base), [])
 })
 
 test('읽기 전용: 통합 API 는 GET 만, 두 표를 1,000행씩 나눠 읽는다. 옛 화면은 그대로 있다', () => {
