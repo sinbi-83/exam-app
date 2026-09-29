@@ -28,7 +28,9 @@
     "test-vocabulary-calibration": "node scripts/test-vocabulary-calibration.ts",
     "test-vocabulary-list-filter": "node scripts/test-vocabulary-list-filter.ts",
     "test-passage-unified": "node scripts/test-passage-unified.ts",
-    "test-mixed-test": "node scripts/test-mixed-test.ts"
+    "test-mixed-test": "node scripts/test-mixed-test.ts",
+    "review-sample-result": "node scripts/review-sample-result.ts",
+    "test-review-sample": "node scripts/test-review-sample.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",
