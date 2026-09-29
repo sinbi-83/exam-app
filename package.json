@@ -32,7 +32,8 @@
     "review-sample-result": "node scripts/review-sample-result.ts",
     "test-review-sample": "node scripts/test-review-sample.ts",
     "test-tab-counts": "node scripts/test-tab-counts.ts",
-    "test-stage5-bulk-approve": "node scripts/test-stage5-bulk-approve.ts"
+    "test-stage5-bulk-approve": "node scripts/test-stage5-bulk-approve.ts",
+    "test-print-layout": "node scripts/test-print-layout.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",

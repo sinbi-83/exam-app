@@ -188,7 +188,7 @@ test('오래된 결과 무시: 조건을 바꾸면 미리보기 비움, 늦게 �
   assert.match(page, /if \(seq !== candSeq\.current\) return/)
 })
 
-test('혼합 시험 인쇄: 일반 인쇄로 가고, 학생용에는 정답이 없다 (단어 문항은 안내만)', () => {
+test('혼합 시험 인쇄: 일반 인쇄(A4 쪽 나누기)로 가고, 학생용에는 정답이 없다 — 자세한 인쇄 규칙은 test-print-layout', () => {
   const word = toWordQuestionData({
     entry: {
       id: 'w1', expression: 'abandon', expression_key: 'abandon', meaning_ko: '버리다', meaning_key: '버리다', accepted_meanings: ['포기하다'],
@@ -197,25 +197,17 @@ test('혼합 시험 인쇄: 일반 인쇄로 가고, 학생용에는 정답이 �
     direction: 'en_ko',
   })
   const mixed = [{ question_data: { type: 'mc' } }, { question_data: word }]
-  assert.equal(isWordTestExam(mixed), false) // → 일반 인쇄 레이아웃
+  assert.equal(isWordTestExam(mixed), false) // → 일반 인쇄 (ExamSheetPrint)
   assert.equal(parsePrintView(null), 'student')
   assert.equal(includesAnswers('student'), false)
   assert.equal(includesQuestions('student'), true)
   const print = readFileSync(new URL('../app/tests/[id]/print/page.tsx', import.meta.url), 'utf8')
-  // 단어 안내는 방향만 보고 정답을 쓰지 않는다
-  const hint = print.slice(print.indexOf("q.type === 'word' && ("), print.indexOf("q.type === 'word' && (") + 300)
-  assert.match(hint, /영어로 쓰시오/)
-  assert.doesNotMatch(hint, /answer/)
-  // 정답(formatAnswer)은 정답 장(AnswerPage)에서만, 정답 장은 includesAnswers 일 때만
-  const firstAnswer = print.indexOf('formatAnswer(q)')
-  assert.ok(firstAnswer > print.indexOf('function AnswerPage'))
-  assert.match(print, /\{includesAnswers\(view\) && <AnswerPage/)
+  assert.match(print, /return <ExamSheetPrint title=\{title\} date=\{date\} questions=\{questions\} view=\{view\}/)
   // 저장 후 인쇄 화면은 view 없이(학생용) 연다
   const page = readFileSync(new URL('../app/create/mixed/page.tsx', import.meta.url), 'utf8')
   assert.match(page, /router\.push\(`\/tests\/\$\{id\}\/print\?exam_id=\$\{id\}&title=[^`]*&date=[^`]*`\)/)
   assert.doesNotMatch(page, /view=teacher|view=answers/)
 })
-
 test('옛 시험 영향 없음: exam_type 은 새 값 없이 추론값과 같게, 문제/단어 시험 판단 그대로', () => {
   assert.equal(inferExamType([{ question_data: { type: 'mc' } }, { question_data: { type: 'word' } }]), 'problem')
   assert.equal(inferExamType([{ question_data: { type: 'word' } }]), 'word')
