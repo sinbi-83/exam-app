@@ -69,7 +69,9 @@ for (const v of ORDER) {
   const counts: Record<string, number> = {}
   for (const q of qs) counts[q.type] = (counts[q.type] ?? 0) + 1
   if (qs.length !== 20) errors.push(`${label}: 문제가 20개가 아니라 ${qs.length}개입니다.`)
-  const expect = { mc: 10, blank: 5, tf: 3, order: 1, match: 1 }
+  //    단, blank·tf 는 객관식(mc)으로 대체할 수 있다 (예: mc18/order1/match1 — 본문 그대로 빈칸·T/F 대신)
+  const replacedByMc = (counts.blank ?? 0) === 0 && (counts.tf ?? 0) === 0
+  const expect = replacedByMc ? { mc: 18, order: 1, match: 1 } : { mc: 10, blank: 5, tf: 3, order: 1, match: 1 }
   for (const [t, n] of Object.entries(expect)) {
     if ((counts[t] ?? 0) !== n) errors.push(`${label}: ${t} 유형이 ${n}개가 아니라 ${counts[t] ?? 0}개입니다.`)
   }

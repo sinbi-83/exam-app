@@ -1,0 +1,1047 @@
+{
+  "school": {
+    "tagged_body": "Today, I taught English to a six-year-old boy.\nHe worked hard in the {{v:lesson}} and followed the activities well. So I gave him a {{v:sticker}}.\nWe have a simple rule. {{g:If he collects three stickers|조건을 나타내는 If절: '만약 ~한다면'}}, he can {{t:choose something fun for the next lesson}}.\nToday, he got his third sticker.\nI thought he would choose a game or a small {{v:prize}}. But he happily said that he wanted to play a zombie game.\nFor a moment, I thought I had made a big {{v:mistake}}.\nThen something surprising happened. His mother was sitting quietly next to us. She said she would join the game too. She said she would become a zombie.\nSo next week, a six-year-old zombie and his mother are going to chase me while I teach English.\nI am not sure how much English we will study that day.\nBut I have to say that I am a little {{v:excited}} about it.",
+    "tags": {
+      "vocab": [
+        "lesson",
+        "sticker",
+        "prize",
+        "mistake",
+        "excited"
+      ],
+      "grammar": [
+        "If 조건절"
+      ],
+      "topic": [
+        "학원 수업",
+        "보상 시스템"
+      ]
+    },
+    "questions": [
+      {
+        "type": "mc",
+        "q": "How old is the boy the writer taught today?",
+        "choices": [
+          "6 years old",
+          "5 years old",
+          "7 years old",
+          "8 years old",
+          "9 years old"
+        ],
+        "answer": "6 years old",
+        "explanation": "'a six-year-old boy'라고 나와 있다."
+      },
+      {
+        "type": "mc",
+        "q": "Why did the writer give the boy a sticker?",
+        "choices": [
+          "Because he was late",
+          "Because he worked hard and followed the activities well",
+          "Because he brought a gift",
+          "Because he asked for it",
+          "Because it was his birthday"
+        ],
+        "answer": "Because he worked hard and followed the activities well",
+        "explanation": "'He worked hard in the lesson and followed the activities well. So I gave him a sticker.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What is the classroom rule about stickers?",
+        "choices": [
+          "Collect five stickers to get a prize",
+          "Collect ten stickers to skip homework",
+          "Collect three stickers to choose something fun for the next lesson",
+          "Collect two stickers to get candy",
+          "Collect one sticker every day"
+        ],
+        "answer": "Collect three stickers to choose something fun for the next lesson",
+        "explanation": "'If he collects three stickers, he can choose something fun for the next lesson.'과 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the writer expect the boy to choose?",
+        "choices": [
+          "A zombie game",
+          "A trip to the zoo",
+          "A day off",
+          "A game or a small prize",
+          "New books"
+        ],
+        "answer": "A game or a small prize",
+        "explanation": "'I thought he would choose a game or a small prize.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the boy actually want to play?",
+        "choices": [
+          "A coloring book",
+          "A math quiz",
+          "A movie",
+          "Nothing",
+          "A zombie game"
+        ],
+        "answer": "A zombie game",
+        "explanation": "'he happily said that he wanted to play a zombie game'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How did the writer feel right after the boy's choice?",
+        "choices": [
+          "Very happy",
+          "He thought he had made a big mistake",
+          "Angry",
+          "Bored",
+          "Confused about the rule only"
+        ],
+        "answer": "He thought he had made a big mistake",
+        "explanation": "'For a moment, I thought I had made a big mistake.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the boy's mother do?",
+        "choices": [
+          "She left the room",
+          "She called the boy's father",
+          "She stopped the game",
+          "She said she would join the game and become a zombie too",
+          "She gave the boy another sticker"
+        ],
+        "answer": "She said she would join the game and become a zombie too",
+        "explanation": "'She said she would join the game too. She said she would become a zombie.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What will happen next week?",
+        "choices": [
+          "A six-year-old zombie and his mother will chase the writer",
+          "The boy will get a new sticker book",
+          "The writer will cancel the lesson",
+          "The boy will bring a real toy",
+          "The mother will teach the lesson"
+        ],
+        "answer": "A six-year-old zombie and his mother will chase the writer",
+        "explanation": "'a six-year-old zombie and his mother are going to chase me while I teach English'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How does the writer feel about studying English that day?",
+        "choices": [
+          "Very confident",
+          "Sure they will study a lot",
+          "Angry about it",
+          "Unaware of the plan",
+          "Not sure how much they will study"
+        ],
+        "answer": "Not sure how much they will study",
+        "explanation": "'I am not sure how much English we will study that day.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How does the writer feel about the situation at the end?",
+        "choices": [
+          "Upset",
+          "Very worried",
+          "A little excited",
+          "Embarrassed",
+          "Indifferent"
+        ],
+        "answer": "A little excited",
+        "explanation": "'I have to say that I am a little excited about it.'와 일치한다."
+      },
+      {
+        "type": "blank",
+        "q": "I taught English to a six-year-old ____.",
+        "answer": "boy",
+        "explanation": "'a six-year-old boy'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "If he collects three ____, he can choose something fun for the next lesson.",
+        "answer": "stickers",
+        "explanation": "'If he collects three stickers'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "He happily said that he wanted to play a ____ game.",
+        "answer": "zombie",
+        "explanation": "'he wanted to play a zombie game'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "His mother was sitting quietly next to ____.",
+        "answer": "us",
+        "explanation": "'His mother was sitting quietly next to us.'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "I have to say that I am a little ____ about it.",
+        "answer": "excited",
+        "explanation": "'I am a little excited about it.'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy got his third sticker today.",
+        "answer": true,
+        "explanation": "'Today, he got his third sticker.'와 일치한다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy chose a small prize instead of playing a zombie game.",
+        "answer": false,
+        "explanation": "실제로는 상품 대신 좀비 게임을 하고 싶다고 말했으므로 사실이 아니다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy's mother refused to join the game.",
+        "answer": false,
+        "explanation": "엄마는 게임에 참여하고 좀비가 되겠다고 했으므로 사실이 아니다."
+      },
+      {
+        "type": "order",
+        "items": [
+          "He happily said that he wanted to play a zombie game.",
+          "He worked hard in the lesson and followed the activities well.",
+          "She said she would join the game too.",
+          "Today, he got his third sticker."
+        ],
+        "answer": [
+          "He worked hard in the lesson and followed the activities well.",
+          "Today, he got his third sticker.",
+          "He happily said that he wanted to play a zombie game.",
+          "She said she would join the game too."
+        ]
+      },
+      {
+        "type": "mc",
+        "q": "What does the underlined word 'mistake' mean in this passage?",
+        "choices": [
+          "실수",
+          "스티커",
+          "수업",
+          "상, 상품",
+          "신이 난, 들뜬"
+        ],
+        "answer": "실수",
+        "explanation": "'mistake'는 '실수'라는 뜻이다. 'I thought I had made a big mistake.'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "q": "Why did the writer give the boy a sticker? Write one sentence in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "The writer gave him a sticker because he worked hard and followed the activities well.",
+        "rubric": "이유(성실히 활동을 따라함)를 정확히 서술하면 만점"
+      },
+      {
+        "q": "What is the classroom rule about stickers? Explain in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "If he collects three stickers, he can choose something fun for the next lesson.",
+        "rubric": "세 개 모으면 다음 수업에서 원하는 것을 고를 수 있다는 규칙을 설명하면 만점"
+      },
+      {
+        "q": "우리말로 쓰시오: 아이가 세 번째 스티커를 받고 무엇을 하고 싶다고 말했나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "좀비 게임을 하고 싶다고 말했다.",
+        "rubric": "좀비 게임을 하고 싶어했다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "q": "How did the boy's mother react? Write in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "She said she would join the game and become a zombie too.",
+        "rubric": "엄마도 게임에 참여해 좀비가 되겠다고 했다는 내용 포함시 만점"
+      },
+      {
+        "q": "우리말로 쓰시오: 글쓴이는 다음 수업에 대해 어떤 기분이 든다고 했나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "조금 신이 난다고 했다.",
+        "rubric": "약간 흥분되거나 기대된다는 감정을 언급하면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Today, I taught English to a six-year-old boy.\nHe worked hard during the lesson and followed the activities well. So I gave him a sticker as a {{v:reward}}. We have a simple rule. {{g:If he collects three stickers|조건을 나타내는 If절: '만약 ~한다면'}}, he can {{t:choose something fun to do during the next lesson}}.\nToday, he finally collected his third sticker.\nI expected him to choose a game or a small prize. Instead, he happily said that he wanted to play a zombie game.\nFor a moment, I wondered if I had made a {{v:mistake}}.\nThen things became more {{v:surprising}}. His mother was sitting quietly beside us. She {{v:agreed}} to join the game as well. She said that she would become a zombie too.\nSo next week, I am going to teach English while a six-year-old zombie and his mother chase me.\nI am not sure how much English we will actually study that day.\nStill, I have to admit that I am quite {{v:curious}} about it.",
+    "tags": {
+      "vocab": [
+        "reward",
+        "mistake",
+        "surprising",
+        "agreed",
+        "curious"
+      ],
+      "grammar": [
+        "If 조건절",
+        "become + 명사"
+      ],
+      "topic": [
+        "학원 수업",
+        "보상 시스템"
+      ]
+    },
+    "questions": [
+      {
+        "type": "mc",
+        "q": "What reward did the boy get for working hard?",
+        "choices": [
+          "A sticker",
+          "A toy",
+          "Candy",
+          "A book",
+          "Free time"
+        ],
+        "answer": "A sticker",
+        "explanation": "'I gave him a sticker as a reward.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What is the classroom rule mentioned in the passage?",
+        "choices": [
+          "Collecting five stickers gives him a prize",
+          "Collecting three stickers lets him choose something fun for the next lesson",
+          "He must finish homework to get a sticker",
+          "He gets a sticker every day automatically",
+          "Stickers can be traded for candy"
+        ],
+        "answer": "Collecting three stickers lets him choose something fun for the next lesson",
+        "explanation": "'If he collects three stickers, he can choose something fun to do during the next lesson.'과 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the writer expect the boy to choose?",
+        "choices": [
+          "A zombie game",
+          "A book",
+          "A game or a small prize",
+          "Extra homework",
+          "Nothing"
+        ],
+        "answer": "A game or a small prize",
+        "explanation": "'I expected him to choose a game or a small prize.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the boy actually want to play?",
+        "choices": [
+          "A board game",
+          "A card game",
+          "A quiz game",
+          "A zombie game",
+          "A puzzle"
+        ],
+        "answer": "A zombie game",
+        "explanation": "'he happily said that he wanted to play a zombie game'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How did the writer feel right after hearing the boy's choice?",
+        "choices": [
+          "Delighted",
+          "Angry",
+          "Bored",
+          "Unaffected",
+          "He wondered if he had made a mistake"
+        ],
+        "answer": "He wondered if he had made a mistake",
+        "explanation": "'For a moment, I wondered if I had made a mistake.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the boy's mother do?",
+        "choices": [
+          "She left early",
+          "She agreed to join the game and become a zombie too",
+          "She refused to let him play",
+          "She gave him another sticker",
+          "She called the boy's teacher"
+        ],
+        "answer": "She agreed to join the game and become a zombie too",
+        "explanation": "'She agreed to join the game as well. She said that she would become a zombie too.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What is going to happen next week according to the writer?",
+        "choices": [
+          "The lesson will be canceled",
+          "The boy will lose his stickers",
+          "The mother will teach instead",
+          "A six-year-old zombie and his mother will chase the writer",
+          "The writer will get a new student"
+        ],
+        "answer": "A six-year-old zombie and his mother will chase the writer",
+        "explanation": "'I am going to teach English while a six-year-old zombie and his mother chase me.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How does the writer feel about how much English will be studied next week?",
+        "choices": [
+          "Not sure",
+          "Very confident",
+          "Extremely sure",
+          "Unaware",
+          "Angry"
+        ],
+        "answer": "Not sure",
+        "explanation": "'I am not sure how much English we will actually study that day.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How does the writer feel about the situation in the end?",
+        "choices": [
+          "Upset",
+          "Terrified",
+          "Indifferent",
+          "Ashamed",
+          "Quite curious about it"
+        ],
+        "answer": "Quite curious about it",
+        "explanation": "'I have to admit that I am quite curious about it.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "Where was the mother during the lesson?",
+        "choices": [
+          "In another room",
+          "Outside the door",
+          "Sitting quietly beside them",
+          "At her office",
+          "On the phone"
+        ],
+        "answer": "Sitting quietly beside them",
+        "explanation": "'His mother was sitting quietly beside us.'와 일치한다."
+      },
+      {
+        "type": "blank",
+        "q": "So next week, I am going to teach English while a six-year-old ____ and his mother chase me.",
+        "answer": "zombie",
+        "explanation": "'a six-year-old zombie and his mother chase me'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "If he collects three ____, he can choose something fun to do during the next lesson.",
+        "answer": "stickers",
+        "explanation": "'If he collects three stickers'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "I expected him to choose a game or a small ____.",
+        "answer": "prize",
+        "explanation": "'I expected him to choose a game or a small prize.'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "For a moment, I wondered if I had made a ____.",
+        "answer": "mistake",
+        "explanation": "'I wondered if I had made a mistake.'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "Still, I have to admit that I am quite ____ about it.",
+        "answer": "curious",
+        "explanation": "'I am quite curious about it.'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy worked hard during the lesson and followed the activities well.",
+        "answer": true,
+        "explanation": "'He worked hard during the lesson and followed the activities well.'과 일치한다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy chose a small prize instead of playing a zombie game.",
+        "answer": false,
+        "explanation": "실제로는 상품 대신 좀비 게임을 하고 싶다고 말했으므로 사실이 아니다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy's mother refused to join the game.",
+        "answer": false,
+        "explanation": "엄마는 게임에 함께하기로 동의했으므로 사실이 아니다."
+      },
+      {
+        "type": "order",
+        "items": [
+          "Instead, he happily said that he wanted to play a zombie game.",
+          "He worked hard during the lesson and followed the activities well.",
+          "She agreed to join the game as well.",
+          "Today, he finally collected his third sticker."
+        ],
+        "answer": [
+          "He worked hard during the lesson and followed the activities well.",
+          "Today, he finally collected his third sticker.",
+          "Instead, he happily said that he wanted to play a zombie game.",
+          "She agreed to join the game as well."
+        ]
+      },
+      {
+        "type": "mc",
+        "q": "What does the underlined word 'curious' mean in this passage?",
+        "choices": [
+          "궁금한",
+          "보상",
+          "실수",
+          "동의했다",
+          "놀라운"
+        ],
+        "answer": "궁금한",
+        "explanation": "'curious'는 '궁금한'라는 뜻이다. 'I am quite curious about it.'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "q": "Why did the writer give the boy a sticker? Answer in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "The writer gave him a sticker as a reward because he worked hard and followed the activities well.",
+        "rubric": "성실히 활동에 참여한 것에 대한 보상임을 서술하면 만점"
+      },
+      {
+        "q": "Explain the classroom rule about stickers in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "If he collects three stickers, he can choose something fun to do during the next lesson.",
+        "rubric": "세 개 모으면 원하는 활동을 고를 수 있다는 규칙 설명시 만점"
+      },
+      {
+        "q": "우리말로 쓰시오: 아이는 세 번째 스티커를 받고 무엇을 하고 싶어했나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "좀비 게임을 하고 싶어했다.",
+        "rubric": "좀비 게임을 원했다는 내용 포함시 만점",
+        "answerLang": "ko"
+      },
+      {
+        "q": "How did the boy's mother react when he chose the zombie game? Write in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "She agreed to join the game and said that she would become a zombie too.",
+        "rubric": "엄마도 함께 좀비가 되겠다고 동의했다는 내용 포함시 만점"
+      },
+      {
+        "q": "우리말로 쓰시오: 글쓴이는 다음 주 수업에 대해 어떤 감정을 느낀다고 했나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "꽤 궁금하다고 했다.",
+        "rubric": "호기심/기대되는 감정을 언급하면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Today, I taught English to a six-year-old boy.\nHe worked hard during the lesson and followed the activities well, so I gave him a sticker as a {{v:reward}}. We have a simple rule: if he collects three stickers, he can choose something fun to do during the next lesson.\nToday, he finally collected his third sticker.\nI expected him to choose a game or a small prize. Instead, he happily said that he wanted to play a zombie game.\nFor a moment, I wondered if I had made a {{v:terrible}} mistake.\nThen things became even more {{v:interesting}}. His mother, {{g:who had been sitting quietly beside us|계속적 용법의 관계대명사 who: 앞의 명사(His mother)에 대한 추가 설명}}, agreed to join the game. She said that she would become a zombie too.\nSo next week, I am {{g:supposed to|be supposed to: ~하기로 되어 있다}} teach English while being chased by a six-year-old zombie and his mother.\nI am not sure how much English we will study that day.\nStill, I have to admit that I am {{v:strangely}} {{t:looking forward to it}}.",
+    "tags": {
+      "vocab": [
+        "reward",
+        "terrible",
+        "interesting",
+        "strangely"
+      ],
+      "grammar": [
+        "관계대명사 who (계속적 용법)",
+        "be supposed to"
+      ],
+      "topic": [
+        "학원 수업",
+        "의외의 전개"
+      ]
+    },
+    "questions": [
+      {
+        "type": "mc",
+        "q": "What kind of mistake did the writer think he might have made?",
+        "choices": [
+          "A terrible mistake",
+          "A small mistake",
+          "No mistake at all",
+          "A funny mistake",
+          "An obvious mistake"
+        ],
+        "answer": "A terrible mistake",
+        "explanation": "'I wondered if I had made a terrible mistake.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "Why did the writer give the boy a sticker?",
+        "choices": [
+          "He was polite",
+          "He worked hard during the lesson and followed the activities well",
+          "He asked for one",
+          "He answered every question correctly",
+          "It was a special day"
+        ],
+        "answer": "He worked hard during the lesson and followed the activities well",
+        "explanation": "'He worked hard during the lesson and followed the activities well, so I gave him a sticker as a reward.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What does the classroom rule say happens after collecting three stickers?",
+        "choices": [
+          "He gets candy",
+          "He gets a certificate",
+          "He can choose something fun to do during the next lesson",
+          "He can skip a lesson",
+          "He gets a new sticker book"
+        ],
+        "answer": "He can choose something fun to do during the next lesson",
+        "explanation": "'if he collects three stickers, he can choose something fun to do during the next lesson'과 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the writer expect the boy to choose?",
+        "choices": [
+          "A zombie game",
+          "A trip",
+          "A new pet",
+          "A game or a small prize",
+          "Nothing"
+        ],
+        "answer": "A game or a small prize",
+        "explanation": "'I expected him to choose a game or a small prize.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "Who agreed to join the zombie game?",
+        "choices": [
+          "The writer's colleague",
+          "The boy's teacher",
+          "The boy's sister",
+          "No one",
+          "The boy's mother"
+        ],
+        "answer": "The boy's mother",
+        "explanation": "'His mother ... agreed to join the game.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How is the boy's mother described while she was sitting beside them?",
+        "choices": [
+          "Loudly talking",
+          "Sitting quietly",
+          "Sleeping",
+          "Reading a book",
+          "On the phone"
+        ],
+        "answer": "Sitting quietly",
+        "explanation": "'who had been sitting quietly beside us'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What is the writer supposed to do next week?",
+        "choices": [
+          "Cancel the lesson",
+          "Give a test",
+          "Meet the boy's father",
+          "Teach English while being chased by a zombie and his mother",
+          "Take a vacation"
+        ],
+        "answer": "Teach English while being chased by a zombie and his mother",
+        "explanation": "'I am supposed to teach English while being chased by a six-year-old zombie and his mother.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How does the writer describe his uncertainty about next week?",
+        "choices": [
+          "He is not sure how much English they will study",
+          "He is sure they will finish the textbook",
+          "He plans to study grammar only",
+          "He will skip the lesson entirely",
+          "He will ask another teacher to help"
+        ],
+        "answer": "He is not sure how much English they will study",
+        "explanation": "'I am not sure how much English we will study that day.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How does the writer feel about the situation, in his own words?",
+        "choices": [
+          "Terrified of it",
+          "Annoyed by it",
+          "Indifferent about it",
+          "Confused by it",
+          "Strangely looking forward to it"
+        ],
+        "answer": "Strangely looking forward to it",
+        "explanation": "'I am strangely looking forward to it.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What happened right when the boy got his third sticker?",
+        "choices": [
+          "He asked for a prize",
+          "He gave the sticker back",
+          "He happily said he wanted to play a zombie game",
+          "He cried",
+          "He asked for another sticker"
+        ],
+        "answer": "He happily said he wanted to play a zombie game",
+        "explanation": "'Instead, he happily said that he wanted to play a zombie game.'와 일치한다."
+      },
+      {
+        "type": "blank",
+        "q": "For a moment, I wondered if I had made a terrible ____.",
+        "answer": "mistake",
+        "explanation": "'I wondered if I had made a terrible mistake.'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "His mother, who had been sitting quietly beside us, agreed to join the ____.",
+        "answer": "game",
+        "explanation": "'agreed to join the game'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "So next week, I am supposed to teach English while being chased by a six-year-old zombie and his ____.",
+        "answer": "mother",
+        "explanation": "'a six-year-old zombie and his mother'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "Still, I have to admit that I am strangely looking forward to ____.",
+        "answer": "it",
+        "explanation": "'I am strangely looking forward to it.'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "We have a simple rule: if he collects three stickers, he can choose something fun to do during the next ____.",
+        "answer": "lesson",
+        "explanation": "'during the next lesson'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy's mother had been sitting quietly beside them.",
+        "answer": true,
+        "explanation": "'who had been sitting quietly beside us'와 일치한다."
+      },
+      {
+        "type": "tf",
+        "q": "The writer was completely certain that they would study a lot of English next week.",
+        "answer": false,
+        "explanation": "'I am not sure how much English we will study that day.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy chose a small prize instead of playing a zombie game.",
+        "answer": false,
+        "explanation": "실제로는 상품 대신 좀비 게임을 하고 싶다고 말했으므로 사실이 아니다."
+      },
+      {
+        "type": "order",
+        "items": [
+          "His mother, who had been sitting quietly beside us, agreed to join the game.",
+          "Today, he finally collected his third sticker.",
+          "He worked hard during the lesson and followed the activities well, so I gave him a sticker as a reward.",
+          "Instead, he happily said that he wanted to play a zombie game."
+        ],
+        "answer": [
+          "He worked hard during the lesson and followed the activities well, so I gave him a sticker as a reward.",
+          "Today, he finally collected his third sticker.",
+          "Instead, he happily said that he wanted to play a zombie game.",
+          "His mother, who had been sitting quietly beside us, agreed to join the game."
+        ]
+      },
+      {
+        "type": "mc",
+        "q": "What does the underlined word 'interesting' mean in this passage?",
+        "choices": [
+          "흥미로운",
+          "보상",
+          "끔찍한, 심한",
+          "~하기로 되어 있다",
+          "이상하게도"
+        ],
+        "answer": "흥미로운",
+        "explanation": "'interesting'는 '흥미로운'라는 뜻이다. 'Then things became even more interesting.'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "q": "Why does the writer describe the mistake as 'terrible'? Answer in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "Because he agreed to a rule that led the boy to choose a zombie game, which could make the lesson chaotic.",
+        "rubric": "좀비 게임을 허락하게 된 규칙 때문에 걱정했다는 내용 포함시 만점"
+      },
+      {
+        "q": "Describe what the boy's mother agreed to do, in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "She agreed to join the zombie game and become a zombie herself.",
+        "rubric": "엄마도 좀비가 되어 게임에 참여하기로 했다는 내용 포함시 만점"
+      },
+      {
+        "q": "우리말로 쓰시오: 글쓴이는 다음 주 수업에 대해 확신하지 못하는 것이 무엇인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "그날 영어를 얼마나 공부할 수 있을지 확신하지 못한다.",
+        "rubric": "영어 공부량에 대한 불확실함을 언급하면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "q": "How does the writer feel about next week's lesson, based on the last sentence? Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "He feels strangely excited and is looking forward to it, even though it seems chaotic.",
+        "rubric": "이상하게도 기대된다는 감정을 서술하면 만점"
+      },
+      {
+        "q": "우리말로 쓰시오: 아이가 세 번째 스티커를 받은 후 벌어진 일을 순서대로 정리해서 쓰시오 (2문장 이상).",
+        "wordLimit": 60,
+        "sampleAnswer": "아이는 좀비 게임을 하고 싶다고 말했다. 그리고 엄마도 함께 좀비가 되어 게임에 참여하기로 했다.",
+        "rubric": "좀비 게임 요청과 엄마의 참여 동의 두 가지가 순서대로 들어가면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Today, I found myself teaching English to a six-year-old boy, one of the most {{v:energetic}} students I have ever taught.\n{{g:Because he had worked hard throughout the lesson and had followed every activity with surprising focus|과거완료(had + p.p.): 보상을 받기 전에 이미 끝난 일을 나타냄}}, I rewarded him with a sticker. We follow a simple rule in class: once he collects three stickers, he is allowed to choose something enjoyable for the following lesson.\nToday, much to his delight, he finally earned his third sticker.\nNaturally, I assumed he would ask for a video game or perhaps a small toy. Instead, grinning from ear to ear, he announced that what he truly wanted was to play a zombie game.\nFor a brief, {{v:unsettling}} moment, it occurred to me that I might have made a rather serious mistake in agreeing to such a rule.\nWhat happened next made the situation even more {{v:entertaining}}. His mother, {{g:who had been sitting quietly beside us the entire time|계속적 용법의 관계대명사 who: 앞의 명사(His mother)에 대한 추가 설명}}, unexpectedly {{v:volunteered}} to join in. Smiling, she declared that she, too, would transform into a zombie for the occasion.\nAs a result, next week I am expected to teach an English lesson while being chased around the room by a six-year-old zombie and his equally enthusiastic mother.\n{{t:Whether much English will actually be learned that day remains uncertain.}}\nEven so, I must confess that, strangely enough, I find myself looking forward to it more than I probably should.",
+    "tags": {
+      "vocab": [
+        "energetic",
+        "unsettling",
+        "entertaining",
+        "volunteered"
+      ],
+      "grammar": [
+        "과거완료 (had + p.p.)",
+        "관계대명사 who (계속적 용법)"
+      ],
+      "topic": [
+        "학원 수업",
+        "예상치 못한 전개"
+      ]
+    },
+    "questions": [
+      {
+        "type": "mc",
+        "q": "How does the writer describe the boy at the beginning?",
+        "choices": [
+          "One of the most energetic students he has ever taught",
+          "One of the quietest students",
+          "A new student",
+          "A shy student",
+          "An average student"
+        ],
+        "answer": "One of the most energetic students he has ever taught",
+        "explanation": "'one of the most energetic students I have ever taught'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "Why was the boy rewarded with a sticker?",
+        "choices": [
+          "He arrived early",
+          "He had worked hard and followed every activity with surprising focus",
+          "He brought a gift",
+          "He answered one question",
+          "It was a holiday"
+        ],
+        "answer": "He had worked hard and followed every activity with surprising focus",
+        "explanation": "'Because he had worked hard throughout the lesson and had followed every activity with surprising focus, I rewarded him with a sticker.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What does the classroom rule allow the boy to do after collecting three stickers?",
+        "choices": [
+          "Skip a lesson",
+          "Get extra homework",
+          "Choose something enjoyable for the following lesson",
+          "Leave early",
+          "Receive a certificate"
+        ],
+        "answer": "Choose something enjoyable for the following lesson",
+        "explanation": "'he is allowed to choose something enjoyable for the following lesson'과 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the writer assume the boy would ask for?",
+        "choices": [
+          "A zombie game",
+          "A book",
+          "Nothing",
+          "A video game or a small toy",
+          "A pet"
+        ],
+        "answer": "A video game or a small toy",
+        "explanation": "'I assumed he would ask for a video game or perhaps a small toy.'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How did the boy announce his choice?",
+        "choices": [
+          "Quietly and shyly",
+          "With tears",
+          "Angrily",
+          "Indifferently",
+          "Grinning from ear to ear"
+        ],
+        "answer": "Grinning from ear to ear",
+        "explanation": "'grinning from ear to ear, he announced that what he truly wanted was to play a zombie game'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the writer think might have happened by agreeing to the rule?",
+        "choices": [
+          "He had made a great decision",
+          "He had made a rather serious mistake",
+          "Nothing important",
+          "He had wasted time",
+          "He had broken the rule"
+        ],
+        "answer": "He had made a rather serious mistake",
+        "explanation": "'it occurred to me that I might have made a rather serious mistake in agreeing to such a rule'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What did the boy's mother unexpectedly do?",
+        "choices": [
+          "She left the room",
+          "She scolded the boy",
+          "She called off the game",
+          "She unexpectedly volunteered to join in and become a zombie",
+          "She asked for a refund"
+        ],
+        "answer": "She unexpectedly volunteered to join in and become a zombie",
+        "explanation": "'unexpectedly volunteered to join in ... she, too, would transform into a zombie'와 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "What is the writer expected to do next week?",
+        "choices": [
+          "Teach an English lesson while being chased around the room",
+          "Cancel all lessons",
+          "Take a break",
+          "Meet with parents",
+          "Redesign the curriculum"
+        ],
+        "answer": "Teach an English lesson while being chased around the room",
+        "explanation": "'I am expected to teach an English lesson while being chased around the room'과 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How certain is the writer that a lot of English will be learned that day?",
+        "choices": [
+          "Completely certain",
+          "Absolutely sure",
+          "Not thinking about it",
+          "Sure it will be a lot",
+          "It remains uncertain"
+        ],
+        "answer": "It remains uncertain",
+        "explanation": "'Whether much English will actually be learned that day remains uncertain.'과 일치한다."
+      },
+      {
+        "type": "mc",
+        "q": "How does the writer feel about the situation in the final sentence?",
+        "choices": [
+          "He dreads it completely",
+          "He feels nothing",
+          "He finds himself looking forward to it more than he probably should",
+          "He plans to cancel it",
+          "He is furious"
+        ],
+        "answer": "He finds himself looking forward to it more than he probably should",
+        "explanation": "'I find myself looking forward to it more than I probably should.'와 일치한다."
+      },
+      {
+        "type": "blank",
+        "q": "Because he had worked hard throughout the lesson and had followed every activity with surprising ____, I rewarded him with a sticker.",
+        "answer": "focus",
+        "explanation": "'with surprising focus'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "Instead, grinning from ear to ear, he announced that what he truly wanted was to play a ____ game.",
+        "answer": "zombie",
+        "explanation": "'to play a zombie game'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "For a brief, unsettling moment, it occurred to me that I might have made a rather serious ____.",
+        "answer": "mistake",
+        "explanation": "'a rather serious mistake'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "Smiling, she declared that she, too, would ____ into a zombie for the occasion.",
+        "answer": "transform",
+        "explanation": "'would transform into a zombie'에서 확인할 수 있다."
+      },
+      {
+        "type": "blank",
+        "q": "Even so, I must confess that, strangely enough, I find myself looking forward to it more than I probably ____.",
+        "answer": "should",
+        "explanation": "'more than I probably should'에서 확인할 수 있다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy's mother volunteered to join the game unexpectedly.",
+        "answer": true,
+        "explanation": "'unexpectedly volunteered to join in'과 일치한다."
+      },
+      {
+        "type": "tf",
+        "q": "The writer is completely certain that a lot of English will be learned that day.",
+        "answer": false,
+        "explanation": "'Whether much English will actually be learned that day remains uncertain.'이라고 했으므로 사실이 아니다."
+      },
+      {
+        "type": "tf",
+        "q": "The boy asked for a video game or a small toy.",
+        "answer": false,
+        "explanation": "그것은 글쓴이가 그럴 것이라고 짐작한 것일 뿐, 아이는 실제로 좀비 게임을 원했으므로 사실이 아니다."
+      },
+      {
+        "type": "order",
+        "items": [
+          "Instead, grinning from ear to ear, he announced that what he truly wanted was to play a zombie game.",
+          "His mother, who had been sitting quietly beside us the entire time, unexpectedly volunteered to join in.",
+          "Because he had worked hard throughout the lesson and had followed every activity with surprising focus, I rewarded him with a sticker.",
+          "Today, much to his delight, he finally earned his third sticker."
+        ],
+        "answer": [
+          "Because he had worked hard throughout the lesson and had followed every activity with surprising focus, I rewarded him with a sticker.",
+          "Today, much to his delight, he finally earned his third sticker.",
+          "Instead, grinning from ear to ear, he announced that what he truly wanted was to play a zombie game.",
+          "His mother, who had been sitting quietly beside us the entire time, unexpectedly volunteered to join in."
+        ]
+      },
+      {
+        "type": "mc",
+        "q": "What does the underlined word 'volunteered' mean in this passage?",
+        "choices": [
+          "자원했다",
+          "활기 넘치는",
+          "불안하게 하는",
+          "재미있는, 흥미로운",
+          "여전히 확실하지 않다"
+        ],
+        "answer": "자원했다",
+        "explanation": "'volunteered'는 '자원했다'라는 뜻이다. 'unexpectedly volunteered to join in'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "q": "Why does the writer describe the moment as 'unsettling'? Answer in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "Because he suddenly worried that agreeing to the sticker rule might have been a serious mistake.",
+        "rubric": "규칙에 동의한 것이 심각한 실수일 수 있다는 걱정을 서술하면 만점"
+      },
+      {
+        "q": "Explain in English what the boy's mother volunteered to do and why it made the situation more entertaining.",
+        "wordLimit": 35,
+        "sampleAnswer": "She volunteered to become a zombie too, which made the situation even more entertaining and unexpected.",
+        "rubric": "엄마도 좀비가 되기로 자원했고 그로 인해 상황이 더 재미있어졌다는 내용 포함시 만점"
+      },
+      {
+        "q": "우리말로 쓰시오: 글쓴이가 다음 주에 하기로 되어 있는 일은 무엇인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "방 안을 돌아다니며 여섯 살짜리 좀비와 그의 엄마에게 쫓기면서 영어 수업을 해야 한다.",
+        "rubric": "쫓기면서 수업을 해야 한다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "q": "How does the writer feel about the upcoming lesson, according to the last two sentences? Write in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "He is uncertain about how much will be learned, but he strangely finds himself looking forward to it.",
+        "rubric": "불확실함과 동시에 이상하게 기대된다는 감정 둘 다 서술하면 만점"
+      },
+      {
+        "q": "우리말로 쓰시오: 이 글에서 예상치 못한 전개(twist)는 무엇인가요? 자신의 말로 서술하시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "아이가 상품이 아니라 좀비 게임을 하고 싶어했고, 조용히 있던 엄마까지 좀비가 되겠다고 자원한 것이 예상치 못한 전개이다.",
+        "rubric": "아이의 선택과 엄마의 자원 참여라는 두 가지 의외의 전개를 언급하면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  }
+}

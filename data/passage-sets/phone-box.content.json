@@ -1,0 +1,1174 @@
+{
+  "school": {
+    "tagged_body": "The Kim family always looked at their phones at {{v:dinner}}.\nDad watched the {{v:news}}. Mom read {{v:emails}}. Yerin played games.\nNobody talked.\nOne Friday, Yerin's grandpa {{g:came to visit|come to + 동사원형: ~하러 오다 (to부정사 기초)}}.\nHe looked at the table and {{v:shook}} his head.\nThen he put an {{v:empty}} box on the table.\n\"This is the Phone Box,\" he said.\n\"{{g:Put your phones in here at dinner|명령문: 동사원형으로 시작해서 '~해라'}}.\"\nAt first, nobody was happy.\nBut soon, Dad told a {{v:funny}} story about his first job.\nMom talked about her school days.\nYerin laughed a lot.\nAfter dinner, they played a card game for one hour.\nYerin {{g:won|win의 과거형: 이겼다 (불규칙 과거)}} two games.\nNow the Kim family uses the Phone Box every night.\n{{t:Dinner is Yerin's favorite time of the day}}.",
+    "tags": {
+      "vocab": [
+        "dinner",
+        "news",
+        "emails",
+        "shook",
+        "empty",
+        "funny"
+      ],
+      "grammar": [
+        "come to + 동사원형",
+        "명령문",
+        "불규칙 과거형"
+      ],
+      "topic": [
+        "가족",
+        "휴대폰 없는 저녁 시간"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "f0e4ee31-3938-4e3c-8e1e-6333a125a392",
+        "type": "mc",
+        "q": "When did the Kim family look at their phones?",
+        "choices": [
+          "At breakfast",
+          "At lunch",
+          "At dinner",
+          "At school",
+          "At bedtime"
+        ],
+        "answer": "At dinner",
+        "explanation": "'The Kim family always looked at their phones at dinner.'와 일치한다."
+      },
+      {
+        "qid": "6d1c029f-ceed-46c2-a26d-27e480c26ddc",
+        "type": "mc",
+        "q": "What did Dad do at dinner?",
+        "choices": [
+          "He read emails.",
+          "He watched the news.",
+          "He played games.",
+          "He cooked rice.",
+          "He talked a lot."
+        ],
+        "answer": "He watched the news.",
+        "explanation": "'Dad watched the news.'와 일치한다."
+      },
+      {
+        "qid": "d6603220-1041-4557-9e94-0f9787f86438",
+        "type": "mc",
+        "q": "What did Yerin do at dinner?",
+        "choices": [
+          "She read a book.",
+          "She watched the news.",
+          "She did her homework.",
+          "She played games.",
+          "She talked with Mom."
+        ],
+        "answer": "She played games.",
+        "explanation": "'Yerin played games.'와 일치한다."
+      },
+      {
+        "qid": "4aef4fd3-496c-4613-a20f-d73ce034b153",
+        "type": "mc",
+        "q": "Who came to visit on Friday?",
+        "choices": [
+          "Yerin's grandma",
+          "Yerin's uncle",
+          "Yerin's teacher",
+          "Yerin's friend",
+          "Yerin's grandpa"
+        ],
+        "answer": "Yerin's grandpa",
+        "explanation": "'One Friday, Yerin's grandpa came to visit.'와 일치한다."
+      },
+      {
+        "qid": "da26e136-b56b-4aa2-8046-ac091f8033c1",
+        "type": "mc",
+        "q": "What did Grandpa put on the table?",
+        "choices": [
+          "A new phone",
+          "A big cake",
+          "An empty box",
+          "A card game",
+          "A story book"
+        ],
+        "answer": "An empty box",
+        "explanation": "'Then he put an empty box on the table.'와 일치한다."
+      },
+      {
+        "qid": "2b3d6b80-066a-45aa-806f-592caf32dac7",
+        "type": "mc",
+        "q": "Where do the phones go at dinner now?",
+        "choices": [
+          "In the Phone Box",
+          "In Mom's bag",
+          "In Yerin's room",
+          "On the sofa",
+          "In Dad's pocket"
+        ],
+        "answer": "In the Phone Box",
+        "explanation": "할아버지가 상자를 'the Phone Box'라고 부르며 'Put your phones in here at dinner.'라고 했다."
+      },
+      {
+        "qid": "7ee4ab34-813b-43bc-a05b-a26847a427df",
+        "type": "mc",
+        "q": "다음 중 'He shook his head.'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "그는 고개를 끄덕였다.",
+          "그는 고개를 저었다.",
+          "그는 손을 흔들었다.",
+          "그는 박수를 쳤다.",
+          "그는 크게 웃었다."
+        ],
+        "answer": "그는 고개를 저었다.",
+        "explanation": "shake one's head는 '고개를 (좌우로) 젓다'라는 뜻이다. 할아버지는 아무도 말하지 않는 식탁이 마음에 들지 않았다."
+      },
+      {
+        "qid": "cc1d1b44-ec30-4da0-94c9-35baeef8afe1",
+        "type": "mc",
+        "q": "What did Dad talk about?",
+        "choices": [
+          "His school days",
+          "A scary movie",
+          "His first job",
+          "His new phone",
+          "The weather"
+        ],
+        "answer": "His first job",
+        "explanation": "'Dad told a funny story about his first job.'와 일치한다. 학창 시절 이야기는 엄마가 했다."
+      },
+      {
+        "qid": "17a3a49f-5674-4e09-860d-a75563e9d08f",
+        "type": "mc",
+        "q": "How long did they play a card game?",
+        "choices": [
+          "For two hours",
+          "For ten minutes",
+          "For thirty minutes",
+          "For one hour",
+          "For three hours"
+        ],
+        "answer": "For one hour",
+        "explanation": "'they played a card game for one hour'와 일치한다."
+      },
+      {
+        "qid": "87cf5148-4d30-4470-ba83-e7b68d3168eb",
+        "type": "mc",
+        "q": "How many games did Yerin win?",
+        "choices": [
+          "Three",
+          "Four",
+          "One",
+          "Five",
+          "Two"
+        ],
+        "answer": "Two",
+        "explanation": "'Yerin won two games.'와 일치한다."
+      },
+      {
+        "qid": "56df95e6-8cb4-4897-b567-677991435be9",
+        "type": "mc",
+        "q": "What is the story mainly about?",
+        "choices": [
+          "A family talks more without phones at dinner.",
+          "A girl gets a new phone.",
+          "Grandpa buys new shoes.",
+          "Dad finds his first job.",
+          "Yerin learns a new card game at school."
+        ],
+        "answer": "A family talks more without phones at dinner.",
+        "explanation": "휴대폰을 상자에 넣은 뒤 가족이 이야기하고 함께 놀게 된 이야기이다."
+      },
+      {
+        "qid": "2e0e77c5-717f-4f8d-8e82-806929d56338",
+        "type": "blank",
+        "q": "Dad watched the ____.",
+        "answer": "news",
+        "explanation": "'Dad watched the news.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "5a04907a-f7d3-4b88-94b1-f5ded79c1483",
+        "type": "blank",
+        "q": "He looked at the table and ____ his head.",
+        "answer": "shook",
+        "explanation": "'He looked at the table and shook his head.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "b25f0256-f0c3-4c62-a527-42055f1f11e2",
+        "type": "blank",
+        "q": "Then he put an ____ box on the table.",
+        "answer": "empty",
+        "explanation": "'Then he put an empty box on the table.'에서 확인할 수 있다. empty는 '빈'이라는 뜻이다."
+      },
+      {
+        "qid": "2964bd93-14cc-4c64-b16f-2b7d01e4ce1f",
+        "type": "blank",
+        "q": "But soon, Dad told a ____ story about his first job.",
+        "answer": "funny",
+        "explanation": "'Dad told a funny story about his first job.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "6446c032-7a00-47ff-a4f3-f64918bd7c93",
+        "type": "blank",
+        "q": "Now the Kim family uses the Phone Box every ____.",
+        "answer": "night",
+        "explanation": "'Now the Kim family uses the Phone Box every night.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "f8850b80-8702-46a8-b0da-1cd13aeef2bc",
+        "type": "tf",
+        "q": "Grandpa came to visit on Friday.",
+        "answer": true,
+        "explanation": "'One Friday, Yerin's grandpa came to visit.'이라고 했으므로 사실이다."
+      },
+      {
+        "qid": "97b24b4d-e2fa-4917-b46f-e3b7785368f3",
+        "type": "tf",
+        "q": "Everyone was happy about the Phone Box at first.",
+        "answer": false,
+        "explanation": "'At first, nobody was happy.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "5b1bb233-ee79-4b55-aeb4-c5ebd2395b42",
+        "type": "tf",
+        "q": "Yerin lost all the card games.",
+        "answer": false,
+        "explanation": "'Yerin won two games.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "dcbe8e32-2aed-4362-b569-0bf419f371ab",
+        "type": "order",
+        "items": [
+          "After dinner, they played a card game for one hour.",
+          "Then he put an empty box on the table.",
+          "But soon, Dad told a funny story about his first job.",
+          "One Friday, Yerin's grandpa came to visit."
+        ],
+        "answer": [
+          "One Friday, Yerin's grandpa came to visit.",
+          "Then he put an empty box on the table.",
+          "But soon, Dad told a funny story about his first job.",
+          "After dinner, they played a card game for one hour."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "fca03f1b-612e-4b5f-aa26-65c9ff50668c",
+        "q": "What did Grandpa put on the table? Write one sentence in English.",
+        "wordLimit": 10,
+        "sampleAnswer": "He put an empty box on the table.",
+        "rubric": "빈 상자(an empty box)를 식탁 위에 놓았다는 내용을 완전한 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "7fd37bea-b601-42c2-a489-287234860349",
+        "q": "Where do the Kims put their phones at dinner now? Write in English.",
+        "wordLimit": 12,
+        "sampleAnswer": "They put their phones in the Phone Box.",
+        "rubric": "휴대폰을 Phone Box(상자)에 넣는다는 내용을 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "f53a1205-d758-4bed-b149-2ed713835bf0",
+        "q": "우리말로 쓰시오: 할아버지가 오기 전, 저녁 시간에 아빠·엄마·예린이는 각각 무엇을 했나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "아빠는 뉴스를 보고, 엄마는 이메일을 읽고, 예린이는 게임을 했다.",
+        "rubric": "세 사람이 한 일(뉴스, 이메일, 게임)을 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "588a377b-542e-480e-968d-20abda6d488f",
+        "q": "What did Dad and Mom talk about? Write in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "Dad talked about his first job, and Mom talked about her school days.",
+        "rubric": "아빠의 첫 직장 이야기와 엄마의 학창 시절 이야기를 모두 쓰면 만점"
+      },
+      {
+        "qid": "808450e0-5469-4d7d-9988-2a15a62162d8",
+        "q": "우리말로 쓰시오: 지금은 왜 저녁 시간이 예린이가 하루 중 가장 좋아하는 시간이 되었을까요?",
+        "wordLimit": 40,
+        "sampleAnswer": "휴대폰을 상자에 넣고 가족이 함께 이야기하고 웃고 게임도 하며 즐거운 시간을 보내기 때문이다.",
+        "rubric": "휴대폰 없이 가족과 이야기하고 함께 노는(웃는) 시간이 되었다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "The Kim family always looked at their phones at dinner. Dad watched the news, Mom read {{v:emails}}, and Yerin played games. {{v:Nobody}} talked.\nOne Friday, Yerin's grandpa {{g:came to visit|come to + 동사원형: ~하러 오다 (to부정사 기초)}}. He looked at the table and {{v:shook}} his head. Then he put an {{v:empty}} {{v:shoebox}} on the table. \"This is the Phone Box,\" he said. \"{{g:From now on|from now on: 지금부터 계속, 앞으로는}}, phones go in here {{v:during}} dinner.\"\nAt first, everyone was {{v:unhappy}}. But soon, Dad told a funny story about his first job. Mom talked about her school days. Yerin {{g:laughed so hard|so + 부사: 아주 ~하게 (hard = 몹시, 세게)}}.\nAfter dinner, they played a card game {{g:for one hour|for + 기간: ~ 동안}}. Yerin won two games.\nNow the Kim family uses the Phone Box every night. {{t:Dinner is Yerin's favorite time of the day}}.",
+    "tags": {
+      "vocab": [
+        "emails",
+        "nobody",
+        "shook",
+        "empty",
+        "shoebox",
+        "during",
+        "unhappy"
+      ],
+      "grammar": [
+        "come to + 동사원형",
+        "from now on",
+        "so + 부사",
+        "for + 기간"
+      ],
+      "topic": [
+        "가족",
+        "휴대폰 없는 저녁 시간",
+        "대화의 즐거움"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "c019ad64-f1a1-4ddc-80b8-faed819a8c95",
+        "type": "mc",
+        "q": "What was the problem with the Kim family at dinner?",
+        "choices": [
+          "They ate too fast.",
+          "They looked at their phones and nobody talked.",
+          "They didn't like the food.",
+          "They always ate dinner late.",
+          "They fought about games."
+        ],
+        "answer": "They looked at their phones and nobody talked.",
+        "explanation": "가족 모두 저녁 식사 때 휴대폰만 보고 'Nobody talked.'라고 했다."
+      },
+      {
+        "qid": "2dd3a763-9069-4da6-93eb-a99ecfb4f7eb",
+        "type": "mc",
+        "q": "What did Mom do at dinner before the Phone Box?",
+        "choices": [
+          "She watched the news.",
+          "She played games.",
+          "She read emails.",
+          "She told a story.",
+          "She cooked dinner."
+        ],
+        "answer": "She read emails.",
+        "explanation": "'Mom read emails'와 일치한다."
+      },
+      {
+        "qid": "94152e4b-4e20-4fac-b1ab-26ebb3432691",
+        "type": "mc",
+        "q": "Why did Grandpa probably shake his head?",
+        "choices": [
+          "He was very hungry.",
+          "He didn't like the food.",
+          "He wanted to play games, too.",
+          "He was tired from the trip.",
+          "He didn't like that nobody talked at dinner."
+        ],
+        "answer": "He didn't like that nobody talked at dinner.",
+        "explanation": "할아버지는 식탁을 보고 고개를 저은 뒤 휴대폰을 넣는 상자를 내놓았다. 모두 휴대폰만 보고 말하지 않는 모습이 마음에 들지 않았던 것이다."
+      },
+      {
+        "qid": "58050a11-eec8-407f-adbc-fca677d2c161",
+        "type": "mc",
+        "q": "What was the Phone Box?",
+        "choices": [
+          "A new phone",
+          "An empty shoebox",
+          "A box of cards",
+          "A gift for Yerin",
+          "A box of shoes"
+        ],
+        "answer": "An empty shoebox",
+        "explanation": "'Then he put an empty shoebox on the table. \"This is the Phone Box,\"'에서 알 수 있다."
+      },
+      {
+        "qid": "cdcd534f-6c03-4065-a11a-34869dac18b0",
+        "type": "mc",
+        "q": "What is the rule of the Phone Box?",
+        "choices": [
+          "Phones go in the box during dinner.",
+          "Only Grandpa can use a phone.",
+          "Phones go in the box at school.",
+          "Everyone buys a new phone.",
+          "Phones go in the box on Fridays only."
+        ],
+        "answer": "Phones go in the box during dinner.",
+        "explanation": "'From now on, phones go in here during dinner.'와 일치한다."
+      },
+      {
+        "qid": "ec9ff177-019b-413c-ac24-84367757b9fc",
+        "type": "mc",
+        "q": "How did the family feel about the Phone Box at first?",
+        "choices": [
+          "Excited",
+          "Unhappy",
+          "Proud",
+          "Thankful",
+          "Surprised and happy"
+        ],
+        "answer": "Unhappy",
+        "explanation": "'At first, everyone was unhappy.'와 일치한다."
+      },
+      {
+        "qid": "4e544e40-8097-4b39-a49e-eb647ad2bf8f",
+        "type": "mc",
+        "q": "What did Mom talk about at dinner?",
+        "choices": [
+          "Her first job",
+          "Her favorite game",
+          "Her emails",
+          "Her school days",
+          "The news"
+        ],
+        "answer": "Her school days",
+        "explanation": "'Mom talked about her school days.'와 일치한다. 첫 직장 이야기는 아빠가 했다."
+      },
+      {
+        "qid": "8ad8b4a7-80ae-4bd5-aba5-a46f79810bdd",
+        "type": "mc",
+        "q": "What does 'Yerin laughed so hard' tell us?",
+        "choices": [
+          "Yerin was having a lot of fun.",
+          "Yerin was angry at Dad.",
+          "Yerin wanted her phone back.",
+          "Yerin was very sleepy.",
+          "Yerin didn't like the story."
+        ],
+        "answer": "Yerin was having a lot of fun.",
+        "explanation": "아빠·엄마의 이야기를 듣고 아주 크게 웃었으므로 예린이가 무척 즐거웠다는 것을 알 수 있다."
+      },
+      {
+        "qid": "dff500ea-2416-426d-83e5-5b6bc1373b14",
+        "type": "mc",
+        "q": "What did the family do after dinner?",
+        "choices": [
+          "They watched the news together.",
+          "They went to bed early.",
+          "They played a card game for one hour.",
+          "They took Grandpa home.",
+          "They played phone games."
+        ],
+        "answer": "They played a card game for one hour.",
+        "explanation": "'After dinner, they played a card game for one hour.'와 일치한다."
+      },
+      {
+        "qid": "243aafd3-c2b0-49b6-9949-c2a1273f9207",
+        "type": "mc",
+        "q": "Which is NOT true about the story?",
+        "choices": [
+          "Grandpa visited on a Friday.",
+          "Dad told a funny story.",
+          "Yerin won two games.",
+          "Yerin played phone games after dinner.",
+          "The family uses the Phone Box every night."
+        ],
+        "answer": "Yerin played phone games after dinner.",
+        "explanation": "저녁 식사 후에는 휴대폰 게임이 아니라 가족과 카드 게임을 했다."
+      },
+      {
+        "qid": "e4c76861-2275-44e4-ae24-ebda543d2550",
+        "type": "mc",
+        "q": "What is the lesson of the story?",
+        "choices": [
+          "Phones are the best way to have fun.",
+          "Putting phones away can help a family talk and have fun together.",
+          "Card games are better than phone games.",
+          "Grandparents should buy phones for children.",
+          "We should eat dinner quickly."
+        ],
+        "answer": "Putting phones away can help a family talk and have fun together.",
+        "explanation": "휴대폰을 치우자 가족이 대화하고 함께 즐거운 시간을 보내게 되었다는 것이 이야기의 교훈이다."
+      },
+      {
+        "qid": "e33f7e03-badd-4742-9713-aeaa2d139618",
+        "type": "blank",
+        "q": "Then he put an empty ____ on the table.",
+        "answer": "shoebox",
+        "explanation": "'Then he put an empty shoebox on the table.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "fbd03ee1-f16c-4a90-82df-8adfb868d18c",
+        "type": "blank",
+        "q": "From now on, phones go in here ____ dinner.",
+        "answer": "during",
+        "explanation": "'phones go in here during dinner'에서 확인할 수 있다. during은 '~ 동안'이라는 뜻이다."
+      },
+      {
+        "qid": "a3750ca1-3759-44ef-9d6e-3abc4aed9fbf",
+        "type": "blank",
+        "q": "At first, everyone was ____.",
+        "answer": "unhappy",
+        "explanation": "'At first, everyone was unhappy.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "423469ae-29a1-4f44-9b9c-408f285f52fa",
+        "type": "blank",
+        "q": "But soon, Dad told a funny story about his first ____.",
+        "answer": "job",
+        "explanation": "'Dad told a funny story about his first job.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "2e25529b-0a57-4f2d-bdf7-77f6ecd32101",
+        "type": "blank",
+        "q": "Dinner is Yerin's ____ time of the day.",
+        "answer": "favorite",
+        "explanation": "'Dinner is Yerin's favorite time of the day.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "2384ce48-fc6f-4865-9577-605e1671637e",
+        "type": "tf",
+        "q": "Yerin's grandpa visited the Kim family on Friday.",
+        "answer": true,
+        "explanation": "'One Friday, Yerin's grandpa came to visit.'이라고 했으므로 사실이다."
+      },
+      {
+        "qid": "f965dce2-7d0c-4853-a624-6d730689e5ec",
+        "type": "tf",
+        "q": "Dad talked about his school days.",
+        "answer": false,
+        "explanation": "학창 시절 이야기를 한 사람은 엄마이고, 아빠는 첫 직장 이야기를 했다."
+      },
+      {
+        "qid": "e0ba5028-00b4-4be4-ad36-600d17be35a2",
+        "type": "tf",
+        "q": "The Kim family uses the Phone Box only on weekends.",
+        "answer": false,
+        "explanation": "'Now the Kim family uses the Phone Box every night.'이라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "5d1fc5a6-93dc-49c1-b51e-8e7fb739b054",
+        "type": "order",
+        "items": [
+          "Mom talked about her school days.",
+          "He looked at the table and shook his head.",
+          "Yerin won two games.",
+          "Dad watched the news, Mom read emails, and Yerin played games."
+        ],
+        "answer": [
+          "Dad watched the news, Mom read emails, and Yerin played games.",
+          "He looked at the table and shook his head.",
+          "Mom talked about her school days.",
+          "Yerin won two games."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "d9a7f191-3a90-40c8-a9d1-9a5f729d9ade",
+        "q": "Why did Grandpa bring the Phone Box? Write one sentence in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "Because the family looked at their phones and nobody talked at dinner.",
+        "rubric": "가족이 저녁 식사 때 휴대폰만 보고 아무도 말하지 않았다는 내용이 들어가면 만점"
+      },
+      {
+        "qid": "0c20f28a-f33d-4ef1-a685-88b248926901",
+        "q": "What is the rule of the Phone Box? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "Phones go in the Phone Box during dinner.",
+        "rubric": "저녁 식사 동안(during dinner) 휴대폰을 상자에 넣는다는 두 요소가 모두 있으면 만점"
+      },
+      {
+        "qid": "10ed4e51-6f56-46d4-96d6-d837ecb4427c",
+        "q": "우리말로 쓰시오: 처음에 가족의 기분은 어땠고, 곧 어떻게 바뀌었나요?",
+        "wordLimit": 50,
+        "sampleAnswer": "처음에는 모두 기분이 좋지 않았지만, 곧 아빠와 엄마가 재미있는 이야기를 하고 예린이가 크게 웃으며 즐거워졌다.",
+        "rubric": "처음에 불만스러웠다는 내용 + 이야기를 나누며 즐거워졌다는 내용이 모두 있으면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "eff69d90-02fb-45aa-9bf9-19626bc171f8",
+        "q": "What did the family do after dinner? Write in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "They played a card game for one hour.",
+        "rubric": "카드 게임을 했다는 내용 + 한 시간 동안이라는 내용이 모두 있으면 만점"
+      },
+      {
+        "qid": "5f697673-c971-4b20-92f1-df002cac596a",
+        "q": "우리말로 쓰시오: 'Dinner is Yerin's favorite time of the day.' 예린이가 이렇게 느끼게 된 이유는 무엇인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "휴대폰 없이 가족이 함께 이야기하고 웃고 게임을 하며 즐거운 시간을 보내게 되었기 때문이다.",
+        "rubric": "휴대폰 없이 가족과 대화·놀이를 하며 즐겁게 지내게 되었다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Every evening, the Kim family sat around the dinner table, but they always looked at their phones {{g:instead of at each other|instead of: ~ 대신에 / each other: 서로}}. Dad watched the news, Mom {{v:checked}} her emails, and Yerin played games on her phone. Nobody said a {{v:single}} word.\nOne Friday, Yerin's grandpa came to visit. {{g:When he saw the quiet table|접속사 when: ~할 때}}, he shook his head {{v:sadly}}. Then he {{v:placed}} an empty shoebox in the {{v:middle}} of the table. \"This is the Phone Box,\" he said. \"From now on, everyone puts their phone in here during dinner.\"\nAt first, everyone looked unhappy and a little {{v:bored}}. But soon, Dad {{g:began to tell|begin to + 동사원형: ~하기 시작하다}} a funny story about his very first job. Mom {{v:shared}} stories about her school days, and Yerin {{g:laughed so hard that her stomach hurt|so + 부사 + that ...: 너무 ~해서 …하다}}.\nAfter dinner, the family played a card game together for an hour. Yerin won two games and was very {{v:proud}} of herself.\nNow the Kim family uses the Phone Box every night. {{t:Dinner has become Yerin's favorite time of the day}}.",
+    "tags": {
+      "vocab": [
+        "checked",
+        "single",
+        "sadly",
+        "placed",
+        "middle",
+        "bored",
+        "shared",
+        "proud"
+      ],
+      "grammar": [
+        "instead of",
+        "접속사 when",
+        "begin to + 동사원형",
+        "so ~ that",
+        "현재완료 has become"
+      ],
+      "topic": [
+        "가족",
+        "휴대폰 없는 저녁 시간",
+        "가족 간의 대화"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "dae61ce6-7786-47b6-86a7-91ed6b5fa6c6",
+        "type": "mc",
+        "q": "What does 'they always looked at their phones instead of at each other' mean?",
+        "choices": [
+          "They looked at each other's phones.",
+          "They did not look at or talk to each other.",
+          "They took pictures of each other.",
+          "They called each other on the phone.",
+          "They shared one phone at dinner."
+        ],
+        "answer": "They did not look at or talk to each other.",
+        "explanation": "instead of는 '~ 대신에'라는 뜻이다. 서로를 보는 대신 휴대폰만 봤다는 것은 가족끼리 서로 보거나 이야기하지 않았다는 뜻이다."
+      },
+      {
+        "qid": "f1387cf7-097c-42ac-8821-8e1f64fbab1d",
+        "type": "mc",
+        "q": "Which is true about the Kim family's dinner before Grandpa's visit?",
+        "choices": [
+          "Nobody said a single word.",
+          "Dad told funny stories.",
+          "Mom watched the news.",
+          "They played card games.",
+          "Yerin talked about school."
+        ],
+        "answer": "Nobody said a single word.",
+        "explanation": "'Nobody said a single word.'와 일치한다. 뉴스를 본 사람은 아빠이다."
+      },
+      {
+        "qid": "24ca406b-c4a1-4379-a213-811b2f8691e6",
+        "type": "mc",
+        "q": "How did Grandpa probably feel when he saw the quiet table?",
+        "choices": [
+          "Excited",
+          "Hungry",
+          "Disappointed",
+          "Proud",
+          "Sleepy"
+        ],
+        "answer": "Disappointed",
+        "explanation": "'he shook his head sadly'에서 할아버지가 아무도 말하지 않는 식탁을 보고 실망했음을 알 수 있다."
+      },
+      {
+        "qid": "3a5972eb-5a43-45bd-b07a-1089e9cbb760",
+        "type": "mc",
+        "q": "Where did Grandpa place the shoebox?",
+        "choices": [
+          "Under the table",
+          "Next to the TV",
+          "In Yerin's room",
+          "In the middle of the table",
+          "On the sofa"
+        ],
+        "answer": "In the middle of the table",
+        "explanation": "'he placed an empty shoebox in the middle of the table'과 일치한다."
+      },
+      {
+        "qid": "394e121b-e42f-4b1c-83b0-08564163d6bb",
+        "type": "mc",
+        "q": "What did Grandpa ask everyone to do during dinner?",
+        "choices": [
+          "Put their phones in the Phone Box",
+          "Turn off the TV",
+          "Eat more vegetables",
+          "Play a card game",
+          "Read the news together"
+        ],
+        "answer": "Put their phones in the Phone Box",
+        "explanation": "'From now on, everyone puts their phone in here during dinner.'라고 했다."
+      },
+      {
+        "qid": "bf2788e7-9d00-461c-83a7-0248d547fbbf",
+        "type": "mc",
+        "q": "How did the family look at first when they had to put their phones away?",
+        "choices": [
+          "Unhappy and a little bored",
+          "Happy and excited",
+          "Angry and loud",
+          "Surprised and thankful",
+          "Proud and calm"
+        ],
+        "answer": "Unhappy and a little bored",
+        "explanation": "'At first, everyone looked unhappy and a little bored.'와 일치한다."
+      },
+      {
+        "qid": "1ee32e61-ce4f-4a47-a0c4-8f9414e20deb",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: Yerin laughed so hard ____ her stomach hurt.",
+        "choices": [
+          "that",
+          "and",
+          "but",
+          "when",
+          "because"
+        ],
+        "answer": "that",
+        "explanation": "'so + 부사 + that ...'은 '너무 ~해서 …하다'라는 뜻이다. 'laughed so hard that her stomach hurt'"
+      },
+      {
+        "qid": "06eec5e6-7eff-4c88-9820-a129cea55267",
+        "type": "mc",
+        "q": "Who shared stories about school days?",
+        "choices": [
+          "Grandpa",
+          "Dad",
+          "Yerin",
+          "Mom",
+          "Yerin's friend"
+        ],
+        "answer": "Mom",
+        "explanation": "'Mom shared stories about her school days'와 일치한다. 아빠는 첫 직장 이야기를 했다."
+      },
+      {
+        "qid": "b372ae3f-ba86-4451-93e6-60fedc7fcbbc",
+        "type": "mc",
+        "q": "Why was Yerin proud of herself?",
+        "choices": [
+          "She told a funny story.",
+          "She finished dinner first.",
+          "She found the shoebox.",
+          "She didn't use her phone for a week.",
+          "She won two card games."
+        ],
+        "answer": "She won two card games.",
+        "explanation": "'Yerin won two games and was very proud of herself.'에서 알 수 있다."
+      },
+      {
+        "qid": "1a500d94-80ec-44a3-a414-bf90d981351e",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: Dinner has ____ Yerin's favorite time of the day.",
+        "choices": [
+          "become",
+          "became",
+          "becoming",
+          "becomes",
+          "to become"
+        ],
+        "answer": "become",
+        "explanation": "has 뒤에는 과거분사가 와서 현재완료(has become: ~이 되었다)를 만든다. become의 과거분사는 become이다."
+      },
+      {
+        "qid": "c4e45100-916c-4317-a64d-0e7db19145d6",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "Phones help families talk more.",
+          "Card games are only for children.",
+          "Time without phones can bring a family closer.",
+          "Grandparents don't like new things.",
+          "Watching the news at dinner is important."
+        ],
+        "answer": "Time without phones can bring a family closer.",
+        "explanation": "휴대폰 없이 보내는 저녁 시간 덕분에 가족이 대화하고 함께 즐기며 가까워졌다는 내용이다."
+      },
+      {
+        "qid": "2bc21f3d-1735-425f-95dd-7c1ad5ff5dc7",
+        "type": "blank",
+        "q": "Then he ____ an empty shoebox in the middle of the table.",
+        "answer": "placed",
+        "explanation": "'Then he placed an empty shoebox in the middle of the table.'에서 확인할 수 있다. place는 '놓다'라는 뜻이다."
+      },
+      {
+        "qid": "fb2725fb-a90d-47da-9e0b-a7bcfd47f4d8",
+        "type": "blank",
+        "q": "At first, everyone looked unhappy and a little ____.",
+        "answer": "bored",
+        "explanation": "'everyone looked unhappy and a little bored'에서 확인할 수 있다."
+      },
+      {
+        "qid": "737fae1e-b85d-4a2d-b9f1-82d2ec4274d6",
+        "type": "blank",
+        "q": "Mom ____ stories about her school days.",
+        "answer": "shared",
+        "explanation": "'Mom shared stories about her school days'에서 확인할 수 있다."
+      },
+      {
+        "qid": "277f7cd1-f50b-43d4-9ef1-13097750994c",
+        "type": "blank",
+        "q": "Yerin laughed so hard that her ____ hurt.",
+        "answer": "stomach",
+        "explanation": "'Yerin laughed so hard that her stomach hurt.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "d4557921-e72e-4ce3-ba2e-b840b4bb5a54",
+        "type": "blank",
+        "q": "Yerin won two games and was very ____ of herself.",
+        "answer": "proud",
+        "explanation": "'was very proud of herself'에서 확인할 수 있다. be proud of는 '~을 자랑스러워하다'라는 뜻이다."
+      },
+      {
+        "qid": "cd601d36-8d5a-4795-a67c-de27fbc2a38f",
+        "type": "tf",
+        "q": "Dad checked his emails at dinner before the Phone Box.",
+        "answer": false,
+        "explanation": "이메일을 확인한 사람은 엄마이고, 아빠는 뉴스를 봤다."
+      },
+      {
+        "qid": "3f76ad72-d35a-4ae2-9348-8f6de1855217",
+        "type": "tf",
+        "q": "The family played a card game together for an hour after dinner.",
+        "answer": true,
+        "explanation": "'After dinner, the family played a card game together for an hour.'와 일치한다."
+      },
+      {
+        "qid": "ea7996da-d974-4367-9c3e-3216969af768",
+        "type": "tf",
+        "q": "Everyone was happy about the Phone Box right away.",
+        "answer": false,
+        "explanation": "'At first, everyone looked unhappy and a little bored.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "b4a193d0-55ce-4f21-9ce0-3f705375f9a9",
+        "type": "order",
+        "items": [
+          "But soon, Dad began to tell a funny story about his very first job.",
+          "When he saw the quiet table, he shook his head sadly.",
+          "Yerin won two games and was very proud of herself.",
+          "Then he placed an empty shoebox in the middle of the table."
+        ],
+        "answer": [
+          "When he saw the quiet table, he shook his head sadly.",
+          "Then he placed an empty shoebox in the middle of the table.",
+          "But soon, Dad began to tell a funny story about his very first job.",
+          "Yerin won two games and was very proud of herself."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "f2c2442d-d170-4953-9e63-c98d153baf69",
+        "q": "Explain in English why Grandpa shook his head sadly.",
+        "wordLimit": 25,
+        "sampleAnswer": "He was sad because everyone looked at their phones and nobody talked at dinner.",
+        "rubric": "가족이 휴대폰만 보고 서로 이야기하지 않았다는 내용이 이유로 들어가면 만점"
+      },
+      {
+        "qid": "292c2fc3-4856-46ce-9f6d-1d20fd9d198f",
+        "q": "Rewrite the sentence using 'so ~ that': Yerin laughed very hard, so her stomach hurt.",
+        "wordLimit": 12,
+        "sampleAnswer": "Yerin laughed so hard that her stomach hurt.",
+        "rubric": "so hard that 구조를 바르게 쓰고 의미가 같으면 만점"
+      },
+      {
+        "qid": "9a2ade77-a994-4927-af13-702cda323f70",
+        "q": "우리말로 쓰시오: 할아버지가 만든 'Phone Box'의 규칙은 무엇인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "앞으로 저녁 식사 시간 동안에는 모두 휴대폰을 신발 상자(Phone Box)에 넣어 두어야 한다.",
+        "rubric": "저녁 식사 동안 + 모든 사람이 휴대폰을 상자에 넣는다는 내용이 모두 있으면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "364bad8a-a6ae-40ce-953d-924d493098d4",
+        "q": "How did dinner change after the Phone Box came? Write two sentences in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "Before, nobody talked at dinner. Now, the family talks, laughs, and has fun together.",
+        "rubric": "이전(아무도 말하지 않음)과 이후(대화·웃음·즐거움)를 비교해서 두 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "ec7290f2-7dac-4b30-ae55-6e2d72f3b66c",
+        "q": "우리말로 쓰시오: 'they always looked at their phones instead of at each other'는 어떤 의미인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "가족이 서로의 얼굴을 보며 대화하는 대신 늘 각자 휴대폰만 쳐다보았다는 의미이다.",
+        "rubric": "서로를 보는 대신(instead of) 휴대폰만 봤다는 의미를 정확히 쓰면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "For a long time, dinner at the Kim family's house was {{v:strangely}} {{v:silent}}. {{g:Although everyone sat at the same table|although: 비록 ~이지만 (양보의 접속사)}}, each person's eyes {{g:were glued to a screen|be glued to: ~에 딱 붙어 있다, ~만 뚫어지게 보다}}. Dad {{v:scrolled}} through the news, Mom answered work emails, and Yerin {{g:was busy playing games|be busy + -ing: ~하느라 바쁘다}}. {{g:Not a single word was spoken|수동태 was + 과거분사: ~되었다 (= Nobody spoke a single word)}} during the whole meal.\nOne Friday evening, Yerin's grandpa came over for a visit. {{g:Noticing the silent table|분사구문: ~하자, ~하면서 (= When he noticed the silent table)}}, he shook his head in {{v:disappointment}}. Without saying anything, he placed an empty shoebox in the center of the table. \"This is the Phone Box,\" he {{v:announced}}. \"From now on, every phone goes in here while we are eating dinner.\"\nAt first, nobody looked {{v:pleased}} with the new rule. Before long, however, Dad started telling a {{v:hilarious}} story about the first job {{g:he had ever had|과거완료 had + 과거분사: (그때까지) ~해 본 적이 있었다}}. Mom joined in with memories of her school days, and Yerin {{g:laughed so hard that tears came to her eyes|so + 부사 + that ...: 너무 ~해서 …하다}}.\nAfter dinner, the family spent an {{v:entire}} hour playing a card game together, and Yerin proudly won two rounds.\nThese days, the Phone Box is used at the Kim family's table every single night. Thanks to Grandpa's simple idea, {{t:dinner has become the time of day that Yerin looks forward to the most}}.",
+    "tags": {
+      "vocab": [
+        "strangely",
+        "silent",
+        "scrolled",
+        "disappointment",
+        "announced",
+        "pleased",
+        "hilarious",
+        "entire"
+      ],
+      "grammar": [
+        "although",
+        "be glued to",
+        "be busy -ing",
+        "수동태",
+        "분사구문",
+        "과거완료",
+        "so ~ that",
+        "look forward to"
+      ],
+      "topic": [
+        "가족",
+        "휴대폰 없는 저녁 시간",
+        "가족 간의 유대 회복"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "35c4757c-52a9-4e1d-9e17-c446d6e5e4c5",
+        "type": "mc",
+        "q": "What does 'each person's eyes were glued to a screen' mean in the passage?",
+        "choices": [
+          "Everyone had something in their eyes.",
+          "Everyone was fixing a broken screen.",
+          "Everyone kept looking at their phones.",
+          "Everyone was watching a movie together.",
+          "Everyone closed their eyes at dinner."
+        ],
+        "answer": "Everyone kept looking at their phones.",
+        "explanation": "be glued to는 '~에 딱 붙어 있다'라는 뜻으로, 눈이 화면에 붙어 있었다는 것은 모두가 휴대폰만 계속 보고 있었다는 뜻이다."
+      },
+      {
+        "qid": "a370e01c-011e-4dea-8678-21dcbc3d0152",
+        "type": "mc",
+        "q": "Which word is closest in meaning to 'silent' in the passage?",
+        "choices": [
+          "Loud",
+          "Quiet",
+          "Busy",
+          "Funny",
+          "Delicious"
+        ],
+        "answer": "Quiet",
+        "explanation": "silent는 '조용한, 말이 없는'이라는 뜻으로 quiet와 의미가 가장 가깝다."
+      },
+      {
+        "qid": "cf1a493f-50ff-42c6-899c-346a0b5ebecb",
+        "type": "mc",
+        "q": "What does 'Not a single word was spoken during the whole meal' tell us?",
+        "choices": [
+          "The family spoke only one word.",
+          "Grandpa did all the talking.",
+          "The family talked in a whisper.",
+          "No one said anything while they ate.",
+          "Yerin was the only one who talked."
+        ],
+        "answer": "No one said anything while they ate.",
+        "explanation": "'단 한 마디의 말도 오가지 않았다'는 수동태 문장으로, 식사 내내 아무도 말하지 않았다는 뜻이다."
+      },
+      {
+        "qid": "49695fd5-920a-4c87-adc8-3fc7acfae7c6",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: ____ the silent table, he shook his head in disappointment.",
+        "choices": [
+          "Noticed",
+          "Notice",
+          "Noticing",
+          "To notices",
+          "Notices"
+        ],
+        "answer": "Noticing",
+        "explanation": "주절의 주어(he)가 '알아차리는' 능동의 관계이므로 현재분사로 시작하는 분사구문 'Noticing ~'이 알맞다."
+      },
+      {
+        "qid": "2a440c71-3f84-49dd-b352-fc572d1f17b5",
+        "type": "mc",
+        "q": "How did Grandpa react to the silent dinner table?",
+        "choices": [
+          "He shook his head in disappointment and brought out a shoebox.",
+          "He laughed and joined the family's games.",
+          "He got angry and took everyone's phones home.",
+          "He turned on the TV to watch the news.",
+          "He asked Yerin to teach him a phone game."
+        ],
+        "answer": "He shook his head in disappointment and brought out a shoebox.",
+        "explanation": "'he shook his head in disappointment'와 'he placed an empty shoebox in the center of the table'에서 알 수 있다."
+      },
+      {
+        "qid": "4c198921-c8e7-48d8-9dd3-6cda7ad75833",
+        "type": "mc",
+        "q": "According to the new rule, when must every phone go into the Phone Box?",
+        "choices": [
+          "Only on weekends",
+          "Before going to bed",
+          "While the family is eating dinner",
+          "When Grandpa visits",
+          "During the card game only"
+        ],
+        "answer": "While the family is eating dinner",
+        "explanation": "'every phone goes in here while we are eating dinner'와 일치한다."
+      },
+      {
+        "qid": "cd5dbfd3-d152-4973-9bc7-37fa0e68894a",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'hilarious' in the passage?",
+        "choices": [
+          "Very sad",
+          "Very long",
+          "Very scary",
+          "Very boring",
+          "Very funny"
+        ],
+        "answer": "Very funny",
+        "explanation": "hilarious는 '아주 웃기는, 몹시 재미있는'이라는 뜻이다. 예린이가 눈물이 날 정도로 웃은 것과도 연결된다."
+      },
+      {
+        "qid": "3c97466c-3cec-4231-b738-bf3d19f50b21",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: Dad told a story about the first job he had ever ____.",
+        "choices": [
+          "has",
+          "have",
+          "having",
+          "had",
+          "to have"
+        ],
+        "answer": "had",
+        "explanation": "had + 과거분사(had)로 과거완료를 만든다. '그가 그때까지 가져 본 첫 직장'이라는 뜻이다."
+      },
+      {
+        "qid": "d007898b-06b7-4590-8ccc-2f31e57ae38a",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "Mom answered work emails at dinner.",
+          "Grandpa explained the rule for a long time before he put the box down.",
+          "Nobody looked pleased with the rule at first.",
+          "Yerin won two rounds of the card game.",
+          "The family uses the Phone Box every night now."
+        ],
+        "answer": "Grandpa explained the rule for a long time before he put the box down.",
+        "explanation": "'Without saying anything, he placed an empty shoebox ~'라고 했으므로, 할아버지는 아무 말 없이 상자를 먼저 놓은 뒤 규칙을 알렸다."
+      },
+      {
+        "qid": "d18a11dc-4f6c-4dbe-ba36-5abe52a45fe0",
+        "type": "mc",
+        "q": "What does the last sentence suggest about Yerin's feelings now?",
+        "choices": [
+          "She is tired of the Phone Box rule.",
+          "She misses playing games at dinner.",
+          "She wants Grandpa to take the box back.",
+          "She eagerly waits for dinner time every day.",
+          "She prefers eating dinner alone."
+        ],
+        "answer": "She eagerly waits for dinner time every day.",
+        "explanation": "look forward to는 '~을 고대하다, 기다리다'라는 뜻이다. 저녁 시간이 예린이가 하루 중 가장 기다리는 시간이 되었다."
+      },
+      {
+        "qid": "e87ff2f0-0f94-4714-bd91-e2242c69789b",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "Phones make family dinners more exciting.",
+          "A simple rule helped a family reconnect and enjoy time together.",
+          "Card games are more fun than phone games.",
+          "Grandparents should not visit on Fridays.",
+          "Children should do their homework at dinner."
+        ],
+        "answer": "A simple rule helped a family reconnect and enjoy time together.",
+        "explanation": "할아버지의 간단한 아이디어(휴대폰 상자) 덕분에 가족이 다시 대화하고 함께 즐기게 되었다는 것이 글의 요지이다."
+      },
+      {
+        "qid": "6efe8562-6566-43e5-b1f3-445d3fba054b",
+        "type": "blank",
+        "q": "Although everyone sat at the same table, each person's eyes were ____ to a screen.",
+        "answer": "glued",
+        "explanation": "'each person's eyes were glued to a screen'에서 확인할 수 있다."
+      },
+      {
+        "qid": "1b4edd7c-2e0f-4cff-b2b3-63ed0f3d3ae9",
+        "type": "blank",
+        "q": "Noticing the silent table, he shook his head in ____.",
+        "answer": "disappointment",
+        "explanation": "'he shook his head in disappointment'에서 확인할 수 있다. in disappointment는 '실망하여'라는 뜻이다."
+      },
+      {
+        "qid": "98094979-fbcc-459c-9916-5e83e14287e9",
+        "type": "blank",
+        "q": "\"This is the Phone Box,\" he ____.",
+        "answer": "announced",
+        "explanation": "'\"This is the Phone Box,\" he announced.'에서 확인할 수 있다. announce는 '알리다, 발표하다'라는 뜻이다."
+      },
+      {
+        "qid": "e7c1fa05-9503-49d1-9ee4-aabdf956e602",
+        "type": "blank",
+        "q": "After dinner, the family spent an entire hour playing a card game together, and Yerin proudly won two ____.",
+        "answer": "rounds",
+        "explanation": "'Yerin proudly won two rounds'에서 확인할 수 있다."
+      },
+      {
+        "qid": "cded44e8-9f2b-4fd4-aa8c-a91b07e8b582",
+        "type": "blank",
+        "q": "Dinner has become the time of day that Yerin looks ____ to the most.",
+        "answer": "forward",
+        "explanation": "'Yerin looks forward to the most'에서 확인할 수 있다. look forward to는 '~을 고대하다'라는 뜻이다."
+      },
+      {
+        "qid": "4791606f-2a69-4944-a773-9bf9580ad9bb",
+        "type": "tf",
+        "q": "Mom answered work emails during dinner before the Phone Box.",
+        "answer": true,
+        "explanation": "'Mom answered work emails'와 일치한다."
+      },
+      {
+        "qid": "2a0cdebe-736e-44a5-b279-343147fdd9c0",
+        "type": "tf",
+        "q": "The family played cards for only half an hour.",
+        "answer": false,
+        "explanation": "'the family spent an entire hour playing a card game'이라고 했으므로 한 시간 내내 했다."
+      },
+      {
+        "qid": "b0fe3be6-85c5-4ea1-a91c-b1d38028cd23",
+        "type": "tf",
+        "q": "The Phone Box is now used at dinner every night.",
+        "answer": true,
+        "explanation": "'These days, the Phone Box is used at the Kim family's table every single night.'와 일치한다."
+      },
+      {
+        "qid": "4a342a87-b68e-4833-86b9-1d0efcfea407",
+        "type": "order",
+        "items": [
+          "Mom joined in with memories of her school days, and Yerin laughed so hard that tears came to her eyes.",
+          "Without saying anything, he placed an empty shoebox in the center of the table.",
+          "Dad scrolled through the news, Mom answered work emails, and Yerin was busy playing games.",
+          "After dinner, the family spent an entire hour playing a card game together, and Yerin proudly won two rounds."
+        ],
+        "answer": [
+          "Dad scrolled through the news, Mom answered work emails, and Yerin was busy playing games.",
+          "Without saying anything, he placed an empty shoebox in the center of the table.",
+          "Mom joined in with memories of her school days, and Yerin laughed so hard that tears came to her eyes.",
+          "After dinner, the family spent an entire hour playing a card game together, and Yerin proudly won two rounds."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "548a99c5-aa75-4f06-9eb7-f4fa1a3cab8a",
+        "q": "Explain in English why Grandpa brought the Phone Box to the table.",
+        "wordLimit": 30,
+        "sampleAnswer": "He brought it because everyone was looking at their phones and nobody talked during dinner.",
+        "rubric": "가족이 휴대폰만 보느라 식사 중 대화가 없었다는 내용이 이유로 들어가면 만점"
+      },
+      {
+        "qid": "deae80ef-9a3f-4e28-a35c-d24aaaff9d57",
+        "q": "Combine the two sentences using 'so ~ that': Yerin laughed very hard. Tears came to her eyes.",
+        "wordLimit": 15,
+        "sampleAnswer": "Yerin laughed so hard that tears came to her eyes.",
+        "rubric": "so hard that 구조를 바르게 써서 두 문장을 한 문장으로 연결하면 만점"
+      },
+      {
+        "qid": "4b3f03ce-21f2-4e83-bc31-642bf148e4a3",
+        "q": "우리말로 쓰시오: 마지막 문장 'dinner has become the time of day that Yerin looks forward to the most'는 무슨 뜻인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "저녁 시간이 예린이가 하루 중 가장 기다리고 고대하는 시간이 되었다는 뜻이다.",
+        "rubric": "look forward to(고대하다)와 the most(가장)의 의미를 살려 정확히 해석하면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "38db9d99-93ca-4aa3-bbcb-a8076340c131",
+        "q": "How did the Phone Box change the Kim family? Answer in one English sentence.",
+        "wordLimit": 25,
+        "sampleAnswer": "The Phone Box helped the family talk, laugh, and enjoy their time together.",
+        "rubric": "가족이 대화하고 함께 즐거운 시간을 보내게 되었다는 변화가 드러나면 만점"
+      },
+      {
+        "qid": "03c69220-3482-4f4d-951e-5a9efef196d7",
+        "q": "우리말로 쓰시오: 휴대폰을 상자에 넣은 뒤 가족이 함께 한 일을 두 가지 이상 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "아빠는 첫 직장에 대한 아주 웃긴 이야기를 했고, 엄마는 학창 시절 추억을 이야기했으며, 저녁 식사 후에는 한 시간 동안 함께 카드 게임을 했다.",
+        "rubric": "아빠의 첫 직장 이야기, 엄마의 학창 시절 이야기, 카드 게임 중 두 가지 이상 쓰면 만점, 한 가지면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  }
+}

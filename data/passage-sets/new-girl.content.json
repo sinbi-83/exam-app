@@ -1,0 +1,1159 @@
+{
+  "school": {
+    "tagged_body": "On Monday morning, a new girl came to our class. Her name was Sora.\nShe stood in front of the class and looked at the {{v:floor}}.\nOur teacher said, \"Sora is from Busan. Please be nice to her.\"\nAt lunch, Sora sat {{v:alone}}. She ate her rice slowly. She did not talk to anyone.\n{{g:I wanted to say hello|want to + 동사원형: ~하고 싶다 (to부정사 기초)}}. But I was {{v:shy}}, too.\nThen I remembered my first day at this school. I was {{v:afraid}}. Nobody talked to me. It was a very long day.\nI took a deep {{v:breath}} and went to her table.\n\"Hi, I'm Yuna. {{g:Can I sit here?|Can I ~?: ~해도 될까요? (허락 구하기)}}\" I asked.\nSora looked up and smiled. \"Sure!\"\nWe talked about cats, cartoons, and our favorite snacks.\nNow Sora is my best friend. {{t:One small hello can change everything}}.",
+    "tags": {
+      "vocab": [
+        "floor",
+        "alone",
+        "shy",
+        "afraid",
+        "breath"
+      ],
+      "grammar": [
+        "want to + 동사원형",
+        "Can I ~? (허락)"
+      ],
+      "topic": [
+        "전학 온 친구",
+        "먼저 건네는 인사"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "9a06b9dd-b70d-488f-a2c9-d25fa32a2ca9",
+        "type": "mc",
+        "q": "When did the new girl come to the class?",
+        "choices": [
+          "On Sunday morning",
+          "On Monday afternoon",
+          "On Monday morning",
+          "On Friday morning",
+          "On Tuesday evening"
+        ],
+        "answer": "On Monday morning",
+        "explanation": "'On Monday morning, a new girl came to our class.'와 일치한다."
+      },
+      {
+        "qid": "0a7b42cf-a900-493a-b4da-a8b21c729653",
+        "type": "mc",
+        "q": "What was the new girl's name?",
+        "choices": [
+          "Yuna",
+          "Sora",
+          "Mina",
+          "Sujin",
+          "Jisu"
+        ],
+        "answer": "Sora",
+        "explanation": "'Her name was Sora.'와 일치한다."
+      },
+      {
+        "qid": "204bf493-feda-4514-b21d-fac158abfac0",
+        "type": "mc",
+        "q": "Where is Sora from?",
+        "choices": [
+          "Seoul",
+          "Jeju",
+          "Daegu",
+          "Incheon",
+          "Busan"
+        ],
+        "answer": "Busan",
+        "explanation": "'Sora is from Busan.'와 일치한다."
+      },
+      {
+        "qid": "fc449336-78c1-4bfe-a0ec-eeb3d2056d9a",
+        "type": "mc",
+        "q": "What did the teacher ask the class to do?",
+        "choices": [
+          "Be nice to Sora",
+          "Sit quietly",
+          "Read a book",
+          "Go to lunch",
+          "Clean the classroom"
+        ],
+        "answer": "Be nice to Sora",
+        "explanation": "'Please be nice to her.'와 일치한다."
+      },
+      {
+        "qid": "463c3c1c-6029-45b5-948b-ff4cf98fcf1c",
+        "type": "mc",
+        "q": "How did Sora eat her rice?",
+        "choices": [
+          "Quickly",
+          "Loudly",
+          "With Yuna",
+          "Slowly",
+          "With the teacher"
+        ],
+        "answer": "Slowly",
+        "explanation": "'She ate her rice slowly.'와 일치한다."
+      },
+      {
+        "qid": "40317e31-f732-4931-b4c3-af9417b8c582",
+        "type": "mc",
+        "q": "What did Sora do at lunch?",
+        "choices": [
+          "She talked with many friends.",
+          "She did not talk to anyone.",
+          "She played with a cat.",
+          "She went home early.",
+          "She sang a song."
+        ],
+        "answer": "She did not talk to anyone.",
+        "explanation": "'She did not talk to anyone.'와 일치한다."
+      },
+      {
+        "qid": "dcf2387e-a352-4abc-84f1-ccc8520f4ca5",
+        "type": "mc",
+        "q": "Why didn't Yuna say hello at first?",
+        "choices": [
+          "She was angry.",
+          "She was sick.",
+          "She did not like Sora.",
+          "She was shy, too.",
+          "She was very busy."
+        ],
+        "answer": "She was shy, too.",
+        "explanation": "'But I was shy, too.'와 일치한다."
+      },
+      {
+        "qid": "cf59000d-cd0a-4450-8cab-1cb740ac59eb",
+        "type": "mc",
+        "q": "다음 중 'afraid'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "행복한",
+          "무서워하는",
+          "배고픈",
+          "졸린",
+          "화난"
+        ],
+        "answer": "무서워하는",
+        "explanation": "afraid는 '무서워하는, 두려워하는'이라는 뜻이다."
+      },
+      {
+        "qid": "34398465-2c3c-4c95-be9a-2c3c686a9b1c",
+        "type": "mc",
+        "q": "What did Yuna ask Sora?",
+        "choices": [
+          "Where are you from?",
+          "Do you like cats?",
+          "What is your name?",
+          "Can you help me?",
+          "Can I sit here?"
+        ],
+        "answer": "Can I sit here?",
+        "explanation": "'Hi, I'm Yuna. Can I sit here?' I asked.와 일치한다."
+      },
+      {
+        "qid": "912bb230-18c8-4568-8d57-2557b50bfde3",
+        "type": "mc",
+        "q": "Who is Sora to Yuna now?",
+        "choices": [
+          "Her sister",
+          "Her best friend",
+          "Her teacher",
+          "Her cousin",
+          "Her neighbor"
+        ],
+        "answer": "Her best friend",
+        "explanation": "'Now Sora is my best friend.'와 일치한다."
+      },
+      {
+        "qid": "177bfb05-a651-4070-b746-fc8fc9914a6b",
+        "type": "mc",
+        "q": "What is the lesson of the story?",
+        "choices": [
+          "Cats are the best pets.",
+          "Lunch is the most fun time.",
+          "One small hello can change everything.",
+          "Busan is a big city.",
+          "New students must be quiet."
+        ],
+        "answer": "One small hello can change everything.",
+        "explanation": "마지막 문장 'One small hello can change everything.'이 글의 교훈이다."
+      },
+      {
+        "qid": "5cdf4303-66da-4e40-bf2b-812157b7162b",
+        "type": "blank",
+        "q": "She stood in front of the class and looked at the ____.",
+        "answer": "floor",
+        "explanation": "'looked at the floor'에서 확인할 수 있다."
+      },
+      {
+        "qid": "a7288602-f73a-4ed9-9b53-82cfa5480992",
+        "type": "blank",
+        "q": "Then I remembered my first ____ at this school.",
+        "answer": "day",
+        "explanation": "'my first day at this school'에서 확인할 수 있다."
+      },
+      {
+        "qid": "7c988960-1f2b-4c67-b7d8-f083ced3653d",
+        "type": "blank",
+        "q": "I took a deep ____ and went to her table.",
+        "answer": "breath",
+        "explanation": "'I took a deep breath'에서 확인할 수 있다."
+      },
+      {
+        "qid": "cc6237f5-0729-4c28-91c6-59b8c5a0fd56",
+        "type": "blank",
+        "q": "Sora looked up and ____.",
+        "answer": "smiled",
+        "explanation": "'Sora looked up and smiled.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "ce92adf0-71ea-4116-b40f-858875a05e05",
+        "type": "blank",
+        "q": "We talked about cats, ____, and our favorite snacks.",
+        "answer": "cartoons",
+        "explanation": "'cats, cartoons, and our favorite snacks'에서 확인할 수 있다."
+      },
+      {
+        "qid": "ca7bac22-553e-4c86-af9d-b5dea7f2ce09",
+        "type": "tf",
+        "q": "Yuna talked to Sora first.",
+        "answer": true,
+        "explanation": "유나가 소라의 자리로 가서 먼저 인사했으므로 사실이다."
+      },
+      {
+        "qid": "ee1b77f4-2f78-47ff-8489-c62fbe4959db",
+        "type": "tf",
+        "q": "Many friends talked to Yuna on her first day at this school.",
+        "answer": false,
+        "explanation": "'Nobody talked to me.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "90a4e92f-b6aa-4a5e-b545-f002a8e148f6",
+        "type": "tf",
+        "q": "Sora said no when Yuna asked to sit with her.",
+        "answer": false,
+        "explanation": "소라는 웃으며 'Sure!'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "2721912f-df49-48c7-ac8c-ca34d1ff8127",
+        "type": "order",
+        "items": [
+          "Sora looked up and smiled.",
+          "At lunch, Sora sat alone.",
+          "Our teacher said, \"Sora is from Busan. Please be nice to her.\"",
+          "Then I remembered my first day at this school."
+        ],
+        "answer": [
+          "Our teacher said, \"Sora is from Busan. Please be nice to her.\"",
+          "At lunch, Sora sat alone.",
+          "Then I remembered my first day at this school.",
+          "Sora looked up and smiled."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "717d0ce7-dd2f-4d42-800b-071b6938ee3b",
+        "q": "Where is Sora from? Write one sentence in English.",
+        "wordLimit": 10,
+        "sampleAnswer": "Sora is from Busan.",
+        "rubric": "소라가 부산 출신이라는 내용을 완전한 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "ffbcd368-37b9-48ac-a945-6ffa0841e680",
+        "q": "What did Yuna say to Sora? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "Hi, I'm Yuna. Can I sit here?",
+        "rubric": "자기소개와 옆에 앉아도 되는지 묻는 말을 쓰면 만점"
+      },
+      {
+        "qid": "afda4da6-d14e-4da9-aeaf-60cc1ef813ce",
+        "q": "우리말로 쓰시오: 점심시간에 소라는 어떻게 지냈나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "혼자 앉아서 밥을 천천히 먹었고, 아무와도 이야기하지 않았다.",
+        "rubric": "혼자 앉았다는 내용 + 아무와도 말하지 않았다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "fe92049b-b21a-4a0e-927c-d630a53bf6af",
+        "q": "What did Yuna and Sora talk about? Write in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "They talked about cats, cartoons, and their favorite snacks.",
+        "rubric": "고양이, 만화, 좋아하는 간식 세 가지를 모두 쓰면 만점"
+      },
+      {
+        "qid": "e6d1fcc3-c834-4288-8917-e71dac2bde3d",
+        "q": "우리말로 쓰시오: 유나가 용기를 내어 소라에게 다가간 이유는 무엇인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "자신도 이 학교에 온 첫날 무서웠고 아무도 말을 걸어 주지 않았던 일이 생각났기 때문이다.",
+        "rubric": "유나 자신의 첫날(무서웠음, 아무도 말 걸지 않음)을 떠올렸다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "On Monday morning, a new girl came into our {{v:classroom}}. Her name was Sora. She stood at the front and looked at the floor. Our teacher said, \"Sora moved here from Busan. Please be kind to her.\"\nAt lunch, Sora sat {{v:alone}}. She ate her rice slowly and did not talk to anyone. {{g:I wanted to say hello|want to + 동사원형: ~하고 싶었다 (to부정사 기초)}}, but I was {{v:shy}}, too.\nThen I remembered my first day at this school. I was {{v:scared}}, and nobody talked to me. It was {{g:the longest day|the + 형용사-est: 가장 ~한 (최상급)}} of my life.\nI took a deep {{v:breath}} and walked to her table. \"Hi, I'm Yuna. {{g:Can I sit here?|Can I ~?: ~해도 될까요? (허락 구하기)}}\" I asked. Sora looked up and smiled. \"Sure!\"\nWe talked about cats, cartoons, and our favorite snacks. Now Sora is my best friend. {{t:Sometimes one small hello can change everything}}.",
+    "tags": {
+      "vocab": [
+        "classroom",
+        "alone",
+        "shy",
+        "scared",
+        "breath"
+      ],
+      "grammar": [
+        "want to + 동사원형",
+        "최상급 the -est",
+        "Can I ~? (허락)"
+      ],
+      "topic": [
+        "전학 온 친구",
+        "먼저 건네는 인사"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "8c8b5e7d-ab43-4fb6-a44f-48606edfb65a",
+        "type": "mc",
+        "q": "Where did Sora live before she came to this school?",
+        "choices": [
+          "Seoul",
+          "Jeju",
+          "Busan",
+          "Daejeon",
+          "Gwangju"
+        ],
+        "answer": "Busan",
+        "explanation": "'Sora moved here from Busan.'과 일치한다."
+      },
+      {
+        "qid": "86b8206b-c173-4797-bb83-6375f31fc498",
+        "type": "mc",
+        "q": "How did Sora probably feel when she stood at the front?",
+        "choices": [
+          "Nervous",
+          "Angry",
+          "Bored",
+          "Proud",
+          "Excited"
+        ],
+        "answer": "Nervous",
+        "explanation": "앞에 서서 바닥만 바라본 모습에서 긴장했음을 알 수 있다."
+      },
+      {
+        "qid": "304b2494-378e-436b-8e59-56dafee67e74",
+        "type": "mc",
+        "q": "What did the teacher ask the students to do?",
+        "choices": [
+          "Help Sora with homework",
+          "Be kind to Sora",
+          "Show Sora the school",
+          "Sit next to Sora",
+          "Take Sora to lunch"
+        ],
+        "answer": "Be kind to Sora",
+        "explanation": "'Please be kind to her.'와 일치한다."
+      },
+      {
+        "qid": "77118533-996b-4f32-a377-8b272fdbeac1",
+        "type": "mc",
+        "q": "Which is NOT true about Sora at lunch?",
+        "choices": [
+          "She sat alone.",
+          "She ate rice.",
+          "She ate slowly.",
+          "She did not talk to anyone.",
+          "She talked with her classmates."
+        ],
+        "answer": "She talked with her classmates.",
+        "explanation": "'did not talk to anyone'이라고 했으므로 반 친구들과 이야기했다는 것은 사실이 아니다."
+      },
+      {
+        "qid": "bd39ab55-12cc-410d-a2d8-c1dc8de1d8de",
+        "type": "mc",
+        "q": "Why didn't Yuna say hello right away?",
+        "choices": [
+          "She didn't like Sora.",
+          "She was shy, too.",
+          "She was eating.",
+          "The teacher said no.",
+          "She didn't see Sora."
+        ],
+        "answer": "She was shy, too.",
+        "explanation": "'I wanted to say hello, but I was shy, too.'와 일치한다."
+      },
+      {
+        "qid": "02dc0fd2-dad3-4d77-ac35-c36cc9c575aa",
+        "type": "mc",
+        "q": "What did Yuna remember?",
+        "choices": [
+          "Her trip to Busan",
+          "Her favorite cartoon",
+          "Her first day at this school",
+          "Her cat's birthday",
+          "Her last school trip"
+        ],
+        "answer": "Her first day at this school",
+        "explanation": "'Then I remembered my first day at this school.'과 일치한다."
+      },
+      {
+        "qid": "6d8095d3-ec3d-43af-b160-acb9366550bd",
+        "type": "mc",
+        "q": "Why was Yuna's first day 'the longest day of her life'?",
+        "choices": [
+          "She had too many classes.",
+          "She came to school very early.",
+          "She got lost in Busan.",
+          "She was scared and nobody talked to her.",
+          "She had a lot of homework."
+        ],
+        "answer": "She was scared and nobody talked to her.",
+        "explanation": "'I was scared, and nobody talked to me.' 때문에 가장 긴 하루처럼 느껴졌다."
+      },
+      {
+        "qid": "0cf6c7db-819d-4378-b50b-77f472e8fd37",
+        "type": "mc",
+        "q": "What does 'I took a deep breath' show about Yuna?",
+        "choices": [
+          "She was trying to be brave.",
+          "She was very tired.",
+          "She was hungry.",
+          "She was angry at Sora.",
+          "She was sick."
+        ],
+        "answer": "She was trying to be brave.",
+        "explanation": "수줍음이 많던 유나가 숨을 크게 들이쉬고 다가간 것은 용기를 내려는 모습이다."
+      },
+      {
+        "qid": "825f4a31-e465-433f-81d2-0b705099ee4f",
+        "type": "mc",
+        "q": "How did Sora react when Yuna asked to sit with her?",
+        "choices": [
+          "She said no.",
+          "She left the table.",
+          "She started to cry.",
+          "She looked up and smiled.",
+          "She called the teacher."
+        ],
+        "answer": "She looked up and smiled.",
+        "explanation": "'Sora looked up and smiled. \"Sure!\"'와 일치한다."
+      },
+      {
+        "qid": "c846c50c-067a-493b-a95d-2fbe4043e0a7",
+        "type": "mc",
+        "q": "Which words best describe Yuna in this story?",
+        "choices": [
+          "Lazy and rude",
+          "Kind and brave",
+          "Funny and loud",
+          "Quiet and selfish",
+          "Angry and tired"
+        ],
+        "answer": "Kind and brave",
+        "explanation": "수줍음을 이겨 내고 혼자인 친구에게 먼저 다가갔으므로 친절하고 용감하다."
+      },
+      {
+        "qid": "fa1bbf6e-b8cc-4a3f-9182-3b5df59d3d3c",
+        "type": "mc",
+        "q": "What is the lesson of the story?",
+        "choices": [
+          "New students should stay quiet.",
+          "It is better to eat lunch alone.",
+          "A small act of kindness can make a big difference.",
+          "Cats are good friends.",
+          "Teachers should choose our friends."
+        ],
+        "answer": "A small act of kindness can make a big difference.",
+        "explanation": "'Sometimes one small hello can change everything.'과 같은 의미이다."
+      },
+      {
+        "qid": "48bbb8d5-4e47-4d0c-9323-ecc478ed6faf",
+        "type": "blank",
+        "q": "Sora ____ here from Busan.",
+        "answer": "moved",
+        "explanation": "'Sora moved here from Busan.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "a6bc2a44-37c7-4939-88d1-07db6903b953",
+        "type": "blank",
+        "q": "She ate her rice ____ and did not talk to anyone.",
+        "answer": "slowly",
+        "explanation": "'She ate her rice slowly'에서 확인할 수 있다."
+      },
+      {
+        "qid": "d9d9d4c2-b3f5-42bb-ab04-c75039d0de1a",
+        "type": "blank",
+        "q": "I was scared, and ____ talked to me.",
+        "answer": "nobody",
+        "explanation": "'nobody talked to me'에서 확인할 수 있다."
+      },
+      {
+        "qid": "81450af9-ba23-4d5e-99a4-d357294e00e3",
+        "type": "blank",
+        "q": "It was the ____ day of my life.",
+        "answer": "longest",
+        "explanation": "'the longest day of my life'에서 확인할 수 있다."
+      },
+      {
+        "qid": "d6100d18-b7ec-4b31-aed0-df1f05f0d1e5",
+        "type": "blank",
+        "q": "Sometimes one small hello can ____ everything.",
+        "answer": "change",
+        "explanation": "'one small hello can change everything'에서 확인할 수 있다."
+      },
+      {
+        "qid": "dfdd1cac-9474-40ea-84ba-fb310bb1e2da",
+        "type": "tf",
+        "q": "The teacher told the class that Sora came from Busan.",
+        "answer": true,
+        "explanation": "'Sora moved here from Busan.'이라고 소개했으므로 사실이다."
+      },
+      {
+        "qid": "d324ed2b-e7e1-419a-8d3c-9488f7726c8b",
+        "type": "tf",
+        "q": "Yuna was not shy at all.",
+        "answer": false,
+        "explanation": "'I was shy, too.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "819177b0-943b-4058-bc96-0cd9a803ca06",
+        "type": "tf",
+        "q": "Yuna and Sora are best friends now.",
+        "answer": true,
+        "explanation": "'Now Sora is my best friend.'와 일치한다."
+      },
+      {
+        "qid": "28d48cf9-3cd5-4f0f-ae7d-93539f5b6064",
+        "type": "order",
+        "items": [
+          "Sora looked up and smiled.",
+          "I took a deep breath and walked to her table.",
+          "Our teacher said, \"Sora moved here from Busan. Please be kind to her.\"",
+          "At lunch, Sora sat alone."
+        ],
+        "answer": [
+          "Our teacher said, \"Sora moved here from Busan. Please be kind to her.\"",
+          "At lunch, Sora sat alone.",
+          "I took a deep breath and walked to her table.",
+          "Sora looked up and smiled."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "eb82a307-b9fe-428a-807a-1e1f6f855667",
+        "q": "Why did Sora look at the floor, do you think? Write one sentence in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "Because she was nervous and shy in a new classroom.",
+        "rubric": "새 교실에서 긴장했거나 수줍었다는 내용이면 만점"
+      },
+      {
+        "qid": "c6f33203-8bb2-4137-a965-a14d0f66e604",
+        "q": "What did Yuna remember before she walked to Sora's table? Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "She remembered her first day at this school, when she was scared and nobody talked to her.",
+        "rubric": "자신의 첫날 + 무서웠음/아무도 말 걸지 않음을 쓰면 만점"
+      },
+      {
+        "qid": "ba99a6f8-6d21-4a40-8c50-e3677eb1912a",
+        "q": "우리말로 쓰시오: 유나가 소라에게 한 말은 무엇이었나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "안녕, 나는 유나야. 여기 앉아도 될까?",
+        "rubric": "자기소개와 여기 앉아도 되는지 물었다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "f43210b8-b3cf-4c21-8874-046a7ee9dd38",
+        "q": "What did Yuna and Sora talk about? Write in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "They talked about cats, cartoons, and their favorite snacks.",
+        "rubric": "고양이, 만화, 좋아하는 간식 세 가지를 모두 쓰면 만점"
+      },
+      {
+        "qid": "a53bb63f-de6b-4552-a633-e61d39584ce3",
+        "q": "우리말로 쓰시오: 'Sometimes one small hello can change everything.'은 이 이야기에서 어떤 의미인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "유나의 작은 인사 한마디 덕분에 혼자였던 소라와 가장 친한 친구가 되었다는 뜻이다.",
+        "rubric": "작은 인사가 계기가 되어 두 사람이 가장 친한 친구가 되었다는 내용이면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "On Monday morning, a new girl walked into our classroom. Her name was Sora. She stood {{v:quietly}} at the front of the classroom and {{g:kept looking|keep + 동명사: 계속 ~하다}} at the floor. Our teacher said, \"Sora just moved here from Busan. {{g:I hope that you will all be kind to her|접속사 that + 문장: ~하기를 바란다}}.\"\nAt lunch, Sora sat alone at a table in the {{v:corner}}. She ate her rice slowly and didn't speak to anyone. I wanted to go over and say hello, but I was {{g:too shy|too + 형용사: 너무 ~한}}, just like her.\nThen I {{v:suddenly}} remembered my own first day at this school. I was so scared, and nobody talked to me all day. {{g:It felt like the longest day|feel like + 명사: ~처럼 느껴지다 / 최상급 the -est}} of my life.\nI took a deep {{v:breath}} and walked over to her table. \"Hi, I'm Yuna. Can I sit with you?\" I asked. Sora looked up, and a big smile {{v:appeared}} on her face. \"Sure!\"\nWe started talking about cats, cartoons, and our favorite snacks. Now Sora is my best friend. I learned that {{t:sometimes one small hello can change everything}}.",
+    "tags": {
+      "vocab": [
+        "quietly",
+        "corner",
+        "suddenly",
+        "breath",
+        "appeared"
+      ],
+      "grammar": [
+        "keep + 동명사",
+        "접속사 that",
+        "too + 형용사",
+        "feel like + 명사"
+      ],
+      "topic": [
+        "전학 온 친구",
+        "공감과 용기",
+        "먼저 건네는 인사"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "d7196d84-3c70-4aa2-8380-152ac6109f7f",
+        "type": "mc",
+        "q": "What can we guess about Sora from 'kept looking at the floor'?",
+        "choices": [
+          "She lost something on the floor.",
+          "She was nervous in the new classroom.",
+          "She wanted to clean the floor.",
+          "She was angry at the teacher.",
+          "She was looking for her bag."
+        ],
+        "answer": "She was nervous in the new classroom.",
+        "explanation": "새 교실 앞에서 계속 바닥만 본 것은 긴장하고 수줍었기 때문이다."
+      },
+      {
+        "qid": "1e74bbbb-63de-4de9-a2ce-70571803f161",
+        "type": "mc",
+        "q": "What did the teacher hope?",
+        "choices": [
+          "That Sora would go back to Busan",
+          "That Sora would sit alone",
+          "That the class would be kind to Sora",
+          "That Yuna would help with lunch",
+          "That the students would be quiet"
+        ],
+        "answer": "That the class would be kind to Sora",
+        "explanation": "'I hope that you will all be kind to her.'와 일치한다."
+      },
+      {
+        "qid": "f915e797-eb0e-4bd3-879f-775fe7ca4a61",
+        "type": "mc",
+        "q": "Where did Sora sit at lunch?",
+        "choices": [
+          "Next to the teacher",
+          "With Yuna's friends",
+          "In the classroom",
+          "At a table in the corner",
+          "Near the door with a friend"
+        ],
+        "answer": "At a table in the corner",
+        "explanation": "'Sora sat alone at a table in the corner.'와 일치한다."
+      },
+      {
+        "qid": "0e6166c6-30e1-4be8-a36a-56930a2bcd76",
+        "type": "mc",
+        "q": "What does 'just like her' mean in 'I was too shy, just like her'?",
+        "choices": [
+          "Yuna liked Sora very much.",
+          "Yuna was shy in the same way Sora was.",
+          "Yuna looked like Sora.",
+          "Yuna wanted to be Sora's sister.",
+          "Yuna was not shy at all."
+        ],
+        "answer": "Yuna was shy in the same way Sora was.",
+        "explanation": "'just like her'는 '소라처럼'이라는 뜻으로, 유나도 소라만큼 수줍었다는 의미이다."
+      },
+      {
+        "qid": "89a96303-9040-444c-bad5-e8ba56320b1f",
+        "type": "mc",
+        "q": "Why did Yuna finally decide to talk to Sora?",
+        "choices": [
+          "The teacher told her to.",
+          "Sora asked her for help.",
+          "She wanted Sora's snacks.",
+          "She remembered how lonely her own first day was.",
+          "Her friends made her do it."
+        ],
+        "answer": "She remembered how lonely her own first day was.",
+        "explanation": "아무도 말을 걸지 않았던 자신의 첫날을 떠올리고 소라에게 다가갔다."
+      },
+      {
+        "qid": "3f53eba7-13ef-4d22-9ada-60cd940f309a",
+        "type": "mc",
+        "q": "How did Yuna feel on her first day at this school?",
+        "choices": [
+          "Excited",
+          "Proud",
+          "Scared",
+          "Bored",
+          "Relaxed"
+        ],
+        "answer": "Scared",
+        "explanation": "'I was so scared'와 일치한다."
+      },
+      {
+        "qid": "47d1beda-ed62-40d6-818c-18f39d7e9742",
+        "type": "mc",
+        "q": "What does 'I took a deep breath' suggest?",
+        "choices": [
+          "Yuna got ready to do something difficult.",
+          "Yuna felt sick.",
+          "Yuna was out of breath from running.",
+          "Yuna was angry.",
+          "Yuna was sleepy."
+        ],
+        "answer": "Yuna got ready to do something difficult.",
+        "explanation": "수줍은 유나에게 먼저 말을 거는 일은 어려웠기 때문에 숨을 크게 쉬고 마음의 준비를 했다."
+      },
+      {
+        "qid": "963e2e8d-5a05-4950-b848-1ac96c2e3ea4",
+        "type": "mc",
+        "q": "How did Sora's feelings change in the story?",
+        "choices": [
+          "Happy → angry",
+          "Excited → bored",
+          "Angry → sad",
+          "Lonely → happy",
+          "Proud → lonely"
+        ],
+        "answer": "Lonely → happy",
+        "explanation": "처음엔 혼자 앉아 있던 소라가 유나의 인사에 크게 웃으며 친구가 되었다."
+      },
+      {
+        "qid": "492f7d2e-2440-4c78-bd58-5b37cf688021",
+        "type": "mc",
+        "q": "What is the relationship between Yuna and Sora now?",
+        "choices": [
+          "Sisters",
+          "Teacher and student",
+          "Best friends",
+          "Neighbors",
+          "Strangers"
+        ],
+        "answer": "Best friends",
+        "explanation": "'Now Sora is my best friend.'와 일치한다."
+      },
+      {
+        "qid": "034cfabd-8251-4d1d-ad8e-4cc25f55900a",
+        "type": "mc",
+        "q": "What did Yuna learn?",
+        "choices": [
+          "Being shy is always bad.",
+          "Sometimes one small hello can change everything.",
+          "New students like to be alone.",
+          "Lunchtime is too short.",
+          "Teachers know everything."
+        ],
+        "answer": "Sometimes one small hello can change everything.",
+        "explanation": "'I learned that sometimes one small hello can change everything.'과 일치한다."
+      },
+      {
+        "qid": "fcffba68-de2c-4c6f-8689-b79d927765af",
+        "type": "mc",
+        "q": "What is the best title for the story?",
+        "choices": [
+          "My Trip to Busan",
+          "The Best Snacks at School",
+          "A Cat in the Classroom",
+          "A Boring Lunchtime",
+          "The Power of a Small Hello"
+        ],
+        "answer": "The Power of a Small Hello",
+        "explanation": "작은 인사 한마디가 우정을 만든 이야기이므로 가장 알맞은 제목이다."
+      },
+      {
+        "qid": "84fe9eca-d1ed-463e-88e4-85c3f644ed2a",
+        "type": "blank",
+        "q": "Sora just ____ here from Busan.",
+        "answer": "moved",
+        "explanation": "'Sora just moved here from Busan.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "1eb340db-a61d-4291-b49c-267132f7f887",
+        "type": "blank",
+        "q": "At lunch, Sora sat alone at a table in the ____.",
+        "answer": "corner",
+        "explanation": "'a table in the corner'에서 확인할 수 있다."
+      },
+      {
+        "qid": "4849afbb-943a-4788-9c4e-a1de4e5f932f",
+        "type": "blank",
+        "q": "I wanted to go over and say hello, but I was too ____, just like her.",
+        "answer": "shy",
+        "explanation": "'I was too shy, just like her'에서 확인할 수 있다."
+      },
+      {
+        "qid": "8bb20aa2-b439-419d-80de-94924ffeb478",
+        "type": "blank",
+        "q": "It felt like the ____ day of my life.",
+        "answer": "longest",
+        "explanation": "'It felt like the longest day of my life.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "d8d58818-b318-4d46-ab15-b336727c057e",
+        "type": "blank",
+        "q": "Sora looked up, and a big smile ____ on her face.",
+        "answer": "appeared",
+        "explanation": "'a big smile appeared on her face'에서 확인할 수 있다."
+      },
+      {
+        "qid": "7f059bab-a17f-4f0d-8132-1e964e5d9361",
+        "type": "tf",
+        "q": "Nobody talked to Yuna on her first day at this school.",
+        "answer": true,
+        "explanation": "'nobody talked to me all day'와 일치한다."
+      },
+      {
+        "qid": "77356827-d5a3-4fd9-a11d-7de672a1d730",
+        "type": "tf",
+        "q": "Sora sat with many classmates at lunch.",
+        "answer": false,
+        "explanation": "소라는 구석 자리에 혼자 앉았으므로 사실이 아니다."
+      },
+      {
+        "qid": "706f3e46-9b3a-4e8d-9012-31022190bdf7",
+        "type": "tf",
+        "q": "Yuna asked the teacher to help her talk to Sora.",
+        "answer": false,
+        "explanation": "유나는 스스로 용기를 내어 소라에게 다가갔으므로 사실이 아니다."
+      },
+      {
+        "qid": "52ef08ac-61d5-425b-8a6b-d1b3d859aad6",
+        "type": "order",
+        "items": [
+          "I took a deep breath and walked over to her table.",
+          "She stood quietly at the front of the classroom and kept looking at the floor.",
+          "We started talking about cats, cartoons, and our favorite snacks.",
+          "Then I suddenly remembered my own first day at this school."
+        ],
+        "answer": [
+          "She stood quietly at the front of the classroom and kept looking at the floor.",
+          "Then I suddenly remembered my own first day at this school.",
+          "I took a deep breath and walked over to her table.",
+          "We started talking about cats, cartoons, and our favorite snacks."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "6ac4a62a-2140-473f-ab99-550880aa5927",
+        "q": "Why could Yuna understand how Sora felt? Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "Because she was also scared and alone on her first day at this school.",
+        "rubric": "유나도 첫날 무섭고 혼자였다는 경험을 이유로 쓰면 만점"
+      },
+      {
+        "qid": "9a52ebb5-3f30-4e37-9b23-ed7ecd70416e",
+        "q": "How did Sora react when Yuna asked, 'Can I sit with you?' Write in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "She looked up, smiled, and said, 'Sure!'",
+        "rubric": "웃었다는 것과 'Sure'(좋아)라고 답했다는 것을 모두 쓰면 만점"
+      },
+      {
+        "qid": "d27df44c-af74-48c7-bd12-def6166b4b3f",
+        "q": "우리말로 쓰시오: 유나가 'took a deep breath'한 이유는 무엇인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "수줍음이 많아서 소라에게 먼저 다가가려면 용기가 필요했기 때문이다.",
+        "rubric": "수줍음 / 용기가 필요했다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "8dce259c-75f2-4d3b-82e2-daf8fbd4ff4c",
+        "q": "Write the lesson of the story in one English sentence.",
+        "wordLimit": 20,
+        "sampleAnswer": "Sometimes one small hello can change everything.",
+        "rubric": "작은 인사(친절)가 큰 변화를 만든다는 의미의 문장이면 만점"
+      },
+      {
+        "qid": "1d7347ac-e2a2-42ef-aa23-abae2b4ce2e7",
+        "q": "우리말로 쓰시오: 소라의 기분은 이야기의 처음과 끝에서 어떻게 달라졌나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "처음에는 긴장되고 외로웠지만, 끝에서는 유나와 친구가 되어 행복해졌다.",
+        "rubric": "처음(긴장·외로움)과 끝(행복·친구가 됨)을 모두 쓰면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "On Monday morning, a new student walked {{v:nervously}} into our classroom. Her name was Sora. {{g:Standing at the front of the room|분사구문: ~하면서 (= As she stood at the front of the room)}}, she kept her eyes on the floor {{g:as if she wanted to disappear|as if + 문장: 마치 ~인 것처럼}}. Our teacher introduced her and said, \"Sora {{g:has just moved|현재완료(완료): 막 ~했다}} here from Busan, so please do your best to {{g:make her feel welcome|사역동사 make + 목적어 + 동사원형: ~가 …하게 하다}}.\"\nAt lunchtime, Sora sat by herself in the corner of the {{v:cafeteria}}. She ate her rice slowly and quietly, without talking to anyone. I really wanted to go over and say hello, but I was {{g:too shy to move|too + 형용사 + to부정사: 너무 ~해서 …할 수 없다}}, just like her.\nThen a memory of my own first day at this school suddenly came back to me. I had been {{v:terrified}}, and not a single person had spoken to me. It was probably the longest and loneliest day of my life.\nTaking a deep breath, I gathered my {{v:courage}} and walked over to her table. \"Hi, I'm Yuna. Do you mind if I sit here?\" I asked. Sora looked up in surprise, and then a warm smile {{v:spread}} across her face. \"Of course not!\"\nSoon we were chatting about cats, our favorite cartoons, and the snacks we loved most. Today, Sora is my best friend. That day taught me an important lesson: {{t:sometimes a single small hello is enough to change everything}}.",
+    "tags": {
+      "vocab": [
+        "nervously",
+        "disappear",
+        "cafeteria",
+        "terrified",
+        "courage",
+        "spread"
+      ],
+      "grammar": [
+        "분사구문",
+        "as if",
+        "현재완료",
+        "사역동사 make",
+        "too ~ to"
+      ],
+      "topic": [
+        "전학 온 친구",
+        "공감과 용기",
+        "작은 친절의 힘"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "cdb4ee88-03e4-40b0-bf7f-e3daa13626d9",
+        "type": "mc",
+        "q": "Why does the writer say Sora looked 'as if she wanted to disappear'?",
+        "choices": [
+          "She was playing hide-and-seek.",
+          "She felt very nervous and uncomfortable.",
+          "She was trying to hide from Yuna.",
+          "She was angry at the teacher.",
+          "She was too tired to stand."
+        ],
+        "answer": "She felt very nervous and uncomfortable.",
+        "explanation": "사라지고 싶은 것처럼 바닥만 본 것은 매우 긴장되고 불편했기 때문이다."
+      },
+      {
+        "qid": "8974fbc9-fb18-46d1-982e-4eb5a777c2d9",
+        "type": "mc",
+        "q": "What did the teacher ask the students to do?",
+        "choices": [
+          "Give Sora a tour of Busan",
+          "Let Sora sit alone",
+          "Help Sora with her homework",
+          "Do their best to make Sora feel welcome",
+          "Stay quiet during lunch"
+        ],
+        "answer": "Do their best to make Sora feel welcome",
+        "explanation": "'please do your best to make her feel welcome'과 일치한다."
+      },
+      {
+        "qid": "dba13225-7575-4b38-9259-9c20a2d37b3b",
+        "type": "mc",
+        "q": "What does 'by herself' mean in 'Sora sat by herself'?",
+        "choices": [
+          "With a friend",
+          "Quickly",
+          "Alone",
+          "Next to the teacher",
+          "Happily"
+        ],
+        "answer": "Alone",
+        "explanation": "'by herself'는 '혼자서'라는 뜻이다."
+      },
+      {
+        "qid": "7f7cd8ba-6f48-4046-a78d-138f8d783a6a",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'terrified'?",
+        "choices": [
+          "Very happy",
+          "Very sleepy",
+          "Very hungry",
+          "Very proud",
+          "Very scared"
+        ],
+        "answer": "Very scared",
+        "explanation": "'terrified'는 '몹시 겁먹은'이라는 뜻이다."
+      },
+      {
+        "qid": "a55d5a69-eead-488e-9a7d-bcdc06f8ef74",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: I was too shy ____ move.",
+        "choices": [
+          "for",
+          "to",
+          "and",
+          "that",
+          "of"
+        ],
+        "answer": "to",
+        "explanation": "'too + 형용사 + to부정사'는 '너무 ~해서 …할 수 없다'는 뜻이므로 to가 알맞다."
+      },
+      {
+        "qid": "11dc1fbf-7682-41c6-ac61-a6cba8cfd27e",
+        "type": "mc",
+        "q": "Why did Yuna finally walk over to Sora's table?",
+        "choices": [
+          "The teacher ordered her to sit with Sora.",
+          "Sora called her name.",
+          "There were no other empty seats.",
+          "The memory of her own lonely first day made her want to help.",
+          "She wanted to ask about Busan."
+        ],
+        "answer": "The memory of her own lonely first day made her want to help.",
+        "explanation": "아무도 말을 걸지 않았던 자신의 첫날이 떠올라 소라에게 다가갔다."
+      },
+      {
+        "qid": "5cd41274-5162-44a5-b2dc-13b709137b1d",
+        "type": "mc",
+        "q": "What does 'I gathered my courage' mean?",
+        "choices": [
+          "I made myself brave.",
+          "I collected some snacks.",
+          "I called my friends.",
+          "I lost my way.",
+          "I became angry."
+        ],
+        "answer": "I made myself brave.",
+        "explanation": "'gather one's courage'는 '용기를 내다'라는 뜻이다."
+      },
+      {
+        "qid": "382b92e1-6bbe-45e1-addc-4b3a326170f7",
+        "type": "mc",
+        "q": "Yuna asked, 'Do you mind if I sit here?' and Sora answered, 'Of course not!' What does Sora mean?",
+        "choices": [
+          "Yuna cannot sit there.",
+          "Sora wants to be alone.",
+          "Sora doesn't understand the question.",
+          "Sora will leave the table.",
+          "Yuna can sit there."
+        ],
+        "answer": "Yuna can sit there.",
+        "explanation": "'Do you mind ~?'에 'Of course not!'이라고 답하면 '전혀 싫지 않아, 그렇게 해'라는 허락의 뜻이다."
+      },
+      {
+        "qid": "8d7f53d7-5a82-4bd5-8a7a-4d2e009fb815",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: Sora has just ____ here from Busan.",
+        "choices": [
+          "move",
+          "moving",
+          "moved",
+          "moves",
+          "to move"
+        ],
+        "answer": "moved",
+        "explanation": "현재완료는 'has + 과거분사'이므로 moved가 알맞다."
+      },
+      {
+        "qid": "31397853-6588-40eb-93f1-4c3078fc15ce",
+        "type": "mc",
+        "q": "How did Sora's face change when Yuna spoke to her?",
+        "choices": [
+          "From surprised to smiling warmly",
+          "From happy to angry",
+          "From smiling to crying",
+          "From bored to sleepy",
+          "From calm to scared"
+        ],
+        "answer": "From surprised to smiling warmly",
+        "explanation": "'Sora looked up in surprise, and then a warm smile spread across her face.'와 일치한다."
+      },
+      {
+        "qid": "858ec1ee-e29a-4ed9-a2ff-c8ef2fc2a124",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "New students should make friends by themselves.",
+          "Shy people can never make friends.",
+          "Moving to a new city is always exciting.",
+          "A small act of kindness can change someone's life.",
+          "Lunchtime is the best time to study."
+        ],
+        "answer": "A small act of kindness can change someone's life.",
+        "explanation": "'sometimes a single small hello is enough to change everything'이 글의 요지이다."
+      },
+      {
+        "qid": "c2cea4fe-7ce2-41f0-b851-7f0cc40c52cb",
+        "type": "blank",
+        "q": "On Monday morning, a new student walked ____ into our classroom.",
+        "answer": "nervously",
+        "explanation": "'walked nervously into our classroom'에서 확인할 수 있다."
+      },
+      {
+        "qid": "874e32c6-a5e7-49b5-a4bf-fd2b29684ce2",
+        "type": "blank",
+        "q": "Please do your best to make her feel ____.",
+        "answer": "welcome",
+        "explanation": "'make her feel welcome'에서 확인할 수 있다."
+      },
+      {
+        "qid": "b400351f-2f4d-4c27-976a-6285ac9975aa",
+        "type": "blank",
+        "q": "At lunchtime, Sora sat by herself in the corner of the ____.",
+        "answer": "cafeteria",
+        "explanation": "'in the corner of the cafeteria'에서 확인할 수 있다."
+      },
+      {
+        "qid": "3e3e919f-be35-41b4-b75b-e5aa5622d72b",
+        "type": "blank",
+        "q": "Taking a deep breath, I gathered my ____ and walked over to her table.",
+        "answer": "courage",
+        "explanation": "'I gathered my courage'에서 확인할 수 있다."
+      },
+      {
+        "qid": "278dd1f7-a2cc-4c4a-aa19-316c998e9096",
+        "type": "blank",
+        "q": "Sora looked up in surprise, and then a warm smile ____ across her face.",
+        "answer": "spread",
+        "explanation": "'a warm smile spread across her face'에서 확인할 수 있다."
+      },
+      {
+        "qid": "4723dd20-1adb-4992-bf07-83f4b2d868f2",
+        "type": "tf",
+        "q": "No one spoke to Yuna on her first day at this school.",
+        "answer": true,
+        "explanation": "'not a single person had spoken to me'와 일치한다."
+      },
+      {
+        "qid": "3f3c8da7-712e-41e0-92e2-5ed248d9605b",
+        "type": "tf",
+        "q": "Sora refused to let Yuna sit at her table.",
+        "answer": false,
+        "explanation": "'Of course not!'은 앉아도 된다는 뜻이므로 사실이 아니다."
+      },
+      {
+        "qid": "4243950f-8422-470c-911f-1d75d8ed53ae",
+        "type": "tf",
+        "q": "Yuna and Sora chatted about cats, cartoons, and snacks.",
+        "answer": true,
+        "explanation": "'we were chatting about cats, our favorite cartoons, and the snacks we loved most'와 일치한다."
+      },
+      {
+        "qid": "3929203d-e030-405a-8218-a5ef76f1c7fd",
+        "type": "order",
+        "items": [
+          "At lunchtime, Sora sat by herself in the corner of the cafeteria.",
+          "Soon we were chatting about cats, our favorite cartoons, and the snacks we loved most.",
+          "Our teacher introduced her and said, \"Sora has just moved here from Busan, so please do your best to make her feel welcome.\"",
+          "Taking a deep breath, I gathered my courage and walked over to her table."
+        ],
+        "answer": [
+          "Our teacher introduced her and said, \"Sora has just moved here from Busan, so please do your best to make her feel welcome.\"",
+          "At lunchtime, Sora sat by herself in the corner of the cafeteria.",
+          "Taking a deep breath, I gathered my courage and walked over to her table.",
+          "Soon we were chatting about cats, our favorite cartoons, and the snacks we loved most."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "f0b9830c-2b82-47ce-9a19-bae2800a5e41",
+        "q": "Explain in English why Yuna could understand Sora's feelings.",
+        "wordLimit": 30,
+        "sampleAnswer": "Because Yuna had also been terrified and lonely on her first day, when nobody spoke to her.",
+        "rubric": "유나 자신도 첫날 무섭고 외로웠으며 아무도 말을 걸지 않았다는 내용이면 만점"
+      },
+      {
+        "qid": "548c5989-2ca3-4b61-b906-ca79001c999e",
+        "q": "Rewrite the sentence using 'too ~ to': Yuna was very shy, so she couldn't move.",
+        "wordLimit": 10,
+        "sampleAnswer": "Yuna was too shy to move.",
+        "rubric": "'too shy to move' 구조를 정확히 쓰면 만점"
+      },
+      {
+        "qid": "0408ba44-a7dd-4b41-b788-f25b9356aec6",
+        "q": "우리말로 쓰시오: 'Do you mind if I sit here?'에 대한 소라의 대답 'Of course not!'은 무슨 뜻인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "전혀 싫지 않으니 앉아도 된다는 뜻이다.",
+        "rubric": "앉아도 된다(허락)는 의미를 쓰면 만점. '물론 안 돼'로 해석하면 0점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "274057fd-9345-4f2a-84e9-07a20e191741",
+        "q": "What lesson did Yuna learn that day? Answer in one English sentence.",
+        "wordLimit": 25,
+        "sampleAnswer": "She learned that sometimes a single small hello is enough to change everything.",
+        "rubric": "작은 인사(친절)가 모든 것을 바꿀 수 있다는 의미면 만점"
+      },
+      {
+        "qid": "ba53ca65-a92d-45c7-9f91-ba2014a491ed",
+        "q": "우리말로 쓰시오: 소라가 처음에 몹시 긴장했음을 알 수 있는 표현 두 가지를 본문에서 찾아 그 의미를 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "'walked nervously into our classroom'(긴장한 채 교실에 들어왔다), 'kept her eyes on the floor as if she wanted to disappear'(사라지고 싶은 것처럼 바닥만 보았다)",
+        "rubric": "표현 두 개를 찾고 각각의 의미를 쓰면 만점, 하나만 쓰면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  }
+}

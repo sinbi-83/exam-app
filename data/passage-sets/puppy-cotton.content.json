@@ -1,0 +1,1171 @@
+{
+  "school": {
+    "tagged_body": "Wednesday, April 16\nToday was a {{v:special}} day.\nMy family got a {{v:puppy}}!\nHe is a small white dog. He has brown {{v:ears}}.\nHis name is Cotton. {{g:He looks soft like cotton|look + 형용사: ~하게 보이다 / like + 명사: ~처럼}}.\nIn the morning, Dad and I went to the {{v:pet shop}}.\nWe bought a bed, a {{v:bowl}}, and a red ball.\nAt home, Cotton was {{v:afraid}}.\nHe {{g:hid|hide의 과거형: 숨었다 (불규칙 과거)}} under the sofa for thirty minutes.\nThen I {{v:rolled}} the red ball to him.\nHe came out and played with me!\nAt night, Cotton slept in his new bed.\nHis bed was next to my room.\nI was very happy.\n{{t:Tomorrow, I will walk him in the park after school}}.",
+    "tags": {
+      "vocab": [
+        "special",
+        "puppy",
+        "ears",
+        "pet shop",
+        "bowl",
+        "afraid",
+        "rolled"
+      ],
+      "grammar": [
+        "look + 형용사 / like + 명사",
+        "불규칙 과거형",
+        "will + 동사원형"
+      ],
+      "topic": [
+        "일기",
+        "새 강아지"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "05a215f7-e9fe-44ee-95fd-486f7285a55e",
+        "type": "mc",
+        "q": "What day did the writer write this diary?",
+        "choices": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "answer": "Wednesday",
+        "explanation": "일기 맨 위에 'Wednesday, April 16'이라고 쓰여 있다."
+      },
+      {
+        "qid": "d7b9d414-3544-490e-bf79-6daeb811c3c1",
+        "type": "mc",
+        "q": "What did the writer's family get?",
+        "choices": [
+          "A puppy",
+          "A cat",
+          "A rabbit",
+          "A bird",
+          "A fish"
+        ],
+        "answer": "A puppy",
+        "explanation": "'My family got a puppy!'와 일치한다."
+      },
+      {
+        "qid": "cc14e006-545a-46f7-b516-af904e3366e1",
+        "type": "mc",
+        "q": "What color are Cotton's ears?",
+        "choices": [
+          "White",
+          "Black",
+          "Red",
+          "Brown",
+          "Gray"
+        ],
+        "answer": "Brown",
+        "explanation": "'He has brown ears.'와 일치한다. 몸은 흰색이다."
+      },
+      {
+        "qid": "b6ae90bf-1452-40bc-8770-4b5046167ce6",
+        "type": "mc",
+        "q": "Why is the puppy's name Cotton?",
+        "choices": [
+          "He likes cotton candy.",
+          "He looks soft like cotton.",
+          "He is very big.",
+          "He sleeps on cotton.",
+          "Dad likes the name."
+        ],
+        "answer": "He looks soft like cotton.",
+        "explanation": "'His name is Cotton. He looks soft like cotton.'에서 알 수 있다."
+      },
+      {
+        "qid": "c60fdc84-0cfc-4d6d-a756-9b0bc48b77d3",
+        "type": "mc",
+        "q": "Who went to the pet shop?",
+        "choices": [
+          "Mom and Dad",
+          "The writer and Mom",
+          "The writer and a friend",
+          "Only Dad",
+          "Dad and the writer"
+        ],
+        "answer": "Dad and the writer",
+        "explanation": "'Dad and I went to the pet shop.'과 일치한다. I는 글쓴이이다."
+      },
+      {
+        "qid": "01141c67-3575-4506-b2b2-7aa8f65c7f63",
+        "type": "mc",
+        "q": "What did they buy at the pet shop?",
+        "choices": [
+          "A bed, a sofa, and a ball",
+          "A bowl, a cake, and a hat",
+          "A bed, a bowl, and a red ball",
+          "A red ball and a book",
+          "A dog house and a bowl"
+        ],
+        "answer": "A bed, a bowl, and a red ball",
+        "explanation": "'We bought a bed, a bowl, and a red ball.'과 일치한다."
+      },
+      {
+        "qid": "31ac59f9-cb4e-45ec-ba99-064ee1863f62",
+        "type": "mc",
+        "q": "다음 중 'afraid'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "배고픈",
+          "무서워하는",
+          "졸린",
+          "행복한",
+          "화난"
+        ],
+        "answer": "무서워하는",
+        "explanation": "afraid는 '무서워하는, 겁먹은'이라는 뜻이다. 그래서 코튼이 소파 밑에 숨었다."
+      },
+      {
+        "qid": "b0265bfe-72a3-4d0b-af70-790a15158d6e",
+        "type": "mc",
+        "q": "Where did Cotton hide?",
+        "choices": [
+          "Under the sofa",
+          "Under the bed",
+          "In the bowl",
+          "In the park",
+          "Behind the door"
+        ],
+        "answer": "Under the sofa",
+        "explanation": "'He hid under the sofa for thirty minutes.'와 일치한다."
+      },
+      {
+        "qid": "6e31f9a1-1f03-4ff0-9481-1f2f4cbaef2c",
+        "type": "mc",
+        "q": "How long did Cotton hide?",
+        "choices": [
+          "For ten minutes",
+          "For one hour",
+          "For three minutes",
+          "For thirty minutes",
+          "For two hours"
+        ],
+        "answer": "For thirty minutes",
+        "explanation": "'for thirty minutes'와 일치한다."
+      },
+      {
+        "qid": "9b51a748-9202-4866-8414-e6d621440527",
+        "type": "mc",
+        "q": "What did the writer roll to Cotton?",
+        "choices": [
+          "A bowl",
+          "A blue ball",
+          "A small bed",
+          "A toy car",
+          "A red ball"
+        ],
+        "answer": "A red ball",
+        "explanation": "'Then I rolled the red ball to him.'과 일치한다."
+      },
+      {
+        "qid": "a1910ea1-4336-4de9-902a-76c949263689",
+        "type": "mc",
+        "q": "What will the writer do tomorrow?",
+        "choices": [
+          "Go to the pet shop",
+          "Buy a new ball",
+          "Walk Cotton in the park",
+          "Give Cotton a bath",
+          "Visit a friend"
+        ],
+        "answer": "Walk Cotton in the park",
+        "explanation": "'Tomorrow, I will walk him in the park after school.'과 일치한다."
+      },
+      {
+        "qid": "21d84177-c2c7-485c-a81f-84f4a26d1427",
+        "type": "blank",
+        "q": "My family got a ____!",
+        "answer": "puppy",
+        "explanation": "'My family got a puppy!'에서 확인할 수 있다."
+      },
+      {
+        "qid": "ba8c2860-828e-4e8a-bbe9-4c87f456374d",
+        "type": "blank",
+        "q": "He hid under the ____ for thirty minutes.",
+        "answer": "sofa",
+        "explanation": "'He hid under the sofa for thirty minutes.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "794bcebb-93f6-46b3-9d0d-45b52d81478e",
+        "type": "blank",
+        "q": "Then I ____ the red ball to him.",
+        "answer": "rolled",
+        "explanation": "'Then I rolled the red ball to him.'에서 확인할 수 있다. roll은 '굴리다'라는 뜻이다."
+      },
+      {
+        "qid": "25d06344-742b-4d04-b0fe-24f628db1918",
+        "type": "blank",
+        "q": "At night, Cotton slept in his new ____.",
+        "answer": "bed",
+        "explanation": "'At night, Cotton slept in his new bed.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "14ef31f0-91a1-4908-adb1-3d276ced0ec6",
+        "type": "blank",
+        "q": "Tomorrow, I will ____ him in the park after school.",
+        "answer": "walk",
+        "explanation": "'Tomorrow, I will walk him in the park after school.'에서 확인할 수 있다. walk a dog은 '개를 산책시키다'라는 뜻이다."
+      },
+      {
+        "qid": "31ec0299-457e-4c3e-b975-4d73f18dd8fa",
+        "type": "tf",
+        "q": "Cotton is a big black dog.",
+        "answer": false,
+        "explanation": "'He is a small white dog.'이라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "e440df4a-4665-4cb6-a57c-262ace605001",
+        "type": "tf",
+        "q": "Cotton came out and played with the writer.",
+        "answer": true,
+        "explanation": "'He came out and played with me!'와 일치한다."
+      },
+      {
+        "qid": "71ec1c41-942f-44a2-8219-e039f44c3a7c",
+        "type": "tf",
+        "q": "Cotton's bed was next to the writer's room.",
+        "answer": true,
+        "explanation": "'His bed was next to my room.'과 일치한다."
+      },
+      {
+        "qid": "578c3395-5987-47df-8a23-5116e09b1b53",
+        "type": "order",
+        "items": [
+          "He came out and played with me!",
+          "In the morning, Dad and I went to the pet shop.",
+          "Then I rolled the red ball to him.",
+          "He hid under the sofa for thirty minutes."
+        ],
+        "answer": [
+          "In the morning, Dad and I went to the pet shop.",
+          "He hid under the sofa for thirty minutes.",
+          "Then I rolled the red ball to him.",
+          "He came out and played with me!"
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "dc3248e7-f564-4349-88c6-1b12214c9198",
+        "q": "What does Cotton look like? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "He is a small white dog with brown ears.",
+        "rubric": "작다, 흰색이다, 귀가 갈색이다 중 두 가지 이상을 영어 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "362c8a42-de19-4433-bd6c-f0c55f0b08f6",
+        "q": "Where did Dad and the writer go in the morning? Write in English.",
+        "wordLimit": 12,
+        "sampleAnswer": "They went to the pet shop.",
+        "rubric": "애완동물 가게(pet shop)에 갔다는 내용을 영어 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "71884145-a2a1-4042-b82e-b129fa5b4648",
+        "q": "우리말로 쓰시오: 글쓴이는 어떻게 해서 코튼을 소파 밑에서 나오게 했나요?",
+        "wordLimit": 30,
+        "sampleAnswer": "빨간 공을 코튼에게 굴려 주었다.",
+        "rubric": "빨간 공을 굴려 주었다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "00ccfce3-abb5-428d-86f4-b8ed63087726",
+        "q": "What will the writer do tomorrow? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "The writer will walk Cotton in the park after school.",
+        "rubric": "공원에서 코튼을 산책시킨다는 내용을 영어 문장으로 쓰면 만점 (after school은 있으면 좋음)"
+      },
+      {
+        "qid": "8ff7f95d-a086-44d9-9e93-63f205f907c5",
+        "q": "우리말로 쓰시오: 강아지 이름을 '코튼(Cotton)'이라고 지은 이유는 무엇인가요?",
+        "wordLimit": 30,
+        "sampleAnswer": "강아지가 솜(cotton)처럼 부드러워 보이기 때문이다.",
+        "rubric": "솜처럼 부드러워 보인다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Wednesday, April 16\nToday was a {{v:special}} day. My family got a {{v:puppy}}! He is a small white dog with brown ears. {{g:We named him Cotton because he looks soft like cotton|name + 목적어 + 이름: ~을 …라고 이름 짓다 / because: ~ 때문에}}.\nIn the morning, Dad and I went to the pet shop. We bought a bed, a {{v:bowl}}, and a red ball for Cotton. At home, Cotton was {{v:scared}} {{g:at first|at first: 처음에는}}. He {{v:hid}} under the sofa {{g:for thirty minutes|for + 기간: ~ 동안}}. Then I {{v:rolled}} the red ball to him. He came out and played with me!\nAt night, Cotton slept in his new bed {{g:next to my room|next to: ~ 옆에}}. I was so {{v:excited}}. {{t:Tomorrow, I will walk him in the park after school}}.",
+    "tags": {
+      "vocab": [
+        "special",
+        "puppy",
+        "bowl",
+        "scared",
+        "hid",
+        "rolled",
+        "excited"
+      ],
+      "grammar": [
+        "name + 목적어 + 이름",
+        "because",
+        "at first",
+        "for + 기간",
+        "next to"
+      ],
+      "topic": [
+        "일기",
+        "새 강아지",
+        "반려동물과의 첫날"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "664dfa66-4c5c-4d73-ba41-7860ee5ef6fc",
+        "type": "mc",
+        "q": "What kind of writing is this?",
+        "choices": [
+          "A letter",
+          "A diary",
+          "A poem",
+          "A news story",
+          "A recipe"
+        ],
+        "answer": "A diary",
+        "explanation": "날짜(Wednesday, April 16)를 쓰고 그날 있었던 일을 적은 일기이다."
+      },
+      {
+        "qid": "8d17c25a-5e0d-45a8-91a3-69d5c2ce5f12",
+        "type": "mc",
+        "q": "Which is true about Cotton?",
+        "choices": [
+          "He is a big brown dog.",
+          "He has white ears.",
+          "He is a black puppy.",
+          "He is a small white dog with brown ears.",
+          "He is an old dog."
+        ],
+        "answer": "He is a small white dog with brown ears.",
+        "explanation": "'He is a small white dog with brown ears.'와 일치한다."
+      },
+      {
+        "qid": "42238e9d-aa54-4c7d-b7e3-38a18573e6a2",
+        "type": "mc",
+        "q": "Why did the family name the puppy Cotton?",
+        "choices": [
+          "Because he looks soft like cotton.",
+          "Because he likes to play with cotton.",
+          "Because he came from a cotton shop.",
+          "Because the writer's friend chose it.",
+          "Because he is very fast."
+        ],
+        "answer": "Because he looks soft like cotton.",
+        "explanation": "'We named him Cotton because he looks soft like cotton.'과 일치한다."
+      },
+      {
+        "qid": "f7db6aaa-0ee2-4f7b-9aab-3f32920b2f03",
+        "type": "mc",
+        "q": "What did Dad and the writer buy for Cotton?",
+        "choices": [
+          "A sofa, a bowl, and a ball",
+          "A bed, a bowl, and a red ball",
+          "A bed, a coat, and a blue ball",
+          "A bowl and some snacks",
+          "A red ball and a dog house"
+        ],
+        "answer": "A bed, a bowl, and a red ball",
+        "explanation": "'We bought a bed, a bowl, and a red ball for Cotton.'과 일치한다."
+      },
+      {
+        "qid": "ee9986d2-4ac6-4423-b67e-cbe66bf9700e",
+        "type": "mc",
+        "q": "How did Cotton feel when he first came home?",
+        "choices": [
+          "Happy",
+          "Angry",
+          "Hungry",
+          "Sleepy",
+          "Scared"
+        ],
+        "answer": "Scared",
+        "explanation": "'At home, Cotton was scared at first.'와 일치한다."
+      },
+      {
+        "qid": "a49d243f-803a-4720-93f4-3050ab6679af",
+        "type": "mc",
+        "q": "다음 중 'He hid under the sofa.'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "그는 소파 위에서 잤다.",
+          "그는 소파 밑에 숨었다.",
+          "그는 소파 옆에서 놀았다.",
+          "그는 소파를 밀었다.",
+          "그는 소파에 앉았다."
+        ],
+        "answer": "그는 소파 밑에 숨었다.",
+        "explanation": "hid는 hide(숨다)의 과거형이고, under는 '~ 밑에'라는 뜻이다."
+      },
+      {
+        "qid": "0c050dd8-1947-49ee-8038-4576c18978f1",
+        "type": "mc",
+        "q": "How did the writer help Cotton come out?",
+        "choices": [
+          "The writer called Dad.",
+          "The writer gave him food.",
+          "The writer rolled the red ball to him.",
+          "The writer moved the sofa.",
+          "The writer sang a song."
+        ],
+        "answer": "The writer rolled the red ball to him.",
+        "explanation": "'Then I rolled the red ball to him. He came out and played with me!'에서 알 수 있다."
+      },
+      {
+        "qid": "29e04bbe-fb13-44c1-9176-f64b379761b7",
+        "type": "mc",
+        "q": "What happened after the writer rolled the ball?",
+        "choices": [
+          "Cotton came out and played with the writer.",
+          "Cotton went to sleep.",
+          "Cotton ran to the park.",
+          "Cotton hid under the bed.",
+          "Cotton ate his food."
+        ],
+        "answer": "Cotton came out and played with the writer.",
+        "explanation": "'He came out and played with me!'와 일치한다."
+      },
+      {
+        "qid": "ad73532e-5576-4370-8579-cea038db82e9",
+        "type": "mc",
+        "q": "Where did Cotton sleep at night?",
+        "choices": [
+          "Under the sofa",
+          "In the writer's bed",
+          "In the pet shop",
+          "In his new bed next to the writer's room",
+          "In Dad's room"
+        ],
+        "answer": "In his new bed next to the writer's room",
+        "explanation": "'At night, Cotton slept in his new bed next to my room.'과 일치한다."
+      },
+      {
+        "qid": "f6f08953-33d0-4ce4-a5be-1e9db24f9f60",
+        "type": "mc",
+        "q": "How did the writer feel at night?",
+        "choices": [
+          "Sad",
+          "Bored",
+          "Scared",
+          "Tired",
+          "Excited"
+        ],
+        "answer": "Excited",
+        "explanation": "'I was so excited.'와 일치한다."
+      },
+      {
+        "qid": "706b277b-4135-4576-a84c-67d65bd9e881",
+        "type": "mc",
+        "q": "What will the writer do tomorrow after school?",
+        "choices": [
+          "Buy a new bed",
+          "Go to the pet shop again",
+          "Walk Cotton in the park",
+          "Play cards with Dad",
+          "Give Cotton a new name"
+        ],
+        "answer": "Walk Cotton in the park",
+        "explanation": "'Tomorrow, I will walk him in the park after school.'과 일치한다."
+      },
+      {
+        "qid": "ca984b9b-215f-472a-99f6-59f9daeb9225",
+        "type": "blank",
+        "q": "He is a small white dog with ____ ears.",
+        "answer": "brown",
+        "explanation": "'He is a small white dog with brown ears.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "05653a4d-e772-4884-a5e5-03103a482b01",
+        "type": "blank",
+        "q": "We ____ him Cotton because he looks soft like cotton.",
+        "answer": "named",
+        "explanation": "'We named him Cotton'에서 확인할 수 있다. name은 '이름을 지어 주다'라는 뜻이다."
+      },
+      {
+        "qid": "3efde097-c611-4c9c-a6f2-a98f317e225d",
+        "type": "blank",
+        "q": "At home, Cotton was ____ at first.",
+        "answer": "scared",
+        "explanation": "'At home, Cotton was scared at first.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "9f018b89-dcd1-4f71-83f2-c1f039d95a22",
+        "type": "blank",
+        "q": "He hid under the sofa for ____ minutes.",
+        "answer": "thirty",
+        "explanation": "'for thirty minutes'에서 확인할 수 있다."
+      },
+      {
+        "qid": "a57ec396-2c41-4dd1-9ca3-77ee713bcd36",
+        "type": "blank",
+        "q": "At night, Cotton slept in his new bed next to my room. I was so ____.",
+        "answer": "excited",
+        "explanation": "'I was so excited.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "210f41e4-12f5-47a8-98ca-f7ecf6b847eb",
+        "type": "tf",
+        "q": "The writer went to the pet shop with Mom.",
+        "answer": false,
+        "explanation": "'Dad and I went to the pet shop.'이라고 했으므로 엄마가 아니라 아빠와 갔다."
+      },
+      {
+        "qid": "bd51c045-9ed2-4eb3-9b78-7300719811e9",
+        "type": "tf",
+        "q": "Cotton hid under the bed.",
+        "answer": false,
+        "explanation": "코튼은 침대가 아니라 소파 밑에 숨었다."
+      },
+      {
+        "qid": "f4862cf7-afcf-4f46-a530-199131f2ff4a",
+        "type": "tf",
+        "q": "Cotton played with the writer after he came out.",
+        "answer": true,
+        "explanation": "'He came out and played with me!'와 일치한다."
+      },
+      {
+        "qid": "b9ef8735-9a33-4afd-8064-062e57d4022f",
+        "type": "order",
+        "items": [
+          "At night, Cotton slept in his new bed next to my room.",
+          "We bought a bed, a bowl, and a red ball for Cotton.",
+          "Then I rolled the red ball to him.",
+          "At home, Cotton was scared at first."
+        ],
+        "answer": [
+          "We bought a bed, a bowl, and a red ball for Cotton.",
+          "At home, Cotton was scared at first.",
+          "Then I rolled the red ball to him.",
+          "At night, Cotton slept in his new bed next to my room."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "9b8234cc-ec36-4de1-bb91-10dff9b1574f",
+        "q": "Why did the family name the puppy Cotton? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "Because he looks soft like cotton.",
+        "rubric": "솜처럼 부드러워 보인다는 이유를 영어로 쓰면 만점"
+      },
+      {
+        "qid": "7a39b8c8-8205-4d10-9667-35ca03cdf612",
+        "q": "What did Dad and the writer buy for Cotton? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "They bought a bed, a bowl, and a red ball.",
+        "rubric": "침대, 그릇, 빨간 공 세 가지를 모두 쓰면 만점, 두 가지면 부분 점수"
+      },
+      {
+        "qid": "f79ca99e-43cb-4247-a2c9-a6ff473932c9",
+        "q": "우리말로 쓰시오: 집에 처음 온 코튼은 어떻게 행동했나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "무서워서 30분 동안 소파 밑에 숨어 있었다.",
+        "rubric": "무서워했다 + 소파 밑에 (30분 동안) 숨었다는 내용이 모두 있으면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "b9a46a48-93e4-44be-8084-16a47b5f8392",
+        "q": "If you get a puppy, what will you name it? Write the name and the reason in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "I will name it Choco because it is brown like chocolate.",
+        "rubric": "이름과 알맞은 이유(because ~)를 영어 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "f2dfe611-a8fa-47c3-a202-dd27bd47d871",
+        "q": "우리말로 쓰시오: 밤에 글쓴이가 무척 신났던(excited) 이유는 무엇일지 본문 내용을 바탕으로 쓰시오.",
+        "wordLimit": 40,
+        "sampleAnswer": "새 강아지가 생겼고, 처음엔 무서워하던 코튼이 나와서 함께 놀았으며, 내일 공원에서 산책할 생각에 기대가 되었기 때문이다.",
+        "rubric": "강아지가 생긴 일, 함께 논 일, 내일 산책 계획 중 한 가지 이상을 근거로 쓰면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Wednesday, April 16\nToday was a really special day {{g:because my family finally got a puppy|because + 문장: ~ 때문에}}! He is a small white dog with soft brown ears. We {{g:decided to name|decide to + 동사원형: ~하기로 결정하다}} him Cotton because his {{v:fur}} {{g:looks as soft as cotton|as + 형용사 + as: ~만큼 …한 (원급 비교)}}.\nIn the morning, Dad and I went to the pet shop {{g:to buy some things for Cotton|to부정사의 부사적 용법(목적): ~하기 위해}}. We bought a bed, a food bowl, and a {{v:bright}} red ball. When we got home, Cotton was scared at first. He hid under the sofa and didn't come out for thirty minutes. Then I slowly rolled the red ball {{v:toward}} him. {{v:Finally}}, he came out and started playing with me!\nAt night, Cotton {{v:fell asleep}} in his new bed next to my room. {{g:I was so excited that I couldn't stop smiling|so + 형용사 + that ...: 너무 ~해서 …하다}}. {{t:Tomorrow, I am going to take him for a walk in the park after school}}.",
+    "tags": {
+      "vocab": [
+        "fur",
+        "bright",
+        "toward",
+        "finally",
+        "fell asleep"
+      ],
+      "grammar": [
+        "decide to + 동사원형",
+        "as ~ as 원급 비교",
+        "to부정사 목적",
+        "so ~ that",
+        "be going to"
+      ],
+      "topic": [
+        "일기",
+        "새 강아지",
+        "반려동물과 친해지기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "fbc8feed-d559-494b-8df7-cd1d13e85820",
+        "type": "mc",
+        "q": "Why was today a really special day for the writer?",
+        "choices": [
+          "The writer's family finally got a puppy.",
+          "The writer won a prize at school.",
+          "It was the writer's birthday.",
+          "Dad bought a new sofa.",
+          "The writer went to the park with friends."
+        ],
+        "answer": "The writer's family finally got a puppy.",
+        "explanation": "'Today was a really special day because my family finally got a puppy!'와 일치한다."
+      },
+      {
+        "qid": "864d5d91-2c4f-4fcd-b026-31568287e603",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: His fur looks as soft ____ cotton.",
+        "choices": [
+          "than",
+          "as",
+          "like",
+          "so",
+          "that"
+        ],
+        "answer": "as",
+        "explanation": "'as + 형용사 + as'는 '~만큼 …한'이라는 원급 비교 표현이다."
+      },
+      {
+        "qid": "49dd807a-9b8e-4cd3-97fb-905305a19513",
+        "type": "mc",
+        "q": "Why did Dad and the writer go to the pet shop?",
+        "choices": [
+          "To see other puppies",
+          "To give Cotton a bath",
+          "To buy some things for Cotton",
+          "To find a name for the puppy",
+          "To meet a friend"
+        ],
+        "answer": "To buy some things for Cotton",
+        "explanation": "'Dad and I went to the pet shop to buy some things for Cotton.'과 일치한다."
+      },
+      {
+        "qid": "d37e4bca-9772-450e-af87-ef4152838cfd",
+        "type": "mc",
+        "q": "Choose the expression that best fits the blank: We went to the pet shop ____ some things for Cotton.",
+        "choices": [
+          "buy",
+          "bought",
+          "buys",
+          "to buy",
+          "buying of"
+        ],
+        "answer": "to buy",
+        "explanation": "'~하기 위해'라는 목적을 나타낼 때 to부정사(to + 동사원형)를 쓴다."
+      },
+      {
+        "qid": "85f353e3-3e6a-4f04-99da-e57f03a7d463",
+        "type": "mc",
+        "q": "How did Cotton act when they got home?",
+        "choices": [
+          "He ran around the house happily.",
+          "He hid under the sofa and didn't come out for thirty minutes.",
+          "He ate all his food at once.",
+          "He slept in the writer's bed.",
+          "He barked at Dad."
+        ],
+        "answer": "He hid under the sofa and didn't come out for thirty minutes.",
+        "explanation": "'He hid under the sofa and didn't come out for thirty minutes.'와 일치한다."
+      },
+      {
+        "qid": "834d6e88-cc64-40ae-9a3c-2199e6d25463",
+        "type": "mc",
+        "q": "Why did the writer probably roll the ball slowly?",
+        "choices": [
+          "To make Cotton angry",
+          "To help Cotton feel safe and come out",
+          "Because the ball was broken",
+          "Because Dad told the writer to stop",
+          "To put the ball under the sofa"
+        ],
+        "answer": "To help Cotton feel safe and come out",
+        "explanation": "겁먹은 강아지를 놀라게 하지 않고 나오게 하려고 공을 천천히(slowly) 굴려 준 것이다."
+      },
+      {
+        "qid": "fd94379f-9eb1-4d56-8226-a52a57977666",
+        "type": "mc",
+        "q": "What does the word 'Finally' tell us in 'Finally, he came out'?",
+        "choices": [
+          "Cotton came out right away.",
+          "Cotton never came out.",
+          "It took some time before Cotton came out.",
+          "Cotton came out first.",
+          "Cotton came out at night."
+        ],
+        "answer": "It took some time before Cotton came out.",
+        "explanation": "finally는 '마침내, 드디어'라는 뜻으로, 시간이 좀 걸린 뒤에 코튼이 나왔다는 것을 보여 준다."
+      },
+      {
+        "qid": "43f762c2-3da6-40cf-a5f3-a7b0eef7be6c",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: I was so excited ____ I couldn't stop smiling.",
+        "choices": [
+          "and",
+          "but",
+          "because",
+          "that",
+          "when"
+        ],
+        "answer": "that",
+        "explanation": "'so + 형용사 + that ...'은 '너무 ~해서 …하다'라는 뜻이다."
+      },
+      {
+        "qid": "df56eeb8-0fe3-40c1-8cc3-f14be5368bb2",
+        "type": "mc",
+        "q": "What does 'I couldn't stop smiling' show about the writer?",
+        "choices": [
+          "The writer was very happy.",
+          "The writer was worried.",
+          "The writer was sleepy.",
+          "The writer was angry at Cotton.",
+          "The writer was bored."
+        ],
+        "answer": "The writer was very happy.",
+        "explanation": "웃음을 멈출 수 없었다는 것은 글쓴이가 무척 기쁘고 신났다는 뜻이다."
+      },
+      {
+        "qid": "00760819-e797-4eab-9d90-ed9268724c02",
+        "type": "mc",
+        "q": "What is the writer going to do tomorrow?",
+        "choices": [
+          "Go back to the pet shop",
+          "Buy Cotton a new ball",
+          "Take Cotton to school",
+          "Take Cotton for a walk in the park after school",
+          "Give Cotton a bath before school"
+        ],
+        "answer": "Take Cotton for a walk in the park after school",
+        "explanation": "'Tomorrow, I am going to take him for a walk in the park after school.'과 일치한다."
+      },
+      {
+        "qid": "1093d590-e2c0-41f5-9ac2-743191d204f7",
+        "type": "mc",
+        "q": "Which is NOT true according to the diary?",
+        "choices": [
+          "Cotton has soft brown ears.",
+          "They bought a bright red ball.",
+          "Cotton fell asleep next to the writer's room.",
+          "The writer and Mom bought a food bowl.",
+          "Cotton was scared at first."
+        ],
+        "answer": "The writer and Mom bought a food bowl.",
+        "explanation": "애완동물 가게에 간 사람은 엄마가 아니라 아빠와 글쓴이이다."
+      },
+      {
+        "qid": "0aa7a93b-9472-4ddf-af45-f4cb7c43ab18",
+        "type": "blank",
+        "q": "We decided to name him Cotton because his ____ looks as soft as cotton.",
+        "answer": "fur",
+        "explanation": "'because his fur looks as soft as cotton'에서 확인할 수 있다. fur는 '(동물의) 털'이라는 뜻이다."
+      },
+      {
+        "qid": "1b6e90b2-f166-49bc-830a-31acd03400cb",
+        "type": "blank",
+        "q": "We bought a bed, a food bowl, and a ____ red ball.",
+        "answer": "bright",
+        "explanation": "'a bright red ball'에서 확인할 수 있다."
+      },
+      {
+        "qid": "601ef205-7a67-4cf1-813e-8b5bbdfff0ae",
+        "type": "blank",
+        "q": "Then I slowly rolled the red ball ____ him.",
+        "answer": "toward",
+        "explanation": "'rolled the red ball toward him'에서 확인할 수 있다. toward는 '~ 쪽으로'라는 뜻이다."
+      },
+      {
+        "qid": "e178ede8-5039-45bf-be1d-d238cc91f5fb",
+        "type": "blank",
+        "q": "At night, Cotton fell ____ in his new bed next to my room.",
+        "answer": "asleep",
+        "explanation": "'Cotton fell asleep in his new bed'에서 확인할 수 있다. fall asleep은 '잠들다'라는 뜻이다."
+      },
+      {
+        "qid": "53246cc9-0f08-4209-9cd2-64f79e6a8164",
+        "type": "blank",
+        "q": "I was so excited that I couldn't stop ____.",
+        "answer": "smiling",
+        "explanation": "'I couldn't stop smiling'에서 확인할 수 있다."
+      },
+      {
+        "qid": "7f95a253-48fb-4271-b473-131666e51ae2",
+        "type": "tf",
+        "q": "Cotton came out from under the sofa right away.",
+        "answer": false,
+        "explanation": "'didn't come out for thirty minutes'라고 했으므로 30분 동안 나오지 않았다."
+      },
+      {
+        "qid": "5df1e42a-ede4-4096-ba06-f5352c2d6211",
+        "type": "tf",
+        "q": "Cotton has soft brown ears.",
+        "answer": true,
+        "explanation": "'He is a small white dog with soft brown ears.'와 일치한다."
+      },
+      {
+        "qid": "a89eb4ac-a970-46c9-b93d-330869c425d6",
+        "type": "tf",
+        "q": "The writer is going to walk Cotton before school tomorrow.",
+        "answer": false,
+        "explanation": "'after school'이라고 했으므로 학교 끝난 뒤에 산책할 예정이다."
+      },
+      {
+        "qid": "7f6f5db1-bb05-43f6-95e1-f9328ae6064f",
+        "type": "order",
+        "items": [
+          "Finally, he came out and started playing with me!",
+          "When we got home, Cotton was scared at first.",
+          "We bought a bed, a food bowl, and a bright red ball.",
+          "Then I slowly rolled the red ball toward him."
+        ],
+        "answer": [
+          "We bought a bed, a food bowl, and a bright red ball.",
+          "When we got home, Cotton was scared at first.",
+          "Then I slowly rolled the red ball toward him.",
+          "Finally, he came out and started playing with me!"
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "3de7b7d5-4173-4280-8ed1-0eb0aa452d36",
+        "q": "Explain in English how the writer helped Cotton come out from under the sofa.",
+        "wordLimit": 25,
+        "sampleAnswer": "The writer slowly rolled the red ball toward Cotton, and then he came out.",
+        "rubric": "빨간 공을 (천천히) 코튼 쪽으로 굴려 주었다는 내용을 영어로 쓰면 만점"
+      },
+      {
+        "qid": "4e5ab556-4826-41ff-a2cb-6548d91ffe83",
+        "q": "Rewrite the sentence using 'so ~ that': I was very excited, so I couldn't stop smiling.",
+        "wordLimit": 12,
+        "sampleAnswer": "I was so excited that I couldn't stop smiling.",
+        "rubric": "so excited that 구조를 바르게 쓰고 의미가 같으면 만점"
+      },
+      {
+        "qid": "3cf98a02-640e-4868-bf7c-9869dc6780e3",
+        "q": "우리말로 쓰시오: 강아지 이름을 'Cotton'이라고 지은 이유를 본문의 표현을 살려 쓰시오.",
+        "wordLimit": 40,
+        "sampleAnswer": "강아지의 털이 솜만큼 부드러워 보이기 때문이다.",
+        "rubric": "털(fur)이 솜만큼(as soft as) 부드러워 보인다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "3eaa1948-f9e1-47be-934b-01632ae43668",
+        "q": "What is the writer going to do tomorrow? Answer using 'be going to' in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "The writer is going to take Cotton for a walk in the park after school.",
+        "rubric": "be going to를 바르게 쓰고 공원 산책 내용을 쓰면 만점"
+      },
+      {
+        "qid": "5399dff0-0c2c-4ccb-bf9a-29e707a2ff74",
+        "q": "우리말로 쓰시오: 이 날 코튼의 기분은 처음과 나중에 어떻게 달라졌나요?",
+        "wordLimit": 50,
+        "sampleAnswer": "처음에는 무서워서 소파 밑에 숨어 있었지만, 나중에는 밖으로 나와 글쓴이와 함께 놀고 새 침대에서 편하게 잠들었다.",
+        "rubric": "처음(무서워서 숨음)과 나중(나와서 놂/잠듦)을 모두 쓰면 만점, 한쪽만 쓰면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Wednesday, April 16\nToday was {{g:one of the most special days|one of the + 최상급 + 복수명사: 가장 ~한 것들 중 하나}} of my life, because my family finally {{v:adopted}} a puppy! He is a tiny white dog with {{v:floppy}} brown ears. We decided to name him Cotton, {{g:since his fluffy fur looks as soft as a ball of cotton|since: ~ 때문에 (이유의 접속사) / as ~ as 원급 비교}}.\nEarly in the morning, Dad and I visited a pet shop to prepare {{g:everything Cotton would need|목적격 관계대명사 생략 (everything (that) Cotton would need)}}. We picked out a {{v:cozy}} bed, a food bowl, and a bright red ball. When we brought him home, however, Cotton was {{g:too frightened to explore|too + 형용사 + to부정사: 너무 ~해서 …할 수 없다}} his new {{v:surroundings}}. He hid under the sofa and {{v:refused}} to come out for thirty whole minutes. {{g:Hoping to make him feel comfortable|분사구문: ~하기를 바라면서 / make + 목적어 + 동사원형}}, I gently rolled the red ball toward him. {{g:To my delight|to one's delight: ~가 기쁘게도}}, he {{v:crept}} out slowly and began playing with me!\nThat night, Cotton fell fast asleep in his new bed, {{g:which we had placed right next to my room|계속적 용법 관계대명사 which + 과거완료 had placed}}. I was so excited that I could {{v:hardly}} fall asleep myself. {{t:Tomorrow, after school, I am planning to take him for his very first walk in the park}}.",
+    "tags": {
+      "vocab": [
+        "adopted",
+        "floppy",
+        "cozy",
+        "surroundings",
+        "refused",
+        "crept",
+        "hardly"
+      ],
+      "grammar": [
+        "one of the + 최상급",
+        "since(이유)",
+        "목적격 관계대명사 생략",
+        "too ~ to",
+        "분사구문",
+        "계속적 용법 which",
+        "과거완료"
+      ],
+      "topic": [
+        "일기",
+        "새 강아지",
+        "반려동물과 마음 열기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "1388c46d-f60f-4815-ac92-997aab24d791",
+        "type": "mc",
+        "q": "What does 'adopted' mean in 'my family finally adopted a puppy'?",
+        "choices": [
+          "Sold a puppy to someone",
+          "Took a puppy into the family",
+          "Lost a puppy in the park",
+          "Drew a picture of a puppy",
+          "Visited a puppy at a friend's house"
+        ],
+        "answer": "Took a puppy into the family",
+        "explanation": "adopt는 '입양하다', 즉 가족으로 받아들인다는 뜻이다."
+      },
+      {
+        "qid": "154cdfdb-8e95-44a3-af31-836c1cbbe084",
+        "type": "mc",
+        "q": "Which word in the passage describes Cotton's fur?",
+        "choices": [
+          "Floppy",
+          "Cozy",
+          "Bright",
+          "Fluffy",
+          "Tiny"
+        ],
+        "answer": "Fluffy",
+        "explanation": "'his fluffy fur'라고 했다. floppy는 귀, cozy는 침대, bright는 공을 꾸미는 말이다."
+      },
+      {
+        "qid": "89732f87-088a-410b-8165-daf92b8a6759",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: We decided to name him Cotton, ____ his fluffy fur looks as soft as a ball of cotton.",
+        "choices": [
+          "although",
+          "since",
+          "unless",
+          "until",
+          "so"
+        ],
+        "answer": "since",
+        "explanation": "뒤 문장이 이름을 지은 이유이므로 '~ 때문에'라는 뜻의 since가 알맞다."
+      },
+      {
+        "qid": "5289a07e-42ab-4693-af12-d4e01ce342d9",
+        "type": "mc",
+        "q": "What does 'Cotton was too frightened to explore his new surroundings' mean?",
+        "choices": [
+          "Cotton was so scared that he couldn't look around his new home.",
+          "Cotton was excited to look around his new home.",
+          "Cotton explored the house very quickly.",
+          "Cotton was too tired to eat.",
+          "Cotton wanted to go back to the pet shop."
+        ],
+        "answer": "Cotton was so scared that he couldn't look around his new home.",
+        "explanation": "'too + 형용사 + to부정사'는 '너무 ~해서 …할 수 없다'라는 뜻이다. 너무 겁이 나서 새 환경을 둘러보지 못했다."
+      },
+      {
+        "qid": "5f287764-e321-469d-b8f0-407f04f5c90f",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'refused' in the passage?",
+        "choices": [
+          "Wanted very much",
+          "Forgot",
+          "Did not agree to do",
+          "Tried hard",
+          "Finished quickly"
+        ],
+        "answer": "Did not agree to do",
+        "explanation": "refuse는 '거부하다, ~하려 하지 않다'라는 뜻이다. 코튼은 30분 동안 나오려 하지 않았다."
+      },
+      {
+        "qid": "8002a78f-a99e-483e-b7aa-dbfc63e29e2c",
+        "type": "mc",
+        "q": "Why did the writer roll the ball gently toward Cotton?",
+        "choices": [
+          "To make Cotton feel comfortable",
+          "To clean under the sofa",
+          "To show Dad a new game",
+          "To make Cotton go to sleep",
+          "To test the new ball"
+        ],
+        "answer": "To make Cotton feel comfortable",
+        "explanation": "'Hoping to make him feel comfortable, I gently rolled the red ball toward him.'에서 알 수 있다."
+      },
+      {
+        "qid": "ae277e19-5ee4-4207-bd66-c5c365e3f411",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: ____ to make him feel comfortable, I gently rolled the red ball toward him.",
+        "choices": [
+          "Hoped",
+          "Hope",
+          "To hoping",
+          "Hopes",
+          "Hoping"
+        ],
+        "answer": "Hoping",
+        "explanation": "주어(I)가 '바라는' 능동의 관계이므로 현재분사로 시작하는 분사구문 'Hoping ~'이 알맞다."
+      },
+      {
+        "qid": "9c575407-6e64-4588-9b59-52fd2f9650b4",
+        "type": "mc",
+        "q": "What does 'To my delight' tell us about the writer?",
+        "choices": [
+          "The writer was surprised and scared.",
+          "The writer was very happy about what happened.",
+          "The writer was disappointed.",
+          "The writer was bored with the game.",
+          "The writer was worried about Dad."
+        ],
+        "answer": "The writer was very happy about what happened.",
+        "explanation": "to my delight는 '기쁘게도'라는 뜻이다. 코튼이 나와서 놀기 시작해서 글쓴이가 기뻤다."
+      },
+      {
+        "qid": "fba3f585-0080-4150-8edb-7951e66c84ef",
+        "type": "mc",
+        "q": "Where had the family placed Cotton's bed?",
+        "choices": [
+          "Under the sofa",
+          "In the living room",
+          "Right next to the writer's room",
+          "In Dad's room",
+          "In the pet shop"
+        ],
+        "answer": "Right next to the writer's room",
+        "explanation": "'his new bed, which we had placed right next to my room'과 일치한다."
+      },
+      {
+        "qid": "e0810bc7-01a6-49bc-8303-9cb771f8258a",
+        "type": "mc",
+        "q": "Which is NOT true according to the diary?",
+        "choices": [
+          "Cotton has floppy brown ears.",
+          "Dad and the writer visited a pet shop in the morning.",
+          "Cotton hid under the sofa for thirty minutes.",
+          "Cotton went for a walk in the park on Wednesday.",
+          "The writer could hardly fall asleep that night."
+        ],
+        "answer": "Cotton went for a walk in the park on Wednesday.",
+        "explanation": "공원 산책은 내일(목요일) 학교가 끝난 뒤에 할 계획이며, 코튼의 '첫 산책'이 될 것이다."
+      },
+      {
+        "qid": "9dee9bc7-bb1c-4cf9-9529-3fdca662968c",
+        "type": "mc",
+        "q": "What is the diary mainly about?",
+        "choices": [
+          "How to choose a pet shop",
+          "Why puppies are better than cats",
+          "The writer's first day with a new puppy",
+          "The writer's favorite park",
+          "How to make a dog bed"
+        ],
+        "answer": "The writer's first day with a new puppy",
+        "explanation": "강아지를 입양한 첫날 있었던 일(가게, 숨기, 공놀이, 잠들기)을 적은 일기이다."
+      },
+      {
+        "qid": "a1ae55e0-cb5f-41ab-afe3-2a82f2487c94",
+        "type": "blank",
+        "q": "He is a tiny white dog with ____ brown ears.",
+        "answer": "floppy",
+        "explanation": "'a tiny white dog with floppy brown ears'에서 확인할 수 있다. floppy는 '축 늘어진'이라는 뜻이다."
+      },
+      {
+        "qid": "8a97b39a-4e33-4b9e-8274-a2430f5bd6e5",
+        "type": "blank",
+        "q": "We picked out a ____ bed, a food bowl, and a bright red ball.",
+        "answer": "cozy",
+        "explanation": "'a cozy bed'에서 확인할 수 있다. cozy는 '아늑한'이라는 뜻이다."
+      },
+      {
+        "qid": "065fb40c-aa44-48da-b414-aae6565460ee",
+        "type": "blank",
+        "q": "Cotton was too frightened to explore his new ____.",
+        "answer": "surroundings",
+        "explanation": "'to explore his new surroundings'에서 확인할 수 있다. surroundings는 '주변 환경'이라는 뜻이다."
+      },
+      {
+        "qid": "669e12e1-d1a0-4670-8270-6c2ac15ab0e8",
+        "type": "blank",
+        "q": "To my delight, he ____ out slowly and began playing with me!",
+        "answer": "crept",
+        "explanation": "'he crept out slowly'에서 확인할 수 있다. crept는 creep(살금살금 기다)의 과거형이다."
+      },
+      {
+        "qid": "6841b57c-8b56-469f-9eb3-8db65956b5db",
+        "type": "blank",
+        "q": "I was so excited that I could ____ fall asleep myself.",
+        "answer": "hardly",
+        "explanation": "'I could hardly fall asleep myself'에서 확인할 수 있다. hardly는 '거의 ~ 않다'라는 뜻이다."
+      },
+      {
+        "qid": "e0c70771-2bea-4a0d-9942-1bb9919f52c2",
+        "type": "tf",
+        "q": "Cotton explored his new home as soon as he arrived.",
+        "answer": false,
+        "explanation": "'Cotton was too frightened to explore his new surroundings'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "618ebc60-cac6-429d-bafa-1fac3519304e",
+        "type": "tf",
+        "q": "The writer had trouble falling asleep that night.",
+        "answer": true,
+        "explanation": "'I could hardly fall asleep myself'와 일치한다."
+      },
+      {
+        "qid": "34392dc7-b1cc-4758-91d6-12eee845d3d6",
+        "type": "tf",
+        "q": "Cotton has already been for a walk in the park.",
+        "answer": false,
+        "explanation": "내일 'his very first walk(첫 산책)'를 할 계획이므로 아직 산책한 적이 없다."
+      },
+      {
+        "qid": "02572bbc-8914-4f05-9cd8-5f1ea31391ce",
+        "type": "order",
+        "items": [
+          "To my delight, he crept out slowly and began playing with me!",
+          "We picked out a cozy bed, a food bowl, and a bright red ball.",
+          "He hid under the sofa and refused to come out for thirty whole minutes.",
+          "Hoping to make him feel comfortable, I gently rolled the red ball toward him."
+        ],
+        "answer": [
+          "We picked out a cozy bed, a food bowl, and a bright red ball.",
+          "He hid under the sofa and refused to come out for thirty whole minutes.",
+          "Hoping to make him feel comfortable, I gently rolled the red ball toward him.",
+          "To my delight, he crept out slowly and began playing with me!"
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "e13d39fd-5b93-4c7a-acb8-7d913592c7e5",
+        "q": "Explain in English why Cotton hid under the sofa.",
+        "wordLimit": 25,
+        "sampleAnswer": "He hid because he was too frightened in his new home.",
+        "rubric": "새 집(환경)이 낯설어서 무서웠다는 이유를 영어로 쓰면 만점"
+      },
+      {
+        "qid": "45a5ba19-70aa-4097-b803-38d9dc096234",
+        "q": "Rewrite the sentence using 'too ~ to': Cotton was so frightened that he couldn't explore his new surroundings.",
+        "wordLimit": 12,
+        "sampleAnswer": "Cotton was too frightened to explore his new surroundings.",
+        "rubric": "too frightened to explore 구조를 바르게 쓰고 의미가 같으면 만점"
+      },
+      {
+        "qid": "1022a334-f06a-4376-9828-2965e4ff0590",
+        "q": "우리말로 쓰시오: 'To my delight, he crept out slowly and began playing with me!'의 의미를 쓰고, 글쓴이가 기뻤던 이유를 설명하시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "기쁘게도 코튼이 천천히 기어 나와 나와 놀기 시작했다는 뜻이다. 겁이 나서 30분이나 숨어 있던 코튼이 드디어 마음을 열고 함께 놀아 주었기 때문에 기뻤다.",
+        "rubric": "문장을 바르게 해석 + 숨어 있던 코튼이 나와서 함께 놀았다는 이유를 쓰면 만점, 한 가지만 쓰면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "c27f1960-1c23-4591-aab8-9ad9caead74f",
+        "q": "Describe in English how Cotton's feelings changed during the day.",
+        "wordLimit": 30,
+        "sampleAnswer": "At first, Cotton was frightened and hid under the sofa, but later he felt comfortable and played with the writer.",
+        "rubric": "처음(무서워함)과 나중(편안해져 놂)을 비교해서 영어로 쓰면 만점"
+      },
+      {
+        "qid": "4bdb4385-3a4d-4989-8620-d1eda0ce0136",
+        "q": "우리말로 쓰시오: 'I could hardly fall asleep myself.'는 무슨 뜻이며, 글쓴이가 왜 그랬을까요?",
+        "wordLimit": 50,
+        "sampleAnswer": "나도 거의 잠을 잘 수 없었다는 뜻이다. 강아지가 생겨서 너무 신이 났고, 내일 코튼과 첫 산책을 할 생각에 설렜기 때문이다.",
+        "rubric": "hardly(거의 ~ 않다)를 살려 바르게 해석 + 너무 신이 났다는 이유를 쓰면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  }
+}

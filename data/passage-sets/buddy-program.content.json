@@ -1,0 +1,1163 @@
+{
+  "school": {
+    "tagged_body": "I am a {{v:transfer}} student. I moved to this school six months ago. From my experience, I think {{t:every school should have a buddy program for new students}}.\nWhen I first came here, I didn't know where the music room was. I didn't know {{g:how the lunch line worked|간접의문문(의문사 + 주어 + 동사): know의 목적어}}, either. These things look small, but they can be very {{v:stressful}} for a new student. A buddy is a classmate. A buddy helps a new student and can solve these problems easily. For example, a buddy can show the new student around the school. A buddy can also explain the class rules.\nAlso, a buddy program {{g:helps new students feel less lonely|help + 목적어 + 동사원형: ~가 …하도록 돕다}}. {{g:Making friends in a new place|동명사 주어: '~하는 것은' (단수 취급 → takes)}} takes time. Many transfer students spend their first weeks alone. Just one friend to eat lunch with can make a big difference.\nSome people say that students will make friends naturally. But not everyone is {{v:outgoing}}. Shy students need a little help to start a {{v:conversation}}.\nA buddy program does not cost much. It is good for both students. The new student gets help, and the buddy learns kindness and {{v:responsibility}}. {{t:I hope our school will start one soon.}}",
+    "tags": {
+      "vocab": [
+        "transfer",
+        "stressful",
+        "outgoing",
+        "conversation",
+        "responsibility"
+      ],
+      "grammar": [
+        "간접의문문",
+        "help + 목적어 + 동사원형",
+        "동명사 주어"
+      ],
+      "topic": [
+        "전학생 적응",
+        "버디 프로그램",
+        "주장하는 글"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "defca0d4-1bbb-48a8-8e01-3ebc0e485c7e",
+        "type": "mc",
+        "q": "What kind of student is the writer?",
+        "choices": [
+          "A new teacher",
+          "A student council leader",
+          "A transfer student",
+          "An exchange student from abroad",
+          "A buddy for new students"
+        ],
+        "answer": "A transfer student",
+        "explanation": "'I am a transfer student.'와 일치한다."
+      },
+      {
+        "qid": "25c7f912-038b-4eca-83b1-8918350e5407",
+        "type": "mc",
+        "q": "When did the writer move to this school?",
+        "choices": [
+          "Six months ago",
+          "Last week",
+          "One year ago",
+          "Two years ago",
+          "Three months ago"
+        ],
+        "answer": "Six months ago",
+        "explanation": "'I moved to this school six months ago.'와 일치한다."
+      },
+      {
+        "qid": "c2f6636e-28a8-42e9-ad28-21a8d2d980d5",
+        "type": "mc",
+        "q": "What does the writer think every school should have?",
+        "choices": [
+          "A bigger music room",
+          "A shorter lunch line",
+          "More class rules",
+          "A buddy program for new students",
+          "A new student club"
+        ],
+        "answer": "A buddy program for new students",
+        "explanation": "'I think every school should have a buddy program for new students.'와 일치한다."
+      },
+      {
+        "qid": "d333bf8c-22f3-4858-8acb-2d878586a5bf",
+        "type": "mc",
+        "q": "What did the writer NOT know when they first came here?",
+        "choices": [
+          "Who their teacher was",
+          "Where the music room was",
+          "Where the library was",
+          "When school started",
+          "How to get to school"
+        ],
+        "answer": "Where the music room was",
+        "explanation": "'I didn't know where the music room was.'와 일치한다."
+      },
+      {
+        "qid": "581a40f3-4b68-4cd2-980c-de14e89953b7",
+        "type": "mc",
+        "q": "What is a buddy?",
+        "choices": [
+          "A teacher who teaches new students",
+          "A parent who visits the school",
+          "A new student from another school",
+          "A friend from outside the school",
+          "A classmate who helps a new student"
+        ],
+        "answer": "A classmate who helps a new student",
+        "explanation": "'A buddy is a classmate. A buddy helps a new student'와 일치한다."
+      },
+      {
+        "qid": "9a760449-35a7-438f-92f2-2e5ea6d9924a",
+        "type": "mc",
+        "q": "What can a buddy do for a new student?",
+        "choices": [
+          "Do the new student's homework",
+          "Buy lunch for the new student",
+          "Show the new student around the school",
+          "Change the class rules",
+          "Take the new student home"
+        ],
+        "answer": "Show the new student around the school",
+        "explanation": "'a buddy can show the new student around the school'과 일치한다."
+      },
+      {
+        "qid": "9e8afba3-7a3d-4849-a610-5fbaa1105969",
+        "type": "mc",
+        "q": "According to the writer, what can make a big difference?",
+        "choices": [
+          "A bigger lunch room",
+          "Just one friend to eat lunch with",
+          "A lot of homework",
+          "A new music teacher",
+          "A long school vacation"
+        ],
+        "answer": "Just one friend to eat lunch with",
+        "explanation": "'Just one friend to eat lunch with can make a big difference.'와 일치한다."
+      },
+      {
+        "qid": "792b2f6a-f00a-4e56-a713-59bb5b7c9be2",
+        "type": "mc",
+        "q": "What do some people say?",
+        "choices": [
+          "Buddy programs cost too much",
+          "New students do not need friends",
+          "Shy students like to be alone",
+          "Students will make friends naturally",
+          "Schools have too many programs"
+        ],
+        "answer": "Students will make friends naturally",
+        "explanation": "'Some people say that students will make friends naturally.'와 일치한다."
+      },
+      {
+        "qid": "d54c7e10-b31c-475e-a906-17bc3c136b46",
+        "type": "mc",
+        "q": "Who needs a little help to start a conversation?",
+        "choices": [
+          "Shy students",
+          "Teachers",
+          "Outgoing students",
+          "Buddies",
+          "Parents"
+        ],
+        "answer": "Shy students",
+        "explanation": "'Shy students need a little help to start a conversation.'과 일치한다."
+      },
+      {
+        "qid": "bb256115-90d0-4302-b127-f27b4860c7c0",
+        "type": "mc",
+        "q": "What does the buddy learn from the program?",
+        "choices": [
+          "Music and art",
+          "Math and science",
+          "Class rules only",
+          "How to cook lunch",
+          "Kindness and responsibility"
+        ],
+        "answer": "Kindness and responsibility",
+        "explanation": "'the buddy learns kindness and responsibility'와 일치한다."
+      },
+      {
+        "qid": "e9a96e75-b493-4a32-a513-1537fb97ebef",
+        "type": "blank",
+        "q": "I moved to this school six months ____.",
+        "answer": "ago",
+        "explanation": "'six months ago'에서 확인할 수 있다."
+      },
+      {
+        "qid": "f6780ca8-345d-4f60-9208-e89bd1bdbd6c",
+        "type": "blank",
+        "q": "These things look small, but they can be very ____ for a new student.",
+        "answer": "stressful",
+        "explanation": "'they can be very stressful for a new student'에서 확인할 수 있다."
+      },
+      {
+        "qid": "a8eb5bdb-acf8-44dd-8d71-cbea81781f6f",
+        "type": "blank",
+        "q": "A buddy program helps new students feel less ____.",
+        "answer": "lonely",
+        "explanation": "'helps new students feel less lonely'에서 확인할 수 있다."
+      },
+      {
+        "qid": "7342af46-ef40-4055-a754-18b69c26cbfb",
+        "type": "blank",
+        "q": "But not everyone is ____.",
+        "answer": "outgoing",
+        "explanation": "'But not everyone is outgoing.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "547f67d0-bb0a-4d84-8a3d-819c2104d5e9",
+        "type": "blank",
+        "q": "The new student gets help, and the buddy learns kindness and ____.",
+        "answer": "responsibility",
+        "explanation": "'the buddy learns kindness and responsibility'에서 확인할 수 있다."
+      },
+      {
+        "qid": "92b7b720-b2d0-4bc4-8e28-acb8d3ff4f2f",
+        "type": "tf",
+        "q": "The writer moved to this school a year ago.",
+        "answer": false,
+        "explanation": "여섯 달 전(six months ago)에 전학 왔으므로 사실이 아니다."
+      },
+      {
+        "qid": "02d0c9d0-b2ae-4bde-9351-e6192e99eb0f",
+        "type": "tf",
+        "q": "Many transfer students spend their first weeks alone.",
+        "answer": true,
+        "explanation": "'Many transfer students spend their first weeks alone.'과 일치한다."
+      },
+      {
+        "qid": "5c1a1cb8-49d0-43c5-b123-de65c794d5d3",
+        "type": "tf",
+        "q": "A buddy program costs a lot of money.",
+        "answer": false,
+        "explanation": "'A buddy program does not cost much.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "3d4c5872-cb5f-4ac8-a562-fb8b4cf0139e",
+        "type": "order",
+        "items": [
+          "Some people say that students will make friends naturally.",
+          "When I first came here, I didn't know where the music room was.",
+          "I hope our school will start one soon.",
+          "For example, a buddy can show the new student around the school."
+        ],
+        "answer": [
+          "When I first came here, I didn't know where the music room was.",
+          "For example, a buddy can show the new student around the school.",
+          "Some people say that students will make friends naturally.",
+          "I hope our school will start one soon."
+        ]
+      },
+      {
+        "qid": "af8cc050-9d36-40df-acd9-afa03a3e8608",
+        "type": "mc",
+        "q": "What does the underlined word 'outgoing' mean in this passage?",
+        "choices": [
+          "전학 온, 전학",
+          "외향적인, 사교적인",
+          "스트레스가 많은",
+          "대화",
+          "책임감"
+        ],
+        "answer": "외향적인, 사교적인",
+        "explanation": "'outgoing'는 '외향적인, 사교적인'라는 뜻이다. 'But not everyone is outgoing.'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "50884774-561d-4186-88f3-365282fe141b",
+        "q": "Why does the writer think every school should have a buddy program? Write one sentence in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "Because a buddy can help new students with school life and help them feel less lonely.",
+        "rubric": "학교생활 도움 또는 외로움 감소 중 하나 이상을 이유로 완전한 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "ccbbc673-1e7d-42ba-bdad-a631f3961249",
+        "q": "What can a buddy do for a new student? Write two things in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "A buddy can show the new student around the school and explain the class rules.",
+        "rubric": "학교 안내, 학급 규칙 설명 두 가지를 모두 쓰면 만점 (하나만 쓰면 부분 점수)"
+      },
+      {
+        "qid": "6befcc13-e061-47a5-9cc1-365b6cd16a50",
+        "q": "우리말로 쓰시오: 글쓴이가 처음 이 학교에 왔을 때 몰랐던 두 가지는 무엇인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "음악실이 어디에 있는지와 점심 줄이 어떻게 운영되는지를 몰랐다.",
+        "rubric": "음악실 위치, 급식 줄 방식 두 가지를 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "50d95f1b-67b9-45ad-bdf4-c354c4e446cf",
+        "q": "Why do shy students need a buddy? Answer in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "Because shy students need a little help to start a conversation.",
+        "rubric": "대화를 시작하는 데 도움이 필요하다는 내용을 쓰면 만점"
+      },
+      {
+        "qid": "8122f3c1-57ae-490f-a357-12f1219e0802",
+        "q": "우리말로 쓰시오: 글쓴이는 버디 프로그램이 두 학생 모두에게 좋다고 했습니다. 각 학생이 얻는 것은 무엇인가요?",
+        "wordLimit": 50,
+        "sampleAnswer": "새로 온 학생은 도움을 받고, 버디는 친절함과 책임감을 배운다.",
+        "rubric": "새 학생(도움)과 버디(친절·책임감) 양쪽을 모두 쓰면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "I am a transfer student {{g:who moved to this school six months ago|주격 관계대명사 who: 앞의 a transfer student를 꾸밈}}. From my own {{v:experience}}, I strongly believe that {{t:every school should have a buddy program for new students}}.\nWhen I first arrived, I didn't know {{g:where the music room was or how the lunch line worked|간접의문문(의문사 + 주어 + 동사) 두 개가 or로 연결되어 know의 목적어}}. These things seem small, but they can be very {{v:stressful}} for a new student. A buddy is {{g:a classmate chosen to help a new student|과거분사(chosen)의 후치 수식: '~하도록 선택된'}}. A buddy could solve these problems easily. For example, a buddy can show the new student around the school and explain the class rules.\nMore importantly, a buddy program helps new students feel less lonely. Making friends in a new place takes time, and many transfer students spend their first weeks alone. {{g:Having just one person to eat lunch with|동명사 주어 + to부정사의 형용사적 용법(eat lunch with one person → with 필요)}} can make a big difference.\nSome people may say that students will make friends naturally without any program. However, not everyone is {{v:outgoing}}. Shy students especially need a little help to start a conversation.\nA buddy program does not cost much, and it is good for both students. The new student gets {{v:support}}, and the buddy learns kindness and {{v:responsibility}}. {{t:I hope our school will start one soon.}}",
+    "tags": {
+      "vocab": [
+        "experience",
+        "stressful",
+        "outgoing",
+        "support",
+        "responsibility"
+      ],
+      "grammar": [
+        "주격 관계대명사 who",
+        "간접의문문",
+        "과거분사의 후치 수식",
+        "동명사 주어 + to부정사 형용사적 용법"
+      ],
+      "topic": [
+        "전학생 적응",
+        "버디 프로그램",
+        "주장과 근거"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "729531fa-939c-4368-8a5e-694985a47457",
+        "type": "mc",
+        "q": "What is the writer's strong belief based on?",
+        "choices": [
+          "A newspaper article about schools",
+          "A teacher's advice",
+          "The writer's own experience as a transfer student",
+          "A survey of all students",
+          "A program at another school"
+        ],
+        "answer": "The writer's own experience as a transfer student",
+        "explanation": "'From my own experience, I strongly believe ...'와 일치한다."
+      },
+      {
+        "qid": "07bf0db8-c72f-4ee3-8d37-df09909f0954",
+        "type": "mc",
+        "q": "What did the writer not know when they first arrived?",
+        "choices": [
+          "Where the music room was and how the lunch line worked",
+          "Where the gym was and who the principal was",
+          "How to get to school and when it started",
+          "What the class rules were and who their buddy was",
+          "Where the library was and how to borrow books"
+        ],
+        "answer": "Where the music room was and how the lunch line worked",
+        "explanation": "'I didn't know where the music room was or how the lunch line worked.'와 일치한다."
+      },
+      {
+        "qid": "25479835-2f91-40c7-800f-f1a0d81968b0",
+        "type": "mc",
+        "q": "According to the writer, how can small things feel to a new student?",
+        "choices": [
+          "Quite boring",
+          "Not important at all",
+          "Very exciting",
+          "Very stressful",
+          "Easy to solve alone"
+        ],
+        "answer": "Very stressful",
+        "explanation": "'they can be very stressful for a new student'와 일치한다."
+      },
+      {
+        "qid": "43604776-ef89-49de-aa11-45af422735a5",
+        "type": "mc",
+        "q": "How does the writer describe a buddy?",
+        "choices": [
+          "A teacher in charge of new students",
+          "A classmate chosen to help a new student",
+          "An older student from another school",
+          "A parent volunteer at lunch",
+          "A new student who needs help"
+        ],
+        "answer": "A classmate chosen to help a new student",
+        "explanation": "'A buddy is a classmate chosen to help a new student'와 일치한다."
+      },
+      {
+        "qid": "c5c47b78-9411-49aa-a305-f252d0c1b795",
+        "type": "mc",
+        "q": "Which is given as an example of what a buddy can do?",
+        "choices": [
+          "Help with homework every day",
+          "Pay for the new student's lunch",
+          "Talk to the new student's parents",
+          "Choose the new student's club",
+          "Explain the class rules"
+        ],
+        "answer": "Explain the class rules",
+        "explanation": "'a buddy can show the new student around the school and explain the class rules'와 일치한다."
+      },
+      {
+        "qid": "109ed375-0333-410e-bd97-bf30160d753d",
+        "type": "mc",
+        "q": "What does the writer say is MORE important about a buddy program?",
+        "choices": [
+          "It saves the school a lot of money",
+          "It makes classes shorter",
+          "It helps new students feel less lonely",
+          "It helps new students get good grades",
+          "It gives buddies free lunch"
+        ],
+        "answer": "It helps new students feel less lonely",
+        "explanation": "'More importantly, a buddy program helps new students feel less lonely.'와 일치한다."
+      },
+      {
+        "qid": "b0284e81-cfb5-42a0-b298-2053d2feb95d",
+        "type": "mc",
+        "q": "Why do many transfer students spend their first weeks alone?",
+        "choices": [
+          "Because they do not want any friends",
+          "Because making friends in a new place takes time",
+          "Because their classmates are unkind",
+          "Because they are too busy studying",
+          "Because the school has no lunch room"
+        ],
+        "answer": "Because making friends in a new place takes time",
+        "explanation": "'Making friends in a new place takes time, and many transfer students spend their first weeks alone.'와 일치한다."
+      },
+      {
+        "qid": "4068557d-08c9-4871-a87a-5eb8a38c83a9",
+        "type": "mc",
+        "q": "What opposing opinion does the writer mention?",
+        "choices": [
+          "Buddy programs are too expensive",
+          "Buddies do not learn anything",
+          "New students should change schools again",
+          "Students will make friends naturally without any program",
+          "Shy students do not want to talk"
+        ],
+        "answer": "Students will make friends naturally without any program",
+        "explanation": "'Some people may say that students will make friends naturally without any program.'과 일치한다."
+      },
+      {
+        "qid": "c5e3a721-a199-4d15-be66-7ced8ba65094",
+        "type": "mc",
+        "q": "How does the writer answer the opposing opinion?",
+        "choices": [
+          "Not everyone is outgoing, so shy students need help",
+          "Everyone makes friends quickly",
+          "Teachers should make friends for students",
+          "Buddy programs are free for everyone",
+          "New students should join more clubs"
+        ],
+        "answer": "Not everyone is outgoing, so shy students need help",
+        "explanation": "'However, not everyone is outgoing. Shy students especially need a little help ...'와 일치한다."
+      },
+      {
+        "qid": "46c1d82f-4d9e-4d78-8191-39ddd411454f",
+        "type": "mc",
+        "q": "What is the main purpose of this passage?",
+        "choices": [
+          "To describe the school's music room",
+          "To explain how the lunch line works",
+          "To complain about the writer's classmates",
+          "To introduce the writer's best friend",
+          "To argue that the school should start a buddy program"
+        ],
+        "answer": "To argue that the school should start a buddy program",
+        "explanation": "글쓴이는 경험을 근거로 버디 프로그램 도입을 주장하고 'I hope our school will start one soon.'으로 마무리한다."
+      },
+      {
+        "qid": "3df2ea1b-bcfc-4a79-9582-d78eec1e4339",
+        "type": "blank",
+        "q": "From my own ____, I strongly believe that every school should have a buddy program for new students.",
+        "answer": "experience",
+        "explanation": "'From my own experience'에서 확인할 수 있다."
+      },
+      {
+        "qid": "d45779a9-17fb-4cfb-8598-b43b410084f4",
+        "type": "blank",
+        "q": "I didn't know where the music room was or how the lunch ____ worked.",
+        "answer": "line",
+        "explanation": "'how the lunch line worked'에서 확인할 수 있다."
+      },
+      {
+        "qid": "d2e552f2-a677-438e-a967-4dadf26188e6",
+        "type": "blank",
+        "q": "Making friends in a new place takes ____.",
+        "answer": "time",
+        "explanation": "'Making friends in a new place takes time'에서 확인할 수 있다."
+      },
+      {
+        "qid": "aabbbfaf-8d77-412b-98ce-0e5b83f1c305",
+        "type": "blank",
+        "q": "Shy students especially need a little help to start a ____.",
+        "answer": "conversation",
+        "explanation": "'to start a conversation'에서 확인할 수 있다."
+      },
+      {
+        "qid": "a18e0f9e-4dea-4ecc-b149-07d9b26ddc3c",
+        "type": "blank",
+        "q": "A buddy program does not ____ much, and it is good for both students.",
+        "answer": "cost",
+        "explanation": "'A buddy program does not cost much'에서 확인할 수 있다."
+      },
+      {
+        "qid": "a579ca27-b3ca-41bc-840a-55e547291a3b",
+        "type": "tf",
+        "q": "The writer knew where the music room was on the first day.",
+        "answer": false,
+        "explanation": "처음 왔을 때 음악실이 어디인지 몰랐다고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "68995e82-fdcb-4f46-adbe-75c0d7b9361b",
+        "type": "tf",
+        "q": "The writer agrees that all students are outgoing.",
+        "answer": false,
+        "explanation": "'not everyone is outgoing'이라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "ba2e9b82-c3a3-43e8-9b8d-6a1bd9d4f556",
+        "type": "tf",
+        "q": "According to the writer, the buddy also gets something from the program.",
+        "answer": true,
+        "explanation": "버디는 'kindness and responsibility'를 배운다고 했으므로 사실이다."
+      },
+      {
+        "qid": "69c0e521-4201-4295-8c7e-34fe6ab3c0e5",
+        "type": "order",
+        "items": [
+          "Some people may say that students will make friends naturally without any program.",
+          "When I first arrived, I didn't know where the music room was or how the lunch line worked.",
+          "The new student gets support, and the buddy learns kindness and responsibility.",
+          "For example, a buddy can show the new student around the school and explain the class rules."
+        ],
+        "answer": [
+          "When I first arrived, I didn't know where the music room was or how the lunch line worked.",
+          "For example, a buddy can show the new student around the school and explain the class rules.",
+          "Some people may say that students will make friends naturally without any program.",
+          "The new student gets support, and the buddy learns kindness and responsibility."
+        ]
+      },
+      {
+        "qid": "55edf73c-ffe0-40f4-af7f-9e6da6176ca6",
+        "type": "mc",
+        "q": "What does the underlined word 'support' mean in this passage?",
+        "choices": [
+          "경험",
+          "지원, 도움",
+          "외향적인, 사교적인",
+          "책임감",
+          "스트레스가 많은"
+        ],
+        "answer": "지원, 도움",
+        "explanation": "'support'는 '지원, 도움'라는 뜻이다. 'The new student gets support'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "cb07bffa-3e90-4996-9c5a-7d0c9addae8d",
+        "q": "Why can small things like the music room or the lunch line be a problem for a new student? Answer in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "Because a new student does not know these things yet, so they can be very stressful.",
+        "rubric": "새 학생은 모르기 때문에 스트레스가 될 수 있다는 내용을 완전한 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "da8de702-0fb7-4812-bfda-159be23e64be",
+        "q": "What opposing opinion does the writer mention, and how does the writer answer it? Write in English.",
+        "wordLimit": 45,
+        "sampleAnswer": "Some people say students will make friends naturally, but the writer says not everyone is outgoing and shy students need help.",
+        "rubric": "① 반대 의견 ② 글쓴이의 반박 두 가지를 모두 쓰면 만점"
+      },
+      {
+        "qid": "ef73655c-fde5-486d-8975-318f47a95a03",
+        "q": "우리말로 쓰시오: 글에서 말하는 버디(buddy)란 어떤 사람인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "새로 온 학생을 돕도록 뽑힌 같은 반 친구이다.",
+        "rubric": "같은 반 친구 + 새 학생을 돕도록 선택됨 두 요소가 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "6c014a0b-089b-4fe1-be37-b45612e57037",
+        "q": "What does the buddy learn from a buddy program? Answer in a complete English sentence.",
+        "wordLimit": 20,
+        "sampleAnswer": "The buddy learns kindness and responsibility.",
+        "rubric": "kindness, responsibility 둘 다 포함한 완전한 문장이면 만점"
+      },
+      {
+        "qid": "08edf1fa-be43-4a8c-93c4-0c4a1665822e",
+        "q": "우리말로 쓰시오: 버디 프로그램이 새로 온 학생에게 주는 도움 두 가지를 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "학교 안내와 학급 규칙 설명 같은 학교생활 도움을 받고, 함께 점심을 먹을 친구가 생겨 덜 외롭게 해준다.",
+        "rubric": "① 학교생활 실질적 도움 ② 외로움 감소 두 가지를 모두 쓰면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "I am a transfer student {{g:who moved to this school six months ago|주격 관계대명사 who: 앞의 a transfer student를 꾸밈}}. {{g:Based on my experience|분사구문(Based on ~): '~에 근거하여'}}, I strongly believe that {{t:every school should have a buddy program for new students}}.\nWhen I first arrived, I didn't know {{g:where the music room was or how the lunch line worked|간접의문문(의문사 + 주어 + 동사): know의 목적어}}. These things seem small, but for a new student, they can be very {{v:stressful}}. A buddy, {{g:a classmate chosen to help a new student|동격 + 과거분사(chosen)의 후치 수식: A buddy를 설명}}, could solve these problems easily. For example, a buddy can show the new student around the school and explain the class rules.\nMore importantly, a buddy program {{g:helps new students feel less lonely|help + 목적어 + 동사원형: ~가 …하도록 돕다}}. Making friends in a new place takes time, and many transfer students spend their first weeks alone. Having at least one person to eat lunch with can make a huge difference.\nSome people may say that students will {{v:naturally}} make friends without any program. However, not everyone is {{v:outgoing}}. Shy students, in particular, need a little help to start a conversation.\nA buddy program does not cost much, and it {{v:benefits}} both students. The new student gets support, and the buddy learns kindness and {{v:responsibility}}. {{t:I hope our school will start one soon.}}",
+    "tags": {
+      "vocab": [
+        "stressful",
+        "naturally",
+        "outgoing",
+        "benefits",
+        "responsibility"
+      ],
+      "grammar": [
+        "주격 관계대명사 who",
+        "분사구문 Based on",
+        "간접의문문",
+        "동격 + 과거분사 후치 수식",
+        "help + 목적어 + 동사원형"
+      ],
+      "topic": [
+        "전학생 적응",
+        "버디 프로그램",
+        "주장-근거-반론-결론"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "b6923a01-219d-4d04-9e57-a748f64c82f8",
+        "type": "mc",
+        "q": "What is the main claim of the passage?",
+        "choices": [
+          "Transfer students should make friends on their own",
+          "Schools should explain lunch rules more clearly",
+          "Every school should have a buddy program for new students",
+          "Shy students should join more clubs",
+          "New students should visit the school before moving"
+        ],
+        "answer": "Every school should have a buddy program for new students",
+        "explanation": "'I strongly believe that every school should have a buddy program for new students.'가 글의 주장이다."
+      },
+      {
+        "qid": "a848fbea-030a-4445-bbdf-6558c1de8de5",
+        "type": "mc",
+        "q": "What is the writer's opinion based on?",
+        "choices": [
+          "Personal experience as a transfer student",
+          "Research by school teachers",
+          "A story told by a friend",
+          "Rules from the school office",
+          "Interviews with parents"
+        ],
+        "answer": "Personal experience as a transfer student",
+        "explanation": "'Based on my experience'라고 했고, 글쓴이는 6개월 전에 전학 온 학생이다."
+      },
+      {
+        "qid": "c1869b14-6a2c-4f8b-a9a8-34593dfaa102",
+        "type": "mc",
+        "q": "Why does the writer mention the music room and the lunch line?",
+        "choices": [
+          "To complain about the school buildings",
+          "To suggest a new lunch menu",
+          "To explain why music class is difficult",
+          "To show that small things can be stressful for new students",
+          "To show that the writer was often late"
+        ],
+        "answer": "To show that small things can be stressful for new students",
+        "explanation": "'These things seem small, but for a new student, they can be very stressful.'와 연결된다."
+      },
+      {
+        "qid": "e9319ddb-153c-4e09-8e63-4d7774403493",
+        "type": "mc",
+        "q": "According to the passage, which is NOT something a buddy does?",
+        "choices": [
+          "Showing the new student around the school",
+          "Doing the new student's homework",
+          "Explaining the class rules",
+          "Helping solve small problems",
+          "Being someone to eat lunch with"
+        ],
+        "answer": "Doing the new student's homework",
+        "explanation": "본문에서 버디는 학교 안내, 규칙 설명 등을 한다고 했고, 숙제를 대신해 준다는 내용은 없다."
+      },
+      {
+        "qid": "8f094282-86af-44b3-b714-98c9ec9f6e0a",
+        "type": "mc",
+        "q": "What does the writer present as the more important benefit?",
+        "choices": [
+          "Saving money for the school",
+          "Teaching new students the class rules",
+          "Making the lunch line faster",
+          "Helping buddies get better grades",
+          "Helping new students feel less lonely"
+        ],
+        "answer": "Helping new students feel less lonely",
+        "explanation": "'More importantly, a buddy program helps new students feel less lonely.'와 일치한다."
+      },
+      {
+        "qid": "8e987b74-eeac-46a1-ad44-cf29d0043bcd",
+        "type": "mc",
+        "q": "Why can having one person to eat lunch with make a huge difference?",
+        "choices": [
+          "Because the school lunch is not delicious",
+          "Because the lunch line is very long",
+          "Because many transfer students spend their first weeks alone",
+          "Because new students must eat with a teacher",
+          "Because buddies pay for lunch"
+        ],
+        "answer": "Because many transfer students spend their first weeks alone",
+        "explanation": "'many transfer students spend their first weeks alone. Having at least one person to eat lunch with can make a huge difference.'의 흐름이다."
+      },
+      {
+        "qid": "d3fc93d5-8ab4-40e6-a84d-09a1c643f5be",
+        "type": "mc",
+        "q": "What counterargument does the writer address?",
+        "choices": [
+          "Buddy programs cost too much money",
+          "Students will naturally make friends without any program",
+          "Buddies do not want to help new students",
+          "New students should not change schools",
+          "Teachers are too busy for new students"
+        ],
+        "answer": "Students will naturally make friends without any program",
+        "explanation": "'Some people may say that students will naturally make friends without any program.'과 일치한다."
+      },
+      {
+        "qid": "5fca9bec-3b6b-43db-822f-19a1e80d6075",
+        "type": "mc",
+        "q": "How does the writer respond to the counterargument?",
+        "choices": [
+          "By agreeing with it completely",
+          "By saying that friends are not important",
+          "By asking teachers to make friends for students",
+          "By pointing out that not everyone is outgoing",
+          "By saying the program is free"
+        ],
+        "answer": "By pointing out that not everyone is outgoing",
+        "explanation": "'However, not everyone is outgoing.'으로 반박한다."
+      },
+      {
+        "qid": "6e8f3523-41ec-4480-889d-b842f3da518d",
+        "type": "mc",
+        "q": "According to the writer, who needs help in particular?",
+        "choices": [
+          "Shy students",
+          "Outgoing students",
+          "Teachers",
+          "Buddies",
+          "Older students"
+        ],
+        "answer": "Shy students",
+        "explanation": "'Shy students, in particular, need a little help to start a conversation.'과 일치한다."
+      },
+      {
+        "qid": "94daee71-e634-4b74-be66-a61e3361c715",
+        "type": "mc",
+        "q": "What does \"one\" in the last sentence refer to?",
+        "choices": [
+          "A new student",
+          "A music room",
+          "A classmate",
+          "A lunch line",
+          "A buddy program"
+        ],
+        "answer": "A buddy program",
+        "explanation": "'I hope our school will start one soon.'의 one은 앞에 나온 a buddy program을 가리킨다."
+      },
+      {
+        "qid": "882503b6-2423-4c36-8242-e54a56b76f14",
+        "type": "blank",
+        "q": "____ on my experience, I strongly believe that every school should have a buddy program for new students.",
+        "answer": "Based",
+        "explanation": "'Based on my experience'에서 확인할 수 있다."
+      },
+      {
+        "qid": "ef5be2c3-b592-4d04-aaf4-30d9dc1e1d9b",
+        "type": "blank",
+        "q": "A buddy, a classmate ____ to help a new student, could solve these problems easily.",
+        "answer": "chosen",
+        "explanation": "'a classmate chosen to help a new student'에서 확인할 수 있다."
+      },
+      {
+        "qid": "dec4e5e8-f3e1-4836-aa8e-dba3d0b423d3",
+        "type": "blank",
+        "q": "More importantly, a buddy program helps new students feel less ____.",
+        "answer": "lonely",
+        "explanation": "'helps new students feel less lonely'에서 확인할 수 있다."
+      },
+      {
+        "qid": "f96888f8-2ddf-4bf0-a57a-7ce0d8412a2d",
+        "type": "blank",
+        "q": "Shy students, in particular, need a little help to start a ____.",
+        "answer": "conversation",
+        "explanation": "'to start a conversation'에서 확인할 수 있다."
+      },
+      {
+        "qid": "d9ea248a-014b-47a5-8e99-be0df8a152e5",
+        "type": "blank",
+        "q": "The new student gets support, and the buddy learns kindness and ____.",
+        "answer": "responsibility",
+        "explanation": "'the buddy learns kindness and responsibility'에서 확인할 수 있다."
+      },
+      {
+        "qid": "db056587-7d47-4db8-bfb4-ca7f9815e575",
+        "type": "tf",
+        "q": "The writer has been at this school for about six months.",
+        "answer": true,
+        "explanation": "'moved to this school six months ago'와 일치한다."
+      },
+      {
+        "qid": "201ade16-9f1d-4878-82cb-04d199ff4b3e",
+        "type": "tf",
+        "q": "The writer thinks a buddy program is too expensive for schools.",
+        "answer": false,
+        "explanation": "'A buddy program does not cost much'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "746afe28-96e2-4cf8-aebb-669d9e5316d8",
+        "type": "tf",
+        "q": "According to the writer, only the new student benefits from a buddy program.",
+        "answer": false,
+        "explanation": "'it benefits both students'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "05e045bc-107a-4919-8e0a-845717052aa3",
+        "type": "order",
+        "items": [
+          "Some people may say that students will naturally make friends without any program.",
+          "These things seem small, but for a new student, they can be very stressful.",
+          "A buddy program does not cost much, and it benefits both students.",
+          "More importantly, a buddy program helps new students feel less lonely."
+        ],
+        "answer": [
+          "These things seem small, but for a new student, they can be very stressful.",
+          "More importantly, a buddy program helps new students feel less lonely.",
+          "Some people may say that students will naturally make friends without any program.",
+          "A buddy program does not cost much, and it benefits both students."
+        ]
+      },
+      {
+        "qid": "ab8d14ba-1e37-42e0-bf3e-e5eb7f582cd6",
+        "type": "mc",
+        "q": "What does the underlined word 'benefits' mean in this passage?",
+        "choices": [
+          "외향적인, 사교적인",
+          "~에게 이익을 주다, 도움이 되다",
+          "자연스럽게",
+          "책임감",
+          "스트레스가 많은"
+        ],
+        "answer": "~에게 이익을 주다, 도움이 되다",
+        "explanation": "'benefits'는 '~에게 이익을 주다, 도움이 되다'라는 뜻이다. 'it benefits both students'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "ebd70106-0fa8-4425-b91e-cd126e952a13",
+        "q": "The writer says the music room and the lunch line \"seem small.\" Why are they still a problem for a new student? Answer in English.",
+        "wordLimit": 35,
+        "sampleAnswer": "They seem small, but a new student does not know them yet, so they can be very stressful.",
+        "rubric": "① 새 학생은 그런 것을 모른다 ② 그래서 스트레스가 된다 두 요소를 쓰면 만점"
+      },
+      {
+        "qid": "7cdbdb73-f7b5-4dd8-9727-37dd565ca339",
+        "q": "Summarize in English two ways a buddy program helps new students.",
+        "wordLimit": 40,
+        "sampleAnswer": "It helps them with practical things like finding places and learning class rules, and it helps them feel less lonely.",
+        "rubric": "① 실질적 학교생활 도움 ② 외로움 감소 두 가지를 모두 쓰면 만점"
+      },
+      {
+        "qid": "f7544777-02e4-4150-944c-ef9445ac8df8",
+        "q": "우리말로 쓰시오: 글쓴이가 소개한 반대 의견은 무엇이며, 글쓴이는 이를 어떻게 반박했나요?",
+        "wordLimit": 60,
+        "sampleAnswer": "학생들은 프로그램 없이도 자연스럽게 친구를 사귈 것이라는 의견에 대해, 모든 사람이 외향적인 것은 아니며 특히 수줍은 학생은 대화를 시작하는 데 도움이 필요하다고 반박했다.",
+        "rubric": "① 반대 의견 ② 반박 내용(외향적이지 않은 학생, 수줍은 학생) 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "eed12c84-9d10-4b64-a063-df488b119f7a",
+        "q": "What does \"one\" in \"I hope our school will start one soon\" refer to? Rewrite the sentence without using \"one.\"",
+        "wordLimit": 20,
+        "sampleAnswer": "I hope our school will start a buddy program soon.",
+        "rubric": "one = a buddy program을 정확히 바꿔 쓴 완전한 문장이면 만점"
+      },
+      {
+        "qid": "96e6900a-9011-4644-92e1-2b7958c6a011",
+        "q": "우리말로 쓰시오: 이 글의 주장과, 그 주장을 뒷받침하는 근거 두 가지를 쓰시오.",
+        "wordLimit": 70,
+        "sampleAnswer": "주장: 모든 학교에 신입생을 위한 버디 프로그램이 있어야 한다. 근거: ① 버디가 학교 안내, 규칙 설명 등 작은 문제를 쉽게 해결해 준다. ② 새로 온 학생이 덜 외롭게 해준다.",
+        "rubric": "① 주장 ② 근거 2개(실질적 도움, 외로움 감소; 비용이 적고 양쪽 모두에게 이롭다는 근거도 인정)를 모두 쓰면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "{{g:As a transfer student who moved to this school six months ago|전치사 as(~로서) + 주격 관계대명사 who}}, I can say from personal experience that {{t:every school should have a buddy program for newcomers}}.\nWhen I first arrived, I had no idea where the music room was, {{g:let alone how the lunch line worked|let alone: (부정문 뒤에서) ~은 말할 것도 없고}}. {{g:Although such details may seem trivial|양보 접속사 although: '비록 ~이지만'}}, they can be surprisingly stressful for someone unfamiliar with the school. A buddy, a classmate specifically chosen to help a new student, could resolve these problems with little effort. For instance, a buddy could show the newcomer around the school and explain the {{v:unwritten}} rules of each class.\nMore importantly, a buddy program helps new students feel less {{v:isolated}}. Building friendships in an unfamiliar environment {{v:inevitably}} takes time, {{g:which is why many transfer students spend their first few weeks alone|계속적 용법 which is why: '그것이 ~하는 이유이다'}}. Having even a single person to eat lunch with can make an enormous difference.\nSome people may argue that students will naturally make friends without any formal program. However, not everyone is outgoing by nature. Shy students, in particular, often need a little {{v:encouragement}} to start a conversation.\n{{g:Not only is a buddy program inexpensive|부정어 Not only가 문두에 와서 주어·동사 도치 (is + 주어)}}, but it also benefits both participants. While the new student receives much-needed support, the buddy develops kindness and a sense of responsibility. {{t:I sincerely hope that our school will introduce one in the near future.}}",
+    "tags": {
+      "vocab": [
+        "trivial",
+        "unwritten",
+        "isolated",
+        "inevitably",
+        "encouragement"
+      ],
+      "grammar": [
+        "전치사 as + 관계대명사 who",
+        "let alone",
+        "양보 접속사 although",
+        "계속적 용법 which is why",
+        "Not only 도치"
+      ],
+      "topic": [
+        "전학생 적응",
+        "버디 프로그램",
+        "반론과 재반박"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "0f82cfb9-616f-4e9f-ac85-bfe822afba4c",
+        "type": "mc",
+        "q": "Which best states the writer's main argument?",
+        "choices": [
+          "Newcomers should learn school rules before arriving",
+          "Shy students should try harder to be outgoing",
+          "Every school should have a buddy program for newcomers",
+          "Schools should spend more money on music rooms",
+          "Friendships form naturally without any help"
+        ],
+        "answer": "Every school should have a buddy program for newcomers",
+        "explanation": "'every school should have a buddy program for newcomers'가 글의 주장이다."
+      },
+      {
+        "qid": "e574a565-5cf4-4aea-b7c2-ef0cf6db9084",
+        "type": "mc",
+        "q": "What does \"let alone\" suggest in the second paragraph?",
+        "choices": [
+          "The writer knew even less about the lunch line than about the music room",
+          "The writer liked the lunch line more than the music room",
+          "The writer left the lunch line alone",
+          "The writer already knew how the lunch line worked",
+          "The writer ate lunch alone in the music room"
+        ],
+        "answer": "The writer knew even less about the lunch line than about the music room",
+        "explanation": "'I had no idea where the music room was, let alone how the lunch line worked.'는 음악실 위치도 몰랐으니 점심 줄은 더더욱 몰랐다는 뜻이다."
+      },
+      {
+        "qid": "3d866fd5-897e-40a7-a6ba-e407b8bf9b1c",
+        "type": "mc",
+        "q": "According to the writer, how can seemingly trivial details feel to someone new?",
+        "choices": [
+          "Completely unimportant",
+          "Pleasantly exciting",
+          "Easy to ignore",
+          "Surprisingly stressful",
+          "Boring but harmless"
+        ],
+        "answer": "Surprisingly stressful",
+        "explanation": "'they can be surprisingly stressful for someone unfamiliar with the school'과 일치한다."
+      },
+      {
+        "qid": "00e174ef-0f62-4b25-a583-3bea7c6106a4",
+        "type": "mc",
+        "q": "What does \"the unwritten rules of each class\" most likely mean?",
+        "choices": [
+          "Rules that the teacher forgot to write",
+          "Rules that everyone follows but that are not officially written down",
+          "Rules printed in the school handbook",
+          "Rules that nobody follows",
+          "Rules only for new students"
+        ],
+        "answer": "Rules that everyone follows but that are not officially written down",
+        "explanation": "'unwritten'은 '명문화되지 않은'이라는 뜻으로, 공식적으로 적혀 있지 않지만 모두가 따르는 규칙을 말한다."
+      },
+      {
+        "qid": "4be219de-7ef6-4e79-a190-8e74dfded5ad",
+        "type": "mc",
+        "q": "Why, according to the writer, do many transfer students spend their first few weeks alone?",
+        "choices": [
+          "Because they prefer to be alone",
+          "Because buddies refuse to help them",
+          "Because their classes are too difficult",
+          "Because the school does not allow group lunches",
+          "Because building friendships in an unfamiliar environment takes time"
+        ],
+        "answer": "Because building friendships in an unfamiliar environment takes time",
+        "explanation": "'Building friendships in an unfamiliar environment inevitably takes time, which is why ...'와 일치한다."
+      },
+      {
+        "qid": "35bb2fb3-932f-45d7-998a-145f7ecdc3ef",
+        "type": "mc",
+        "q": "What is the role of the paragraph that begins with \"Some people may argue\"?",
+        "choices": [
+          "It summarizes the writer's main argument",
+          "It introduces the writer's personal background",
+          "It presents a counterargument and then refutes it",
+          "It describes the cost of the program",
+          "It gives a new example of a buddy's duties"
+        ],
+        "answer": "It presents a counterargument and then refutes it",
+        "explanation": "반대 의견('students will naturally make friends')을 제시한 뒤 'However, not everyone is outgoing by nature.'로 반박한다."
+      },
+      {
+        "qid": "02a31d4a-df7a-49fb-a32b-28668d2d2e5f",
+        "type": "mc",
+        "q": "What does \"by nature\" imply in \"not everyone is outgoing by nature\"?",
+        "choices": [
+          "Everyone becomes outgoing in nature",
+          "Some people are born with a personality that makes socializing difficult",
+          "Students make friends more easily outdoors",
+          "Outgoing students do not need any program",
+          "Nature classes help shy students"
+        ],
+        "answer": "Some people are born with a personality that makes socializing difficult",
+        "explanation": "'by nature'는 '천성적으로'라는 뜻으로, 타고난 성격상 외향적이지 않은 사람도 있다는 의미이다."
+      },
+      {
+        "qid": "891ce1ed-f09b-4ecd-af28-5d0923627d4c",
+        "type": "mc",
+        "q": "According to the writer, what does the buddy gain from the program?",
+        "choices": [
+          "Better test scores",
+          "Free lunch every day",
+          "A new set of class rules",
+          "Kindness and a sense of responsibility",
+          "Extra time off from school"
+        ],
+        "answer": "Kindness and a sense of responsibility",
+        "explanation": "'the buddy develops kindness and a sense of responsibility'와 일치한다."
+      },
+      {
+        "qid": "4b9f8d1b-7349-4a91-877c-0d1d5782664a",
+        "type": "mc",
+        "q": "Which word best describes the writer's attitude toward a buddy program?",
+        "choices": [
+          "Supportive",
+          "Doubtful",
+          "Indifferent",
+          "Critical",
+          "Fearful"
+        ],
+        "answer": "Supportive",
+        "explanation": "글쓴이는 처음부터 끝까지 버디 프로그램 도입을 지지하며 'I sincerely hope ...'로 마무리한다."
+      },
+      {
+        "qid": "e1a464a9-bb40-429e-a1e5-b22c193c641d",
+        "type": "mc",
+        "q": "Which is NOT mentioned as an advantage of a buddy program?",
+        "choices": [
+          "It is inexpensive",
+          "It helps new students feel less isolated",
+          "It helps newcomers with practical school matters",
+          "It benefits the buddy as well",
+          "It improves new students' test scores"
+        ],
+        "answer": "It improves new students' test scores",
+        "explanation": "성적 향상에 대한 언급은 없다. 저렴함, 고립감 감소, 학교생활 도움, 버디에게도 이로움은 모두 본문에 있다."
+      },
+      {
+        "qid": "cede0fbc-5a77-4f89-8f8a-322f0f51864c",
+        "type": "blank",
+        "q": "When I first arrived, I had no idea where the music room was, let ____ how the lunch line worked.",
+        "answer": "alone",
+        "explanation": "'let alone'에서 확인할 수 있다."
+      },
+      {
+        "qid": "e07cd3fa-dcea-456c-bf95-2e01f8b7df86",
+        "type": "blank",
+        "q": "Although such details may seem ____, they can be surprisingly stressful for someone unfamiliar with the school.",
+        "answer": "trivial",
+        "explanation": "'such details may seem trivial'에서 확인할 수 있다."
+      },
+      {
+        "qid": "2fe1a3e0-ccf1-4697-9358-b506e7908476",
+        "type": "blank",
+        "q": "Building friendships in an unfamiliar environment ____ takes time.",
+        "answer": "inevitably",
+        "explanation": "'inevitably takes time'에서 확인할 수 있다."
+      },
+      {
+        "qid": "4a0e3cd5-4aab-4ee8-a0b3-dec99292dd89",
+        "type": "blank",
+        "q": "Shy students, in particular, often need a little ____ to start a conversation.",
+        "answer": "encouragement",
+        "explanation": "'need a little encouragement'에서 확인할 수 있다."
+      },
+      {
+        "qid": "fd053b02-2801-4ce8-b875-c397570276ce",
+        "type": "blank",
+        "q": "Not only is a buddy program ____, but it also benefits both participants.",
+        "answer": "inexpensive",
+        "explanation": "'Not only is a buddy program inexpensive'에서 확인할 수 있다."
+      },
+      {
+        "qid": "e3648fe7-e182-472a-adc3-374c69a96d80",
+        "type": "tf",
+        "q": "The writer moved to this school about six months ago.",
+        "answer": true,
+        "explanation": "'who moved to this school six months ago'와 일치한다."
+      },
+      {
+        "qid": "77b28fb5-b5c1-473c-accb-9ef6d6ef37f4",
+        "type": "tf",
+        "q": "The writer believes that every student is outgoing by nature.",
+        "answer": false,
+        "explanation": "'not everyone is outgoing by nature'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "c40bec1b-9322-45c5-9453-e2f83a6c0175",
+        "type": "tf",
+        "q": "According to the writer, a buddy program is costly to run.",
+        "answer": false,
+        "explanation": "'Not only is a buddy program inexpensive'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "7a86a469-bb60-4381-b1a6-842dc6a79bf1",
+        "type": "order",
+        "items": [
+          "Some people may argue that students will naturally make friends without any formal program.",
+          "Although such details may seem trivial, they can be surprisingly stressful for someone unfamiliar with the school.",
+          "Not only is a buddy program inexpensive, but it also benefits both participants.",
+          "More importantly, a buddy program helps new students feel less isolated."
+        ],
+        "answer": [
+          "Although such details may seem trivial, they can be surprisingly stressful for someone unfamiliar with the school.",
+          "More importantly, a buddy program helps new students feel less isolated.",
+          "Some people may argue that students will naturally make friends without any formal program.",
+          "Not only is a buddy program inexpensive, but it also benefits both participants."
+        ]
+      },
+      {
+        "qid": "edd5d0d5-a419-4836-a869-ddaf04b42353",
+        "type": "mc",
+        "q": "What does the underlined word 'isolated' mean in this passage?",
+        "choices": [
+          "사소한",
+          "고립된, 외로운",
+          "필연적으로",
+          "격려",
+          "명문화되지 않은"
+        ],
+        "answer": "고립된, 외로운",
+        "explanation": "'isolated'는 '고립된, 외로운'라는 뜻이다. 'a buddy program helps new students feel less isolated'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "569146d5-2afa-4ddd-9911-eeecb5232ebf",
+        "q": "Explain in your own words what the writer means by \"I had no idea where the music room was, let alone how the lunch line worked.\"",
+        "wordLimit": 40,
+        "sampleAnswer": "The writer did not even know where the music room was, so they knew even less about something more complicated like how the lunch line worked.",
+        "rubric": "let alone의 의미(~은 말할 것도 없고)를 반영하여 자신의 말로 설명하면 만점"
+      },
+      {
+        "qid": "56f96a79-eb2e-4bc4-9c22-92f6c622e64e",
+        "q": "Rewrite the sentence \"Not only is a buddy program inexpensive, but it also benefits both participants\" without inversion, keeping the same meaning.",
+        "wordLimit": 25,
+        "sampleAnswer": "A buddy program is not only inexpensive but also beneficial to both participants.",
+        "rubric": "도치 없이 not only A but (also) B 구조로 같은 의미를 정확히 표현하면 만점"
+      },
+      {
+        "qid": "4c137ccf-e185-461b-954a-e5c863a1e5ad",
+        "q": "우리말로 쓰시오: 글쓴이가 다룬 반론은 무엇이며, 그에 대해 어떻게 재반박했는지 설명하시오.",
+        "wordLimit": 70,
+        "sampleAnswer": "학생들은 공식 프로그램 없이도 자연스럽게 친구를 사귈 것이라는 반론에 대해, 모든 사람이 천성적으로 외향적인 것은 아니며 특히 수줍은 학생들은 대화를 시작하는 데 약간의 격려가 필요하다고 재반박했다.",
+        "rubric": "① 반론 ② 재반박(천성적으로 외향적이지 않음, 수줍은 학생은 격려 필요) 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "999d6828-369f-460c-9ac0-7b4817c7bc60",
+        "q": "According to the writer, why does a buddy program benefit both participants? Explain in English.",
+        "wordLimit": 40,
+        "sampleAnswer": "The new student receives much-needed support, while the buddy develops kindness and a sense of responsibility.",
+        "rubric": "① 새 학생이 얻는 것 ② 버디가 얻는 것 두 가지를 모두 쓰면 만점"
+      },
+      {
+        "qid": "9ee5b906-5232-4e18-9bd4-2a57f61eca26",
+        "q": "우리말로 쓰시오: 글쓴이가 버디 프로그램을 주장하는 근거를 세 가지 쓰시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "① 버디가 학교 안내나 명문화되지 않은 규칙 설명 등 사소하지만 스트레스가 되는 문제를 쉽게 해결해 준다. ② 새로 온 학생이 덜 고립감을 느끼게 해준다. ③ 비용이 적게 들고 새 학생과 버디 모두에게 이롭다.",
+        "rubric": "근거 세 가지(실질적 도움, 고립감 감소, 저비용·상호 이익)를 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  }
+}

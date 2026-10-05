@@ -1,0 +1,1453 @@
+{
+  "school": {
+    "tagged_body": "Today, clothes are very cheap. In many stores, a T-shirt costs about the same as a sandwich. New styles come out almost every week. People call this fast fashion. It looks {{v:convenient}}, but I think {{t:we should buy fewer clothes and wear them longer}}.\n\nFirst, making clothes uses a lot of {{v:resources}}. {{g:To make one cotton T-shirt|to부정사의 부사적 용법(목적): ~하기 위해}}, people need thousands of liters of water. If we buy clothes and don't wear them, we waste that water.\n\nSecond, cheap clothes don't last long. {{g:They are made quickly|수동태(be + p.p.): 만들어지다}} with cheap materials. So they often lose their shape after a few washes. Then many of them are thrown away. They end up in {{v:landfills}}, and {{g:it takes many years for them to break down|it takes + 시간 + for 목적어 + to부정사: ~가 …하는 데 시간이 걸리다}}.\n\nSome people say that cheap clothes help them save money. But one good item can last for years. It can actually cost less than {{g:several cheap items that wear out quickly|주격 관계대명사 that: 앞의 명사 items를 꾸며 줌 (복수 → wear)}}.\n\nBefore you buy new clothes, ask yourself, \"Do I really need this?\" You can fix old clothes, {{v:swap}} clothes with friends, or shop at {{v:secondhand}} stores. {{t:Our choices can really help the planet}}.",
+    "tags": {
+      "vocab": [
+        "convenient",
+        "resources",
+        "landfill",
+        "swap",
+        "secondhand"
+      ],
+      "grammar": [
+        "to부정사 부사적 용법(목적)",
+        "수동태 (be + p.p.)",
+        "it takes + 시간 + for + 목적어 + to부정사",
+        "주격 관계대명사 that",
+        "비교급 (fewer, longer, less)"
+      ],
+      "topic": [
+        "패스트패션",
+        "환경",
+        "현명한 소비"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "67eaab11-6def-4eab-ac7a-c9b23ca25540",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "We should buy new clothes every week.",
+          "We should buy less and use our clothes for a long time.",
+          "Cheap clothes are always good for us.",
+          "Cotton T-shirts are the best kind of clothes.",
+          "Secondhand stores sell only old clothes."
+        ],
+        "answer": "We should buy less and use our clothes for a long time.",
+        "explanation": "글쓴이의 주장은 첫 문단 'we should buy fewer clothes and wear them longer'에 나와 있다."
+      },
+      {
+        "qid": "47628236-2a4c-4435-b4f3-1bc6d6b493f4",
+        "type": "mc",
+        "q": "Which is the best title for the passage?",
+        "choices": [
+          "How to Make a Cotton T-shirt",
+          "The Best Stores for Cheap Clothes",
+          "Why New Styles Are Exciting",
+          "Buy Less, Wear Longer",
+          "Sandwiches and T-shirts"
+        ],
+        "answer": "Buy Less, Wear Longer",
+        "explanation": "옷을 덜 사고 오래 입자는 주장이 글 전체를 이끌고 있다."
+      },
+      {
+        "qid": "6c543ec2-d545-4789-965c-010be35a3678",
+        "type": "mc",
+        "q": "What is the writer mainly trying to do?",
+        "choices": [
+          "To persuade readers to change how they buy clothes",
+          "To advertise a new clothing store",
+          "To explain how to wash T-shirts",
+          "To tell a funny story about shopping",
+          "To teach how to grow cotton"
+        ],
+        "answer": "To persuade readers to change how they buy clothes",
+        "explanation": "'I think we should ~'로 주장을 하고 이유를 들어 설득하는 글이다."
+      },
+      {
+        "qid": "1fabda18-c389-47bb-9d4f-0c64ca600f9a",
+        "type": "mc",
+        "q": "What is \"fast fashion\"?",
+        "choices": [
+          "Making clothes slowly by hand",
+          "Wearing the same clothes for many years",
+          "Buying clothes only at secondhand stores",
+          "Fixing old clothes quickly",
+          "Selling cheap clothes with new styles coming out very often"
+        ],
+        "answer": "Selling cheap clothes with new styles coming out very often",
+        "explanation": "옷이 싸고 'New styles come out almost every week' 하는 현상을 fast fashion이라고 부른다."
+      },
+      {
+        "qid": "491c1a58-3935-4f84-bbee-df92d2aa6c44",
+        "type": "mc",
+        "q": "According to the writer, why is making clothes bad for the environment?",
+        "choices": [
+          "It needs a lot of electricity.",
+          "It makes a lot of noise.",
+          "It uses a lot of water.",
+          "It cuts down many trees.",
+          "It uses too much plastic."
+        ],
+        "answer": "It uses a lot of water.",
+        "explanation": "면 티셔츠 한 장을 만드는 데 'thousands of liters of water'가 필요하다고 했다."
+      },
+      {
+        "qid": "1833c498-f636-4074-980c-7e214bf6d7b3",
+        "type": "mc",
+        "q": "Which best completes the sentence? \"If we buy clothes and never wear them, the water used to make them is ____.\"",
+        "choices": [
+          "used for nothing",
+          "saved for later",
+          "cleaned again",
+          "sent back to the river",
+          "given to farmers"
+        ],
+        "answer": "used for nothing",
+        "explanation": "'If we buy clothes and don't wear them, we waste that water.' → 물이 헛되이 쓰인 것이다."
+      },
+      {
+        "qid": "7ab77085-4b56-4f0b-b0c4-a594da6f8dfd",
+        "type": "mc",
+        "q": "Why do cheap clothes not last long?",
+        "choices": [
+          "People wash them too carefully.",
+          "They are too expensive to keep.",
+          "They are made fast with poor materials.",
+          "They are made by hand.",
+          "People wear them only once a year."
+        ],
+        "answer": "They are made fast with poor materials.",
+        "explanation": "'They are made quickly with cheap materials.'가 이유이다."
+      },
+      {
+        "qid": "d6e0ac23-2261-49ca-b237-13ff80342ddb",
+        "type": "mc",
+        "q": "What happens to many cheap clothes in the end?",
+        "choices": [
+          "They are sold again at high prices.",
+          "They are given to other countries.",
+          "They break down in a few days.",
+          "They are made into new T-shirts.",
+          "They are thrown away and stay in landfills for a long time."
+        ],
+        "answer": "They are thrown away and stay in landfills for a long time.",
+        "explanation": "'many of them are thrown away ... it takes many years for them to break down'과 일치한다."
+      },
+      {
+        "qid": "464add65-bca5-44e4-ae83-51abb214fdda",
+        "type": "mc",
+        "q": "What does the fourth paragraph (\"Some people say ...\") do?",
+        "choices": [
+          "It gives a new example of water use.",
+          "It shows a different opinion and then answers it.",
+          "It tells the writer's own shopping story.",
+          "It explains how fast fashion started.",
+          "It lists stores that sell good clothes."
+        ],
+        "answer": "It shows a different opinion and then answers it.",
+        "explanation": "'Some people say ~'로 반대 의견을 소개하고 'But ~'으로 반박한다."
+      },
+      {
+        "qid": "bd5b25f6-a3c6-4729-98e6-1a5fb2472fc5",
+        "type": "mc",
+        "q": "In \"cheap clothes don't last long,\" what does \"last\" mean?",
+        "choices": [
+          "come at the end",
+          "become cheaper",
+          "get bigger",
+          "stay in good condition",
+          "be the final one"
+        ],
+        "answer": "stay in good condition",
+        "explanation": "여기서 last는 '오래가다, (좋은 상태로) 유지되다'라는 뜻의 동사이다."
+      },
+      {
+        "qid": "16592d30-481c-4e94-aca2-3086863191b1",
+        "type": "mc",
+        "q": "Which word means \"to give something and get something else back\"?",
+        "choices": [
+          "repair",
+          "waste",
+          "throw",
+          "swap",
+          "last"
+        ],
+        "answer": "swap",
+        "explanation": "swap은 '교환하다'라는 뜻으로 'swap clothes with friends'에 쓰였다."
+      },
+      {
+        "qid": "e9a1af86-d03f-4754-800d-da4391670c89",
+        "type": "mc",
+        "q": "In \"They end up in landfills,\" what does \"They\" refer to?",
+        "choices": [
+          "people",
+          "many cheap clothes",
+          "stores",
+          "washes",
+          "new styles"
+        ],
+        "answer": "many cheap clothes",
+        "explanation": "바로 앞 문장의 'many of them(= cheap clothes)'을 가리킨다."
+      },
+      {
+        "qid": "21e4add0-cecc-4948-9b59-2d3b4c2233cb",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "New styles come out almost every week.",
+          "A T-shirt can cost about the same as a sandwich.",
+          "Making one cotton T-shirt needs thousands of liters of water.",
+          "Clothes in landfills take many years to break down.",
+          "Cheap clothes usually keep their shape for many years."
+        ],
+        "answer": "Cheap clothes usually keep their shape for many years.",
+        "explanation": "싼 옷은 'often lose their shape after a few washes'라고 했으므로 일치하지 않는다."
+      },
+      {
+        "qid": "92131d78-507a-47bc-a493-54eda0f7c7c5",
+        "type": "mc",
+        "q": "Who follows the writer's advice best?",
+        "choices": [
+          "Mina fixes a hole in her old jeans instead of buying new ones.",
+          "Jisu buys three cheap T-shirts every week.",
+          "Tom throws away his shirt after wearing it twice.",
+          "Yuna buys a jacket only because it is on sale.",
+          "Ben buys new shoes every time a new style comes out."
+        ],
+        "answer": "Mina fixes a hole in her old jeans instead of buying new ones.",
+        "explanation": "글쓴이는 'You can fix old clothes'라고 하며 오래된 옷을 고쳐 입으라고 권한다."
+      },
+      {
+        "qid": "4a38d528-fe81-439e-be07-87ef40345ef7",
+        "type": "mc",
+        "q": "Which best completes the sentence? \"The writer thinks one good item can be ____ than several cheap items in the long run.\"",
+        "choices": [
+          "more expensive",
+          "less useful",
+          "cheaper",
+          "more popular",
+          "weaker"
+        ],
+        "answer": "cheaper",
+        "explanation": "'It can actually cost less than several cheap items'와 같은 의미이다."
+      },
+      {
+        "qid": "11ff35c1-4773-463b-8001-324215f8e82b",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "Clothes are cheaper than before.",
+          "It takes many years for plastic to break down.",
+          "Many of the old shirts is thrown away.",
+          "We should buy fewer clothes.",
+          "Making clothes uses a lot of water."
+        ],
+        "answer": "Many of the old shirts is thrown away.",
+        "explanation": "주어 'Many of the old shirts'는 복수이므로 is가 아니라 are가 와야 한다."
+      },
+      {
+        "qid": "e933b462-7882-44e3-bda1-1ac89ffedade",
+        "type": "mc",
+        "q": "Which sentence uses \"to\" in the same way as \"To make one cotton T-shirt, people need ...\"?",
+        "choices": [
+          "She went to the store to buy a shirt.",
+          "I want to buy a new shirt.",
+          "My plan is to save money.",
+          "It is hard to find good clothes.",
+          "I have something to tell you."
+        ],
+        "answer": "She went to the store to buy a shirt.",
+        "explanation": "본문의 To make는 '~하기 위해'(목적)의 부사적 용법이다. 같은 쓰임은 'to buy a shirt(셔츠를 사기 위해)'."
+      },
+      {
+        "qid": "a436ea21-aade-4840-aba9-56a912512f67",
+        "type": "mc",
+        "q": "Which is NOT one of the writer's ideas for using fewer new clothes?",
+        "choices": [
+          "Fixing old clothes",
+          "Swapping clothes with friends",
+          "Shopping at secondhand stores",
+          "Asking yourself if you really need it",
+          "Buying cheap clothes more often"
+        ],
+        "answer": "Buying cheap clothes more often",
+        "explanation": "마지막 문단의 대안은 고쳐 입기, 친구와 바꾸기, 중고 매장 이용하기, 필요한지 스스로 묻기이다."
+      },
+      {
+        "qid": "98641988-9964-4c0e-87db-32c42640ef33",
+        "type": "order",
+        "items": [
+          "Cheap clothes don't last long and end up in landfills.",
+          "Fast fashion makes clothes cheap, and new styles come out every week.",
+          "Before buying, ask yourself if you really need it.",
+          "Making clothes uses a lot of water."
+        ],
+        "answer": [
+          "Fast fashion makes clothes cheap, and new styles come out every week.",
+          "Making clothes uses a lot of water.",
+          "Cheap clothes don't last long and end up in landfills.",
+          "Before buying, ask yourself if you really need it."
+        ]
+      },
+      {
+        "qid": "00d34a72-fd40-427b-b325-fda2bded876c",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "resources",
+            "meaning": "자원"
+          },
+          {
+            "word": "convenient",
+            "meaning": "편리한"
+          },
+          {
+            "word": "landfill",
+            "meaning": "쓰레기 매립지"
+          },
+          {
+            "word": "secondhand",
+            "meaning": "중고의"
+          },
+          {
+            "word": "swap",
+            "meaning": "교환하다, 바꾸다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "64533ed7-6b7b-4e59-922f-297af1925d83",
+        "q": "Why does the writer think buying clothes we rarely wear is a waste? Answer in English with a reason from the passage.",
+        "wordLimit": 30,
+        "sampleAnswer": "Because making one cotton T-shirt needs thousands of liters of water, so that water is wasted if we don't wear the clothes.",
+        "rubric": "① 물(자원) 사용 언급 ② 입지 않으면 낭비라는 연결 ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "9601680c-025a-434b-923d-0668be9a7b75",
+        "q": "우리말로 쓰시오: 글쓴이가 싼 옷이 오래가지 못한다고 말하는 이유와, 그 결과 어떤 일이 생기는지 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "빠르게, 값싼 재료로 만들어져 몇 번 빨면 모양이 망가진다. 그래서 많이 버려지고, 매립지에서 분해되는 데 오랜 시간이 걸린다.",
+        "rubric": "① 이유(빠른 제작·값싼 재료) ② 결과(버려짐·매립지에서 오래 분해 안 됨) 두 가지 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "9aefa19b-7c0a-42c6-804d-f953999a3232",
+        "q": "Some people say cheap clothes help them save money. How does the writer answer this? Write in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "The writer says that one good item can last for years, so it can cost less than several cheap items that wear out quickly.",
+        "rubric": "① 좋은 옷이 오래간다는 점 ② 결국 돈이 덜 든다는 점 ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "2679ce6c-4405-43e0-bc74-5197ff89a2df",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '나는 새 옷을 사는 대신 오래된 옷을 고칠 것이다.' <조건> instead of를 사용할 것 / will을 사용할 것",
+        "wordLimit": 15,
+        "sampleAnswer": "I will fix my old clothes instead of buying new ones.",
+        "rubric": "① instead of + 동명사(buying) ② will + 동사원형 ③ 의미 일치 (fix/repair 모두 정답)"
+      },
+      {
+        "qid": "c6d60066-9ad6-4dd0-8a6e-4f9aa1515aa0",
+        "q": "Write two things you can do to follow the writer's advice. Use two complete English sentences.",
+        "wordLimit": 40,
+        "sampleAnswer": "I can fix my old clothes when they have small holes. I can also swap clothes with my friends instead of buying new ones.",
+        "rubric": "① 본문의 대안과 관련된 실천 2가지 ② 완전한 영어 문장 2개 ③ 문법 오류 없음"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "These days, clothes are {{g:cheaper than ever|비교급 + than ever: 그 어느 때보다 ~한}}. Many stores sell T-shirts for the price of a sandwich, and new styles appear almost every week. This trend is called fast fashion. It may seem {{v:convenient}}, but {{t:I believe we should buy fewer clothes and wear them longer}}.\n\nFirst, making clothes uses a huge amount of {{v:resources}}. {{g:Producing a single cotton T-shirt requires|동명사 주어: 동명사구(Producing ~)는 단수 취급 → requires}} thousands of liters of water. When we buy clothes we rarely wear, we are wasting that water.\n\nSecond, cheap clothes do not last long. {{g:Because they are made quickly|수동태(be + p.p.): 만들어지다}} and with low-quality materials, they often lose their shape after just a few washes. As a result, many of them are thrown away and end up in {{v:landfills}}, {{g:where they can take many years to break down|관계부사 where (계속적 용법): 앞의 landfills를 보충 설명 (= and there)}}.\n\nSome people may {{v:argue}} that cheap clothes help people save money. However, buying one good-quality item that lasts for years can actually cost less than buying {{g:several cheap items that wear out quickly|주격 관계대명사 that: 선행사 items가 복수 → wear}}.\n\nBefore buying new clothes, ask yourself, \"Do I really need this?\" Repairing old clothes, swapping with friends, or shopping at secondhand stores are great {{v:alternatives}}. {{t:Our choices can make a real difference for the planet}}.",
+    "tags": {
+      "vocab": [
+        "convenient",
+        "resources",
+        "require",
+        "landfill",
+        "argue",
+        "alternative",
+        "wear out"
+      ],
+      "grammar": [
+        "비교급 + than ever",
+        "동명사 주어 (단수 취급)",
+        "수동태 (be + p.p.)",
+        "관계부사 where (계속적 용법)",
+        "주격 관계대명사 that"
+      ],
+      "topic": [
+        "패스트패션",
+        "환경",
+        "현명한 소비"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "a1a20bf2-4ea5-4154-8971-b1c10fcefb99",
+        "type": "mc",
+        "q": "Which best states the writer's main claim?",
+        "choices": [
+          "Fast fashion is convenient, so it should be supported.",
+          "Cotton T-shirts should be banned in stores.",
+          "Secondhand stores should sell more new styles.",
+          "Cheap clothes are the best way to save money.",
+          "People should buy fewer clothes and keep wearing them for a longer time."
+        ],
+        "answer": "People should buy fewer clothes and keep wearing them for a longer time.",
+        "explanation": "첫 문단 'I believe we should buy fewer clothes and wear them longer'가 주장이다."
+      },
+      {
+        "qid": "ad3ede2b-591a-4d5e-92e3-4c3238bbd0a1",
+        "type": "mc",
+        "q": "Which is the best title for the passage?",
+        "choices": [
+          "How Cotton Is Grown Around the World",
+          "The Joy of Following New Styles",
+          "Fast Fashion: Cheap Today, Costly Tomorrow",
+          "Why Sandwiches Cost More Than Clothes",
+          "Tips for Washing Clothes Properly"
+        ],
+        "answer": "Fast Fashion: Cheap Today, Costly Tomorrow",
+        "explanation": "지금은 싸 보이지만 자원 낭비·쓰레기·장기적 비용이라는 대가가 있다는 내용이다."
+      },
+      {
+        "qid": "e963d668-892c-4199-80bd-1f3daa84c872",
+        "type": "mc",
+        "q": "What is the main purpose of the passage?",
+        "choices": [
+          "to persuade readers to rethink their clothes-buying habits",
+          "to introduce a new fashion brand",
+          "to explain how T-shirts are made step by step",
+          "to compare the prices of food and clothes",
+          "to describe the history of fast fashion"
+        ],
+        "answer": "to persuade readers to rethink their clothes-buying habits",
+        "explanation": "주장 → 근거 2개 → 반론 반박 → 실천 제안으로 이루어진 설득하는 글이다."
+      },
+      {
+        "qid": "325eefc9-e617-4fb7-a6c6-8ae8f1b90055",
+        "type": "mc",
+        "q": "Why does the writer mention \"the price of a sandwich\"?",
+        "choices": [
+          "To suggest that people should eat less",
+          "To explain why sandwiches are expensive",
+          "To show how cheap clothes have become",
+          "To compare the quality of food and clothes",
+          "To show that T-shirts are healthy"
+        ],
+        "answer": "To show how cheap clothes have become",
+        "explanation": "티셔츠가 샌드위치 한 개 값이라는 비유로 옷값이 얼마나 싸졌는지 보여 준다."
+      },
+      {
+        "qid": "d96aaa9c-a688-4bad-9a98-9b4bdc33590f",
+        "type": "mc",
+        "q": "According to the second paragraph, buying clothes we rarely wear means that ____.",
+        "choices": [
+          "we save a lot of water",
+          "cotton becomes more expensive",
+          "stores have to make fewer clothes",
+          "we help farmers grow more cotton",
+          "the water used to produce them is wasted"
+        ],
+        "answer": "the water used to produce them is wasted",
+        "explanation": "'When we buy clothes we rarely wear, we are wasting that water.'"
+      },
+      {
+        "qid": "7e4f46a1-c4bc-41ba-a5d8-64b90c4de063",
+        "type": "mc",
+        "q": "What is the direct result of cheap clothes losing their shape quickly?",
+        "choices": [
+          "People wash them more carefully.",
+          "Many of them are thrown away and end up in landfills.",
+          "Stores raise their prices.",
+          "Factories start using better materials.",
+          "People repair them more often."
+        ],
+        "answer": "Many of them are thrown away and end up in landfills.",
+        "explanation": "'As a result, many of them are thrown away and end up in landfills'에서 인과 관계를 확인할 수 있다."
+      },
+      {
+        "qid": "a4531a38-d2c6-4915-9a7e-06fa6738b9af",
+        "type": "mc",
+        "q": "Which is closest in meaning to \"break down\" in the third paragraph?",
+        "choices": [
+          "stop working",
+          "become popular",
+          "get cheaper",
+          "decay naturally",
+          "be repaired"
+        ],
+        "answer": "decay naturally",
+        "explanation": "매립지에서 'break down'은 '(자연적으로) 분해되다'라는 뜻이다. 'stop working(고장 나다)'은 다른 뜻이다."
+      },
+      {
+        "qid": "0459f336-794f-4b19-aa58-94864a08becb",
+        "type": "mc",
+        "q": "The word \"alternatives\" in the last paragraph is closest in meaning to ____.",
+        "choices": [
+          "problems",
+          "expensive items",
+          "old habits",
+          "other choices",
+          "warnings"
+        ],
+        "answer": "other choices",
+        "explanation": "alternative는 '대안'으로, 새 옷을 사는 것 대신 할 수 있는 다른 선택을 말한다."
+      },
+      {
+        "qid": "bed5bb87-0ec2-4f2e-879d-944c1ac252a2",
+        "type": "mc",
+        "q": "What is the role of \"However\" in the fourth paragraph?",
+        "choices": [
+          "It adds another example of water waste.",
+          "It introduces the writer's response to an opposing view.",
+          "It shows the result of buying cheap clothes.",
+          "It introduces the conclusion of the whole passage.",
+          "It gives a reason why fast fashion is popular."
+        ],
+        "answer": "It introduces the writer's response to an opposing view.",
+        "explanation": "'Some people may argue ~'(반론) 뒤에 'However'로 글쓴이의 반박이 이어진다."
+      },
+      {
+        "qid": "7a0e2be0-d779-45ad-b3df-a626077aac05",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "New styles appear in stores almost every week.",
+          "Producing one cotton T-shirt requires thousands of liters of water.",
+          "Cheap clothes are often made with low-quality materials.",
+          "Clothes in landfills can take many years to break down.",
+          "The writer thinks fast fashion is both convenient and good for the planet."
+        ],
+        "answer": "The writer thinks fast fashion is both convenient and good for the planet.",
+        "explanation": "글쓴이는 'It may seem convenient, but ~'이라고 하며 패스트패션이 환경에 좋다고 하지 않았다."
+      },
+      {
+        "qid": "6b8674f1-b924-4bac-a41f-dc8a855e31b3",
+        "type": "mc",
+        "q": "Which statement would the writer most likely agree with?",
+        "choices": [
+          "The real cost of clothing includes its effect on the environment.",
+          "The lower the price of clothes, the better for everyone.",
+          "People should follow every new trend to stay stylish.",
+          "Secondhand clothes are always of low quality.",
+          "Repairing clothes costs more than buying new ones."
+        ],
+        "answer": "The real cost of clothing includes its effect on the environment.",
+        "explanation": "물 낭비·매립지 문제를 근거로 들었으므로 옷의 진짜 비용에는 환경 영향도 포함된다고 볼 것이다."
+      },
+      {
+        "qid": "3da92cce-a664-480e-b6ca-837f8f18a164",
+        "type": "mc",
+        "q": "Which student's behavior best matches the writer's advice?",
+        "choices": [
+          "Minsu buys a new hoodie every time a new style comes out.",
+          "Jiwon throws away T-shirts after a few washes.",
+          "Hana pays more for a sturdy coat that she plans to wear for many winters.",
+          "Seojun buys five cheap shirts instead of one good shirt.",
+          "Yerin keeps buying clothes she never wears because they are on sale."
+        ],
+        "answer": "Hana pays more for a sturdy coat that she plans to wear for many winters.",
+        "explanation": "'buying one good-quality item that lasts for years'를 실천하는 사례이다."
+      },
+      {
+        "qid": "0c0191c3-36ac-4a52-b2a4-b598f0eaf3c1",
+        "type": "mc",
+        "q": "In the third paragraph, what does \"they\" in \"they often lose their shape\" refer to?",
+        "choices": [
+          "landfills",
+          "low-quality materials",
+          "cheap clothes",
+          "people",
+          "washes"
+        ],
+        "answer": "cheap clothes",
+        "explanation": "문단 첫 문장의 주어 'cheap clothes'를 가리킨다."
+      },
+      {
+        "qid": "4f109951-98b2-415f-ab22-fc002f421822",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "Recycling old bottles help the environment.",
+          "This is the shop where I bought my jacket.",
+          "Prices are higher than ever.",
+          "I need a bag that lasts for years.",
+          "The shirt was made in a small factory."
+        ],
+        "answer": "Recycling old bottles help the environment.",
+        "explanation": "동명사 주어(Recycling old bottles)는 단수 취급하므로 help가 아니라 helps가 와야 한다."
+      },
+      {
+        "qid": "b7943e38-794b-422b-9bed-c366a3e4b369",
+        "type": "mc",
+        "q": "Which word best fills the blank? \"I visited a store, ____ I found a great secondhand jacket.\"",
+        "choices": [
+          "which",
+          "what",
+          "that",
+          "who",
+          "where"
+        ],
+        "answer": "where",
+        "explanation": "뒤에 완전한 문장(I found a jacket)이 오고 장소(a store)를 보충하므로 관계부사 where가 알맞다."
+      },
+      {
+        "qid": "2acef23f-5cce-4052-acdc-abae6c638ee9",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Fast fashion makes clothes cheap, but it (A) ____ resources and creates a lot of (B) ____.\"",
+        "choices": [
+          "(A) saves – (B) waste",
+          "(A) wastes – (B) waste",
+          "(A) wastes – (B) money",
+          "(A) protects – (B) jobs",
+          "(A) creates – (B) water"
+        ],
+        "answer": "(A) wastes – (B) waste",
+        "explanation": "자원(물)을 낭비하고(wastes) 매립지에 쓰레기(waste)를 만든다는 내용이다."
+      },
+      {
+        "qid": "a3658051-d5fc-4872-8a17-f0cfb37db2dc",
+        "type": "mc",
+        "q": "What is the writer's attitude toward fast fashion?",
+        "choices": [
+          "excited",
+          "indifferent",
+          "supportive",
+          "critical",
+          "curious"
+        ],
+        "answer": "critical",
+        "explanation": "편리해 보이지만 문제가 많다고 비판하는 태도이다."
+      },
+      {
+        "qid": "d14921c5-de5a-4a46-86fd-2c703d3f9181",
+        "type": "mc",
+        "q": "Which is NOT suggested as an alternative to buying new clothes?",
+        "choices": [
+          "Choosing clothes only by their low price",
+          "Repairing old clothes",
+          "Swapping clothes with friends",
+          "Shopping at secondhand stores",
+          "Thinking about whether you really need them"
+        ],
+        "answer": "Choosing clothes only by their low price",
+        "explanation": "가격만 보고 사는 것은 글쓴이가 비판하는 행동이다."
+      },
+      {
+        "qid": "2e19744a-8c83-440f-aaf7-5785bbf0650c",
+        "type": "order",
+        "items": [
+          "Cheap clothes wear out fast and pile up in landfills.",
+          "We should ask ourselves whether we really need new clothes.",
+          "Fast fashion has made clothes extremely cheap.",
+          "One good item can be cheaper in the long run than many cheap ones.",
+          "Making clothes uses a huge amount of water."
+        ],
+        "answer": [
+          "Fast fashion has made clothes extremely cheap.",
+          "Making clothes uses a huge amount of water.",
+          "Cheap clothes wear out fast and pile up in landfills.",
+          "One good item can be cheaper in the long run than many cheap ones.",
+          "We should ask ourselves whether we really need new clothes."
+        ]
+      },
+      {
+        "qid": "c785288b-678f-4c49-a45b-32d049c829cd",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "resources",
+            "meaning": "자원"
+          },
+          {
+            "word": "require",
+            "meaning": "필요로 하다"
+          },
+          {
+            "word": "landfill",
+            "meaning": "쓰레기 매립지"
+          },
+          {
+            "word": "wear out",
+            "meaning": "닳다, 해지다"
+          },
+          {
+            "word": "alternative",
+            "meaning": "대안"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "18c0fb4b-5cc2-4d64-b888-ba3363032136",
+        "q": "The writer gives two reasons for buying fewer clothes. Write both reasons in English.",
+        "wordLimit": 40,
+        "sampleAnswer": "First, making clothes uses a huge amount of resources such as water. Second, cheap clothes do not last long, so many of them end up in landfills.",
+        "rubric": "① 자원(물) 사용 ② 금방 망가져 매립지로 간다는 점 ③ 완전한 영어 문장 2개"
+      },
+      {
+        "qid": "a35bda52-a061-4ea7-8693-168f8c91c54f",
+        "q": "우리말로 쓰시오: 네 번째 문단에서 글쓴이가 반박하는 주장은 무엇이며, 글쓴이는 어떤 근거로 반박하는가?",
+        "wordLimit": 60,
+        "sampleAnswer": "싼 옷이 돈을 아끼게 해 준다는 주장을 반박한다. 오래가는 좋은 옷 한 벌이 금방 닳는 싼 옷 여러 벌보다 오히려 돈이 덜 들 수 있다는 것이 근거이다.",
+        "rubric": "① 반박 대상 주장(싼 옷 = 돈 절약) ② 근거(좋은 옷 한 벌이 결국 더 쌈) 두 가지 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "15eeb59d-918d-46d8-bb81-90d677bbbe88",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '오래가는 옷 한 벌을 사는 것은 돈을 절약하는 방법이다.' <조건> 동명사 주어로 시작할 것 / 관계대명사 that을 사용할 것",
+        "wordLimit": 20,
+        "sampleAnswer": "Buying one piece of clothing that lasts for a long time is a way to save money.",
+        "rubric": "① 동명사 주어(Buying ~) + 단수 동사 is ② 관계대명사 that + lasts ③ 의미 일치"
+      },
+      {
+        "qid": "dfd035e9-d130-458f-bc09-40b59a07bcd3",
+        "q": "Summarize the passage in one English sentence. Include the problem and the writer's solution.",
+        "wordLimit": 35,
+        "sampleAnswer": "Because fast fashion wastes resources and fills landfills, we should buy fewer clothes and wear them longer by repairing, swapping, or buying secondhand.",
+        "rubric": "① 문제(자원 낭비·쓰레기) ② 해결책(덜 사고 오래 입기) ③ 한 문장, 문법 오류 없음"
+      },
+      {
+        "qid": "adc5fa86-0414-43e0-81d7-a6eda2c9895f",
+        "q": "Do you agree with the writer? Give your opinion and one reason in two English sentences.",
+        "wordLimit": 40,
+        "sampleAnswer": "I agree with the writer. If I wear my clothes longer, I can save money and reduce the waste in landfills.",
+        "rubric": "① 찬반 입장이 분명함 ② 타당한 이유 1개 ③ 완전한 영어 문장 2개 (반대 입장도 이유가 타당하면 만점)"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "{{g:Clothes have never been as cheap as they are today|never + as 원급 as: 비교 표현으로 최상급 의미 (지금이 가장 싸다)}}. In many stores, a T-shirt costs no more than a sandwich, and new styles arrive on the shelves almost every week. {{g:This trend, known as fast fashion,|과거분사구 삽입(known as ~): 앞 명사를 보충 설명, ~로 알려진}} may seem convenient, but I am {{v:convinced}} that {{t:we should buy fewer clothes and wear them for longer}}.\n\nFirst of all, producing clothes {{v:consumes}} an {{v:enormous}} amount of resources. {{g:It takes thousands of liters of water to make|It takes + 양/시간 + to부정사: ~하는 데 …가 필요하다}} just one cotton T-shirt. Whenever we buy clothes that we rarely wear, we are wasting all of that water.\n\nIn addition, cheap clothes are not built to last. {{g:Since they are produced quickly|이유의 접속사 since + 수동태: ~ 만들어지기 때문에}} from low-quality materials, they often lose their shape after only a few washes. {{v:Consequently}}, many of them are thrown away and end up in landfills, {{g:where they can take many years to decompose|관계부사 where (계속적 용법): 앞의 landfills를 보충 설명}}.\n\nSome people might argue that {{v:inexpensive}} clothing helps people save money. However, a single high-quality item that lasts for years can actually {{g:turn out to be cheaper|turn out to be + 형용사: 결국 ~인 것으로 드러나다}} than several cheap items that wear out quickly.\n\nSo before purchasing new clothes, ask yourself, \"Do I really need this?\" Repairing old clothes, swapping them with friends, and shopping at secondhand stores are all excellent {{v:alternatives}}. {{t:The choices we make as consumers can make a real difference for the planet}}.",
+    "tags": {
+      "vocab": [
+        "convinced",
+        "consume",
+        "enormous",
+        "decompose",
+        "inexpensive",
+        "consequently",
+        "alternative"
+      ],
+      "grammar": [
+        "never as ~ as (최상급 의미)",
+        "과거분사구 삽입 (known as)",
+        "It takes + 양 + to부정사",
+        "이유 접속사 since + 수동태",
+        "관계부사 where (계속적 용법)",
+        "turn out to be"
+      ],
+      "topic": [
+        "패스트패션",
+        "환경",
+        "현명한 소비"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "409ec32e-6408-438a-b522-6005f3568935",
+        "type": "mc",
+        "q": "Which of the following best summarizes the writer's argument?",
+        "choices": [
+          "Fast fashion should be banned because it is too convenient.",
+          "Clothes made from cotton are the main reason for water shortages.",
+          "Although fast fashion is convenient, buying less and wearing clothes longer is better for both the planet and our wallets.",
+          "Expensive clothes are better than cheap ones in every way.",
+          "People should shop only at secondhand stores from now on."
+        ],
+        "answer": "Although fast fashion is convenient, buying less and wearing clothes longer is better for both the planet and our wallets.",
+        "explanation": "편리함을 인정하면서(may seem convenient) 환경·경제 두 측면에서 덜 사고 오래 입자고 주장한다."
+      },
+      {
+        "qid": "73f07b79-9a42-47ac-9443-abdceb0d57bf",
+        "type": "mc",
+        "q": "Which is the best title for the passage?",
+        "choices": [
+          "Fashion Trends That Change Every Week",
+          "How to Find Clothes on Sale",
+          "The Science of Washing Cotton",
+          "Why Secondhand Stores Are Disappearing",
+          "The Hidden Costs Behind Cheap Clothes"
+        ],
+        "answer": "The Hidden Costs Behind Cheap Clothes",
+        "explanation": "싼 가격 뒤에 숨은 자원 낭비·쓰레기·장기 비용을 지적하는 글이다."
+      },
+      {
+        "qid": "f92b8ad9-9a25-4e41-9b35-a37ed46b8165",
+        "type": "mc",
+        "q": "What does the first sentence, \"Clothes have never been as cheap as they are today,\" mean?",
+        "choices": [
+          "Clothes were cheaper in the past than today.",
+          "Clothes are cheaper now than at any time in the past.",
+          "Clothes have always been very expensive.",
+          "Clothes will become cheaper in the future.",
+          "Clothes are as expensive as they were before."
+        ],
+        "answer": "Clothes are cheaper now than at any time in the past.",
+        "explanation": "'never + as 원급 as'는 최상급 의미로, 지금이 그 어느 때보다 싸다는 뜻이다."
+      },
+      {
+        "qid": "a1cbf026-c5d6-4e39-9100-1161e228c0a1",
+        "type": "mc",
+        "q": "According to the passage, the true price of a T-shirt should also include ____.",
+        "choices": [
+          "the cost of a sandwich",
+          "the price of washing it at home",
+          "the money stores spend on ads",
+          "the natural resources used to make it",
+          "the time spent choosing it"
+        ],
+        "answer": "the natural resources used to make it",
+        "explanation": "수천 리터의 물이 들고, 입지 않으면 그 물이 낭비된다는 점에서 자원도 옷의 비용임을 알 수 있다."
+      },
+      {
+        "qid": "cd5882bb-2293-4c5b-a0f9-808716200500",
+        "type": "mc",
+        "q": "Which correctly shows the chain of events in the third paragraph?",
+        "choices": [
+          "thrown away → made quickly from poor materials → lose shape → slowly decompose in landfills",
+          "lose shape → made quickly from poor materials → slowly decompose in landfills → thrown away",
+          "slowly decompose in landfills → lose shape → thrown away → made quickly from poor materials",
+          "made quickly from poor materials → lose shape → thrown away → slowly decompose in landfills",
+          "made quickly from poor materials → thrown away → lose shape → slowly decompose in landfills"
+        ],
+        "answer": "made quickly from poor materials → lose shape → thrown away → slowly decompose in landfills",
+        "explanation": "Since(원인) → lose their shape → Consequently, thrown away → where ~ decompose 순서이다."
+      },
+      {
+        "qid": "09100733-bb8f-4684-b002-ba1963a68575",
+        "type": "mc",
+        "q": "The word \"decompose\" is closest in meaning to ____.",
+        "choices": [
+          "be put together",
+          "break down naturally",
+          "become popular",
+          "lose value",
+          "be sold again"
+        ],
+        "answer": "break down naturally",
+        "explanation": "decompose는 '분해되다, 썩다'라는 뜻이다."
+      },
+      {
+        "qid": "3f5fd167-3fc5-4ee9-9856-f9f04db06687",
+        "type": "mc",
+        "q": "The phrase \"not built to last\" suggests that cheap clothes are ____.",
+        "choices": [
+          "not designed by famous designers",
+          "not sold in big stores",
+          "too heavy to wear every day",
+          "made only for special occasions",
+          "not made to stay in good condition for a long time"
+        ],
+        "answer": "not made to stay in good condition for a long time",
+        "explanation": "'built to last'는 '오래가도록 만들어진'이라는 뜻이므로 부정하면 오래가지 않게 만들어졌다는 의미이다."
+      },
+      {
+        "qid": "2f98cfe5-7b82-42e3-92b6-c70ae208940e",
+        "type": "mc",
+        "q": "How does the writer deal with the opposing view in the fourth paragraph?",
+        "choices": [
+          "By presenting it and then showing that it ignores long-term costs",
+          "By agreeing with it completely",
+          "By ignoring it and moving to the next topic",
+          "By giving statistics about clothing prices",
+          "By telling a personal story about saving money"
+        ],
+        "answer": "By presenting it and then showing that it ignores long-term costs",
+        "explanation": "반론(save money)을 소개한 뒤 'However'로 장기적으로는 좋은 옷이 더 싸다고 반박한다."
+      },
+      {
+        "qid": "754def20-55b3-4347-afa4-abcb508ee72a",
+        "type": "mc",
+        "q": "Which could best replace \"Consequently\" in the third paragraph?",
+        "choices": [
+          "However",
+          "For example",
+          "As a result",
+          "In contrast",
+          "Instead"
+        ],
+        "answer": "As a result",
+        "explanation": "Consequently는 '그 결과'라는 뜻으로 As a result와 같다."
+      },
+      {
+        "qid": "479526b9-4b8d-48d2-b487-8a6c417fa838",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "The trend of cheap clothes and fast-changing styles is called fast fashion.",
+          "It takes thousands of liters of water to make one cotton T-shirt.",
+          "The writer claims that clothes in landfills break down within a few months.",
+          "Cheap clothes often lose their shape after a few washes.",
+          "The writer suggests swapping clothes with friends."
+        ],
+        "answer": "The writer claims that clothes in landfills break down within a few months.",
+        "explanation": "'they can take many years to decompose'라고 했으므로 몇 달 안에 분해된다는 것은 틀리다."
+      },
+      {
+        "qid": "25f46cc9-ab81-4781-b5e5-f6d573a706cf",
+        "type": "mc",
+        "q": "The writer would most likely DISAGREE with which statement?",
+        "choices": [
+          "A low price tag tells us everything about what a product really costs.",
+          "Our shopping habits affect the environment.",
+          "Durable clothing can be a smart choice.",
+          "Repairing clothes can reduce waste.",
+          "We should think carefully before shopping."
+        ],
+        "answer": "A low price tag tells us everything about what a product really costs.",
+        "explanation": "글쓴이는 가격표에 보이지 않는 자원·쓰레기·장기 비용을 강조하므로 이 진술에 반대할 것이다."
+      },
+      {
+        "qid": "5ed11d06-8981-4149-bc0d-d67eeaa12614",
+        "type": "mc",
+        "q": "Which situation best supports the writer's argument about money?",
+        "choices": [
+          "A $20 shirt is always a better deal than a $60 shirt.",
+          "Buying clothes on sale every week saves the most money.",
+          "Clothes from secondhand stores never last long.",
+          "Expensive clothes wear out as quickly as cheap ones.",
+          "A $60 pair of jeans worn for five years costs less than four $20 pairs that tear within a year."
+        ],
+        "answer": "A $60 pair of jeans worn for five years costs less than four $20 pairs that tear within a year.",
+        "explanation": "좋은 옷 한 벌(60달러)이 금방 닳는 싼 옷 여러 벌(80달러)보다 결국 싸다는 사례이다."
+      },
+      {
+        "qid": "bf3cf320-5c17-4513-ba37-af8a22b1cdb8",
+        "type": "mc",
+        "q": "What does \"all of that water\" in the second paragraph refer to?",
+        "choices": [
+          "the water we drink every day",
+          "the water used to produce the clothes we rarely wear",
+          "the water used to wash our clothes",
+          "the rainwater in landfills",
+          "the water saved by secondhand stores"
+        ],
+        "answer": "the water used to produce the clothes we rarely wear",
+        "explanation": "옷을 만드는 데 든 수천 리터의 물을 가리킨다."
+      },
+      {
+        "qid": "28ed850e-4977-4f25-a65b-6dfe47968249",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "It takes a lot of time to repair a jacket.",
+          "This style, known as minimalism, is becoming popular.",
+          "The plan turned out to be cheaper than we expected.",
+          "This phone has never been as cheaper as it is now.",
+          "We visited a market, where we bought used books."
+        ],
+        "answer": "This phone has never been as cheaper as it is now.",
+        "explanation": "as ~ as 사이에는 원급이 와야 하므로 cheaper가 아니라 cheap이 맞다."
+      },
+      {
+        "qid": "b80830a0-589a-4eb2-9abc-62f2242b49e3",
+        "type": "mc",
+        "q": "Which form correctly fills the blank? \"The shirt, ____ in a factory overseas, cost only five dollars.\"",
+        "choices": [
+          "made",
+          "making",
+          "to make",
+          "makes",
+          "was made"
+        ],
+        "answer": "made",
+        "explanation": "셔츠는 '만들어진' 것이므로 수동의 과거분사 made가 삽입구로 쓰인다."
+      },
+      {
+        "qid": "9f4a1f4b-1dea-4240-961d-149c2f100416",
+        "type": "mc",
+        "q": "Which best describes the tone of the passage?",
+        "choices": [
+          "humorous and light",
+          "neutral and scientific",
+          "angry and hopeless",
+          "nostalgic and sad",
+          "persuasive and concerned"
+        ],
+        "answer": "persuasive and concerned",
+        "explanation": "환경 문제를 걱정하며 독자를 설득하는 어조이다."
+      },
+      {
+        "qid": "6c5c686b-b2a0-4394-959d-01d8c9bae6b4",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Fast fashion offers (A) ____ prices, but its hidden costs, such as wasted water and growing landfills, make it (B) ____ in the long run.\"",
+        "choices": [
+          "(A) high – (B) costly",
+          "(A) low – (B) beneficial",
+          "(A) low – (B) costly",
+          "(A) high – (B) harmless",
+          "(A) fair – (B) cheap"
+        ],
+        "answer": "(A) low – (B) costly",
+        "explanation": "가격은 낮지만(low) 숨은 비용 때문에 장기적으로는 대가가 크다(costly)."
+      },
+      {
+        "qid": "b31bde41-2ca2-4956-b6c6-bb704196e200",
+        "type": "mc",
+        "q": "Why does the writer include the question \"Do I really need this?\"",
+        "choices": [
+          "To encourage readers to think carefully before making a purchase",
+          "To ask readers to share their favorite clothes",
+          "To show that the writer does not understand fashion",
+          "To introduce a new topic about human needs",
+          "To make readers throw away their old clothes"
+        ],
+        "answer": "To encourage readers to think carefully before making a purchase",
+        "explanation": "사기 전에 필요성을 스스로 따져 보라는 실천 제안이다."
+      },
+      {
+        "qid": "b7953cf6-f283-4a4f-9409-17d4f43bb9b1",
+        "type": "order",
+        "items": [
+          "The claim that cheap clothes save money ignores how quickly they wear out.",
+          "Fast fashion has made clothes cheaper than ever, but the writer argues for buying less.",
+          "Readers are encouraged to repair, swap, or buy secondhand instead.",
+          "Poorly made clothes lose their shape and end up in landfills.",
+          "Producing clothes consumes huge amounts of water, which is wasted if the clothes are rarely worn."
+        ],
+        "answer": [
+          "Fast fashion has made clothes cheaper than ever, but the writer argues for buying less.",
+          "Producing clothes consumes huge amounts of water, which is wasted if the clothes are rarely worn.",
+          "Poorly made clothes lose their shape and end up in landfills.",
+          "The claim that cheap clothes save money ignores how quickly they wear out.",
+          "Readers are encouraged to repair, swap, or buy secondhand instead."
+        ]
+      },
+      {
+        "qid": "70f28494-65d1-4f8e-a68b-735ab4aa9bb0",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "consume",
+            "meaning": "소비하다, 써 버리다"
+          },
+          {
+            "word": "enormous",
+            "meaning": "막대한, 거대한"
+          },
+          {
+            "word": "decompose",
+            "meaning": "분해되다, 썩다"
+          },
+          {
+            "word": "consequently",
+            "meaning": "그 결과"
+          },
+          {
+            "word": "convinced",
+            "meaning": "확신하는"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "01593c58-681d-438a-a35c-bffdc63f27d7",
+        "q": "Explain what \"cheap clothes are not built to last\" means and how it is connected to the landfill problem. Write two English sentences.",
+        "wordLimit": 50,
+        "sampleAnswer": "It means that cheap clothes are made quickly from low-quality materials, so they wear out after only a few washes. Because they wear out so fast, many of them are thrown away and stay in landfills for many years.",
+        "rubric": "① 표현의 의미(오래가지 않게 만들어짐) ② 매립지 문제와의 인과 연결 ③ 완전한 영어 문장 2개"
+      },
+      {
+        "qid": "d3b3206a-50c7-4f95-bae8-d1c0c4c0d2ef",
+        "q": "우리말로 쓰시오: 글쓴이는 패스트패션이 '편리해 보인다'는 점을 인정하면서도 반대한다. 그 이유 두 가지를 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "첫째, 옷을 만드는 데 물 같은 자원이 막대하게 쓰여 잘 입지 않으면 그 자원이 낭비된다. 둘째, 싼 옷은 금방 망가져 버려지고 매립지에서 오랫동안 분해되지 않는다.",
+        "rubric": "① 자원(물) 낭비 ② 금방 버려져 매립지 문제 발생 — 두 가지 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "95d6448d-9217-4091-84ff-594f1d97e094",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '좋은 옷 한 벌이 여러 벌의 싼 옷보다 결국 더 싼 것으로 드러날 수 있다.' <조건> turn out to be를 사용할 것 / 비교급을 사용할 것",
+        "wordLimit": 20,
+        "sampleAnswer": "One good piece of clothing can turn out to be cheaper than several cheap ones.",
+        "rubric": "① can turn out to be ② 비교급 cheaper than ③ 의미 일치 (item/piece of clothing 모두 정답)"
+      },
+      {
+        "qid": "85bce902-1daa-4d73-ad43-9b00b5646993",
+        "q": "What opposing argument does the writer mention, and why does the writer think it is wrong? Write in English.",
+        "wordLimit": 50,
+        "sampleAnswer": "Some people argue that cheap clothes help people save money. The writer thinks this is wrong because a high-quality item that lasts for years can be cheaper than many cheap items that wear out quickly.",
+        "rubric": "① 반론 내용(돈 절약) ② 반박 근거(장기적으로 좋은 옷이 더 쌈) ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "5e42707a-21f3-4ac1-af63-e24004305f4e",
+        "q": "Choose ONE alternative the writer suggests and explain how it helps solve BOTH problems in the passage (wasting resources and creating waste). Write 2–3 English sentences.",
+        "wordLimit": 60,
+        "sampleAnswer": "Shopping at secondhand stores is a good alternative. It means no new resources are used to make the clothes, and clothes that might have gone to landfills are worn again.",
+        "rubric": "① 본문 대안 중 하나 선택 ② 자원 절약 설명 ③ 쓰레기 감소 설명 ④ 완전한 영어 문장 2~3개"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "{{g:Clothing has never been more affordable than it is today|never + 비교급 + than: 최상급 의미 (지금이 가장 저렴하다)}}. Many retailers sell T-shirts for roughly the price of a sandwich, and new collections appear almost every week. This {{v:phenomenon}}, {{g:commonly referred to as fast fashion|과거분사구 삽입: be referred to as ~ (~라고 불리다)}}, may appear convenient, yet I firmly believe that {{t:we ought to purchase fewer garments and wear them considerably longer}}.\n\nTo begin with, the production of clothing consumes an enormous quantity of resources. Manufacturing a single cotton T-shirt {{g:is estimated to require|be estimated to + 동사원형: ~하는 것으로 추정되다}} thousands of liters of water, {{g:which means that|계속적 용법의 관계대명사 which: 앞 절 전체를 받음}} every garment we purchase but seldom wear represents water that has been {{v:needlessly}} wasted.\n\nFurthermore, inexpensive clothing is rarely designed to {{v:endure}}. {{g:Having been manufactured hastily|완료 수동 분사구문(Having been p.p.): 주절보다 먼저 일어난 수동의 일 (= Because they had been manufactured)}} from low-quality materials, such garments frequently lose their shape after only a handful of washes. As a result, a substantial proportion of them are discarded and eventually {{v:accumulate}} in landfills, where they can take many years to decompose.\n\n{{g:Admittedly, some people may contend|Admittedly(양보) ~ Nevertheless(역접): 반론을 인정한 뒤 반박하는 구조}} that cheap clothing allows consumers to save money. Nevertheless, investing in a single {{v:durable}}, high-quality item that lasts for years can, in the long run, {{g:prove less expensive|prove + 형용사: ~임이 드러나다 (= turn out to be)}} than repeatedly buying several cheap items that wear out quickly.\n\nBefore purchasing new clothes, therefore, we should ask ourselves, \"Do I genuinely need this?\" Repairing worn clothing, exchanging garments with friends, and shopping at secondhand stores are all worthwhile alternatives. Ultimately, {{t:the choices we make as consumers can make a meaningful difference for the planet}}.",
+    "tags": {
+      "vocab": [
+        "affordable",
+        "phenomenon",
+        "garment",
+        "needlessly",
+        "endure",
+        "accumulate",
+        "contend",
+        "durable"
+      ],
+      "grammar": [
+        "never + 비교급 + than (최상급 의미)",
+        "be referred to as",
+        "be estimated to부정사",
+        "계속적 용법 which (앞 절 전체)",
+        "완료 수동 분사구문 (Having been p.p.)",
+        "prove + 형용사"
+      ],
+      "topic": [
+        "패스트패션",
+        "환경",
+        "현명한 소비"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "32301a33-38df-4858-8a47-8c82dc90a647",
+        "type": "mc",
+        "q": "다음 글의 요지로 가장 적절한 것은?",
+        "choices": [
+          "유행을 빠르게 따라가는 것이 합리적인 소비이다.",
+          "면 티셔츠 생산을 전면 금지해야 한다.",
+          "중고 매장의 옷은 새 옷보다 품질이 좋다.",
+          "값싼 옷의 숨은 비용을 고려해 옷을 덜 사고 오래 입어야 한다.",
+          "옷값이 싸지면 환경 문제는 자연히 해결된다."
+        ],
+        "answer": "값싼 옷의 숨은 비용을 고려해 옷을 덜 사고 오래 입어야 한다.",
+        "explanation": "'we ought to purchase fewer garments and wear them considerably longer'가 글의 요지이다."
+      },
+      {
+        "qid": "16c048e7-4b10-4c6e-be1b-dbf4854bd11a",
+        "type": "mc",
+        "q": "Which is the best topic of the passage?",
+        "choices": [
+          "the history of the cotton industry",
+          "the benefits of following fashion trends",
+          "ways to wash garments without losing their shape",
+          "the environmental and economic drawbacks of fast fashion",
+          "the rising price of food compared to clothing"
+        ],
+        "answer": "the environmental and economic drawbacks of fast fashion",
+        "explanation": "자원 낭비·매립지(환경)와 장기 비용(경제) 측면의 단점을 다룬다."
+      },
+      {
+        "qid": "bc76f106-d6a0-4b08-85bc-8fb207e071aa",
+        "type": "mc",
+        "q": "Which is the best title for the passage?",
+        "choices": [
+          "Fashion Without Limits",
+          "Cheap to Buy, Costly to Keep Buying",
+          "How Cotton Became King",
+          "The Joy of Weekly Shopping",
+          "Landfills: A Modern Wonder"
+        ],
+        "answer": "Cheap to Buy, Costly to Keep Buying",
+        "explanation": "한 벌은 싸지만 계속 사들이면 환경적·경제적 대가가 크다는 내용을 함축한다."
+      },
+      {
+        "qid": "c5416281-7989-4797-8ebe-3cc49ea0cd61",
+        "type": "mc",
+        "q": "What does the writer imply by saying that a garment we seldom wear \"represents water that has been needlessly wasted\"?",
+        "choices": [
+          "Clothes should be washed less often to save water.",
+          "Cotton farmers use more water than they need.",
+          "Water is the most expensive part of a T-shirt.",
+          "Garments absorb water when they are stored.",
+          "The environmental cost of an item is lost if the item is hardly used."
+        ],
+        "answer": "The environmental cost of an item is lost if the item is hardly used.",
+        "explanation": "옷을 만드는 데 들인 물(환경 비용)이 옷을 거의 입지 않으면 헛된 것이 된다는 뜻이다."
+      },
+      {
+        "qid": "21dd4502-27c2-4d0c-b54e-b93605ef8b28",
+        "type": "mc",
+        "q": "Which best fills in the blank? \"For the writer, the real price of a garment is measured not only by the money we pay but also by ____.\"",
+        "choices": [
+          "the resources it consumes and the waste it leaves behind",
+          "the number of styles it comes in",
+          "how quickly it can be replaced",
+          "how popular the brand is",
+          "the price of a sandwich"
+        ],
+        "answer": "the resources it consumes and the waste it leaves behind",
+        "explanation": "글쓴이의 두 근거(자원 소비, 매립지 쓰레기)가 곧 가격표에 보이지 않는 비용이다."
+      },
+      {
+        "qid": "6da59ac7-5c59-4e98-9c36-c6e5c84718e2",
+        "type": "mc",
+        "q": "The word \"endure\" in the third paragraph is closest in meaning to ____.",
+        "choices": [
+          "shrink",
+          "suffer",
+          "last",
+          "appear",
+          "attract"
+        ],
+        "answer": "last",
+        "explanation": "endure는 '견디다, 오래가다'라는 뜻으로, 여기서는 옷이 오래간다는 의미이다. suffer(고통받다)는 다른 뜻이다."
+      },
+      {
+        "qid": "dd3d466b-3c96-4300-bcd6-ab8a0da39a4e",
+        "type": "mc",
+        "q": "The word \"contend\" in the fourth paragraph is closest in meaning to ____.",
+        "choices": [
+          "compete",
+          "deny",
+          "claim",
+          "worry",
+          "agree"
+        ],
+        "answer": "claim",
+        "explanation": "contend that ~은 '~라고 주장하다'라는 뜻이다. compete(경쟁하다)는 다른 뜻이다."
+      },
+      {
+        "qid": "06df6f36-a5d3-4671-91a5-15d76dcfdabb",
+        "type": "mc",
+        "q": "Which best describes how the passage is organized?",
+        "choices": [
+          "claim → two supporting reasons → counterargument and rebuttal → practical suggestions",
+          "problem → history → statistics → conclusion",
+          "personal story → claim → examples → question",
+          "two opposing views → comparison → neutral conclusion",
+          "definition → classification → examples → summary"
+        ],
+        "answer": "claim → two supporting reasons → counterargument and rebuttal → practical suggestions",
+        "explanation": "주장(1문단) → To begin with/Furthermore 근거 2개 → Admittedly/Nevertheless 반론·반박 → 실천 제안 순이다."
+      },
+      {
+        "qid": "02baa527-db63-4efb-9b2b-a69b7e792673",
+        "type": "mc",
+        "q": "\"Admittedly\" and \"Nevertheless\" in the fourth paragraph work together to ____.",
+        "choices": [
+          "list two examples of the same idea",
+          "show a cause and its effect",
+          "summarize the whole passage",
+          "introduce a new problem",
+          "admit a point and then argue against it"
+        ],
+        "answer": "admit a point and then argue against it",
+        "explanation": "Admittedly(인정하건대)로 반론을 인정하고 Nevertheless(그럼에도 불구하고)로 반박한다."
+      },
+      {
+        "qid": "6758228d-bc60-4151-9831-f3765d382cf0",
+        "type": "mc",
+        "q": "Which is NOT consistent with the passage?",
+        "choices": [
+          "Some retailers sell T-shirts for about the price of a sandwich.",
+          "The writer argues that cheap garments break down quickly once they reach landfills.",
+          "The writer believes we ought to wear garments longer.",
+          "Cheap garments often lose their shape after a few washes.",
+          "The writer recommends exchanging garments with friends."
+        ],
+        "answer": "The writer argues that cheap garments break down quickly once they reach landfills.",
+        "explanation": "'where they can take many years to decompose'와 반대된다."
+      },
+      {
+        "qid": "7e66f177-f6dd-44ba-90e7-c5981025e3e8",
+        "type": "mc",
+        "q": "With which statement would the writer most likely agree?",
+        "choices": [
+          "Consumers are not responsible for environmental problems.",
+          "Fast fashion lets people express themselves at no real cost.",
+          "Durable clothing is a luxury only the rich should buy.",
+          "A garment's value depends partly on how many times it is actually worn.",
+          "Secondhand clothing should be avoided for hygiene reasons."
+        ],
+        "answer": "A garment's value depends partly on how many times it is actually worn.",
+        "explanation": "거의 입지 않는 옷은 자원을 헛되이 쓴 것이라고 했으므로, 실제로 입는 횟수가 가치를 좌우한다고 볼 것이다."
+      },
+      {
+        "qid": "99907297-5560-4c28-a3f8-9ec68a42c66a",
+        "type": "mc",
+        "q": "Which piece of evidence would best support the writer's rebuttal in the fourth paragraph?",
+        "choices": [
+          "A survey shows that people who buy durable coats spend less on outerwear over ten years.",
+          "A study shows that cheap T-shirts sell more than expensive ones.",
+          "A report finds that fast-fashion brands release dozens of styles a year.",
+          "An article explains how cotton is grown.",
+          "A survey shows that most people enjoy shopping on weekends."
+        ],
+        "answer": "A survey shows that people who buy durable coats spend less on outerwear over ten years.",
+        "explanation": "반박의 핵심은 오래가는 좋은 옷이 장기적으로 더 싸다는 것이므로 장기 지출 비교 자료가 뒷받침한다."
+      },
+      {
+        "qid": "1962c89a-a1a7-43eb-b5a9-d7cee3527a17",
+        "type": "mc",
+        "q": "What does \"such garments\" in the third paragraph refer to?",
+        "choices": [
+          "high-quality items that last for years",
+          "clothes sold at secondhand stores",
+          "garments exchanged with friends",
+          "clothes that have already been repaired",
+          "inexpensive clothes made hastily from low-quality materials"
+        ],
+        "answer": "inexpensive clothes made hastily from low-quality materials",
+        "explanation": "앞의 'inexpensive clothing ... manufactured hastily from low-quality materials'를 가리킨다."
+      },
+      {
+        "qid": "3d1d0910-418c-4bc9-98a7-7fb07427be7a",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "The bridge is estimated to cost millions of dollars.",
+          "She lent me a novel, which I finished in one night.",
+          "Having manufactured hastily, the toys broke within a week.",
+          "The old method may prove more effective than the new one.",
+          "Food has never been more expensive than it is now."
+        ],
+        "answer": "Having manufactured hastily, the toys broke within a week.",
+        "explanation": "장난감은 '만들어진' 것이므로 수동 분사구문 'Having been manufactured'가 되어야 한다."
+      },
+      {
+        "qid": "5f7dc670-2ebd-4f75-ade4-8b718c052b53",
+        "type": "mc",
+        "q": "Which form correctly fills the blank? \"This method, commonly ____ to as upcycling, turns old clothes into new products.\"",
+        "choices": [
+          "referred",
+          "referring",
+          "refers",
+          "to refer",
+          "is referred"
+        ],
+        "answer": "referred",
+        "explanation": "'~라고 불리는'은 be referred to as의 과거분사구 삽입이므로 referred가 알맞다."
+      },
+      {
+        "qid": "f5d4afde-b858-4071-ac9c-f0ddb2150f32",
+        "type": "mc",
+        "q": "Which best paraphrases the second sentence of the fourth paragraph?",
+        "choices": [
+          "One expensive item always costs more than many cheap items.",
+          "Cheap items become more durable over time.",
+          "Over time, one long-lasting item may cost less than many cheap ones.",
+          "High-quality items wear out as fast as cheap ones.",
+          "Spending money on clothing is never a wise decision."
+        ],
+        "answer": "Over time, one long-lasting item may cost less than many cheap ones.",
+        "explanation": "'in the long run, prove less expensive than repeatedly buying several cheap items'의 의미이다."
+      },
+      {
+        "qid": "4bd1bf4b-3ba8-4a6e-bad6-4f730b6125db",
+        "type": "mc",
+        "q": "The writer's attitude toward fast fashion is best described as ____.",
+        "choices": [
+          "enthusiastic and approving",
+          "indifferent and detached",
+          "hostile and hopeless",
+          "nostalgic and sentimental",
+          "critical but constructive"
+        ],
+        "answer": "critical but constructive",
+        "explanation": "패스트패션을 비판하면서도 고쳐 입기·교환·중고 구매 같은 구체적 대안을 제시한다."
+      },
+      {
+        "qid": "f72d59cd-54df-4950-8670-eec8a3f87e0c",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Fast fashion may seem (A) ____, but because it wastes resources and produces garments that are quickly (B) ____, consumers should buy less.\"",
+        "choices": [
+          "(A) convenient – (B) repaired",
+          "(A) convenient – (B) discarded",
+          "(A) harmful – (B) discarded",
+          "(A) expensive – (B) recycled",
+          "(A) inconvenient – (B) repaired"
+        ],
+        "answer": "(A) convenient – (B) discarded",
+        "explanation": "'may appear convenient', 'are discarded and eventually accumulate in landfills'의 요약이다."
+      },
+      {
+        "qid": "baecf4a7-ea77-4c1f-b700-6f40f36548dd",
+        "type": "order",
+        "items": [
+          "Hastily made garments soon lose their shape and accumulate in landfills.",
+          "Consumers should question their needs and turn to repairing, exchanging, or buying secondhand.",
+          "Clothing production consumes vast resources, which are wasted when garments go unworn.",
+          "The view that cheap clothing saves money overlooks long-term costs.",
+          "The writer admits that fast fashion appears convenient but calls for buying fewer garments."
+        ],
+        "answer": [
+          "The writer admits that fast fashion appears convenient but calls for buying fewer garments.",
+          "Clothing production consumes vast resources, which are wasted when garments go unworn.",
+          "Hastily made garments soon lose their shape and accumulate in landfills.",
+          "The view that cheap clothing saves money overlooks long-term costs.",
+          "Consumers should question their needs and turn to repairing, exchanging, or buying secondhand."
+        ]
+      },
+      {
+        "qid": "0be9c8e5-3d3c-471f-8033-41431f5ade6a",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "affordable",
+            "meaning": "(가격이) 감당할 수 있는, 저렴한"
+          },
+          {
+            "word": "garment",
+            "meaning": "의복, 옷 한 벌"
+          },
+          {
+            "word": "endure",
+            "meaning": "오래가다, 견디다"
+          },
+          {
+            "word": "accumulate",
+            "meaning": "쌓이다, 축적되다"
+          },
+          {
+            "word": "contend",
+            "meaning": "주장하다"
+          },
+          {
+            "word": "durable",
+            "meaning": "내구성 있는, 오래가는"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "173dda1a-07e1-4e8a-9f7b-c03c6048056a",
+        "q": "Explain in your own words what the writer means by \"every garment we purchase but seldom wear represents water that has been needlessly wasted.\" Write two English sentences.",
+        "wordLimit": 60,
+        "sampleAnswer": "Making any piece of clothing uses a large amount of water. If we buy clothes but hardly wear them, all the water used to make them has been used for nothing.",
+        "rubric": "① 생산에 물이 많이 든다는 점 ② 입지 않으면 그 물이 헛되다는 점 ③ 본문 표현을 그대로 베끼지 않고 자신의 말로 ④ 완전한 영어 문장 2개"
+      },
+      {
+        "qid": "27a83966-b873-4434-a948-5c0082de27a2",
+        "q": "우리말로 쓰시오: 네 번째 문단에서 글쓴이는 'Admittedly'와 'Nevertheless'를 사용해 어떤 방식으로 논리를 전개하는지 내용과 함께 설명하시오.",
+        "wordLimit": 70,
+        "sampleAnswer": "먼저 'Admittedly'로 싼 옷이 돈을 아끼게 해 준다는 반대 주장을 일단 인정한다. 그런 다음 'Nevertheless'로 오래가는 좋은 옷 한 벌이 장기적으로는 싼 옷을 여러 번 사는 것보다 덜 든다고 반박한다.",
+        "rubric": "① 반론 인정(양보) – 내용 포함 ② 반박(역접) – 내용 포함 ③ 두 단계의 순서가 드러나면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "f007a228-35da-43de-b324-4df35673dfa3",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '질 낮은 재료로 급하게 만들어졌기 때문에, 그 옷들은 금방 모양이 망가졌다.' <조건> 완료 수동 분사구문(Having been p.p.)으로 시작할 것",
+        "wordLimit": 20,
+        "sampleAnswer": "Having been made hastily from low-quality materials, the clothes quickly lost their shape.",
+        "rubric": "① Having been + p.p. 분사구문 ② 주절 시제 과거(lost) ③ 의미 일치 (made/manufactured, hastily/quickly 모두 정답)"
+      },
+      {
+        "qid": "3a6e7e52-d3af-4d5c-b234-3bbca619c170",
+        "q": "The writer suggests buying high-quality items instead of cheap ones. Point out one possible weakness of this suggestion, and explain how the writer's other advice could still help. Write 2–3 English sentences.",
+        "wordLimit": 70,
+        "sampleAnswer": "Not everyone can afford to pay more for a high-quality item at once. However, those people can still follow the writer's advice by repairing old clothes, swapping with friends, or buying secondhand, which costs little.",
+        "rubric": "① 타당한 약점 1개(예: 초기 비용 부담) ② 본문의 다른 대안과 연결한 보완 ③ 완전한 영어 문장 2~3개"
+      },
+      {
+        "qid": "4b980cda-359a-46e2-9a45-a361ed5aa796",
+        "q": "Summarize the passage in about 30 words in English. Include the writer's claim, the two reasons, and the suggested solution.",
+        "wordLimit": 40,
+        "sampleAnswer": "The writer argues that we should buy fewer clothes because their production wastes resources like water and cheap clothes soon end up in landfills, so we should repair, swap, or buy secondhand.",
+        "rubric": "① 주장 ② 근거 2개(자원 낭비, 매립지) ③ 해결책 ④ 30단어 내외 한두 문장"
+      }
+    ]
+  }
+}

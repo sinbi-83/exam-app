@@ -1,0 +1,1163 @@
+{
+  "school": {
+    "tagged_body": "I think {{t:children should clean their own rooms}}. I have three reasons.\nFirst, it is our own {{v:space}}. We use our rooms every day. So {{g:we should take care of them|should + 동사원형: ~해야 한다}}.\nSecond, cleaning makes us {{v:responsible}}. I clean my room by myself. I put things back in the right place. Now I don't lose my things often.\nThird, it helps our parents. Mom and Dad are very {{v:busy}} at work and at home. {{g:If we clean our rooms|If 조건절: '만약 ~한다면'}}, they can {{v:rest}} a little more.\nSome people say children are too busy with homework. But cleaning a room doesn't take long. Just fifteen minutes a day is {{v:enough}}.\nSo, {{g:let's clean our own rooms|Let's + 동사원형: '~하자' (제안)}}. {{t:It is good for us and our families!}}",
+    "tags": {
+      "vocab": [
+        "space",
+        "responsible",
+        "busy",
+        "rest",
+        "enough"
+      ],
+      "grammar": [
+        "should + 동사원형",
+        "If 조건절",
+        "Let's + 동사원형"
+      ],
+      "topic": [
+        "방 청소",
+        "책임감",
+        "가족 돕기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "c1f02be2-2263-4c7d-8c5e-db290015fa27",
+        "type": "mc",
+        "q": "What does the writer think?",
+        "choices": [
+          "Parents should clean children's rooms.",
+          "Children should do more homework.",
+          "Children should clean their own rooms.",
+          "Children don't need their own rooms.",
+          "Rooms should be cleaned once a month."
+        ],
+        "answer": "Children should clean their own rooms.",
+        "explanation": "첫 문장 'I think children should clean their own rooms.'가 글쓴이의 생각이다."
+      },
+      {
+        "qid": "fac4a23c-5ba4-4d63-9caf-ea940bd6721b",
+        "type": "mc",
+        "q": "How many reasons does the writer give?",
+        "choices": [
+          "Three",
+          "One",
+          "Two",
+          "Four",
+          "Five"
+        ],
+        "answer": "Three",
+        "explanation": "'I have three reasons.'와 일치한다."
+      },
+      {
+        "qid": "359c5006-5023-44fc-9d73-bdd8a71deb63",
+        "type": "mc",
+        "q": "Why should we take care of our rooms?",
+        "choices": [
+          "Because our rooms are very big",
+          "Because our parents tell us to",
+          "Because we have a lot of toys",
+          "Because we use our rooms every day",
+          "Because our friends visit often"
+        ],
+        "answer": "Because we use our rooms every day",
+        "explanation": "'We use our rooms every day. So we should take care of them.'와 일치한다."
+      },
+      {
+        "qid": "56aefad8-57d7-40d9-beb6-f9bc2380297f",
+        "type": "mc",
+        "q": "What does the writer do when cleaning the room?",
+        "choices": [
+          "The writer throws away old toys.",
+          "The writer puts things back in the right place.",
+          "The writer asks Mom for help.",
+          "The writer buys new things.",
+          "The writer moves to a new room."
+        ],
+        "answer": "The writer puts things back in the right place.",
+        "explanation": "'I put things back in the right place.'와 일치한다."
+      },
+      {
+        "qid": "37b7aa52-11f2-4cae-be2a-33797fb4d32c",
+        "type": "mc",
+        "q": "What is different for the writer now?",
+        "choices": [
+          "The writer has a bigger room.",
+          "The writer has more homework.",
+          "The writer loses things every day.",
+          "The writer never cleans the room.",
+          "The writer doesn't lose things often."
+        ],
+        "answer": "The writer doesn't lose things often.",
+        "explanation": "'Now I don't lose my things often.'와 일치한다."
+      },
+      {
+        "qid": "ceda239e-23c5-42c1-a092-6064fe67596c",
+        "type": "mc",
+        "q": "Who is very busy at work and at home?",
+        "choices": [
+          "Teachers",
+          "Friends",
+          "Mom and Dad",
+          "Children",
+          "Grandparents"
+        ],
+        "answer": "Mom and Dad",
+        "explanation": "'Mom and Dad are very busy at work and at home.'와 일치한다."
+      },
+      {
+        "qid": "989d2d54-3840-441d-be1a-6e572d10a6f7",
+        "type": "mc",
+        "q": "What can parents do if children clean their rooms?",
+        "choices": [
+          "They can work more.",
+          "They can rest a little more.",
+          "They can buy a new house.",
+          "They can clean the kitchen.",
+          "They can do our homework."
+        ],
+        "answer": "They can rest a little more.",
+        "explanation": "'If we clean our rooms, they can rest a little more.'와 일치한다."
+      },
+      {
+        "qid": "96e13974-f36c-48b4-9b03-90c040a0e9ae",
+        "type": "mc",
+        "q": "What do some people say?",
+        "choices": [
+          "Children like cleaning very much.",
+          "Parents should not work.",
+          "Rooms are not important.",
+          "Children are too busy with homework.",
+          "Cleaning takes only one minute."
+        ],
+        "answer": "Children are too busy with homework.",
+        "explanation": "'Some people say children are too busy with homework.'와 일치한다."
+      },
+      {
+        "qid": "bc76ca6f-c618-4a21-b12d-e81c4f182238",
+        "type": "mc",
+        "q": "How much time a day is enough for cleaning a room?",
+        "choices": [
+          "Fifteen minutes",
+          "Five minutes",
+          "Fifty minutes",
+          "Thirty minutes",
+          "One hour"
+        ],
+        "answer": "Fifteen minutes",
+        "explanation": "'Just fifteen minutes a day is enough.'와 일치한다."
+      },
+      {
+        "qid": "40d087b3-e56b-490b-8177-37235c79d07e",
+        "type": "mc",
+        "q": "Who is cleaning our own rooms good for?",
+        "choices": [
+          "Only our teachers",
+          "Only our friends",
+          "Only our neighbors",
+          "Nobody",
+          "Us and our families"
+        ],
+        "answer": "Us and our families",
+        "explanation": "'It is good for us and our families!'와 일치한다."
+      },
+      {
+        "qid": "750c9e26-c962-4868-8b79-1d46ce6dc817",
+        "type": "blank",
+        "q": "First, it is our own ____.",
+        "answer": "space",
+        "explanation": "'it is our own space'에서 확인할 수 있다."
+      },
+      {
+        "qid": "df0058c3-8fbb-4bca-8be7-22f372c796c2",
+        "type": "blank",
+        "q": "I put things back in the right ____.",
+        "answer": "place",
+        "explanation": "'in the right place'에서 확인할 수 있다."
+      },
+      {
+        "qid": "dc0495c9-1e4e-4599-bded-4fe9e708c865",
+        "type": "blank",
+        "q": "Mom and Dad are very ____ at work and at home.",
+        "answer": "busy",
+        "explanation": "'Mom and Dad are very busy at work and at home.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "9f0c754a-b69f-4c2c-8005-09a4139a89bc",
+        "type": "blank",
+        "q": "If we clean our rooms, they can ____ a little more.",
+        "answer": "rest",
+        "explanation": "'they can rest a little more'에서 확인할 수 있다."
+      },
+      {
+        "qid": "598b017e-ab12-4097-b1d3-58ef4e6a30f2",
+        "type": "blank",
+        "q": "Just fifteen minutes a day is ____.",
+        "answer": "enough",
+        "explanation": "'Just fifteen minutes a day is enough.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "0238eff6-4e56-4301-b97e-f997293c654a",
+        "type": "tf",
+        "q": "The writer gives two reasons.",
+        "answer": false,
+        "explanation": "'I have three reasons.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "6d044ae7-3b2a-4722-83ea-b2a923823e42",
+        "type": "tf",
+        "q": "The writer loses things often now.",
+        "answer": false,
+        "explanation": "'Now I don't lose my things often.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "39b97e77-557c-4aa0-b87a-1783c2bb6937",
+        "type": "tf",
+        "q": "Cleaning a room doesn't take long.",
+        "answer": true,
+        "explanation": "'But cleaning a room doesn't take long.'과 일치한다."
+      },
+      {
+        "qid": "d79c55bd-312d-4b1b-9aba-ed1050e7db82",
+        "type": "order",
+        "items": [
+          "Third, it helps our parents.",
+          "First, it is our own space.",
+          "Some people say children are too busy with homework.",
+          "Second, cleaning makes us responsible."
+        ],
+        "answer": [
+          "First, it is our own space.",
+          "Second, cleaning makes us responsible.",
+          "Third, it helps our parents.",
+          "Some people say children are too busy with homework."
+        ]
+      },
+      {
+        "qid": "6106b3cd-8f55-4b58-bc24-aa31a6d187e1",
+        "type": "mc",
+        "q": "What does the underlined word 'responsible' mean in this passage?",
+        "choices": [
+          "공간",
+          "책임감 있는",
+          "바쁜",
+          "충분한",
+          "쉬다"
+        ],
+        "answer": "책임감 있는",
+        "explanation": "'responsible'는 '책임감 있는'라는 뜻이다. 'cleaning makes us responsible'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "4c25e5b5-8819-43b9-a6fb-6e15c6be9d35",
+        "q": "What does the writer think children should do? Write one sentence in English.",
+        "wordLimit": 10,
+        "sampleAnswer": "Children should clean their own rooms.",
+        "rubric": "자기 방을 스스로 청소해야 한다는 내용을 완전한 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "0c045bd9-e1e3-4f5a-85c8-519f65253413",
+        "q": "How much time a day is enough for cleaning a room? Write in English.",
+        "wordLimit": 10,
+        "sampleAnswer": "Just fifteen minutes a day is enough.",
+        "rubric": "15분이라는 내용을 완전한 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "9fd2aa7c-ef28-4040-ba09-a252ef001f84",
+        "q": "우리말로 쓰시오: 글쓴이는 방을 스스로 청소한 뒤 무엇이 달라졌나요?",
+        "wordLimit": 30,
+        "sampleAnswer": "물건을 제자리에 두게 되어서 이제 물건을 자주 잃어버리지 않는다.",
+        "rubric": "물건을 자주 잃어버리지 않게 되었다는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "69a1dc11-26c4-4160-b018-350856c511fb",
+        "q": "Who is very busy at work and at home? Write in English.",
+        "wordLimit": 10,
+        "sampleAnswer": "Mom and Dad are very busy at work and at home.",
+        "rubric": "엄마와 아빠(부모님)라는 내용을 완전한 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "7d26e961-2df2-4682-83a7-1ea948e2badb",
+        "q": "우리말로 쓰시오: 글쓴이가 말한 세 가지 이유를 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "① 방은 우리 자신의 공간이다. ② 청소는 우리를 책임감 있게 만든다. ③ 부모님을 도울 수 있다.",
+        "rubric": "세 가지 이유를 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "I think {{t:children should clean their own rooms}}. I have three reasons.\nFirst, it is our own {{v:space}}. We use our rooms every day, so we should take care of them.\nSecond, {{g:cleaning helps us become|help + 목적어 + 동사원형: ~가 …하도록 돕다}} responsible. When I clean my room by myself, I {{g:learn to put things back|learn + to부정사: ~하는 것을 배우다}} in the right place. Now I don't {{v:lose}} my things often.\nThird, it helps our parents. Parents are very {{v:busy}} at work and at home. {{g:If we clean our rooms|If 조건절: '만약 ~한다면'}}, they can {{v:rest}} a little more.\nSome people say children are too busy with homework. But cleaning a room doesn't take a long time. Just fifteen minutes a day is {{v:enough}}.\nSo, {{g:let's clean our own rooms|Let's + 동사원형: '~하자' (제안)}}. {{t:It is good for us and for our families!}}",
+    "tags": {
+      "vocab": [
+        "space",
+        "lose",
+        "busy",
+        "rest",
+        "enough"
+      ],
+      "grammar": [
+        "help + 목적어 + 동사원형",
+        "learn + to부정사",
+        "If 조건절",
+        "Let's + 동사원형"
+      ],
+      "topic": [
+        "방 청소",
+        "책임감",
+        "주장과 이유"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "b8962529-a887-4bb6-9c39-2891f33db8cc",
+        "type": "mc",
+        "q": "What is the writer's opinion?",
+        "choices": [
+          "Parents should clean children's rooms.",
+          "Children should clean the whole house.",
+          "Children should clean their own rooms.",
+          "Children should not have their own rooms.",
+          "Rooms do not need cleaning."
+        ],
+        "answer": "Children should clean their own rooms.",
+        "explanation": "첫 문장 'I think children should clean their own rooms.'가 글쓴이의 의견이다."
+      },
+      {
+        "qid": "f3410e01-0ac1-491f-88c6-ee7d0ce3640a",
+        "type": "mc",
+        "q": "Why should we take care of our rooms, according to the first reason?",
+        "choices": [
+          "Because we use our rooms every day",
+          "Because our rooms are dirty",
+          "Because our teachers check them",
+          "Because we sleep there only on weekends",
+          "Because our friends use them"
+        ],
+        "answer": "Because we use our rooms every day",
+        "explanation": "'We use our rooms every day, so we should take care of them.'와 일치한다."
+      },
+      {
+        "qid": "6519bd8a-16e3-4831-a14d-6c86876a1d9a",
+        "type": "mc",
+        "q": "What does cleaning help us become?",
+        "choices": [
+          "Busy",
+          "Tired",
+          "Lazy",
+          "Responsible",
+          "Bored"
+        ],
+        "answer": "Responsible",
+        "explanation": "'cleaning helps us become responsible'와 일치한다."
+      },
+      {
+        "qid": "e101cf27-90c1-4c9a-b5e1-39e0c14b11ec",
+        "type": "mc",
+        "q": "What does the writer learn by cleaning alone?",
+        "choices": [
+          "To buy new things",
+          "To put things back in the right place",
+          "To finish homework faster",
+          "To cook for the family",
+          "To ask parents for help"
+        ],
+        "answer": "To put things back in the right place",
+        "explanation": "'I learn to put things back in the right place.'와 일치한다."
+      },
+      {
+        "qid": "3eff5ce4-25e3-44dd-94ed-ed7bfc21d5c3",
+        "type": "mc",
+        "q": "What is the result of the writer's cleaning habit?",
+        "choices": [
+          "The writer has more toys.",
+          "The writer loses things more often.",
+          "The writer gets more homework.",
+          "The writer sleeps longer.",
+          "The writer doesn't lose things often."
+        ],
+        "answer": "The writer doesn't lose things often.",
+        "explanation": "'Now I don't lose my things often.'와 일치한다."
+      },
+      {
+        "qid": "ca8623cb-278f-48c5-9ee7-97a0dc270e83",
+        "type": "mc",
+        "q": "How does cleaning our rooms help our parents?",
+        "choices": [
+          "They can work later.",
+          "They can go on a trip.",
+          "They can rest a little more.",
+          "They can clean our rooms again.",
+          "They can buy us gifts."
+        ],
+        "answer": "They can rest a little more.",
+        "explanation": "'If we clean our rooms, they can rest a little more.'와 일치한다."
+      },
+      {
+        "qid": "7ff0f4e7-49d5-448e-8f9d-d7d3293a23a5",
+        "type": "mc",
+        "q": "Where are parents very busy?",
+        "choices": [
+          "Only at work",
+          "At work and at home",
+          "Only at home",
+          "At school and at the park",
+          "At the store"
+        ],
+        "answer": "At work and at home",
+        "explanation": "'Parents are very busy at work and at home.'와 일치한다."
+      },
+      {
+        "qid": "1b27fe21-40ba-4e0e-af6b-57a55d86e218",
+        "type": "mc",
+        "q": "What do some people say about children?",
+        "choices": [
+          "They are too young to clean.",
+          "They do not like their rooms.",
+          "They clean too much.",
+          "They are too busy with homework.",
+          "They should help at work."
+        ],
+        "answer": "They are too busy with homework.",
+        "explanation": "'Some people say children are too busy with homework.'와 일치한다."
+      },
+      {
+        "qid": "7a577db5-59fc-42ff-966b-f5e5ce3c4ad9",
+        "type": "mc",
+        "q": "How does the writer answer those people?",
+        "choices": [
+          "Cleaning a room doesn't take a long time.",
+          "Homework is not important.",
+          "Children should stop doing homework.",
+          "Parents should do the homework.",
+          "Cleaning takes two hours a day."
+        ],
+        "answer": "Cleaning a room doesn't take a long time.",
+        "explanation": "'But cleaning a room doesn't take a long time. Just fifteen minutes a day is enough.'로 답한다."
+      },
+      {
+        "qid": "a15a3fde-efc4-4937-a4b8-a8b013054303",
+        "type": "mc",
+        "q": "What does the writer want readers to do at the end?",
+        "choices": [
+          "Do more homework",
+          "Help their friends",
+          "Buy new furniture",
+          "Rest more at home",
+          "Clean their own rooms"
+        ],
+        "answer": "Clean their own rooms",
+        "explanation": "'So, let's clean our own rooms.'로 독자에게 제안한다."
+      },
+      {
+        "qid": "6115c5fc-352c-4c43-a0d6-31909a888484",
+        "type": "blank",
+        "q": "First, it is our own ____.",
+        "answer": "space",
+        "explanation": "'it is our own space'에서 확인할 수 있다."
+      },
+      {
+        "qid": "f32f1205-4da0-4248-903e-505d885ca03c",
+        "type": "blank",
+        "q": "Second, cleaning helps us become ____.",
+        "answer": "responsible",
+        "explanation": "'cleaning helps us become responsible'에서 확인할 수 있다."
+      },
+      {
+        "qid": "03f78dd8-d725-45c8-8233-93ef967d110e",
+        "type": "blank",
+        "q": "Parents are very busy at work and at ____.",
+        "answer": "home",
+        "explanation": "'at work and at home'에서 확인할 수 있다."
+      },
+      {
+        "qid": "cad5ffae-3feb-4712-a7cc-b4f2a7fd1eb7",
+        "type": "blank",
+        "q": "If we clean our rooms, they can ____ a little more.",
+        "answer": "rest",
+        "explanation": "'they can rest a little more'에서 확인할 수 있다."
+      },
+      {
+        "qid": "7fcd293c-063b-4276-aab3-cbf08f4e39ca",
+        "type": "blank",
+        "q": "Just ____ minutes a day is enough.",
+        "answer": "fifteen",
+        "explanation": "'Just fifteen minutes a day is enough.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "48f17f74-5998-48c0-8d48-caba58e31cf5",
+        "type": "tf",
+        "q": "The writer thinks parents should clean children's rooms.",
+        "answer": false,
+        "explanation": "글쓴이는 아이들이 스스로 방을 청소해야 한다고 생각하므로 사실이 아니다."
+      },
+      {
+        "qid": "88ef5c5c-763f-403b-9731-337e329ea80c",
+        "type": "tf",
+        "q": "The writer cleans the room alone.",
+        "answer": true,
+        "explanation": "'When I clean my room by myself'와 일치한다."
+      },
+      {
+        "qid": "14841eda-1213-41ab-bdac-41eaca463a92",
+        "type": "tf",
+        "q": "The writer says cleaning a room takes an hour a day.",
+        "answer": false,
+        "explanation": "'Just fifteen minutes a day is enough.'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "d53c0ea4-45f3-449b-985e-a3c3bc943e02",
+        "type": "order",
+        "items": [
+          "Third, it helps our parents.",
+          "First, it is our own space.",
+          "Some people say children are too busy with homework.",
+          "Second, cleaning helps us become responsible."
+        ],
+        "answer": [
+          "First, it is our own space.",
+          "Second, cleaning helps us become responsible.",
+          "Third, it helps our parents.",
+          "Some people say children are too busy with homework."
+        ]
+      },
+      {
+        "qid": "ba82c55c-a2a3-4666-9211-aff9440e5ac1",
+        "type": "mc",
+        "q": "What does the underlined word 'enough' mean in this passage?",
+        "choices": [
+          "공간",
+          "충분한",
+          "잃어버리다",
+          "바쁜",
+          "쉬다"
+        ],
+        "answer": "충분한",
+        "explanation": "'enough'는 '충분한'라는 뜻이다. 'Just fifteen minutes a day is enough.'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "21fef1bd-f5f4-437c-9a1c-412e34a5cc9d",
+        "q": "Why should we take care of our rooms? Write one sentence in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "Because it is our own space and we use it every day.",
+        "rubric": "우리 공간이라는 점 또는 매일 사용한다는 점을 완전한 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "7064ba89-9ecc-4317-b058-9ca4642aae7c",
+        "q": "What does the writer learn by cleaning the room alone? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "The writer learns to put things back in the right place.",
+        "rubric": "물건을 제자리에 두는 법을 배운다는 내용이면 만점"
+      },
+      {
+        "qid": "330ba8e6-18ef-4bf5-829f-d4ed02c3a45e",
+        "q": "우리말로 쓰시오: 일부 사람들은 무엇이라고 말하고, 글쓴이는 어떻게 대답했나요?",
+        "wordLimit": 50,
+        "sampleAnswer": "아이들은 숙제 때문에 너무 바쁘다고 말하지만, 글쓴이는 방 청소는 오래 걸리지 않고 하루 15분이면 충분하다고 대답했다.",
+        "rubric": "① 반대 의견(숙제로 바쁨) ② 글쓴이의 대답(15분이면 충분) 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "ab548939-68ee-4867-8b29-d30777638f9c",
+        "q": "How can children help their parents? Write in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "If children clean their rooms, their parents can rest a little more.",
+        "rubric": "방 청소 → 부모님이 더 쉴 수 있다는 내용을 쓰면 만점"
+      },
+      {
+        "qid": "9963950f-8409-4a42-ba82-d7c00e5d1e9c",
+        "q": "우리말로 쓰시오: 글쓴이가 아이들이 방을 청소해야 한다고 말한 세 가지 이유를 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "① 방은 우리 자신의 공간이다. ② 청소는 책임감을 길러 준다. ③ 바쁜 부모님을 도울 수 있다.",
+        "rubric": "세 가지 이유를 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "I believe that {{t:children should clean their own rooms}}, and I have three reasons for this.\nFirst, our rooms are our own {{v:personal}} space. {{g:Since we use them every single day|이유 접속사 since: '~이기 때문에'}}, we should be the ones {{g:who take care of them|주격 관계대명사 who: 앞의 the ones를 꾸밈}}.\nSecond, cleaning helps us become more {{v:responsible}}. When I clean my room by myself, I {{g:learn to put everything back|learn + to부정사: ~하는 것을 배우다}} in the right place. Thanks to this {{v:habit}}, I don't lose my things as often as before.\nThird, cleaning our own rooms helps our parents. Parents are very busy, both at work and at home. If we clean our rooms ourselves, they can get a little more rest.\nSome people say that children are {{g:too busy with homework to clean|too ~ to ...: 너무 ~해서 …할 수 없다}}. However, cleaning a room doesn't take very long. Just fifteen minutes a day is enough to keep it {{v:neat}}.\nSo, let's start cleaning our own rooms. It is good {{g:not only for us but also for our families|not only A but also B: A뿐만 아니라 B도}}!",
+    "tags": {
+      "vocab": [
+        "personal",
+        "responsible",
+        "habit",
+        "neat"
+      ],
+      "grammar": [
+        "이유 접속사 since",
+        "주격 관계대명사 who",
+        "learn + to부정사",
+        "too ~ to ...",
+        "not only A but also B"
+      ],
+      "topic": [
+        "방 청소",
+        "책임감",
+        "반대 의견과 대답"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "fe528d7a-d681-4b70-9ddb-65f54d1949d0",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "Parents work too hard.",
+          "Homework is more important than cleaning.",
+          "Children should clean their own rooms.",
+          "Children need bigger rooms.",
+          "Cleaning should be done once a week."
+        ],
+        "answer": "Children should clean their own rooms.",
+        "explanation": "'I believe that children should clean their own rooms'가 글의 중심 생각이다."
+      },
+      {
+        "qid": "ae4a1fe3-830b-4ef8-8e95-9c999445992c",
+        "type": "mc",
+        "q": "Why does the writer think we should take care of our rooms?",
+        "choices": [
+          "Because we use them every single day",
+          "Because our parents are too tired",
+          "Because our rooms are very small",
+          "Because we have too many things",
+          "Because our friends visit every day"
+        ],
+        "answer": "Because we use them every single day",
+        "explanation": "'Since we use them every single day, we should be the ones who take care of them.'와 일치한다."
+      },
+      {
+        "qid": "9205375f-7cbb-4d93-894f-79235c543549",
+        "type": "mc",
+        "q": "What does \"them\" refer to in \"we should be the ones who take care of them\"?",
+        "choices": [
+          "Our parents",
+          "Our friends",
+          "Our things",
+          "Our rooms",
+          "Our reasons"
+        ],
+        "answer": "Our rooms",
+        "explanation": "'them'은 앞 문장의 'our rooms'를 가리킨다."
+      },
+      {
+        "qid": "a9f340fc-58d2-4690-ad12-c7158c5bb15d",
+        "type": "mc",
+        "q": "What does the writer learn when cleaning alone?",
+        "choices": [
+          "To throw everything away",
+          "To put everything back in the right place",
+          "To clean the whole house",
+          "To ask for help",
+          "To buy new things"
+        ],
+        "answer": "To put everything back in the right place",
+        "explanation": "'I learn to put everything back in the right place.'와 일치한다."
+      },
+      {
+        "qid": "e4688c1a-b671-4239-a214-6c3e7bf9fa9c",
+        "type": "mc",
+        "q": "What happened \"thanks to this habit\"?",
+        "choices": [
+          "The writer has a new room.",
+          "The writer loses more things.",
+          "The writer stopped doing homework.",
+          "The writer got a prize.",
+          "The writer doesn't lose things as often as before."
+        ],
+        "answer": "The writer doesn't lose things as often as before.",
+        "explanation": "'Thanks to this habit, I don't lose my things as often as before.'와 일치한다."
+      },
+      {
+        "qid": "5ac49a66-7dbe-43a7-959d-21c13283402a",
+        "type": "mc",
+        "q": "How does cleaning our own rooms help our parents?",
+        "choices": [
+          "They can earn more money.",
+          "They can stay at work longer.",
+          "They can get a little more rest.",
+          "They can clean our rooms faster.",
+          "They can do more housework."
+        ],
+        "answer": "They can get a little more rest.",
+        "explanation": "'If we clean our rooms ourselves, they can get a little more rest.'와 일치한다."
+      },
+      {
+        "qid": "bba9a386-b159-4c31-babc-9c109f5f483d",
+        "type": "mc",
+        "q": "What do some people say about children?",
+        "choices": [
+          "They clean their rooms too often.",
+          "They are too busy with homework to clean.",
+          "They are too young to have rooms.",
+          "They help their parents too much.",
+          "They like cleaning more than homework."
+        ],
+        "answer": "They are too busy with homework to clean.",
+        "explanation": "'Some people say that children are too busy with homework to clean.'와 일치한다."
+      },
+      {
+        "qid": "23d2030d-350d-485d-958a-6a087a8467b9",
+        "type": "mc",
+        "q": "How does the writer answer those people?",
+        "choices": [
+          "Homework is not important.",
+          "Children should sleep less.",
+          "Parents should help with homework.",
+          "Cleaning a room doesn't take very long.",
+          "Cleaning should be done on weekends only."
+        ],
+        "answer": "Cleaning a room doesn't take very long.",
+        "explanation": "'However, cleaning a room doesn't take very long.'로 반박한다."
+      },
+      {
+        "qid": "9f6c6eee-14f8-49af-8d74-4cd3c623f9a2",
+        "type": "mc",
+        "q": "What is enough to keep a room neat?",
+        "choices": [
+          "Just fifteen minutes a day",
+          "Five hours a week",
+          "One hour a day",
+          "Fifty minutes a day",
+          "Two hours on weekends"
+        ],
+        "answer": "Just fifteen minutes a day",
+        "explanation": "'Just fifteen minutes a day is enough to keep it neat.'와 일치한다."
+      },
+      {
+        "qid": "5efe6058-e535-4893-a00c-c6c88346a7e7",
+        "type": "mc",
+        "q": "Who does the writer say cleaning our own rooms is good for?",
+        "choices": [
+          "Only our parents",
+          "Only our teachers",
+          "Only us",
+          "Only our friends",
+          "Both us and our families"
+        ],
+        "answer": "Both us and our families",
+        "explanation": "'It is good not only for us but also for our families!'와 일치한다."
+      },
+      {
+        "qid": "9a4755c9-fa4e-4b72-9428-7ce935d2f3ce",
+        "type": "blank",
+        "q": "First, our rooms are our own personal ____.",
+        "answer": "space",
+        "explanation": "'our own personal space'에서 확인할 수 있다."
+      },
+      {
+        "qid": "7d50b151-8ec8-454c-80b3-a4cdc7a4f609",
+        "type": "blank",
+        "q": "Thanks to this ____, I don't lose my things as often as before.",
+        "answer": "habit",
+        "explanation": "'Thanks to this habit'에서 확인할 수 있다."
+      },
+      {
+        "qid": "0effdb9d-8000-422a-bc8a-9bcd23a2e0f7",
+        "type": "blank",
+        "q": "Parents are very busy, both at work and at ____.",
+        "answer": "home",
+        "explanation": "'both at work and at home'에서 확인할 수 있다."
+      },
+      {
+        "qid": "fdc5f615-b255-41c0-83ae-07907a650950",
+        "type": "blank",
+        "q": "If we clean our rooms ourselves, they can get a little more ____.",
+        "answer": "rest",
+        "explanation": "'they can get a little more rest'에서 확인할 수 있다."
+      },
+      {
+        "qid": "9cf0fc4b-d947-4ad5-a390-6cb441e8a1e0",
+        "type": "blank",
+        "q": "Just fifteen minutes a day is enough to keep it ____.",
+        "answer": "neat",
+        "explanation": "'enough to keep it neat'에서 확인할 수 있다."
+      },
+      {
+        "qid": "2448489c-0ed4-49a2-a1f2-b7fee254e459",
+        "type": "tf",
+        "q": "The writer cleans the room with help from parents.",
+        "answer": false,
+        "explanation": "'When I clean my room by myself'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "f297357a-64bb-49b6-80b3-7d7b70525592",
+        "type": "tf",
+        "q": "Some people say children are too busy with homework to clean.",
+        "answer": true,
+        "explanation": "'Some people say that children are too busy with homework to clean.'과 일치한다."
+      },
+      {
+        "qid": "00eea99a-c825-498c-a086-e24f4d8fbe5a",
+        "type": "tf",
+        "q": "The writer says cleaning is good only for children.",
+        "answer": false,
+        "explanation": "'not only for us but also for our families'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "5bfffda4-fb6a-47cb-8142-3c9be23360af",
+        "type": "order",
+        "items": [
+          "Third, cleaning our own rooms helps our parents.",
+          "First, our rooms are our own personal space.",
+          "Some people say that children are too busy with homework to clean.",
+          "Second, cleaning helps us become more responsible."
+        ],
+        "answer": [
+          "First, our rooms are our own personal space.",
+          "Second, cleaning helps us become more responsible.",
+          "Third, cleaning our own rooms helps our parents.",
+          "Some people say that children are too busy with homework to clean."
+        ]
+      },
+      {
+        "qid": "5fd509e8-3f77-4488-b670-4362ff45175c",
+        "type": "mc",
+        "q": "What does the underlined word 'neat' mean in this passage?",
+        "choices": [
+          "개인적인",
+          "깔끔한, 정돈된",
+          "습관",
+          "책임감 있는",
+          "휴식"
+        ],
+        "answer": "깔끔한, 정돈된",
+        "explanation": "'neat'는 '깔끔한, 정돈된'라는 뜻이다. 'enough to keep it neat'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "e4d82742-cf32-4d99-ba51-afbe9a6573cf",
+        "q": "What habit does the writer have, and what is the result? Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "The writer puts everything back in the right place, so the writer doesn't lose things as often as before.",
+        "rubric": "① 습관(제자리에 두기) ② 결과(덜 잃어버림) 모두 쓰면 만점"
+      },
+      {
+        "qid": "bada0850-b314-4e04-9502-43b0bc61edb8",
+        "q": "Some people say children are too busy with homework. How does the writer answer them? Write in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "Cleaning a room doesn't take very long. Just fifteen minutes a day is enough.",
+        "rubric": "오래 걸리지 않음 + 15분이면 충분함을 쓰면 만점"
+      },
+      {
+        "qid": "fcbb9714-01ac-4849-be0e-bd1c4869bf8c",
+        "q": "우리말로 쓰시오: 글쓴이가 아이들이 방을 청소하면 부모님께 도움이 된다고 한 이유는 무엇인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "부모님은 직장과 집에서 모두 바쁘기 때문에, 우리가 방을 스스로 청소하면 부모님이 조금 더 쉴 수 있기 때문이다.",
+        "rubric": "① 부모님이 바쁨 ② 우리가 청소하면 더 쉴 수 있음 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "e0324549-fa9d-445e-bc93-d41df2252c92",
+        "q": "Who is cleaning our own rooms good for? Answer using \"not only ~ but also.\"",
+        "wordLimit": 20,
+        "sampleAnswer": "It is good not only for us but also for our families.",
+        "rubric": "not only A but also B 구조로 우리와 가족을 모두 쓰면 만점"
+      },
+      {
+        "qid": "15a638ac-1358-46d0-a31d-b58b4d730cf1",
+        "q": "우리말로 쓰시오: 이 글의 주장과 세 가지 이유를 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "주장: 아이들은 자기 방을 스스로 청소해야 한다. 이유: ① 방은 우리의 개인 공간이다. ② 청소는 우리를 더 책임감 있게 만든다. ③ 바쁜 부모님이 조금 더 쉴 수 있다.",
+        "rubric": "주장 + 이유 세 가지를 모두 쓰면 만점, 일부만 쓰면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "In my opinion, {{t:children should be responsible for cleaning their own rooms}}, and there are {{g:three main reasons why I believe this|관계부사 why: 앞의 reasons를 꾸밈}}.\nFirst of all, a bedroom is a {{v:personal}} space. Since we spend time in our rooms every day, {{g:it is only natural that we should be the ones|가주어 it ... that 진주어: '~하는 것은 당연하다'}} to take care of them.\nSecond, cleaning teaches us responsibility. {{g:Ever since I started cleaning my room by myself, I have learned|현재완료(have learned) + ever since: ~한 이후로 쭉}} to put things back where they belong. As a result, I rarely lose my {{v:belongings}} anymore.\nThird, it {{v:lightens}} our parents' load. Most parents are busy {{g:not only at work but also at home|not only A but also B: A뿐만 아니라 B도}}. If we take care of our own rooms, they can have a little more time to relax.\nSome people argue that children are {{g:too busy with homework to clean their rooms|too ~ to ...: 너무 ~해서 …할 수 없다}}. However, keeping a room {{v:tidy}} doesn't {{v:require}} much time. Spending just fifteen minutes a day is enough.\nSo, why not start cleaning our own rooms today? {{g:Doing so benefits|동명사 주어: 단수 취급 (benefits)}} not only ourselves but also our families!",
+    "tags": {
+      "vocab": [
+        "personal",
+        "belongings",
+        "lightens",
+        "tidy",
+        "require"
+      ],
+      "grammar": [
+        "관계부사 why",
+        "가주어 it ... that",
+        "현재완료 + ever since",
+        "not only A but also B",
+        "too ~ to ...",
+        "동명사 주어"
+      ],
+      "topic": [
+        "방 청소",
+        "책임감",
+        "반론과 재반박"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "9b72a91e-5458-42fa-b992-010b8e64bfe3",
+        "type": "mc",
+        "q": "Which best expresses the writer's main argument?",
+        "choices": [
+          "Parents should do all the housework.",
+          "Children are too busy to clean.",
+          "Children should be responsible for cleaning their own rooms.",
+          "Bedrooms should be shared with siblings.",
+          "Homework is more important than anything else."
+        ],
+        "answer": "Children should be responsible for cleaning their own rooms.",
+        "explanation": "'children should be responsible for cleaning their own rooms'가 글의 주장이다."
+      },
+      {
+        "qid": "c9305837-61b2-4aec-a408-9ef838785c1e",
+        "type": "mc",
+        "q": "Why does the writer say it is \"only natural\" for children to take care of their rooms?",
+        "choices": [
+          "Because they spend time in their rooms every day",
+          "Because their parents tell them to",
+          "Because their rooms are very large",
+          "Because their friends clean their rooms",
+          "Because they rarely use their rooms"
+        ],
+        "answer": "Because they spend time in their rooms every day",
+        "explanation": "'Since we spend time in our rooms every day, it is only natural that ...'와 일치한다."
+      },
+      {
+        "qid": "b68da945-44e0-4ef6-a062-46cd04d1ea98",
+        "type": "mc",
+        "q": "What has the writer learned since starting to clean alone?",
+        "choices": [
+          "To throw away old things",
+          "To clean the whole house",
+          "To buy new belongings",
+          "To put things back where they belong",
+          "To ask parents for help"
+        ],
+        "answer": "To put things back where they belong",
+        "explanation": "'I have learned to put things back where they belong.'와 일치한다."
+      },
+      {
+        "qid": "6343e04e-6c35-4c62-968a-427a20ba8da1",
+        "type": "mc",
+        "q": "What is the result of the writer's new habit?",
+        "choices": [
+          "The writer loses things more often.",
+          "The writer rarely loses belongings anymore.",
+          "The writer has fewer belongings.",
+          "The writer cleans for hours every day.",
+          "The writer has no time for homework."
+        ],
+        "answer": "The writer rarely loses belongings anymore.",
+        "explanation": "'As a result, I rarely lose my belongings anymore.'와 일치한다."
+      },
+      {
+        "qid": "71d4f304-ded6-4e07-a726-66103713ca79",
+        "type": "mc",
+        "q": "What does \"it lightens our parents' load\" mean?",
+        "choices": [
+          "It makes our parents carry heavy bags.",
+          "It turns on the lights for our parents.",
+          "It makes our parents' jobs harder.",
+          "It helps our parents lose weight.",
+          "It makes our parents' work easier."
+        ],
+        "answer": "It makes our parents' work easier.",
+        "explanation": "'lighten one's load'는 '~의 짐(일)을 덜어 주다'라는 뜻이다."
+      },
+      {
+        "qid": "c368afcb-c0e4-4e83-a98c-08f429f19c5f",
+        "type": "mc",
+        "q": "According to the writer, where are most parents busy?",
+        "choices": [
+          "Only at work",
+          "Only at home",
+          "Both at work and at home",
+          "Neither at work nor at home",
+          "Only on weekends"
+        ],
+        "answer": "Both at work and at home",
+        "explanation": "'Most parents are busy not only at work but also at home.'과 일치한다."
+      },
+      {
+        "qid": "f66c6302-af60-4732-a897-0c45707a0d76",
+        "type": "mc",
+        "q": "What counterargument does the writer mention?",
+        "choices": [
+          "Cleaning makes children tired.",
+          "Children are too busy with homework to clean their rooms.",
+          "Parents enjoy cleaning.",
+          "Children do not have their own rooms.",
+          "Rooms do not need to be tidy."
+        ],
+        "answer": "Children are too busy with homework to clean their rooms.",
+        "explanation": "'Some people argue that children are too busy with homework to clean their rooms.'와 일치한다."
+      },
+      {
+        "qid": "31a0bc54-962e-4779-80ff-a534f74b6a2e",
+        "type": "mc",
+        "q": "How does the writer respond to the counterargument?",
+        "choices": [
+          "Homework is useless.",
+          "Children should sleep less.",
+          "Parents should help with homework.",
+          "Keeping a room tidy doesn't require much time.",
+          "Cleaning should be done once a month."
+        ],
+        "answer": "Keeping a room tidy doesn't require much time.",
+        "explanation": "'However, keeping a room tidy doesn't require much time.'로 재반박한다."
+      },
+      {
+        "qid": "376bc763-aa3e-440f-b53f-8de002861237",
+        "type": "mc",
+        "q": "What is the writer doing with the question \"why not start cleaning our own rooms today?\"",
+        "choices": [
+          "Suggesting that readers start cleaning",
+          "Asking why readers dislike cleaning",
+          "Complaining about messy rooms",
+          "Asking for a reason not to clean",
+          "Telling readers to stop cleaning"
+        ],
+        "answer": "Suggesting that readers start cleaning",
+        "explanation": "'Why not ~?'은 '~하는 게 어때?'라는 제안의 표현이다."
+      },
+      {
+        "qid": "7f4f5e51-9bb7-400c-b8b7-72826b74a964",
+        "type": "mc",
+        "q": "According to the writer, who benefits from children cleaning their own rooms?",
+        "choices": [
+          "Only the children",
+          "Only the parents",
+          "Only the teachers",
+          "No one",
+          "Both children and their families"
+        ],
+        "answer": "Both children and their families",
+        "explanation": "'Doing so benefits not only ourselves but also our families!'와 일치한다."
+      },
+      {
+        "qid": "21752f0f-9e3f-4038-8fbc-3c3d536d03ce",
+        "type": "blank",
+        "q": "Ever since I started cleaning my room by myself, I have learned to put things back where they ____.",
+        "answer": "belong",
+        "explanation": "'where they belong'에서 확인할 수 있다."
+      },
+      {
+        "qid": "b05d0561-a5ad-4c94-bed1-3f8d49df5d21",
+        "type": "blank",
+        "q": "As a result, I rarely lose my ____ anymore.",
+        "answer": "belongings",
+        "explanation": "'I rarely lose my belongings anymore'에서 확인할 수 있다."
+      },
+      {
+        "qid": "85f921c0-138b-49f5-94ec-ff25094ee245",
+        "type": "blank",
+        "q": "Third, it ____ our parents' load.",
+        "answer": "lightens",
+        "explanation": "'it lightens our parents' load'에서 확인할 수 있다."
+      },
+      {
+        "qid": "dcb25e09-2a0e-4731-8a0b-062f8c5c05f7",
+        "type": "blank",
+        "q": "However, keeping a room tidy doesn't ____ much time.",
+        "answer": "require",
+        "explanation": "'doesn't require much time'에서 확인할 수 있다."
+      },
+      {
+        "qid": "7f575360-7a43-4e9f-afd9-3d99dbbe1ce0",
+        "type": "blank",
+        "q": "Spending just fifteen minutes a day is ____.",
+        "answer": "enough",
+        "explanation": "'Spending just fifteen minutes a day is enough.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "b62d9e16-ce77-4e1b-915c-60565d0051c6",
+        "type": "tf",
+        "q": "The writer has learned to put things back where they belong.",
+        "answer": true,
+        "explanation": "'I have learned to put things back where they belong.'과 일치한다."
+      },
+      {
+        "qid": "28fd910c-f8d7-4192-bb9d-63ab7845fa02",
+        "type": "tf",
+        "q": "Most parents are busy only at work.",
+        "answer": false,
+        "explanation": "'not only at work but also at home'이라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "b3f3461a-eecf-45fd-af22-286e07505e39",
+        "type": "tf",
+        "q": "The writer says keeping a room tidy takes a lot of time.",
+        "answer": false,
+        "explanation": "'keeping a room tidy doesn't require much time'이라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "f33c651a-d98d-4f00-b8a2-d1411b3408e0",
+        "type": "order",
+        "items": [
+          "Third, it lightens our parents' load.",
+          "First of all, a bedroom is a personal space.",
+          "Some people argue that children are too busy with homework to clean their rooms.",
+          "Second, cleaning teaches us responsibility."
+        ],
+        "answer": [
+          "First of all, a bedroom is a personal space.",
+          "Second, cleaning teaches us responsibility.",
+          "Third, it lightens our parents' load.",
+          "Some people argue that children are too busy with homework to clean their rooms."
+        ]
+      },
+      {
+        "qid": "9fa5a679-ccf8-4479-8aba-682718f80091",
+        "type": "mc",
+        "q": "What does the underlined word 'belongings' mean in this passage?",
+        "choices": [
+          "깔끔한",
+          "소지품, 물건",
+          "가볍게 하다, 덜어 주다",
+          "개인적인",
+          "필요로 하다"
+        ],
+        "answer": "소지품, 물건",
+        "explanation": "'belongings'는 '소지품, 물건'라는 뜻이다. 'I rarely lose my belongings anymore'에서 확인할 수 있다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "81c8b03d-00dc-471f-9be0-ac474e518549",
+        "q": "Explain in your own words what \"it lightens our parents' load\" means. Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "It means that when we clean our own rooms, our parents have less work to do and can relax more.",
+        "rubric": "부모님의 일이 줄어든다는 의미를 자신의 말로 설명하면 만점"
+      },
+      {
+        "qid": "41a7a23f-81bd-4898-8cfc-dcf57444696b",
+        "q": "Rewrite the sentence \"Most parents are busy not only at work but also at home\" using \"both A and B.\"",
+        "wordLimit": 15,
+        "sampleAnswer": "Most parents are busy both at work and at home.",
+        "rubric": "both A and B 구조로 같은 의미를 정확히 쓰면 만점"
+      },
+      {
+        "qid": "43bb795a-2f7f-4db4-a14b-9f28ab6d6c92",
+        "q": "우리말로 쓰시오: 글쓴이가 소개한 반론은 무엇이며, 어떻게 재반박했나요?",
+        "wordLimit": 50,
+        "sampleAnswer": "아이들은 숙제 때문에 너무 바빠서 방을 청소할 수 없다는 반론에 대해, 방을 깔끔하게 유지하는 데는 시간이 많이 들지 않고 하루 15분이면 충분하다고 재반박했다.",
+        "rubric": "① 반론(숙제로 바쁨) ② 재반박(시간이 많이 들지 않음, 15분이면 충분) 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "5ea971bb-b279-4b7f-9f1a-37a3b2c87764",
+        "q": "What change has the writer experienced since starting to clean their room alone? Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "The writer has learned to put things back where they belong, so the writer rarely loses belongings anymore.",
+        "rubric": "① 제자리에 두는 법을 배움 ② 거의 잃어버리지 않음 모두 쓰면 만점"
+      },
+      {
+        "qid": "b6d63c89-b035-4a50-9216-6d8106942fb8",
+        "q": "우리말로 쓰시오: 글쓴이가 아이들이 방을 청소해야 한다고 주장하는 이유 세 가지를 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "① 침실은 개인 공간이므로 매일 쓰는 우리가 관리하는 것이 당연하다. ② 청소는 책임감을 가르쳐 준다. ③ 바쁜 부모님의 짐을 덜어 드린다.",
+        "rubric": "세 가지 이유를 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  }
+}

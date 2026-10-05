@@ -1,0 +1,1170 @@
+{
+  "school": {
+    "tagged_body": "Everyone wants good friends.\nHow can you be a good friend? Here are four {{v:tips}}.\nFirst, {{g:listen well|명령문: 동사원형으로 시작해서 '~해라'}}.\nLook at your friend. {{g:Don't stop your friend in the middle|부정 명령문: Don't + 동사원형 = ~하지 마라}}.\nSecond, {{v:share}} with your friends.\nYou can share your {{v:snacks}}, books, or your time.\nThen your friends will be happy.\nThird, keep {{v:secrets}}.\nYour friend tells you a secret. Don't tell other people.\nThen your friend {{g:will trust you|will + 동사원형: ~할 것이다 (미래)}}.\nLast, say sorry for your {{v:mistakes}}.\nEveryone makes mistakes.\nYou may not want to say sorry. But it is very important.\nAlso, {{v:forgive}} your friend.\nA good friend is like a special gift.\n{{t:Be a good friend. Then you will have good friends, too!}}",
+    "tags": {
+      "vocab": [
+        "tips",
+        "share",
+        "snacks",
+        "secrets",
+        "mistakes",
+        "forgive"
+      ],
+      "grammar": [
+        "명령문",
+        "부정 명령문 Don't",
+        "will + 동사원형"
+      ],
+      "topic": [
+        "우정",
+        "좋은 친구가 되는 방법"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "172bf21e-dd1a-4d00-a569-4a9edb9cab00",
+        "type": "mc",
+        "q": "How many tips does the writer give?",
+        "choices": [
+          "Two",
+          "Three",
+          "Four",
+          "Five",
+          "Six"
+        ],
+        "answer": "Four",
+        "explanation": "'Here are four tips.'와 일치한다."
+      },
+      {
+        "qid": "3e081483-7592-4710-ab0e-c428f698f1ab",
+        "type": "mc",
+        "q": "What is the first tip?",
+        "choices": [
+          "Listen well.",
+          "Keep secrets.",
+          "Share snacks.",
+          "Say sorry.",
+          "Buy gifts."
+        ],
+        "answer": "Listen well.",
+        "explanation": "'First, listen well.'과 일치한다."
+      },
+      {
+        "qid": "568b3fb6-dcd9-46b6-b262-dd84a19585b8",
+        "type": "mc",
+        "q": "What should you do when your friend talks?",
+        "choices": [
+          "Play games.",
+          "Look at your phone.",
+          "Talk loudly.",
+          "Look at your friend.",
+          "Go home."
+        ],
+        "answer": "Look at your friend.",
+        "explanation": "'Look at your friend.'와 일치한다."
+      },
+      {
+        "qid": "922df264-0913-4557-af19-da07efd4a6c3",
+        "type": "mc",
+        "q": "What can you share with your friends?",
+        "choices": [
+          "Only money",
+          "Your phone number",
+          "Your homework answers",
+          "Other friends' secrets",
+          "Snacks, books, or your time"
+        ],
+        "answer": "Snacks, books, or your time",
+        "explanation": "'You can share your snacks, books, or your time.'과 일치한다."
+      },
+      {
+        "qid": "e997fcd1-5fc9-4466-b80f-ecfbf894930e",
+        "type": "mc",
+        "q": "What is the third tip?",
+        "choices": [
+          "Listen well.",
+          "Keep secrets.",
+          "Say sorry.",
+          "Share with your friends.",
+          "Look at your friend."
+        ],
+        "answer": "Keep secrets.",
+        "explanation": "'Third, keep secrets.'와 일치한다."
+      },
+      {
+        "qid": "d37fea7d-cf96-4e70-994b-97aff96e972f",
+        "type": "mc",
+        "q": "Your friend tells you a secret. What should you do?",
+        "choices": [
+          "Tell your mom.",
+          "Tell your teacher.",
+          "Don't tell other people.",
+          "Write it on the board.",
+          "Tell all your friends."
+        ],
+        "answer": "Don't tell other people.",
+        "explanation": "'Your friend tells you a secret. Don't tell other people.'과 일치한다."
+      },
+      {
+        "qid": "51fa0764-c8d7-4b6b-a683-90354dfc2f9e",
+        "type": "mc",
+        "q": "다음 중 'trust'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "잊다",
+          "믿다",
+          "싸우다",
+          "돕다",
+          "기다리다"
+        ],
+        "answer": "믿다",
+        "explanation": "trust는 '믿다, 신뢰하다'라는 뜻이다. 비밀을 지키면 친구가 나를 믿게 된다."
+      },
+      {
+        "qid": "b27b5108-e6f1-4893-b880-c2cf44b9f9c5",
+        "type": "mc",
+        "q": "What should you do for your mistakes?",
+        "choices": [
+          "Laugh.",
+          "Cry.",
+          "Go home.",
+          "Say sorry.",
+          "Get angry."
+        ],
+        "answer": "Say sorry.",
+        "explanation": "'Last, say sorry for your mistakes.'와 일치한다."
+      },
+      {
+        "qid": "0a27ac6d-5ba2-45aa-82d0-bfe9d92c4cb6",
+        "type": "mc",
+        "q": "다음 중 'forgive'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "용서하다",
+          "선물하다",
+          "약속하다",
+          "말하다",
+          "나누다"
+        ],
+        "answer": "용서하다",
+        "explanation": "forgive는 '용서하다'라는 뜻이다."
+      },
+      {
+        "qid": "944b7434-c1c8-4da1-8f4d-21040ab66d95",
+        "type": "mc",
+        "q": "A good friend is like a ____.",
+        "choices": [
+          "big house",
+          "funny book",
+          "new phone",
+          "sweet snack",
+          "special gift"
+        ],
+        "answer": "special gift",
+        "explanation": "'A good friend is like a special gift.'와 일치한다."
+      },
+      {
+        "qid": "b29d7891-a965-4d33-9410-4c20c468ceed",
+        "type": "mc",
+        "q": "What is the passage mainly about?",
+        "choices": [
+          "How to make snacks",
+          "How to keep a diary",
+          "How to be a good friend",
+          "How to find a new school",
+          "How to play with toys"
+        ],
+        "answer": "How to be a good friend",
+        "explanation": "좋은 친구가 되는 방법 네 가지를 알려 주는 글이다."
+      },
+      {
+        "qid": "4c195f5d-7009-4a64-8b56-7ca1b508a6fd",
+        "type": "blank",
+        "q": "First, ____ well.",
+        "answer": "listen",
+        "explanation": "'First, listen well.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "169fc730-52f9-44cf-98d9-48d9b5b01ab6",
+        "type": "blank",
+        "q": "Second, ____ with your friends.",
+        "answer": "share",
+        "explanation": "'Second, share with your friends.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "32162b2f-6da3-437f-90ee-eaf3afec563a",
+        "type": "blank",
+        "q": "Then your friend will ____ you.",
+        "answer": "trust",
+        "explanation": "'Then your friend will trust you.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "3e91251f-a4c3-4872-a0be-69fcd34c8e5c",
+        "type": "blank",
+        "q": "Everyone makes ____.",
+        "answer": "mistakes",
+        "explanation": "'Everyone makes mistakes.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "da38a629-206a-4ba6-947a-5dda337f1ccd",
+        "type": "blank",
+        "q": "A good friend is like a special ____.",
+        "answer": "gift",
+        "explanation": "'A good friend is like a special gift.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "89b2e492-a762-4f76-b2dd-708e0fe40f21",
+        "type": "tf",
+        "q": "You should talk a lot when your friend talks.",
+        "answer": false,
+        "explanation": "친구가 말할 때는 친구를 보고 말을 끊지 말아야 한다."
+      },
+      {
+        "qid": "49dee42e-c8b0-48f7-929b-492c5a3d1f0d",
+        "type": "tf",
+        "q": "Everyone makes mistakes.",
+        "answer": true,
+        "explanation": "'Everyone makes mistakes.'와 일치한다."
+      },
+      {
+        "qid": "be579407-2221-4bd2-98ec-4d27e1ea4780",
+        "type": "tf",
+        "q": "You can tell your friend's secret to other people.",
+        "answer": false,
+        "explanation": "'Don't tell other people.'이라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "c698b5e2-6363-4a27-a85a-1ef26003eed2",
+        "type": "order",
+        "items": [
+          "Third, keep secrets.",
+          "Last, say sorry for your mistakes.",
+          "First, listen well.",
+          "Second, share with your friends."
+        ],
+        "answer": [
+          "First, listen well.",
+          "Second, share with your friends.",
+          "Third, keep secrets.",
+          "Last, say sorry for your mistakes."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "b5d5a4c2-272f-4b27-9ec4-c51097be174b",
+        "q": "What is the first tip? Write in English.",
+        "wordLimit": 8,
+        "sampleAnswer": "Listen well.",
+        "rubric": "'잘 들어라(listen well)'라는 내용을 영어로 쓰면 만점"
+      },
+      {
+        "qid": "1eeee0f7-ca00-4628-9ae4-6b973cfc57c5",
+        "q": "What can you share with your friends? Write in English.",
+        "wordLimit": 12,
+        "sampleAnswer": "I can share my snacks, books, or time.",
+        "rubric": "간식, 책, 시간 중 두 가지 이상을 영어로 쓰면 만점, 한 가지면 부분 점수"
+      },
+      {
+        "qid": "0308f063-6da4-408b-8e18-3fc3e93eb29e",
+        "q": "우리말로 쓰시오: 친구의 비밀을 다른 사람에게 말하지 않으면 어떻게 되나요?",
+        "wordLimit": 30,
+        "sampleAnswer": "친구가 나를 믿게 된다.",
+        "rubric": "친구가 나를 믿는다(신뢰한다)는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "2cf4e1b9-7ba0-4113-adf2-0958e6b69b54",
+        "q": "What should you do when you make a mistake? Write in English.",
+        "wordLimit": 10,
+        "sampleAnswer": "I should say sorry.",
+        "rubric": "사과한다(say sorry)는 내용을 영어 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "70d6cd5b-940b-406e-a9dd-eac70693e8b6",
+        "q": "우리말로 쓰시오: 이 글에 나온 좋은 친구가 되는 방법 네 가지를 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "① 친구 말을 잘 듣는다. ② 친구와 나눈다. ③ 비밀을 지킨다. ④ 실수하면 미안하다고 말한다.",
+        "rubric": "네 가지를 모두 쓰면 만점, 두세 가지면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Everyone wants good friends. But how can you be a good friend? Here are four {{v:tips}}.\nFirst, listen {{v:carefully}}. {{g:When your friend talks|접속사 when: ~할 때}}, look at your friend and don't {{v:interrupt}}.\nSecond, share with your friends. You can share your snacks, books, or even your time. {{g:Sharing makes friends happy|동명사 주어(Sharing) + make + 목적어 + 형용사: ~을 …하게 만들다}}.\nThird, keep secrets. {{g:If your friend tells you a secret|접속사 if: 만약 ~하면}}, don't tell other people. Then your friend will {{v:trust}} you.\nFinally, say sorry when you make a {{v:mistake}}. Everyone makes mistakes. Saying sorry is not easy, but it is very important. Also, {{v:forgive}} your friend when they say sorry to you.\nA good friend is like a special {{v:present}}. {{t:If you are a good friend, you will have good friends, too!}}",
+    "tags": {
+      "vocab": [
+        "tips",
+        "carefully",
+        "interrupt",
+        "trust",
+        "mistake",
+        "forgive",
+        "present"
+      ],
+      "grammar": [
+        "접속사 when",
+        "동명사 주어",
+        "make + 목적어 + 형용사",
+        "접속사 if"
+      ],
+      "topic": [
+        "우정",
+        "좋은 친구가 되는 방법",
+        "경청·나눔·신뢰·사과"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "34096b01-2014-46ef-90fc-c96544881eae",
+        "type": "mc",
+        "q": "What is the passage mainly about?",
+        "choices": [
+          "Tips for being a good friend",
+          "How to make new snacks",
+          "Why secrets are bad",
+          "How to find a present",
+          "Why everyone makes mistakes"
+        ],
+        "answer": "Tips for being a good friend",
+        "explanation": "좋은 친구가 되는 네 가지 방법(tips)을 알려 주는 글이다."
+      },
+      {
+        "qid": "a9f45a9b-71be-46f0-bb13-3f2a8c31ad4a",
+        "type": "mc",
+        "q": "What should you NOT do when your friend talks?",
+        "choices": [
+          "Listen carefully",
+          "Interrupt",
+          "Look at your friend",
+          "Stay quiet",
+          "Nod your head"
+        ],
+        "answer": "Interrupt",
+        "explanation": "'look at your friend and don't interrupt'라고 했다."
+      },
+      {
+        "qid": "7de9b042-5245-46c5-aec6-dd376d1f7dd5",
+        "type": "mc",
+        "q": "다음 중 'interrupt'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "칭찬하다",
+          "대답하다",
+          "기다리다",
+          "남의 말을 끊다",
+          "크게 웃다"
+        ],
+        "answer": "남의 말을 끊다",
+        "explanation": "interrupt는 '(남의 말을) 끊다, 방해하다'라는 뜻이다."
+      },
+      {
+        "qid": "5e50bc08-ac55-4217-a19d-1cb2f2c096d9",
+        "type": "mc",
+        "q": "According to the passage, what makes friends happy?",
+        "choices": [
+          "Keeping secrets",
+          "Saying sorry",
+          "Interrupting",
+          "Buying presents",
+          "Sharing"
+        ],
+        "answer": "Sharing",
+        "explanation": "'Sharing makes friends happy.'와 일치한다."
+      },
+      {
+        "qid": "ebe46cd1-d458-4467-849d-d01508fa61b6",
+        "type": "mc",
+        "q": "What does 'You can share ... or even your time' tell us?",
+        "choices": [
+          "You can share your time, too, not only things.",
+          "You should not share your time.",
+          "Time is not important.",
+          "You should share only snacks.",
+          "Friends don't like books."
+        ],
+        "answer": "You can share your time, too, not only things.",
+        "explanation": "even은 '~까지도'라는 뜻으로, 간식이나 책 같은 물건뿐 아니라 시간도 나눌 수 있다는 뜻이다."
+      },
+      {
+        "qid": "42ba5be3-3c8b-47a1-b201-7ac0a708e26d",
+        "type": "mc",
+        "q": "What will happen if you keep your friend's secrets?",
+        "choices": [
+          "Your friend will be angry.",
+          "Your friend will trust you.",
+          "Your friend will tell other people.",
+          "Your friend will give you a present.",
+          "Your friend will forget the secret."
+        ],
+        "answer": "Your friend will trust you.",
+        "explanation": "'Then your friend will trust you.'와 일치한다."
+      },
+      {
+        "qid": "a9c021e7-7be9-4525-947d-db6f83a08075",
+        "type": "mc",
+        "q": "What does the writer say about saying sorry?",
+        "choices": [
+          "It is easy and not important.",
+          "Only children should say it.",
+          "It is not easy, but it is very important.",
+          "You don't need to say it to friends.",
+          "It is fun to say sorry."
+        ],
+        "answer": "It is not easy, but it is very important.",
+        "explanation": "'Saying sorry is not easy, but it is very important.'와 일치한다."
+      },
+      {
+        "qid": "7b8e7eca-aa8d-4a1a-9f24-8328e75388a6",
+        "type": "mc",
+        "q": "What should you do when your friend says sorry to you?",
+        "choices": [
+          "Get angry",
+          "Tell other people",
+          "Say nothing",
+          "Forgive your friend",
+          "Walk away"
+        ],
+        "answer": "Forgive your friend",
+        "explanation": "'Also, forgive your friend when they say sorry to you.'와 일치한다."
+      },
+      {
+        "qid": "c24fe1a6-a589-499e-b53f-34bf946dd9b1",
+        "type": "mc",
+        "q": "Which word has the same meaning as 'present' in the passage?",
+        "choices": [
+          "gift",
+          "secret",
+          "snack",
+          "mistake",
+          "tip"
+        ],
+        "answer": "gift",
+        "explanation": "이 글에서 present는 '선물'이라는 뜻으로 gift와 의미가 같다."
+      },
+      {
+        "qid": "113b1fde-c282-4311-b54d-0490eb09be0d",
+        "type": "mc",
+        "q": "Which is NOT one of the four tips?",
+        "choices": [
+          "Listen carefully.",
+          "Share with your friends.",
+          "Keep secrets.",
+          "Say sorry when you make a mistake.",
+          "Always agree with your friend."
+        ],
+        "answer": "Always agree with your friend.",
+        "explanation": "네 가지 방법은 잘 듣기, 나누기, 비밀 지키기, 사과하기이다. '항상 친구 말에 동의하기'는 없다."
+      },
+      {
+        "qid": "607c0e26-e31d-4fc9-bb9d-65d035954e07",
+        "type": "mc",
+        "q": "What does the last sentence mean?",
+        "choices": [
+          "Good friends are hard to find.",
+          "You should buy presents for friends.",
+          "You don't need many friends.",
+          "Good friends always say sorry first.",
+          "If you are kind to friends, they will be good friends to you."
+        ],
+        "answer": "If you are kind to friends, they will be good friends to you.",
+        "explanation": "'If you are a good friend, you will have good friends, too!'는 내가 좋은 친구가 되면 좋은 친구들이 생긴다는 뜻이다."
+      },
+      {
+        "qid": "e667d5a1-6bdb-419d-8006-47fd1b13ea2e",
+        "type": "blank",
+        "q": "First, listen ____.",
+        "answer": "carefully",
+        "explanation": "'First, listen carefully.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "af2cd62b-7704-4e72-8d1a-e608494acb4d",
+        "type": "blank",
+        "q": "When your friend talks, look at your friend and don't ____.",
+        "answer": "interrupt",
+        "explanation": "'look at your friend and don't interrupt'에서 확인할 수 있다."
+      },
+      {
+        "qid": "b73d31b3-8ef2-4ee5-849e-15e1f1daf477",
+        "type": "blank",
+        "q": "Sharing makes friends ____.",
+        "answer": "happy",
+        "explanation": "'Sharing makes friends happy.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "96117a71-f7a3-4be2-b01a-c268258154c3",
+        "type": "blank",
+        "q": "If your friend tells you a secret, don't tell other people. Then your friend will ____ you.",
+        "answer": "trust",
+        "explanation": "'Then your friend will trust you.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "ad1a7f3e-6d6e-48a9-b002-e82cf2e19a0f",
+        "type": "blank",
+        "q": "Also, ____ your friend when they say sorry to you.",
+        "answer": "forgive",
+        "explanation": "'Also, forgive your friend when they say sorry to you.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "e6860bcf-7ba7-4dae-8113-aeec1c1355f9",
+        "type": "tf",
+        "q": "The writer gives five tips.",
+        "answer": false,
+        "explanation": "'Here are four tips.'라고 했으므로 다섯 가지가 아니라 네 가지이다."
+      },
+      {
+        "qid": "e400c147-0f31-4837-8ef4-9774e2017e8a",
+        "type": "tf",
+        "q": "The writer says everyone makes mistakes.",
+        "answer": true,
+        "explanation": "'Everyone makes mistakes.'와 일치한다."
+      },
+      {
+        "qid": "3caa15f7-44c0-4e0e-b18a-951e611a75c1",
+        "type": "tf",
+        "q": "It is okay to tell your friend's secret to your family.",
+        "answer": false,
+        "explanation": "'don't tell other people'이라고 했으므로 누구에게도 말하면 안 된다."
+      },
+      {
+        "qid": "2c1605bf-cd74-497c-9892-0209d0bdaad7",
+        "type": "order",
+        "items": [
+          "Then your friend will trust you.",
+          "You can share your snacks, books, or even your time.",
+          "Also, forgive your friend when they say sorry to you.",
+          "When your friend talks, look at your friend and don't interrupt."
+        ],
+        "answer": [
+          "When your friend talks, look at your friend and don't interrupt.",
+          "You can share your snacks, books, or even your time.",
+          "Then your friend will trust you.",
+          "Also, forgive your friend when they say sorry to you."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "7ed3e566-a33a-4dcc-8516-9facda7dda74",
+        "q": "What should you do when your friend talks? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "I should look at my friend and not interrupt.",
+        "rubric": "친구를 바라본다 + 말을 끊지 않는다, 두 가지가 모두 있으면 만점"
+      },
+      {
+        "qid": "d9b7e643-98e6-47b5-a2d3-f605eac8ae57",
+        "q": "Why should you keep your friend's secrets? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "Because then my friend will trust me.",
+        "rubric": "친구가 나를 믿게 된다(trust)는 이유를 영어로 쓰면 만점"
+      },
+      {
+        "qid": "3cae484a-f8bd-4228-bb97-7922ccac7c00",
+        "q": "우리말로 쓰시오: 내가 실수했을 때 해야 할 일과, 친구가 나에게 사과할 때 해야 할 일은 각각 무엇인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "내가 실수했을 때는 미안하다고 말해야 하고, 친구가 사과하면 친구를 용서해야 한다.",
+        "rubric": "사과하기 + 용서하기 두 가지를 모두 쓰면 만점, 한 가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "90389f22-9218-4c03-acf6-cd06325f6fe4",
+        "q": "Which tip do you think is the most important? Write the tip and one reason in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "I think keeping secrets is the most important because friends need to trust each other.",
+        "rubric": "본문의 네 가지 중 하나를 고르고 알맞은 이유를 한 가지 영어로 쓰면 만점"
+      },
+      {
+        "qid": "03daf005-cf02-4551-bc86-d5d8339d7617",
+        "q": "우리말로 쓰시오: 'A good friend is like a special present.'는 어떤 의미인가요?",
+        "wordLimit": 40,
+        "sampleAnswer": "좋은 친구는 특별한 선물처럼 소중하고 기쁨을 주는 존재라는 의미이다.",
+        "rubric": "좋은 친구가 선물처럼 소중하다(특별하다)는 의미를 쓰면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Everyone wants good friends. But how can you become a good friend yourself? Here are four {{v:helpful}} tips.\nFirst, listen carefully. When your friend is talking, look at your friend's face and {{g:try not to interrupt|try not to + 동사원형: ~하지 않으려고 노력하다 (to부정사의 부정)}}. {{g:This shows that you truly care about your friend's feelings|접속사 that: ~라는 것 (명사절)}}.\nSecond, share with your friends. You can share your snacks, your books, or even your free time. {{g:Sharing makes your friends feel happy and special|사역동사 make + 목적어 + 동사원형: ~가 …하게 하다}}.\nThird, keep secrets. If your friend tells you a secret, don't tell it to anyone else. Then your friend will know that you are {{v:trustworthy}}.\nFinally, {{v:apologize}} when you make a mistake. Everyone makes mistakes sometimes. Saying sorry is not easy, but it is {{g:one of the most important things|one of the + 최상급 + 복수명사: 가장 ~한 것들 중 하나}} in a {{v:friendship}}. Also, be {{v:ready}} to forgive your friend when they say sorry to you.\nA good friend is like a special present {{g:that you can keep forever|관계대명사 that: 앞의 명사(present)를 꾸밈}}. {{t:If you try to be a good friend, you will have good friends, too!}}",
+    "tags": {
+      "vocab": [
+        "helpful",
+        "trustworthy",
+        "apologize",
+        "friendship",
+        "ready",
+        "forever"
+      ],
+      "grammar": [
+        "try not to",
+        "접속사 that",
+        "사역동사 make",
+        "one of the + 최상급 + 복수명사",
+        "관계대명사 that"
+      ],
+      "topic": [
+        "우정",
+        "좋은 친구가 되는 방법",
+        "신뢰와 배려"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "93141441-4112-4c54-a011-e164736fb983",
+        "type": "mc",
+        "q": "What is the purpose of the passage?",
+        "choices": [
+          "To tell a funny story about friends",
+          "To give tips on how to be a good friend",
+          "To explain how to buy presents",
+          "To introduce the writer's best friend",
+          "To complain about a friend's mistake"
+        ],
+        "answer": "To give tips on how to be a good friend",
+        "explanation": "좋은 친구가 되는 네 가지 도움이 되는 방법(helpful tips)을 알려 주는 글이다."
+      },
+      {
+        "qid": "05c21f88-d216-4326-bdf4-bea3c0312487",
+        "type": "mc",
+        "q": "According to the passage, what does listening carefully show?",
+        "choices": [
+          "You want to talk first.",
+          "You are bored.",
+          "You truly care about your friend's feelings.",
+          "You know a secret.",
+          "You want a present."
+        ],
+        "answer": "You truly care about your friend's feelings.",
+        "explanation": "'This shows that you truly care about your friend's feelings.'와 일치한다."
+      },
+      {
+        "qid": "38e512d1-ae26-4dfb-ac50-b3e191c60ebf",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: Look at your friend's face and try not ____ interrupt.",
+        "choices": [
+          "for",
+          "at",
+          "to",
+          "and",
+          "of"
+        ],
+        "answer": "to",
+        "explanation": "try not to + 동사원형은 '~하지 않으려고 노력하다'라는 뜻이다."
+      },
+      {
+        "qid": "7a3c218f-49d4-43ca-a1d2-186d59d48e31",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: Sharing makes your friends ____ happy and special.",
+        "choices": [
+          "to feel",
+          "feel",
+          "feeling",
+          "felt",
+          "feels"
+        ],
+        "answer": "feel",
+        "explanation": "사역동사 make는 'make + 목적어 + 동사원형' 형태로 쓴다. → makes your friends feel happy"
+      },
+      {
+        "qid": "9ebdfd45-49b2-491c-9858-0eb05daf7055",
+        "type": "mc",
+        "q": "What does 'trustworthy' mean in the passage?",
+        "choices": [
+          "Someone who talks a lot",
+          "Someone who forgets things",
+          "Someone who is very funny",
+          "Someone who shares snacks",
+          "Someone you can trust"
+        ],
+        "answer": "Someone you can trust",
+        "explanation": "trustworthy는 '믿을 수 있는, 신뢰할 만한'이라는 뜻이다. 비밀을 지키면 믿을 만한 사람이 된다."
+      },
+      {
+        "qid": "65a7575a-5445-41ba-891f-9d111378a167",
+        "type": "mc",
+        "q": "Which expression has the same meaning as 'apologize'?",
+        "choices": [
+          "Say sorry",
+          "Say hello",
+          "Say thank you",
+          "Say goodbye",
+          "Say yes"
+        ],
+        "answer": "Say sorry",
+        "explanation": "apologize는 '사과하다'라는 뜻으로 say sorry와 같은 의미이다. 바로 다음 문장에도 'Saying sorry'가 나온다."
+      },
+      {
+        "qid": "fcd75f9b-7978-405a-906c-6ee22e855f39",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: Saying sorry is one of the most important ____ in a friendship.",
+        "choices": [
+          "thing",
+          "things",
+          "a thing",
+          "the thing",
+          "thing's"
+        ],
+        "answer": "things",
+        "explanation": "'one of the + 최상급 + 복수명사'는 '가장 ~한 것들 중 하나'라는 뜻이므로 복수명사 things가 알맞다."
+      },
+      {
+        "qid": "3106be06-b4e5-4d47-bc2f-15b3b11a2884",
+        "type": "mc",
+        "q": "What should you be ready to do when your friend says sorry to you?",
+        "choices": [
+          "Forgive your friend",
+          "Tell your teacher",
+          "Ask for a present",
+          "Stop talking to your friend",
+          "Say sorry again"
+        ],
+        "answer": "Forgive your friend",
+        "explanation": "'be ready to forgive your friend when they say sorry to you'와 일치한다."
+      },
+      {
+        "qid": "308b5f41-1622-4878-9b20-e68d6037673d",
+        "type": "mc",
+        "q": "Why does the writer compare a good friend to a special present?",
+        "choices": [
+          "Because friends always give presents.",
+          "Because presents are expensive.",
+          "Because a good friend is precious and can stay with you forever.",
+          "Because friends like surprises.",
+          "Because presents are easy to find."
+        ],
+        "answer": "Because a good friend is precious and can stay with you forever.",
+        "explanation": "'a special present that you can keep forever'라고 했으므로 좋은 친구가 소중하고 오래 함께할 수 있는 존재라는 뜻이다."
+      },
+      {
+        "qid": "0a9a7524-a556-4eed-82db-2f986f69255c",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "You can share your free time with friends.",
+          "Everyone makes mistakes sometimes.",
+          "Saying sorry is not easy.",
+          "It is okay to tell a friend's secret to your best friend.",
+          "Listening carefully shows that you care."
+        ],
+        "answer": "It is okay to tell a friend's secret to your best friend.",
+        "explanation": "'don't tell it to anyone else'라고 했으므로 친한 친구를 포함해 누구에게도 말하면 안 된다."
+      },
+      {
+        "qid": "8b6a91ba-488b-4888-9131-f952b0580d27",
+        "type": "mc",
+        "q": "What does the last sentence mean?",
+        "choices": [
+          "You should try to have many friends.",
+          "Being a good friend helps you get good friends.",
+          "Good friends never make mistakes.",
+          "You should wait for good friends to come.",
+          "Only good students have good friends."
+        ],
+        "answer": "Being a good friend helps you get good friends.",
+        "explanation": "'If you try to be a good friend, you will have good friends, too!'는 내가 먼저 좋은 친구가 되려고 노력하면 좋은 친구가 생긴다는 뜻이다."
+      },
+      {
+        "qid": "564c7d02-5a21-4c98-839c-98767ce75e47",
+        "type": "blank",
+        "q": "When your friend is talking, look at your friend's ____ and try not to interrupt.",
+        "answer": "face",
+        "explanation": "'look at your friend's face'에서 확인할 수 있다."
+      },
+      {
+        "qid": "07bdb395-79f6-46ec-81f9-edb036b1397d",
+        "type": "blank",
+        "q": "You can share your snacks, your books, or even your ____ time.",
+        "answer": "free",
+        "explanation": "'or even your free time'에서 확인할 수 있다. free time은 '자유 시간'이라는 뜻이다."
+      },
+      {
+        "qid": "45f8a08a-733c-43ec-95a5-991081c3d626",
+        "type": "blank",
+        "q": "Then your friend will know that you are ____.",
+        "answer": "trustworthy",
+        "explanation": "'Then your friend will know that you are trustworthy.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "bb029dd3-5aa8-4666-bae0-f6e90c14c04c",
+        "type": "blank",
+        "q": "Finally, ____ when you make a mistake.",
+        "answer": "apologize",
+        "explanation": "'Finally, apologize when you make a mistake.'에서 확인할 수 있다."
+      },
+      {
+        "qid": "85f40dc6-166a-4586-9cc6-b886d82adcf3",
+        "type": "blank",
+        "q": "A good friend is like a special present that you can keep ____.",
+        "answer": "forever",
+        "explanation": "'a special present that you can keep forever'에서 확인할 수 있다."
+      },
+      {
+        "qid": "d38dd2ba-b19a-4fb5-9a98-1be6ed7b749b",
+        "type": "tf",
+        "q": "Listening carefully shows that you care about your friend.",
+        "answer": true,
+        "explanation": "'This shows that you truly care about your friend's feelings.'와 일치한다."
+      },
+      {
+        "qid": "f1e74e60-3f6d-4f86-a88c-0d9b6fe4bd8c",
+        "type": "tf",
+        "q": "The writer says that saying sorry is easy.",
+        "answer": false,
+        "explanation": "'Saying sorry is not easy'라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "7eda2226-4779-41a6-8bfb-049a76b7870d",
+        "type": "tf",
+        "q": "The writer says a good friend is like a present you can keep forever.",
+        "answer": true,
+        "explanation": "'A good friend is like a special present that you can keep forever.'와 일치한다."
+      },
+      {
+        "qid": "f5e1d550-c19e-4db7-bb44-03e11dc21a21",
+        "type": "order",
+        "items": [
+          "If your friend tells you a secret, don't tell it to anyone else.",
+          "Sharing makes your friends feel happy and special.",
+          "Also, be ready to forgive your friend when they say sorry to you.",
+          "This shows that you truly care about your friend's feelings."
+        ],
+        "answer": [
+          "This shows that you truly care about your friend's feelings.",
+          "Sharing makes your friends feel happy and special.",
+          "If your friend tells you a secret, don't tell it to anyone else.",
+          "Also, be ready to forgive your friend when they say sorry to you."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "03e0835c-6f7a-4b50-9ea9-9287c3ac0742",
+        "q": "Explain in English why listening carefully is important.",
+        "wordLimit": 25,
+        "sampleAnswer": "It is important because it shows that you truly care about your friend's feelings.",
+        "rubric": "친구의 감정에 진심으로 관심이 있다는 것을 보여 준다는 내용이 들어가면 만점"
+      },
+      {
+        "qid": "db14b1a8-3dfe-40a1-86e4-13c9bd35e016",
+        "q": "Rewrite the sentence using 'make + 목적어 + 동사원형': When you share, your friends feel happy.",
+        "wordLimit": 12,
+        "sampleAnswer": "Sharing makes your friends feel happy.",
+        "rubric": "make(s) + your friends + feel happy 구조를 바르게 쓰면 만점 (to feel, feeling은 감점)"
+      },
+      {
+        "qid": "a50335d8-8212-40a0-854f-2a8ebb8f81c2",
+        "q": "우리말로 쓰시오: 친구에게 'trustworthy(믿을 만한)' 사람이 되려면 어떻게 해야 하나요? 본문을 근거로 쓰시오.",
+        "wordLimit": 40,
+        "sampleAnswer": "친구가 말해 준 비밀을 다른 누구에게도 말하지 않고 지켜야 한다.",
+        "rubric": "비밀을 다른 사람에게 말하지 않는다(지킨다)는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "8150c9d4-02a2-4f87-8a07-2ad502bcdc94",
+        "q": "Give one more tip for being a good friend. Write one sentence in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "Help your friend when they have a problem.",
+        "rubric": "본문에 없는 새로운 방법을 알맞은 영어 문장으로 쓰면 만점 (본문 내용 반복은 부분 점수)"
+      },
+      {
+        "qid": "13c8a123-a9d9-4c90-86cd-50123f86f233",
+        "q": "우리말로 쓰시오: 'A good friend is like a special present that you can keep forever.'에서 좋은 친구를 선물에 비유한 이유는 무엇인가요?",
+        "wordLimit": 50,
+        "sampleAnswer": "좋은 친구는 특별한 선물처럼 소중하고, 오래도록(평생) 곁에 둘 수 있는 존재이기 때문이다.",
+        "rubric": "소중하다(특별하다) + 오래 함께할 수 있다는 두 요소가 모두 있으면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Almost everyone hopes to have good friends, but not many people stop to think about {{g:what being a good friend actually requires|의문사 what이 이끄는 명사절 (간접의문문) + 동명사 주어 being}}. Here are four {{v:practical}} tips that anyone can follow.\nFirst, be a careful listener. Whenever your friend is speaking, make eye contact and {{g:avoid interrupting|avoid + 동명사: ~하는 것을 피하다}}, even if you are {{v:eager}} to share your own thoughts. Listening {{v:patiently}} shows your friend that their words truly matter to you.\nSecond, be {{v:generous}} with your friends. You might share your snacks or your favorite books, but {{g:the most valuable thing you can offer|최상급 + 목적격 관계대명사 생략 (thing (that) you can offer)}} is your time. Sharing what you have makes your friends feel {{v:appreciated}}.\nThird, keep the secrets that your friends trust you with. If a friend tells you something {{v:private}}, never pass it on to anyone else. {{g:Only a person who can keep a secret will be trusted completely|주격 관계대명사 who + 조동사 수동태 will be + 과거분사}}.\nFinally, apologize {{v:sincerely}} whenever you make a mistake. Nobody is perfect, and everyone makes mistakes from time to time. {{g:Although saying sorry is never easy|although: 비록 ~이지만 (양보의 접속사)}}, it is one of the most {{v:essential}} parts of any friendship. Likewise, be willing to forgive your friend when they apologize to you.\nA true friend is like a precious gift that lasts a lifetime. {{t:If you make the effort to be a good friend, you will surely find good friends in return!}}",
+    "tags": {
+      "vocab": [
+        "practical",
+        "eager",
+        "patiently",
+        "generous",
+        "appreciated",
+        "private",
+        "sincerely",
+        "essential"
+      ],
+      "grammar": [
+        "간접의문문 what",
+        "avoid + 동명사",
+        "목적격 관계대명사 생략",
+        "관계대명사 who",
+        "조동사 수동태",
+        "although"
+      ],
+      "topic": [
+        "우정",
+        "좋은 친구가 되는 방법",
+        "경청·관대함·신뢰·진심 어린 사과"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "add75cfe-fc81-4aa6-8280-d50bca97aa9e",
+        "type": "mc",
+        "q": "What does the writer say in the first sentence?",
+        "choices": [
+          "Most people already know how to be good friends.",
+          "Few people think about what it takes to be a good friend.",
+          "Good friends are very easy to find.",
+          "Nobody wants to have good friends.",
+          "People should stop making new friends."
+        ],
+        "answer": "Few people think about what it takes to be a good friend.",
+        "explanation": "'not many people stop to think about what being a good friend actually requires'는 좋은 친구가 되려면 무엇이 필요한지 생각해 보는 사람이 많지 않다는 뜻이다."
+      },
+      {
+        "qid": "98db4368-acc9-43dd-9bf6-c6ceceddd6f4",
+        "type": "mc",
+        "q": "What does 'make eye contact' mean in the passage?",
+        "choices": [
+          "Close your eyes and think",
+          "Look at your phone",
+          "Look at the other person's eyes",
+          "Wear glasses",
+          "Point at your friend"
+        ],
+        "answer": "Look at the other person's eyes",
+        "explanation": "make eye contact는 '눈을 맞추다', 즉 상대방의 눈을 바라본다는 뜻이다."
+      },
+      {
+        "qid": "16766812-7fe7-4a33-89e6-aefd25ed4e22",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'eager' in the passage?",
+        "choices": [
+          "Afraid",
+          "Tired",
+          "Bored",
+          "Wanting very much",
+          "Angry"
+        ],
+        "answer": "Wanting very much",
+        "explanation": "be eager to는 '몹시 ~하고 싶어 하다'라는 뜻이다. 자기 생각을 말하고 싶더라도 말을 끊지 말라는 내용이다."
+      },
+      {
+        "qid": "2d63eb2c-1ab4-41be-aaeb-f9fbd7ecdba8",
+        "type": "mc",
+        "q": "According to the writer, what is the most valuable thing you can share?",
+        "choices": [
+          "Your snacks",
+          "Your favorite books",
+          "Your secrets",
+          "Your money",
+          "Your time"
+        ],
+        "answer": "Your time",
+        "explanation": "'the most valuable thing you can offer is your time'과 일치한다."
+      },
+      {
+        "qid": "38943df0-adf0-4929-b4fe-8c759769f631",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'generous'?",
+        "choices": [
+          "Willing to give and share",
+          "Very careful",
+          "Always on time",
+          "Good at keeping secrets",
+          "Easily upset"
+        ],
+        "answer": "Willing to give and share",
+        "explanation": "generous는 '너그러운, 아낌없이 주는'이라는 뜻이다. 뒤에 나누는 내용이 이어진다."
+      },
+      {
+        "qid": "f19c1b87-0563-44a0-b239-8665a49ae8f1",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: Only a person who can keep a secret will ____ trusted completely.",
+        "choices": [
+          "is",
+          "be",
+          "been",
+          "being",
+          "to be"
+        ],
+        "answer": "be",
+        "explanation": "조동사 will 뒤에는 동사원형이 오므로, 수동태는 'will be + 과거분사(trusted)'가 된다."
+      },
+      {
+        "qid": "eb4a5204-c16c-442a-9543-cdfa962e3f10",
+        "type": "mc",
+        "q": "What does 'never pass it on to anyone else' mean?",
+        "choices": [
+          "Never forget the secret.",
+          "Never tell the secret to other people.",
+          "Never write the secret down.",
+          "Never ask about the secret.",
+          "Never share snacks with others."
+        ],
+        "answer": "Never tell the secret to other people.",
+        "explanation": "pass on은 '(다른 사람에게) 전하다'라는 뜻이다. 친구의 비밀을 다른 누구에게도 전하지 말라는 뜻이다."
+      },
+      {
+        "qid": "448beefd-1548-4a77-89fd-2aff0971b8de",
+        "type": "mc",
+        "q": "Choose the word that best fits the blank: ____ saying sorry is never easy, it is one of the most essential parts of any friendship.",
+        "choices": [
+          "Because",
+          "So",
+          "If",
+          "Although",
+          "Unless"
+        ],
+        "answer": "Although",
+        "explanation": "'사과하는 것은 쉽지 않지만, 우정에서 가장 중요한 부분 중 하나이다'라는 반대 내용이 이어지므로 양보의 접속사 Although가 알맞다."
+      },
+      {
+        "qid": "bab5c645-15af-46b0-914b-c2997659c9ed",
+        "type": "mc",
+        "q": "Which sentence supports the idea that everyone makes mistakes?",
+        "choices": [
+          "Nobody is perfect.",
+          "Sharing makes friends feel appreciated.",
+          "Listening patiently matters.",
+          "Make eye contact.",
+          "Here are four practical tips."
+        ],
+        "answer": "Nobody is perfect.",
+        "explanation": "'Nobody is perfect, and everyone makes mistakes from time to time.'에서 '완벽한 사람은 없다'가 누구나 실수한다는 생각을 뒷받침한다."
+      },
+      {
+        "qid": "e753ae1f-47e4-4b58-b621-24f5a16526ba",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "You should avoid interrupting your friend.",
+          "Sharing makes your friends feel appreciated.",
+          "You should share only things, not your time.",
+          "Everyone makes mistakes from time to time.",
+          "You should be willing to forgive your friend."
+        ],
+        "answer": "You should share only things, not your time.",
+        "explanation": "글쓴이는 나눌 수 있는 가장 소중한 것이 시간이라고 했으므로 사실이 아니다."
+      },
+      {
+        "qid": "cbd489c3-7c98-405f-99c0-3c8cf75238a9",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "Good friends never argue with each other.",
+          "It is better to have many friends than a few.",
+          "Being a good friend takes effort, and it brings good friends in return.",
+          "Presents are the best way to make friends.",
+          "You should keep your own thoughts secret."
+        ],
+        "answer": "Being a good friend takes effort, and it brings good friends in return.",
+        "explanation": "마지막 문장 'If you make the effort to be a good friend, you will surely find good friends in return!'이 글의 요지이다."
+      },
+      {
+        "qid": "d0e30901-245f-422f-9cf6-d1721d1e0a39",
+        "type": "blank",
+        "q": "Whenever your friend is speaking, make eye contact and avoid ____.",
+        "answer": "interrupting",
+        "explanation": "'make eye contact and avoid interrupting'에서 확인할 수 있다. avoid 뒤에는 동명사가 온다."
+      },
+      {
+        "qid": "6bc6b7ba-705f-4dc8-9e27-2e9576c2f8a7",
+        "type": "blank",
+        "q": "The most ____ thing you can offer is your time.",
+        "answer": "valuable",
+        "explanation": "'the most valuable thing you can offer is your time'에서 확인할 수 있다."
+      },
+      {
+        "qid": "5923c882-2c92-4545-9d34-6729504da1a9",
+        "type": "blank",
+        "q": "If a friend tells you something ____, never pass it on to anyone else.",
+        "answer": "private",
+        "explanation": "'If a friend tells you something private'에서 확인할 수 있다. private은 '사적인, 비밀의'라는 뜻이다."
+      },
+      {
+        "qid": "a919f4e1-8f22-4988-b47c-8e9876ba7cd0",
+        "type": "blank",
+        "q": "Finally, apologize ____ whenever you make a mistake.",
+        "answer": "sincerely",
+        "explanation": "'apologize sincerely whenever you make a mistake'에서 확인할 수 있다. sincerely는 '진심으로'라는 뜻이다."
+      },
+      {
+        "qid": "d875cc9d-bfb4-4a4e-8a8c-b37c0347283c",
+        "type": "blank",
+        "q": "A true friend is like a precious gift that lasts a ____.",
+        "answer": "lifetime",
+        "explanation": "'a precious gift that lasts a lifetime'에서 확인할 수 있다."
+      },
+      {
+        "qid": "b1455be0-32c0-432e-9a6e-f1e3a4c6f167",
+        "type": "tf",
+        "q": "The writer says you may interrupt your friend if you are eager to share your thoughts.",
+        "answer": false,
+        "explanation": "'avoid interrupting, even if you are eager to share your own thoughts'라고 했으므로 말하고 싶어도 끊으면 안 된다."
+      },
+      {
+        "qid": "2f06f926-eb65-4758-93f8-2fd7977b1489",
+        "type": "tf",
+        "q": "The writer believes everyone makes mistakes from time to time.",
+        "answer": true,
+        "explanation": "'everyone makes mistakes from time to time'과 일치한다."
+      },
+      {
+        "qid": "6c70dcfd-3510-474f-bd8d-e6fcdff4f164",
+        "type": "tf",
+        "q": "You should be willing to forgive a friend who apologizes to you.",
+        "answer": true,
+        "explanation": "'be willing to forgive your friend when they apologize to you'와 일치한다."
+      },
+      {
+        "qid": "4168c719-d106-40fa-a3d6-77d051a67656",
+        "type": "order",
+        "items": [
+          "Only a person who can keep a secret will be trusted completely.",
+          "Listening patiently shows your friend that their words truly matter to you.",
+          "Likewise, be willing to forgive your friend when they apologize to you.",
+          "Sharing what you have makes your friends feel appreciated."
+        ],
+        "answer": [
+          "Listening patiently shows your friend that their words truly matter to you.",
+          "Sharing what you have makes your friends feel appreciated.",
+          "Only a person who can keep a secret will be trusted completely.",
+          "Likewise, be willing to forgive your friend when they apologize to you."
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "35b8689e-ebaf-45f4-a7c6-102f87cf2b82",
+        "q": "Explain in English why listening patiently is important in a friendship.",
+        "wordLimit": 30,
+        "sampleAnswer": "It is important because it shows your friend that their words truly matter to you.",
+        "rubric": "친구의 말이 나에게 정말 중요하다는 것을 보여 준다는 내용이 들어가면 만점"
+      },
+      {
+        "qid": "0049f98d-7641-45aa-8296-1e6ea001fade",
+        "q": "Rewrite the sentence in the passive voice: People will trust only a person who can keep a secret.",
+        "wordLimit": 15,
+        "sampleAnswer": "Only a person who can keep a secret will be trusted.",
+        "rubric": "will be trusted (조동사 수동태) 구조를 바르게 쓰면 만점"
+      },
+      {
+        "qid": "6bf2bf25-6cb2-4713-b15b-0ceb8da24203",
+        "q": "우리말로 쓰시오: 글쓴이는 친구와 나눌 수 있는 가장 소중한 것이 무엇이라고 했나요? 그것이 왜 소중한지 자신의 생각을 덧붙여 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "시간이다. 시간은 한 번 쓰면 돌아오지 않기 때문에, 친구와 함께 시간을 보내는 것은 그 친구를 아낀다는 뜻이 되기 때문이다.",
+        "rubric": "'시간'을 정확히 쓰고 알맞은 이유를 덧붙이면 만점, '시간'만 쓰면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "1aeffadb-4550-48a7-a5e2-11ac1d28ea98",
+        "q": "What does the writer mean by 'you will surely find good friends in return'? Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "If you are a good friend to others, they will be good friends to you, too.",
+        "rubric": "내가 좋은 친구가 되면 그 보답으로 좋은 친구가 생긴다는 의미를 영어로 쓰면 만점"
+      },
+      {
+        "qid": "7c10a56b-755c-49ec-b61f-1a8ab5713fc6",
+        "q": "우리말로 쓰시오: 이 글의 네 가지 조언을 각각 한 가지 구체적인 행동과 함께 쓰시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "① 잘 듣기 – 눈을 맞추고 말을 끊지 않는다. ② 나누기 – 간식, 책, 시간을 나눈다. ③ 비밀 지키기 – 친구의 비밀을 다른 사람에게 전하지 않는다. ④ 사과하기 – 실수하면 진심으로 사과하고, 친구가 사과하면 용서한다.",
+        "rubric": "네 가지 조언과 각각의 구체적 행동을 모두 쓰면 만점, 조언만 쓰거나 일부만 쓰면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  }
+}
