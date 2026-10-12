@@ -100,6 +100,21 @@ public/brand/signature.png  ← fallback 서명 (원본: 싸인.png)
 
 ---
 
+## Supabase 계정·일시정지 대처 (2026-10-12 기록)
+
+- **앱이 쓰는 Supabase 프로젝트**: `sinbi-83's Project` (ID `zbpxszbsyxmoruvywqoi`, 서울 `ap-northeast-2`, 무료 플랜)
+- **로그인 계정**: Supabase에서 "Continue with GitHub" → GitHub **`sinbi-83`** (가운데 `-` 있음, seojenny0926 Gmail) 계정으로 들어가야 보인다.
+  - GitHub `sinbi83` (`-` 없음, seojenny83 Gmail)으로 로그인하면 빈 계정이라 "You do not have access to this project"만 뜬다.
+  - 두 Supabase 계정 모두 GitHub 연동이라 이메일+비밀번호 로그인은 안 된다.
+- **증상**: 앱 모든 페이지(로그인 포함)가 `504 MIDDLEWARE_INVOCATION_TIMEOUT`, Vercel 로그에 `ENOTFOUND zbpxszbsyxmoruvywqoi.supabase.co`
+  → `middleware.ts`가 매 요청마다 Supabase에 묻는데 프로젝트가 멈춰 있어서다. 코드 문제 아님.
+- **원인**: 무료 플랜은 약 7일 동안 사용이 없으면 프로젝트를 자동 일시정지한다 (데이터는 그대로).
+- **해결**: GitHub `sinbi-83`으로 Supabase 로그인 → 프로젝트 카드 → **Resume project** → 몇 분 뒤 앱 새로고침. 유료 업그레이드(Supabase Pro, Vercel Pro) 불필요.
+- **예방**: 일주일에 한 번은 앱을 열어 둔다.
+- Vercel 환경변수 값은 다시 보이지 않는다(예시 글자만 표시). 편집 화면에서 Save 누르지 말 것. 로컬 `.env.local`의 Supabase 값은 아직 예시 글자 상태다.
+
+---
+
 ## 안전 규칙
 
 - 요청하지 않은 디자인 변경, 파일 삭제, 구조 변경, 라이브 배포 금지
