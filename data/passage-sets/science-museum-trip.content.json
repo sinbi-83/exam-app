@@ -1,0 +1,1468 @@
+{
+  "school": {
+    "tagged_body": "Grade 5 {{v:Field Trip}} to the City Science {{v:Museum}}\n\nDear parents and students,\n\n{{t:Our Grade 5 students will go to the City Science Museum.}} They {{g:will see|will + 동사원형: ~할 것이다 (미래)}} {{v:robots}} and dinosaur {{v:bones}}. They will also watch a space show.\n\nDate: Thursday, November 6\nTime: 8:30 a.m. to 3:00 p.m.\n{{v:Meeting place}}: School {{v:playground}} (The bus {{g:leaves|정해진 일정은 현재시제로 쓴다: 버스가 떠난다}} at 8:40 a.m.)\n{{v:Cost}}: 12,000 won (bus and ticket)\nWhat to bring: lunch box, water bottle, notebook, pencil\n\nPlease note:\n- {{g:Wear|명령문: 동사원형으로 시작한다 (~해라)}} {{v:comfortable}} shoes.\n- {{g:Don't bring|부정 명령문: Don't + 동사원형 (~하지 마라)}} toys or games.\n- Stay with your {{v:group}} all the time.\n\nPlease bring back the {{v:permission form}} {{g:by Friday, October 31|by + 날짜: ~까지 (기한)}}.",
+    "tags": {
+      "vocab": [
+        "field trip",
+        "museum",
+        "robots",
+        "bones",
+        "meeting place",
+        "playground",
+        "cost",
+        "comfortable",
+        "group",
+        "permission form"
+      ],
+      "grammar": [
+        "will + 동사원형",
+        "현재시제(정해진 일정)",
+        "명령문 (동사원형 ~)",
+        "부정 명령문 (Don't ~)",
+        "by + 날짜 (기한)"
+      ],
+      "topic": [
+        "안내문",
+        "현장 학습",
+        "과학관"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "6e1cfd84-db61-4e36-b36c-0bef7b05da31",
+        "type": "mc",
+        "q": "What is this notice about?",
+        "choices": [
+          "A school sports day",
+          "A new science class",
+          "A field trip to a science museum",
+          "A party at the museum",
+          "A school concert"
+        ],
+        "answer": "A field trip to a science museum",
+        "explanation": "제목과 첫 문장 'Our Grade 5 students will go to the City Science Museum.'에서 과학관 현장 학습 안내문임을 알 수 있다."
+      },
+      {
+        "qid": "43a92d1d-7844-45fe-8165-2264504c5d69",
+        "type": "mc",
+        "q": "Who will go to the museum?",
+        "choices": [
+          "Grade 5 students",
+          "Grade 4 students",
+          "Grade 6 students",
+          "Only parents",
+          "Only teachers"
+        ],
+        "answer": "Grade 5 students",
+        "explanation": "'Our Grade 5 students will go to the City Science Museum.'과 일치한다."
+      },
+      {
+        "qid": "7965483e-9d93-41d1-bf5b-91ae83daceba",
+        "type": "mc",
+        "q": "What will the students NOT see at the museum?",
+        "choices": [
+          "Robots",
+          "Dinosaur bones",
+          "A space show",
+          "Famous paintings",
+          "Robots and dinosaur bones"
+        ],
+        "answer": "Famous paintings",
+        "explanation": "로봇, 공룡 뼈, 우주 쇼는 나오지만 유명한 그림(paintings)은 나오지 않는다."
+      },
+      {
+        "qid": "6fa7a595-5cc4-4343-8eb5-252062d731c1",
+        "type": "mc",
+        "q": "When is the field trip?",
+        "choices": [
+          "Friday, October 31",
+          "Thursday, November 6",
+          "Thursday, October 6",
+          "Tuesday, November 6",
+          "Friday, November 6"
+        ],
+        "answer": "Thursday, November 6",
+        "explanation": "'Date: Thursday, November 6'에서 확인할 수 있다. 10월 31일 금요일은 동의서를 내는 날이다."
+      },
+      {
+        "qid": "59cc17cd-b7e1-440b-95d6-80f48107f118",
+        "type": "mc",
+        "q": "What time does the trip start?",
+        "choices": [
+          "8:40 a.m.",
+          "3:00 p.m.",
+          "8:00 a.m.",
+          "9:30 a.m.",
+          "8:30 a.m."
+        ],
+        "answer": "8:30 a.m.",
+        "explanation": "'Time: 8:30 a.m. to 3:00 p.m.'이므로 오전 8시 30분에 시작한다. 8시 40분은 버스가 떠나는 시각이다."
+      },
+      {
+        "qid": "ddadcca4-751b-4d19-b730-e37629f479f3",
+        "type": "mc",
+        "q": "What time does the bus leave?",
+        "choices": [
+          "8:40 a.m.",
+          "8:30 a.m.",
+          "3:00 p.m.",
+          "8:00 a.m.",
+          "9:00 a.m."
+        ],
+        "answer": "8:40 a.m.",
+        "explanation": "'The bus leaves at 8:40 a.m.'과 일치한다."
+      },
+      {
+        "qid": "bc2da80d-2eb5-4779-9bc0-e4ee317cde30",
+        "type": "mc",
+        "q": "Where do the students meet?",
+        "choices": [
+          "At the museum",
+          "In the classroom",
+          "At the school playground",
+          "At the bus stop",
+          "In the school library"
+        ],
+        "answer": "At the school playground",
+        "explanation": "'Meeting place: School playground'에서 확인할 수 있다."
+      },
+      {
+        "qid": "818790f4-96b9-4979-8b04-db9193b2576d",
+        "type": "mc",
+        "q": "How much does the trip cost?",
+        "choices": [
+          "2,000 won",
+          "10,000 won",
+          "20,000 won",
+          "15,000 won",
+          "12,000 won"
+        ],
+        "answer": "12,000 won",
+        "explanation": "'Cost: 12,000 won'과 일치한다."
+      },
+      {
+        "qid": "9e02e29d-f041-434f-8f47-fd576c00ef0b",
+        "type": "mc",
+        "q": "What does the 12,000 won pay for?",
+        "choices": [
+          "Lunch and water",
+          "The bus and the ticket",
+          "Only the ticket",
+          "Only the bus",
+          "A notebook and a pencil"
+        ],
+        "answer": "The bus and the ticket",
+        "explanation": "'12,000 won (bus and ticket)'이므로 버스비와 입장권 값이다."
+      },
+      {
+        "qid": "ae81f1c3-3d21-4e51-a201-7067ccf9d427",
+        "type": "mc",
+        "q": "What is NOT on the \"What to bring\" list?",
+        "choices": [
+          "A lunch box",
+          "A water bottle",
+          "A notebook",
+          "A camera",
+          "A pencil"
+        ],
+        "answer": "A camera",
+        "explanation": "준비물은 도시락, 물병, 공책, 연필이다. 카메라는 없다."
+      },
+      {
+        "qid": "c2a05f84-1a03-4e05-b1e9-e4f06b0a8625",
+        "type": "mc",
+        "q": "What kind of shoes should the students wear?",
+        "choices": [
+          "New shoes",
+          "Black shoes",
+          "Rain boots",
+          "Comfortable shoes",
+          "Big shoes"
+        ],
+        "answer": "Comfortable shoes",
+        "explanation": "'Wear comfortable shoes.'와 일치한다."
+      },
+      {
+        "qid": "a702f0b2-3b7b-464b-b6ee-b4a10f6b0cf6",
+        "type": "mc",
+        "q": "What should the students NOT bring?",
+        "choices": [
+          "Lunch boxes",
+          "Toys and games",
+          "Water bottles",
+          "Notebooks",
+          "Pencils"
+        ],
+        "answer": "Toys and games",
+        "explanation": "'Don't bring toys or games.'에서 장난감과 게임은 가져오면 안 된다."
+      },
+      {
+        "qid": "4bfd94ef-8b16-466c-b688-3e700adff9b4",
+        "type": "mc",
+        "q": "다음 중 'permission form'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "동의서(허락서)",
+          "시간표",
+          "입장권",
+          "숙제",
+          "성적표"
+        ],
+        "answer": "동의서(허락서)",
+        "explanation": "permission은 '허락', form은 '서류'라는 뜻이다. 현장 학습에 보내도 된다고 허락하는 동의서이다."
+      },
+      {
+        "qid": "0e25366b-6d4a-447d-961e-af027598ccec",
+        "type": "mc",
+        "q": "다음 중 'comfortable'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "비싼",
+          "새로운",
+          "작은",
+          "무거운",
+          "편안한"
+        ],
+        "answer": "편안한",
+        "explanation": "comfortable은 '편안한'이라는 뜻이다. 'Wear comfortable shoes.'는 편한 신발을 신으라는 말이다."
+      },
+      {
+        "qid": "0d7c3304-843b-49d0-8e01-04ae7faab3f8",
+        "type": "mc",
+        "q": "By when should the permission form come back?",
+        "choices": [
+          "By Thursday, November 6",
+          "By Monday, November 3",
+          "By Friday, October 31",
+          "By today",
+          "After the trip"
+        ],
+        "answer": "By Friday, October 31",
+        "explanation": "'Please bring back the permission form by Friday, October 31.'과 일치한다."
+      },
+      {
+        "qid": "0d0ad60b-b66c-4501-800b-82fb09e35273",
+        "type": "mc",
+        "q": "Which is true about the trip?",
+        "choices": [
+          "The trip is on Friday.",
+          "The trip ends at 3:00 p.m.",
+          "The bus leaves at 8:30 a.m.",
+          "The students meet at the museum.",
+          "The students can bring games."
+        ],
+        "answer": "The trip ends at 3:00 p.m.",
+        "explanation": "'8:30 a.m. to 3:00 p.m.'이므로 오후 3시에 끝난다. 여행은 목요일, 버스는 8시 40분, 모이는 곳은 학교 운동장, 게임은 가져올 수 없다."
+      },
+      {
+        "qid": "989aef24-2e59-49ed-ab10-d29a531ed1a4",
+        "type": "mc",
+        "q": "Who follows the rules best?",
+        "choices": [
+          "Minho brings his toy robot.",
+          "Sora walks around the museum alone.",
+          "Tom comes to the playground at 8:50 a.m.",
+          "Yuna brings a game for the bus.",
+          "Jimin wears comfortable shoes and stays with her group."
+        ],
+        "answer": "Jimin wears comfortable shoes and stays with her group.",
+        "explanation": "지민이만 규칙(편한 신발, 모둠과 함께 있기)을 지켰다. 장난감·게임은 금지, 혼자 다니면 안 되고, 8시 50분에 오면 8시 40분 버스를 놓친다."
+      },
+      {
+        "qid": "c3066b4d-7a77-4da3-8300-f5105fb25262",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"____ comfortable shoes.\"",
+        "choices": [
+          "Wear",
+          "Wears",
+          "Wearing",
+          "Wore",
+          "To wear"
+        ],
+        "answer": "Wear",
+        "explanation": "명령문은 주어 없이 동사원형으로 시작한다. 그래서 Wear가 알맞다."
+      },
+      {
+        "qid": "5987a9a3-8c23-48cc-b69d-75ec0e543cbc",
+        "type": "order",
+        "items": [
+          "The bus leaves for the museum.",
+          "Parents give back the permission form.",
+          "The trip ends at 3:00 p.m.",
+          "Students meet at the school playground."
+        ],
+        "answer": [
+          "Parents give back the permission form.",
+          "Students meet at the school playground.",
+          "The bus leaves for the museum.",
+          "The trip ends at 3:00 p.m."
+        ]
+      },
+      {
+        "qid": "0869118a-76e2-45da-99c8-75736af43e9e",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "field trip",
+            "meaning": "현장 학습"
+          },
+          {
+            "word": "museum",
+            "meaning": "박물관, 과학관"
+          },
+          {
+            "word": "bone",
+            "meaning": "뼈"
+          },
+          {
+            "word": "bring",
+            "meaning": "가져오다"
+          },
+          {
+            "word": "group",
+            "meaning": "모둠, 무리"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "a624b1cc-202e-4c9d-b5ee-64ac0127b27a",
+        "q": "Where will the Grade 5 students go? Write in English.",
+        "wordLimit": 12,
+        "sampleAnswer": "They will go to the City Science Museum.",
+        "rubric": "시티 과학관(City Science Museum)에 간다는 내용을 완전한 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "95558465-b124-49f6-b06d-b57ff2b0a767",
+        "q": "What should the students bring? Write two things in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "They should bring a lunch box and a water bottle.",
+        "rubric": "준비물(도시락, 물병, 공책, 연필) 중 두 가지를 영어로 맞게 쓰면 만점, 한 가지면 부분 점수"
+      },
+      {
+        "qid": "c09b9e0b-d77a-4311-b4a7-82aa5174e455",
+        "q": "우리말로 쓰시오: 현장 학습 날 학생들이 지켜야 할 것 세 가지를 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "① 편한 신발을 신는다. ② 장난감이나 게임을 가져오지 않는다. ③ 항상 모둠과 함께 있는다.",
+        "rubric": "세 가지를 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "6ad3c0df-b579-4e84-8a8d-06ca9ef383b5",
+        "q": "우리말로 쓰시오: 언제까지 무엇을 내야 하나요?",
+        "wordLimit": 30,
+        "sampleAnswer": "10월 31일 금요일까지 동의서(허락서)를 내야 한다.",
+        "rubric": "① 10월 31일(금요일) ② 동의서 두 가지가 모두 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "f85119dc-8d2b-4b8f-b465-d9609628fd73",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '장난감을 가져오지 마세요.' <조건> Don't를 사용할 것",
+        "wordLimit": 6,
+        "sampleAnswer": "Don't bring toys.",
+        "rubric": "① Don't + 동사원형(bring) ② toys 사용 ③ 의미 일치 (Do not bring toys.도 정답)"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Grade 5 {{v:Field Trip}} to the City Science {{v:Museum}}\n\nDear parents and students,\n\n{{t:Our Grade 5 students will visit the City Science Museum.}} They {{g:will see|will + 동사원형: ~할 것이다 (미래)}} {{v:robots}}, dinosaur {{v:bones}}, and a space show.\n\nDate: Thursday, November 6\nTime: 8:30 a.m. to 3:00 p.m.\nMeeting place: School {{v:playground}} (The bus {{g:leaves|정해진 일정은 현재시제로 쓴다: 버스가 떠난다}} at 8:40 a.m.)\n{{v:Cost}}: 12,000 won (bus and ticket)\nWhat to bring: lunch box, water bottle, notebook, pencil\n\nPlease note:\n- {{g:Wear|명령문: 동사원형으로 시작한다 (~해라)}} {{v:comfortable}} shoes.\n- {{g:Do not bring|부정 명령문: Do not(Don't) + 동사원형 (~하지 마라)}} toys or games.\n- Stay with your group {{v:at all times}}.\n\nPlease {{v:return}} the {{v:permission form}} {{g:by Friday, October 31|by + 날짜: ~까지 (기한)}}.",
+    "tags": {
+      "vocab": [
+        "field trip",
+        "museum",
+        "robots",
+        "bones",
+        "playground",
+        "cost",
+        "comfortable",
+        "at all times",
+        "return",
+        "permission form"
+      ],
+      "grammar": [
+        "will + 동사원형",
+        "현재시제(정해진 일정)",
+        "명령문 (동사원형 ~)",
+        "부정 명령문 (Do not ~)",
+        "by + 날짜 (기한)"
+      ],
+      "topic": [
+        "안내문",
+        "현장 학습",
+        "과학관"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "ce0fe1f4-9f28-461d-9c9a-df553e2fdda9",
+        "type": "mc",
+        "q": "What is the main purpose of this notice?",
+        "choices": [
+          "To advertise a new museum",
+          "To give information about a field trip",
+          "To invite parents to a science class",
+          "To change the date of a trip",
+          "To ask for money for new robots"
+        ],
+        "answer": "To give information about a field trip",
+        "explanation": "현장 학습의 날짜, 시간, 장소, 비용, 준비물, 주의사항을 알려 주는 안내문이다."
+      },
+      {
+        "qid": "f9f5de99-d5c4-470d-8ede-b39ab4277b21",
+        "type": "mc",
+        "q": "Who is this notice written for?",
+        "choices": [
+          "Only teachers",
+          "Museum workers",
+          "Bus drivers",
+          "Parents and students",
+          "Grade 6 students"
+        ],
+        "answer": "Parents and students",
+        "explanation": "'Dear parents and students,'로 시작하므로 학부모와 학생에게 쓴 글이다."
+      },
+      {
+        "qid": "0e86bd7e-3ffe-4542-b59a-39683d341a18",
+        "type": "mc",
+        "q": "Which will the students see at the museum?",
+        "choices": [
+          "A space show",
+          "A magic show",
+          "Live dinosaurs",
+          "A robot contest",
+          "A movie about the sea"
+        ],
+        "answer": "A space show",
+        "explanation": "'They will see robots, dinosaur bones, and a space show.'에 우주 쇼가 나온다. 살아 있는 공룡이 아니라 공룡 뼈이다."
+      },
+      {
+        "qid": "968dff21-6868-4f87-b617-6692aed5d3f9",
+        "type": "mc",
+        "q": "How long is the field trip?",
+        "choices": [
+          "About three hours",
+          "About five hours",
+          "About eight hours",
+          "All day and night",
+          "About six and a half hours"
+        ],
+        "answer": "About six and a half hours",
+        "explanation": "오전 8시 30분부터 오후 3시까지이므로 6시간 30분이다."
+      },
+      {
+        "qid": "4f2d18e1-ba2d-4544-91d0-9293516b5f12",
+        "type": "mc",
+        "q": "How many minutes are there between the meeting time and the bus time?",
+        "choices": [
+          "5 minutes",
+          "20 minutes",
+          "10 minutes",
+          "30 minutes",
+          "40 minutes"
+        ],
+        "answer": "10 minutes",
+        "explanation": "8시 30분에 모이고 버스는 8시 40분에 떠나므로 10분 차이다."
+      },
+      {
+        "qid": "ff29f4a1-24c8-4c41-a4f7-e26340932a2b",
+        "type": "mc",
+        "q": "What will probably happen if a student arrives at the playground at 8:45 a.m.?",
+        "choices": [
+          "The student will get a free ticket.",
+          "The bus will wait for an hour.",
+          "The trip will start at 9:00 a.m.",
+          "The student may miss the bus.",
+          "The student will see the space show first."
+        ],
+        "answer": "The student may miss the bus.",
+        "explanation": "버스가 8시 40분에 떠나므로 8시 45분에 오면 버스를 놓칠 수 있다."
+      },
+      {
+        "qid": "b36505d2-8f39-422d-9197-43d1b0325461",
+        "type": "mc",
+        "q": "What is included in the cost?",
+        "choices": [
+          "The bus and the ticket",
+          "Only lunch",
+          "Only the bus",
+          "The ticket and lunch",
+          "A notebook and a pencil"
+        ],
+        "answer": "The bus and the ticket",
+        "explanation": "'Cost: 12,000 won (bus and ticket)'에서 버스비와 입장권이 포함됨을 알 수 있다."
+      },
+      {
+        "qid": "b9266ba1-914c-49a4-9291-04f0adcfeeab",
+        "type": "mc",
+        "q": "Which is NOT something the students need to bring?",
+        "choices": [
+          "A lunch box",
+          "A water bottle",
+          "Money for snacks",
+          "A notebook",
+          "A pencil"
+        ],
+        "answer": "Money for snacks",
+        "explanation": "준비물은 도시락, 물병, 공책, 연필이다. 간식비는 안내문에 없다."
+      },
+      {
+        "qid": "d391f5b6-5e7c-4075-ad7a-cb76eac2927e",
+        "type": "mc",
+        "q": "Which rule is NOT in the notice?",
+        "choices": [
+          "Wear comfortable shoes.",
+          "Do not bring toys or games.",
+          "Stay with your group at all times.",
+          "Return the permission form.",
+          "Do not take pictures."
+        ],
+        "answer": "Do not take pictures.",
+        "explanation": "사진 촬영 금지는 안내문에 없다."
+      },
+      {
+        "qid": "c2cf4691-dca5-45ae-9cbd-67791f1d1ea9",
+        "type": "mc",
+        "q": "'at all times'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "가끔",
+          "항상",
+          "점심시간에만",
+          "버스 안에서만",
+          "처음에만"
+        ],
+        "answer": "항상",
+        "explanation": "at all times는 '항상, 언제나'라는 뜻이다. 'Stay with your group at all times.'는 항상 모둠과 함께 있으라는 말이다."
+      },
+      {
+        "qid": "55744f11-7acc-431d-8fe9-2036dc5ba3aa",
+        "type": "mc",
+        "q": "Which word means \"saying yes to let someone do something\"?",
+        "choices": [
+          "cost",
+          "group",
+          "trip",
+          "notebook",
+          "permission"
+        ],
+        "answer": "permission",
+        "explanation": "permission은 '허락'이라는 뜻이다. 'permission form'은 허락(동의)서이다."
+      },
+      {
+        "qid": "d5df1905-360f-422e-a9d6-8751f805c61a",
+        "type": "mc",
+        "q": "Which is NOT true according to the notice?",
+        "choices": [
+          "The trip is on Thursday, November 6.",
+          "The students meet at the school playground.",
+          "The bus leaves the school at 8:30 a.m.",
+          "The cost is 12,000 won.",
+          "The trip ends at 3:00 p.m."
+        ],
+        "answer": "The bus leaves the school at 8:30 a.m.",
+        "explanation": "버스는 8시 40분에 떠난다. 8시 30분은 모이는 시각(여행 시작 시각)이다."
+      },
+      {
+        "qid": "f6bd3438-53fd-4b27-8458-810c75d82cab",
+        "type": "mc",
+        "q": "Who is doing the right thing?",
+        "choices": [
+          "Junho goes straight to the museum by himself.",
+          "Mina comes to the playground at 8:30 a.m. with her lunch box.",
+          "Hana brings a board game for her friends.",
+          "Leo returns the form on November 3.",
+          "Sumi leaves her group to see the robots alone."
+        ],
+        "answer": "Mina comes to the playground at 8:30 a.m. with her lunch box.",
+        "explanation": "미나만 안내문대로 했다. 혼자 박물관에 가기·게임 가져오기·11월 3일에 동의서 내기·모둠을 떠나기는 모두 안내와 다르다."
+      },
+      {
+        "qid": "f9fc9e03-228d-4cf3-952c-ebaa254eb6d7",
+        "type": "mc",
+        "q": "What should the families do by October 31?",
+        "choices": [
+          "Return the permission form",
+          "Pay at the museum",
+          "Come to the playground",
+          "Buy a new lunch box",
+          "Call the museum"
+        ],
+        "answer": "Return the permission form",
+        "explanation": "'Please return the permission form by Friday, October 31.'과 일치한다."
+      },
+      {
+        "qid": "3794e9f5-7be0-4af7-8640-2268810f7b54",
+        "type": "mc",
+        "q": "How many days after the form deadline is the field trip?",
+        "choices": [
+          "1 day",
+          "3 days",
+          "7 days",
+          "6 days",
+          "10 days"
+        ],
+        "answer": "6 days",
+        "explanation": "동의서 마감은 10월 31일(금), 현장 학습은 11월 6일(목)이므로 6일 뒤이다."
+      },
+      {
+        "qid": "b3565e98-54e9-435a-8fa3-bd4a33549275",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "Wear comfortable shoes.",
+          "Do not bring toys.",
+          "Stays with your group.",
+          "Please return the form.",
+          "They will see robots."
+        ],
+        "answer": "Stays with your group.",
+        "explanation": "명령문은 동사원형으로 시작해야 하므로 Stays가 아니라 Stay가 맞다."
+      },
+      {
+        "qid": "26905ab0-65bf-4462-b290-e243dd2dbd25",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"The students will ____ a space show.\"",
+        "choices": [
+          "see",
+          "sees",
+          "saw",
+          "seeing",
+          "to see"
+        ],
+        "answer": "see",
+        "explanation": "will 뒤에는 동사원형이 온다. 그래서 see가 알맞다."
+      },
+      {
+        "qid": "911c4a1a-b35c-4f0a-a316-7e5154821421",
+        "type": "mc",
+        "q": "In 'The bus leaves at 8:40 a.m.', which word is the opposite of 'leaves'?",
+        "choices": [
+          "goes",
+          "starts",
+          "runs",
+          "arrives",
+          "moves"
+        ],
+        "answer": "arrives",
+        "explanation": "leave(떠나다)의 반대말은 arrive(도착하다)이다."
+      },
+      {
+        "qid": "9e1d9c6f-1a30-4fff-97b5-99df2eebfc4b",
+        "type": "order",
+        "items": [
+          "The bus leaves the school at 8:40 a.m.",
+          "Families return the permission form.",
+          "Students see robots, dinosaur bones, and a space show.",
+          "Students meet at the school playground at 8:30 a.m.",
+          "The trip ends at 3:00 p.m."
+        ],
+        "answer": [
+          "Families return the permission form.",
+          "Students meet at the school playground at 8:30 a.m.",
+          "The bus leaves the school at 8:40 a.m.",
+          "Students see robots, dinosaur bones, and a space show.",
+          "The trip ends at 3:00 p.m."
+        ]
+      },
+      {
+        "qid": "306e75ec-431a-4fb1-8a83-f32912e3a538",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "field trip",
+            "meaning": "현장 학습"
+          },
+          {
+            "word": "permission form",
+            "meaning": "동의서, 허락서"
+          },
+          {
+            "word": "comfortable",
+            "meaning": "편안한"
+          },
+          {
+            "word": "cost",
+            "meaning": "비용"
+          },
+          {
+            "word": "bone",
+            "meaning": "뼈"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "bc8097bb-bf0f-40ff-b68d-3a1f1ef2951a",
+        "q": "What will the students see at the museum? Write three things in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "They will see robots, dinosaur bones, and a space show.",
+        "rubric": "① 로봇 ② 공룡 뼈 ③ 우주 쇼 세 가지를 모두 쓰면 만점, 두 가지면 부분 점수"
+      },
+      {
+        "qid": "e3fc7ffe-0cb7-48b3-9cb1-cb59005eb673",
+        "q": "우리말로 쓰시오: 버스는 8시 40분에 출발하는데, 학생들은 몇 시까지 어디에 모여야 하나요? 그렇게 하는 이유도 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "오전 8시 30분까지 학교 운동장에 모여야 한다. 버스가 8시 40분에 떠나므로 늦지 않게 미리 모여야 하기 때문이다.",
+        "rubric": "① 8시 30분 ② 학교 운동장 ③ 버스를 놓치지 않기 위해(버스가 8시 40분에 떠나서) 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "47d86b10-f4cd-4923-83ef-4487dfca1a06",
+        "q": "Imagine you are a student going on this trip. What will you bring? Start with \"I will bring\".",
+        "wordLimit": 20,
+        "sampleAnswer": "I will bring a lunch box, a water bottle, a notebook, and a pencil.",
+        "rubric": "① 'I will bring'으로 시작 ② 본문 준비물 2개 이상 ③ 장난감·게임을 쓰면 감점"
+      },
+      {
+        "qid": "f54b0f57-36b4-40a8-8a4b-4c43878aa629",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '항상 너의 모둠과 함께 있어라.' <조건> stay와 at all times를 사용할 것",
+        "wordLimit": 10,
+        "sampleAnswer": "Stay with your group at all times.",
+        "rubric": "① 명령문(동사원형 Stay로 시작) ② with your group ③ at all times 모두 맞으면 만점"
+      },
+      {
+        "qid": "7d17a6e5-d333-4a0f-b2cb-b78c54d3833b",
+        "q": "우리말로 쓰시오: 학생이 현장 학습 날 지켜야 할 규칙 세 가지와, 그 전에 가족이 해야 할 일 한 가지를 쓰시오.",
+        "wordLimit": 70,
+        "sampleAnswer": "규칙: ① 편한 신발을 신는다. ② 장난감이나 게임을 가져오지 않는다. ③ 항상 모둠과 함께 있는다. 가족이 할 일: 10월 31일 금요일까지 동의서를 낸다.",
+        "rubric": "규칙 3가지 + 할 일 1가지(동의서 제출, 날짜 포함)를 모두 쓰면 만점, 일부만 쓰면 부분 점수",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Grade 5 {{v:Field Trip}} to the City Science Museum\n\nDear parents and students,\n\nWe are delighted to {{v:announce}} that {{t:our Grade 5 students will be visiting the City Science Museum next month.}} During their visit, they will have {{g:a chance to see|to부정사의 형용사적 용법: 앞의 명사 chance를 꾸밈 (볼 기회)}} moving robots and actual dinosaur bones, and they will also experience an exciting space show.\n\nDate: Thursday, November 6\nTime: 8:30 a.m. to 3:00 p.m.\nMeeting place: School playground (The bus {{v:departs}} at 8:40 a.m., so please don't be late.)\nCost: 12,000 won ({{v:including}} the bus and the museum ticket)\nWhat to bring: a lunch box, a water bottle, a notebook, and a pencil\n\nPlease note:\n- Students {{g:should wear|should + 동사원형: ~해야 한다 (충고)}} {{v:comfortable}} shoes {{g:because they will walk a lot|because + 주어 + 동사: ~하기 때문에 (이유)}}.\n- Students should not bring any toys or games.\n- Students {{g:must stay|must + 동사원형: 반드시 ~해야 한다 (의무)}} with their group at all times.\n\nPlease {{g:make sure to return|make sure to + 동사원형: 반드시 ~하도록 하다}} the {{v:signed}} {{v:permission form}} by Friday, October 31.",
+    "tags": {
+      "vocab": [
+        "field trip",
+        "announce",
+        "departs",
+        "including",
+        "comfortable",
+        "signed",
+        "permission form"
+      ],
+      "grammar": [
+        "to부정사 형용사적 용법 (a chance to see)",
+        "should / must + 동사원형",
+        "because + 주어 + 동사 (이유)",
+        "make sure to + 동사원형",
+        "will be + -ing"
+      ],
+      "topic": [
+        "안내문",
+        "현장 학습",
+        "과학관",
+        "안전 수칙"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "a3e23f99-18ab-4666-b97a-a3cce2ace83c",
+        "type": "mc",
+        "q": "What is the main purpose of this notice?",
+        "choices": [
+          "To introduce the history of the museum",
+          "To tell students how robots are made",
+          "To announce that the trip is canceled",
+          "To give details about a trip and ask for a signed form",
+          "To ask parents to drive students to the museum"
+        ],
+        "answer": "To give details about a trip and ask for a signed form",
+        "explanation": "현장 학습의 세부 사항을 알리고, 서명한 동의서를 내 달라고 요청하는 글이다."
+      },
+      {
+        "qid": "ee53a856-eb3f-423a-ba87-a28933d954ef",
+        "type": "mc",
+        "q": "In which month was this notice most likely written?",
+        "choices": [
+          "November",
+          "October",
+          "September",
+          "December",
+          "January"
+        ],
+        "answer": "October",
+        "explanation": "현장 학습(11월 6일)이 'next month'이고 동의서 마감이 10월 31일이므로 10월에 쓴 글이다."
+      },
+      {
+        "qid": "d46ef60b-57b5-42dc-a362-5c5db6a24e89",
+        "type": "mc",
+        "q": "Why should the students wear comfortable shoes?",
+        "choices": [
+          "Because the bus is small",
+          "Because it will rain",
+          "Because the museum gives a prize",
+          "Because they will play soccer",
+          "Because they will walk a lot"
+        ],
+        "answer": "Because they will walk a lot",
+        "explanation": "'Students should wear comfortable shoes because they will walk a lot.'에서 이유를 알 수 있다."
+      },
+      {
+        "qid": "0e891875-bedc-4877-80ea-a115f7618cef",
+        "type": "mc",
+        "q": "Why does the notice say \"please don't be late\"?",
+        "choices": [
+          "Because the bus departs at 8:40 a.m.",
+          "Because the museum opens at 8:30 a.m.",
+          "Because lunch starts early",
+          "Because the space show is first",
+          "Because the form is due that day"
+        ],
+        "answer": "Because the bus departs at 8:40 a.m.",
+        "explanation": "'The bus departs at 8:40 a.m., so please don't be late.' — 버스가 8시 40분에 떠나기 때문이다."
+      },
+      {
+        "qid": "af29874a-3fb6-4376-b509-c70b39331550",
+        "type": "mc",
+        "q": "What does the 12,000 won include?",
+        "choices": [
+          "The museum ticket and lunch",
+          "Only the bus",
+          "The bus and the museum ticket",
+          "Lunch and a water bottle",
+          "A notebook and a pencil"
+        ],
+        "answer": "The bus and the museum ticket",
+        "explanation": "'12,000 won (including the bus and the museum ticket)'과 일치한다."
+      },
+      {
+        "qid": "4d52f937-011b-4f6e-b924-83157fe2fb2c",
+        "type": "mc",
+        "q": "How long will the students be on the trip?",
+        "choices": [
+          "Four hours",
+          "Five and a half hours",
+          "Six and a half hours",
+          "Seven hours",
+          "Eight hours"
+        ],
+        "answer": "Six and a half hours",
+        "explanation": "오전 8시 30분부터 오후 3시까지이므로 6시간 30분이다."
+      },
+      {
+        "qid": "005aa226-a946-410b-a469-1b30960b3358",
+        "type": "mc",
+        "q": "What kind of robots will the students see?",
+        "choices": [
+          "Talking robots",
+          "Flying robots",
+          "Toy robots",
+          "Broken robots",
+          "Moving robots"
+        ],
+        "answer": "Moving robots",
+        "explanation": "'they will have a chance to see moving robots'와 일치한다."
+      },
+      {
+        "qid": "ac0f6a9a-86e2-4dba-8da7-5b7ba6c130cc",
+        "type": "mc",
+        "q": "Which is NOT true according to the notice?",
+        "choices": [
+          "The trip is on Thursday, November 6.",
+          "Students may bring one small toy.",
+          "The bus departs from the school at 8:40 a.m.",
+          "Students will see real dinosaur bones.",
+          "The form must be signed."
+        ],
+        "answer": "Students may bring one small toy.",
+        "explanation": "'Students should not bring any toys or games.'이므로 작은 장난감도 가져올 수 없다."
+      },
+      {
+        "qid": "55472497-bbe8-4fb3-ba71-5636f0e3e6be",
+        "type": "mc",
+        "q": "Who does NOT follow the notice?",
+        "choices": [
+          "Kevin wears his most comfortable sneakers.",
+          "Sujin arrives at the playground at 8:25 a.m.",
+          "Eric stays with his group all day.",
+          "Dana brings a small game player in her bag.",
+          "Ara packs a lunch box and a water bottle."
+        ],
+        "answer": "Dana brings a small game player in her bag.",
+        "explanation": "'should not bring any toys or games'라고 했으므로 게임기를 가져온 Dana가 안내를 지키지 않았다."
+      },
+      {
+        "qid": "089b8fec-4ba1-47b6-899c-f633ecdaa945",
+        "type": "mc",
+        "q": "What must families return by October 31?",
+        "choices": [
+          "The signed permission form",
+          "The museum ticket",
+          "The lunch box",
+          "The bus fare in cash",
+          "A science report"
+        ],
+        "answer": "The signed permission form",
+        "explanation": "'Please make sure to return the signed permission form by Friday, October 31.'과 일치한다."
+      },
+      {
+        "qid": "cb58e430-a000-4b3f-ad5c-8de5cd0154bb",
+        "type": "mc",
+        "q": "'signed'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "서명한",
+          "인쇄한",
+          "접은",
+          "새로운",
+          "비어 있는"
+        ],
+        "answer": "서명한",
+        "explanation": "signed는 '서명한, 사인한'이라는 뜻이다. 부모님이 사인한 동의서를 내라는 말이다."
+      },
+      {
+        "qid": "58169d61-1c52-49da-bcec-92c678e9b085",
+        "type": "mc",
+        "q": "Which word is closest in meaning to 'departs'?",
+        "choices": [
+          "arrives",
+          "stops",
+          "waits",
+          "leaves",
+          "returns"
+        ],
+        "answer": "leaves",
+        "explanation": "depart는 '출발하다, 떠나다'로 leave와 뜻이 가깝다."
+      },
+      {
+        "qid": "c4104955-31a6-4103-adf5-b4021b10cd0c",
+        "type": "mc",
+        "q": "'announce'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "묻다",
+          "거절하다",
+          "알리다",
+          "빌리다",
+          "바꾸다"
+        ],
+        "answer": "알리다",
+        "explanation": "announce는 '알리다, 발표하다'라는 뜻이다."
+      },
+      {
+        "qid": "5b4c4825-fc45-40b6-b6e8-770f21f118c3",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "They will have a chance to see robots.",
+          "Please don't be late.",
+          "Make sure to return the form.",
+          "They will be visiting the museum.",
+          "Students must stays with their group."
+        ],
+        "answer": "Students must stays with their group.",
+        "explanation": "must 뒤에는 동사원형이 와야 하므로 stays가 아니라 stay가 맞다."
+      },
+      {
+        "qid": "7b2fd4dc-0102-4287-b6fb-e19f216fbe56",
+        "type": "mc",
+        "q": "Which 'to' is used in the same way as in 'a chance to see moving robots'?",
+        "choices": [
+          "I want to see the robots.",
+          "I have some homework to do.",
+          "She went to the museum to see robots.",
+          "To see real bones is exciting.",
+          "He was happy to see the space show."
+        ],
+        "answer": "I have some homework to do.",
+        "explanation": "'a chance to see'의 to부정사는 앞의 명사 chance를 꾸민다. 'homework to do'도 명사 homework를 꾸미는 형용사적 용법이다."
+      },
+      {
+        "qid": "b6adff02-4d90-4542-920d-b993caf8810c",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Students should wear comfortable shoes ____ they will walk a lot.\"",
+        "choices": [
+          "but",
+          "or",
+          "so",
+          "until",
+          "because"
+        ],
+        "answer": "because",
+        "explanation": "뒤 내용(많이 걸을 것이다)이 이유이므로 because가 알맞다."
+      },
+      {
+        "qid": "4cc9008b-060c-416e-9cfd-59137b759147",
+        "type": "mc",
+        "q": "Which information is NOT given in the notice?",
+        "choices": [
+          "What time the bus departs",
+          "What time the students will arrive at the museum",
+          "What the cost includes",
+          "What the students should bring",
+          "When the form is due"
+        ],
+        "answer": "What time the students will arrive at the museum",
+        "explanation": "박물관에 도착하는 시각은 나와 있지 않다."
+      },
+      {
+        "qid": "47237ab8-63f0-4075-a09e-c55283283297",
+        "type": "mc",
+        "q": "Which best completes the sentence? \"The notice tells students to (A) ____ comfortable shoes and to (B) ____ their toys at home.\"",
+        "choices": [
+          "(A) wear – (B) leave",
+          "(A) buy – (B) bring",
+          "(A) wear – (B) bring",
+          "(A) take off – (B) leave",
+          "(A) bring – (B) sell"
+        ],
+        "answer": "(A) wear – (B) leave",
+        "explanation": "편한 신발을 신고(wear), 장난감은 집에 두고 오라(leave)는 뜻이다. 'should not bring any toys'와 같은 의미이다."
+      },
+      {
+        "qid": "5597efc8-fa97-4f28-b872-16a2f07e9dce",
+        "type": "order",
+        "items": [
+          "The bus departs, so nobody should be late.",
+          "Families return the signed permission form.",
+          "Students enjoy moving robots, dinosaur bones, and a space show.",
+          "Students gather at the school playground.",
+          "The trip finishes at 3:00 p.m."
+        ],
+        "answer": [
+          "Families return the signed permission form.",
+          "Students gather at the school playground.",
+          "The bus departs, so nobody should be late.",
+          "Students enjoy moving robots, dinosaur bones, and a space show.",
+          "The trip finishes at 3:00 p.m."
+        ]
+      },
+      {
+        "qid": "cf4736f2-1a98-4710-a3b7-8c595c7f81cb",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "chance",
+            "meaning": "기회"
+          },
+          {
+            "word": "include",
+            "meaning": "포함하다"
+          },
+          {
+            "word": "comfortable",
+            "meaning": "편안한"
+          },
+          {
+            "word": "return",
+            "meaning": "돌려주다, 제출하다"
+          },
+          {
+            "word": "field trip",
+            "meaning": "현장 학습"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "1ccd67b8-aeeb-476c-b323-14ab69001371",
+        "q": "Why should the students wear comfortable shoes? Answer in a complete English sentence.",
+        "wordLimit": 15,
+        "sampleAnswer": "They should wear comfortable shoes because they will walk a lot.",
+        "rubric": "① because를 사용한 이유 ② 많이 걷는다는 내용 ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "2ccbbdb8-d9a1-46b4-905c-0bc914c83120",
+        "q": "우리말로 쓰시오: 버스 시각과 관련해 학생들이 주의해야 할 점과 그 이유를 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "버스가 오전 8시 40분에 출발하므로 늦지 않도록 8시 30분까지 학교 운동장에 와야 한다.",
+        "rubric": "① 늦지 말 것(8시 30분까지 운동장) ② 버스가 8시 40분에 출발한다는 이유 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "3f0ddf15-d430-4bf9-854d-097305ad9d04",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '우리는 많이 걸을 것이기 때문에 편한 신발을 신어야 한다.' <조건> should와 because를 사용할 것",
+        "wordLimit": 15,
+        "sampleAnswer": "We should wear comfortable shoes because we will walk a lot.",
+        "rubric": "① should + 동사원형(wear) ② because + 주어 + 동사 ③ 의미 일치"
+      },
+      {
+        "qid": "083a1543-6b16-408c-ba9b-45c0279aab0f",
+        "q": "Write two things the students must do on the day of the trip. Use two complete English sentences.",
+        "wordLimit": 30,
+        "sampleAnswer": "They must come to the school playground by 8:30 a.m. They must stay with their group at all times.",
+        "rubric": "① 본문 내용에 맞는 할 일 2가지 ② 완전한 영어 문장 2개 ③ 문법 오류 없음"
+      },
+      {
+        "qid": "40c8e70f-124b-47d2-b2ae-0d5f47debdc9",
+        "q": "우리말로 쓰시오: 12,000원에 포함된 것은 무엇이고, 학생이 직접 챙겨야 하는 것은 무엇인지 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "12,000원에는 버스비와 박물관 입장권이 포함된다. 학생은 도시락, 물병, 공책, 연필을 직접 챙겨야 한다.",
+        "rubric": "① 포함된 것(버스, 입장권) ② 챙길 것(도시락, 물병, 공책, 연필 중 3개 이상) 모두 쓰면 만점",
+        "answerLang": "ko"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Grade 5 Field Trip to the City Science Museum\n\nDear parents and students,\n\nWe {{g:are pleased to inform|be pleased to + 동사원형: ~하게 되어 기쁘다 (감정의 원인)}} you that {{t:our Grade 5 students will be taking an educational field trip to the City Science Museum.}} Throughout the visit, students will have the {{v:opportunity}} to {{v:observe}} robots in action, {{v:examine}} {{v:genuine}} dinosaur skeletons, and experience an {{v:immersive}} space show that brings the universe to life.\n\nDate: Thursday, November 6\nTime: 8:30 a.m. to 3:00 p.m.\nMeeting place: School playground (Please note that the bus will depart {{v:promptly}} at 8:40 a.m.)\nCost: 12,000 won (covering both transportation and {{v:admission}})\nWhat to bring: a packed lunch, a water bottle, a notebook, and a pencil\n\nImportant reminders:\n- {{g:Since students will be walking|since + 주어 + 동사: ~이기 때문에 (이유)}} for most of the day, comfortable {{v:footwear}} is strongly recommended.\n- Toys and games {{g:are not permitted|수동태 be + p.p.: 허락되지 않는다}} during the trip.\n- For safety reasons, students {{g:are required to remain|be required to + 동사원형: ~해야 한다 (의무)}} with their {{v:assigned}} group at all times.\n\nKindly return the completed permission form {{g:no later than Friday, October 31|no later than + 날짜: 늦어도 ~까지}}. We appreciate your {{v:cooperation}}.",
+    "tags": {
+      "vocab": [
+        "opportunity",
+        "observe",
+        "examine",
+        "genuine",
+        "immersive",
+        "promptly",
+        "admission",
+        "footwear",
+        "assigned",
+        "cooperation"
+      ],
+      "grammar": [
+        "be pleased to + 동사원형",
+        "since + 주어 + 동사 (이유)",
+        "수동태 (are not permitted)",
+        "be required to + 동사원형",
+        "no later than + 날짜"
+      ],
+      "topic": [
+        "안내문",
+        "현장 학습",
+        "과학관",
+        "안전 수칙",
+        "학부모 동의"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "b93cc119-18aa-4aa9-a0a5-96a1f36d266e",
+        "type": "mc",
+        "q": "What is the primary purpose of this notice?",
+        "choices": [
+          "To provide trip details and request parental permission",
+          "To recommend a science book to students",
+          "To report what happened on a past field trip",
+          "To ask parents to volunteer at the museum",
+          "To explain how the universe was formed"
+        ],
+        "answer": "To provide trip details and request parental permission",
+        "explanation": "다가오는 현장 학습의 세부 정보를 안내하고, 동의서 제출(학부모 허락)을 요청하는 글이다."
+      },
+      {
+        "qid": "c810c8b4-68e5-4402-8631-372991173d84",
+        "type": "mc",
+        "q": "What can be inferred about the bus?",
+        "choices": [
+          "It will pick students up at their homes.",
+          "It will leave the museum at 8:40 a.m.",
+          "It is not included in the cost.",
+          "It will be late because of traffic.",
+          "It will not wait for students who arrive late."
+        ],
+        "answer": "It will not wait for students who arrive late.",
+        "explanation": "'the bus will depart promptly at 8:40 a.m.' — promptly(정각에)이므로 늦게 오는 학생을 기다리지 않을 것임을 추론할 수 있다."
+      },
+      {
+        "qid": "7c4bbe74-14a2-4ff1-bdda-f28564aab02a",
+        "type": "mc",
+        "q": "What does \"covering both transportation and admission\" mean?",
+        "choices": [
+          "Students must pay extra for the bus.",
+          "The fee includes lunch and snacks.",
+          "The fee pays for both the bus and entry to the museum.",
+          "Admission is free, but the bus is not.",
+          "Parents must drive their children to the museum."
+        ],
+        "answer": "The fee pays for both the bus and entry to the museum.",
+        "explanation": "transportation은 교통(버스), admission은 입장(료)이다. 12,000원이 두 가지를 모두 포함한다는 뜻이다."
+      },
+      {
+        "qid": "4a18f4e5-10ae-4f18-a018-10d104375f40",
+        "type": "mc",
+        "q": "Why is comfortable footwear strongly recommended?",
+        "choices": [
+          "The museum floor is very slippery.",
+          "Students will run a race at the museum.",
+          "New shoes are not allowed on the bus.",
+          "Students will be walking for most of the day.",
+          "It will rain on the day of the trip."
+        ],
+        "answer": "Students will be walking for most of the day.",
+        "explanation": "'Since students will be walking for most of the day'에서 이유를 알 수 있다."
+      },
+      {
+        "qid": "8e41c162-6dbc-45fd-a47f-a07099abd833",
+        "type": "mc",
+        "q": "What does \"a space show that brings the universe to life\" suggest?",
+        "choices": [
+          "The show is about living animals.",
+          "The show makes space feel real and vivid.",
+          "The show explains how to build robots.",
+          "The show is held outdoors at night.",
+          "The show is only for parents."
+        ],
+        "answer": "The show makes space feel real and vivid.",
+        "explanation": "bring ~ to life는 '~을 생생하게 살아 있는 것처럼 보여 주다'라는 뜻이다. immersive(몰입형)와도 연결된다."
+      },
+      {
+        "qid": "0a5e70c5-76f7-4be7-b82a-2d9217863f8e",
+        "type": "mc",
+        "q": "What does \"robots in action\" most likely mean?",
+        "choices": [
+          "Robots that are broken",
+          "Robots that are moving and working",
+          "Pictures of robots in a book",
+          "Robots that are for sale",
+          "Robots made by the students"
+        ],
+        "answer": "Robots that are moving and working",
+        "explanation": "in action은 '작동 중인, 활동 중인'이라는 뜻이다."
+      },
+      {
+        "qid": "f2a2cb65-ad78-42da-9025-c518c4577c64",
+        "type": "mc",
+        "q": "Which is NOT true according to the notice?",
+        "choices": [
+          "The trip lasts from 8:30 a.m. to 3:00 p.m.",
+          "Students will see dinosaur skeletons.",
+          "Students should bring a packed lunch.",
+          "Students may bring games if they keep them in their bags.",
+          "Students must stay with their assigned group."
+        ],
+        "answer": "Students may bring games if they keep them in their bags.",
+        "explanation": "'Toys and games are not permitted during the trip.'이므로 가방에 넣어도 게임은 가져올 수 없다."
+      },
+      {
+        "qid": "a4256400-2310-4b10-8eda-0e903f013373",
+        "type": "mc",
+        "q": "Which student follows ALL of the guidelines?",
+        "choices": [
+          "Yerin arrives at 8:30 a.m. in sneakers with a packed lunch and stays with her group.",
+          "Daniel arrives at 8:45 a.m. with his lunch and a notebook.",
+          "Somi wears new high heels but stays with her group.",
+          "Chris brings a card game to play on the bus.",
+          "Haein leaves her group to look at the robots by herself."
+        ],
+        "answer": "Yerin arrives at 8:30 a.m. in sneakers with a packed lunch and stays with her group.",
+        "explanation": "예린이만 시간, 신발, 준비물, 모둠 규칙을 모두 지켰다. 8시 45분 도착은 버스를 놓치고, 굽 높은 새 신발은 편한 신발이 아니며, 게임 지참·단독 행동은 금지이다."
+      },
+      {
+        "qid": "5400e747-e3b4-498b-bb50-3cc279d7ae4e",
+        "type": "mc",
+        "q": "Which question CANNOT be answered from the notice?",
+        "choices": [
+          "Where should the students meet?",
+          "What does the fee cover?",
+          "Why should students stay with their group?",
+          "When is the permission form due?",
+          "What time will the students arrive at the museum?"
+        ],
+        "answer": "What time will the students arrive at the museum?",
+        "explanation": "박물관 도착 시각은 나와 있지 않다. 모둠과 함께 있어야 하는 이유는 For safety reasons(안전)라고 나와 있다."
+      },
+      {
+        "qid": "0c41f0e3-16e5-43fb-824b-0900989f53a9",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'promptly'?",
+        "choices": [
+          "slowly",
+          "quietly",
+          "exactly on time",
+          "sometimes",
+          "a little late"
+        ],
+        "answer": "exactly on time",
+        "explanation": "promptly는 '정각에, 지체 없이'라는 뜻이다."
+      },
+      {
+        "qid": "26443967-cc6c-431a-b99f-724c830fd45e",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'permitted'?",
+        "choices": [
+          "required",
+          "sold",
+          "allowed",
+          "recommended",
+          "forgotten"
+        ],
+        "answer": "allowed",
+        "explanation": "permit은 '허락하다'로 allow와 뜻이 같다. are not permitted = are not allowed."
+      },
+      {
+        "qid": "8296057e-4cd6-4f0e-b053-9811cc1f13ec",
+        "type": "mc",
+        "q": "In 'their assigned group', what does 'assigned' mean?",
+        "choices": [
+          "chosen freely by each student",
+          "made up of parents",
+          "waiting at the museum",
+          "formed after the trip",
+          "given to them by the school"
+        ],
+        "answer": "given to them by the school",
+        "explanation": "assign은 '(일·자리 등을) 정해 주다, 배정하다'라는 뜻이다. 학교가 정해 준 모둠이다."
+      },
+      {
+        "qid": "3e0c4fb2-95bf-40b2-8f57-f5c4eb5de6e7",
+        "type": "mc",
+        "q": "What does 'no later than Friday, October 31' mean?",
+        "choices": [
+          "Only after Friday, October 31",
+          "Exactly on Thursday, November 6",
+          "Any day next month",
+          "On or before Friday, October 31",
+          "After the field trip"
+        ],
+        "answer": "On or before Friday, October 31",
+        "explanation": "no later than은 '늦어도 ~까지'이므로 10월 31일 당일이나 그 전에 내면 된다."
+      },
+      {
+        "qid": "6c13054d-48c2-486c-90aa-a0f127eb7d53",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "We are pleased to inform you of the change.",
+          "Students are required remain with their group.",
+          "The bus will depart promptly at 8:40 a.m.",
+          "Since it was raining, we stayed inside.",
+          "Toys are not permitted during the trip."
+        ],
+        "answer": "Students are required remain with their group.",
+        "explanation": "be required 뒤에는 to부정사가 와야 하므로 are required to remain이 맞다."
+      },
+      {
+        "qid": "8af42797-59f3-4b34-8e1c-252593336dd1",
+        "type": "mc",
+        "q": "Which sentence uses 'since' with the same meaning as in 'Since students will be walking for most of the day'?",
+        "choices": [
+          "Since the museum is far, we will take a bus.",
+          "She has been busy since Monday.",
+          "It has been two years since we met.",
+          "I haven't eaten anything since breakfast.",
+          "He has played the piano since he was six."
+        ],
+        "answer": "Since the museum is far, we will take a bus.",
+        "explanation": "본문의 since는 '~이기 때문에(이유)'이다. 나머지 since는 모두 '~ 이후로(시간)'의 뜻이다."
+      },
+      {
+        "qid": "3ed6d631-91dc-4c5f-8eb1-eeee7ebb4a09",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Students are required ____ with their assigned group.\"",
+        "choices": [
+          "to remain",
+          "remaining",
+          "remain",
+          "remained",
+          "to remaining"
+        ],
+        "answer": "to remain",
+        "explanation": "be required to + 동사원형: ~해야 한다. 그래서 to remain이 알맞다."
+      },
+      {
+        "qid": "8dd36027-6d42-4086-9cd2-331428d8a29c",
+        "type": "mc",
+        "q": "The tone of the notice is best described as ____.",
+        "choices": [
+          "angry and strict",
+          "funny and playful",
+          "sad and worried",
+          "informative and polite",
+          "doubtful and confused"
+        ],
+        "answer": "informative and polite",
+        "explanation": "필요한 정보를 차례대로 알려 주고 'Kindly', 'We appreciate your cooperation.'처럼 정중한 표현을 쓴다."
+      },
+      {
+        "qid": "f25bd3db-59ee-4fe4-833c-0b7c4c0eb1a9",
+        "type": "mc",
+        "q": "Which best shows the order of the information in the notice?",
+        "choices": [
+          "Reminders → purpose of the trip → request for the form → cost",
+          "Request for the form → schedule → purpose of the trip → reminders",
+          "Purpose of the trip → schedule and cost → reminders → request for the form",
+          "Cost → reminders → schedule → purpose of the trip",
+          "Schedule → request for the form → reminders → purpose of the trip"
+        ],
+        "answer": "Purpose of the trip → schedule and cost → reminders → request for the form",
+        "explanation": "첫 문단에서 목적·활동을 소개하고, 날짜·시간·장소·비용·준비물을 안내한 뒤, 주의사항을 말하고, 마지막에 동의서 제출을 요청한다."
+      },
+      {
+        "qid": "9fbebb5d-4b22-4664-a993-f95a331ebe91",
+        "type": "order",
+        "items": [
+          "The bus departs promptly from the school.",
+          "Families return the completed permission form.",
+          "Students observe robots in action and examine dinosaur skeletons.",
+          "Students gather at the school playground at 8:30 a.m.",
+          "The trip comes to an end at 3:00 p.m."
+        ],
+        "answer": [
+          "Families return the completed permission form.",
+          "Students gather at the school playground at 8:30 a.m.",
+          "The bus departs promptly from the school.",
+          "Students observe robots in action and examine dinosaur skeletons.",
+          "The trip comes to an end at 3:00 p.m."
+        ]
+      },
+      {
+        "qid": "e58e520e-fe7e-4a7e-997a-57d3f0bc457d",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "educational",
+            "meaning": "교육적인"
+          },
+          {
+            "word": "observe",
+            "meaning": "관찰하다"
+          },
+          {
+            "word": "genuine",
+            "meaning": "진짜의"
+          },
+          {
+            "word": "admission",
+            "meaning": "입장, 입장료"
+          },
+          {
+            "word": "footwear",
+            "meaning": "신발(류)"
+          },
+          {
+            "word": "cooperation",
+            "meaning": "협조, 협력"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "d75168d1-d88b-4d38-9033-d5eda5cb8a4e",
+        "q": "우리말로 쓰시오: 'covering both transportation and admission'이 무슨 뜻인지 쓰고, 이 비용과 별도로 학생이 직접 준비해야 하는 것을 모두 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "12,000원에 교통(버스)비와 박물관 입장료가 모두 포함된다는 뜻이다. 학생은 도시락, 물병, 공책, 연필을 직접 준비해야 한다.",
+        "rubric": "① 버스비+입장료 포함이라는 의미 ② 준비물 4가지 모두 쓰면 만점, 준비물 2~3개면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "a9d009d3-fa1e-4949-acfc-0afed319b43b",
+        "q": "우리말로 쓰시오: 주의사항 중 이유가 함께 제시된 두 가지를 찾아, 각각의 내용과 이유를 쓰시오.",
+        "wordLimit": 70,
+        "sampleAnswer": "① 하루 대부분 걸어 다니기 때문에 편한 신발을 신는 것이 강력히 권장된다. ② 안전상의 이유로 학생들은 배정된 모둠과 항상 함께 있어야 한다.",
+        "rubric": "① 편한 신발 – 하루 종일 걷기 때문 ② 모둠과 함께 – 안전 때문, 두 가지의 내용과 이유를 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "f5bbc83a-ed4a-4ef6-95f9-307c784f9946",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '모든 학생은 이름표를 착용해야 한다.' <조건> be required to를 사용할 것 / name tag(s)를 사용할 것",
+        "wordLimit": 12,
+        "sampleAnswer": "All students are required to wear name tags.",
+        "rubric": "① are required to + 동사원형(wear) ② 주어 All students와 be동사 수 일치 ③ 의미 일치"
+      },
+      {
+        "qid": "9c98b004-e61c-489d-b9c4-08008ddc55a6",
+        "q": "Imagine you are a parent. Write a short reply to the teacher in 2–3 English sentences. Say that your child will join the trip and that you will return the permission form before the deadline.",
+        "wordLimit": 50,
+        "sampleAnswer": "Thank you for the information about the field trip. My child will join the trip to the City Science Museum. I will return the signed permission form no later than Friday, October 31.",
+        "rubric": "① 참가 의사 ② 마감(10월 31일) 전 동의서 제출 ③ 완전한 영어 문장 2~3개, 문법 오류 없음"
+      },
+      {
+        "qid": "172c51c6-e02b-44cb-a52b-2fa83f93b752",
+        "q": "Summarize the notice in about 25 words in English. Include where the students are going, when, and what families must do.",
+        "wordLimit": 35,
+        "sampleAnswer": "Grade 5 students will visit the City Science Museum on Thursday, November 6, and families must return the permission form by Friday, October 31.",
+        "rubric": "① 장소(City Science Museum) ② 날짜(11월 6일) ③ 동의서 제출(10월 31일까지) ④ 25단어 내외의 영어 문장"
+      }
+    ]
+  }
+}

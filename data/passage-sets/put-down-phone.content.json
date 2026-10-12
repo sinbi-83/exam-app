@@ -1,0 +1,1481 @@
+{
+  "school": {
+    "tagged_body": "Why Is It So Hard to Put Down Your Phone?\n\n{{g:Have you ever picked up|현재완료 경험: Have you ever + p.p.? (~해 본 적 있니?)}} your phone {{g:to check|to부정사 부사적 용법(목적): ~하기 위해}} just one message? Then, thirty minutes later, you were still {{v:scrolling}}. You are not alone. Many teenagers {{g:find it hard to stop|가목적어 it + 진목적어 to부정사: ~하는 것이 어렵다고 느끼다}} using their phones. {{t:There is a scientific reason for this.}}\n\nWhen we get a \"like\" or a new message, our brain makes a {{v:chemical}} called dopamine. Dopamine {{g:makes us feel good|사역동사 make + 목적어 + 동사원형: ~가 …하게 만들다}}. So our brain wants to have the same feeling again and again. App designers know this very well. That is why many apps have {{v:endless}} scrolling and red {{v:notification}} dots. These things {{g:keep us looking|keep + 목적어 + -ing: ~가 계속 …하게 하다}} at the screen.\n\nToo much phone time can cause some problems. It can make it hard to {{v:fall asleep}}. It can also make it hard to {{v:focus}}. It can even make us feel more {{v:worried}}.\n\nLuckily, there are easy ways to take back {{v:control}}. {{g:Turn off|명령문: 동사원형으로 시작 (~해라)}} notifications for apps you don't need. Keep your phone outside your bedroom at night. You can also set a {{v:daily}} time limit in your phone's settings. {{t:Your phone should be a useful tool. It should not control your life.}}",
+    "tags": {
+      "vocab": [
+        "scrolling",
+        "chemical",
+        "endless",
+        "notification",
+        "fall asleep",
+        "focus",
+        "worried",
+        "control",
+        "daily"
+      ],
+      "grammar": [
+        "현재완료 경험 (Have you ever p.p.?)",
+        "to부정사 부사적 용법(목적)",
+        "가목적어 it + to부정사",
+        "사역동사 make + 목적어 + 동사원형",
+        "keep + 목적어 + -ing",
+        "명령문"
+      ],
+      "topic": [
+        "스마트폰 사용",
+        "도파민",
+        "자기 조절"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "2a7b553e-5203-4fb1-a924-f1468468c5a8",
+        "type": "mc",
+        "q": "What is the passage mainly about?",
+        "choices": [
+          "How to choose a good phone",
+          "How app designers make a lot of money",
+          "Why teenagers need phones for school",
+          "Why it is hard to stop using phones and how to control it",
+          "How to take good photos with a phone"
+        ],
+        "answer": "Why it is hard to stop using phones and how to control it",
+        "explanation": "1~2문단은 휴대폰을 내려놓기 어려운 이유(도파민, 앱 기능), 3문단은 문제점, 4문단은 조절 방법을 다룬다."
+      },
+      {
+        "qid": "c5d67adb-b820-477c-aeda-24a79baff782",
+        "type": "mc",
+        "q": "In the first paragraph, how long was the person still scrolling?",
+        "choices": [
+          "For five minutes",
+          "For thirty minutes",
+          "For ten minutes",
+          "For an hour",
+          "For three hours"
+        ],
+        "answer": "For thirty minutes",
+        "explanation": "'Then, thirty minutes later, you were still scrolling.'과 일치한다."
+      },
+      {
+        "qid": "948d17c0-4cc0-4e7e-a329-272f942bb594",
+        "type": "mc",
+        "q": "What does our brain make when we get a \"like\"?",
+        "choices": [
+          "Dopamine",
+          "Vitamin C",
+          "Sugar",
+          "Water",
+          "Oxygen"
+        ],
+        "answer": "Dopamine",
+        "explanation": "'our brain makes a chemical called dopamine'과 일치한다."
+      },
+      {
+        "qid": "43de7c99-9af3-47b0-a436-d7d18928ea58",
+        "type": "mc",
+        "q": "How does dopamine make us feel?",
+        "choices": [
+          "Sad",
+          "Tired",
+          "Angry",
+          "Bored",
+          "Good"
+        ],
+        "answer": "Good",
+        "explanation": "'Dopamine makes us feel good.'과 일치한다."
+      },
+      {
+        "qid": "4c2a3456-323d-41a1-bfcd-b74f21ee7b8a",
+        "type": "mc",
+        "q": "Who knows about this \"very well\"?",
+        "choices": [
+          "Teachers",
+          "Parents",
+          "App designers",
+          "Doctors",
+          "Teenagers"
+        ],
+        "answer": "App designers",
+        "explanation": "'App designers know this very well.'과 일치한다."
+      },
+      {
+        "qid": "3ecd67f0-b9b2-4b22-95a2-606a3d66ba06",
+        "type": "mc",
+        "q": "Which things keep us looking at the screen?",
+        "choices": [
+          "Big screens and long batteries",
+          "Endless scrolling and red notification dots",
+          "Free games and music",
+          "Cameras and maps",
+          "Dark mode and large letters"
+        ],
+        "answer": "Endless scrolling and red notification dots",
+        "explanation": "'many apps have endless scrolling and red notification dots. These things keep us looking at the screen.'"
+      },
+      {
+        "qid": "45d75d8e-e1d4-4288-9e50-f8d5fa2c4d56",
+        "type": "mc",
+        "q": "Which is mentioned as a problem of using a phone too much?",
+        "choices": [
+          "It can hurt our eyes.",
+          "It can make us gain weight.",
+          "It can cost too much money.",
+          "It can make us lose friends.",
+          "It can make it hard to fall asleep."
+        ],
+        "answer": "It can make it hard to fall asleep.",
+        "explanation": "본문의 문제점은 잠들기 어려움, 집중하기 어려움, 더 걱정하게 됨 세 가지이다."
+      },
+      {
+        "qid": "4e8ee859-19f6-4477-b127-ec6fad009eab",
+        "type": "mc",
+        "q": "Which is one of the writer's tips?",
+        "choices": [
+          "Buy a new phone every year.",
+          "Delete all of your apps.",
+          "Keep your phone outside your bedroom at night.",
+          "Turn on more notifications.",
+          "Use your phone in bed before sleeping."
+        ],
+        "answer": "Keep your phone outside your bedroom at night.",
+        "explanation": "'Keep your phone outside your bedroom at night.'이 글쓴이의 조언 중 하나이다."
+      },
+      {
+        "qid": "b1281c9b-f3f0-41a1-a02a-94724b7bee8f",
+        "type": "mc",
+        "q": "Where should you keep your phone at night?",
+        "choices": [
+          "Outside your bedroom",
+          "Under your pillow",
+          "In your bed",
+          "On your desk in your bedroom",
+          "In your school bag next to your bed"
+        ],
+        "answer": "Outside your bedroom",
+        "explanation": "'Keep your phone outside your bedroom at night.'과 일치한다."
+      },
+      {
+        "qid": "3a89f437-40f7-4316-aba1-b7fb7cca3f94",
+        "type": "mc",
+        "q": "다음 중 'focus'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "잠들다",
+          "걱정하다",
+          "반복하다",
+          "집중하다",
+          "끄다"
+        ],
+        "answer": "집중하다",
+        "explanation": "focus는 '집중하다'라는 뜻이다."
+      },
+      {
+        "qid": "be433d5d-24ef-4546-8df9-ed4658f66dac",
+        "type": "mc",
+        "q": "다음 중 'endless'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "빠른",
+          "짧은",
+          "끝없는",
+          "무료의",
+          "위험한"
+        ],
+        "answer": "끝없는",
+        "explanation": "end(끝) + -less(~이 없는) = endless(끝없는). 끝없이 내려가는 화면(endless scrolling)을 말한다."
+      },
+      {
+        "qid": "7633924e-a72d-46a0-a4a6-e68898cc8267",
+        "type": "mc",
+        "q": "In \"These things keep us looking at the screen,\" what does \"These things\" refer to?",
+        "choices": [
+          "Endless scrolling and red notification dots",
+          "App designers",
+          "Our brains",
+          "Many teenagers",
+          "The phone's settings"
+        ],
+        "answer": "Endless scrolling and red notification dots",
+        "explanation": "바로 앞 문장의 endless scrolling and red notification dots를 가리킨다."
+      },
+      {
+        "qid": "0d3699d3-9c89-4e07-9534-37e3e7aa481d",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "Dopamine makes us feel good.",
+          "App designers know about dopamine very well.",
+          "We can set a daily time limit on our phones.",
+          "Using a phone too much can make it hard to focus.",
+          "Only a few teenagers find it hard to stop using their phones."
+        ],
+        "answer": "Only a few teenagers find it hard to stop using their phones.",
+        "explanation": "'Many teenagers find it hard to stop using their phones.'이므로 '소수의 십대만'은 사실이 아니다."
+      },
+      {
+        "qid": "351a3231-0c78-4efe-b49f-f797cb25256f",
+        "type": "mc",
+        "q": "Who follows the writer's advice best?",
+        "choices": [
+          "Minho uses his phone in bed until midnight.",
+          "Jisoo turns off notifications for games she doesn't play.",
+          "Yuna turns on notifications for every app.",
+          "Tom checks every new message right away.",
+          "Sora scrolls through videos for hours every night."
+        ],
+        "answer": "Jisoo turns off notifications for games she doesn't play.",
+        "explanation": "필요 없는 앱의 알림을 끄라는 조언('Turn off notifications for apps you don't need.')을 지수가 따랐다."
+      },
+      {
+        "qid": "0b819fd6-41dd-4d9c-805b-9f7afbd9697f",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "Many teenagers find it hard to stop using phones.",
+          "Keep your phone outside your bedroom.",
+          "Our brain wants to have the same feeling.",
+          "Dopamine makes us to feel good.",
+          "These things keep us looking at the screen."
+        ],
+        "answer": "Dopamine makes us to feel good.",
+        "explanation": "사역동사 make는 목적어 뒤에 동사원형을 쓴다. makes us to feel → makes us feel."
+      },
+      {
+        "qid": "eaeb7f75-af54-47c3-9f59-2ceee4321489",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Many teenagers find it hard ____ using their phones.\"",
+        "choices": [
+          "stop",
+          "stopping",
+          "stopped",
+          "to stopping",
+          "to stop"
+        ],
+        "answer": "to stop",
+        "explanation": "find it hard to + 동사원형: ~하는 것이 어렵다고 느끼다. it은 가목적어, to stop이 진목적어이다."
+      },
+      {
+        "qid": "05793ec2-7d35-4a54-b931-ce092e9ac50a",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Our brain makes (A) ____ when we get a 'like,' so we want to use our phones (B) ____.\"",
+        "choices": [
+          "(A) dopamine – (B) again and again",
+          "(A) dopamine – (B) less and less",
+          "(A) sugar – (B) again and again",
+          "(A) a message – (B) only at night",
+          "(A) a dot – (B) less and less"
+        ],
+        "answer": "(A) dopamine – (B) again and again",
+        "explanation": "좋아요를 받으면 도파민이 나오고, 기분이 좋아서 같은 경험을 계속(again and again) 원하게 된다."
+      },
+      {
+        "qid": "3277bf21-0030-441f-90b7-e5379d58bbb3",
+        "type": "mc",
+        "q": "What is the writer's main message in the last part?",
+        "choices": [
+          "Never use your phone again.",
+          "Use your phone as a tool and don't let it control your life.",
+          "Buy a phone with more apps.",
+          "Phones are more important than sleep.",
+          "Only app designers can solve the problem."
+        ],
+        "answer": "Use your phone as a tool and don't let it control your life.",
+        "explanation": "'Your phone should be a useful tool. It should not control your life.'가 글쓴이의 핵심 메시지이다."
+      },
+      {
+        "qid": "1d773e9b-10dc-4c11-94e8-e9a4e55a645c",
+        "type": "order",
+        "items": [
+          "Too much phone time can cause some problems.",
+          "There are easy ways to take back control.",
+          "Have you ever picked up your phone to check one message and kept scrolling?",
+          "Dopamine and app designs make us use our phones more."
+        ],
+        "answer": [
+          "Have you ever picked up your phone to check one message and kept scrolling?",
+          "Dopamine and app designs make us use our phones more.",
+          "Too much phone time can cause some problems.",
+          "There are easy ways to take back control."
+        ]
+      },
+      {
+        "qid": "d856cd0f-d56d-445c-b84c-f305cee61903",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "chemical",
+            "meaning": "화학 물질"
+          },
+          {
+            "word": "notification",
+            "meaning": "알림"
+          },
+          {
+            "word": "scroll",
+            "meaning": "(화면을) 위아래로 넘기다"
+          },
+          {
+            "word": "fall asleep",
+            "meaning": "잠들다"
+          },
+          {
+            "word": "control",
+            "meaning": "통제, 조절"
+          },
+          {
+            "word": "daily",
+            "meaning": "매일의, 하루의"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "41a246c2-f155-4af0-96f0-151c69f3c6e8",
+        "q": "Why does our brain want to use the phone again and again? Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "Because dopamine makes us feel good, our brain wants to have the same feeling again and again.",
+        "rubric": "① 도파민(dopamine) ② 기분이 좋아짐 ③ 같은 경험을 반복하고 싶어 함 — 세 요소가 완전한 영어 문장에 들어가면 만점"
+      },
+      {
+        "qid": "084f03f5-f8f5-4486-b308-a09fce5ac410",
+        "q": "우리말로 쓰시오: 휴대폰을 너무 많이 사용할 때 생길 수 있는 문제 세 가지를 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "① 잠들기 어려워진다. ② 집중하기 어려워진다. ③ 더 걱정(불안)하게 된다.",
+        "rubric": "세 가지를 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "182e6824-a966-4b83-b5e9-29b684fe90c9",
+        "q": "우리말로 쓰시오: 글쓴이가 휴대폰 사용을 조절하기 위해 제안한 방법 세 가지를 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "① 필요 없는 앱의 알림을 끈다. ② 밤에는 휴대폰을 침실 밖에 둔다. ③ 휴대폰 설정에서 하루 사용 시간 제한을 정한다.",
+        "rubric": "세 가지를 모두 쓰면 만점, 두 가지면 부분 점수 (필요 없는 앱이라는 조건이 빠지면 감점 없음)",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "27688fa8-9b7a-47a6-9ed4-4c8a1b228c46",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '밤에는 휴대폰을 침실 밖에 두어라.' <조건> 명령문으로 쓸 것 / keep과 outside를 사용할 것",
+        "wordLimit": 10,
+        "sampleAnswer": "Keep your phone outside your bedroom at night.",
+        "rubric": "① 명령문(Keep으로 시작) ② outside your bedroom ③ at night 모두 맞으면 만점"
+      },
+      {
+        "qid": "f1bddb00-4b31-466a-bfe8-36737f5808dd",
+        "q": "Which of the writer's tips will you try? Write one sentence with a reason, using \"I will ~ because ~\".",
+        "wordLimit": 25,
+        "sampleAnswer": "I will turn off notifications for games because they make me check my phone too often.",
+        "rubric": "① 본문의 조언 중 하나 ② I will ~ because ~ 구조 ③ 이유가 자연스러움 ④ 문법 오류 없음"
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Why Is It So Hard to Put Down Your Phone?\n\n{{g:Have you ever picked up|현재완료 경험: Have you ever + p.p.? (~해 본 적 있니?)}} your phone to check one message and {{g:found yourself still scrolling|find + 목적어 + -ing: ~가 …하고 있는 것을 발견하다}} thirty minutes later? You are not alone. Many teenagers {{g:find it difficult to stop|가목적어 it + 진목적어 to부정사}} using their phones, and {{t:there is a scientific reason for this}}.\n\nWhen we get a \"like\" or a new message, our brain {{v:releases}} a {{v:chemical}} {{g:called dopamine|과거분사구(called ~)가 명사를 뒤에서 꾸밈: ~라고 불리는}}. Dopamine {{g:makes us feel good|사역동사 make + 목적어 + 동사원형}}, so our brain wants to repeat the experience again and again. App designers know this very well. That is why many apps use {{v:features}} such as {{v:endless}} scrolling and red {{v:notification}} dots, {{g:which are designed to keep|계속적 용법 관계대명사 which(= and they) + 수동태 be designed to: ~하도록 만들어지다}} us looking at the screen.\n\nUsing a phone too much can cause several problems. It can make it harder to fall asleep, {{v:reduce}} our ability to {{v:focus}}, and even make us feel more {{v:anxious}}.\n\n{{v:Fortunately}}, there are simple ways to take back control. {{g:Try turning off|try + -ing: 시험 삼아 ~해 보다}} notifications for apps you don't need. Keep your phone outside your bedroom at night. You can also set a {{v:daily}} time limit in your phone's settings. {{t:Your phone should be a useful tool, not something that controls your life.}}",
+    "tags": {
+      "vocab": [
+        "releases",
+        "chemical",
+        "features",
+        "endless",
+        "notification",
+        "reduce",
+        "focus",
+        "anxious",
+        "fortunately",
+        "daily"
+      ],
+      "grammar": [
+        "현재완료 경험",
+        "find + 목적어 + -ing",
+        "가목적어 it + to부정사",
+        "과거분사의 명사 수식 (called ~)",
+        "계속적 용법 관계대명사 which",
+        "try + -ing"
+      ],
+      "topic": [
+        "스마트폰 사용",
+        "도파민",
+        "앱 디자인",
+        "자기 조절"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "ee0bcc8b-bb3f-4883-8c28-aa74976e62ca",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "Phones are hard to put down because of dopamine and app design, but we can control our use.",
+          "Teenagers should not be allowed to have smartphones.",
+          "Dopamine is a dangerous chemical that we must avoid.",
+          "App designers want to help people sleep better.",
+          "Phones are useless tools for teenagers."
+        ],
+        "answer": "Phones are hard to put down because of dopamine and app design, but we can control our use.",
+        "explanation": "원인(도파민·앱 기능) → 문제점 → 해결 방법의 흐름으로, 우리가 사용을 조절할 수 있다는 것이 요지이다."
+      },
+      {
+        "qid": "6d867faf-cb5d-4029-875f-6882de925853",
+        "type": "mc",
+        "q": "What is the purpose of the passage?",
+        "choices": [
+          "To advertise a new phone app",
+          "To describe how phones are made",
+          "To explain why it is hard to stop using phones and suggest ways to control it",
+          "To compare different kinds of phones",
+          "To report the results of a survey about sleep"
+        ],
+        "answer": "To explain why it is hard to stop using phones and suggest ways to control it",
+        "explanation": "휴대폰을 끊기 어려운 이유를 설명하고 조절 방법을 제안하는 글이다."
+      },
+      {
+        "qid": "5cc4c19c-63b7-4298-ae94-ac4d7053e2db",
+        "type": "mc",
+        "q": "According to the passage, what happens when we get a \"like\"?",
+        "choices": [
+          "Our phone turns off automatically.",
+          "App designers send us a message.",
+          "We feel more anxious right away.",
+          "Our brain stops working for a while.",
+          "Our brain releases dopamine."
+        ],
+        "answer": "Our brain releases dopamine.",
+        "explanation": "'When we get a \"like\" or a new message, our brain releases a chemical called dopamine.'"
+      },
+      {
+        "qid": "32cd78b2-d226-489f-9598-6a7fc3b376f4",
+        "type": "mc",
+        "q": "Why does our brain want to repeat the experience?",
+        "choices": [
+          "Because we want to sleep better",
+          "Because dopamine makes us feel good",
+          "Because our friends tell us to",
+          "Because red dots are beautiful",
+          "Because phones are expensive"
+        ],
+        "answer": "Because dopamine makes us feel good",
+        "explanation": "'Dopamine makes us feel good, so our brain wants to repeat the experience.'"
+      },
+      {
+        "qid": "73c15295-ac61-4956-bb40-fcdcfd455237",
+        "type": "mc",
+        "q": "What does \"this\" in \"App designers know this very well\" refer to?",
+        "choices": [
+          "That teenagers do not like phones",
+          "That phones are useful tools",
+          "That notifications can be turned off",
+          "That dopamine makes our brain want to repeat good experiences",
+          "That phones should stay outside the bedroom"
+        ],
+        "answer": "That dopamine makes our brain want to repeat good experiences",
+        "explanation": "바로 앞 문장(도파민이 기분을 좋게 해서 뇌가 그 경험을 반복하려 한다)을 가리킨다."
+      },
+      {
+        "qid": "0900151d-75f8-4759-9d14-70798933bfd7",
+        "type": "mc",
+        "q": "What does \"which\" in the second paragraph refer to?",
+        "choices": [
+          "App designers",
+          "Our brains",
+          "Likes and new messages",
+          "Teenagers",
+          "Features such as endless scrolling and red notification dots"
+        ],
+        "answer": "Features such as endless scrolling and red notification dots",
+        "explanation": "', which are designed to keep us looking at the screen'의 which는 앞의 features such as endless scrolling and red notification dots를 가리킨다."
+      },
+      {
+        "qid": "a3e347fb-7792-4394-81e0-bb5826254603",
+        "type": "mc",
+        "q": "What can be inferred about app designers?",
+        "choices": [
+          "They want teenagers to use phones less.",
+          "They use how the brain works to make people use apps longer.",
+          "They do not understand dopamine.",
+          "They design apps to help people sleep.",
+          "They are worried about teenagers' focus."
+        ],
+        "answer": "They use how the brain works to make people use apps longer.",
+        "explanation": "도파민의 원리를 잘 알고, 화면을 계속 보게 만드는 기능을 넣는다고 했으므로 뇌의 원리를 이용한다고 추론할 수 있다."
+      },
+      {
+        "qid": "53abd2de-2331-42eb-a3d8-a0b68783f614",
+        "type": "mc",
+        "q": "Which is NOT mentioned in the passage?",
+        "choices": [
+          "Phone use can make it harder to fall asleep.",
+          "Phone use can reduce our ability to focus.",
+          "Phone use can make us feel more anxious.",
+          "Phone use can damage our eyesight.",
+          "We may keep scrolling longer than we planned."
+        ],
+        "answer": "Phone use can damage our eyesight.",
+        "explanation": "시력 손상은 언급되지 않았다."
+      },
+      {
+        "qid": "fe33c07e-60eb-492e-9992-938d8fe5bfca",
+        "type": "mc",
+        "q": "Which is NOT one of the suggested ways to take back control?",
+        "choices": [
+          "Delete all of your social media apps.",
+          "Turn off notifications for apps you don't need.",
+          "Keep your phone outside your bedroom at night.",
+          "Set a daily time limit on your phone.",
+          "Use your phone's settings to limit your use."
+        ],
+        "answer": "Delete all of your social media apps.",
+        "explanation": "모든 SNS 앱을 삭제하라는 말은 없다."
+      },
+      {
+        "qid": "62390c4b-1b38-4aa5-9ad7-a564ae280b71",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'releases' in the passage?",
+        "choices": [
+          "catches",
+          "stops",
+          "lets out",
+          "buys",
+          "hides"
+        ],
+        "answer": "lets out",
+        "explanation": "release는 이 글에서 '(물질을) 내보내다, 분비하다'라는 뜻이다."
+      },
+      {
+        "qid": "557c844f-181d-45fd-912e-06a68339a20c",
+        "type": "mc",
+        "q": "What does 'anxious' mean?",
+        "choices": [
+          "bored and sleepy",
+          "worried and nervous",
+          "happy and excited",
+          "proud and confident",
+          "calm and relaxed"
+        ],
+        "answer": "worried and nervous",
+        "explanation": "anxious는 '불안한, 걱정하는'이라는 뜻이다."
+      },
+      {
+        "qid": "6525e627-112c-4ebd-905a-4a2a6b32d81b",
+        "type": "mc",
+        "q": "'take back control'의 의미로 가장 알맞은 것은?",
+        "choices": [
+          "휴대폰을 가게에 반납하다",
+          "앱을 다시 설치하다",
+          "조절을 다른 사람에게 맡기다",
+          "친구의 휴대폰을 빼앗다",
+          "휴대폰 사용을 다시 스스로 조절하다"
+        ],
+        "answer": "휴대폰 사용을 다시 스스로 조절하다",
+        "explanation": "take back control은 '통제권을 되찾다'라는 뜻으로, 휴대폰에 끌려다니지 않고 스스로 조절하는 것을 말한다."
+      },
+      {
+        "qid": "892235d2-8a92-4916-a63f-80eaa8a54db2",
+        "type": "mc",
+        "q": "Where would the following sentence best fit? \"For example, a red dot makes us curious about what we have missed.\"",
+        "choices": [
+          "At the end of the first paragraph",
+          "After \"our brain releases a chemical called dopamine\"",
+          "At the end of the second paragraph",
+          "At the end of the third paragraph",
+          "After \"Keep your phone outside your bedroom at night\""
+        ],
+        "answer": "At the end of the second paragraph",
+        "explanation": "빨간 점(red notification dots)이 언급된 2문단 마지막 문장 뒤에 와야 예시로 자연스럽다."
+      },
+      {
+        "qid": "5796cd23-de64-434b-a45c-bfb818f79099",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "Dopamine makes us feel bad, so we stop using our phones.",
+          "Many teenagers find it difficult to stop using their phones.",
+          "Some apps use endless scrolling.",
+          "We can set a daily time limit in the settings.",
+          "Using a phone too much can cause several problems."
+        ],
+        "answer": "Dopamine makes us feel bad, so we stop using our phones.",
+        "explanation": "도파민은 기분을 좋게 해서(feel good) 오히려 계속 사용하게 만든다."
+      },
+      {
+        "qid": "a50a0773-1cd3-4238-b905-57cd238ce6a2",
+        "type": "mc",
+        "q": "Who is following the writer's advice?",
+        "choices": [
+          "Jun keeps his phone next to his pillow at night.",
+          "Mina turns on notifications for all her apps.",
+          "Leo scrolls videos until he falls asleep.",
+          "Hana sets a two-hour daily limit in her phone's settings.",
+          "Sumi checks her phone every time she sees a red dot."
+        ],
+        "answer": "Hana sets a two-hour daily limit in her phone's settings.",
+        "explanation": "'You can also set a daily time limit in your phone's settings.'를 하나가 실천했다."
+      },
+      {
+        "qid": "cdf557f4-ed42-4afb-b7e0-3a28a8240cf3",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "Try turning off notifications.",
+          "Our brain wants to repeat the experience.",
+          "Apps use features which are designed to keep us looking.",
+          "Many teenagers find it difficult stop using their phones.",
+          "Your phone should be a useful tool."
+        ],
+        "answer": "Many teenagers find it difficult stop using their phones.",
+        "explanation": "find it difficult 뒤에는 진목적어로 to부정사가 와야 한다. difficult stop → difficult to stop."
+      },
+      {
+        "qid": "b8e59f96-7e73-4ea9-adff-ac8bb2982803",
+        "type": "mc",
+        "q": "'Try turning off notifications'의 의미로 가장 알맞은 것은?",
+        "choices": [
+          "시험 삼아 알림을 꺼 보세요.",
+          "알림을 끄려고 (힘들어도) 애쓰세요.",
+          "알림을 끄는 것을 멈추세요.",
+          "알림을 끈 것을 기억하세요.",
+          "알림을 끄는 것을 잊지 마세요."
+        ],
+        "answer": "시험 삼아 알림을 꺼 보세요.",
+        "explanation": "try + -ing는 '시험 삼아 ~해 보다', try + to부정사는 '~하려고 애쓰다'이다."
+      },
+      {
+        "qid": "e6507894-1b2a-4234-8aa4-6deb435e5a33",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Phones are hard to put down because apps use our brain's love of (A) ____, but we can take back control by (B) ____ our phone use.\"",
+        "choices": [
+          "(A) dopamine – (B) increasing",
+          "(A) sleep – (B) limiting",
+          "(A) dopamine – (B) limiting",
+          "(A) notifications – (B) sharing",
+          "(A) anxiety – (B) increasing"
+        ],
+        "answer": "(A) dopamine – (B) limiting",
+        "explanation": "앱은 도파민(dopamine)이 주는 즐거움을 이용하고, 우리는 사용을 제한(limiting)해서 조절할 수 있다."
+      },
+      {
+        "qid": "58828d27-f80e-47c7-b0a7-952080103590",
+        "type": "order",
+        "items": [
+          "Our brain releases dopamine.",
+          "We keep looking at the screen again and again.",
+          "We get a \"like\" or a new message.",
+          "Our brain wants to repeat the experience.",
+          "We feel good."
+        ],
+        "answer": [
+          "We get a \"like\" or a new message.",
+          "Our brain releases dopamine.",
+          "We feel good.",
+          "Our brain wants to repeat the experience.",
+          "We keep looking at the screen again and again."
+        ]
+      },
+      {
+        "qid": "5df8685b-0ee6-4901-bb08-a5213065b2f5",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "chemical",
+            "meaning": "화학 물질"
+          },
+          {
+            "word": "feature",
+            "meaning": "기능, 특징"
+          },
+          {
+            "word": "endless",
+            "meaning": "끝없는"
+          },
+          {
+            "word": "notification",
+            "meaning": "알림"
+          },
+          {
+            "word": "reduce",
+            "meaning": "줄이다"
+          },
+          {
+            "word": "daily",
+            "meaning": "매일의, 하루의"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "6823d480-513f-4bd3-a155-fd2a64ed023b",
+        "q": "Explain in English why many teenagers find it hard to stop using their phones. Use the word \"dopamine.\"",
+        "wordLimit": 35,
+        "sampleAnswer": "When they get a \"like\" or a new message, their brain releases dopamine, which makes them feel good, so they want to repeat the experience again and again.",
+        "rubric": "① like/메시지 → 도파민 분비 ② 기분이 좋아짐 ③ 반복하고 싶어 함 ④ dopamine 사용, 완전한 영어 문장"
+      },
+      {
+        "qid": "6f4435b7-402e-4fb9-9138-05d5a2409d20",
+        "q": "우리말로 쓰시오: 앱 디자이너들이 사용하는 기능 두 가지와 그 기능의 목적을 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "끝없이 내려가는 화면(무한 스크롤)과 빨간 알림 점을 사용한다. 사람들이 계속 화면을 보게 만들기 위해서이다.",
+        "rubric": "① 무한 스크롤 ② 빨간 알림 점 ③ 화면을 계속 보게 하려는 목적 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "f5777ed6-7d08-49c4-beeb-64b0f397816b",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '휴대폰을 너무 많이 사용하는 것은 잠드는 것을 더 어렵게 만들 수 있다.' <조건> 동명사 주어로 시작할 것 / make it harder to를 사용할 것",
+        "wordLimit": 15,
+        "sampleAnswer": "Using a phone too much can make it harder to fall asleep.",
+        "rubric": "① 동명사 주어(Using) ② can make it harder to + 동사원형 ③ fall asleep ④ 의미 일치"
+      },
+      {
+        "qid": "258ef7a6-b2cc-4785-b262-a84604cdd1c8",
+        "q": "우리말로 쓰시오: 마지막 문장 'Your phone should be a useful tool, not something that controls your life.'가 전하는 의미를 설명하시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "휴대폰은 우리가 필요할 때 잘 쓰는 도구여야 하고, 휴대폰이 우리의 시간과 생활을 지배하게 두어서는 안 된다는 뜻이다.",
+        "rubric": "① 유용한 도구로 써야 함 ② 휴대폰이 삶을 통제하게 두면 안 됨, 두 내용 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "02e2f2c1-96b4-450c-9781-28b013e4273c",
+        "q": "Write three ways to take back control of phone use, according to the passage. Use complete English sentences.",
+        "wordLimit": 40,
+        "sampleAnswer": "We can turn off notifications for apps we don't need. We can keep our phones outside our bedrooms at night. We can also set a daily time limit in our phone's settings.",
+        "rubric": "① 알림 끄기 ② 침실 밖에 두기 ③ 하루 사용 시간 제한 — 세 가지 모두 완전한 문장이면 만점, 두 가지면 부분 점수"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Why Is It So Hard to Put Down Your Phone?\n\nHave you ever picked up your phone just to check a single message, {{g:only to find yourself still scrolling|only to + 동사원형: (그런데) 결국 ~하게 되다 (뜻밖의 결과)}} thirty minutes later? If so, you are far from alone. A great number of teenagers {{v:struggle}} to stop using their phones, and {{t:science can explain why this happens}}.\n\nWhenever we receive a \"like\" or a new message, our brain {{v:releases}} a chemical known as dopamine. Because dopamine produces a {{v:pleasant}} feeling, our brain is {{v:motivated}} to repeat the experience over and over. App designers are well {{v:aware}} of this. {{g:This is precisely why|This is why + 주어 + 동사: 그것이 바로 ~하는 이유이다}} so many apps include features like endless scrolling and red notification dots, {{g:both of which|수량 표현 + 관계대명사: both of which = and both of them}} are designed to keep our eyes fixed on the screen.\n\n{{v:Excessive}} phone use can lead to a number of problems. It can make it more difficult to fall asleep, {{v:weaken}} our ability to {{v:concentrate}}, and even increase our feelings of anxiety.\n\nFortunately, there are several simple {{v:strategies}} for {{v:regaining}} control. {{g:Consider turning off|consider + -ing: ~하는 것을 고려하다}} notifications for apps that you do not really need. Leave your phone outside your bedroom at night. In addition, you can set a daily time limit in your phone's settings. {{t:After all, your phone should serve as a useful tool}} {{g:rather than|A rather than B: B라기보다는 A}} something that controls your life.",
+    "tags": {
+      "vocab": [
+        "struggle",
+        "releases",
+        "pleasant",
+        "motivated",
+        "aware",
+        "excessive",
+        "weaken",
+        "concentrate",
+        "strategies",
+        "regaining"
+      ],
+      "grammar": [
+        "only to + 동사원형 (결과)",
+        "This is why + 주어 + 동사",
+        "수량 표현 + 관계대명사 (both of which)",
+        "consider + -ing",
+        "A rather than B"
+      ],
+      "topic": [
+        "스마트폰 과다 사용",
+        "도파민과 보상",
+        "앱 디자인",
+        "자기 조절 전략"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "27abecd4-d839-4c5d-9f85-fd45d1c1df14",
+        "type": "mc",
+        "q": "Which best states the main idea of the passage?",
+        "choices": [
+          "Dopamine is harmful, so teenagers should avoid all pleasant experiences.",
+          "App designers are trying to help teenagers concentrate better.",
+          "Phone overuse is driven by brain chemistry and app design, but simple habits can help us regain control.",
+          "Teenagers use phones mainly to check important messages.",
+          "Setting time limits on phones does not really work."
+        ],
+        "answer": "Phone overuse is driven by brain chemistry and app design, but simple habits can help us regain control.",
+        "explanation": "원인(도파민 + 앱 디자인) → 문제(수면·집중·불안) → 해결(간단한 습관)의 흐름이다."
+      },
+      {
+        "qid": "58930197-172d-47c4-9121-b9bcc344b364",
+        "type": "mc",
+        "q": "Which best describes how the passage is organized?",
+        "choices": [
+          "A problem → a personal story → a survey result → a conclusion",
+          "A definition → examples → a comparison → a question",
+          "Solutions → problems → causes → a familiar experience",
+          "An argument → a counterargument → a rebuttal → a question",
+          "A familiar experience → a scientific cause → problems → solutions"
+        ],
+        "answer": "A familiar experience → a scientific cause → problems → solutions",
+        "explanation": "1문단(익숙한 경험) → 2문단(과학적 원인) → 3문단(문제점) → 4문단(해결책) 순서이다."
+      },
+      {
+        "qid": "5852ad78-625d-4e1f-828b-0722bfcb92e2",
+        "type": "mc",
+        "q": "What does \"only to find yourself still scrolling\" express?",
+        "choices": [
+          "A purpose",
+          "An unexpected result",
+          "A reason",
+          "A condition",
+          "A comparison"
+        ],
+        "answer": "An unexpected result",
+        "explanation": "only to + 동사원형은 '(~했는데) 결국 …하게 되다'라는 뜻밖의 결과를 나타낸다."
+      },
+      {
+        "qid": "2fab6a55-f834-4604-af58-bae557ad0beb",
+        "type": "mc",
+        "q": "Why is our brain motivated to repeat the experience?",
+        "choices": [
+          "Because notifications make loud sounds",
+          "Because teenagers are bored at school",
+          "Because phones help us concentrate",
+          "Because dopamine produces a pleasant feeling",
+          "Because app designers pay us"
+        ],
+        "answer": "Because dopamine produces a pleasant feeling",
+        "explanation": "'Because dopamine produces a pleasant feeling, our brain is motivated to repeat the experience'"
+      },
+      {
+        "qid": "e55db551-0fb8-4038-a7a3-07d1ac0c4a01",
+        "type": "mc",
+        "q": "What does \"both of which\" refer to?",
+        "choices": [
+          "Endless scrolling and red notification dots",
+          "A \"like\" and a new message",
+          "App designers and teenagers",
+          "Sleep and concentration",
+          "Dopamine and anxiety"
+        ],
+        "answer": "Endless scrolling and red notification dots",
+        "explanation": "both of which는 바로 앞의 두 기능(endless scrolling, red notification dots)을 가리킨다."
+      },
+      {
+        "qid": "ae352ac0-90f4-4e9d-a2de-cb3aa4250ee9",
+        "type": "mc",
+        "q": "What does \"this\" in \"App designers are well aware of this\" refer to?",
+        "choices": [
+          "The fact that teenagers struggle with homework",
+          "The need to turn off notifications",
+          "The problem of falling asleep",
+          "The brain's desire to repeat the pleasant feeling caused by dopamine",
+          "The daily time limit in the settings"
+        ],
+        "answer": "The brain's desire to repeat the pleasant feeling caused by dopamine",
+        "explanation": "바로 앞 문장(도파민의 즐거움 때문에 뇌가 경험을 반복하려 한다)을 가리킨다."
+      },
+      {
+        "qid": "f23979ad-79cb-499f-979c-5c0d5adccdc3",
+        "type": "mc",
+        "q": "What can be inferred about red notification dots?",
+        "choices": [
+          "They are used on purpose to draw our attention.",
+          "They appear only when the battery is low.",
+          "They help us fall asleep faster.",
+          "They were added by mistake.",
+          "They reduce the time we spend on our phones."
+        ],
+        "answer": "They are used on purpose to draw our attention.",
+        "explanation": "'designed to keep our eyes fixed on the screen'이므로 일부러 주의를 끌기 위해 넣은 것이다."
+      },
+      {
+        "qid": "c8b7c9ac-d993-41c0-9aa7-fb29695893e8",
+        "type": "mc",
+        "q": "Which is NOT mentioned as an effect of excessive phone use?",
+        "choices": [
+          "Difficulty falling asleep",
+          "Weaker concentration",
+          "Stronger feelings of anxiety",
+          "Scrolling longer than intended",
+          "Poor eyesight"
+        ],
+        "answer": "Poor eyesight",
+        "explanation": "시력 저하는 언급되지 않았다."
+      },
+      {
+        "qid": "09db591d-546d-48b2-9125-4c1789917a34",
+        "type": "mc",
+        "q": "Which strategy is NOT suggested in the passage?",
+        "choices": [
+          "Turn off notifications for apps you do not really need.",
+          "Leave your phone outside your bedroom at night.",
+          "Replace your smartphone with a simpler phone.",
+          "Set a daily time limit in the settings.",
+          "Use your phone as a useful tool."
+        ],
+        "answer": "Replace your smartphone with a simpler phone.",
+        "explanation": "더 단순한 휴대폰으로 바꾸라는 내용은 없다."
+      },
+      {
+        "qid": "3f980765-2b37-41f7-b093-bed1b9dc9a9b",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'excessive'?",
+        "choices": [
+          "healthy",
+          "too much",
+          "careful",
+          "rare",
+          "necessary"
+        ],
+        "answer": "too much",
+        "explanation": "excessive는 '지나친, 과도한'이라는 뜻이다."
+      },
+      {
+        "qid": "f1c49e35-781d-43f4-9c1d-e22286f37541",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'regaining'?",
+        "choices": [
+          "losing",
+          "sharing",
+          "avoiding",
+          "testing",
+          "getting back"
+        ],
+        "answer": "getting back",
+        "explanation": "regain은 '되찾다'라는 뜻이다."
+      },
+      {
+        "qid": "28928580-c44d-4de7-83b1-6904baba01c6",
+        "type": "mc",
+        "q": "Which word can replace 'concentrate' without changing the meaning?",
+        "choices": [
+          "relax",
+          "focus",
+          "sleep",
+          "worry",
+          "repeat"
+        ],
+        "answer": "focus",
+        "explanation": "concentrate는 '집중하다'로 focus와 뜻이 같다."
+      },
+      {
+        "qid": "84bb5df8-f4a3-4837-9940-fc1b90c93521",
+        "type": "mc",
+        "q": "Where would the following sentence best fit? \"A red dot, for instance, makes us curious about what we might have missed.\"",
+        "choices": [
+          "At the end of the first paragraph",
+          "After \"our brain releases a chemical known as dopamine\"",
+          "At the end of the third paragraph",
+          "At the end of the second paragraph",
+          "After \"Leave your phone outside your bedroom at night\""
+        ],
+        "answer": "At the end of the second paragraph",
+        "explanation": "red notification dots가 처음 나오는 2문단 마지막 문장 뒤에서 구체적인 예시 역할을 한다."
+      },
+      {
+        "qid": "aa15f673-11ae-4e81-afc6-9bdf0006a270",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "App designers are unaware of how dopamine works.",
+          "Many teenagers struggle to stop using their phones.",
+          "Dopamine produces a pleasant feeling.",
+          "Excessive phone use can weaken concentration.",
+          "We can set a daily time limit in the settings."
+        ],
+        "answer": "App designers are unaware of how dopamine works.",
+        "explanation": "'App designers are well aware of this.'이므로 모른다는 것은 사실이 아니다."
+      },
+      {
+        "qid": "9c4c722e-852d-4aed-89b8-1d3a83195c4a",
+        "type": "mc",
+        "q": "Which statement would the writer most likely agree with?",
+        "choices": [
+          "Phones are so harmful that no one should use them.",
+          "Teenagers cannot change their phone habits.",
+          "Phones are helpful, but we should decide how and when to use them.",
+          "App designers are responsible for solving the problem alone.",
+          "The more notifications we get, the better we focus."
+        ],
+        "answer": "Phones are helpful, but we should decide how and when to use them.",
+        "explanation": "'your phone should serve as a useful tool rather than something that controls your life'와 같은 입장이다."
+      },
+      {
+        "qid": "d89b5e5d-f45d-4a0b-b5bf-ad55487cba08",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "I have two phones, both of them are broken.",
+          "I have two brothers, both of whom live in Seoul.",
+          "Consider turning off notifications.",
+          "Dopamine is known as a feel-good chemical.",
+          "A phone should serve as a tool rather than a master."
+        ],
+        "answer": "I have two phones, both of them are broken.",
+        "explanation": "두 문장을 접속사 없이 대명사로 이을 수 없다. both of them → both of which (또는 and both of them)."
+      },
+      {
+        "qid": "edb6ab93-7577-41b2-a1de-70bf42646efb",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Consider ____ off notifications for apps that you do not really need.\"",
+        "choices": [
+          "to turn",
+          "turn",
+          "turning",
+          "turned",
+          "to turning"
+        ],
+        "answer": "turning",
+        "explanation": "consider는 동명사를 목적어로 취한다. consider + -ing."
+      },
+      {
+        "qid": "8f934946-ba05-43cc-8383-57ff9e344886",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Because dopamine makes phone use feel (A) ____, apps are designed to (B) ____ our attention; however, simple habits can help us regain control.\"",
+        "choices": [
+          "(A) boring – (B) hold",
+          "(A) rewarding – (B) lose",
+          "(A) stressful – (B) release",
+          "(A) useless – (B) ignore",
+          "(A) rewarding – (B) hold"
+        ],
+        "answer": "(A) rewarding – (B) hold",
+        "explanation": "도파민 덕분에 휴대폰 사용이 보람 있게/즐겁게(rewarding) 느껴지고, 앱은 우리의 주의를 붙잡도록(hold) 만들어진다."
+      },
+      {
+        "qid": "bec3b332-424c-4d1f-95a2-c1a86e519ac8",
+        "type": "order",
+        "items": [
+          "Overuse can harm our sleep, concentration, and emotions.",
+          "Simple changes in our habits can help us regain control.",
+          "A familiar experience shows that phones are hard to put down.",
+          "Dopamine and clever app design explain why this happens."
+        ],
+        "answer": [
+          "A familiar experience shows that phones are hard to put down.",
+          "Dopamine and clever app design explain why this happens.",
+          "Overuse can harm our sleep, concentration, and emotions.",
+          "Simple changes in our habits can help us regain control."
+        ]
+      },
+      {
+        "qid": "a905ea92-ec76-4098-8d28-f6aba5d9ebbc",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "release",
+            "meaning": "분비하다, 내보내다"
+          },
+          {
+            "word": "motivate",
+            "meaning": "동기를 부여하다"
+          },
+          {
+            "word": "aware",
+            "meaning": "알고 있는"
+          },
+          {
+            "word": "strategy",
+            "meaning": "전략"
+          },
+          {
+            "word": "pleasant",
+            "meaning": "즐거운, 기분 좋은"
+          },
+          {
+            "word": "weaken",
+            "meaning": "약화시키다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "deda758b-ec73-42fe-9faf-f06933e535f8",
+        "q": "Explain in two English sentences how dopamine makes it hard to stop using our phones.",
+        "wordLimit": 40,
+        "sampleAnswer": "When we receive a \"like\" or a new message, our brain releases dopamine, which produces a pleasant feeling. Because of this feeling, our brain wants to repeat the experience, so we keep using our phones.",
+        "rubric": "① 자극(좋아요·메시지) → 도파민 분비 ② 즐거운 감정 ③ 반복 욕구 → 계속 사용 ④ 영어 문장 2개, 문법 오류 없음"
+      },
+      {
+        "qid": "780b5f9e-72b0-4915-a984-de7010acf125",
+        "q": "우리말로 쓰시오: 'both of which are designed to keep our eyes fixed on the screen'에서 both of which가 가리키는 것 두 가지와, 그 기능들의 목적을 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "무한 스크롤과 빨간 알림 점을 가리킨다. 사용자가 눈을 화면에서 떼지 못하고 계속 보게 만들기 위한 것이다.",
+        "rubric": "① 무한 스크롤 ② 빨간 알림 점 ③ 화면에 계속 붙잡아 두려는 목적, 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "5f16f4c2-d200-4bb7-ba78-e2d7774621a7",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '휴대폰은 너의 삶을 통제하는 것이 아니라 유용한 도구 역할을 해야 한다.' <조건> serve as와 rather than을 사용할 것 / should를 사용할 것",
+        "wordLimit": 20,
+        "sampleAnswer": "Your phone should serve as a useful tool rather than something that controls your life.",
+        "rubric": "① should serve as ② A rather than B ③ something that controls your life (관계대명사절) ④ 의미 일치"
+      },
+      {
+        "qid": "a5fab79d-ee20-43c4-9f7b-97f7373d4e76",
+        "q": "우리말로 쓰시오: 휴대폰 과다 사용이 일으키는 문제 세 가지와 글쓴이가 제시한 해결책 세 가지를 쓰시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "문제: ① 잠들기 어려워진다. ② 집중력이 약해진다. ③ 불안감이 커진다. 해결책: ① 꼭 필요하지 않은 앱의 알림을 끈다. ② 밤에는 휴대폰을 침실 밖에 둔다. ③ 설정에서 하루 사용 시간 제한을 정한다.",
+        "rubric": "문제 3 + 해결책 3 = 6개 요소 중 6개 만점, 4~5개 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "1c5de0e9-ade4-4393-8c1f-774b13badaf8",
+        "q": "Do you agree that many apps are designed to keep us looking at the screen? Give your opinion and one reason or example in 2–3 English sentences.",
+        "wordLimit": 50,
+        "sampleAnswer": "Yes, I agree. Video apps automatically play the next video, so I often watch much longer than I planned. This shows that apps are designed to hold our attention.",
+        "rubric": "① 찬반 의견 명확 ② 구체적 이유·예시 1개 이상 ③ 영어 문장 2~3개, 문법 오류 없음"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Why Is It So Hard to Put Down Your Phone?\n\nHave you ever reached for your phone intending merely to check a single message, {{g:only to discover|only to + 동사원형: (그런데) 결국 ~하게 되다 (뜻밖의 결과)}} that you were still scrolling half an hour later? If so, you are by no means alone. A considerable number of {{v:adolescents}} find it remarkably difficult to {{v:disengage}} from their phones, and {{t:there is a well-established scientific explanation for this phenomenon}}.\n\n{{g:Each time we receive|Each time + 주어 + 동사: ~할 때마다 (접속사 역할)}} a \"like\" or a new message, our brain releases a {{v:neurotransmitter}} called dopamine. Since dopamine generates a sense of pleasure, the brain is driven to seek out the same experience repeatedly. App developers are acutely aware of this {{v:mechanism}}. {{g:It is precisely for this reason that|It is ~ that 강조구문: 바로 ~ 때문에 …하다}} numerous applications {{v:incorporate}} features such as infinite scrolling and red notification badges, {{g:all of which|수량 표현 + 관계대명사: all of which = and all of them}} are {{v:deliberately}} engineered to keep users' attention fixed on the screen.\n\nExcessive smartphone use can give rise to a variety of problems. {{g:Not only can it make|부정어 Not only가 문장 앞 → 조동사 + 주어 도치}} it harder to fall asleep, but it can also {{v:impair}} our capacity to concentrate and even {{v:heighten}} feelings of anxiety.\n\nFortunately, there are straightforward strategies for regaining control. Consider disabling notifications for {{v:nonessential}} applications. {{g:Make it a habit to leave|make it a habit to + 동사원형: ~하는 것을 습관으로 삼다 (가목적어 it)}} your phone outside your bedroom at night. Additionally, you can establish a daily usage limit in your phone's settings. {{t:Ultimately, your phone ought to remain a useful tool rather than something that}} {{v:dictates}} how you live.",
+    "tags": {
+      "vocab": [
+        "adolescents",
+        "disengage",
+        "neurotransmitter",
+        "mechanism",
+        "incorporate",
+        "deliberately",
+        "impair",
+        "heighten",
+        "nonessential",
+        "dictates"
+      ],
+      "grammar": [
+        "only to + 동사원형 (결과)",
+        "Each time + 주어 + 동사",
+        "It is ~ that 강조구문",
+        "수량 표현 + 관계대명사 (all of which)",
+        "Not only 도치",
+        "make it a habit to ~ (가목적어)"
+      ],
+      "topic": [
+        "스마트폰 과다 사용",
+        "도파민 보상 체계",
+        "설득적 앱 디자인",
+        "디지털 자기 조절"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "f7e06257-a402-4dc5-bf5a-76d0fa8ef10c",
+        "type": "mc",
+        "q": "What is the primary purpose of the passage?",
+        "choices": [
+          "To argue that smartphones should be banned for adolescents",
+          "To praise app developers for their creative designs",
+          "To describe the history of the smartphone industry",
+          "To compare the effects of dopamine on adults and children",
+          "To explain the neurological and design-related causes of compulsive phone use and offer practical remedies"
+        ],
+        "answer": "To explain the neurological and design-related causes of compulsive phone use and offer practical remedies",
+        "explanation": "뇌 화학(도파민)과 앱 디자인이라는 원인을 설명하고, 실천 가능한 해결책을 제시하는 글이다."
+      },
+      {
+        "qid": "6530e139-af5d-4919-b7ca-851c2682b70c",
+        "type": "mc",
+        "q": "In the first sentence, what does \"only to discover\" suggest about the reader's experience?",
+        "choices": [
+          "The reader ended up doing something they had not intended.",
+          "The reader planned to scroll for half an hour.",
+          "The reader never checked the message.",
+          "The reader discovered a new app.",
+          "The reader decided to turn off the phone."
+        ],
+        "answer": "The reader ended up doing something they had not intended.",
+        "explanation": "only to + 동사원형은 의도와 다른 뜻밖의 결과를 나타낸다. 메시지 하나만 확인하려다 30분째 스크롤하고 있었다는 뜻이다."
+      },
+      {
+        "qid": "63126ca2-15ee-483b-8fa7-20988cb1c311",
+        "type": "mc",
+        "q": "Which best describes the role of dopamine according to the passage?",
+        "choices": [
+          "It makes us anxious so that we stop using our phones.",
+          "It helps us concentrate on difficult tasks.",
+          "It is released only when we sleep well.",
+          "It creates pleasure that drives us to repeat a behavior.",
+          "It prevents app developers from tracking users."
+        ],
+        "answer": "It creates pleasure that drives us to repeat a behavior.",
+        "explanation": "'Since dopamine generates a sense of pleasure, the brain is driven to seek out the same experience repeatedly.'"
+      },
+      {
+        "qid": "89e4d5bd-c7bf-4e9f-9c6a-51e68c5d5fa8",
+        "type": "mc",
+        "q": "What does \"this mechanism\" refer to?",
+        "choices": [
+          "The process of setting a daily usage limit",
+          "The way notifications can be disabled",
+          "The brain's tendency to seek repeated pleasure triggered by dopamine",
+          "The habit of leaving phones outside the bedroom",
+          "The method adolescents use to disengage from phones"
+        ],
+        "answer": "The brain's tendency to seek repeated pleasure triggered by dopamine",
+        "explanation": "바로 앞 내용(도파민이 쾌감을 만들어 뇌가 같은 경험을 반복해서 찾게 되는 원리)을 가리킨다."
+      },
+      {
+        "qid": "ce8aed72-abdf-416c-beff-7e9a54452e7b",
+        "type": "mc",
+        "q": "What does the phrase \"deliberately engineered\" imply about app features?",
+        "choices": [
+          "They were created by accident.",
+          "They were intentionally designed to capture attention.",
+          "They were designed mainly for safety.",
+          "They were made to reduce screen time.",
+          "They were tested only on adults."
+        ],
+        "answer": "They were intentionally designed to capture attention.",
+        "explanation": "deliberately는 '의도적으로', engineer는 '설계하다'이다. 주의를 붙잡도록 일부러 설계되었다는 뜻이다."
+      },
+      {
+        "qid": "5dd105a6-b12a-44f7-88bf-d9864fc805a9",
+        "type": "mc",
+        "q": "What does \"all of which\" refer to?",
+        "choices": [
+          "Features such as infinite scrolling and red notification badges",
+          "Numerous app developers",
+          "Users' attention and the screen",
+          "Likes and new messages",
+          "Adolescents who use phones"
+        ],
+        "answer": "Features such as infinite scrolling and red notification badges",
+        "explanation": "all of which는 앞의 features such as infinite scrolling and red notification badges를 가리킨다."
+      },
+      {
+        "qid": "e90fb884-0b84-4c4a-871a-097821787863",
+        "type": "mc",
+        "q": "Which best describes the writer's attitude toward app developers?",
+        "choices": [
+          "Strongly admiring of their technical skill",
+          "Completely neutral, without any judgment",
+          "Somewhat critical, implying that they exploit how the brain works",
+          "Sympathetic to the pressure they face",
+          "Grateful for their efforts to protect users"
+        ],
+        "answer": "Somewhat critical, implying that they exploit how the brain works",
+        "explanation": "'acutely aware', 'deliberately engineered' 같은 표현으로 개발자들이 뇌의 원리를 의도적으로 이용한다는 비판적 시각을 드러낸다."
+      },
+      {
+        "qid": "62a900b4-41f8-45ad-80f4-6c6da59e001b",
+        "type": "mc",
+        "q": "Which is NOT stated as a consequence of excessive smartphone use?",
+        "choices": [
+          "Difficulty falling asleep",
+          "A decline in academic grades",
+          "A reduced capacity to concentrate",
+          "Heightened feelings of anxiety",
+          "Scrolling far longer than intended"
+        ],
+        "answer": "A decline in academic grades",
+        "explanation": "성적 하락은 언급되지 않았다."
+      },
+      {
+        "qid": "c9b5b19c-a95c-4547-adaa-cc423418063e",
+        "type": "mc",
+        "q": "Which is NOT recommended as a strategy for regaining control?",
+        "choices": [
+          "Disabling notifications for nonessential applications",
+          "Leaving the phone outside the bedroom at night",
+          "Establishing a daily usage limit in the settings",
+          "Switching from a smartphone to a tablet",
+          "Treating the phone as a useful tool"
+        ],
+        "answer": "Switching from a smartphone to a tablet",
+        "explanation": "태블릿으로 바꾸라는 내용은 없다."
+      },
+      {
+        "qid": "3663f08c-607d-498f-9cbe-644063212e49",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'disengage' in the first paragraph?",
+        "choices": [
+          "connect",
+          "participate",
+          "upgrade",
+          "communicate",
+          "separate oneself"
+        ],
+        "answer": "separate oneself",
+        "explanation": "disengage from은 '~에서 벗어나다, 손을 떼다'라는 뜻이다."
+      },
+      {
+        "qid": "dec6cad6-212c-42ca-971d-6fba4df9e871",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'impair'?",
+        "choices": [
+          "improve",
+          "measure",
+          "test",
+          "weaken",
+          "ignore"
+        ],
+        "answer": "weaken",
+        "explanation": "impair는 '손상시키다, 약화시키다'라는 뜻이다."
+      },
+      {
+        "qid": "246bc0bc-d54e-4689-b5e0-81f4421ae386",
+        "type": "mc",
+        "q": "What does 'nonessential applications' mean?",
+        "choices": [
+          "apps that are very important",
+          "apps that are expensive",
+          "apps that are not really necessary",
+          "apps that were just installed",
+          "apps that are free to use"
+        ],
+        "answer": "apps that are not really necessary",
+        "explanation": "non-(아닌) + essential(필수적인) = 꼭 필요하지 않은."
+      },
+      {
+        "qid": "55aafc37-0e9b-460d-9124-3aafaf939328",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'dictates' in the last sentence?",
+        "choices": [
+          "controls",
+          "describes",
+          "records",
+          "predicts",
+          "supports"
+        ],
+        "answer": "controls",
+        "explanation": "dictate는 '좌우하다, 지시하다'라는 뜻으로 control과 가깝다."
+      },
+      {
+        "qid": "947af829-1d42-4972-ac35-74a25bcbbb67",
+        "type": "mc",
+        "q": "Where would the following sentence best fit? \"A red badge, for instance, triggers our curiosity about what we might have missed.\"",
+        "choices": [
+          "At the end of the first paragraph",
+          "After \"our brain releases a neurotransmitter called dopamine\"",
+          "At the end of the third paragraph",
+          "After \"Consider disabling notifications for nonessential applications\"",
+          "At the end of the second paragraph"
+        ],
+        "answer": "At the end of the second paragraph",
+        "explanation": "red notification badges가 언급된 2문단 마지막 문장 뒤에 구체적 예시로 오는 것이 자연스럽다."
+      },
+      {
+        "qid": "0a4f4529-b9e5-4ffd-a13f-3a22b407f357",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "It is precisely for this reason that apps use red badges.",
+          "Not only it can make it harder to fall asleep, but it can also cause anxiety.",
+          "Each time we receive a message, dopamine is released.",
+          "Make it a habit to leave your phone outside your bedroom.",
+          "The apps, all of which were free, were deleted."
+        ],
+        "answer": "Not only it can make it harder to fall asleep, but it can also cause anxiety.",
+        "explanation": "Not only가 문장 앞에 오면 조동사와 주어가 도치된다. Not only it can → Not only can it."
+      },
+      {
+        "qid": "6cf083c4-ca2e-461b-8aa2-72925937d74f",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Not only ____ make it harder to fall asleep, but it can also impair our capacity to concentrate.\"",
+        "choices": [
+          "it can",
+          "does it",
+          "can it",
+          "it does",
+          "can be it"
+        ],
+        "answer": "can it",
+        "explanation": "Not only 도치: 조동사(can) + 주어(it) + 동사원형(make)."
+      },
+      {
+        "qid": "5d7a5e78-a07d-466c-a568-8c44d71cadd8",
+        "type": "mc",
+        "q": "Which sentence uses the same structure as \"It is precisely for this reason that numerous applications incorporate such features\"?",
+        "choices": [
+          "It is important that you sleep well.",
+          "It is true that phones are useful.",
+          "It was so cold that we stayed home.",
+          "It seems that he is tired.",
+          "It was in the library that I found the book."
+        ],
+        "answer": "It was in the library that I found the book.",
+        "explanation": "It is ~ that 강조구문이다. 'It was in the library that ~'도 장소 부사구를 강조한다. 나머지는 가주어 구문, so ~ that, It seems that 구문이다."
+      },
+      {
+        "qid": "a9dcbc6d-ce24-46e1-ae49-59e8a2336f8b",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Compulsive phone use stems from the (A) ____ triggered by dopamine and from app features engineered to (B) ____ it; nevertheless, simple habits can restore our control.\"",
+        "choices": [
+          "(A) pleasure – (B) exploit",
+          "(A) pleasure – (B) reduce",
+          "(A) anxiety – (B) exploit",
+          "(A) sleep – (B) reduce",
+          "(A) boredom – (B) ignore"
+        ],
+        "answer": "(A) pleasure – (B) exploit",
+        "explanation": "도파민이 만드는 쾌감(pleasure)과, 그것을 이용하도록(exploit) 설계된 앱 기능이 원인이다."
+      },
+      {
+        "qid": "4646da99-527e-4771-acf6-28818d272999",
+        "type": "order",
+        "items": [
+          "Overuse undermines sleep, focus, and emotional well-being.",
+          "Practical changes in habits allow users to regain control.",
+          "A common experience reveals how difficult it is to disengage from phones.",
+          "The brain's reward system and deliberate app design explain this phenomenon."
+        ],
+        "answer": [
+          "A common experience reveals how difficult it is to disengage from phones.",
+          "The brain's reward system and deliberate app design explain this phenomenon.",
+          "Overuse undermines sleep, focus, and emotional well-being.",
+          "Practical changes in habits allow users to regain control."
+        ]
+      },
+      {
+        "qid": "5c25271f-f680-40ea-ae6b-9a9e05c5affa",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "neurotransmitter",
+            "meaning": "신경 전달 물질"
+          },
+          {
+            "word": "phenomenon",
+            "meaning": "현상"
+          },
+          {
+            "word": "incorporate",
+            "meaning": "포함하다, 넣다"
+          },
+          {
+            "word": "deliberately",
+            "meaning": "의도적으로, 고의로"
+          },
+          {
+            "word": "heighten",
+            "meaning": "높이다, 고조시키다"
+          },
+          {
+            "word": "establish",
+            "meaning": "정하다, 설정하다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "2be20b35-ba41-43c2-ac91-83c26666dcae",
+        "q": "Explain in 2–3 English sentences why app developers can be said to \"exploit\" the brain's reward system.",
+        "wordLimit": 60,
+        "sampleAnswer": "App developers know that dopamine creates pleasure and makes the brain seek the same experience again. They deliberately add features like infinite scrolling and red badges to trigger this response. In this way, they use the brain's reward system to keep users on the screen.",
+        "rubric": "① 도파민 보상 원리 이해 ② 의도적 기능 설계(무한 스크롤·빨간 배지) ③ 화면에 붙잡아 두는 결과 ④ 영어 문장 2~3개, 문법 오류 없음"
+      },
+      {
+        "qid": "0f640b6a-1eaa-4f9a-a880-3c3011317f1a",
+        "q": "우리말로 쓰시오: 'Not only can it make it harder to fall asleep, but it can also impair our capacity to concentrate and even heighten feelings of anxiety.'에서 말하는 문제 세 가지를 쓰고, 이 문장에 쓰인 어순의 특징을 설명하시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "문제: ① 잠들기 어려워진다. ② 집중력이 손상된다. ③ 불안감이 커진다. 어순: 부정어 Not only가 문장 앞에 나와서 조동사 can과 주어 it의 순서가 바뀌었다(도치).",
+        "rubric": "① 문제 3가지 ② Not only 문두 → 조동사 + 주어 도치 설명, 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "bab722e1-75cd-4a0b-a606-5158e963b61d",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '우리가 휴대폰을 내려놓기 어려운 것은 바로 도파민 때문이다.' <조건> It is ~ that 강조구문을 사용할 것 / find it hard to를 사용할 것",
+        "wordLimit": 20,
+        "sampleAnswer": "It is because of dopamine that we find it hard to put down our phones.",
+        "rubric": "① It is because of dopamine that 강조구문 ② find it hard to + 동사원형 ③ put down our phones ④ 의미 일치"
+      },
+      {
+        "qid": "1e89a1ab-dd36-41ff-a11a-ac065a7cb3d3",
+        "q": "우리말로 쓰시오: 글쓴이가 제시한 세 가지 해결책이 각각 본문의 어떤 원인이나 문제를 줄이는 데 도움이 되는지 연결하여 설명하시오.",
+        "wordLimit": 100,
+        "sampleAnswer": "① 불필요한 앱의 알림을 끄면 빨간 알림 배지 같은 자극이 줄어 도파민을 좇아 휴대폰을 확인하는 일이 줄어든다. ② 밤에 휴대폰을 침실 밖에 두면 잠들기 어려운 문제를 줄일 수 있다. ③ 하루 사용 시간을 제한하면 과다 사용 자체가 줄어 집중력 저하와 불안을 막는 데 도움이 된다.",
+        "rubric": "해결책 3가지를 각각 본문의 원인·문제와 논리적으로 연결하면 만점, 2가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "7db2041a-a351-4df3-ab8e-ea22337202b4",
+        "q": "Summarize the passage in about 40 English words. Include the cause, the problems, and the solutions.",
+        "wordLimit": 50,
+        "sampleAnswer": "Phones are hard to put down because dopamine makes us seek pleasure and apps are designed to exploit this. Overuse can harm sleep, focus, and emotions, but disabling notifications, keeping phones out of bedrooms, and setting time limits can help.",
+        "rubric": "① 원인(도파민 + 앱 설계) ② 문제(수면·집중·불안) ③ 해결책(3가지 중 2가지 이상) ④ 40단어 내외"
+      }
+    ]
+  }
+}
