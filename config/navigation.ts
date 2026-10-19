@@ -1,11 +1,12 @@
 // 왼쪽 메뉴(데스크탑 SidebarNav)와 모바일 메뉴(MobileNav)가 함께 쓰는 메뉴 목록 (5단계 메뉴 개편, 2026-09-28).
 // 예전에는 두 파일에 목록이 따로 있어서 모바일에 외부지문저장소가 빠져 있었다 → 한 곳에서만 관리한다.
 //
-// 큰 메뉴 3개: 자료(지문 / 외부지문저장소 / 문제은행 / 문항 검색 / 단어은행), 시험 출제(문제 시험 / 단어 시험), 시험 관리(시험지 보관함 / 채점·결과)
+// 큰 메뉴 3개: 자료(지문 / 외부지문저장소 / 문제은행 / 문항 검색 / 단어은행 / 지문 단어장), 시험 출제(문제 시험 / 단어 시험), 시험 관리(시험지 보관함 / 채점·결과)
 // 나머지(학생관리·운영관리·알림)는 이름과 위치만 정리했다 (기능·주소 그대로).
 // 옛 주소 → 새 주소 연결은 config/legacyRoutes.json.
 // 6단계 A (2026-09-29): 문항 검색(/materials/questions/search)과 외부지문저장소를 자료 아래 메뉴 항목으로 꺼냈다
 //   (전에는 자료·지문 첫 화면 카드에서만 들어갈 수 있었다). 주소는 5단계 그대로.
+// 지문 단어장 (2026-10-19): 외부지문 🔵 단어 → A4 단어지·단어 테스트지 (/materials/wordbooks).
 
 export type NavItem = {
   label: string
@@ -30,6 +31,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { label: '문제은행', href: '/materials/questions', icon: '🏦' },
       { label: '문항 검색', href: '/materials/questions/search', icon: '🔎' },
       { label: '단어은행', href: '/materials/vocabulary', icon: '📒' },
+      { label: '지문 단어장', href: '/materials/wordbooks', icon: '📗' },
     ],
   },
   {

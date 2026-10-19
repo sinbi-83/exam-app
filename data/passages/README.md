@@ -36,6 +36,8 @@
   JSON을 다 쓴 뒤 `npm run assign-qids -- data/passages/파일이름.json`을 실행하면 없는 곳에만 붙습니다
   (이미 있는 qid는 절대 바뀌지 않음). qid는 문제를 수정·삭제·순서변경해도 그 문제의 사용이력을 이어주는 ID입니다.
   - ⚠️ 이미 DB에 저장된 지문의 파일에는 실행하지 않습니다 (DB 쪽 qid와 달라짐).
+- 지문 단어장: `"wordbook": [{ "word", "surface", "pos", "meaning", "sentence" }, …]` 칸에 🔵 단어 전부를 넣으면 저장 때 단어장도 같이 저장됩니다
+  (형식: `data/wordbooks/README.md`). 4단계 세트 content 파일은 난이도마다 `wordbook` 이 있어야 검사를 통과합니다.
 - 저장: `npm run add-passage -- data/passages/파일이름.json`
 - 4단계 세트 content 파일도 같습니다: `npm run assign-qids -- data/passage-sets/파일이름.content.json`
   → `check-passage-questions` → `add-passage-set-questions`

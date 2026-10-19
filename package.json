@@ -25,6 +25,7 @@
     "test-exam-type": "node scripts/test-exam-type.ts",
     "test-official-vocabulary": "node scripts/test-official-vocabulary.ts",
     "add-vocabulary-seed": "node scripts/add-vocabulary-seed.ts",
+    "add-wordbook": "node scripts/add-wordbook.ts",
     "test-vocabulary-calibration": "node scripts/test-vocabulary-calibration.ts",
     "test-vocabulary-list-filter": "node scripts/test-vocabulary-list-filter.ts",
     "test-passage-unified": "node scripts/test-passage-unified.ts",
@@ -34,7 +35,8 @@
     "test-tab-counts": "node scripts/test-tab-counts.ts",
     "test-stage5-bulk-approve": "node scripts/test-stage5-bulk-approve.ts",
     "test-print-layout": "node scripts/test-print-layout.ts",
-    "test-grammar-leak": "node scripts/test-grammar-leak.ts"
+    "test-grammar-leak": "node scripts/test-grammar-leak.ts",
+    "test-wordbook": "node scripts/test-wordbook.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",

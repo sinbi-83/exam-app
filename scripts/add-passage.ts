@@ -5,12 +5,14 @@
 //
 // 문제·서술형마다 영구 ID(qid)가 있어야 저장한다. 없으면 먼저: npm run assign-qids -- <JSON 파일>
 // (qid 없는 예전 파일을 일부러 그대로 저장해야 할 때만 --allow-legacy)
+// JSON 에 wordbook(🔵 단어의 뜻·품사·예문, data/wordbooks/README.md 의 words 형식)이 있으면 지문 단어장도 같이 저장한다.
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 import type { PassageInput } from '../types/passageBank'
 import { inspectQids, qidErrors } from '../lib/passageQid.ts'
+import { saveWordbookFromScript, wordbookSaveMessage } from '../lib/wordbookSave.ts'
 
 function loadEnvLocal(): Record<string, string> {
   const envPath = resolve(process.cwd(), '.env.local')
@@ -109,6 +111,12 @@ async function main() {
   }
 
   console.log(`저장 완료: ${data.title} (id: ${data.id})`)
+  const wordbook = (input as PassageInput & { wordbook?: unknown }).wordbook
+  if (Array.isArray(wordbook) && wordbook.length > 0) {
+    console.log(wordbookSaveMessage('지문', await saveWordbookFromScript(supabase, authData.user.id, data.id, wordbook, false)))
+  } else {
+    console.log('⚠️ JSON 에 단어장(wordbook)이 없음 — 화면에서는 🔵 단어 자동 발췌로 보입니다')
+  }
   process.exit(0)
 }
 

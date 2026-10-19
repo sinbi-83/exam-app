@@ -1,6 +1,6 @@
 import HubCard from '@/app/components/HubCard'
 
-// 큰 메뉴 "자료" 첫 화면: 지문 / 문제은행 / 단어은행
+// 큰 메뉴 "자료" 첫 화면: 지문 / 문제은행 / 단어은행 / 지문 단어장
 export default function MaterialsPage() {
   return (
     <div className="mx-auto max-w-4xl">
@@ -25,6 +25,7 @@ export default function MaterialsPage() {
           extra={[{ label: '문항 검색', href: '/materials/questions/search' }]}
         />
         <HubCard icon="📒" title="단어은행" description="단어 뜻·난이도 검수, 확인 필요 단어 사용하기" href="/materials/vocabulary" />
+        <HubCard icon="📗" title="지문 단어장" description="지문 속 단어로 A4 단어지·단어 테스트지 출력" href="/materials/wordbooks" />
       </div>
     </div>
   )

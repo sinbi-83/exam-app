@@ -3,12 +3,14 @@
 //
 // 실행: node scripts/check-passage-questions.ts data/passage-sets/파일이름.content.json data/passage-sets/파일이름.json
 //       [--allow-legacy]  qid(문항 영구 ID)가 없는 예전 content 파일을 검사할 때만 사용 (없으면 경고로만 표시)
+//       [--allow-no-wordbook]  단어장(wordbook)이 없는 예전 content 파일을 검사할 때만 사용
 //
 // 새로 만든 content 는 모든 문제·서술형에 qid 가 있어야 한다 → 없으면 npm run assign-qids -- <content.json>
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { inspectQids, qidErrors } from '../lib/passageQid.ts'
+import { wordbookCoverageProblems } from '../lib/wordbook.ts'
 
 const ORDER = ['school', 'academy', 'advanced', 'prestudy'] as const
 const LABELS: Record<string, string> = {
@@ -38,6 +40,7 @@ function wordOverlap(a: string, b: string): number {
 const contentFile = process.argv[2]
 const setFile = process.argv[3]
 const allowLegacy = process.argv.includes('--allow-legacy')
+const allowNoWordbook = process.argv.includes('--allow-no-wordbook')
 if (!contentFile || !setFile) {
   console.error('사용법: node scripts/check-passage-questions.ts <content.json> <원본 지문 세트.json>')
   process.exit(1)
@@ -152,6 +155,18 @@ for (const v of ORDER) {
   const markupCount = (c.tagged_body.match(/\{\{(v|g|t):/g) ?? []).length
   if (markupCount === 0) errors.push(`${label}: tagged_body에 색깔 마크업이 하나도 없습니다.`)
 
+  // 9-1) 지문 단어장(wordbook): 🔵 단어 전부의 뜻·품사·예문 (data/wordbooks/README.md 의 words 형식)
+  //      예전 content 를 검사할 때만 --allow-no-wordbook (없으면 경고로만)
+  if (!Array.isArray(c.wordbook) || c.wordbook.length === 0) {
+    const msg = `${label}: 단어장(wordbook)이 없습니다. 🔵 단어마다 { word, surface, pos, meaning, sentence } 를 넣어 주세요.`
+    if (allowNoWordbook) warnings.push(msg)
+    else errors.push(msg)
+  } else {
+    const wb = wordbookCoverageProblems(c.tagged_body, c.wordbook)
+    wb.errors.forEach((m) => errors.push(`${label}: 단어장 ${m}`))
+    wb.warnings.forEach((m) => warnings.push(`${label}: 단어장 ${m}`))
+  }
+
   summaryRows.push({
     난이도: label,
     문제: qs.length,
@@ -161,6 +176,7 @@ for (const v of ORDER) {
     '마크업 개수': markupCount,
     '한글답변 서술형': es.filter((e: any) => e.answerLang === 'ko').length,
     'qid(문제/서술형)': `${qidReport.questionsWithQid}/${qidReport.essaysWithQid}`,
+    단어장: Array.isArray(c.wordbook) ? c.wordbook.length : 0,
   })
 }
 
@@ -190,4 +206,4 @@ if (errors.length) {
   errors.forEach((e) => console.log('❌', e))
   process.exit(1)
 }
-console.log('✅ 4단계 모두 20문제+5서술형 / 정답·해설·예시답안 존재 / 근거 단어 확인 / 태그 존재 / qid 중복 없음')
+console.log('✅ 4단계 모두 20문제+5서술형 / 정답·해설·예시답안 존재 / 근거 단어 확인 / 태그 존재 / qid 중복 없음 / 단어장 확인')

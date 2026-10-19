@@ -98,6 +98,18 @@ public/brand/signature.png  ← fallback 서명 (원본: 싸인.png)
 위 JSON 형식으로 `data/passages/`에 만들고 `add-passage.ts`로 저장한다. **API는 호출하지 않는다**
 (Claude Code가 직접 JSON 내용을 작성한다).
 
+### 지문 단어장 (API 호출 없음, 2026-10-19)
+
+- 경로: `/materials/wordbooks` (목록), `/materials/wordbooks/[passageId]` (편집), `/materials/wordbooks/[passageId]/print?mode=list|test` (A4 단어지 / 단어 테스트지)
+- 지문 `tagged_body` 의 🔵 `{{v:단어}}` 를 모아 단어장을 만든다. 뜻·품사는 단어은행(사용 중 → 확인 필요 순)에서 원형까지 찾아 채운다 (`lib/wordbook.ts`). 없는 뜻은 빈칸 → 선생님이 화면에서 채움.
+- DB 표: `passage_wordbooks` (지문 하나당 하나, `passage-wordbooks-migration.sql`). 4단계 세트는 버전마다 따로.
+- **지문을 넣어 문제를 만들 때마다 단어장도 반드시 같이 만든다** (향미님 요청, 2026-10-19):
+  - 4단계 세트: content 파일의 각 난이도(`school`/`academy`/`advanced`/`prestudy`)에 `"wordbook": [{ word, surface, pos, meaning, sentence }, …]`
+    (그 난이도 `tagged_body` 의 🔵 단어 전부, 지문 순서, 뜻·품사 Claude Code 가 직접 작성). `check-passage-questions` 가 없으면 오류로 막고,
+    `add-passage-set-questions` 가 문제 저장 뒤 단어장도 저장한다 (이미 화면에서 고쳐 저장한 단어장은 안 건드림, `--replace-wordbook` 으로만).
+  - 단독 지문: `data/passages/*.json` 에 같은 `"wordbook"` 칸 → `add-passage` 가 같이 저장.
+  - 이미 DB 에 있는 지문의 단어장만 따로: `data/wordbooks/*.json` + `npm run add-wordbook` (또는 세트는 `add-passage-set-questions … --wordbook-only`).
+
 ---
 
 ## 안전 규칙

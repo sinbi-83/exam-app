@@ -10,11 +10,17 @@
 //   qid 없는 예전 content 를 일부러 저장할 때만 --allow-legacy.
 // - 이 스크립트는 questions/essays 배열을 "통째로 교체"한다. DB에 이미 있는 qid 가 content 에 없으면
 //   그 문항의 사용이력이 끊기므로 중단한다. 정말 문항을 새로 갈아끼우는 것이면 --allow-drop-qids.
+//
+// 지문 단어장 (2026-10-19): content 의 각 난이도에 wordbook(🔵 단어의 뜻·품사·예문)이 있으면
+// 문제 저장 뒤 passage_wordbooks 에도 저장한다 → 지문을 넣을 때마다 단어장이 같이 만들어진다.
+// - 화면에서 고쳐 저장한 단어장이 이미 있으면 그대로 둔다 (바꿔 쓰려면 --replace-wordbook)
+// - 단어장만 다시 저장: --wordbook-only (지문·문제는 건드리지 않음)
 
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 import { inspectQids, qidErrors } from '../lib/passageQid.ts'
+import { saveWordbookFromScript, wordbookSaveMessage } from '../lib/wordbookSave.ts'
 
 const ORDER = ['school', 'academy', 'advanced', 'prestudy'] as const
 
@@ -48,6 +54,8 @@ async function main() {
 
   const allowLegacy = process.argv.includes('--allow-legacy')
   const allowDropQids = process.argv.includes('--allow-drop-qids')
+  const wordbookOnly = process.argv.includes('--wordbook-only')
+  const replaceWordbook = process.argv.includes('--replace-wordbook')
   let qidFailed = false
   for (const v of ORDER) {
     const problems = qidErrors(inspectQids(content[v].questions ?? [], content[v].essays ?? []), !allowLegacy)
@@ -91,6 +99,11 @@ async function main() {
 
   // 실패 시 되돌릴 수 있도록, 지금 상태(문제 붙이기 전)를 먼저 기억해 둔다.
   const before = new Map(rows.map((r) => [r.variant_level as string, r]))
+
+  if (wordbookOnly) {
+    await saveWordbooks()
+    process.exit(0)
+  }
 
   // DB에 이미 있는 qid 가 이번 content 에서 사라지는지 확인 (통째 교체로 이력이 끊기는 것 방지)
   const itemQids = (items: { qid?: string }[] | null | undefined) =>
@@ -139,7 +152,23 @@ async function main() {
   }
 
   console.log(`\n저장 완료: "${title}" 4단계 모두 문제·서술형·태그 반영됨 (묶음 id: ${group.id})`)
+  // 단어장은 문제 저장과 따로 (실패해도 문제는 그대로, --wordbook-only 로 다시 저장)
+  await saveWordbooks()
   process.exit(0)
+
+  async function saveWordbooks() {
+    const LABEL: Record<string, string> = { school: '학교형', academy: '일반학원형', advanced: '상위학원형', prestudy: '선행형' }
+    for (const v of ORDER) {
+      const row = before.get(v)
+      const words = content[v].wordbook
+      if (!row) continue
+      if (!Array.isArray(words) || words.length === 0) {
+        console.log(`⚠️ ${LABEL[v]} content 에 단어장(wordbook)이 없음 — 화면에서는 🔵 단어 자동 발췌로 보입니다`)
+        continue
+      }
+      console.log(wordbookSaveMessage(LABEL[v], await saveWordbookFromScript(supabase, auth.user!.id, row.id, words, replaceWordbook)))
+    }
+  }
 
   async function rollback() {
     for (const v of done) {
