@@ -96,7 +96,7 @@ function buildOrder(q: Extract<PassageQuestion, { type: 'order' }>): Pick<ExamQu
   return { items: q.items, answer: answerLabels.join(' → ') }
 }
 
-function buildMatch(q: Extract<PassageQuestion, { type: 'match' }>): Pick<ExamQuestionData, 'matchWords' | 'matchMeanings' | 'answer'> {
+export function buildMatch(q: Extract<PassageQuestion, { type: 'match' }>): Pick<ExamQuestionData, 'matchWords' | 'matchMeanings' | 'answer'> {
   const matchWords = q.pairs.map((p) => p.word)
   const matchMeanings = rotateMeanings(q.pairs.map((p) => p.meaning))
   const answer = q.pairs

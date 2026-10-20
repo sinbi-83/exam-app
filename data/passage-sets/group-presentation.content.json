@@ -1,0 +1,1716 @@
+{
+  "school": {
+    "tagged_body": "Yuna: {{t:Tom, our group presentation is next Wednesday.}}\nTom: I know. Our {{v:topic}} is \"Animals in Korea,\" right?\nYuna: Yes. We have four people in our group. {{g:Let's|Let's + 동사원형: ~하자 (제안)}} {{v:divide}} the work.\nTom: Okay. {{g:I can find|can + 동사원형: ~할 수 있다}} pictures on the computer.\nYuna: Great. Jimin {{g:is good at drawing|be good at + -ing: ~을 잘하다}}. She can make the {{v:poster}}.\nTom: What about Daniel?\nYuna: He speaks {{v:loudly}} and {{v:clearly}}. He can {{v:present}} in front of the class.\nTom: And what about you?\nYuna: {{g:I will write|will + 동사원형: ~할 것이다 (미래)}} the {{v:script}}. The {{v:presentation}} is five minutes long.\nTom: When can we meet?\nYuna: {{g:How about Monday after school?|How about ~?: ~은 어때? (제안)}} Let's meet in the {{v:library}} at three thirty.\nTom: Sounds good. I will tell Jimin and Daniel.",
+    "tags": {
+      "vocab": [
+        "topic",
+        "divide",
+        "poster",
+        "loudly",
+        "clearly",
+        "present",
+        "script",
+        "presentation",
+        "library"
+      ],
+      "grammar": [
+        "Let's + 동사원형",
+        "can + 동사원형",
+        "be good at + -ing",
+        "will + 동사원형",
+        "How about ~?"
+      ],
+      "topic": [
+        "모둠 발표",
+        "역할 나누기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "5456094d-8cf4-4cb1-ae3f-cf26d097ebba",
+        "type": "mc",
+        "q": "When is the group presentation?",
+        "choices": [
+          "Next Monday",
+          "Next Tuesday",
+          "Next Wednesday",
+          "Next Thursday",
+          "Next Friday"
+        ],
+        "answer": "Next Wednesday",
+        "explanation": "'our group presentation is next Wednesday'와 일치한다."
+      },
+      {
+        "qid": "33f6c053-7fff-4854-bc53-ef20a6f6eb4e",
+        "type": "mc",
+        "q": "What is the topic of the presentation?",
+        "choices": [
+          "Animals in Korea",
+          "Food in Korea",
+          "Animals in China",
+          "Sports in Korea",
+          "Plants in Korea"
+        ],
+        "answer": "Animals in Korea",
+        "explanation": "'Our topic is \"Animals in Korea,\"'와 일치한다."
+      },
+      {
+        "qid": "536b418d-2f90-4bc1-b37a-34a2c661ea3c",
+        "type": "mc",
+        "q": "How many people are in the group?",
+        "choices": [
+          "Two",
+          "Three",
+          "Four",
+          "Five",
+          "Six"
+        ],
+        "answer": "Four",
+        "explanation": "'We have four people in our group.'과 일치한다."
+      },
+      {
+        "qid": "73a1d01a-cf33-480c-b3f2-395511f3a5e9",
+        "type": "mc",
+        "q": "What is Tom's job for the presentation?",
+        "choices": [
+          "Find pictures.",
+          "Make the poster.",
+          "Write the script.",
+          "Present in front of the class.",
+          "Buy snacks."
+        ],
+        "answer": "Find pictures.",
+        "explanation": "Tom은 'I can find pictures on the computer.'라고 했다."
+      },
+      {
+        "qid": "f6a0bdaa-6491-4af8-aa4b-e8fac0225c9c",
+        "type": "mc",
+        "q": "Who can make the poster?",
+        "choices": [
+          "Yuna",
+          "Tom",
+          "Daniel",
+          "The teacher",
+          "Jimin"
+        ],
+        "answer": "Jimin",
+        "explanation": "'Jimin is good at drawing. She can make the poster.'와 일치한다."
+      },
+      {
+        "qid": "d020dc48-3e11-4e22-be95-968ca9c8b7fc",
+        "type": "mc",
+        "q": "Why can Jimin make the poster?",
+        "choices": [
+          "She is good at drawing.",
+          "She has a computer.",
+          "She speaks loudly.",
+          "She likes animals.",
+          "She is the leader."
+        ],
+        "answer": "She is good at drawing.",
+        "explanation": "'Jimin is good at drawing.'에서 지민이가 그림을 잘 그리기 때문이다."
+      },
+      {
+        "qid": "6d718c75-cf27-444a-9d13-224c9f9353dd",
+        "type": "mc",
+        "q": "Who will present in front of the class?",
+        "choices": [
+          "Yuna",
+          "Tom",
+          "Jimin",
+          "Daniel",
+          "All four"
+        ],
+        "answer": "Daniel",
+        "explanation": "Daniel에 대해 'He can present in front of the class.'라고 했다."
+      },
+      {
+        "qid": "376458ad-d94b-4775-80f7-d9d5dab52b62",
+        "type": "mc",
+        "q": "다니엘이 반 앞에서 발표를 맡게 된 이유는?",
+        "choices": [
+          "그림을 잘 그려서",
+          "컴퓨터를 잘해서",
+          "크고 분명하게 말해서",
+          "글을 잘 써서",
+          "동물을 좋아해서"
+        ],
+        "answer": "크고 분명하게 말해서",
+        "explanation": "'He speaks loudly and clearly.'에서 크고 분명하게 말하기 때문이다."
+      },
+      {
+        "qid": "578b955a-fe95-4544-9d22-cede6d630fde",
+        "type": "mc",
+        "q": "What is Yuna's job?",
+        "choices": [
+          "Find pictures.",
+          "Make the poster.",
+          "Present in front of the class.",
+          "Draw animals.",
+          "Write the script."
+        ],
+        "answer": "Write the script.",
+        "explanation": "유나는 'I will write the script.'라고 했다."
+      },
+      {
+        "qid": "aa77f92a-e9f4-407f-96f0-8c0a2821117c",
+        "type": "mc",
+        "q": "How long is the presentation?",
+        "choices": [
+          "Three minutes",
+          "Five minutes",
+          "Ten minutes",
+          "Thirty minutes",
+          "One hour"
+        ],
+        "answer": "Five minutes",
+        "explanation": "'The presentation is five minutes long.'과 일치한다."
+      },
+      {
+        "qid": "f68c2577-4bf6-42a5-aa84-077bd4536ef8",
+        "type": "mc",
+        "q": "When will they meet?",
+        "choices": [
+          "On Sunday morning",
+          "On Monday after school",
+          "On Wednesday after school",
+          "On Monday morning",
+          "On Friday after school"
+        ],
+        "answer": "On Monday after school",
+        "explanation": "'How about Monday after school?'에 Tom이 'Sounds good.'이라고 했다."
+      },
+      {
+        "qid": "28c7df78-0843-4f3e-867d-76a2d29e0808",
+        "type": "mc",
+        "q": "Where will they meet?",
+        "choices": [
+          "In the classroom",
+          "At Tom's house",
+          "In the park",
+          "In the music room",
+          "In the library"
+        ],
+        "answer": "In the library",
+        "explanation": "'Let's meet in the library'와 일치한다."
+      },
+      {
+        "qid": "f1f2380c-8a26-4d10-983a-71a830387962",
+        "type": "mc",
+        "q": "What time will they meet?",
+        "choices": [
+          "At 2:30",
+          "At 3:00",
+          "At 3:30",
+          "At 4:00",
+          "At 4:30"
+        ],
+        "answer": "At 3:30",
+        "explanation": "'at three thirty'는 3시 30분이다."
+      },
+      {
+        "qid": "25cbde5d-d147-4c63-b2de-8fe020cf8fab",
+        "type": "mc",
+        "q": "다음 중 'script'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "포스터",
+          "대본",
+          "사진",
+          "도서관",
+          "주제"
+        ],
+        "answer": "대본",
+        "explanation": "script는 발표할 때 읽을 말을 적은 '대본'이다."
+      },
+      {
+        "qid": "769d8fac-8ccc-450a-a868-007b1a417bac",
+        "type": "mc",
+        "q": "다음 중 'divide'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "나누다",
+          "모으다",
+          "끝내다",
+          "바꾸다",
+          "고르다"
+        ],
+        "answer": "나누다",
+        "explanation": "divide는 '나누다'라는 뜻이다. 'Let's divide the work.'는 일을 나누자는 말이다."
+      },
+      {
+        "qid": "9c3191a6-ec32-44b5-88ef-7cd75b067be5",
+        "type": "mc",
+        "q": "Which is true?",
+        "choices": [
+          "The presentation is next Monday.",
+          "Tom will make the poster.",
+          "Daniel will write the script.",
+          "The presentation is five minutes long.",
+          "They will meet at Tom's house."
+        ],
+        "answer": "The presentation is five minutes long.",
+        "explanation": "발표는 5분이다. 발표는 수요일, 포스터는 지민, 대본은 유나, 만나는 곳은 도서관이다."
+      },
+      {
+        "qid": "fb773c41-4015-4daa-942a-2266834c7859",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Let's ____ in the library.\"",
+        "choices": [
+          "meet",
+          "meets",
+          "meeting",
+          "met",
+          "to meet"
+        ],
+        "answer": "meet",
+        "explanation": "Let's 뒤에는 동사원형이 온다. 그래서 meet이 알맞다."
+      },
+      {
+        "qid": "db8be088-bc6a-4950-b071-1fa2d4f08a14",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Jimin is good ____ drawing.\"",
+        "choices": [
+          "in",
+          "on",
+          "at",
+          "for",
+          "to"
+        ],
+        "answer": "at",
+        "explanation": "'~을 잘하다'는 be good at이다."
+      },
+      {
+        "qid": "8ecf58bf-79f8-4566-95a1-3740450a4f7d",
+        "type": "order",
+        "items": [
+          "Yuna says Daniel can present.",
+          "Yuna says the presentation is next Wednesday.",
+          "Yuna wants to meet on Monday.",
+          "Tom says he can find pictures."
+        ],
+        "answer": [
+          "Yuna says the presentation is next Wednesday.",
+          "Tom says he can find pictures.",
+          "Yuna says Daniel can present.",
+          "Yuna wants to meet on Monday."
+        ]
+      },
+      {
+        "qid": "467b0ee1-6a11-4e7e-9444-84c5226411fb",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "topic",
+            "meaning": "주제"
+          },
+          {
+            "word": "poster",
+            "meaning": "포스터"
+          },
+          {
+            "word": "library",
+            "meaning": "도서관"
+          },
+          {
+            "word": "loudly",
+            "meaning": "크게, 큰 소리로"
+          },
+          {
+            "word": "clearly",
+            "meaning": "분명하게"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "d533aa3b-e4a2-4414-8efe-35f6b5940cf8",
+        "q": "What is the topic of the group presentation? Write in English.",
+        "wordLimit": 10,
+        "sampleAnswer": "The topic is \"Animals in Korea.\"",
+        "rubric": "주제가 'Animals in Korea(한국의 동물)'라는 내용을 영어 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "7cf2d281-d107-49d3-aefb-9c4e71995e76",
+        "q": "When and where will they meet? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "They will meet in the library on Monday after school.",
+        "rubric": "① 월요일 방과 후(Monday after school) ② 도서관(library) 두 가지가 모두 들어가면 만점, 하나면 부분 점수 (at three thirty 추가 가능)"
+      },
+      {
+        "qid": "5a153b07-0130-4080-bd7e-5975c76b02d6",
+        "q": "우리말로 쓰시오: 모둠 네 명이 각각 맡은 일을 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "톰: 컴퓨터로 사진 찾기, 지민: 포스터 만들기, 다니엘: 반 앞에서 발표하기, 유나: 대본 쓰기",
+        "rubric": "네 명의 일을 모두 맞게 쓰면 만점, 두세 명이면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "ac497669-95a3-471f-9060-232fb9961531",
+        "q": "우리말로 쓰시오: 다니엘이 발표를 맡게 된 이유는 무엇인가요?",
+        "wordLimit": 30,
+        "sampleAnswer": "다니엘은 크고 분명하게 말하기 때문이다.",
+        "rubric": "'크게'와 '분명하게' 두 가지가 모두 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "06f30282-8b83-41d9-9fb1-0c8221d2cb68",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '도서관에서 만나자.' <조건> Let's를 사용할 것",
+        "wordLimit": 6,
+        "sampleAnswer": "Let's meet in the library.",
+        "rubric": "① Let's + 동사원형(meet) ② in the library ③ 의미 일치"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "topic",
+        "surface": "topic",
+        "pos": "명",
+        "meaning": "주제",
+        "sentence": "Our topic is \"Animals in Korea,\" right?"
+      },
+      {
+        "word": "divide",
+        "surface": "divide",
+        "pos": "동",
+        "meaning": "나누다",
+        "sentence": "Let's divide the work."
+      },
+      {
+        "word": "poster",
+        "surface": "poster",
+        "pos": "명",
+        "meaning": "포스터",
+        "sentence": "She can make the poster."
+      },
+      {
+        "word": "loudly",
+        "surface": "loudly",
+        "pos": "부",
+        "meaning": "크게, 큰 소리로",
+        "sentence": "He speaks loudly and clearly."
+      },
+      {
+        "word": "clearly",
+        "surface": "clearly",
+        "pos": "부",
+        "meaning": "분명하게, 또렷하게",
+        "sentence": "He speaks loudly and clearly."
+      },
+      {
+        "word": "present",
+        "surface": "present",
+        "pos": "동",
+        "meaning": "발표하다",
+        "sentence": "He can present in front of the class."
+      },
+      {
+        "word": "script",
+        "surface": "script",
+        "pos": "명",
+        "meaning": "대본",
+        "sentence": "I will write the script."
+      },
+      {
+        "word": "presentation",
+        "surface": "presentation",
+        "pos": "명",
+        "meaning": "발표",
+        "sentence": "The presentation is five minutes long."
+      },
+      {
+        "word": "library",
+        "surface": "library",
+        "pos": "명",
+        "meaning": "도서관",
+        "sentence": "Let's meet in the library at three thirty."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Yuna: {{t:Tom, our group presentation is next Wednesday.}}\nTom: I know. Our {{v:topic}} is \"Animals in Korea,\" right?\nYuna: Yes. {{g:There are four people|There are + 복수 명사: ~들이 있다}} in our group, so {{g:let's|let's + 동사원형: ~하자 (제안)}} {{v:divide}} the work.\nTom: Okay. I can find pictures on the computer.\nYuna: Great. Jimin {{g:is good at drawing|be good at + 동명사(-ing): ~을 잘하다}}, so she can make the {{v:poster}}.\nTom: What about Daniel?\nYuna: He speaks {{v:loudly}} and {{v:clearly}}. He can {{v:present}} in front of the class.\nTom: And what about you?\nYuna: I'll write the {{v:script}}. The presentation {{g:must be five minutes long|must + 동사원형: ~해야 한다 (의무)}}.\nTom: When can we meet?\nYuna: {{g:How about Monday after school?|How about ~?: ~은 어때? (제안)}} Let's meet in the {{v:library}} at three thirty.\nTom: Sounds good. I'll tell Jimin and Daniel.",
+    "tags": {
+      "vocab": [
+        "topic",
+        "divide",
+        "poster",
+        "loudly",
+        "clearly",
+        "present",
+        "script",
+        "library"
+      ],
+      "grammar": [
+        "There are + 복수 명사",
+        "let's + 동사원형",
+        "be good at + 동명사",
+        "must + 동사원형",
+        "How about ~?"
+      ],
+      "topic": [
+        "모둠 발표",
+        "역할 나누기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "c526ee94-7f45-4c0c-a60b-f92f181953b9",
+        "type": "mc",
+        "q": "What are Yuna and Tom mainly talking about?",
+        "choices": [
+          "Planning their group presentation",
+          "Choosing a pet animal",
+          "Making a poster for a contest",
+          "Visiting a zoo in Korea",
+          "Studying in the library for a test"
+        ],
+        "answer": "Planning their group presentation",
+        "explanation": "모둠 발표를 위해 일을 나누고 만날 시간을 정하는 대화이다."
+      },
+      {
+        "qid": "a6441324-4e2b-46bb-9050-df69f5805e87",
+        "type": "mc",
+        "q": "When is the group presentation?",
+        "choices": [
+          "This Monday",
+          "Next Monday",
+          "This Wednesday",
+          "Next Wednesday",
+          "Next Friday"
+        ],
+        "answer": "Next Wednesday",
+        "explanation": "'our group presentation is next Wednesday'와 일치한다. 월요일은 만나는 날이다."
+      },
+      {
+        "qid": "d52f1244-9011-4522-9e91-1b18d9d10182",
+        "type": "mc",
+        "q": "Why does Yuna want to divide the work?",
+        "choices": [
+          "Because the topic is difficult.",
+          "Because there are four people in the group.",
+          "Because Tom is busy.",
+          "Because the poster is big.",
+          "Because the teacher said so."
+        ],
+        "answer": "Because there are four people in the group.",
+        "explanation": "'There are four people in our group, so let's divide the work.'에서 so 앞이 이유이다."
+      },
+      {
+        "qid": "f8f31aca-704e-4ce5-a82b-d37667e3987d",
+        "type": "mc",
+        "q": "What is Tom's part in the presentation?",
+        "choices": [
+          "Writing the script",
+          "Making the poster",
+          "Finding pictures on the computer",
+          "Presenting in front of the class",
+          "Choosing the topic"
+        ],
+        "answer": "Finding pictures on the computer",
+        "explanation": "Tom은 'I can find pictures on the computer.'라고 했다."
+      },
+      {
+        "qid": "cac18982-634d-4caa-9f54-5bedca065140",
+        "type": "mc",
+        "q": "Why will Jimin make the poster?",
+        "choices": [
+          "She has many pictures.",
+          "She is good at drawing.",
+          "She speaks loudly.",
+          "She likes animals.",
+          "She has a computer."
+        ],
+        "answer": "She is good at drawing.",
+        "explanation": "'Jimin is good at drawing, so she can make the poster.'와 일치한다."
+      },
+      {
+        "qid": "d0c2965d-b9e4-4d6f-b9a1-3b35f5af7020",
+        "type": "mc",
+        "q": "Why is Daniel a good person to present?",
+        "choices": [
+          "He is good at drawing.",
+          "He knows a lot about animals.",
+          "He speaks loudly and clearly.",
+          "He is good with computers.",
+          "He writes well."
+        ],
+        "answer": "He speaks loudly and clearly.",
+        "explanation": "'He speaks loudly and clearly. He can present in front of the class.'와 일치한다."
+      },
+      {
+        "qid": "5deb4d65-b9c7-4286-bb46-ee832af88a98",
+        "type": "mc",
+        "q": "Who will write the script?",
+        "choices": [
+          "Tom",
+          "Jimin",
+          "Daniel",
+          "Tom and Jimin",
+          "Yuna"
+        ],
+        "answer": "Yuna",
+        "explanation": "유나가 'I'll write the script.'라고 했다."
+      },
+      {
+        "qid": "5cdba65c-084d-45b3-b489-250c2a4f2fd0",
+        "type": "mc",
+        "q": "How long must the presentation be?",
+        "choices": [
+          "Three minutes",
+          "Five minutes",
+          "Ten minutes",
+          "Fifteen minutes",
+          "Thirty minutes"
+        ],
+        "answer": "Five minutes",
+        "explanation": "'The presentation must be five minutes long.'과 일치한다."
+      },
+      {
+        "qid": "6043b3bb-3b9b-42bd-b76c-f66b5078cc51",
+        "type": "mc",
+        "q": "When and where will the group meet?",
+        "choices": [
+          "On Monday after school, in the library",
+          "On Monday after school, in the classroom",
+          "On Wednesday after school, in the library",
+          "On Monday morning, in the library",
+          "On Tuesday after school, at Tom's house"
+        ],
+        "answer": "On Monday after school, in the library",
+        "explanation": "'How about Monday after school? Let's meet in the library'와 일치한다."
+      },
+      {
+        "qid": "78056ce6-0e27-4399-bf5e-525e08e6aa83",
+        "type": "mc",
+        "q": "What time will they meet?",
+        "choices": [
+          "At 3:00",
+          "At 3:15",
+          "At 3:30",
+          "At 4:00",
+          "At 4:30"
+        ],
+        "answer": "At 3:30",
+        "explanation": "'at three thirty'는 3시 30분이다."
+      },
+      {
+        "qid": "ca36a390-3a67-4d9d-9466-5b71c32643e3",
+        "type": "mc",
+        "q": "What is the topic of the presentation?",
+        "choices": [
+          "Animals in Korea",
+          "Food in Korea",
+          "Sports in Korea",
+          "Animals in China",
+          "Places in Korea"
+        ],
+        "answer": "Animals in Korea",
+        "explanation": "'Our topic is \"Animals in Korea,\"'와 일치한다."
+      },
+      {
+        "qid": "14ad4e41-95fd-4d86-b23c-b41bc6437b9c",
+        "type": "mc",
+        "q": "Which is NOT true about the group?",
+        "choices": [
+          "There are four people in the group.",
+          "Jimin will make the poster.",
+          "Daniel will present in front of the class.",
+          "Tom will write the script.",
+          "They will meet in the library."
+        ],
+        "answer": "Tom will write the script.",
+        "explanation": "대본은 유나가 쓴다. Tom은 컴퓨터로 사진을 찾는다."
+      },
+      {
+        "qid": "fecf23ac-dea4-4807-be53-b88892ed59e2",
+        "type": "mc",
+        "q": "다음 중 'present'가 대화에서 쓰인 뜻으로 알맞은 것은?",
+        "choices": [
+          "선물",
+          "현재",
+          "참석한",
+          "주다",
+          "발표하다"
+        ],
+        "answer": "발표하다",
+        "explanation": "'He can present in front of the class.'에서 present는 동사로 '발표하다'라는 뜻이다."
+      },
+      {
+        "qid": "7e9a252c-b7df-4250-bbc1-782a35f38cf4",
+        "type": "mc",
+        "q": "다음 중 'clearly'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "빠르게",
+          "분명하게",
+          "조용히",
+          "천천히",
+          "늦게"
+        ],
+        "answer": "분명하게",
+        "explanation": "clearly는 '분명하게, 또렷하게'라는 뜻이다."
+      },
+      {
+        "qid": "0ec56482-7126-4da6-83da-71d8f47a4203",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Jimin is good at ____.\"",
+        "choices": [
+          "draw",
+          "draws",
+          "drawing",
+          "drew",
+          "to draw"
+        ],
+        "answer": "drawing",
+        "explanation": "전치사 at 뒤에는 동명사(-ing)가 온다. 그래서 drawing이 알맞다."
+      },
+      {
+        "qid": "2b280683-76f4-4b1b-ac7a-6e26debf9cee",
+        "type": "mc",
+        "q": "다음 문장의 must와 의미가 가장 비슷한 것은? \"The presentation must be five minutes long.\"",
+        "choices": [
+          "can",
+          "may",
+          "will",
+          "would",
+          "has to"
+        ],
+        "answer": "has to",
+        "explanation": "must는 '~해야 한다'라는 뜻으로 have(has) to와 바꿔 쓸 수 있다."
+      },
+      {
+        "qid": "d947bb55-3a5c-424c-8a8a-4b3ee575153f",
+        "type": "mc",
+        "q": "'How about Monday after school?'에서 유나가 하는 말의 의도로 알맞은 것은?",
+        "choices": [
+          "제안하기",
+          "사과하기",
+          "칭찬하기",
+          "거절하기",
+          "길 묻기"
+        ],
+        "answer": "제안하기",
+        "explanation": "How about ~?은 '~은 어때?'라고 제안하는 표현이다."
+      },
+      {
+        "qid": "60c6505e-d8bb-4d0c-b41f-c9eecb6694fc",
+        "type": "mc",
+        "q": "Who will Tom tell about the meeting?",
+        "choices": [
+          "Yuna and Jimin",
+          "Jimin and Daniel",
+          "Daniel and Yuna",
+          "The teacher",
+          "His parents"
+        ],
+        "answer": "Jimin and Daniel",
+        "explanation": "Tom은 'I'll tell Jimin and Daniel.'이라고 했다."
+      },
+      {
+        "qid": "f0b8da25-ab0c-4e86-91d0-a890f65b3800",
+        "type": "order",
+        "items": [
+          "Yuna says she will write the script.",
+          "Tom says he can find pictures on the computer.",
+          "Tom says he will tell Jimin and Daniel.",
+          "Yuna says Daniel can present."
+        ],
+        "answer": [
+          "Tom says he can find pictures on the computer.",
+          "Yuna says Daniel can present.",
+          "Yuna says she will write the script.",
+          "Tom says he will tell Jimin and Daniel."
+        ]
+      },
+      {
+        "qid": "0340dec9-9dc4-4ec6-ae98-7dcf92d3fdd1",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "topic",
+            "meaning": "주제"
+          },
+          {
+            "word": "divide",
+            "meaning": "나누다"
+          },
+          {
+            "word": "poster",
+            "meaning": "포스터"
+          },
+          {
+            "word": "script",
+            "meaning": "대본"
+          },
+          {
+            "word": "library",
+            "meaning": "도서관"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "bebb8d69-c5c7-4d65-a919-51635878f5f1",
+        "q": "Why does Yuna want to divide the work? Write in English.",
+        "wordLimit": 12,
+        "sampleAnswer": "Because there are four people in their group.",
+        "rubric": "모둠에 네 명이 있기 때문이라는 내용을 영어 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "072f0062-53cf-4ff0-a3e0-1c6d72a1293c",
+        "q": "What can Daniel do, and why? Write in English.",
+        "wordLimit": 18,
+        "sampleAnswer": "He can present in front of the class because he speaks loudly and clearly.",
+        "rubric": "① 반 앞에서 발표한다 ② 크고 분명하게 말하기 때문 두 가지가 모두 들어가면 만점, 하나면 부분 점수"
+      },
+      {
+        "qid": "128b46cb-bcf6-4c7a-a486-a719e50df6cc",
+        "q": "우리말로 쓰시오: 모둠이 만나기로 한 요일, 시각, 장소를 쓰시오.",
+        "wordLimit": 30,
+        "sampleAnswer": "월요일 방과 후 3시 30분에 도서관에서 만난다.",
+        "rubric": "① 월요일 방과 후 ② 3시 30분 ③ 도서관 세 가지를 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "a8e5d63b-b3fe-4710-944c-c7457c0a5652",
+        "q": "우리말로 쓰시오: 유나가 맡은 일은 무엇이고, 발표는 몇 분이어야 하나요?",
+        "wordLimit": 30,
+        "sampleAnswer": "유나는 대본을 쓴다. 발표는 5분이어야 한다.",
+        "rubric": "① 대본 쓰기 ② 5분 두 가지가 모두 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "655d198e-3af1-4316-ae5b-0ac2d0e8a761",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '발표는 5분이어야 한다.' <조건> must를 사용할 것",
+        "wordLimit": 8,
+        "sampleAnswer": "The presentation must be five minutes long.",
+        "rubric": "① must + 동사원형(be) ② five minutes ③ 의미 일치"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "topic",
+        "surface": "topic",
+        "pos": "명",
+        "meaning": "주제",
+        "sentence": "Our topic is \"Animals in Korea,\" right?"
+      },
+      {
+        "word": "divide",
+        "surface": "divide",
+        "pos": "동",
+        "meaning": "나누다",
+        "sentence": "There are four people in our group, so let's divide the work."
+      },
+      {
+        "word": "poster",
+        "surface": "poster",
+        "pos": "명",
+        "meaning": "포스터",
+        "sentence": "Jimin is good at drawing, so she can make the poster."
+      },
+      {
+        "word": "loudly",
+        "surface": "loudly",
+        "pos": "부",
+        "meaning": "크게, 큰 소리로",
+        "sentence": "He speaks loudly and clearly."
+      },
+      {
+        "word": "clearly",
+        "surface": "clearly",
+        "pos": "부",
+        "meaning": "분명하게, 또렷하게",
+        "sentence": "He speaks loudly and clearly."
+      },
+      {
+        "word": "present",
+        "surface": "present",
+        "pos": "동",
+        "meaning": "발표하다",
+        "sentence": "He can present in front of the class."
+      },
+      {
+        "word": "script",
+        "surface": "script",
+        "pos": "명",
+        "meaning": "대본",
+        "sentence": "I'll write the script."
+      },
+      {
+        "word": "library",
+        "surface": "library",
+        "pos": "명",
+        "meaning": "도서관",
+        "sentence": "Let's meet in the library at three thirty."
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Yuna: Tom, {{g:don't forget that|don't forget that + 문장: ~라는 것을 잊지 마 (that은 접속사)}} our group presentation is next Wednesday.\nTom: I know. Our {{v:topic}} is \"Animals in Korea,\" {{g:isn't it|부가의문문: 앞 문장이 긍정(is)이면 부정(isn't it?)으로 확인}}?\nYuna: That's right. There are four people in our group, so {{t:let's divide the work fairly}}.\nTom: Okay. I'm good with computers, so I can {{v:search}} for pictures {{v:online}}.\nYuna: Great. Jimin {{g:is really good at drawing|be good at + 동명사(-ing): ~을 잘하다}}, so she can make the {{v:poster}} for our presentation.\nTom: What about Daniel? What can he do?\nYuna: He always speaks loudly and clearly, so he can {{v:present}} our work in front of the class.\nTom: That's a good idea. And what about you?\nYuna: I'll write the {{v:script}} for Daniel. Remember, the presentation {{g:must be|must + 동사원형: ~해야 한다 (의무)}} {{v:exactly}} five minutes long.\nTom: Then we {{g:need to|need to + 동사원형: ~할 필요가 있다}} {{v:practice}} together. When can we meet?\nYuna: How about Monday after school? Let's meet in the school {{v:library}} at three thirty.\nTom: Sounds perfect. I'll tell Jimin and Daniel about our plan.",
+    "tags": {
+      "vocab": [
+        "topic",
+        "search",
+        "online",
+        "poster",
+        "present",
+        "script",
+        "exactly",
+        "practice",
+        "library"
+      ],
+      "grammar": [
+        "don't forget that + 문장",
+        "부가의문문 isn't it?",
+        "be good at + 동명사",
+        "must + 동사원형",
+        "need to + 동사원형"
+      ],
+      "topic": [
+        "모둠 발표",
+        "공평한 역할 나누기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "3fc01861-2670-4b58-b8df-03d5d82b269a",
+        "type": "mc",
+        "q": "What is the main purpose of the conversation?",
+        "choices": [
+          "To choose a new topic",
+          "To divide the work for the presentation",
+          "To make a poster together",
+          "To practice the presentation",
+          "To borrow books from the library"
+        ],
+        "answer": "To divide the work for the presentation",
+        "explanation": "모둠 발표를 위해 네 명이 맡을 일을 나누는 것이 대화의 목적이다."
+      },
+      {
+        "qid": "7da2383f-e7a8-4978-8d14-e8549c08079a",
+        "type": "mc",
+        "q": "What does Yuna remind Tom of at the beginning?",
+        "choices": [
+          "The topic of the presentation",
+          "The meeting place",
+          "Daniel's job",
+          "The date of the group presentation",
+          "The length of the script"
+        ],
+        "answer": "The date of the group presentation",
+        "explanation": "첫 말에서 'don't forget that our group presentation is next Wednesday'라고 발표 날짜를 상기시킨다."
+      },
+      {
+        "qid": "ddcfc327-f7ac-4d50-966d-252349e924ac",
+        "type": "mc",
+        "q": "Why can Tom find pictures for the group?",
+        "choices": [
+          "He is good at drawing.",
+          "He speaks clearly.",
+          "He has many animal books.",
+          "He likes taking photos.",
+          "He is good with computers."
+        ],
+        "answer": "He is good with computers.",
+        "explanation": "'I'm good with computers, so I can search for pictures online.'과 일치한다."
+      },
+      {
+        "qid": "6882c499-4a74-4ed0-a0bd-0cd5d8fda02b",
+        "type": "mc",
+        "q": "What will Jimin make, and why?",
+        "choices": [
+          "A script, because she writes well",
+          "Pictures, because she is good with computers",
+          "A poster, because she is good at drawing",
+          "A poster, because she speaks clearly",
+          "A video, because she likes animals"
+        ],
+        "answer": "A poster, because she is good at drawing",
+        "explanation": "'Jimin is really good at drawing, so she can make the poster'와 일치한다."
+      },
+      {
+        "qid": "8811d7d0-f7b1-4e28-8d3d-70d07832997c",
+        "type": "mc",
+        "q": "Why is Daniel chosen to present?",
+        "choices": [
+          "He always speaks loudly and clearly.",
+          "He is good at drawing.",
+          "He wrote the script.",
+          "He knows a lot about animals.",
+          "He is the group leader."
+        ],
+        "answer": "He always speaks loudly and clearly.",
+        "explanation": "'He always speaks loudly and clearly, so he can present our work'와 일치한다."
+      },
+      {
+        "qid": "5007e163-c210-4a07-9cd7-6515f106b838",
+        "type": "mc",
+        "q": "Who will write the script, and for whom?",
+        "choices": [
+          "Tom, for Jimin",
+          "Daniel, for Yuna",
+          "Jimin, for Tom",
+          "Yuna, for Daniel",
+          "Yuna, for Tom"
+        ],
+        "answer": "Yuna, for Daniel",
+        "explanation": "유나가 'I'll write the script for Daniel.'이라고 했다. 발표하는 다니엘을 위한 대본이다."
+      },
+      {
+        "qid": "385a5b16-0e60-432a-be53-9d29105859ad",
+        "type": "mc",
+        "q": "Which is true about the presentation?",
+        "choices": [
+          "It must be about animals in China.",
+          "It is next Monday.",
+          "It must be exactly five minutes long.",
+          "Jimin will present it.",
+          "Tom will write the script."
+        ],
+        "answer": "It must be exactly five minutes long.",
+        "explanation": "'the presentation must be exactly five minutes long'과 일치한다."
+      },
+      {
+        "qid": "de2ea97c-7cff-43a6-93ec-87b588e6850f",
+        "type": "mc",
+        "q": "Why does Tom ask when they can meet?",
+        "choices": [
+          "He wants to make the poster.",
+          "He wants to borrow a book.",
+          "He wants to change the topic.",
+          "He wants to meet the teacher.",
+          "They need to practice together."
+        ],
+        "answer": "They need to practice together.",
+        "explanation": "'Then we need to practice together. When can we meet?'에서 함께 연습해야 하기 때문이다."
+      },
+      {
+        "qid": "c541c087-6419-4e3d-bf32-149ca50b00c5",
+        "type": "mc",
+        "q": "Where and when will the group meet?",
+        "choices": [
+          "In the school library on Monday at 3:30",
+          "In the classroom on Monday at 3:30",
+          "In the school library on Wednesday at 3:30",
+          "In the city library on Monday at 3:00",
+          "At Tom's house on Monday at 3:30"
+        ],
+        "answer": "In the school library on Monday at 3:30",
+        "explanation": "'How about Monday after school? Let's meet in the school library at three thirty.'와 일치한다."
+      },
+      {
+        "qid": "a617bb1d-9bc4-48fe-bb0c-42f2a5009b0e",
+        "type": "mc",
+        "q": "What will Tom probably do next?",
+        "choices": [
+          "Draw a poster for the group",
+          "Write the script for Daniel",
+          "Change the presentation topic",
+          "Tell Jimin and Daniel about the plan",
+          "Go to the library alone"
+        ],
+        "answer": "Tell Jimin and Daniel about the plan",
+        "explanation": "Tom이 마지막에 'I'll tell Jimin and Daniel about our plan.'이라고 했다."
+      },
+      {
+        "qid": "e0c28f4c-0c7e-4f43-9d46-b5838dba0f46",
+        "type": "mc",
+        "q": "Which is NOT mentioned in the conversation?",
+        "choices": [
+          "The date of the presentation",
+          "The topic of the presentation",
+          "The length of the presentation",
+          "The meeting place",
+          "The name of their teacher"
+        ],
+        "answer": "The name of their teacher",
+        "explanation": "선생님 이름은 대화에 나오지 않는다. 날짜(수요일), 주제(한국의 동물), 길이(5분), 장소(학교 도서관)는 나온다."
+      },
+      {
+        "qid": "781d0bb9-12b3-4e5e-9877-15bc14e22240",
+        "type": "mc",
+        "q": "Which word best describes Yuna in the conversation?",
+        "choices": [
+          "Lazy",
+          "Organized",
+          "Angry",
+          "Shy",
+          "Worried"
+        ],
+        "answer": "Organized",
+        "explanation": "유나는 날짜를 알려 주고, 각자 잘하는 것에 맞게 일을 나누고, 만날 시간까지 정한다. 계획적인(organized) 모습이다."
+      },
+      {
+        "qid": "3806e53c-51cf-46f4-a3d4-ea2289478d03",
+        "type": "mc",
+        "q": "다음 중 'fairly'가 대화에서 쓰인 뜻으로 알맞은 것은?",
+        "choices": [
+          "공평하게",
+          "빠르게",
+          "아름답게",
+          "조용히",
+          "혼자서"
+        ],
+        "answer": "공평하게",
+        "explanation": "'let's divide the work fairly'는 일을 공평하게 나누자는 말이다."
+      },
+      {
+        "qid": "ed6bbc84-412d-4ce8-ae25-e82af1bb2a74",
+        "type": "mc",
+        "q": "다음 중 'exactly'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "거의",
+          "적어도",
+          "정확히",
+          "대략",
+          "최대"
+        ],
+        "answer": "정확히",
+        "explanation": "exactly는 '정확히'라는 뜻이다. 발표는 정확히 5분이어야 한다."
+      },
+      {
+        "qid": "92a3f15c-8665-4396-bf21-ae32ca5909c0",
+        "type": "mc",
+        "q": "Which has the same meaning as \"search for\"?",
+        "choices": [
+          "look for",
+          "look at",
+          "look like",
+          "look after",
+          "look up to"
+        ],
+        "answer": "look for",
+        "explanation": "search for는 '~을 찾다'로 look for와 같은 뜻이다."
+      },
+      {
+        "qid": "c0573b91-3f1c-4b74-8dec-b7e326703224",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Our topic is 'Animals in Korea,' ____?\"",
+        "choices": [
+          "is it",
+          "isn't it",
+          "doesn't it",
+          "aren't they",
+          "isn't they"
+        ],
+        "answer": "isn't it",
+        "explanation": "앞 문장이 긍정의 be동사(is)이고 주어가 our topic(it)이므로 부가의문문은 isn't it?이다."
+      },
+      {
+        "qid": "47bb278a-9d2d-43f6-b028-d0e9260aed16",
+        "type": "mc",
+        "q": "다음 중 어법상 올바른 문장은?",
+        "choices": [
+          "Jimin is good at draw.",
+          "Let's meets in the library.",
+          "The presentation must is five minutes long.",
+          "We need to practice together.",
+          "He can presents our work."
+        ],
+        "answer": "We need to practice together.",
+        "explanation": "need to 뒤에는 동사원형이 온다. 나머지는 drawing, meet, must be, can present로 고쳐야 한다."
+      },
+      {
+        "qid": "a07408c3-65c9-474e-8e3b-f5f6055aee35",
+        "type": "mc",
+        "q": "'How about Monday after school?'과 바꿔 쓸 수 있는 것은?",
+        "choices": [
+          "Why don't we meet on Monday after school?",
+          "Did we meet on Monday after school?",
+          "Do you hate Monday?",
+          "Where is the school on Monday?",
+          "What did you do on Monday?"
+        ],
+        "answer": "Why don't we meet on Monday after school?",
+        "explanation": "How about ~?과 Why don't we ~?는 모두 제안하는 표현이다."
+      },
+      {
+        "qid": "6005ab45-77ef-48ab-9ce4-fffa0c937796",
+        "type": "order",
+        "items": [
+          "The group meets in the school library on Monday.",
+          "Daniel presents in front of the class on Wednesday.",
+          "Yuna and Tom divide the work.",
+          "Tom tells Jimin and Daniel about the plan."
+        ],
+        "answer": [
+          "Yuna and Tom divide the work.",
+          "Tom tells Jimin and Daniel about the plan.",
+          "The group meets in the school library on Monday.",
+          "Daniel presents in front of the class on Wednesday."
+        ]
+      },
+      {
+        "qid": "172df5a7-66b0-442d-8369-a891cd042d66",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "topic",
+            "meaning": "주제"
+          },
+          {
+            "word": "search",
+            "meaning": "찾다, 검색하다"
+          },
+          {
+            "word": "online",
+            "meaning": "온라인으로, 인터넷에서"
+          },
+          {
+            "word": "practice",
+            "meaning": "연습하다"
+          },
+          {
+            "word": "script",
+            "meaning": "대본"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "d143b5af-6dca-4e87-8bc7-abb7e1b96dbe",
+        "q": "What are the four members' roles? Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "Tom will find pictures online, Jimin will make the poster, Daniel will present, and Yuna will write the script.",
+        "rubric": "네 명의 역할을 모두 영어로 맞게 쓰면 만점, 두세 명이면 부분 점수"
+      },
+      {
+        "qid": "7e2651dd-2eb8-4d4f-9873-a74c3451d79b",
+        "q": "Why does the group need to meet? Write in English.",
+        "wordLimit": 12,
+        "sampleAnswer": "They need to practice the presentation together.",
+        "rubric": "함께 발표 연습을 하기 위해서라는 내용을 영어 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "50aadd76-08c6-4901-a7a9-09db337c0356",
+        "q": "우리말로 쓰시오: 대화에서 알 수 있는 발표의 날짜, 주제, 길이를 쓰시오.",
+        "wordLimit": 40,
+        "sampleAnswer": "날짜: 다음 주 수요일, 주제: 한국의 동물, 길이: 정확히 5분",
+        "rubric": "① 다음 주 수요일 ② 한국의 동물 ③ (정확히) 5분 세 가지를 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "0f6d40bd-9cf6-4d67-b144-90474f5267bf",
+        "q": "Why is Daniel a good person to present? Write in English.",
+        "wordLimit": 12,
+        "sampleAnswer": "Because he always speaks loudly and clearly.",
+        "rubric": "크게(loudly)와 분명하게(clearly) 말한다는 내용이 모두 들어가면 만점"
+      },
+      {
+        "qid": "2d38852b-d727-4242-9a22-15bb1cfe4193",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '우리는 함께 연습할 필요가 있어.' <조건> need to를 사용할 것",
+        "wordLimit": 6,
+        "sampleAnswer": "We need to practice together.",
+        "rubric": "① need to + 동사원형(practice) ② together ③ 의미 일치"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "topic",
+        "surface": "topic",
+        "pos": "명",
+        "meaning": "주제",
+        "sentence": "Our topic is \"Animals in Korea,\" isn't it?"
+      },
+      {
+        "word": "search",
+        "surface": "search",
+        "pos": "동",
+        "meaning": "찾다, 검색하다 (search for: ~을 찾다)",
+        "sentence": "I'm good with computers, so I can search for pictures online."
+      },
+      {
+        "word": "online",
+        "surface": "online",
+        "pos": "부",
+        "meaning": "온라인으로, 인터넷에서",
+        "sentence": "I'm good with computers, so I can search for pictures online."
+      },
+      {
+        "word": "poster",
+        "surface": "poster",
+        "pos": "명",
+        "meaning": "포스터",
+        "sentence": "Jimin is really good at drawing, so she can make the poster for our presentation."
+      },
+      {
+        "word": "present",
+        "surface": "present",
+        "pos": "동",
+        "meaning": "발표하다",
+        "sentence": "He always speaks loudly and clearly, so he can present our work in front of the class."
+      },
+      {
+        "word": "script",
+        "surface": "script",
+        "pos": "명",
+        "meaning": "대본",
+        "sentence": "I'll write the script for Daniel."
+      },
+      {
+        "word": "exactly",
+        "surface": "exactly",
+        "pos": "부",
+        "meaning": "정확히",
+        "sentence": "Remember, the presentation must be exactly five minutes long."
+      },
+      {
+        "word": "practice",
+        "surface": "practice",
+        "pos": "동",
+        "meaning": "연습하다",
+        "sentence": "Then we need to practice together."
+      },
+      {
+        "word": "library",
+        "surface": "library",
+        "pos": "명",
+        "meaning": "도서관",
+        "sentence": "Let's meet in the school library at three thirty."
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Yuna: Tom, just a {{v:reminder}} that our group presentation is {{v:due}} next Wednesday.\nTom: I'm {{v:aware}} of that. We're presenting on \"Animals in Korea,\" correct?\nYuna: Exactly. {{t:Since there are four members in our group, I think we should divide the responsibilities equally.}}\nTom: That makes sense. I'm fairly {{v:comfortable}} with computers, so I'll {{g:be responsible for collecting|be responsible for + 동명사(-ing): ~을 책임지다, 맡다}} pictures from the internet.\nYuna: Wonderful. Jimin is {{v:remarkably}} {{v:talented}} at drawing, so she {{g:would be the perfect person to design|would: ~일 것이다 (추측) / to design이 앞의 person을 꾸밈 (to부정사 형용사적 용법)}} the poster.\nTom: And what about Daniel? Which role {{v:suits}} him best?\nYuna: Daniel has a loud, clear voice, so I believe he {{g:should be the one presenting|should + 동사원형: ~해야 한다 / the one + -ing: ~하는 사람}} in front of the class.\nTom: I completely agree. What will you be {{v:in charge of}}, then?\nYuna: I'll take care of writing the script. Keep in mind that the presentation {{g:has to|has to + 동사원형: ~해야 한다 (= must)}} {{v:last}} exactly five minutes, no more and no less.\nTom: In that case, {{g:we'd better get together|had better('d better) + 동사원형: ~하는 게 좋겠다}} and {{v:rehearse}}. When would be {{v:convenient}} for everyone?\nYuna: How about Monday after school? Let's meet in the library at three thirty.\nTom: Sounds great. I'll pass the plan along to Jimin and Daniel.",
+    "tags": {
+      "vocab": [
+        "reminder",
+        "due",
+        "aware",
+        "comfortable",
+        "remarkably",
+        "talented",
+        "suits",
+        "in charge of",
+        "last",
+        "rehearse",
+        "convenient"
+      ],
+      "grammar": [
+        "be responsible for + 동명사",
+        "to부정사 형용사적 용법",
+        "should + 동사원형",
+        "has to + 동사원형",
+        "had better + 동사원형"
+      ],
+      "topic": [
+        "모둠 발표",
+        "강점에 따른 역할 분담"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "cdea5341-eeb5-40f7-b587-438c52e448b7",
+        "type": "mc",
+        "q": "What is the main purpose of the conversation?",
+        "choices": [
+          "To decide who will do each part of the presentation",
+          "To choose a topic for the presentation",
+          "To review the poster Jimin made",
+          "To complain about the presentation",
+          "To ask the teacher for more time"
+        ],
+        "answer": "To decide who will do each part of the presentation",
+        "explanation": "네 명이 발표에서 맡을 일을 정하고 연습 시간을 잡는 대화이다."
+      },
+      {
+        "qid": "782ee5e4-3a0a-472d-a1d8-6d7276fa7f6b",
+        "type": "mc",
+        "q": "Which information about the presentation is NOT given in the conversation?",
+        "choices": [
+          "Its due date",
+          "Its topic",
+          "Its length",
+          "The number of group members",
+          "The score it will get"
+        ],
+        "answer": "The score it will get",
+        "explanation": "받을 점수는 나오지 않는다. 날짜(다음 주 수요일), 주제(한국의 동물), 길이(정확히 5분), 인원(4명)은 나온다."
+      },
+      {
+        "qid": "9a3809d2-edd1-4e24-b097-56f1e24814a7",
+        "type": "mc",
+        "q": "Why does Tom volunteer to collect pictures?",
+        "choices": [
+          "He is talented at drawing.",
+          "He has a loud, clear voice.",
+          "He is fairly comfortable with computers.",
+          "He likes animals in Korea.",
+          "He wants to write the script."
+        ],
+        "answer": "He is fairly comfortable with computers.",
+        "explanation": "'I'm fairly comfortable with computers, so I'll be responsible for collecting pictures'와 일치한다."
+      },
+      {
+        "qid": "8a7b446b-65ef-49e4-962e-e45ef59bd186",
+        "type": "mc",
+        "q": "According to Yuna, why is Jimin the perfect person to design the poster?",
+        "choices": [
+          "She is comfortable with computers.",
+          "She is remarkably talented at drawing.",
+          "She has a loud, clear voice.",
+          "She knows a lot about animals.",
+          "She is good at writing scripts."
+        ],
+        "answer": "She is remarkably talented at drawing.",
+        "explanation": "'Jimin is remarkably talented at drawing, so she would be the perfect person to design the poster.'와 일치한다."
+      },
+      {
+        "qid": "5da999db-9c5e-4ce1-b9e0-2e8bd6f3058a",
+        "type": "mc",
+        "q": "Which role suits Daniel best, and why?",
+        "choices": [
+          "Presenting, because he has a loud, clear voice",
+          "Drawing, because he is talented at art",
+          "Writing the script, because he speaks clearly",
+          "Collecting pictures, because he likes computers",
+          "Designing the poster, because he has a clear voice"
+        ],
+        "answer": "Presenting, because he has a loud, clear voice",
+        "explanation": "'Daniel has a loud, clear voice, so I believe he should be the one presenting'과 일치한다."
+      },
+      {
+        "qid": "242b7ec1-3e96-41c6-9453-f8f9dae164cf",
+        "type": "mc",
+        "q": "What will Yuna be in charge of?",
+        "choices": [
+          "Collecting pictures",
+          "Designing the poster",
+          "Presenting in front of the class",
+          "Writing the script",
+          "Booking the library"
+        ],
+        "answer": "Writing the script",
+        "explanation": "유나는 'I'll take care of writing the script.'라고 했다."
+      },
+      {
+        "qid": "e1667491-05c1-424e-ba48-2a3e5d161677",
+        "type": "mc",
+        "q": "What does 'no more and no less' tell us about the presentation?",
+        "choices": [
+          "It can be longer than five minutes.",
+          "It can be shorter than five minutes.",
+          "It should last exactly five minutes.",
+          "It has no time limit.",
+          "It should last about ten minutes."
+        ],
+        "answer": "It should last exactly five minutes.",
+        "explanation": "no more and no less는 '더도 덜도 말고', 즉 정확히 5분이어야 한다는 뜻이다."
+      },
+      {
+        "qid": "718ef40e-e50c-46fa-9c0e-74f1f4e8584a",
+        "type": "mc",
+        "q": "Why does Tom suggest getting together?",
+        "choices": [
+          "To choose a new topic",
+          "To draw the poster together",
+          "To borrow books",
+          "To rehearse the presentation",
+          "To meet the teacher"
+        ],
+        "answer": "To rehearse the presentation",
+        "explanation": "'we'd better get together and rehearse'에서 발표를 연습하려고 모이자고 한다."
+      },
+      {
+        "qid": "cac1311e-63ce-4ed4-821f-3c6174b32ead",
+        "type": "mc",
+        "q": "Which is true according to the conversation?",
+        "choices": [
+          "The presentation is due next Monday.",
+          "The group has five members.",
+          "Tom will design the poster.",
+          "The group will meet in the library on Monday.",
+          "Daniel will write the script."
+        ],
+        "answer": "The group will meet in the library on Monday.",
+        "explanation": "월요일 방과 후 도서관에서 만난다. 발표는 수요일, 4명, 포스터는 지민, 대본은 유나이다."
+      },
+      {
+        "qid": "e3357f6e-68d2-485b-8cbe-f57eb20793bc",
+        "type": "mc",
+        "q": "What will Tom most likely do after the conversation?",
+        "choices": [
+          "Rehearse the presentation alone",
+          "Pass the plan along to Jimin and Daniel",
+          "Design the poster for the group",
+          "Write the script for Daniel",
+          "Change the topic of the presentation"
+        ],
+        "answer": "Pass the plan along to Jimin and Daniel",
+        "explanation": "Tom이 마지막에 'I'll pass the plan along to Jimin and Daniel.'이라고 했다."
+      },
+      {
+        "qid": "424a27b4-1ec6-46d1-9d79-d066f3c246bd",
+        "type": "mc",
+        "q": "How does the group decide who does each job?",
+        "choices": [
+          "By drawing lots",
+          "By each member's strengths",
+          "By age",
+          "By who arrives first",
+          "By the teacher's order"
+        ],
+        "answer": "By each member's strengths",
+        "explanation": "컴퓨터를 잘하는 톰은 사진, 그림을 잘 그리는 지민은 포스터, 목소리가 크고 분명한 다니엘은 발표를 맡는다. 각자 잘하는 것에 따라 정했다."
+      },
+      {
+        "qid": "b6f8c018-f212-42b2-a710-1201d4146660",
+        "type": "mc",
+        "q": "Which best describes Yuna's attitude in the conversation?",
+        "choices": [
+          "Organized and fair",
+          "Careless and lazy",
+          "Angry and impatient",
+          "Nervous and shy",
+          "Bored and tired"
+        ],
+        "answer": "Organized and fair",
+        "explanation": "유나는 일을 공평하게(equally) 나누자고 하고, 각자에게 맞는 역할과 만날 시간까지 정리한다."
+      },
+      {
+        "qid": "324779cc-d343-43ea-b728-35e933535552",
+        "type": "mc",
+        "q": "다음 중 'due'가 대화에서 쓰인 뜻으로 알맞은 것은?",
+        "choices": [
+          "빚진",
+          "~때문에",
+          "정당한",
+          "~하기로 되어 있는(마감인)",
+          "늦은"
+        ],
+        "answer": "~하기로 되어 있는(마감인)",
+        "explanation": "'our group presentation is due next Wednesday'는 발표가 다음 주 수요일로 예정되어(마감이어) 있다는 뜻이다."
+      },
+      {
+        "qid": "298c2ea4-0449-44ec-a837-5020d3071763",
+        "type": "mc",
+        "q": "Which word is closest in meaning to 'rehearse'?",
+        "choices": [
+          "relax",
+          "practice",
+          "remove",
+          "return",
+          "refuse"
+        ],
+        "answer": "practice",
+        "explanation": "rehearse는 발표·공연 전에 '미리 연습하다'라는 뜻으로 practice와 가깝다."
+      },
+      {
+        "qid": "3dda5a84-187d-41d5-a9e3-df80fabddb26",
+        "type": "mc",
+        "q": "'be in charge of'와 의미가 가장 가까운 것은?",
+        "choices": [
+          "be afraid of",
+          "be tired of",
+          "be proud of",
+          "be full of",
+          "be responsible for"
+        ],
+        "answer": "be responsible for",
+        "explanation": "be in charge of와 be responsible for는 모두 '~을 맡다, 책임지다'라는 뜻이다."
+      },
+      {
+        "qid": "b4e1d3d7-a3b2-4509-8375-524f002e86a5",
+        "type": "mc",
+        "q": "대화의 내용과 같은 뜻이 되도록 빈칸에 알맞은 것은? \"The presentation ____ last exactly five minutes.\"",
+        "choices": [
+          "may",
+          "might",
+          "must",
+          "would",
+          "could"
+        ],
+        "answer": "must",
+        "explanation": "대화의 has to(~해야 한다)는 must와 같은 뜻이다."
+      },
+      {
+        "qid": "adc1059f-0509-427f-977b-ea9091f084f2",
+        "type": "mc",
+        "q": "다음 중 어법상 올바른 문장은?",
+        "choices": [
+          "We'd better to rehearse together.",
+          "We'd better rehearsing together.",
+          "We had better rehearsed together.",
+          "We'd better rehearses together.",
+          "We'd better rehearse together."
+        ],
+        "answer": "We'd better rehearse together.",
+        "explanation": "had better('d better) 뒤에는 동사원형이 온다."
+      },
+      {
+        "qid": "c59b1588-c30c-4ac5-a98d-0bf80d017223",
+        "type": "mc",
+        "q": "Tom asks, 'When would be convenient for everyone?' How does Yuna answer?",
+        "choices": [
+          "By suggesting Monday after school",
+          "By refusing to meet",
+          "By asking the teacher",
+          "By choosing a new topic",
+          "By saying she is busy"
+        ],
+        "answer": "By suggesting Monday after school",
+        "explanation": "유나는 'How about Monday after school?'이라고 월요일 방과 후를 제안한다."
+      },
+      {
+        "qid": "5b0b6940-3be3-410f-8294-5099057ad6d0",
+        "type": "order",
+        "items": [
+          "Tom suggests rehearsing together.",
+          "Yuna reminds Tom of the due date.",
+          "Yuna proposes a meeting time and place.",
+          "Tom offers to collect pictures."
+        ],
+        "answer": [
+          "Yuna reminds Tom of the due date.",
+          "Tom offers to collect pictures.",
+          "Tom suggests rehearsing together.",
+          "Yuna proposes a meeting time and place."
+        ]
+      },
+      {
+        "qid": "5b387eeb-7134-49ea-b39c-346dd7a3a304",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "reminder",
+            "meaning": "상기시키는 말(것)"
+          },
+          {
+            "word": "aware",
+            "meaning": "알고 있는"
+          },
+          {
+            "word": "talented",
+            "meaning": "재능 있는"
+          },
+          {
+            "word": "suit",
+            "meaning": "(~에게) 맞다, 어울리다"
+          },
+          {
+            "word": "convenient",
+            "meaning": "편리한, 형편이 좋은"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "a8e652b4-d2db-4780-81c1-fdc8fb10811c",
+        "q": "Explain how the group divides the work. Write each member's role in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "Tom will collect pictures from the internet, Jimin will design the poster, Daniel will present in front of the class, and Yuna will write the script.",
+        "rubric": "네 명의 역할을 모두 영어로 맞게 쓰면 만점, 두세 명이면 부분 점수"
+      },
+      {
+        "qid": "448ad780-d738-4469-ab0b-e18c8a1e4282",
+        "q": "Why does Yuna think Daniel should present? Write in English.",
+        "wordLimit": 12,
+        "sampleAnswer": "Because Daniel has a loud, clear voice.",
+        "rubric": "목소리가 크고 분명하다(loud, clear voice)는 내용을 영어 문장으로 쓰면 만점"
+      },
+      {
+        "qid": "7b4516d1-39d0-40d2-ae4a-1b9463fa6d0f",
+        "q": "우리말로 쓰시오: 'no more and no less'는 발표에 대해 무엇을 뜻하나요?",
+        "wordLimit": 40,
+        "sampleAnswer": "발표는 5분보다 길어도 짧아도 안 되고, 정확히 5분이어야 한다는 뜻이다.",
+        "rubric": "'정확히 5분(더 길지도 짧지도 않게)'이라는 내용이 들어가면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "fdb61d85-88d8-4e10-809c-c8492599cdc0",
+        "q": "When and where will the group meet, and why? Write in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "They will meet in the library at three thirty on Monday after school to rehearse the presentation.",
+        "rubric": "① 월요일 방과 후(3시 30분) ② 도서관 ③ 발표 연습(rehearse/practice) 세 가지를 모두 쓰면 만점, 두 가지면 부분 점수"
+      },
+      {
+        "qid": "28834972-e476-441e-810d-aa8325275fa2",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '우리는 함께 연습하는 게 좋겠어.' <조건> had better('d better)를 사용할 것",
+        "wordLimit": 6,
+        "sampleAnswer": "We'd better rehearse together.",
+        "rubric": "① had better('d better) + 동사원형 ② rehearse 또는 practice ③ together ④ 의미 일치"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "reminder",
+        "surface": "reminder",
+        "pos": "명",
+        "meaning": "상기시키는 말(것)",
+        "sentence": "Tom, just a reminder that our group presentation is due next Wednesday."
+      },
+      {
+        "word": "due",
+        "surface": "due",
+        "pos": "형",
+        "meaning": "~하기로 되어 있는, 마감인",
+        "sentence": "Tom, just a reminder that our group presentation is due next Wednesday."
+      },
+      {
+        "word": "aware",
+        "surface": "aware",
+        "pos": "형",
+        "meaning": "알고 있는 (be aware of: ~을 알고 있다)",
+        "sentence": "I'm aware of that."
+      },
+      {
+        "word": "comfortable",
+        "surface": "comfortable",
+        "pos": "형",
+        "meaning": "편안한, 익숙한",
+        "sentence": "I'm fairly comfortable with computers, so I'll be responsible for collecting pictures from the internet."
+      },
+      {
+        "word": "remarkably",
+        "surface": "remarkably",
+        "pos": "부",
+        "meaning": "놀랄 만큼, 몹시",
+        "sentence": "Jimin is remarkably talented at drawing, so she would be the perfect person to design the poster."
+      },
+      {
+        "word": "talented",
+        "surface": "talented",
+        "pos": "형",
+        "meaning": "재능 있는",
+        "sentence": "Jimin is remarkably talented at drawing, so she would be the perfect person to design the poster."
+      },
+      {
+        "word": "suit",
+        "surface": "suits",
+        "pos": "동",
+        "meaning": "(~에게) 맞다, 어울리다",
+        "sentence": "Which role suits him best?"
+      },
+      {
+        "word": "in charge of",
+        "surface": "in charge of",
+        "pos": "숙어",
+        "meaning": "~을 맡은, 책임지는",
+        "sentence": "What will you be in charge of, then?"
+      },
+      {
+        "word": "last",
+        "surface": "last",
+        "pos": "동",
+        "meaning": "(시간이) 계속되다, 지속되다",
+        "sentence": "Keep in mind that the presentation has to last exactly five minutes, no more and no less."
+      },
+      {
+        "word": "rehearse",
+        "surface": "rehearse",
+        "pos": "동",
+        "meaning": "(미리) 연습하다, 리허설하다",
+        "sentence": "In that case, we'd better get together and rehearse."
+      },
+      {
+        "word": "convenient",
+        "surface": "convenient",
+        "pos": "형",
+        "meaning": "편리한, 형편이 좋은",
+        "sentence": "When would be convenient for everyone?"
+      }
+    ]
+  }
+}

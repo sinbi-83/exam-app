@@ -9,6 +9,7 @@ import { PassageRecord } from '@/types/passageBank'
 import { TaggedBody, stripTagMarkup } from '@/lib/passageTagRenderer'
 import { copyrightNotice } from '@/config/copyright'
 import A4SheetPrint, { type PrintBlock } from '@/components/A4SheetPrint'
+import { buildMatch } from '@/lib/externalPassageExam'
 
 const QTYPE_LABEL: Record<string, string> = {
   mc: '객관식',
@@ -51,28 +52,42 @@ function QuestionBlock({ q, num }: { q: Question; num: number }) {
             </>
           )}
           {q.type === 'order' && (
-            <ul className="ml-1 mt-1 space-y-0.5">
-              {q.items.map((item, i) => (
-                <li key={i} className="text-sm text-gray-700">
-                  {String.fromCharCode(65 + i)}. {item}
-                </li>
-              ))}
-            </ul>
-          )}
-          {q.type === 'match' && (
-            <div className="ml-1 mt-1 grid grid-cols-2 gap-3">
-              <ul className="space-y-0.5">
-                {q.pairs.map((p, i) => (
-                  <li key={i} className="text-sm text-gray-700">{String.fromCharCode(65 + i)}. {p.word}</li>
+            <>
+              <ul className="ml-1 mt-1 space-y-0.5">
+                {q.items.map((item, i) => (
+                  <li key={i} className="text-sm text-gray-700">
+                    {String.fromCharCode(65 + i)}. {item}
+                  </li>
                 ))}
               </ul>
-              <ul className="space-y-0.5">
-                {q.pairs.map((p, i) => (
-                  <li key={i} className="text-sm text-gray-700">{i + 1}. ______</li>
+              {/* 답 칸: 기호(A, B…)를 순서대로 써 넣는 괄호 */}
+              <p className="ml-1 mt-2 text-sm text-gray-700">
+                {q.items.map((_, i) => (
+                  <span key={i}>
+                    {i > 0 && ' → '}(<span className="inline-block w-8" />)
+                  </span>
                 ))}
-              </ul>
-            </div>
+              </p>
+            </>
           )}
+          {q.type === 'match' && (() => {
+            // 짝짓기: 왼쪽 단어(번호) 옆 괄호에 오른쪽 뜻의 기호를 쓴다. 뜻 순서는 시험지 인쇄와 같은 방식(lib/externalPassageExam.ts)
+            const { matchWords, matchMeanings } = buildMatch(q)
+            return (
+              <div className="ml-1 mt-1 grid grid-cols-2 gap-x-6 gap-y-0.5 text-sm text-gray-700">
+                <ul className="space-y-0.5">
+                  {matchWords?.map((w, i) => (
+                    <li key={i}>{i + 1}. {w} (<span className="inline-block w-8" />)</li>
+                  ))}
+                </ul>
+                <ul className="space-y-0.5">
+                  {matchMeanings?.map((m, i) => (
+                    <li key={i}>{String.fromCharCode(65 + i)}. {m}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          })()}
         </div>
       </div>
     </div>
@@ -191,7 +206,7 @@ function buildBlocks(
             {q.type === 'blank' && <>{q.answer} — {q.explanation}</>}
             {q.type === 'tf' && <>{q.answer ? 'True' : 'False'} — {q.explanation}</>}
             {q.type === 'order' && <>{q.answer.join(' → ')}</>}
-            {q.type === 'match' && <>{q.pairs.map((p) => `${p.word}=${p.meaning}`).join(', ')}</>}
+            {q.type === 'match' && <>{buildMatch(q).answer} ({q.pairs.map((p) => `${p.word}=${p.meaning}`).join(', ')})</>}
           </div>
         ),
       })
