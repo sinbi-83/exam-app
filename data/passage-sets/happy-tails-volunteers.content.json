@@ -1,0 +1,1915 @@
+{
+  "school": {
+    "tagged_body": "Volunteers Wanted: Happy Tails Animal Shelter\n\nDo you love animals? Do you want to help your community? Happy Tails Animal Shelter {{g:is looking for|현재진행형: be동사 + -ing (~을 찾고 있다)}} student {{v:volunteers}}!\n\nOur {{v:shelter}} {{v:takes care of}} about 60 dogs and 25 cats. Their {{v:owners}} left them, or they {{v:got lost}}. We need your help. Please {{t:give them a better life}} {{g:before they meet|before + 주어 + 동사: ~하기 전에 (시간 접속사)}} their new families.\n\nVolunteer Activities\n- Walk dogs\n- Clean {{v:cages}} and feeding bowls\n- Play with cats\n- Take photos of animals for our {{v:adoption}} website\n\nRequirements\n- {{g:You must be|must + 동사원형: ~해야 한다 (의무)}} 14 years old or older.\n- Students under 16 must come with a parent or {{v:guardian}}.\n- Volunteers must take a one-hour {{v:training}} class first.\n\nSchedule\n- Saturdays and Sundays, 10:00 a.m. – 1:00 p.m.\n- Please come {{g:two times a month|횟수 + a + 기간: ~에 …번}} or more.\n\nYou will get a volunteer hours {{v:certificate}}. (3 hours for each visit)\n\n{{g:To apply|to부정사 부사적 용법(목적): ~하기 위해}}, {{v:fill out}} the online form on our website by October 31. {{g:If you have any questions|조건의 if: 만약 ~라면}}, please call 053-987-6543.\n\nNote: Please wear {{v:comfortable}} clothes. Your clothes {{g:may get dirty|may + 동사원형: ~일지도 모른다 / get + 형용사: ~하게 되다}}!",
+    "tags": {
+      "vocab": [
+        "volunteer",
+        "shelter",
+        "take care of",
+        "owner",
+        "get lost",
+        "cage",
+        "adoption",
+        "guardian",
+        "training",
+        "certificate",
+        "fill out",
+        "comfortable"
+      ],
+      "grammar": [
+        "현재진행형",
+        "before + 주어 + 동사",
+        "must + 동사원형",
+        "횟수 + a + 기간",
+        "to부정사 부사적 용법(목적)",
+        "조건의 if",
+        "may + 동사원형"
+      ],
+      "topic": [
+        "봉사활동 모집 안내문",
+        "동물 보호",
+        "실용문 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "14a65c53-3e21-4871-8697-7115f184ef70",
+        "type": "mc",
+        "q": "What is the purpose of this notice?",
+        "choices": [
+          "To sell dogs and cats",
+          "To find a lost dog",
+          "To find student volunteers for an animal shelter",
+          "To invite people to a pet show",
+          "To teach students how to take photos"
+        ],
+        "answer": "To find student volunteers for an animal shelter",
+        "explanation": "동물 보호소에서 학생 자원봉사자를 찾는 모집 안내문이다."
+      },
+      {
+        "qid": "82b62abc-39fa-4b31-9cb3-54c6a34affde",
+        "type": "mc",
+        "q": "How many animals does the shelter take care of?",
+        "choices": [
+          "About 25",
+          "About 60",
+          "About 100",
+          "About 85",
+          "About 14"
+        ],
+        "answer": "About 85",
+        "explanation": "개 약 60마리 + 고양이 약 25마리 = 약 85마리."
+      },
+      {
+        "qid": "240bc2d1-7d4f-4c17-a6d0-d57b6978478f",
+        "type": "mc",
+        "q": "Which is NOT a volunteer activity?",
+        "choices": [
+          "Walking dogs",
+          "Cleaning cages",
+          "Playing with cats",
+          "Taking photos of animals",
+          "Washing dogs"
+        ],
+        "answer": "Washing dogs",
+        "explanation": "개 산책, 우리·밥그릇 청소, 고양이와 놀기, 사진 찍기만 나온다. 개 목욕은 없다."
+      },
+      {
+        "qid": "bb0de795-668c-4268-ac74-b58c251ab4ef",
+        "type": "mc",
+        "q": "Why do volunteers take photos of the animals?",
+        "choices": [
+          "For the shelter's adoption website",
+          "For a photo contest",
+          "For the school newspaper",
+          "For their own phones",
+          "For a calendar"
+        ],
+        "answer": "For the shelter's adoption website",
+        "explanation": "'Take photos of animals for our adoption website.' 입양 웹사이트에 올리기 위해서이다."
+      },
+      {
+        "qid": "0975c4ac-1b14-4028-9875-4110011b983d",
+        "type": "mc",
+        "q": "How old must you be to volunteer?",
+        "choices": [
+          "13 years old or older",
+          "14 years old or older",
+          "16 years old or older",
+          "18 years old or older",
+          "Under 14 years old"
+        ],
+        "answer": "14 years old or older",
+        "explanation": "'You must be 14 years old or older.'"
+      },
+      {
+        "qid": "929ad6d3-0dd0-4c35-92cd-3553e268d9e2",
+        "type": "mc",
+        "q": "Mina is 15 years old. What does she need to do to volunteer?",
+        "choices": [
+          "Bring her own pet",
+          "Pay some money",
+          "Come with a parent or guardian",
+          "Come on weekdays",
+          "Nothing. She cannot volunteer."
+        ],
+        "answer": "Come with a parent or guardian",
+        "explanation": "16세 미만 학생은 부모님이나 보호자와 함께 와야 한다. 15세는 14세 이상이라 봉사는 가능하다."
+      },
+      {
+        "qid": "22a43614-d713-445f-a2f5-79ea4bad611a",
+        "type": "mc",
+        "q": "What must volunteers do first?",
+        "choices": [
+          "Buy a dog",
+          "Call the shelter every day",
+          "Clean their own house",
+          "Take a one-hour training class",
+          "Take photos of cats"
+        ],
+        "answer": "Take a one-hour training class",
+        "explanation": "'Volunteers must take a one-hour training class first.'"
+      },
+      {
+        "qid": "e832698a-8943-4f2d-a051-f4a836f0e810",
+        "type": "mc",
+        "q": "When can volunteers work at the shelter?",
+        "choices": [
+          "Every weekday",
+          "Only on Mondays",
+          "Every evening",
+          "Only on Sundays",
+          "On Saturdays and Sundays"
+        ],
+        "answer": "On Saturdays and Sundays",
+        "explanation": "'Saturdays and Sundays, 10:00 a.m. – 1:00 p.m.'"
+      },
+      {
+        "qid": "da5aa714-e521-4f30-b310-7364e722f814",
+        "type": "mc",
+        "q": "How long do volunteers work on each visit?",
+        "choices": [
+          "Three hours",
+          "One hour",
+          "Two hours",
+          "Four hours",
+          "Six hours"
+        ],
+        "answer": "Three hours",
+        "explanation": "오전 10시부터 오후 1시까지이므로 3시간이다. 확인서에도 방문 1회당 3시간이 적힌다."
+      },
+      {
+        "qid": "61f5da1e-e655-4b49-9de0-b3b7f88fd54b",
+        "type": "mc",
+        "q": "How often should volunteers come?",
+        "choices": [
+          "Once a year",
+          "Two times a month or more",
+          "Every day",
+          "Once a month",
+          "Only one time"
+        ],
+        "answer": "Two times a month or more",
+        "explanation": "'Please come two times a month or more.'"
+      },
+      {
+        "qid": "10d0608c-99a7-418b-a369-35918096ff40",
+        "type": "mc",
+        "q": "What will volunteers get?",
+        "choices": [
+          "A free pet",
+          "Some money",
+          "A volunteer hours certificate",
+          "A T-shirt",
+          "A new camera"
+        ],
+        "answer": "A volunteer hours certificate",
+        "explanation": "'You will get a volunteer hours certificate.'"
+      },
+      {
+        "qid": "9f72e383-de29-4d21-8c9a-669f7f82b11b",
+        "type": "mc",
+        "q": "Junho visits the shelter four times. How many volunteer hours does he get?",
+        "choices": [
+          "3 hours",
+          "4 hours",
+          "8 hours",
+          "12 hours",
+          "6 hours"
+        ],
+        "answer": "12 hours",
+        "explanation": "방문 1회당 3시간이므로 3 × 4 = 12시간이다."
+      },
+      {
+        "qid": "cde44827-6b03-4648-9ee5-91f375e18660",
+        "type": "mc",
+        "q": "How can students apply?",
+        "choices": [
+          "By visiting the school office",
+          "By sending a letter",
+          "By calling the shelter",
+          "By sending an email",
+          "By filling out the online form"
+        ],
+        "answer": "By filling out the online form",
+        "explanation": "'To apply, fill out the online form on our website.' 전화는 질문이 있을 때 한다."
+      },
+      {
+        "qid": "5e157ac4-eccc-4bcf-b0d1-a8887644f6cb",
+        "type": "mc",
+        "q": "What is the last day to apply?",
+        "choices": [
+          "October 31",
+          "October 1",
+          "October 13",
+          "November 30",
+          "December 31"
+        ],
+        "answer": "October 31",
+        "explanation": "'by October 31' → 10월 31일까지 신청해야 한다."
+      },
+      {
+        "qid": "ab5975a2-d231-45d2-ad91-a81084692622",
+        "type": "mc",
+        "q": "When should you call 053-987-6543?",
+        "choices": [
+          "When you find a lost cat",
+          "When you have questions",
+          "When you want to buy a dog",
+          "When you finish the training",
+          "When you get your certificate"
+        ],
+        "answer": "When you have questions",
+        "explanation": "'If you have any questions, please call 053-987-6543.'"
+      },
+      {
+        "qid": "5dc4872b-daf7-4fc0-a9ca-d97d9c583782",
+        "type": "mc",
+        "q": "What kind of clothes should volunteers wear?",
+        "choices": [
+          "School uniforms",
+          "New clothes",
+          "Comfortable clothes",
+          "White clothes",
+          "Party clothes"
+        ],
+        "answer": "Comfortable clothes",
+        "explanation": "'Please wear comfortable clothes. Your clothes may get dirty!'"
+      },
+      {
+        "qid": "175b5e61-5214-4ef3-a8e5-b6188a5327da",
+        "type": "mc",
+        "q": "Which is NOT true about the notice?",
+        "choices": [
+          "The shelter has about 25 cats.",
+          "Volunteers clean feeding bowls.",
+          "Volunteers need a training class.",
+          "Volunteers can come on weekday afternoons.",
+          "The form is on the website."
+        ],
+        "answer": "Volunteers can come on weekday afternoons.",
+        "explanation": "봉사는 토·일요일 오전 10시~오후 1시에만 한다."
+      },
+      {
+        "qid": "b4c35dc5-1128-4e4d-9f1f-99c6fc27f620",
+        "type": "mc",
+        "q": "Sora is 16, and Jiho is 13. Who can volunteer without a parent?",
+        "choices": [
+          "Only Jiho",
+          "Both Sora and Jiho",
+          "Jiho with his friend",
+          "Neither of them",
+          "Only Sora"
+        ],
+        "answer": "Only Sora",
+        "explanation": "14세 이상만 봉사할 수 있고, 16세 미만은 보호자가 필요하다. 16세 소라는 혼자 가능, 13세 지호는 봉사할 수 없다."
+      },
+      {
+        "qid": "5b74a61d-c5c7-4e08-a789-7bd7f5ecdc6d",
+        "type": "order",
+        "items": [
+          "Walk dogs and play with cats for three hours.",
+          "Fill out the online form by October 31.",
+          "Get a volunteer hours certificate.",
+          "Take a one-hour training class.",
+          "Come to the shelter on a Saturday at 10:00 a.m."
+        ],
+        "answer": [
+          "Fill out the online form by October 31.",
+          "Take a one-hour training class.",
+          "Come to the shelter on a Saturday at 10:00 a.m.",
+          "Walk dogs and play with cats for three hours.",
+          "Get a volunteer hours certificate."
+        ]
+      },
+      {
+        "qid": "ed902a15-ff4d-4b7e-be35-e89687d362ac",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "volunteer",
+            "meaning": "자원봉사자"
+          },
+          {
+            "word": "shelter",
+            "meaning": "보호소"
+          },
+          {
+            "word": "cage",
+            "meaning": "우리, (동물) 장"
+          },
+          {
+            "word": "adoption",
+            "meaning": "입양"
+          },
+          {
+            "word": "guardian",
+            "meaning": "보호자"
+          },
+          {
+            "word": "certificate",
+            "meaning": "증명서"
+          },
+          {
+            "word": "comfortable",
+            "meaning": "편안한"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "732e47c1-6a42-48d3-b1f8-612b345cac27",
+        "q": "우리말로 쓰시오: 이 보호소에서 봉사자가 하는 일 네 가지를 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "① 개 산책시키기 ② 우리와 밥그릇 청소하기 ③ 고양이와 놀아 주기 ④ 입양 웹사이트에 올릴 동물 사진 찍기",
+        "rubric": "네 가지를 모두 쓰면 만점, 세 가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "7dccd122-7485-49f1-9d94-9b6d16968a89",
+        "q": "Who must come with a parent or guardian? Answer in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "Students under 16 must come with a parent or guardian.",
+        "rubric": "① under 16 ② must come with ③ a parent or guardian, 완전한 영어 문장"
+      },
+      {
+        "qid": "7c29d9ac-9c07-45da-9fd7-57752f1b86cf",
+        "q": "우리말로 쓰시오: 한 달에 두 번 봉사하면 한 달에 몇 시간의 봉사 시간을 받는지 계산 과정과 함께 쓰시오.",
+        "wordLimit": 40,
+        "sampleAnswer": "방문 1회에 3시간(오전 10시~오후 1시)이므로 3시간 × 2번 = 한 달에 6시간이다.",
+        "rubric": "① 1회 3시간 ② 2번 ③ 합계 6시간",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "b794bf27-8656-4dd8-b106-02d75ec93343",
+        "q": "다음 우리말을 영어로 쓰시오. '봉사자들은 먼저 1시간짜리 교육 수업을 들어야 한다.' <조건> must를 사용할 것",
+        "wordLimit": 12,
+        "sampleAnswer": "Volunteers must take a one-hour training class first.",
+        "rubric": "① must + 동사원형 ② a one-hour training class ③ first ④ 의미 일치"
+      },
+      {
+        "qid": "2b1f97ce-6428-4c65-94e1-cca901b1b105",
+        "q": "Which volunteer activity do you want to do most? Write the reason in 2 English sentences.",
+        "wordLimit": 30,
+        "sampleAnswer": "I want to walk dogs most. I love dogs, and I want to help them stay healthy.",
+        "rubric": "① 활동 이름 ② 이유 ③ 완전한 영어 문장 2개"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "volunteer",
+        "surface": "volunteers",
+        "pos": "명",
+        "meaning": "자원봉사자",
+        "sentence": "Happy Tails Animal Shelter is looking for student volunteers!"
+      },
+      {
+        "word": "shelter",
+        "surface": "shelter",
+        "pos": "명",
+        "meaning": "보호소, 쉼터",
+        "sentence": "Happy Tails Animal Shelter is looking for student volunteers!"
+      },
+      {
+        "word": "take care of",
+        "surface": "takes care of",
+        "pos": "숙",
+        "meaning": "~을 돌보다",
+        "sentence": "Our shelter takes care of about 60 dogs and 25 cats."
+      },
+      {
+        "word": "owner",
+        "surface": "owners",
+        "pos": "명",
+        "meaning": "주인",
+        "sentence": "Their owners left them, or they got lost."
+      },
+      {
+        "word": "get lost",
+        "surface": "got lost",
+        "pos": "숙",
+        "meaning": "길을 잃다",
+        "sentence": "Their owners left them, or they got lost."
+      },
+      {
+        "word": "cage",
+        "surface": "cages",
+        "pos": "명",
+        "meaning": "우리, (동물) 장",
+        "sentence": "- Clean cages and feeding bowls"
+      },
+      {
+        "word": "adoption",
+        "surface": "adoption",
+        "pos": "명",
+        "meaning": "입양",
+        "sentence": "- Take photos of animals for our adoption website"
+      },
+      {
+        "word": "guardian",
+        "surface": "guardian",
+        "pos": "명",
+        "meaning": "보호자",
+        "sentence": "- Students under 16 must come with a parent or guardian."
+      },
+      {
+        "word": "training",
+        "surface": "training",
+        "pos": "명",
+        "meaning": "교육, 훈련",
+        "sentence": "- Volunteers must take a one-hour training class first."
+      },
+      {
+        "word": "certificate",
+        "surface": "certificate",
+        "pos": "명",
+        "meaning": "증명서, 확인서",
+        "sentence": "You will get a volunteer hours certificate."
+      },
+      {
+        "word": "fill out",
+        "surface": "fill out",
+        "pos": "숙",
+        "meaning": "(서류를) 작성하다",
+        "sentence": "To apply, fill out the online form on our website by October 31."
+      },
+      {
+        "word": "comfortable",
+        "surface": "comfortable",
+        "pos": "형",
+        "meaning": "편안한",
+        "sentence": "Note: Please wear comfortable clothes."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Volunteers Wanted: Happy Tails Animal Shelter\n\nDo you love animals? Do you want to {{v:make a difference}} in your community? Happy Tails Animal Shelter is looking for student {{v:volunteers}}!\n\nOur {{v:shelter}} takes care of about 60 dogs and 25 cats {{g:that have been|주격 관계대명사 that + 현재완료 수동태(have been p.p.)}} {{v:abandoned}} or lost. We need your help to {{t:give them a better life}} {{g:while they wait for|while + 주어 + 동사: ~하는 동안}} new families.\n\nVolunteer Activities\n- {{g:Walking dogs|동명사(-ing): ~하기 (활동 나열)}}\n- Cleaning {{v:cages}} and feeding bowls\n- Playing with cats\n- Taking photos of animals for our {{v:adoption}} website\n\nRequirements\n- Students {{v:aged}} 14 or older\n- Students under 16 must come with a parent or {{v:guardian}}.\n- Volunteers must {{v:attend}} a one-hour training {{v:session}} {{g:before starting|전치사 before + 동명사: ~하기 전에}}.\n\nSchedule\n- Saturdays and Sundays, 10:00 a.m. – 1:00 p.m.\n- Volunteers {{g:should come|should + 동사원형: ~해야 한다 (권고)}} {{v:at least}} twice a month.\n\nVolunteers will receive {{v:official}} volunteer hours {{v:certificates}} (3 hours per visit).\n\n{{g:To apply|to부정사 부사적 용법(목적): ~하기 위해}}, {{v:fill out}} the online form on our website by October 31. If you have any questions, please call 053-987-6543.\n\nNote: Please wear {{v:comfortable}} clothes {{g:that you don't mind getting dirty|목적격 관계대명사 that / mind + 동명사: ~하는 것을 꺼리다}}!",
+    "tags": {
+      "vocab": [
+        "make a difference",
+        "volunteer",
+        "shelter",
+        "abandoned",
+        "cage",
+        "adoption",
+        "aged",
+        "guardian",
+        "attend",
+        "session",
+        "at least",
+        "official",
+        "certificate",
+        "fill out",
+        "comfortable"
+      ],
+      "grammar": [
+        "주격 관계대명사 that",
+        "현재완료 수동태",
+        "while + 주어 + 동사",
+        "동명사",
+        "전치사 + 동명사",
+        "should + 동사원형",
+        "to부정사 부사적 용법(목적)",
+        "목적격 관계대명사 that",
+        "mind + 동명사"
+      ],
+      "topic": [
+        "봉사활동 모집 안내문",
+        "유기동물 보호",
+        "실용문 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "81e390c8-48ae-4f4f-a638-aff8b21fe0a3",
+        "type": "mc",
+        "q": "What is the main purpose of this notice?",
+        "choices": [
+          "To recruit student volunteers for an animal shelter",
+          "To ask people to give money to the shelter",
+          "To report on lost pets in the community",
+          "To advertise a pet training class",
+          "To announce a photo contest"
+        ],
+        "answer": "To recruit student volunteers for an animal shelter",
+        "explanation": "동물 보호소의 학생 자원봉사자를 모집하는 안내문이다."
+      },
+      {
+        "qid": "3d8931f9-d437-4047-ab4c-3dc8ae05d868",
+        "type": "mc",
+        "q": "What does \"make a difference\" mean in the notice?",
+        "choices": [
+          "Change your mind",
+          "Have a good effect on something",
+          "Make a mistake",
+          "Find the differences",
+          "Spend a lot of money"
+        ],
+        "answer": "Have a good effect on something",
+        "explanation": "make a difference = 변화를 가져오다, 좋은 영향을 주다."
+      },
+      {
+        "qid": "eeeaceff-5213-4d1e-81b4-9b0c63efe050",
+        "type": "mc",
+        "q": "What does the word \"abandoned\" mean?",
+        "choices": [
+          "Well trained",
+          "Very sick",
+          "Left behind by their owners",
+          "Sold at a pet shop",
+          "Recently born"
+        ],
+        "answer": "Left behind by their owners",
+        "explanation": "abandoned = 버려진, 유기된."
+      },
+      {
+        "qid": "081ae25e-90de-4dc2-b10f-db58bcaa9729",
+        "type": "mc",
+        "q": "About how many animals does the shelter take care of in total?",
+        "choices": [
+          "About 25",
+          "About 60",
+          "About 100",
+          "About 85",
+          "About 35"
+        ],
+        "answer": "About 85",
+        "explanation": "개 약 60마리 + 고양이 약 25마리 = 약 85마리."
+      },
+      {
+        "qid": "6a08bfb6-a5d9-4299-ab0c-33da21416782",
+        "type": "mc",
+        "q": "Which is NOT mentioned as a volunteer activity?",
+        "choices": [
+          "Walking dogs",
+          "Cleaning feeding bowls",
+          "Playing with cats",
+          "Taking photos of animals",
+          "Giving medicine to sick animals"
+        ],
+        "answer": "Giving medicine to sick animals",
+        "explanation": "약을 주는 활동은 언급되지 않았다."
+      },
+      {
+        "qid": "7108eaef-f166-48b6-af76-9c8017142942",
+        "type": "mc",
+        "q": "Why do volunteers take photos of the animals?",
+        "choices": [
+          "To put them on the adoption website",
+          "To sell them in the shelter shop",
+          "To make a school yearbook",
+          "To enter a photo contest",
+          "To send them to the animals' old owners"
+        ],
+        "answer": "To put them on the adoption website",
+        "explanation": "'Taking photos of animals for our adoption website' — 입양 웹사이트용이다."
+      },
+      {
+        "qid": "064aa4b1-bfa6-4676-8ce3-bd8aba43bf0e",
+        "type": "mc",
+        "q": "Which student can volunteer WITHOUT a parent or guardian?",
+        "choices": [
+          "A 13-year-old student",
+          "A 16-year-old student",
+          "A 14-year-old student",
+          "A 15-year-old student",
+          "A 12-year-old student"
+        ],
+        "answer": "A 16-year-old student",
+        "explanation": "14세 이상이어야 하고, 16세 미만은 부모나 보호자와 와야 한다. 따라서 16세는 혼자 가능하다."
+      },
+      {
+        "qid": "6f7085d5-98fd-48f3-be46-d1c4022e48bf",
+        "type": "mc",
+        "q": "What must volunteers do before starting?",
+        "choices": [
+          "Adopt a dog or a cat",
+          "Buy their own feeding bowls",
+          "Attend a one-hour training session",
+          "Visit the shelter on a weekday",
+          "Take a photo test"
+        ],
+        "answer": "Attend a one-hour training session",
+        "explanation": "'Volunteers must attend a one-hour training session before starting.'"
+      },
+      {
+        "qid": "e7497e1e-c2ff-4ab1-8d52-be7764296031",
+        "type": "mc",
+        "q": "Which is true about the schedule?",
+        "choices": [
+          "Volunteers work on weekdays.",
+          "The work starts at 1:00 p.m.",
+          "Volunteers can come once a month.",
+          "Volunteers work for three hours on each visit.",
+          "The work ends at 3:00 p.m."
+        ],
+        "answer": "Volunteers work for three hours on each visit.",
+        "explanation": "토·일 오전 10시~오후 1시, 즉 방문당 3시간이다. 한 달에 최소 두 번 와야 한다."
+      },
+      {
+        "qid": "41c7d902-3968-47f4-8fd6-e03e3a420242",
+        "type": "mc",
+        "q": "What does \"at least twice a month\" mean?",
+        "choices": [
+          "Exactly two times a month",
+          "Less than two times a month",
+          "Once every two months",
+          "Twice a week",
+          "Two or more times a month"
+        ],
+        "answer": "Two or more times a month",
+        "explanation": "at least = 적어도. 한 달에 두 번 이상이라는 뜻이다."
+      },
+      {
+        "qid": "f915ef83-702d-4909-9944-913c7cf3f07d",
+        "type": "mc",
+        "q": "Seoyeon volunteered on four Saturdays in November. How many volunteer hours did she get?",
+        "choices": [
+          "12 hours",
+          "4 hours",
+          "6 hours",
+          "8 hours",
+          "16 hours"
+        ],
+        "answer": "12 hours",
+        "explanation": "방문 1회당 3시간 × 4번 = 12시간."
+      },
+      {
+        "qid": "5e3c4290-a3ec-4fbd-a53d-6efd4f15abab",
+        "type": "mc",
+        "q": "What will volunteers receive for each visit?",
+        "choices": [
+          "A certificate for 1 volunteer hour",
+          "A certificate for 3 volunteer hours",
+          "A certificate for 6 volunteer hours",
+          "A free pet",
+          "A free training session"
+        ],
+        "answer": "A certificate for 3 volunteer hours",
+        "explanation": "'official volunteer hours certificates (3 hours per visit)'"
+      },
+      {
+        "qid": "cc85eb45-2eb9-4516-9d31-6c5ec6933ea4",
+        "type": "mc",
+        "q": "How can students apply to be volunteers?",
+        "choices": [
+          "By calling the shelter",
+          "By visiting the shelter on Sunday",
+          "By filling out an online form on the website",
+          "By sending a letter",
+          "By talking to their teacher"
+        ],
+        "answer": "By filling out an online form on the website",
+        "explanation": "'To apply, fill out the online form on our website.'"
+      },
+      {
+        "qid": "5a822424-be51-4a31-aed6-892d7383e6c7",
+        "type": "mc",
+        "q": "By when should students apply?",
+        "choices": [
+          "By October 13",
+          "By September 30",
+          "By November 1",
+          "By October 31",
+          "By December 31"
+        ],
+        "answer": "By October 31",
+        "explanation": "'by October 31'"
+      },
+      {
+        "qid": "eef06a87-a8c5-42cb-9c37-f185f066fd4e",
+        "type": "mc",
+        "q": "What should you do if you have any questions?",
+        "choices": [
+          "Fill out the online form",
+          "Visit the shelter on Monday",
+          "Ask at the training session",
+          "Send a letter to the shelter",
+          "Call 053-987-6543"
+        ],
+        "answer": "Call 053-987-6543",
+        "explanation": "'If you have any questions, please call 053-987-6543.'"
+      },
+      {
+        "qid": "d34d136a-fc67-4b9f-834a-7055d119a848",
+        "type": "mc",
+        "q": "Why should volunteers wear comfortable clothes?",
+        "choices": [
+          "Because their clothes may get dirty",
+          "Because the shelter is very cold",
+          "Because they will take photos of themselves",
+          "Because there is a dress code for training",
+          "Because the animals like bright colors"
+        ],
+        "answer": "Because their clothes may get dirty",
+        "explanation": "'Please wear comfortable clothes that you don't mind getting dirty!'"
+      },
+      {
+        "qid": "aec107ca-1079-4ce5-915d-cc23274eff05",
+        "type": "mc",
+        "q": "In \"Volunteers must attend a one-hour training session before starting,\" why is 'starting' used?",
+        "choices": [
+          "Because 'start' is always used with -ing",
+          "Because a gerund follows the preposition 'before'",
+          "Because it is a present participle that describes 'session'",
+          "Because 'must' needs an -ing form",
+          "Because it is in the past tense"
+        ],
+        "answer": "Because a gerund follows the preposition 'before'",
+        "explanation": "before가 전치사로 쓰여 뒤에 동명사(starting)가 온다."
+      },
+      {
+        "qid": "6a9c7a57-7811-4350-80eb-f8a00178eb0b",
+        "type": "mc",
+        "q": "Which is NOT true according to the notice?",
+        "choices": [
+          "The shelter takes care of about 60 dogs.",
+          "Volunteers clean cages.",
+          "Students under 16 cannot volunteer at all.",
+          "Volunteers should come at least twice a month.",
+          "The online form is on the shelter's website."
+        ],
+        "answer": "Students under 16 cannot volunteer at all.",
+        "explanation": "16세 미만도 14세 이상이면 부모나 보호자와 함께 봉사할 수 있다."
+      },
+      {
+        "qid": "3e1c203e-0870-4e20-afc7-f35b35ec23c5",
+        "type": "order",
+        "items": [
+          "Arrive at the shelter at 10:00 a.m. on a weekend.",
+          "Receive a certificate for 3 volunteer hours.",
+          "Fill out the online form on the website by October 31.",
+          "Walk dogs, clean cages, and play with cats.",
+          "Attend a one-hour training session."
+        ],
+        "answer": [
+          "Fill out the online form on the website by October 31.",
+          "Attend a one-hour training session.",
+          "Arrive at the shelter at 10:00 a.m. on a weekend.",
+          "Walk dogs, clean cages, and play with cats.",
+          "Receive a certificate for 3 volunteer hours."
+        ]
+      },
+      {
+        "qid": "b82b0c7e-770d-4258-bfdf-7a90035486fb",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "volunteer",
+            "meaning": "자원봉사자"
+          },
+          {
+            "word": "shelter",
+            "meaning": "보호소"
+          },
+          {
+            "word": "abandoned",
+            "meaning": "버려진"
+          },
+          {
+            "word": "adoption",
+            "meaning": "입양"
+          },
+          {
+            "word": "guardian",
+            "meaning": "보호자"
+          },
+          {
+            "word": "attend",
+            "meaning": "참석하다"
+          },
+          {
+            "word": "certificate",
+            "meaning": "증명서"
+          },
+          {
+            "word": "comfortable",
+            "meaning": "편안한"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "72186a6b-13a7-489c-be61-f9b93bfd32d9",
+        "q": "Why does the shelter need volunteers? Answer in 1-2 English sentences using the notice.",
+        "wordLimit": 35,
+        "sampleAnswer": "The shelter takes care of about 60 dogs and 25 cats that have been abandoned or lost. It needs help to give them a better life while they wait for new families.",
+        "rubric": "① 버려지거나 길 잃은 동물 약 85마리 ② 새 가족을 기다리는 동안 더 나은 삶 ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "27bc8859-88c4-4118-9a36-da417d6ad0a7",
+        "q": "우리말로 쓰시오: 15살인 민수가 이 보호소에서 봉사하려면 지켜야 할 조건을 네 가지 쓰시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "① 10월 31일까지 웹사이트에서 온라인 신청서를 작성한다. ② 16세 미만이므로 부모님이나 보호자와 함께 와야 한다. ③ 시작 전 1시간 교육을 받아야 한다. ④ 한 달에 적어도 두 번 와야 한다.",
+        "rubric": "① 온라인 신청(10/31까지) ② 보호자 동반 ③ 1시간 교육 ④ 월 2회 이상 — 네 가지면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "333b3452-7718-4a23-89cc-436b07293c26",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '이 보호소는 버려지거나 길을 잃은 동물들을 돌본다.' <조건> 관계대명사 that과 현재완료 수동태를 사용할 것",
+        "wordLimit": 14,
+        "sampleAnswer": "This shelter takes care of animals that have been abandoned or lost.",
+        "rubric": "① takes care of ② that have been ③ abandoned or lost ④ 의미 일치"
+      },
+      {
+        "qid": "c5ff445b-a2b4-4b07-aaa1-e5f657945d64",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '더러워져도 괜찮은 편안한 옷을 입어 주세요.' <조건> mind + 동명사를 사용할 것",
+        "wordLimit": 14,
+        "sampleAnswer": "Please wear comfortable clothes that you don't mind getting dirty.",
+        "rubric": "① Please wear comfortable clothes ② that ③ don't mind getting dirty ④ 의미 일치"
+      },
+      {
+        "qid": "874da0ab-7ca1-4a68-ae17-027f82afdc27",
+        "q": "Write a short message in English to invite a friend to volunteer at the shelter with you. Include the day and time, one activity, and one requirement.",
+        "wordLimit": 50,
+        "sampleAnswer": "Hi, Yuna! Let's volunteer at Happy Tails Animal Shelter together. We can go on Saturday from 10:00 a.m. to 1:00 p.m. and walk dogs. Don't forget that we must attend a one-hour training session first!",
+        "rubric": "① 요일·시간 ② 활동 1개 ③ 조건 1개 ④ 초대 표현과 문법 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "make a difference",
+        "surface": "make a difference",
+        "pos": "숙",
+        "meaning": "변화를 가져오다, 좋은 영향을 주다",
+        "sentence": "Do you want to make a difference in your community?"
+      },
+      {
+        "word": "volunteer",
+        "surface": "volunteers",
+        "pos": "명",
+        "meaning": "자원봉사자",
+        "sentence": "Happy Tails Animal Shelter is looking for student volunteers!"
+      },
+      {
+        "word": "shelter",
+        "surface": "shelter",
+        "pos": "명",
+        "meaning": "보호소, 쉼터",
+        "sentence": "Happy Tails Animal Shelter is looking for student volunteers!"
+      },
+      {
+        "word": "abandoned",
+        "surface": "abandoned",
+        "pos": "형",
+        "meaning": "버려진, 유기된",
+        "sentence": "Our shelter takes care of about 60 dogs and 25 cats that have been abandoned or lost."
+      },
+      {
+        "word": "cage",
+        "surface": "cages",
+        "pos": "명",
+        "meaning": "우리, (동물) 장",
+        "sentence": "- Cleaning cages and feeding bowls"
+      },
+      {
+        "word": "adoption",
+        "surface": "adoption",
+        "pos": "명",
+        "meaning": "입양",
+        "sentence": "- Taking photos of animals for our adoption website"
+      },
+      {
+        "word": "aged",
+        "surface": "aged",
+        "pos": "형",
+        "meaning": "~세의, 나이가 ~인",
+        "sentence": "- Students aged 14 or older"
+      },
+      {
+        "word": "guardian",
+        "surface": "guardian",
+        "pos": "명",
+        "meaning": "보호자",
+        "sentence": "- Students under 16 must come with a parent or guardian."
+      },
+      {
+        "word": "attend",
+        "surface": "attend",
+        "pos": "동",
+        "meaning": "참석하다",
+        "sentence": "- Volunteers must attend a one-hour training session before starting."
+      },
+      {
+        "word": "session",
+        "surface": "session",
+        "pos": "명",
+        "meaning": "(특정 활동을 하는) 시간, 수업",
+        "sentence": "- Volunteers must attend a one-hour training session before starting."
+      },
+      {
+        "word": "at least",
+        "surface": "at least",
+        "pos": "숙",
+        "meaning": "적어도, 최소한",
+        "sentence": "- Volunteers should come at least twice a month."
+      },
+      {
+        "word": "official",
+        "surface": "official",
+        "pos": "형",
+        "meaning": "공식적인",
+        "sentence": "Volunteers will receive official volunteer hours certificates (3 hours per visit)."
+      },
+      {
+        "word": "certificate",
+        "surface": "certificates",
+        "pos": "명",
+        "meaning": "증명서, 확인서",
+        "sentence": "Volunteers will receive official volunteer hours certificates (3 hours per visit)."
+      },
+      {
+        "word": "fill out",
+        "surface": "fill out",
+        "pos": "숙",
+        "meaning": "(서류를) 작성하다",
+        "sentence": "To apply, fill out the online form on our website by October 31."
+      },
+      {
+        "word": "comfortable",
+        "surface": "comfortable",
+        "pos": "형",
+        "meaning": "편안한",
+        "sentence": "Note: Please wear comfortable clothes that you don't mind getting dirty!"
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Volunteers Wanted: Happy Tails Animal Shelter\n\nAre you an animal lover? Are you {{v:eager}} to make a {{v:meaningful}} difference in your community? Happy Tails Animal Shelter is currently {{v:seeking}} student volunteers!\n\nOur shelter provides care for {{v:approximately}} 60 dogs and 25 cats {{g:that have been abandoned by their owners or separated from their families|관계대명사 that + 현재완료 수동태 have been p.p. (abandoned / separated 병렬)}}. We need your support to {{t:improve their lives}} {{g:while they wait to be adopted|while + 주어 + 동사 / to be p.p.: 수동형 to부정사 (입양되기를)}} by new families.\n\nVolunteer Activities\n- Taking dogs for walks\n- Cleaning cages and feeding bowls\n- {{g:Spending time playing with cats|spend + 시간 + -ing: ~하며 시간을 보내다}}\n- {{v:Photographing}} animals for our adoption website\n\nRequirements\n- {{v:Applicants}} must be at least 14 years old.\n- Students under the age of 16 {{g:must be accompanied by|조동사 수동태: must be p.p. (~이 동반되어야 한다)}} a parent or guardian.\n- All volunteers {{g:are required to complete|be required to + 동사원형: ~해야 한다}} a one-hour training session before beginning their activities.\n\nSchedule\n- Saturdays and Sundays, 10:00 a.m. – 1:00 p.m.\n- Volunteers {{g:are expected to visit|be expected to + 동사원형: ~하기로 되어 있다(~해야 한다)}} at least twice a month.\n\nVolunteers {{g:will be awarded|미래 수동태: will be p.p. / award = 수여하다}} official volunteer hours certificates (3 hours per visit).\n\nTo apply, complete the online {{v:application}} form on our website by October 31. For further {{v:inquiries}}, please contact us at 053-987-6543.\n\nNote: Please wear comfortable {{v:clothing}} that you {{g:don't mind getting dirty|mind + 동명사: ~하는 것을 꺼리다}}!",
+    "tags": {
+      "vocab": [
+        "eager",
+        "meaningful",
+        "seek",
+        "approximately",
+        "abandon",
+        "separate",
+        "photograph",
+        "applicant",
+        "accompany",
+        "require",
+        "expect",
+        "award",
+        "application",
+        "inquiry",
+        "clothing"
+      ],
+      "grammar": [
+        "관계대명사 that + 현재완료 수동태",
+        "수동형 to부정사",
+        "spend + 시간 + -ing",
+        "조동사 수동태",
+        "be required to",
+        "be expected to",
+        "미래 수동태",
+        "mind + 동명사"
+      ],
+      "topic": [
+        "봉사활동 모집 안내문",
+        "유기동물 입양",
+        "실용문 읽기",
+        "지역사회 기여"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "33c0449b-4f0c-42a9-bc1c-6219310eaa20",
+        "type": "mc",
+        "q": "What is the main purpose of this notice?",
+        "choices": [
+          "To persuade people to adopt pets from the shelter right away",
+          "To recruit student volunteers and explain the requirements and schedule",
+          "To report how many animals were adopted this year",
+          "To advertise a paid training course for pet owners",
+          "To raise money for a new shelter building"
+        ],
+        "answer": "To recruit student volunteers and explain the requirements and schedule",
+        "explanation": "학생 자원봉사자를 모집하며 활동·자격·일정·신청 방법을 안내하는 글이다."
+      },
+      {
+        "qid": "cb985927-a23a-4db5-a73d-59387276df49",
+        "type": "mc",
+        "q": "In the notice, 'eager' is closest in meaning to ____.",
+        "choices": [
+          "afraid",
+          "unable",
+          "keen",
+          "tired",
+          "ashamed"
+        ],
+        "answer": "keen",
+        "explanation": "be eager to = ~하기를 간절히 바라다(keen)."
+      },
+      {
+        "qid": "5cb91088-94cb-496c-8a51-6414495cd571",
+        "type": "mc",
+        "q": "In the notice, 'approximately' is closest in meaning to ____.",
+        "choices": [
+          "exactly",
+          "more than",
+          "at most",
+          "about",
+          "only"
+        ],
+        "answer": "about",
+        "explanation": "approximately = 대략, 약(about)."
+      },
+      {
+        "qid": "d909bca3-e915-425c-8dcc-d616f48660d9",
+        "type": "mc",
+        "q": "According to the notice, what happened to the animals at the shelter?",
+        "choices": [
+          "They were all born at the shelter.",
+          "They were rescued from a big fire.",
+          "They belong to the student volunteers.",
+          "They were brought from other countries.",
+          "They were abandoned by their owners or separated from their families."
+        ],
+        "answer": "They were abandoned by their owners or separated from their families.",
+        "explanation": "'that have been abandoned by their owners or separated from their families'"
+      },
+      {
+        "qid": "61401219-74b4-4140-aece-a6cc4d82c169",
+        "type": "mc",
+        "q": "Which activity is NOT included in the Volunteer Activities?",
+        "choices": [
+          "Training dogs to follow commands",
+          "Taking dogs for walks",
+          "Cleaning cages and feeding bowls",
+          "Spending time playing with cats",
+          "Photographing animals"
+        ],
+        "answer": "Training dogs to follow commands",
+        "explanation": "개에게 명령을 따르도록 훈련시키는 활동은 없다. 'training session'은 봉사자가 받는 교육이다."
+      },
+      {
+        "qid": "6bc32c32-1d90-497c-9c85-804b483cf86c",
+        "type": "mc",
+        "q": "What is the most likely reason the shelter wants volunteers to photograph the animals?",
+        "choices": [
+          "To keep a record of the volunteers' work hours",
+          "To help the animals find new families through the website",
+          "To sell the photos to raise money",
+          "To show the photos at a school festival",
+          "To check the animals' health every month"
+        ],
+        "answer": "To help the animals find new families through the website",
+        "explanation": "입양 웹사이트(adoption website)에 올려 새 가족을 찾도록 돕기 위해서이다."
+      },
+      {
+        "qid": "bbd5af5a-0509-454e-b3c3-63f6673c28ee",
+        "type": "mc",
+        "q": "A 15-year-old student wants to volunteer. Which statement is correct?",
+        "choices": [
+          "The student is too young to volunteer.",
+          "The student does not need any training.",
+          "The student must be accompanied by a parent or guardian.",
+          "The student can volunteer only on weekdays.",
+          "The student must bring a pet to the shelter."
+        ],
+        "answer": "The student must be accompanied by a parent or guardian.",
+        "explanation": "14세 이상이면 지원 가능, 16세 미만은 부모나 보호자의 동반이 필요하다."
+      },
+      {
+        "qid": "ffa037c4-8100-4737-ba33-0fc3e492388f",
+        "type": "mc",
+        "q": "What are all volunteers required to do before beginning their activities?",
+        "choices": [
+          "Adopt one of the animals",
+          "Visit the shelter four times",
+          "Submit photos of their own pets",
+          "Complete a one-hour training session",
+          "Pay a small fee for the certificate"
+        ],
+        "answer": "Complete a one-hour training session",
+        "explanation": "'All volunteers are required to complete a one-hour training session before beginning their activities.'"
+      },
+      {
+        "qid": "8a152316-fbc2-4c11-b07b-60f6dfbbae7f",
+        "type": "mc",
+        "q": "What does \"Volunteers are expected to visit at least twice a month\" mean?",
+        "choices": [
+          "Volunteers may come whenever they want.",
+          "Volunteers must come exactly twice a year.",
+          "Volunteers can visit only on two Saturdays.",
+          "Volunteers should come once every two months.",
+          "Volunteers should come two or more times every month."
+        ],
+        "answer": "Volunteers should come two or more times every month.",
+        "explanation": "be expected to = ~하기로 되어 있다. at least twice a month = 한 달에 두 번 이상."
+      },
+      {
+        "qid": "ce7bf78b-78d7-4a5b-9312-a5f4ecaf2f26",
+        "type": "mc",
+        "q": "A volunteer visits the shelter every Saturday and Sunday in a month with four weekends. How many volunteer hours will the certificates show?",
+        "choices": [
+          "24 hours",
+          "8 hours",
+          "12 hours",
+          "6 hours",
+          "30 hours"
+        ],
+        "answer": "24 hours",
+        "explanation": "주말 4번 × 2일 = 8회, 8회 × 3시간 = 24시간."
+      },
+      {
+        "qid": "ac766565-9c99-456b-a025-0dc7228d4fc6",
+        "type": "mc",
+        "q": "In \"Volunteers will be awarded official volunteer hours certificates,\" 'awarded' is closest in meaning to ____.",
+        "choices": [
+          "refused",
+          "given",
+          "asked",
+          "paid",
+          "taught"
+        ],
+        "answer": "given",
+        "explanation": "be awarded = 수여받다(be given)."
+      },
+      {
+        "qid": "4cab787a-0a6e-480a-9729-5ee96da287cd",
+        "type": "mc",
+        "q": "In \"For further inquiries, please contact us,\" 'inquiries' is closest in meaning to ____.",
+        "choices": [
+          "complaints",
+          "payments",
+          "questions",
+          "applications",
+          "answers"
+        ],
+        "answer": "questions",
+        "explanation": "inquiry = 문의, 질문(question)."
+      },
+      {
+        "qid": "298a6769-8fef-4b3a-8a1d-67ab47412722",
+        "type": "mc",
+        "q": "According to the notice, how can students apply to volunteer?",
+        "choices": [
+          "By calling the shelter before October 31",
+          "By visiting the shelter on a weekend",
+          "By attending the training session first",
+          "By completing an online application form on the website by October 31",
+          "By sending an email with a photo"
+        ],
+        "answer": "By completing an online application form on the website by October 31",
+        "explanation": "'To apply, complete the online application form on our website by October 31.' 전화는 추가 문의용이다."
+      },
+      {
+        "qid": "537aeea6-2cac-4751-9076-83068941e049",
+        "type": "mc",
+        "q": "Why does the notice ask volunteers to wear comfortable clothing?",
+        "choices": [
+          "Because the shelter has a strict dress code",
+          "Because volunteers will appear in the photos",
+          "Because the training session takes place outdoors",
+          "Because the animals are afraid of uniforms",
+          "Because the activities may make their clothes dirty"
+        ],
+        "answer": "Because the activities may make their clothes dirty",
+        "explanation": "'comfortable clothing that you don't mind getting dirty' — 옷이 더러워질 수 있기 때문이다."
+      },
+      {
+        "qid": "2bdc2359-92b2-4dbe-8e3e-05cc10c8812e",
+        "type": "mc",
+        "q": "Which is the correct active form of \"Students under the age of 16 must be accompanied by a parent or guardian\"?",
+        "choices": [
+          "A parent or guardian must accompany students under the age of 16.",
+          "A parent or guardian must be accompanied students under the age of 16.",
+          "Students under the age of 16 must accompany a parent or guardian.",
+          "A parent or guardian must accompanying students under the age of 16.",
+          "A parent or guardian must accompanied by students under the age of 16."
+        ],
+        "answer": "A parent or guardian must accompany students under the age of 16.",
+        "explanation": "조동사 수동태 must be p.p. by A → 능동태 A must + 동사원형 + 목적어."
+      },
+      {
+        "qid": "76e91693-4cb7-4dff-a18b-da65512d4d16",
+        "type": "mc",
+        "q": "Which sentence is grammatically correct?",
+        "choices": [
+          "Volunteers are required completing a training session.",
+          "Volunteers are required to complete a training session.",
+          "Volunteers require to complete a training session.",
+          "Volunteers are requiring complete a training session.",
+          "Volunteers are required to completing a training session."
+        ],
+        "answer": "Volunteers are required to complete a training session.",
+        "explanation": "be required to + 동사원형: ~해야 한다."
+      },
+      {
+        "qid": "c411c5c9-40ce-4ecd-94d9-aba635d7da63",
+        "type": "mc",
+        "q": "Which is NOT true according to the notice?",
+        "choices": [
+          "The shelter cares for approximately 85 animals.",
+          "Applicants must be at least 14 years old.",
+          "Volunteer activities take place on weekday afternoons.",
+          "Each visit counts as three volunteer hours.",
+          "Questions can be asked by phone."
+        ],
+        "answer": "Volunteer activities take place on weekday afternoons.",
+        "explanation": "봉사는 토·일요일 오전 10시~오후 1시에 한다."
+      },
+      {
+        "qid": "22f369ec-f04a-49c7-9a20-0a4dd9764345",
+        "type": "mc",
+        "q": "Which best describes the tone of the notice?",
+        "choices": [
+          "Angry and critical",
+          "Sad and hopeless",
+          "Humorous and sarcastic",
+          "Encouraging and informative",
+          "Strict and threatening"
+        ],
+        "answer": "Encouraging and informative",
+        "explanation": "참여를 권하며(Are you eager to ~?) 필요한 정보를 자세히 알려 주는 어조이다."
+      },
+      {
+        "qid": "9a96aca5-e32d-4d03-9587-4e058ca5819a",
+        "type": "order",
+        "items": [
+          "Complete a one-hour training session.",
+          "Take dogs for walks and spend time playing with cats.",
+          "Complete the online application form by October 31.",
+          "Be awarded a certificate for three volunteer hours.",
+          "Arrive at the shelter on a weekend at 10:00 a.m."
+        ],
+        "answer": [
+          "Complete the online application form by October 31.",
+          "Complete a one-hour training session.",
+          "Arrive at the shelter on a weekend at 10:00 a.m.",
+          "Take dogs for walks and spend time playing with cats.",
+          "Be awarded a certificate for three volunteer hours."
+        ]
+      },
+      {
+        "qid": "c6c5aaac-23cc-43e3-a556-fb4ee50db59d",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "eager",
+            "meaning": "열망하는"
+          },
+          {
+            "word": "meaningful",
+            "meaning": "의미 있는"
+          },
+          {
+            "word": "approximately",
+            "meaning": "대략, 약"
+          },
+          {
+            "word": "abandon",
+            "meaning": "버리다"
+          },
+          {
+            "word": "applicant",
+            "meaning": "지원자"
+          },
+          {
+            "word": "accompany",
+            "meaning": "동행하다"
+          },
+          {
+            "word": "inquiry",
+            "meaning": "문의"
+          },
+          {
+            "word": "award",
+            "meaning": "수여하다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "613449fb-2dc4-4aec-9eb8-6e3c1655149f",
+        "q": "Summarize in 2-3 English sentences why the shelter needs volunteers and what volunteers will do.",
+        "wordLimit": 55,
+        "sampleAnswer": "The shelter cares for approximately 60 dogs and 25 cats that have been abandoned or separated from their families. It needs volunteers to improve their lives while they wait to be adopted. Volunteers will walk dogs, clean cages and feeding bowls, play with cats, and photograph animals for the adoption website.",
+        "rubric": "① 동물 수·처지 ② 봉사자가 필요한 이유 ③ 활동 3개 이상 ④ 영어 2~3문장, 문법 정확성"
+      },
+      {
+        "qid": "a0079056-bbc4-4159-9c79-1ad25be8664a",
+        "q": "우리말로 쓰시오: 'All volunteers are required to complete a one-hour training session'과 'Volunteers are expected to visit at least twice a month'에서 be required to와 be expected to의 뜻을 각각 쓰고, 봉사자가 반드시 해야 하는 일 두 가지를 쓰시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "be required to는 '~해야 한다(필수)', be expected to는 '~하기로 되어 있다(~할 것이 기대된다)'는 뜻이다. 봉사자는 시작 전 1시간 교육을 반드시 받아야 하고, 한 달에 적어도 두 번 방문해야 한다.",
+        "rubric": "① be required to = 의무 ② be expected to = 기대·약속 ③ 1시간 교육 ④ 월 2회 이상 방문",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "7756013b-aee8-485f-b732-7650495c8fba",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '16세 미만의 학생들은 부모나 보호자와 동행해야 한다.' <조건> accompany를 수동태로 쓸 것",
+        "wordLimit": 16,
+        "sampleAnswer": "Students under the age of 16 must be accompanied by a parent or guardian.",
+        "rubric": "① under the age of 16 (또는 under 16) ② must be accompanied ③ by a parent or guardian ④ 의미 일치"
+      },
+      {
+        "qid": "b89a3a7b-e639-4710-ba26-1378e1b0fc4f",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '나는 보호소에서 고양이들과 놀면서 두 시간을 보냈다.' <조건> spend + 시간 + -ing 구문을 사용할 것",
+        "wordLimit": 12,
+        "sampleAnswer": "I spent two hours playing with cats at the shelter.",
+        "rubric": "① spent(과거형) ② two hours ③ playing with cats ④ at the shelter"
+      },
+      {
+        "qid": "8ef69fa4-130f-4f6a-a233-6d00bd784306",
+        "q": "You are 15 years old and want to start volunteering at the shelter. Write in English what you need to do before and during your first visit, in time order (at least three steps).",
+        "wordLimit": 60,
+        "sampleAnswer": "First, I will complete the online application form on the website by October 31. Next, I will complete a one-hour training session. Then, on my first Saturday, I will come to the shelter at 10:00 a.m. with my mother because I am under 16. Finally, I will wear comfortable clothing that I don't mind getting dirty.",
+        "rubric": "① 시간 순서 연결어 ② 신청(10/31) ③ 교육 ④ 보호자 동반 또는 복장 ⑤ 문법 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "eager",
+        "surface": "eager",
+        "pos": "형",
+        "meaning": "열망하는, 간절히 ~하고 싶어 하는",
+        "sentence": "Are you eager to make a meaningful difference in your community?"
+      },
+      {
+        "word": "meaningful",
+        "surface": "meaningful",
+        "pos": "형",
+        "meaning": "의미 있는",
+        "sentence": "Are you eager to make a meaningful difference in your community?"
+      },
+      {
+        "word": "seek",
+        "surface": "seeking",
+        "pos": "동",
+        "meaning": "찾다, 구하다",
+        "sentence": "Happy Tails Animal Shelter is currently seeking student volunteers!"
+      },
+      {
+        "word": "approximately",
+        "surface": "approximately",
+        "pos": "부",
+        "meaning": "대략, 약",
+        "sentence": "Our shelter provides care for approximately 60 dogs and 25 cats that have been abandoned by their owners or separated from their families."
+      },
+      {
+        "word": "photograph",
+        "surface": "Photographing",
+        "pos": "동",
+        "meaning": "사진을 찍다",
+        "sentence": "- Photographing animals for our adoption website"
+      },
+      {
+        "word": "applicant",
+        "surface": "Applicants",
+        "pos": "명",
+        "meaning": "지원자",
+        "sentence": "- Applicants must be at least 14 years old."
+      },
+      {
+        "word": "application",
+        "surface": "application",
+        "pos": "명",
+        "meaning": "지원(서), 신청(서)",
+        "sentence": "To apply, complete the online application form on our website by October 31."
+      },
+      {
+        "word": "inquiry",
+        "surface": "inquiries",
+        "pos": "명",
+        "meaning": "문의, 질문",
+        "sentence": "For further inquiries, please contact us at 053-987-6543."
+      },
+      {
+        "word": "clothing",
+        "surface": "clothing",
+        "pos": "명",
+        "meaning": "옷, 의류",
+        "sentence": "Note: Please wear comfortable clothing that you don't mind getting dirty!"
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Volunteers Wanted: Happy Tails Animal Shelter\n\nAre you {{v:passionate about}} animals? Do you {{v:aspire to}} make a {{v:tangible}} difference in your local community? Happy Tails Animal Shelter is currently recruiting {{v:dedicated}} student volunteers!\n\nOur {{v:facility}} {{v:houses}} approximately 60 dogs and 25 cats, {{g:all of which have been abandoned or have gone astray|수량 표현 + of which (계속적 용법 관계대명사) / 현재완료 수동태 · go astray = 길을 잃다}}. We are seeking your assistance in {{t:enhancing their well-being}} {{g:while they await adoption|while + 주어 + 동사 / await = wait for (전치사 없이 목적어)}} into permanent homes.\n\nVolunteer Responsibilities\n- Exercising dogs on regular walks\n- {{v:Sanitizing}} cages and feeding bowls\n- {{v:Socializing}} with cats through play\n- Photographing animals {{g:to be featured on|수동형 to부정사: to be p.p. (게시되도록)}} our adoption website\n\n{{v:Eligibility}}\n- Applicants must be aged 14 or above.\n- Those under 16 must be {{v:accompanied by}} a parent or legal guardian.\n- {{g:Prior to commencing|prior to + 동명사: ~하기 전에 (to는 전치사)}} any activities, all volunteers are required to attend a {{v:mandatory}} one-hour {{v:orientation}} session.\n\nSchedule\n- Saturdays and Sundays, 10:00 a.m. – 1:00 p.m.\n- Volunteers {{g:are expected to commit to a minimum of two visits|be expected to + 동사원형 / commit to + 명사: ~에 전념하다(to는 전치사)}} per month.\n\n{{g:Upon completion of each visit|upon + 명사: ~하자마자, ~할 때}}, volunteers will be {{v:issued}} official certificates recognizing three hours of volunteer service.\n\nTo apply, submit the online application form on our website {{v:no later than}} October 31. {{g:Should you have any inquiries|가정법 도치: If you should have → Should you have}}, please contact us at 053-987-6543.\n\nNote: We recommend wearing comfortable {{v:attire}} that you would not mind getting {{v:soiled}}!",
+    "tags": {
+      "vocab": [
+        "passionate",
+        "aspire",
+        "tangible",
+        "dedicated",
+        "facility",
+        "house",
+        "astray",
+        "await",
+        "sanitize",
+        "socialize",
+        "eligibility",
+        "accompany",
+        "commence",
+        "mandatory",
+        "orientation",
+        "issue",
+        "no later than",
+        "inquiry",
+        "attire",
+        "soiled"
+      ],
+      "grammar": [
+        "수량 표현 + of which",
+        "현재완료 수동태",
+        "while + 주어 + 동사",
+        "수동형 to부정사",
+        "prior to + 동명사",
+        "commit to + 명사",
+        "upon + 명사",
+        "가정법 도치(Should you ~)"
+      ],
+      "topic": [
+        "봉사활동 모집 안내문",
+        "유기동물 복지",
+        "실용문 읽기",
+        "지역사회 기여"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "5ba2d55c-6b87-43bb-96b7-00d9493aaf7b",
+        "type": "mc",
+        "q": "Which best describes the purpose of the notice?",
+        "choices": [
+          "To persuade local families to adopt abandoned pets immediately",
+          "To report on the number of animals adopted from the shelter this year",
+          "To promote a paid orientation program for new pet owners",
+          "To recruit student volunteers and inform them of their responsibilities, eligibility, and schedule",
+          "To request donations for building a new animal facility"
+        ],
+        "answer": "To recruit student volunteers and inform them of their responsibilities, eligibility, and schedule",
+        "explanation": "학생 자원봉사자를 모집하며 담당 업무·자격·일정·신청 방법을 알리는 글이다."
+      },
+      {
+        "qid": "7a768ed6-0011-4bf8-acce-570fea7ba5b8",
+        "type": "mc",
+        "q": "In the notice, 'tangible' in \"a tangible difference\" is closest in meaning to ____.",
+        "choices": [
+          "invisible",
+          "temporary",
+          "imaginary",
+          "minor",
+          "real"
+        ],
+        "answer": "real",
+        "explanation": "tangible = 실질적인, 눈에 보이는(real)."
+      },
+      {
+        "qid": "2bc5c8f1-5509-4699-bde0-12d4d4fb9681",
+        "type": "mc",
+        "q": "What does 'houses' mean in \"Our facility houses approximately 60 dogs and 25 cats\"?",
+        "choices": [
+          "Provides a place to live for",
+          "Builds new homes for",
+          "Sells to other families",
+          "Trains for special jobs",
+          "Owns several buildings for"
+        ],
+        "answer": "Provides a place to live for",
+        "explanation": "house가 동사로 쓰여 '수용하다, 거처를 제공하다'라는 뜻이다."
+      },
+      {
+        "qid": "04b4bc3d-d8d5-469f-9d81-37e4aae90a8d",
+        "type": "mc",
+        "q": "The phrase \"have gone astray\" in the notice is closest in meaning to ____.",
+        "choices": [
+          "have been adopted",
+          "have become lost",
+          "have become ill",
+          "have been trained",
+          "have run a race"
+        ],
+        "answer": "have become lost",
+        "explanation": "go astray = 길을 잃다, 행방불명이 되다."
+      },
+      {
+        "qid": "99a581ed-673a-4c20-a097-45d24c27b37a",
+        "type": "mc",
+        "q": "In \"while they await adoption,\" 'await' can be replaced with ____.",
+        "choices": [
+          "wait on",
+          "refuse",
+          "wait for",
+          "apply for",
+          "look after"
+        ],
+        "answer": "wait for",
+        "explanation": "await는 타동사로 wait for와 같은 뜻이다(await 뒤에 for를 쓰지 않는다)."
+      },
+      {
+        "qid": "16e5196c-7682-4424-b8ea-d9a55561b4ea",
+        "type": "mc",
+        "q": "Which of the following is NOT listed among the Volunteer Responsibilities?",
+        "choices": [
+          "Exercising dogs on regular walks",
+          "Sanitizing cages and feeding bowls",
+          "Socializing with cats through play",
+          "Grooming and bathing dogs",
+          "Photographing animals for the website"
+        ],
+        "answer": "Grooming and bathing dogs",
+        "explanation": "털 손질·목욕은 업무 목록에 없다."
+      },
+      {
+        "qid": "300a5c41-c8ad-42dc-a79c-1d24c20ab073",
+        "type": "mc",
+        "q": "In \"Sanitizing cages and feeding bowls,\" 'Sanitizing' is closest in meaning to ____.",
+        "choices": [
+          "painting in bright colors",
+          "repairing broken parts",
+          "filling with fresh food",
+          "moving to another room",
+          "cleaning thoroughly to remove germs"
+        ],
+        "answer": "cleaning thoroughly to remove germs",
+        "explanation": "sanitize = 소독하다, 위생 처리하다."
+      },
+      {
+        "qid": "ce465b51-9397-4b94-8309-295be91b8e41",
+        "type": "mc",
+        "q": "In the notice, 'mandatory' is closest in meaning to ____.",
+        "choices": [
+          "required",
+          "optional",
+          "expensive",
+          "enjoyable",
+          "occasional"
+        ],
+        "answer": "required",
+        "explanation": "mandatory = 의무적인, 필수의(required)."
+      },
+      {
+        "qid": "4d031196-4f11-4a69-b51c-88f5c6c3c486",
+        "type": "mc",
+        "q": "According to the notice, what must all volunteers do prior to commencing any activities?",
+        "choices": [
+          "Adopt at least one animal from the facility",
+          "Attend a mandatory one-hour orientation session",
+          "Submit a recommendation from a teacher",
+          "Visit the facility on two weekdays",
+          "Pay a fee for their volunteer certificates"
+        ],
+        "answer": "Attend a mandatory one-hour orientation session",
+        "explanation": "'Prior to commencing any activities, all volunteers are required to attend a mandatory one-hour orientation session.'"
+      },
+      {
+        "qid": "50b2404e-72ce-4c28-953f-b880d90fcf57",
+        "type": "mc",
+        "q": "Based on the Eligibility section, which applicant may volunteer without being accompanied by an adult?",
+        "choices": [
+          "A 13-year-old middle school student",
+          "A 15-year-old middle school student",
+          "A 17-year-old high school student",
+          "A 14-year-old middle school student",
+          "A 12-year-old elementary school student"
+        ],
+        "answer": "A 17-year-old high school student",
+        "explanation": "14세 이상이어야 하고, 16세 미만은 부모나 법적 보호자와 동반해야 한다. 17세만 혼자 가능하다."
+      },
+      {
+        "qid": "ec51d33d-347e-4bc1-b018-ce3c0a499cb4",
+        "type": "mc",
+        "q": "Which volunteer meets the shelter's expectation for the number of visits?",
+        "choices": [
+          "Minho, who comes once at the start of each month",
+          "Hana, who comes on weekday evenings",
+          "Tom, who comes once every two months",
+          "Jisu, who comes every other Saturday, about twice a month",
+          "Yuna, who comes only during summer vacation"
+        ],
+        "answer": "Jisu, who comes every other Saturday, about twice a month",
+        "explanation": "'commit to a minimum of two visits per month' — 한 달에 최소 두 번 와야 한다."
+      },
+      {
+        "qid": "6dc0b66d-3b68-4e35-8bd2-4779c982b3e1",
+        "type": "mc",
+        "q": "A volunteer visits the shelter three times a month for three months. How many hours of volunteer service will be recognized in total?",
+        "choices": [
+          "9 hours",
+          "18 hours",
+          "24 hours",
+          "36 hours",
+          "27 hours"
+        ],
+        "answer": "27 hours",
+        "explanation": "3회 × 3개월 = 9회, 9회 × 3시간 = 27시간."
+      },
+      {
+        "qid": "0e9898c8-63f8-4f8d-aa17-04ee06dc0d6f",
+        "type": "mc",
+        "q": "What does \"no later than October 31\" mean in the notice?",
+        "choices": [
+          "By October 31 at the latest",
+          "After October 31",
+          "Exactly on October 31",
+          "From October 31 onward",
+          "Not before October 31"
+        ],
+        "answer": "By October 31 at the latest",
+        "explanation": "no later than = 늦어도 ~까지."
+      },
+      {
+        "qid": "9f51a199-0546-46b4-a09b-4a1a23dabcc7",
+        "type": "mc",
+        "q": "Which has the same meaning as \"Should you have any inquiries, please contact us\"?",
+        "choices": [
+          "You should have some inquiries before contacting us.",
+          "If you have any inquiries, please contact us.",
+          "Because you have inquiries, you must contact us.",
+          "Although you have inquiries, please contact us.",
+          "Unless you have inquiries, please contact us."
+        ],
+        "answer": "If you have any inquiries, please contact us.",
+        "explanation": "가정법 도치: If you should have ~ → Should you have ~. '문의 사항이 있으시면'이라는 뜻이다."
+      },
+      {
+        "qid": "f50c11da-8240-4953-8f28-a5021de7741d",
+        "type": "mc",
+        "q": "In \"60 dogs and 25 cats, all of which have been abandoned or have gone astray,\" what does 'which' refer to?",
+        "choices": [
+          "Our facility",
+          "The student volunteers",
+          "The 60 dogs and 25 cats",
+          "The permanent homes",
+          "The local community"
+        ],
+        "answer": "The 60 dogs and 25 cats",
+        "explanation": "'all of which'의 which는 앞의 60 dogs and 25 cats를 가리킨다(계속적 용법)."
+      },
+      {
+        "qid": "504164ce-c389-4fb4-b5e8-83462ba4c597",
+        "type": "mc",
+        "q": "In \"comfortable attire that you would not mind getting soiled,\" 'soiled' is closest in meaning to ____.",
+        "choices": [
+          "torn",
+          "wet",
+          "expensive",
+          "dirty",
+          "folded"
+        ],
+        "answer": "dirty",
+        "explanation": "soiled = 더러워진(dirty)."
+      },
+      {
+        "qid": "5843dd07-ae89-45eb-92ca-b0924b84068c",
+        "type": "mc",
+        "q": "Which of the following is NOT true according to the notice?",
+        "choices": [
+          "The facility cares for approximately 85 animals in total.",
+          "Applicants must apply through an online form.",
+          "Each visit is recognized as three hours of service.",
+          "Volunteer work takes place on weekend mornings.",
+          "The orientation session is optional for applicants aged 16 or above."
+        ],
+        "answer": "The orientation session is optional for applicants aged 16 or above.",
+        "explanation": "오리엔테이션은 모든 봉사자에게 의무(mandatory)이다."
+      },
+      {
+        "qid": "b8fc5d30-015b-422d-8e19-dd906fa1fc9c",
+        "type": "mc",
+        "q": "Why is 'commencing' used in \"Prior to commencing any activities\"?",
+        "choices": [
+          "Because 'to' in 'prior to' is a preposition, so a gerund follows it",
+          "Because 'prior' is a verb that takes an -ing object",
+          "Because it is a present participle modifying 'activities'",
+          "Because the sentence is in the progressive tense",
+          "Because a to-infinitive cannot be used in formal writing"
+        ],
+        "answer": "Because 'to' in 'prior to' is a preposition, so a gerund follows it",
+        "explanation": "prior to의 to는 전치사이므로 뒤에 동명사가 온다 (look forward to -ing와 같은 원리)."
+      },
+      {
+        "qid": "ff0c2a94-2b46-4eb5-a718-c9a2105d6fa0",
+        "type": "order",
+        "items": [
+          "Be issued a certificate recognizing three hours of service.",
+          "Arrive at the facility on a weekend at 10:00 a.m.",
+          "Submit the online application form no later than October 31.",
+          "Exercise dogs and socialize with cats for three hours.",
+          "Attend the mandatory one-hour orientation session."
+        ],
+        "answer": [
+          "Submit the online application form no later than October 31.",
+          "Attend the mandatory one-hour orientation session.",
+          "Arrive at the facility on a weekend at 10:00 a.m.",
+          "Exercise dogs and socialize with cats for three hours.",
+          "Be issued a certificate recognizing three hours of service."
+        ]
+      },
+      {
+        "qid": "9a1d4dca-c477-42cf-925d-9c57a608b61f",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "tangible",
+            "meaning": "실질적인"
+          },
+          {
+            "word": "facility",
+            "meaning": "시설"
+          },
+          {
+            "word": "astray",
+            "meaning": "길을 잃은"
+          },
+          {
+            "word": "sanitize",
+            "meaning": "소독하다"
+          },
+          {
+            "word": "eligibility",
+            "meaning": "자격"
+          },
+          {
+            "word": "mandatory",
+            "meaning": "의무적인"
+          },
+          {
+            "word": "attire",
+            "meaning": "복장"
+          },
+          {
+            "word": "soiled",
+            "meaning": "더러워진"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "c1eea568-efd8-48e5-b745-de1aa3e90dbb",
+        "q": "Summarize the notice in three English sentences: (1) why volunteers are needed, (2) the main responsibilities, and (3) the eligibility and application process.",
+        "wordLimit": 80,
+        "sampleAnswer": "Happy Tails Animal Shelter needs student volunteers to care for about 85 abandoned or lost animals until they are adopted. Volunteers will walk dogs, clean cages and bowls, play with cats, and take photos for the adoption website. Applicants must be at least 14, attend a one-hour orientation, and apply online by October 31.",
+        "rubric": "① 필요 이유 ② 업무 ③ 자격·신청 방법 ④ 영어 3문장, 정확성"
+      },
+      {
+        "qid": "8191797c-0582-4980-bff2-4e646851103d",
+        "q": "우리말로 쓰시오: Eligibility에 나온 자격 조건 세 가지를 쓰고, 13살·15살·17살 학생이 각각 봉사할 수 있는지와 그 이유를 쓰시오.",
+        "wordLimit": 100,
+        "sampleAnswer": "조건: ① 14세 이상 ② 16세 미만은 부모나 법적 보호자 동반 ③ 활동 전 1시간 의무 오리엔테이션 참석. 13살은 14세 미만이라 봉사할 수 없다. 15살은 부모나 보호자와 함께 오면 할 수 있다. 17살은 혼자서도 할 수 있다(오리엔테이션은 모두 필수).",
+        "rubric": "① 조건 3가지 ② 13살 불가 ③ 15살 보호자 동반 시 가능 ④ 17살 단독 가능",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "d3d7d0fb-d8af-440d-99fa-1711b2cffc55",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '어떤 활동이든 시작하기 전에, 모든 봉사자들은 오리엔테이션에 참석해야 한다.' <조건> prior to와 be required to를 사용할 것",
+        "wordLimit": 16,
+        "sampleAnswer": "Prior to commencing any activities, all volunteers are required to attend an orientation session.",
+        "rubric": "① Prior to + 동명사(commencing/starting) ② are required to attend ③ orientation (session) ④ 의미 일치"
+      },
+      {
+        "qid": "9f29140c-a316-4819-a37f-24c621f42325",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '문의 사항이 있으시면 저희에게 연락해 주세요.' <조건> if를 쓰지 말고 Should로 시작하는 도치 구문을 쓸 것",
+        "wordLimit": 10,
+        "sampleAnswer": "Should you have any inquiries, please contact us.",
+        "rubric": "① Should you have (도치) ② any inquiries(questions) ③ please contact us ④ if 미사용"
+      },
+      {
+        "qid": "78a37e32-4fcc-4cc9-ab40-82a532318b23",
+        "q": "Some people say that giving volunteer hours certificates makes students volunteer for the wrong reasons. Do you agree? Write your opinion in English with two reasons.",
+        "wordLimit": 90,
+        "sampleAnswer": "I partly disagree. First, certificates can motivate students to try volunteering for the first time, and many of them discover that they truly enjoy helping animals. Second, the shelter requires volunteers to visit at least twice a month, so only students who really care will continue. However, schools should also teach students the real meaning of volunteering.",
+        "rubric": "① 입장 명확 ② 근거 2개 ③ 연결어(First, Second, However 등) ④ 영어 문장의 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "passionate about",
+        "surface": "passionate about",
+        "pos": "숙",
+        "meaning": "~에 열정적인",
+        "sentence": "Are you passionate about animals?"
+      },
+      {
+        "word": "aspire to",
+        "surface": "aspire to",
+        "pos": "숙",
+        "meaning": "~하기를 열망하다",
+        "sentence": "Do you aspire to make a tangible difference in your local community?"
+      },
+      {
+        "word": "tangible",
+        "surface": "tangible",
+        "pos": "형",
+        "meaning": "실질적인, 눈에 보이는",
+        "sentence": "Do you aspire to make a tangible difference in your local community?"
+      },
+      {
+        "word": "dedicated",
+        "surface": "dedicated",
+        "pos": "형",
+        "meaning": "헌신적인, 전념하는",
+        "sentence": "Happy Tails Animal Shelter is currently recruiting dedicated student volunteers!"
+      },
+      {
+        "word": "facility",
+        "surface": "facility",
+        "pos": "명",
+        "meaning": "시설",
+        "sentence": "Our facility houses approximately 60 dogs and 25 cats, all of which have been abandoned or have gone astray."
+      },
+      {
+        "word": "house",
+        "surface": "houses",
+        "pos": "동",
+        "meaning": "수용하다, 거처를 제공하다",
+        "sentence": "Our facility houses approximately 60 dogs and 25 cats, all of which have been abandoned or have gone astray."
+      },
+      {
+        "word": "sanitize",
+        "surface": "Sanitizing",
+        "pos": "동",
+        "meaning": "소독하다, 위생 처리하다",
+        "sentence": "- Sanitizing cages and feeding bowls"
+      },
+      {
+        "word": "socialize",
+        "surface": "Socializing",
+        "pos": "동",
+        "meaning": "어울리다, 교감하다",
+        "sentence": "- Socializing with cats through play"
+      },
+      {
+        "word": "eligibility",
+        "surface": "Eligibility",
+        "pos": "명",
+        "meaning": "자격, 적격성",
+        "sentence": "Eligibility"
+      },
+      {
+        "word": "be accompanied by",
+        "surface": "accompanied by",
+        "pos": "숙",
+        "meaning": "~와 동반되다, ~이 함께하다",
+        "sentence": "- Those under 16 must be accompanied by a parent or legal guardian."
+      },
+      {
+        "word": "mandatory",
+        "surface": "mandatory",
+        "pos": "형",
+        "meaning": "의무적인, 필수의",
+        "sentence": "- Prior to commencing any activities, all volunteers are required to attend a mandatory one-hour orientation session."
+      },
+      {
+        "word": "orientation",
+        "surface": "orientation",
+        "pos": "명",
+        "meaning": "오리엔테이션, 사전 교육",
+        "sentence": "- Prior to commencing any activities, all volunteers are required to attend a mandatory one-hour orientation session."
+      },
+      {
+        "word": "issue",
+        "surface": "issued",
+        "pos": "동",
+        "meaning": "발급하다, 지급하다",
+        "sentence": "Upon completion of each visit, volunteers will be issued official certificates recognizing three hours of volunteer service."
+      },
+      {
+        "word": "no later than",
+        "surface": "no later than",
+        "pos": "숙",
+        "meaning": "늦어도 ~까지",
+        "sentence": "To apply, submit the online application form on our website no later than October 31."
+      },
+      {
+        "word": "attire",
+        "surface": "attire",
+        "pos": "명",
+        "meaning": "복장, 옷차림",
+        "sentence": "Note: We recommend wearing comfortable attire that you would not mind getting soiled!"
+      },
+      {
+        "word": "soiled",
+        "surface": "soiled",
+        "pos": "형",
+        "meaning": "더러워진",
+        "sentence": "Note: We recommend wearing comfortable attire that you would not mind getting soiled!"
+      }
+    ]
+  }
+}
