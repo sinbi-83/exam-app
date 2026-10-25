@@ -1,0 +1,2055 @@
+{
+  "school": {
+    "tagged_body": "The Kimchi Notebook\n\nEvery year on the last Saturday of November, Yerin's {{v:whole}} family met at her grandmother's house for {{v:gimjang}}. Gimjang is the day {{g:of making kimchi|전치사 of + 동명사: ~하는 (날)}} for winter.\n\nThis year, {{g:there were 50 heads of cabbage|there were + 복수 명사: ~이 있었다 (head of cabbage: 배추 한 포기)}} in the {{v:yard}}. Yerin {{v:sighed}}. \"Grandma, {{g:why don't we just buy|Why don't we + 동사원형?: 우리 ~하는 게 어때? (제안)}} kimchi at the store? It's {{g:so much easier|much + 비교급: 훨씬 더 ~한 (비교급 강조)}}.\"\n\nHer grandmother smiled, but she didn't answer. She just {{g:gave Yerin a pair of rubber gloves|4형식: give + 간접목적어(사람) + 직접목적어(사물)}}.\n\nAll morning, they {{v:salted}} {{v:cabbage}}. They also {{v:mixed}} red pepper {{v:powder}} with {{v:garlic}}, {{v:ginger}}, and fish {{v:sauce}}. By lunchtime, Yerin's {{v:back}} hurt. She {{g:stopped complaining|stop + -ing: ~하던 것을 멈추다}}, but only because she was {{g:too tired to talk|too + 형용사 + to부정사: 너무 ~해서 …할 수 없다}}.\n\nThen her grandmother {{g:began to put|begin + to부정사: ~하기 시작하다}} the kimchi into boxes. Three boxes were for three {{v:neighbors}}. They lived {{v:alone}}. Five boxes were for the children's {{v:center}} down the street.\n\n\"I make kimchi like this every year. I started 50 years ago,\" her grandmother said. \"My mother {{g:used to do|used to + 동사원형: (과거에) ~하곤 했다}} the same. {{t:Gimjang is not just about kimchi. It's about sharing}}.\"\n\nThat night, Yerin opened a new {{v:notebook}}. She {{v:wrote down}} every {{v:step}} of her grandmother's {{v:recipe}}. On the first page, she wrote, \"{{t:Grandma's Kimchi – for sharing}}.\"",
+    "tags": {
+      "vocab": [
+        "whole",
+        "gimjang",
+        "yard",
+        "sigh",
+        "salt",
+        "cabbage",
+        "mix",
+        "powder",
+        "garlic",
+        "ginger",
+        "sauce",
+        "back",
+        "neighbor",
+        "alone",
+        "center",
+        "notebook",
+        "write down",
+        "step",
+        "recipe"
+      ],
+      "grammar": [
+        "전치사 + 동명사",
+        "there were + 복수 명사",
+        "Why don't we ~?",
+        "much + 비교급",
+        "4형식(give + 간접목적어 + 직접목적어)",
+        "stop + -ing",
+        "too + 형용사 + to부정사",
+        "begin + to부정사",
+        "used to + 동사원형"
+      ],
+      "topic": [
+        "김장과 나눔",
+        "세대를 잇는 전통",
+        "이야기 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "513d92a7-2251-4c4e-aa48-62b4a42b8945",
+        "type": "mc",
+        "q": "What is the story mainly about?",
+        "choices": [
+          "A girl who opens a kimchi store",
+          "A girl who learns the true meaning of gimjang",
+          "A family that buys kimchi at the store",
+          "A grandmother who stops making kimchi",
+          "A children's center that makes kimchi"
+        ],
+        "answer": "A girl who learns the true meaning of gimjang",
+        "explanation": "김장을 귀찮아하던 예린이가 김장의 진짜 의미(나눔)를 알게 되는 이야기이다."
+      },
+      {
+        "qid": "157019e8-8b60-4748-a968-1b57591af870",
+        "type": "mc",
+        "q": "When did Yerin's family meet for gimjang?",
+        "choices": [
+          "On the first Saturday of November",
+          "On the last Sunday of November",
+          "On the last Saturday of December",
+          "On the last Saturday of November",
+          "On every Saturday in winter"
+        ],
+        "answer": "On the last Saturday of November",
+        "explanation": "'Every year on the last Saturday of November'"
+      },
+      {
+        "qid": "697757bf-1b56-4ad1-90c6-44f1e2e301e4",
+        "type": "mc",
+        "q": "What is gimjang?",
+        "choices": [
+          "The day of making kimchi for winter",
+          "A kind of kimchi store",
+          "A winter trip with family",
+          "A cooking contest",
+          "Grandma's birthday party"
+        ],
+        "answer": "The day of making kimchi for winter",
+        "explanation": "'Gimjang is the day of making kimchi for winter.'"
+      },
+      {
+        "qid": "87b0c60d-f855-4292-89e7-618c27603019",
+        "type": "mc",
+        "q": "How many heads of cabbage were in the yard?",
+        "choices": [
+          "3",
+          "5",
+          "8",
+          "15",
+          "50"
+        ],
+        "answer": "50",
+        "explanation": "'there were 50 heads of cabbage in the yard.'"
+      },
+      {
+        "qid": "3fb0ce77-9d22-40a4-8612-59db9360e4ea",
+        "type": "mc",
+        "q": "What did Yerin want to do at first?",
+        "choices": [
+          "Make more kimchi",
+          "Go home early",
+          "Buy kimchi at the store",
+          "Visit the children's center",
+          "Write a recipe book"
+        ],
+        "answer": "Buy kimchi at the store",
+        "explanation": "\"why don't we just buy kimchi at the store?\""
+      },
+      {
+        "qid": "38dcb7f2-68fc-4a01-bc49-3ed885e7b41a",
+        "type": "mc",
+        "q": "What did Grandma do after Yerin's question?",
+        "choices": [
+          "She got angry at Yerin.",
+          "She gave Yerin rubber gloves and did not answer.",
+          "She went to the store to buy kimchi.",
+          "She told Yerin a long story.",
+          "She sent Yerin home."
+        ],
+        "answer": "She gave Yerin rubber gloves and did not answer.",
+        "explanation": "'Her grandmother smiled, but she didn't answer. She just gave Yerin a pair of rubber gloves.'"
+      },
+      {
+        "qid": "04471559-5eca-4407-a463-b9d0e942cfbc",
+        "type": "mc",
+        "q": "Which was NOT used to make the kimchi?",
+        "choices": [
+          "Cabbage",
+          "Garlic",
+          "Ginger",
+          "Fish sauce",
+          "Sugar"
+        ],
+        "answer": "Sugar",
+        "explanation": "배추, 고춧가루, 마늘, 생강, 액젓이 나온다. 설탕은 나오지 않는다."
+      },
+      {
+        "qid": "00cf642b-7795-4fee-8490-617d57312d6b",
+        "type": "mc",
+        "q": "How was Yerin by lunchtime?",
+        "choices": [
+          "Her back hurt, and she was very tired.",
+          "She was full of energy.",
+          "She was angry at Grandma.",
+          "She was hungry but not tired.",
+          "She was sleeping."
+        ],
+        "answer": "Her back hurt, and she was very tired.",
+        "explanation": "'By lunchtime, Yerin's back hurt.' / 'she was too tired to talk.'"
+      },
+      {
+        "qid": "e2f546a3-a989-4350-85d1-4f27a7a49eed",
+        "type": "mc",
+        "q": "Why did Yerin stop complaining?",
+        "choices": [
+          "She started to like gimjang.",
+          "Grandma told her to stop.",
+          "She was eating lunch.",
+          "She was too tired to talk.",
+          "She went to the store."
+        ],
+        "answer": "She was too tired to talk.",
+        "explanation": "'She stopped complaining, but only because she was too tired to talk.'"
+      },
+      {
+        "qid": "b57c3a18-a73f-430a-b40d-9e97f3ba19ba",
+        "type": "mc",
+        "q": "Who were three of the boxes for?",
+        "choices": [
+          "Yerin's friends",
+          "The store",
+          "Three neighbors who lived alone",
+          "Yerin's teachers",
+          "The children's center"
+        ],
+        "answer": "Three neighbors who lived alone",
+        "explanation": "'Three boxes were for three neighbors. They lived alone.'"
+      },
+      {
+        "qid": "b7879f09-f766-4116-b960-2ffe24a2f924",
+        "type": "mc",
+        "q": "How many boxes were for the children's center?",
+        "choices": [
+          "Five",
+          "One",
+          "Three",
+          "Eight",
+          "Fifty"
+        ],
+        "answer": "Five",
+        "explanation": "'Five boxes were for the children's center down the street.'"
+      },
+      {
+        "qid": "ba6acc96-6495-4c33-bb9b-c08176795ae9",
+        "type": "mc",
+        "q": "How many boxes did Grandma give to other people in all?",
+        "choices": [
+          "Three",
+          "Five",
+          "Fifteen",
+          "Fifty",
+          "Eight"
+        ],
+        "answer": "Eight",
+        "explanation": "이웃 3상자 + 지역아동센터 5상자 = 8상자."
+      },
+      {
+        "qid": "0a36d0c8-b646-4934-8b09-925d5d97c3df",
+        "type": "mc",
+        "q": "How long has Grandma made kimchi like this?",
+        "choices": [
+          "For 5 years",
+          "For 50 years",
+          "Since last year",
+          "For 3 years",
+          "For 15 years"
+        ],
+        "answer": "For 50 years",
+        "explanation": "\"I started 50 years ago.\" → 50년 동안 해 왔다."
+      },
+      {
+        "qid": "37572e99-f222-4ec9-8d79-e18ff7d57f62",
+        "type": "mc",
+        "q": "What does \"My mother used to do the same\" mean?",
+        "choices": [
+          "Grandma's mother bought kimchi at the store.",
+          "Grandma's mother never made kimchi.",
+          "Yerin's mother makes kimchi now.",
+          "Grandma's mother also made kimchi and shared it.",
+          "Grandma's mother sold kimchi."
+        ],
+        "answer": "Grandma's mother also made kimchi and shared it.",
+        "explanation": "used to = (과거에) ~하곤 했다 → 할머니의 어머니도 똑같이 김치를 만들어 나누었다."
+      },
+      {
+        "qid": "7b5d7387-da32-43eb-a277-670a14907f10",
+        "type": "mc",
+        "q": "According to Grandma, what is gimjang about?",
+        "choices": [
+          "Money",
+          "Winning",
+          "Sharing",
+          "Shopping",
+          "Resting"
+        ],
+        "answer": "Sharing",
+        "explanation": "\"Gimjang is not just about kimchi. It's about sharing.\""
+      },
+      {
+        "qid": "f1f38121-4108-4206-8465-eb6035b62a3c",
+        "type": "mc",
+        "q": "What did Yerin do that night?",
+        "choices": [
+          "She bought kimchi at the store.",
+          "She went to the children's center.",
+          "She called her friends.",
+          "She went to bed early.",
+          "She wrote down Grandma's recipe in a new notebook."
+        ],
+        "answer": "She wrote down Grandma's recipe in a new notebook.",
+        "explanation": "'She wrote down every step of her grandmother's recipe.'"
+      },
+      {
+        "qid": "c0f22e50-0bc0-4f01-b071-67862ed8d0ce",
+        "type": "mc",
+        "q": "What does \"for sharing\" on the first page show?",
+        "choices": [
+          "Yerin now understands why Grandma makes kimchi.",
+          "Yerin wants to sell kimchi.",
+          "Yerin still wants to buy kimchi.",
+          "Yerin does not like kimchi.",
+          "Yerin will give the notebook away."
+        ],
+        "answer": "Yerin now understands why Grandma makes kimchi.",
+        "explanation": "할머니가 말한 나눔의 의미를 받아들여 공책 첫 장에 적었다."
+      },
+      {
+        "qid": "210a5856-6611-4268-8a32-759b8f57d433",
+        "type": "mc",
+        "q": "Which sentence is correct, like \"she was too tired to talk\"?",
+        "choices": [
+          "I was too sleepy watch the movie.",
+          "I was too sleepy to watched the movie.",
+          "I was too sleepy to watch the movie.",
+          "I was too sleepy watching the movie.",
+          "I was too sleepy to watching the movie."
+        ],
+        "answer": "I was too sleepy to watch the movie.",
+        "explanation": "too + 형용사 + to + 동사원형: 너무 ~해서 …할 수 없다."
+      },
+      {
+        "qid": "6ea5e7eb-9afa-4650-b13e-14663db9cfa9",
+        "type": "order",
+        "items": [
+          "They salted cabbage and mixed red pepper powder with garlic.",
+          "Yerin wrote down the recipe in a new notebook.",
+          "Yerin asked Grandma, \"Why don't we just buy kimchi?\"",
+          "Grandma put the kimchi into boxes for neighbors and the children's center.",
+          "Grandma gave Yerin a pair of rubber gloves."
+        ],
+        "answer": [
+          "Yerin asked Grandma, \"Why don't we just buy kimchi?\"",
+          "Grandma gave Yerin a pair of rubber gloves.",
+          "They salted cabbage and mixed red pepper powder with garlic.",
+          "Grandma put the kimchi into boxes for neighbors and the children's center.",
+          "Yerin wrote down the recipe in a new notebook."
+        ]
+      },
+      {
+        "qid": "ce89e2a5-8905-4006-9ff0-eaac5ef67339",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "cabbage",
+            "meaning": "배추"
+          },
+          {
+            "word": "sigh",
+            "meaning": "한숨 쉬다"
+          },
+          {
+            "word": "salt",
+            "meaning": "소금에 절이다"
+          },
+          {
+            "word": "garlic",
+            "meaning": "마늘"
+          },
+          {
+            "word": "ginger",
+            "meaning": "생강"
+          },
+          {
+            "word": "neighbor",
+            "meaning": "이웃"
+          },
+          {
+            "word": "recipe",
+            "meaning": "요리법"
+          },
+          {
+            "word": "step",
+            "meaning": "단계"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "cd8b28bd-de7c-47c7-9c33-579a27dd3111",
+        "q": "우리말로 쓰시오: 할머니가 김치 상자를 누구에게 몇 개씩 주었는지 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "혼자 사는 이웃 세 분에게 한 상자씩(3상자), 길 아래 지역아동센터에 다섯 상자를 주었다.",
+        "rubric": "① 혼자 사는 이웃 3명에게 1상자씩 ② 지역아동센터에 5상자",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "7682d10a-1263-439c-803a-d40add716ed7",
+        "q": "Why did Yerin want to buy kimchi at the store? Answer in English.",
+        "wordLimit": 12,
+        "sampleAnswer": "Because it is so much easier.",
+        "rubric": "① because ② (so) much easier ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "a8f37867-051e-4c48-9c16-2e021b3103d2",
+        "q": "우리말로 쓰시오: 할머니가 예린이의 질문에 대답하지 않고 고무장갑만 건네준 이유를 추측하여 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "말로 설명하기보다 예린이가 직접 김장을 해 보고 김치를 나누는 모습을 보면서 김장의 의미(나눔)를 스스로 깨닫기를 바랐기 때문이다.",
+        "rubric": "① 직접 해 보게 함 ② 스스로 깨닫기를 바람(나눔의 의미)",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "cede0eda-a237-4ec8-9d5b-fdd764780cf9",
+        "q": "다음 우리말을 영어로 쓰시오. '예린이는 너무 피곤해서 말을 할 수 없었다.' <조건> too ~ to를 사용할 것",
+        "wordLimit": 8,
+        "sampleAnswer": "Yerin was too tired to talk.",
+        "rubric": "① was too tired ② to talk ③ 의미 일치"
+      },
+      {
+        "qid": "ae8ff2ed-2580-4f4b-a477-e40ca2338145",
+        "q": "Have you ever shared something with other people? Write about it in 2 English sentences.",
+        "wordLimit": 30,
+        "sampleAnswer": "Yes, I shared my cookies with my classmates. They were happy, and I felt good, too.",
+        "rubric": "① 나눈 경험 ② 느낌이나 결과 ③ 완전한 영어 문장 2개"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "whole",
+        "surface": "whole",
+        "pos": "형",
+        "meaning": "전체의, 온",
+        "sentence": "Every year on the last Saturday of November, Yerin's whole family met at her grandmother's house for gimjang."
+      },
+      {
+        "word": "gimjang",
+        "surface": "gimjang",
+        "pos": "명",
+        "meaning": "김장",
+        "sentence": "Every year on the last Saturday of November, Yerin's whole family met at her grandmother's house for gimjang."
+      },
+      {
+        "word": "yard",
+        "surface": "yard",
+        "pos": "명",
+        "meaning": "마당",
+        "sentence": "This year, there were 50 heads of cabbage in the yard."
+      },
+      {
+        "word": "sigh",
+        "surface": "sighed",
+        "pos": "동",
+        "meaning": "한숨 쉬다",
+        "sentence": "Yerin sighed."
+      },
+      {
+        "word": "salt",
+        "surface": "salted",
+        "pos": "동",
+        "meaning": "소금에 절이다",
+        "sentence": "All morning, they salted cabbage."
+      },
+      {
+        "word": "cabbage",
+        "surface": "cabbage",
+        "pos": "명",
+        "meaning": "배추, 양배추",
+        "sentence": "This year, there were 50 heads of cabbage in the yard."
+      },
+      {
+        "word": "mix",
+        "surface": "mixed",
+        "pos": "동",
+        "meaning": "섞다",
+        "sentence": "They also mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "powder",
+        "surface": "powder",
+        "pos": "명",
+        "meaning": "가루 (red pepper powder: 고춧가루)",
+        "sentence": "They also mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "garlic",
+        "surface": "garlic",
+        "pos": "명",
+        "meaning": "마늘",
+        "sentence": "They also mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "ginger",
+        "surface": "ginger",
+        "pos": "명",
+        "meaning": "생강",
+        "sentence": "They also mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "sauce",
+        "surface": "sauce",
+        "pos": "명",
+        "meaning": "소스 (fish sauce: 액젓)",
+        "sentence": "They also mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "back",
+        "surface": "back",
+        "pos": "명",
+        "meaning": "등, 허리",
+        "sentence": "By lunchtime, Yerin's back hurt."
+      },
+      {
+        "word": "neighbor",
+        "surface": "neighbors",
+        "pos": "명",
+        "meaning": "이웃",
+        "sentence": "Three boxes were for three neighbors."
+      },
+      {
+        "word": "alone",
+        "surface": "alone",
+        "pos": "부",
+        "meaning": "혼자",
+        "sentence": "They lived alone."
+      },
+      {
+        "word": "center",
+        "surface": "center",
+        "pos": "명",
+        "meaning": "센터, 시설 (children's center: 지역아동센터)",
+        "sentence": "Five boxes were for the children's center down the street."
+      },
+      {
+        "word": "notebook",
+        "surface": "notebook",
+        "pos": "명",
+        "meaning": "공책",
+        "sentence": "The Kimchi Notebook"
+      },
+      {
+        "word": "write down",
+        "surface": "wrote down",
+        "pos": "숙",
+        "meaning": "적어 두다",
+        "sentence": "She wrote down every step of her grandmother's recipe."
+      },
+      {
+        "word": "step",
+        "surface": "step",
+        "pos": "명",
+        "meaning": "단계",
+        "sentence": "She wrote down every step of her grandmother's recipe."
+      },
+      {
+        "word": "recipe",
+        "surface": "recipe",
+        "pos": "명",
+        "meaning": "요리법, 레시피",
+        "sentence": "She wrote down every step of her grandmother's recipe."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "The Kimchi Notebook\n\nEvery year on the last Saturday of November, Yerin's {{v:whole}} family {{v:gathered}} at her grandmother's house for {{v:gimjang}}, {{g:the day of making kimchi for winter|동격: 콤마 뒤에서 앞의 gimjang을 설명 / 전치사 of + 동명사}}.\n\nThis year, there were 50 heads of {{v:cabbage}} {{g:waiting in the yard|현재분사 후치 수식: waiting ~ 이 cabbage를 꾸민다 (기다리고 있는)}}. Yerin {{v:sighed}}. \"Grandma, {{g:why don't we just buy|Why don't we + 동사원형?: 우리 ~하는 게 어때? (제안)}} kimchi at the store? It's {{g:so much easier|much + 비교급: 훨씬 더 ~한 (비교급 강조)}}.\"\n\nHer grandmother smiled but didn't answer. She just {{g:handed Yerin a pair of rubber gloves|4형식: hand + 간접목적어(사람) + 직접목적어(사물)}}.\n\nAll morning, they {{v:salted}} cabbage and {{v:mixed}} red pepper {{v:powder}} with {{v:garlic}}, {{v:ginger}}, and fish {{v:sauce}}. By lunchtime, Yerin's back was {{v:sore}}, and she {{g:had stopped complaining|과거완료 + stop + -ing: (점심때 이전에 이미) 불평하던 것을 멈췄었다}} only because she was {{g:too tired to talk|too + 형용사 + to부정사: 너무 ~해서 …할 수 없다}}.\n\nThen her grandmother {{g:began packing|begin + 동명사(= to부정사): ~하기 시작하다}} the kimchi into boxes. One box was for {{g:each of three neighbors|each of + 복수 명사: ~ 각각 (단수 취급)}} {{g:who lived alone|주격 관계대명사 who: 앞의 neighbors를 꾸민다}}, and five boxes were for the children's {{v:center}} {{v:down the street}}.\n\n\"{{g:I have made kimchi like this for 50 years|현재완료(계속): have + p.p. + for 기간 (~ 동안 계속 ~해 왔다)}},\" her grandmother said. \"My mother {{g:used to do|used to + 동사원형: (과거에) ~하곤 했다}} the same. {{t:Gimjang is not just about kimchi. It's about sharing}}.\"\n\nThat night, Yerin opened a new {{v:notebook}} and {{v:wrote down}} every {{v:step}} of her grandmother's {{v:recipe}}. On the first page, she wrote, \"{{t:Grandma's Kimchi – for sharing}}.\"",
+    "tags": {
+      "vocab": [
+        "whole",
+        "gather",
+        "gimjang",
+        "cabbage",
+        "sigh",
+        "salt",
+        "mix",
+        "powder",
+        "garlic",
+        "ginger",
+        "sauce",
+        "sore",
+        "center",
+        "down the street",
+        "notebook",
+        "write down",
+        "step",
+        "recipe"
+      ],
+      "grammar": [
+        "동격",
+        "현재분사 후치 수식",
+        "Why don't we ~?",
+        "much + 비교급",
+        "4형식(hand + 간접목적어 + 직접목적어)",
+        "과거완료 + stop + -ing",
+        "too + 형용사 + to부정사",
+        "begin + 동명사",
+        "each of + 복수 명사",
+        "주격 관계대명사 who",
+        "현재완료(계속)",
+        "used to + 동사원형"
+      ],
+      "topic": [
+        "김장과 나눔",
+        "세대를 잇는 전통",
+        "인물의 변화 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "c67d4ce9-cb17-482b-a1b7-25d8c0df2a29",
+        "type": "mc",
+        "q": "What is the main idea of the story?",
+        "choices": [
+          "Buying kimchi at the store is easier than making it.",
+          "Through gimjang, Yerin learns that making kimchi is about sharing with others.",
+          "Making kimchi is too hard for young people.",
+          "Yerin's grandmother wants to open a kimchi store.",
+          "Children's centers should make their own kimchi."
+        ],
+        "answer": "Through gimjang, Yerin learns that making kimchi is about sharing with others.",
+        "explanation": "김장은 김치를 만드는 일만이 아니라 나눔이라는 것을 예린이가 배운다."
+      },
+      {
+        "qid": "81913f7e-b008-4a3f-9ec1-b86c16215fd8",
+        "type": "mc",
+        "q": "What does 'the day of making kimchi for winter' do in the first sentence?",
+        "choices": [
+          "It tells where the family lives.",
+          "It shows how old Grandma is.",
+          "It gives the price of kimchi.",
+          "It explains what gimjang means.",
+          "It tells why Yerin was tired."
+        ],
+        "answer": "It explains what gimjang means.",
+        "explanation": "동격: 콤마 뒤 표현이 앞의 gimjang을 설명한다."
+      },
+      {
+        "qid": "c52bc7b0-008b-4364-8b5d-0e1bf0c0b73b",
+        "type": "mc",
+        "q": "How did Yerin feel about gimjang at the beginning?",
+        "choices": [
+          "unwilling",
+          "excited",
+          "proud",
+          "curious",
+          "thankful"
+        ],
+        "answer": "unwilling",
+        "explanation": "'Yerin sighed.' 그리고 가게에서 사자고 했다 → 내키지 않았다."
+      },
+      {
+        "qid": "86e6db03-6fcb-4bc6-9c88-4e21b004dad8",
+        "type": "mc",
+        "q": "When Yerin says, \"Why don't we just buy kimchi at the store?\", she is ____.",
+        "choices": [
+          "asking for directions",
+          "thanking her grandmother",
+          "saying sorry",
+          "giving an order",
+          "suggesting an easier way"
+        ],
+        "answer": "suggesting an easier way",
+        "explanation": "Why don't we ~? = 우리 ~하는 게 어때? (제안). 이유도 \"It's so much easier.\""
+      },
+      {
+        "qid": "76582653-6e42-4e7e-8309-e3e2bdb6436b",
+        "type": "mc",
+        "q": "Why did Grandma most likely not answer Yerin's question?",
+        "choices": [
+          "She did not hear the question.",
+          "She was angry at Yerin.",
+          "She wanted Yerin to learn the meaning of gimjang by doing it herself.",
+          "She did not know the answer.",
+          "She also wanted to buy kimchi."
+        ],
+        "answer": "She wanted Yerin to learn the meaning of gimjang by doing it herself.",
+        "explanation": "대답 대신 고무장갑을 건넸다 → 직접 해 보며 깨닫게 하려 했다."
+      },
+      {
+        "qid": "dc02cef6-4d61-44de-aeaf-205024f65782",
+        "type": "mc",
+        "q": "In the passage, 'sore' is closest in meaning to ____.",
+        "choices": [
+          "strong",
+          "painful",
+          "wet",
+          "straight",
+          "warm"
+        ],
+        "answer": "painful",
+        "explanation": "sore = 아픈, 쑤시는(painful)."
+      },
+      {
+        "qid": "956813ef-619f-4612-9e35-6eb649feca50",
+        "type": "mc",
+        "q": "What does 'she had stopped complaining only because she was too tired to talk' mean?",
+        "choices": [
+          "Yerin began to enjoy the work very much.",
+          "Yerin complained all day long.",
+          "Grandma told Yerin to stop complaining.",
+          "Yerin was too happy to talk.",
+          "Yerin stopped complaining because she was very tired, not because she liked the work."
+        ],
+        "answer": "Yerin stopped complaining because she was very tired, not because she liked the work.",
+        "explanation": "only because = 오직 ~ 때문에 → 일이 좋아져서가 아니라 너무 지쳐서였다."
+      },
+      {
+        "qid": "865215b5-84bb-4fba-950c-51ad5aa8e6bf",
+        "type": "mc",
+        "q": "Who received the kimchi boxes?",
+        "choices": [
+          "Three neighbors who lived alone and a children's center",
+          "Yerin's friends and teachers",
+          "A kimchi store down the street",
+          "Only the family members",
+          "Fifty neighbors in the town"
+        ],
+        "answer": "Three neighbors who lived alone and a children's center",
+        "explanation": "'One box was for each of three neighbors who lived alone, and five boxes were for the children's center.'"
+      },
+      {
+        "qid": "2ce17e65-28d8-4e6a-a7bd-ac9a8df03194",
+        "type": "mc",
+        "q": "How many boxes did Grandma pack for other people?",
+        "choices": [
+          "Three",
+          "Five",
+          "Fifty",
+          "Eight",
+          "Fifteen"
+        ],
+        "answer": "Eight",
+        "explanation": "이웃 3명에게 1상자씩(3) + 아동센터 5상자 = 8상자."
+      },
+      {
+        "qid": "19832eb7-e639-44ed-901b-eeb3af828109",
+        "type": "mc",
+        "q": "What does \"I have made kimchi like this for 50 years\" show?",
+        "choices": [
+          "Grandma started making kimchi last year.",
+          "Grandma will stop making kimchi soon.",
+          "Grandma has made and shared kimchi every year for a long time.",
+          "It took 50 hours to make the kimchi.",
+          "Grandma has made 50 boxes of kimchi."
+        ],
+        "answer": "Grandma has made and shared kimchi every year for a long time.",
+        "explanation": "현재완료(계속) + for 50 years: 50년 동안 계속 해 왔다."
+      },
+      {
+        "qid": "bd612bca-8a21-4030-9ed4-53872cf15ac3",
+        "type": "mc",
+        "q": "What does \"My mother used to do the same\" suggest?",
+        "choices": [
+          "Sharing kimchi is a family tradition passed down from parent to child.",
+          "Grandma's mother did not like kimchi.",
+          "Grandma learned the recipe from a book.",
+          "Grandma's mother bought kimchi every year.",
+          "Yerin's mother will make kimchi next year."
+        ],
+        "answer": "Sharing kimchi is a family tradition passed down from parent to child.",
+        "explanation": "할머니의 어머니도 똑같이 했다 → 대대로 이어진 전통이다."
+      },
+      {
+        "qid": "b1168449-3d4a-4101-842a-7e4a8bf7ff74",
+        "type": "mc",
+        "q": "What does Grandma mean by \"It's about sharing\"?",
+        "choices": [
+          "The real purpose of gimjang is to make the most delicious kimchi.",
+          "Gimjang is a good way to make money.",
+          "Gimjang helps people save time.",
+          "Gimjang is only for family members.",
+          "The real purpose of gimjang is to share with others."
+        ],
+        "answer": "The real purpose of gimjang is to share with others.",
+        "explanation": "김장의 진짜 의미는 이웃과 나누는 것이다."
+      },
+      {
+        "qid": "8f092b25-6588-472b-8edf-f02c8d739ce0",
+        "type": "mc",
+        "q": "How did Yerin's attitude change in the story?",
+        "choices": [
+          "From loving gimjang to hating it",
+          "From thinking gimjang was hard work to understanding its value of sharing",
+          "From sharing kimchi to selling kimchi",
+          "From making kimchi to buying kimchi",
+          "From being tired to being angry"
+        ],
+        "answer": "From thinking gimjang was hard work to understanding its value of sharing",
+        "explanation": "처음엔 한숨 쉬고 사자고 했지만, 마지막엔 \"for sharing\"이라고 적었다."
+      },
+      {
+        "qid": "ff4345fa-aa19-462c-a095-55583b1a5254",
+        "type": "mc",
+        "q": "What does the title \"The Kimchi Notebook\" refer to?",
+        "choices": [
+          "A book sold at the kimchi store",
+          "Grandma's old diary",
+          "The children's center's list",
+          "The notebook where Yerin wrote down Grandma's recipe",
+          "A school cooking textbook"
+        ],
+        "answer": "The notebook where Yerin wrote down Grandma's recipe",
+        "explanation": "'Yerin opened a new notebook and wrote down every step of her grandmother's recipe.'"
+      },
+      {
+        "qid": "1beb26fe-29ff-406f-8b9f-c0b9876db487",
+        "type": "mc",
+        "q": "Which sentence is correct, like \"I have made kimchi like this for 50 years\"?",
+        "choices": [
+          "I live in Daegu for ten years.",
+          "I have lived in Daegu ten years ago.",
+          "I have lived in Daegu for ten years.",
+          "I lived in Daegu since ten years.",
+          "I have live in Daegu for ten years."
+        ],
+        "answer": "I have lived in Daegu for ten years.",
+        "explanation": "현재완료(계속): have + p.p. + for 기간. ago는 현재완료와 함께 쓸 수 없다."
+      },
+      {
+        "qid": "4128cc98-6b76-476a-855f-b4c052ef4722",
+        "type": "mc",
+        "q": "Which sentence is correct, like \"My mother used to do the same\"?",
+        "choices": [
+          "My father used to plays soccer every weekend.",
+          "My father used to playing soccer every weekend.",
+          "My father use to played soccer every weekend.",
+          "My father used to played soccer every weekend.",
+          "My father used to play soccer every weekend."
+        ],
+        "answer": "My father used to play soccer every weekend.",
+        "explanation": "used to + 동사원형: (과거에) ~하곤 했다."
+      },
+      {
+        "qid": "bf2f4069-b207-47c2-990c-1e7a161dc393",
+        "type": "mc",
+        "q": "Which 'who' is used in the same way as in 'three neighbors who lived alone'?",
+        "choices": [
+          "I have a friend who speaks Chinese well.",
+          "Who is that girl over there?",
+          "I don't know who he is.",
+          "Who made this cake?",
+          "Tell me who called you."
+        ],
+        "answer": "I have a friend who speaks Chinese well.",
+        "explanation": "주격 관계대명사 who: 앞의 명사(a friend)를 꾸민다. 나머지는 의문사 who."
+      },
+      {
+        "qid": "7b81a35c-f688-4e2b-a707-c520405c8aef",
+        "type": "mc",
+        "q": "Which is NOT true according to the story?",
+        "choices": [
+          "There were 50 heads of cabbage in the yard.",
+          "Grandma handed Yerin a pair of rubber gloves.",
+          "Yerin's grandmother bought kimchi at the store.",
+          "Five boxes were for the children's center.",
+          "Yerin wrote down her grandmother's recipe."
+        ],
+        "answer": "Yerin's grandmother bought kimchi at the store.",
+        "explanation": "할머니는 가게에서 사지 않고 직접 김치를 만들었다."
+      },
+      {
+        "qid": "a1e3d92e-7b5c-4173-b483-910807d2cf88",
+        "type": "order",
+        "items": [
+          "Grandma packed boxes for three neighbors and the children's center.",
+          "Yerin sighed and asked why they did not just buy kimchi.",
+          "Yerin wrote \"for sharing\" on the first page of her notebook.",
+          "By lunchtime, Yerin was too tired to talk.",
+          "Grandma smiled and handed Yerin rubber gloves."
+        ],
+        "answer": [
+          "Yerin sighed and asked why they did not just buy kimchi.",
+          "Grandma smiled and handed Yerin rubber gloves.",
+          "By lunchtime, Yerin was too tired to talk.",
+          "Grandma packed boxes for three neighbors and the children's center.",
+          "Yerin wrote \"for sharing\" on the first page of her notebook."
+        ]
+      },
+      {
+        "qid": "3ea8e23e-4ca9-49a0-8340-50ad8dae2f94",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "gather",
+            "meaning": "모이다"
+          },
+          {
+            "word": "sigh",
+            "meaning": "한숨 쉬다"
+          },
+          {
+            "word": "salt",
+            "meaning": "소금에 절이다"
+          },
+          {
+            "word": "sore",
+            "meaning": "아픈, 쑤시는"
+          },
+          {
+            "word": "complain",
+            "meaning": "불평하다"
+          },
+          {
+            "word": "neighbor",
+            "meaning": "이웃"
+          },
+          {
+            "word": "recipe",
+            "meaning": "요리법"
+          },
+          {
+            "word": "share",
+            "meaning": "나누다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "daca9b56-65f3-48a4-b4b6-fd7f42956926",
+        "q": "Summarize the story in two English sentences: (1) how Yerin felt about gimjang at first and (2) what she learned.",
+        "wordLimit": 50,
+        "sampleAnswer": "At first, Yerin did not want to make kimchi because buying it at the store was much easier. After she saw her grandmother share the kimchi with neighbors and a children's center, she learned that gimjang is about sharing.",
+        "rubric": "① 처음 태도 ② 할머니의 나눔 ③ 배운 점(sharing) ④ 영어 2문장"
+      },
+      {
+        "qid": "843c5ec1-f47c-4f36-9498-f1379fc6b6ef",
+        "q": "우리말로 쓰시오: 할머니의 말 \"Gimjang is not just about kimchi. It's about sharing.\"의 의미를 쓰고, 이를 보여 주는 할머니의 행동을 이야기에서 찾아 쓰시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "김장은 김치를 만드는 일만이 아니라 다른 사람과 나누는 일이라는 뜻이다. 할머니는 만든 김치를 혼자 사는 이웃 세 분에게 한 상자씩, 지역아동센터에 다섯 상자를 나누어 주었다.",
+        "rubric": "① 의미(나눔) ② 행동 근거(이웃 3상자, 아동센터 5상자)",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "5c1684aa-be6a-40ca-afb3-914aa15239c5",
+        "q": "What did Yerin write on the first page of her notebook, and why? Answer in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "She wrote \"Grandma's Kimchi – for sharing\" because she learned that gimjang is about sharing.",
+        "rubric": "① 적은 내용 ② 이유(나눔을 배움) ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "13465364-5c26-4ddc-83d5-e6b62d28215b",
+        "q": "다음 우리말을 영어로 쓰시오. '나는 50년 동안 이렇게 김치를 만들어 왔다.' <조건> 현재완료와 for를 사용할 것",
+        "wordLimit": 12,
+        "sampleAnswer": "I have made kimchi like this for 50 years.",
+        "rubric": "① have made ② kimchi like this ③ for 50 years"
+      },
+      {
+        "qid": "d7a24db9-e485-4933-915b-a112a2eec463",
+        "q": "두 문장을 관계대명사 who를 사용하여 한 문장으로 쓰시오. 'One box was for each of three neighbors. They lived alone.'",
+        "wordLimit": 14,
+        "sampleAnswer": "One box was for each of three neighbors who lived alone.",
+        "rubric": "① who ② lived alone ③ 나머지 내용 일치"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "whole",
+        "surface": "whole",
+        "pos": "형",
+        "meaning": "전체의, 온",
+        "sentence": "Every year on the last Saturday of November, Yerin's whole family gathered at her grandmother's house for gimjang, the day of making kimchi for winter."
+      },
+      {
+        "word": "gather",
+        "surface": "gathered",
+        "pos": "동",
+        "meaning": "모이다",
+        "sentence": "Every year on the last Saturday of November, Yerin's whole family gathered at her grandmother's house for gimjang, the day of making kimchi for winter."
+      },
+      {
+        "word": "gimjang",
+        "surface": "gimjang",
+        "pos": "명",
+        "meaning": "김장",
+        "sentence": "Every year on the last Saturday of November, Yerin's whole family gathered at her grandmother's house for gimjang, the day of making kimchi for winter."
+      },
+      {
+        "word": "cabbage",
+        "surface": "cabbage",
+        "pos": "명",
+        "meaning": "배추, 양배추",
+        "sentence": "This year, there were 50 heads of cabbage waiting in the yard."
+      },
+      {
+        "word": "sigh",
+        "surface": "sighed",
+        "pos": "동",
+        "meaning": "한숨 쉬다",
+        "sentence": "Yerin sighed."
+      },
+      {
+        "word": "salt",
+        "surface": "salted",
+        "pos": "동",
+        "meaning": "소금에 절이다",
+        "sentence": "All morning, they salted cabbage and mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "mix",
+        "surface": "mixed",
+        "pos": "동",
+        "meaning": "섞다",
+        "sentence": "All morning, they salted cabbage and mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "powder",
+        "surface": "powder",
+        "pos": "명",
+        "meaning": "가루 (red pepper powder: 고춧가루)",
+        "sentence": "All morning, they salted cabbage and mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "garlic",
+        "surface": "garlic",
+        "pos": "명",
+        "meaning": "마늘",
+        "sentence": "All morning, they salted cabbage and mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "ginger",
+        "surface": "ginger",
+        "pos": "명",
+        "meaning": "생강",
+        "sentence": "All morning, they salted cabbage and mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "sauce",
+        "surface": "sauce",
+        "pos": "명",
+        "meaning": "소스 (fish sauce: 액젓)",
+        "sentence": "All morning, they salted cabbage and mixed red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "sore",
+        "surface": "sore",
+        "pos": "형",
+        "meaning": "아픈, 쑤시는",
+        "sentence": "By lunchtime, Yerin's back was sore, and she had stopped complaining only because she was too tired to talk."
+      },
+      {
+        "word": "center",
+        "surface": "center",
+        "pos": "명",
+        "meaning": "센터, 시설 (children's center: 지역아동센터)",
+        "sentence": "One box was for each of three neighbors who lived alone, and five boxes were for the children's center down the street."
+      },
+      {
+        "word": "down the street",
+        "surface": "down the street",
+        "pos": "숙",
+        "meaning": "길을 따라가면 (있는), 길 아래쪽에",
+        "sentence": "One box was for each of three neighbors who lived alone, and five boxes were for the children's center down the street."
+      },
+      {
+        "word": "notebook",
+        "surface": "notebook",
+        "pos": "명",
+        "meaning": "공책",
+        "sentence": "The Kimchi Notebook"
+      },
+      {
+        "word": "write down",
+        "surface": "wrote down",
+        "pos": "숙",
+        "meaning": "적어 두다",
+        "sentence": "That night, Yerin opened a new notebook and wrote down every step of her grandmother's recipe."
+      },
+      {
+        "word": "step",
+        "surface": "step",
+        "pos": "명",
+        "meaning": "단계",
+        "sentence": "That night, Yerin opened a new notebook and wrote down every step of her grandmother's recipe."
+      },
+      {
+        "word": "recipe",
+        "surface": "recipe",
+        "pos": "명",
+        "meaning": "요리법, 레시피",
+        "sentence": "That night, Yerin opened a new notebook and wrote down every step of her grandmother's recipe."
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "The Kimchi Notebook\n\nEvery year on the last Saturday of November, Yerin's {{v:entire}} family {{g:would gather|과거의 습관 would: ~하곤 했다}} at her grandmother's house for gimjang, the {{v:traditional}} day of making kimchi {{g:to last through the winter|to부정사 형용사적 용법: 겨울 내내 갈 (김치) (last: 지속되다, 버티다)}}.\n\nThis year, 50 heads of cabbage were {{v:piled up}} in the yard, {{g:waiting to be prepared|분사구문 + to부정사 수동형(to be p.p.): 손질되기를 기다리며}}. Yerin {{v:let out a sigh}}. \"Grandma, why don't we just buy kimchi at the store? It {{g:would be|would: (그렇게 하면) ~일 텐데 (가정의 의미)}} {{g:so much more|much + 비교급: 훨씬 더 ~한}} {{v:convenient}}.\"\n\nHer grandmother smiled but said nothing. {{v:Instead}}, she simply {{g:handed Yerin a pair of rubber gloves|4형식: hand + 간접목적어 + 직접목적어}}.\n\n{{v:Throughout}} the morning, they salted the cabbage and {{v:blended}} red pepper powder with garlic, ginger, and fish sauce. By lunchtime, Yerin's back was {{v:aching}}, and she {{g:had stopped complaining|과거완료 + stop + -ing: 불평하던 것을 이미 멈췄었다}} only because she was {{g:too exhausted to say a word|too + 형용사 + to부정사: 너무 ~해서 …할 수 없다}}.\n\nThen her grandmother started packing the kimchi into boxes. One box was {{v:set aside}} for each of the three neighbors {{g:who lived on their own|주격 관계대명사 who / on one's own: 혼자서}}, and five boxes {{g:were reserved|수동태: be + p.p. (~을 위해 따로 남겨지다)}} for the children's center down the street.\n\n\"{{g:I have made kimchi this way for 50 years|현재완료(계속): have + p.p. + for 기간}},\" her grandmother {{v:explained}}. \"My mother used to do {{v:exactly}} the same. Gimjang isn't {{v:merely}} about kimchi. {{t:It's about sharing}}.\"\n\nThat night, Yerin opened a {{v:brand-new}} notebook and carefully {{v:recorded}} every step of her grandmother's recipe. On the first page, she wrote, \"{{t:Grandma's Kimchi – for sharing}}.\"",
+    "tags": {
+      "vocab": [
+        "entire",
+        "traditional",
+        "pile up",
+        "let out a sigh",
+        "convenient",
+        "instead",
+        "throughout",
+        "blend",
+        "ache",
+        "set aside",
+        "explain",
+        "exactly",
+        "merely",
+        "brand-new",
+        "record"
+      ],
+      "grammar": [
+        "과거의 습관 would",
+        "to부정사 형용사적 용법",
+        "to부정사 수동형(to be p.p.)",
+        "가정의 would",
+        "much + 비교급",
+        "4형식",
+        "과거완료 + stop + -ing",
+        "too + 형용사 + to부정사",
+        "주격 관계대명사 who",
+        "수동태",
+        "현재완료(계속)"
+      ],
+      "topic": [
+        "김장과 나눔",
+        "세대를 잇는 전통",
+        "인물의 변화 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "c4e4806a-ae1b-494a-8655-8a1c9d874d7e",
+        "type": "mc",
+        "q": "Which of the following best expresses the theme of the story?",
+        "choices": [
+          "Old traditions should be replaced by more convenient modern ways.",
+          "A tradition can carry a meaning far beyond its practical purpose, such as caring for others.",
+          "Hard physical work is the most important part of any tradition.",
+          "Children should always obey their grandparents without asking questions.",
+          "Homemade kimchi always tastes better than store-bought kimchi."
+        ],
+        "answer": "A tradition can carry a meaning far beyond its practical purpose, such as caring for others.",
+        "explanation": "김장(전통)의 의미는 김치 자체가 아니라 나눔과 돌봄이다."
+      },
+      {
+        "qid": "8d6d4ac7-bb21-40da-839f-97281cda0d5b",
+        "type": "mc",
+        "q": "Which of the following would be the best title for the story?",
+        "choices": [
+          "How to Buy Kimchi Easily",
+          "The Hardest Saturday of the Year",
+          "A Grandmother's Secret Store",
+          "A Recipe for Sharing",
+          "Fifty Ways to Grow Cabbage"
+        ],
+        "answer": "A Recipe for Sharing",
+        "explanation": "예린이 적은 레시피의 제목이 \"for sharing\"이다."
+      },
+      {
+        "qid": "8361d813-595d-4cab-bd74-58e7181cbd80",
+        "type": "mc",
+        "q": "In the passage, 'convenient' is closest in meaning to ____.",
+        "choices": [
+          "easy and saving effort",
+          "expensive",
+          "delicious",
+          "healthy",
+          "traditional"
+        ],
+        "answer": "easy and saving effort",
+        "explanation": "convenient = 편리한, 수고를 덜어 주는."
+      },
+      {
+        "qid": "e5a5c686-d581-46a3-b234-b4d3cf0fe1f2",
+        "type": "mc",
+        "q": "In the passage, 'exhausted' is closest in meaning to ____.",
+        "choices": [
+          "very hungry",
+          "bored",
+          "excited",
+          "angry",
+          "extremely tired"
+        ],
+        "answer": "extremely tired",
+        "explanation": "exhausted = 기진맥진한."
+      },
+      {
+        "qid": "d2233309-ba36-4bcf-a254-c93b3857ddec",
+        "type": "mc",
+        "q": "In the passage, 'set aside' is closest in meaning to ____.",
+        "choices": [
+          "thrown away",
+          "sold",
+          "kept for a special purpose",
+          "opened",
+          "forgotten"
+        ],
+        "answer": "kept for a special purpose",
+        "explanation": "set aside = 따로 떼어 두다."
+      },
+      {
+        "qid": "5fafba8d-57a9-489d-95d6-a3356122fe03",
+        "type": "mc",
+        "q": "In the passage, 'merely' is closest in meaning to ____.",
+        "choices": [
+          "never",
+          "only",
+          "mainly",
+          "hardly",
+          "finally"
+        ],
+        "answer": "only",
+        "explanation": "merely = 단지, 그저(only)."
+      },
+      {
+        "qid": "ea650bbf-4900-4448-aa7e-62e4c42607d2",
+        "type": "mc",
+        "q": "Why does Grandma say nothing and simply hand Yerin rubber gloves?",
+        "choices": [
+          "She is too busy to listen to Yerin.",
+          "She agrees that buying kimchi is better.",
+          "She wants Yerin to clean the yard instead.",
+          "She is upset that Yerin does not like kimchi.",
+          "She wants Yerin to discover the answer through her own experience."
+        ],
+        "answer": "She wants Yerin to discover the answer through her own experience.",
+        "explanation": "말 대신 행동으로 → 예린이가 직접 경험하며 답을 찾게 한다."
+      },
+      {
+        "qid": "c1b57a04-f394-4923-a9a5-0630414c1a1c",
+        "type": "mc",
+        "q": "The phrase 'would gather' in the first sentence suggests that ____.",
+        "choices": [
+          "the family gathering was a regular yearly custom",
+          "the family gathered for the first time that year",
+          "the family did not want to gather",
+          "the gathering was canceled that year",
+          "only Yerin and her grandmother gathered"
+        ],
+        "answer": "the family gathering was a regular yearly custom",
+        "explanation": "과거의 습관 would + Every year → 해마다 반복된 관습."
+      },
+      {
+        "qid": "7a46831f-2876-44d8-baad-08b69c062b45",
+        "type": "mc",
+        "q": "Why had Yerin stopped complaining by lunchtime?",
+        "choices": [
+          "She had realized the meaning of gimjang.",
+          "Her grandmother had promised her a reward.",
+          "She had finished all the work by herself.",
+          "She was too exhausted to speak, not because she had accepted the work.",
+          "She had decided to buy kimchi later."
+        ],
+        "answer": "She was too exhausted to speak, not because she had accepted the work.",
+        "explanation": "'only because she was too exhausted to say a word' → 아직 마음이 바뀐 것은 아니다."
+      },
+      {
+        "qid": "c9805ca7-8edd-4566-859d-f3fb54bd7b2c",
+        "type": "mc",
+        "q": "What does Grandma's way of packing the kimchi reveal?",
+        "choices": [
+          "The family needed eight boxes for themselves.",
+          "Grandma planned to sell the kimchi at the store.",
+          "Much of the kimchi was meant for people outside the family.",
+          "The kimchi was too salty for the family.",
+          "The children's center had asked to buy kimchi."
+        ],
+        "answer": "Much of the kimchi was meant for people outside the family.",
+        "explanation": "이웃 3상자 + 아동센터 5상자 → 가족 밖의 사람들을 위한 김치였다."
+      },
+      {
+        "qid": "5f96ca1f-5c96-49ec-bc7a-29b510923327",
+        "type": "mc",
+        "q": "What can be inferred about the three neighbors?",
+        "choices": [
+          "They may not have anyone to make kimchi for them.",
+          "They work at the children's center.",
+          "They sell kimchi down the street.",
+          "They helped Yerin salt the cabbage.",
+          "They are Yerin's classmates."
+        ],
+        "answer": "They may not have anyone to make kimchi for them.",
+        "explanation": "'neighbors who lived on their own' → 혼자 살아서 김장을 해 줄 사람이 없을 수 있다."
+      },
+      {
+        "qid": "cc49cb0e-0af8-4d5d-8028-ccf55e755846",
+        "type": "mc",
+        "q": "How many boxes of kimchi did Grandma set aside for people outside the family?",
+        "choices": [
+          "three",
+          "five",
+          "fifty",
+          "fifteen",
+          "eight"
+        ],
+        "answer": "eight",
+        "explanation": "이웃 3명 각 1상자(3) + 아동센터 5상자 = 8상자."
+      },
+      {
+        "qid": "ee610239-da7c-46e3-b6d9-59cd080065b3",
+        "type": "mc",
+        "q": "What does 'My mother used to do exactly the same' emphasize?",
+        "choices": [
+          "Grandma's mother made better kimchi than Grandma.",
+          "The practice of sharing has been passed down through generations.",
+          "Grandma's mother never shared her kimchi.",
+          "The recipe has changed a lot over the years.",
+          "Gimjang used to be held in summer."
+        ],
+        "answer": "The practice of sharing has been passed down through generations.",
+        "explanation": "할머니의 어머니도 꼭 같이 했다 → 세대를 이어 내려온 나눔."
+      },
+      {
+        "qid": "2273613c-a96c-47a1-904e-9b5769b4b37e",
+        "type": "mc",
+        "q": "Which best describes the change in Yerin's attitude?",
+        "choices": [
+          "excited → bored",
+          "proud → ashamed",
+          "curious → afraid",
+          "reluctant → appreciative",
+          "thankful → annoyed"
+        ],
+        "answer": "reluctant → appreciative",
+        "explanation": "한숨 쉬며 사자고 함(내키지 않음) → \"for sharing\"이라고 기록(가치를 알게 됨)."
+      },
+      {
+        "qid": "47fb1469-da67-4c69-93c4-b71b7b1665f1",
+        "type": "mc",
+        "q": "What is the significance of 'for sharing' on the first page of the notebook?",
+        "choices": [
+          "It shows that Yerin plans to sell the recipe.",
+          "It shows that Yerin still prefers store-bought kimchi.",
+          "It shows that Yerin intends to carry on the tradition of sharing.",
+          "It shows that the notebook belongs to her grandmother.",
+          "It shows that Yerin wants to share the notebook with friends only."
+        ],
+        "answer": "It shows that Yerin intends to carry on the tradition of sharing.",
+        "explanation": "레시피 제목에 나눔을 적었다 → 할머니의 전통을 이어 가겠다는 뜻."
+      },
+      {
+        "qid": "c6b9a970-ab65-4b2e-b3e0-bfbdc150a743",
+        "type": "mc",
+        "q": "Which uses 'to be + p.p.' correctly, as in 'waiting to be prepared'?",
+        "choices": [
+          "These letters need to be send today.",
+          "These letters need to sent today.",
+          "These letters need be sent today.",
+          "These letters need to being sent today.",
+          "These letters need to be sent today."
+        ],
+        "answer": "These letters need to be sent today.",
+        "explanation": "to부정사의 수동형: to be + 과거분사(sent)."
+      },
+      {
+        "qid": "51a04f17-4c00-4ef5-a275-72f8417ab7c7",
+        "type": "mc",
+        "q": "Which sentence means '그녀는 불평하던 것을 멈췄다' as in 'she had stopped complaining'?",
+        "choices": [
+          "She stopped complaining.",
+          "She stopped to complain.",
+          "She stopped complain.",
+          "She stops to complaining.",
+          "She stopped of complaining."
+        ],
+        "answer": "She stopped complaining.",
+        "explanation": "stop + -ing: ~하던 것을 멈추다 / stop + to부정사: ~하기 위해 멈추다."
+      },
+      {
+        "qid": "ceb95f22-c8a5-4cc6-806e-ad7dbb3b2606",
+        "type": "mc",
+        "q": "Which statement is NOT true according to the story?",
+        "choices": [
+          "Fifty heads of cabbage were piled up in the yard.",
+          "They blended red pepper powder with garlic, ginger, and fish sauce.",
+          "Grandma explained the meaning of gimjang before the work started.",
+          "Five boxes were reserved for the children's center.",
+          "Yerin recorded every step of her grandmother's recipe."
+        ],
+        "answer": "Grandma explained the meaning of gimjang before the work started.",
+        "explanation": "할머니는 처음엔 아무 말도 하지 않았고, 상자를 다 싼 뒤에 의미를 설명했다."
+      },
+      {
+        "qid": "38a71f0f-e495-47c2-b49d-fba8481b9f29",
+        "type": "order",
+        "items": [
+          "Grandma explained that gimjang is about sharing.",
+          "Grandma said nothing and handed Yerin rubber gloves.",
+          "Grandma set aside boxes for her neighbors and the children's center.",
+          "Yerin let out a sigh and suggested buying kimchi.",
+          "They salted the cabbage and blended the seasoning all morning."
+        ],
+        "answer": [
+          "Yerin let out a sigh and suggested buying kimchi.",
+          "Grandma said nothing and handed Yerin rubber gloves.",
+          "They salted the cabbage and blended the seasoning all morning.",
+          "Grandma set aside boxes for her neighbors and the children's center.",
+          "Grandma explained that gimjang is about sharing."
+        ]
+      },
+      {
+        "qid": "64dd30a4-a7c7-415f-bec0-d79de63cddd3",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "entire",
+            "meaning": "전체의"
+          },
+          {
+            "word": "traditional",
+            "meaning": "전통적인"
+          },
+          {
+            "word": "convenient",
+            "meaning": "편리한"
+          },
+          {
+            "word": "blend",
+            "meaning": "섞다"
+          },
+          {
+            "word": "ache",
+            "meaning": "아프다, 쑤시다"
+          },
+          {
+            "word": "set aside",
+            "meaning": "따로 떼어 두다"
+          },
+          {
+            "word": "merely",
+            "meaning": "단지"
+          },
+          {
+            "word": "record",
+            "meaning": "기록하다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "ddd23440-6ec6-46cd-b860-b58a8253fcc8",
+        "q": "Summarize the story in three English sentences: (1) Yerin's attitude at first, (2) what Grandma did with the kimchi, and (3) what Yerin learned.",
+        "wordLimit": 70,
+        "sampleAnswer": "At first, Yerin let out a sigh and suggested buying kimchi because it would be much more convenient. After the hard work, Grandma set aside boxes of kimchi for three neighbors who lived alone and for a children's center. Yerin learned that gimjang is about sharing, so she recorded the recipe with the note \"for sharing.\"",
+        "rubric": "① 처음 태도 ② 할머니의 나눔 ③ 배운 점과 기록 ④ 영어 3문장, 정확성"
+      },
+      {
+        "qid": "03ac10e1-4a3d-4338-b10b-39e396a5f444",
+        "q": "우리말로 쓰시오: 할머니가 예린이의 질문에 말로 대답하지 않고 고무장갑을 건넨 행동의 의미를 쓰고, 그 방법이 효과가 있었다고 볼 수 있는 근거를 이야기에서 찾아 쓰시오.",
+        "wordLimit": 90,
+        "sampleAnswer": "할머니는 말로 설명하는 대신 예린이가 직접 김장을 하고 김치를 나누는 과정을 보며 스스로 의미를 깨닫게 하려 했다. 그날 밤 예린이가 할머니의 레시피를 모두 적고 첫 장에 \"for sharing\"이라고 쓴 것을 보면 그 방법이 효과가 있었다.",
+        "rubric": "① 행동의 의미(직접 경험하게 함) ② 근거(레시피 기록, for sharing)",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "9aeceacd-9f40-401f-b5c7-f08da8c5b431",
+        "q": "다음 우리말을 영어로 쓰시오. '예린이는 너무 지쳐서 한마디도 할 수 없었다.' <조건> too ~ to, exhausted를 사용할 것",
+        "wordLimit": 10,
+        "sampleAnswer": "Yerin was too exhausted to say a word.",
+        "rubric": "① too exhausted ② to say ③ a word"
+      },
+      {
+        "qid": "9790974d-543a-4e2e-8af6-2da1416ac849",
+        "q": "다음 문장을 수동태로 바꿔 쓰시오. 'Grandma reserved five boxes for the children's center.'",
+        "wordLimit": 12,
+        "sampleAnswer": "Five boxes were reserved for the children's center (by Grandma).",
+        "rubric": "① Five boxes 주어 ② were reserved ③ for the children's center"
+      },
+      {
+        "qid": "9982cae3-6193-444c-8c49-6d5adcc0cc36",
+        "q": "Is there a tradition in your family that you want to keep? Explain it in 2–3 English sentences.",
+        "wordLimit": 50,
+        "sampleAnswer": "My family visits my grandparents every Chuseok and makes songpyeon together. I want to keep this tradition because it brings our family closer. Someday, I will make songpyeon with my own children.",
+        "rubric": "① 구체적 전통 ② 지키고 싶은 이유 ③ 영어 2~3문장, 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "entire",
+        "surface": "entire",
+        "pos": "형",
+        "meaning": "전체의",
+        "sentence": "Every year on the last Saturday of November, Yerin's entire family would gather at her grandmother's house for gimjang, the traditional day of making kimchi to last through the winter."
+      },
+      {
+        "word": "traditional",
+        "surface": "traditional",
+        "pos": "형",
+        "meaning": "전통적인",
+        "sentence": "Every year on the last Saturday of November, Yerin's entire family would gather at her grandmother's house for gimjang, the traditional day of making kimchi to last through the winter."
+      },
+      {
+        "word": "pile up",
+        "surface": "piled up",
+        "pos": "숙",
+        "meaning": "쌓다 (be piled up: 쌓여 있다)",
+        "sentence": "This year, 50 heads of cabbage were piled up in the yard, waiting to be prepared."
+      },
+      {
+        "word": "let out a sigh",
+        "surface": "let out a sigh",
+        "pos": "숙",
+        "meaning": "한숨을 내쉬다",
+        "sentence": "Yerin let out a sigh."
+      },
+      {
+        "word": "convenient",
+        "surface": "convenient",
+        "pos": "형",
+        "meaning": "편리한",
+        "sentence": "It would be so much more convenient.\""
+      },
+      {
+        "word": "instead",
+        "surface": "Instead",
+        "pos": "부",
+        "meaning": "대신에",
+        "sentence": "Instead, she simply handed Yerin a pair of rubber gloves."
+      },
+      {
+        "word": "throughout",
+        "surface": "Throughout",
+        "pos": "전",
+        "meaning": "~ 내내",
+        "sentence": "Throughout the morning, they salted the cabbage and blended red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "blend",
+        "surface": "blended",
+        "pos": "동",
+        "meaning": "섞다, 혼합하다",
+        "sentence": "Throughout the morning, they salted the cabbage and blended red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "ache",
+        "surface": "aching",
+        "pos": "동",
+        "meaning": "아프다, 쑤시다",
+        "sentence": "By lunchtime, Yerin's back was aching, and she had stopped complaining only because she was too exhausted to say a word."
+      },
+      {
+        "word": "set aside",
+        "surface": "set aside",
+        "pos": "숙",
+        "meaning": "따로 떼어 두다",
+        "sentence": "One box was set aside for each of the three neighbors who lived on their own, and five boxes were reserved for the children's center down the street."
+      },
+      {
+        "word": "explain",
+        "surface": "explained",
+        "pos": "동",
+        "meaning": "설명하다",
+        "sentence": "\"I have made kimchi this way for 50 years,\" her grandmother explained."
+      },
+      {
+        "word": "exactly",
+        "surface": "exactly",
+        "pos": "부",
+        "meaning": "정확히, 꼭",
+        "sentence": "\"My mother used to do exactly the same."
+      },
+      {
+        "word": "merely",
+        "surface": "merely",
+        "pos": "부",
+        "meaning": "단지, 그저",
+        "sentence": "Gimjang isn't merely about kimchi."
+      },
+      {
+        "word": "brand-new",
+        "surface": "brand-new",
+        "pos": "형",
+        "meaning": "아주 새로운, 새것인",
+        "sentence": "That night, Yerin opened a brand-new notebook and carefully recorded every step of her grandmother's recipe."
+      },
+      {
+        "word": "record",
+        "surface": "recorded",
+        "pos": "동",
+        "meaning": "기록하다",
+        "sentence": "That night, Yerin opened a brand-new notebook and carefully recorded every step of her grandmother's recipe."
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "The Kimchi Notebook\n\nEvery year on the final Saturday of November, Yerin's {{v:extended family}} {{g:would convene|과거의 습관 would: ~하곤 했다}} at her grandmother's house for gimjang, the {{v:time-honored}} {{v:ritual}} of preparing kimchi {{g:to sustain the household|to부정사 부사적 용법(목적): ~하기 위해 (sustain: 지탱하다, 먹여 살리다)}} throughout the winter.\n\nThis year, {{g:no fewer than|no fewer than + 수: 무려 ~이나 (= as many as)}} 50 heads of cabbage {{g:lay stacked|lie(lay) + 과거분사: ~된 상태로 놓여 있다 (lie-lay-lain)}} in the yard, {{v:awaiting}} preparation. Yerin {{v:heaved a sigh}}. \"Grandma, why don't we just {{v:purchase}} kimchi at the store? It would be {{v:considerably}} more {{v:convenient}}.\"\n\nHer grandmother smiled but offered no reply. Instead, she {{v:wordlessly}} handed Yerin a pair of rubber gloves.\n\nThroughout the morning, they salted the cabbage and {{v:combined}} red pepper powder with garlic, ginger, and fish sauce. By lunchtime, Yerin's back was aching, and she {{g:had ceased complaining|과거완료 + cease + -ing: (이미) ~하기를 그만두었다}} {{v:solely}} because she was {{g:too exhausted to utter a word|too + 형용사 + to부정사: 너무 ~해서 …할 수 없다}}.\n\nAfterward, her grandmother began packing the kimchi into {{v:containers}}. One box {{g:was designated for|수동태: be designated for (~용으로 지정되다)}} each of the three neighbors {{g:who lived by themselves|주격 관계대명사 who / by oneself: 혼자서}}, {{g:while|대조의 접속사 while: 한편, ~인 반면}} five boxes were set aside for the children's center down the street.\n\n\"{{g:I have prepared kimchi in this manner for half a century|현재완료(계속): have + p.p. + for 기간 (half a century = 50년)}},\" her grandmother explained. \"My mother {{g:used to do|used to + 동사원형: (과거에) ~하곤 했다}} {{v:precisely}} the same. Gimjang {{g:has never been merely about kimchi|현재완료 부정: 한 번도 ~인 적이 없었다}}. {{v:Fundamentally}}, {{t:it's about sharing}}.\"\n\nThat night, Yerin opened a brand-new notebook and {{v:meticulously}} {{v:documented}} every step of her grandmother's recipe. On the very first page, she {{v:inscribed}}, \"{{t:Grandma's Kimchi – for sharing}}.\"",
+    "tags": {
+      "vocab": [
+        "extended family",
+        "time-honored",
+        "ritual",
+        "await",
+        "heave a sigh",
+        "purchase",
+        "considerably",
+        "convenient",
+        "wordlessly",
+        "combine",
+        "solely",
+        "container",
+        "precisely",
+        "fundamentally",
+        "meticulously",
+        "document",
+        "inscribe"
+      ],
+      "grammar": [
+        "과거의 습관 would",
+        "to부정사 부사적 용법(목적)",
+        "no fewer than",
+        "lie(lay) + 과거분사",
+        "과거완료 + cease + -ing",
+        "too + 형용사 + to부정사",
+        "수동태(be designated for)",
+        "주격 관계대명사 who",
+        "대조의 while",
+        "현재완료(계속)",
+        "used to + 동사원형",
+        "현재완료 부정"
+      ],
+      "topic": [
+        "전통의 가치와 나눔",
+        "세대 간 계승",
+        "보여 주기 서술과 주제 파악"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "8128660c-e8c5-4a7f-be6d-81ba3add3691",
+        "type": "mc",
+        "q": "Which of the following best captures the central theme of the story?",
+        "choices": [
+          "Modern convenience has made traditional customs like gimjang unnecessary.",
+          "The true value of a tradition lies in the generosity it expresses, which the younger generation comes to inherit.",
+          "Physical labor is the most meaningful part of any family ritual.",
+          "Grandparents should explain the meaning of traditions before asking children to help.",
+          "The quality of homemade kimchi depends mainly on the ingredients used."
+        ],
+        "answer": "The true value of a tradition lies in the generosity it expresses, which the younger generation comes to inherit.",
+        "explanation": "김장의 가치는 나눔에 있고, 예린이가 그 정신을 이어받는다."
+      },
+      {
+        "qid": "8c38461e-e24c-4ca9-9950-43a8a38ef232",
+        "type": "mc",
+        "q": "How does the writer present the meaning of gimjang through the grandmother's silence?",
+        "choices": [
+          "By having the grandmother give a long lecture about tradition",
+          "By comparing gimjang with other countries' customs",
+          "By listing statistics about kimchi consumption",
+          "By showing rather than telling, letting Yerin discover the meaning through experience",
+          "By having Yerin read about gimjang in a book"
+        ],
+        "answer": "By showing rather than telling, letting Yerin discover the meaning through experience",
+        "explanation": "침묵하고 장갑을 건넨 뒤 나누는 모습으로 보여 준다 → 예린이가 스스로 깨닫는다."
+      },
+      {
+        "qid": "7ab12ab6-06ad-4b2d-8a62-f5e4332185c3",
+        "type": "mc",
+        "q": "In the passage, 'convene' is closest in meaning to ____.",
+        "choices": [
+          "gather",
+          "argue",
+          "travel",
+          "celebrate",
+          "separate"
+        ],
+        "answer": "gather",
+        "explanation": "convene = 모이다(gather)."
+      },
+      {
+        "qid": "4197f316-6399-4af8-a01e-31f9cab59adc",
+        "type": "mc",
+        "q": "In the passage, 'time-honored' is closest in meaning to ____.",
+        "choices": [
+          "newly invented",
+          "rarely practiced",
+          "highly expensive",
+          "widely criticized",
+          "long-established"
+        ],
+        "answer": "long-established",
+        "explanation": "time-honored = 오랜 전통의."
+      },
+      {
+        "qid": "d7ddd835-3030-4990-8d29-b46e4974af42",
+        "type": "mc",
+        "q": "In the passage, 'solely' is closest in meaning to ____.",
+        "choices": [
+          "partly",
+          "mostly",
+          "only",
+          "rarely",
+          "secretly"
+        ],
+        "answer": "only",
+        "explanation": "solely = 오로지(only)."
+      },
+      {
+        "qid": "91cde71b-8477-4443-84c9-8a3cd16ef277",
+        "type": "mc",
+        "q": "In the passage, 'meticulously' is closest in meaning to ____.",
+        "choices": [
+          "quickly",
+          "very carefully",
+          "carelessly",
+          "secretly",
+          "reluctantly"
+        ],
+        "answer": "very carefully",
+        "explanation": "meticulously = 꼼꼼하게."
+      },
+      {
+        "qid": "774196a5-fa0a-4ddd-90eb-433367204022",
+        "type": "mc",
+        "q": "In the passage, 'awaiting' is closest in meaning to ____.",
+        "choices": [
+          "refusing",
+          "avoiding",
+          "cooking",
+          "ignoring",
+          "waiting for"
+        ],
+        "answer": "waiting for",
+        "explanation": "await = ~을 기다리다(wait for)."
+      },
+      {
+        "qid": "01098329-55a1-4905-a738-5658a2618a2e",
+        "type": "mc",
+        "q": "What does 'she had ceased complaining solely because she was too exhausted to utter a word' imply?",
+        "choices": [
+          "By lunchtime, Yerin had not yet come to appreciate the value of gimjang.",
+          "Yerin had already understood the meaning of sharing.",
+          "Yerin had been told by her grandmother to be quiet.",
+          "Yerin had finished all the work before lunch.",
+          "Yerin had lost her voice from shouting."
+        ],
+        "answer": "By lunchtime, Yerin had not yet come to appreciate the value of gimjang.",
+        "explanation": "solely because = 오로지 지쳐서 → 아직 마음이 바뀐 것은 아니다. 깨달음은 나중에 온다."
+      },
+      {
+        "qid": "a828718a-086d-4d04-9295-d433cdc3f5d2",
+        "type": "mc",
+        "q": "What does the way the boxes were distributed reveal about the grandmother?",
+        "choices": [
+          "She preferred her neighbors to her own family.",
+          "She was paid by the children's center for the kimchi.",
+          "She wanted to get rid of extra kimchi.",
+          "Much of her effort was devoted to people outside the family who might need help.",
+          "She planned to sell the rest of the kimchi."
+        ],
+        "answer": "Much of her effort was devoted to people outside the family who might need help.",
+        "explanation": "혼자 사는 이웃과 아동센터 → 도움이 필요할 수 있는 이웃을 챙겼다."
+      },
+      {
+        "qid": "f6681e49-47e1-4ab1-ad7c-4f631f27be8b",
+        "type": "mc",
+        "q": "Which is correct about the kimchi given away?",
+        "choices": [
+          "Five boxes went to neighbors, and three went to the children's center.",
+          "Only one box was shared among the three neighbors.",
+          "Three boxes went to neighbors, and five went to the children's center.",
+          "Fifty boxes were given to people in the neighborhood.",
+          "All of the boxes were taken to a store."
+        ],
+        "answer": "Three boxes went to neighbors, and five went to the children's center.",
+        "explanation": "이웃 세 명에게 각 1상자(3상자) + 아동센터 5상자."
+      },
+      {
+        "qid": "145e9c56-9691-416c-b614-87d121c156ae",
+        "type": "mc",
+        "q": "In the passage, 'half a century' is equal to ____.",
+        "choices": [
+          "fifty years",
+          "five years",
+          "fifteen years",
+          "a hundred years",
+          "twenty-five years"
+        ],
+        "answer": "fifty years",
+        "explanation": "century = 100년 → half a century = 50년 (원문의 for 50 years)."
+      },
+      {
+        "qid": "b4fe574f-d3f9-4735-88bb-35fedc9fc85b",
+        "type": "mc",
+        "q": "What does the grandmother imply by saying 'Gimjang has never been merely about kimchi'?",
+        "choices": [
+          "Gimjang used to be about kimchi but has recently changed.",
+          "Kimchi is no longer an important part of gimjang.",
+          "She has never enjoyed making kimchi.",
+          "Gimjang is mainly about saving money for winter.",
+          "Its deeper purpose has always been sharing, from the very beginning."
+        ],
+        "answer": "Its deeper purpose has always been sharing, from the very beginning.",
+        "explanation": "현재완료 부정(has never been) → 처음부터 지금까지 늘 나눔이 목적이었다."
+      },
+      {
+        "qid": "e9f76c77-4796-4eff-98a9-9e859c38d1b0",
+        "type": "mc",
+        "q": "Yerin's question 'why don't we just purchase kimchi at the store?' mainly reflects her preference for ____.",
+        "choices": [
+          "tradition over efficiency",
+          "efficiency over tradition",
+          "quality over price",
+          "sharing over keeping",
+          "family over neighbors"
+        ],
+        "answer": "efficiency over tradition",
+        "explanation": "\"It would be considerably more convenient.\" → 편리함(효율)을 전통보다 앞세웠다."
+      },
+      {
+        "qid": "59454347-0ee7-4e09-8da9-ad97e3e4649b",
+        "type": "mc",
+        "q": "The final act of inscribing 'for sharing' functions as ____.",
+        "choices": [
+          "a sign that Yerin plans to publish the recipe for profit",
+          "proof that Yerin still disagrees with her grandmother",
+          "a reminder to buy kimchi next winter",
+          "evidence that Yerin has embraced and will continue the family's tradition",
+          "a list of people who received the kimchi"
+        ],
+        "answer": "evidence that Yerin has embraced and will continue the family's tradition",
+        "explanation": "첫 장에 \"for sharing\" → 나눔의 전통을 받아들이고 이어 가겠다는 표시."
+      },
+      {
+        "qid": "e58f129e-2c82-42df-af0f-a4e84acfc1a0",
+        "type": "mc",
+        "q": "Which sentence uses 'lie' correctly, as in '50 heads of cabbage lay stacked in the yard'?",
+        "choices": [
+          "The book laid open on the desk all night.",
+          "The book lain open on the desk all night.",
+          "The book lay open on the desk all night.",
+          "The book lied open on the desk all night.",
+          "The book lying open on the desk all night."
+        ],
+        "answer": "The book lay open on the desk all night.",
+        "explanation": "lie(놓여 있다)-lay-lain. 과거형은 lay. (laid는 lay(놓다)의 과거형)"
+      },
+      {
+        "qid": "710ee7a9-683e-4d38-a7d7-d3602ccc6542",
+        "type": "mc",
+        "q": "'No fewer than 50 heads of cabbage' is closest in meaning to ____.",
+        "choices": [
+          "fewer than 50 heads of cabbage",
+          "at most 50 heads of cabbage",
+          "not even 50 heads of cabbage",
+          "only a few heads of cabbage",
+          "as many as 50 heads of cabbage"
+        ],
+        "answer": "as many as 50 heads of cabbage",
+        "explanation": "no fewer than = 무려 ~이나(as many as) → 많다는 것을 강조한다."
+      },
+      {
+        "qid": "c3bc9c9b-f9dc-4311-82dd-99f3b0409678",
+        "type": "mc",
+        "q": "Which 'while' expresses contrast, as in 'while five boxes were set aside for the children's center'?",
+        "choices": [
+          "My brother loves meat, while I prefer vegetables.",
+          "I fell asleep while watching TV.",
+          "While I was cooking, the phone rang.",
+          "Please wait here for a while.",
+          "She read a book while waiting for the bus."
+        ],
+        "answer": "My brother loves meat, while I prefer vegetables.",
+        "explanation": "대조의 while: ~인 반면. 나머지는 시간(~하는 동안) 또는 명사(a while)."
+      },
+      {
+        "qid": "3654ae3c-1fc2-4097-9041-8efa44e0b721",
+        "type": "mc",
+        "q": "Which statement is NOT true according to the story?",
+        "choices": [
+          "Yerin's grandmother has prepared kimchi in this manner for half a century.",
+          "They combined red pepper powder with garlic, ginger, and fish sauce.",
+          "Yerin's grandmother learned gimjang from a cooking class.",
+          "One box was designated for each of three neighbors who lived by themselves.",
+          "Yerin documented every step of her grandmother's recipe."
+        ],
+        "answer": "Yerin's grandmother learned gimjang from a cooking class.",
+        "explanation": "할머니의 어머니도 똑같이 했다고 했다. 요리 수업 이야기는 없다."
+      },
+      {
+        "qid": "f349eea9-7c26-4c78-98e0-b3d58599421f",
+        "type": "order",
+        "items": [
+          "Her grandmother packed containers for her neighbors and the children's center.",
+          "Her grandmother wordlessly handed her a pair of rubber gloves.",
+          "Yerin meticulously documented the recipe and inscribed \"for sharing.\"",
+          "Yerin heaved a sigh and suggested purchasing kimchi.",
+          "Yerin ceased complaining because she was too exhausted to speak."
+        ],
+        "answer": [
+          "Yerin heaved a sigh and suggested purchasing kimchi.",
+          "Her grandmother wordlessly handed her a pair of rubber gloves.",
+          "Yerin ceased complaining because she was too exhausted to speak.",
+          "Her grandmother packed containers for her neighbors and the children's center.",
+          "Yerin meticulously documented the recipe and inscribed \"for sharing.\""
+        ]
+      },
+      {
+        "qid": "327a3eda-720e-427e-aaed-3394225a212c",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "convene",
+            "meaning": "모이다"
+          },
+          {
+            "word": "time-honored",
+            "meaning": "오랜 전통의"
+          },
+          {
+            "word": "ritual",
+            "meaning": "의식, 관례"
+          },
+          {
+            "word": "purchase",
+            "meaning": "구입하다"
+          },
+          {
+            "word": "wordlessly",
+            "meaning": "말없이"
+          },
+          {
+            "word": "solely",
+            "meaning": "오로지"
+          },
+          {
+            "word": "meticulously",
+            "meaning": "꼼꼼하게"
+          },
+          {
+            "word": "inscribe",
+            "meaning": "(글을) 적다, 새기다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "9d1181d8-8c42-4d55-8157-d0d115a96787",
+        "q": "Summarize the story in three English sentences: (1) Yerin's initial attitude, (2) the turning point, and (3) the meaning of the ending.",
+        "wordLimit": 80,
+        "sampleAnswer": "At first, Yerin heaved a sigh and suggested purchasing kimchi because it would be considerably more convenient. After a long morning of work, she watched her grandmother pack kimchi for neighbors who lived alone and for a children's center, and learned that gimjang has always been about sharing. By inscribing \"for sharing\" in her new recipe notebook, Yerin showed that she had embraced the tradition and intended to carry it on.",
+        "rubric": "① 처음 태도 ② 전환점(나눔을 봄) ③ 결말의 의미 ④ 영어 3문장, 정확성"
+      },
+      {
+        "qid": "6c106e21-4794-4059-9054-f46b326278cc",
+        "q": "우리말로 쓰시오: 이 글에서 할머니가 김장의 의미를 \"말로 설명하지 않고 보여 준\" 방식을 설명하고, 이 방식이 예린이의 변화에 어떤 영향을 주었는지 지문에 근거해 쓰시오.",
+        "wordLimit": 100,
+        "sampleAnswer": "할머니는 예린이의 질문에 대답하지 않고 고무장갑을 건넨 뒤, 함께 김장을 하고 김치를 이웃과 아동센터에 나누는 모습을 직접 보여 주었다. 설명이 아니라 경험으로 의미를 알게 했기 때문에, 예린이는 스스로 나눔의 가치를 깨닫고 그날 밤 레시피를 꼼꼼히 기록하며 첫 장에 \"for sharing\"이라고 적었다.",
+        "rubric": "① 보여 주는 방식(침묵·장갑·나눔) ② 예린이의 변화(기록·for sharing) ③ 지문 근거",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "620715ac-ed87-49fa-9782-a53719e36b32",
+        "q": "다음 문장을 so ~ that 구문으로 바꿔 쓰시오. 'She was too exhausted to utter a word.'",
+        "wordLimit": 14,
+        "sampleAnswer": "She was so exhausted that she couldn't utter a word.",
+        "rubric": "① so exhausted ② that she ③ couldn't (could not) utter a word"
+      },
+      {
+        "qid": "91f6bfd6-37f1-4b38-a0f6-7131976083bd",
+        "q": "다음 우리말을 영어로 쓰시오. '김장은 결코 단지 김치에 관한 것이었던 적이 없다.' <조건> 현재완료, never, merely를 사용할 것",
+        "wordLimit": 10,
+        "sampleAnswer": "Gimjang has never been merely about kimchi.",
+        "rubric": "① has never been ② merely ③ about kimchi"
+      },
+      {
+        "qid": "2f279643-3ec9-4b28-a6f6-4d6c034f5abb",
+        "q": "Should traditions like gimjang be kept even if buying the food is more convenient? Give your opinion with a reason in 3–4 English sentences.",
+        "wordLimit": 70,
+        "sampleAnswer": "I think traditions like gimjang should be kept. Buying kimchi is convenient, but it cannot give us the experience of working and sharing together. As the story shows, gimjang connects family members and neighbors. These values are more important than saving time.",
+        "rubric": "① 입장 ② 이유(지문 활용 가능) ③ 영어 3~4문장, 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "extended family",
+        "surface": "extended family",
+        "pos": "명",
+        "meaning": "대가족, 친척들",
+        "sentence": "Every year on the final Saturday of November, Yerin's extended family would convene at her grandmother's house for gimjang, the time-honored ritual of preparing kimchi to sustain the household throughout the winter."
+      },
+      {
+        "word": "time-honored",
+        "surface": "time-honored",
+        "pos": "형",
+        "meaning": "오랜 전통의",
+        "sentence": "Every year on the final Saturday of November, Yerin's extended family would convene at her grandmother's house for gimjang, the time-honored ritual of preparing kimchi to sustain the household throughout the winter."
+      },
+      {
+        "word": "ritual",
+        "surface": "ritual",
+        "pos": "명",
+        "meaning": "의식, (반복되는) 관례",
+        "sentence": "Every year on the final Saturday of November, Yerin's extended family would convene at her grandmother's house for gimjang, the time-honored ritual of preparing kimchi to sustain the household throughout the winter."
+      },
+      {
+        "word": "await",
+        "surface": "awaiting",
+        "pos": "동",
+        "meaning": "기다리다",
+        "sentence": "This year, no fewer than 50 heads of cabbage lay stacked in the yard, awaiting preparation."
+      },
+      {
+        "word": "heave a sigh",
+        "surface": "heaved a sigh",
+        "pos": "숙",
+        "meaning": "한숨을 크게 쉬다",
+        "sentence": "Yerin heaved a sigh."
+      },
+      {
+        "word": "purchase",
+        "surface": "purchase",
+        "pos": "동",
+        "meaning": "구입하다",
+        "sentence": "\"Grandma, why don't we just purchase kimchi at the store?"
+      },
+      {
+        "word": "considerably",
+        "surface": "considerably",
+        "pos": "부",
+        "meaning": "상당히, 훨씬",
+        "sentence": "It would be considerably more convenient.\""
+      },
+      {
+        "word": "convenient",
+        "surface": "convenient",
+        "pos": "형",
+        "meaning": "편리한",
+        "sentence": "It would be considerably more convenient.\""
+      },
+      {
+        "word": "wordlessly",
+        "surface": "wordlessly",
+        "pos": "부",
+        "meaning": "말없이",
+        "sentence": "Instead, she wordlessly handed Yerin a pair of rubber gloves."
+      },
+      {
+        "word": "combine",
+        "surface": "combined",
+        "pos": "동",
+        "meaning": "섞다, 결합하다",
+        "sentence": "Throughout the morning, they salted the cabbage and combined red pepper powder with garlic, ginger, and fish sauce."
+      },
+      {
+        "word": "solely",
+        "surface": "solely",
+        "pos": "부",
+        "meaning": "오로지, 단지",
+        "sentence": "By lunchtime, Yerin's back was aching, and she had ceased complaining solely because she was too exhausted to utter a word."
+      },
+      {
+        "word": "container",
+        "surface": "containers",
+        "pos": "명",
+        "meaning": "용기, 그릇",
+        "sentence": "Afterward, her grandmother began packing the kimchi into containers."
+      },
+      {
+        "word": "precisely",
+        "surface": "precisely",
+        "pos": "부",
+        "meaning": "정확히, 꼭",
+        "sentence": "\"My mother used to do precisely the same."
+      },
+      {
+        "word": "fundamentally",
+        "surface": "Fundamentally",
+        "pos": "부",
+        "meaning": "근본적으로",
+        "sentence": "Fundamentally, it's about sharing.\""
+      },
+      {
+        "word": "meticulously",
+        "surface": "meticulously",
+        "pos": "부",
+        "meaning": "꼼꼼하게",
+        "sentence": "That night, Yerin opened a brand-new notebook and meticulously documented every step of her grandmother's recipe."
+      },
+      {
+        "word": "document",
+        "surface": "documented",
+        "pos": "동",
+        "meaning": "기록하다",
+        "sentence": "That night, Yerin opened a brand-new notebook and meticulously documented every step of her grandmother's recipe."
+      },
+      {
+        "word": "inscribe",
+        "surface": "inscribed",
+        "pos": "동",
+        "meaning": "(글을) 새기다, 적다",
+        "sentence": "On the very first page, she inscribed, \"Grandma's Kimchi – for sharing.\""
+      }
+    ]
+  }
+}
