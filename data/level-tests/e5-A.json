@@ -1,0 +1,50 @@
+{
+  "id": "e5-A",
+  "grade": "초5",
+  "form": "A",
+  "title": "초5 레벨테스트 A형",
+  "description": "초급~중급: 몸 상태·장소·서수·직업 단어, 과거형·will·비교급(-er)·should 기초, 동물원 일기·아픈 친구 대화 읽기",
+  "timeMinutes": 30,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "A Great Day",
+      "text": "Last Sunday, I went to the zoo with my family.\nWe saw lions, giraffes, and monkeys.\nThe monkeys were very funny.\nWe ate sandwiches for lunch.\nI took many pictures. It was a great day!"
+    },
+    {
+      "id": "p2",
+      "title": "What's Wrong?",
+      "text": "A: What's wrong, Minsu?\nB: I have a headache.\nA: That's too bad. You should take some medicine and get some rest.\nB: Okay, thank you."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 말을 고르세요.", "stimulus": "🤒", "choices": ["I have a fever.", "I'm hungry.", "I'm happy.", "I'm sleepy."], "answer": 0, "points": 4, "explanation": "🤒 열이 나는 모습 → I have a fever.(열이 나요.)" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "museum", "choices": ["도서관", "박물관", "시장", "공항"], "answer": 1, "points": 4, "explanation": "museum = 박물관 (도서관 library, 시장 market, 공항 airport)" },
+    { "id": "v3", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "'세 번째'를 영어로 고르세요.", "choices": ["three", "thirty", "third", "thirteen"], "answer": 2, "points": 4, "explanation": "세 번째 = third (three 3, thirty 30, thirteen 13)" },
+    { "id": "v4", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 단어를 고르세요.", "stimulus": "🥕", "choices": ["potato", "onion", "cucumber", "carrot"], "answer": 3, "points": 4, "explanation": "🥕 당근 = carrot" },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "often", "choices": ["자주", "가끔", "절대 ~않다", "항상"], "answer": 0, "points": 4, "explanation": "often = 자주 (가끔 sometimes, 절대 ~않다 never, 항상 always)" },
+    { "id": "v6", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "같은 종류가 아닌 것을 고르세요.", "choices": ["math", "science", "music", "lunch"], "answer": 3, "points": 4, "explanation": "math 수학, science 과학, music 음악은 과목이고 lunch(점심)는 과목이 아니다." },
+    { "id": "v7", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 직업을 고르세요.", "stimulus": "I like to cook. I want to be a ____.", "choices": ["pilot", "chef", "singer", "dentist"], "answer": 1, "points": 4, "explanation": "요리하는 것을 좋아함 → chef(요리사)" },
+    { "id": "v8", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "주어진 단어와 반대 뜻의 단어를 고르세요.", "stimulus": "early", "choices": ["fast", "soon", "late", "slow"], "answer": 2, "points": 4, "explanation": "early(이른, 일찍) ↔ late(늦은, 늦게)" },
+    { "id": "v9", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "그림을 보고 빈칸에 알맞은 말을 고르세요.", "stimulus": "🦷  A: What's wrong?  B: I have a ____.", "choices": ["headache", "stomachache", "cold", "toothache"], "answer": 3, "points": 4, "explanation": "🦷 이가 아픔 → toothache(치통) (headache 두통, stomachache 복통, cold 감기)" },
+    { "id": "v10", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "the day after today", "choices": ["yesterday", "tomorrow", "weekend", "tonight"], "answer": 1, "points": 4, "explanation": "오늘의 다음 날 = tomorrow(내일)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Yesterday, I ____ my grandma.", "choices": ["visit", "visits", "visited", "visiting"], "answer": 2, "points": 4, "explanation": "Yesterday(어제) → 과거형 visited" },
+    { "id": "g2", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "He is ____ than me.", "choices": ["tall", "taller", "tallest", "more tall"], "answer": 1, "points": 4, "explanation": "than(~보다) 앞에는 비교급 → tall + er = taller" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I will ____ a movie tomorrow.", "choices": ["watch", "watches", "watched", "watching"], "answer": 0, "points": 4, "explanation": "will 다음에는 동사원형 → I will watch a movie." },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "'How often do you exercise?'에 알맞은 대답을 고르세요.", "choices": ["At seven.", "By bus.", "With my dad.", "Twice a week."], "answer": 3, "points": 4, "explanation": "How often(얼마나 자주)에는 횟수로 대답 → Twice a week.(일주일에 두 번)" },
+    { "id": "g5", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "과거형이 바르지 않은 것을 고르세요.", "choices": ["play – played", "eat – ate", "go – goed", "see – saw"], "answer": 2, "points": 4, "explanation": "go의 과거형은 went이다. (goed는 없는 말)" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.  (자전거를 탈 때)", "stimulus": "You ____ wear a helmet.", "choices": ["are", "should", "does", "shoulds"], "answer": 1, "points": 4, "explanation": "~해야 한다(충고) = should + 동사원형. should에는 -s를 붙이지 않는다." },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "글쓴이는 언제 동물원에 갔나요?", "choices": ["지난 토요일", "지난 일요일", "어제", "오늘"], "answer": 1, "points": 4, "explanation": "'Last Sunday, I went to the zoo' → 지난 일요일" },
+    { "id": "r2", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "글쓴이가 동물원에서 본 동물이 아닌 것은 무엇인가요?", "choices": ["lions", "giraffes", "monkeys", "elephants"], "answer": 3, "points": 4, "explanation": "사자, 기린, 원숭이를 보았다. 코끼리(elephants)는 나오지 않는다." },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "아주 재미있었던 동물은 무엇인가요?", "choices": ["monkeys", "lions", "giraffes", "tigers"], "answer": 0, "points": 4, "explanation": "'The monkeys were very funny.' → 원숭이" },
+    { "id": "r4", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "가족은 점심으로 무엇을 먹었나요?", "choices": ["pizza", "noodles", "sandwiches", "rice"], "answer": 2, "points": 4, "explanation": "'We ate sandwiches for lunch.' (ate = eat의 과거형)" },
+    { "id": "r5", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "A가 민수에게 해 준 조언은 무엇인가요?", "choices": ["병원에 가라", "물을 많이 마셔라", "약을 먹고 쉬어라", "운동을 해라"], "answer": 2, "points": 4, "explanation": "'You should take some medicine and get some rest.' → 약을 먹고 좀 쉬어라" },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "그림을 보고 단어를 쓰세요.", "stimulus": "🎂", "hint": "c _ k _", "answer": "cake", "points": 4, "explanation": "🎂 케이크 = cake" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "어제", "answer": "yesterday", "points": 4, "explanation": "어제 = yesterday (내일 tomorrow, 오늘 today)" },
+    { "id": "w3", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "I ______ soccer yesterday. (play)", "answer": "played", "accept": ["I played soccer yesterday"], "points": 4, "explanation": "yesterday → 과거형 played" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> will을 사용할 것", "stimulus": "나는 내일 영화를 볼 것이다.", "answer": "I will watch a movie tomorrow.", "accept": ["I will see a movie tomorrow", "I'll watch a movie tomorrow", "I'll see a movie tomorrow", "Tomorrow I will watch a movie", "Tomorrow, I will watch a movie"], "points": 4, "explanation": "will + 동사원형 → I will watch a movie tomorrow." }
+  ]
+}

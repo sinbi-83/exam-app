@@ -1,0 +1,50 @@
+{
+  "id": "e5-B",
+  "grade": "초5",
+  "form": "B",
+  "title": "초5 레벨테스트 B형",
+  "description": "중급~고급: 감정·직업·서수·길 안내 표현, 과거형(did)·be going to·비교급·have to, 편지와 캠프 안내문 읽기, 문장 쓰기",
+  "timeMinutes": 35,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "Dear Grandpa",
+      "text": "Dear Grandpa,\nHow are you? I'm doing well.\nLast weekend, I joined the school science club.\nWe made a small robot car. It moved very fast!\nNext month, our club is going to enter a robot contest.\nI'm a little nervous, but I'm excited, too.\nI'll send you pictures of our robot.\nLove,\nJimin"
+    },
+    {
+      "id": "p2",
+      "title": "Summer Camp",
+      "text": "Summer Camp\nDate: July 25 – July 27\nPlace: Green Forest Camp\nActivities: hiking, swimming, making pizza\nFee: 50,000 won\nBring: a hat, water, and sunscreen"
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "dentist", "choices": ["간호사", "소방관", "치과의사", "경찰관"], "answer": 2, "points": 4, "explanation": "dentist = 치과의사 (간호사 nurse, 소방관 firefighter, 경찰관 police officer)" },
+    { "id": "v2", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "Don't be ____. You can do it!", "choices": ["nervous", "happy", "kind", "ready"], "answer": 0, "points": 4, "explanation": "'넌 할 수 있어!'라고 격려 → 긴장하지(nervous) 마." },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "My room is messy. I'm going to ____ it.", "choices": ["cook", "draw", "sleep", "clean"], "answer": 3, "points": 4, "explanation": "방이 지저분하다(messy) → 청소할(clean) 것이다" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "두 단어의 관계가 같도록 빈칸에 알맞은 말을 고르세요.", "stimulus": "give : gave = buy : ____", "choices": ["buyed", "bought", "brought", "buys"], "answer": 1, "points": 4, "explanation": "give의 과거형 gave처럼 buy의 과거형 → bought (brought는 bring의 과거형)" },
+    { "id": "v5", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "다음 설명에 알맞은 직업을 고르세요.", "stimulus": "a person who flies a plane", "choices": ["driver", "sailor", "pilot", "farmer"], "answer": 2, "points": 4, "explanation": "비행기를 조종하는 사람 = pilot(조종사)" },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "December is the ____ month of the year.", "choices": ["tenth", "eleventh", "twentieth", "twelfth"], "answer": 3, "points": 4, "explanation": "12월은 열두 번째 달 → twelfth (tenth 10번째, eleventh 11번째, twentieth 20번째)" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "지도에서 서점은 은행과 빵집 사이에 있어요. 빈칸에 알맞은 말을 고르세요.", "stimulus": "The bookstore is ____ the bank and the bakery.", "choices": ["behind", "between", "next", "across"], "answer": 1, "points": 4, "explanation": "A와 B 사이에 = between A and B" },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "주어진 문장과 뜻이 가장 가까운 것을 고르세요.", "stimulus": "I'm planning to visit Jeju.", "choices": ["I visited Jeju.", "I'm going to visit Jeju.", "I can visit Jeju.", "I must visit Jeju."], "answer": 1, "points": 4, "explanation": "plan to(~할 계획이다) ≈ be going to(~할 예정이다)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "She ____ to the library yesterday.", "choices": ["go", "goes", "went", "going"], "answer": 2, "points": 4, "explanation": "yesterday → go의 과거형 went" },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "비교급이 바르지 않은 것을 고르세요.", "choices": ["big – bigger", "happy – happier", "beautiful – beautifuler", "fast – faster"], "answer": 2, "points": 4, "explanation": "긴 단어 beautiful은 more를 앞에 쓴다 → more beautiful" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "'Did you finish your homework?'에 '응'이라고 대답하는 말을 고르세요.", "choices": ["Yes, I did.", "Yes, I do.", "Yes, I finished.", "Yes, I was."], "answer": 0, "points": 4, "explanation": "Did you ~?로 물으면 Yes, I did. / No, I didn't.로 대답한다." },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I'm going to ____ my uncle next week.", "choices": ["visited", "visits", "visiting", "visit"], "answer": 3, "points": 4, "explanation": "be going to + 동사원형 → I'm going to visit ~." },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Which is ____, the sun or the moon?", "choices": ["big", "bigger", "biggest", "more big"], "answer": 1, "points": 4, "explanation": "둘 중 어느 것이 더 ~한지 → 비교급 bigger (big은 g를 한 번 더 쓰고 -er)" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.  (학교 규칙)", "stimulus": "We ____ wear uniforms at school.", "choices": ["has to", "have to", "having to", "to have"], "answer": 1, "points": 4, "explanation": "~해야 한다 = have to. 주어가 We이므로 have to (He/She면 has to)" },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["He will come soon.", "She is taller than me.", "I didn't went to school.", "They played soccer."], "answer": 2, "points": 4, "explanation": "didn't 다음에는 동사원형 → I didn't go to school." },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "이 편지는 누구에게 쓴 것인가요?", "choices": ["할머니", "할아버지", "선생님", "친구"], "answer": 1, "points": 4, "explanation": "'Dear Grandpa' → 할아버지" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "지민이는 지난 주말에 무엇을 했나요?", "choices": ["과학 동아리에 들어갔다", "로봇 대회에서 우승했다", "할아버지 댁에 갔다", "사진 전시회에 갔다"], "answer": 0, "points": 4, "explanation": "'Last weekend, I joined the school science club.' 로봇 대회는 다음 달에 나간다." },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "동아리에서 만든 것은 무엇인가요?", "choices": ["로봇 강아지", "드론", "작은 로봇 자동차", "컴퓨터"], "answer": 2, "points": 4, "explanation": "'We made a small robot car.'" },
+    { "id": "r4", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "로봇 대회를 앞둔 지민이의 기분으로 알맞은 것은 무엇인가요?", "choices": ["bored and tired", "angry and sad", "calm and sleepy", "nervous but excited"], "answer": 3, "points": 4, "explanation": "'I'm a little nervous, but I'm excited, too.' → 조금 긴장되지만 신난다" },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "여름 캠프는 며칠 동안 하나요?", "choices": ["하루", "이틀", "사흘(3일)", "일주일"], "answer": 2, "points": 4, "explanation": "July 25 – July 27 → 25일, 26일, 27일 = 3일 (2박 3일)" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "안내문의 내용과 다른 것을 고르세요.", "choices": ["캠프에서 피자를 만든다.", "참가비는 50,000원이다.", "모자를 가져가야 한다.", "캠프는 8월에 열린다."], "answer": 3, "points": 4, "explanation": "'Date: July 25 – July 27' → 캠프는 7월에 열린다." },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "병원", "answer": "hospital", "points": 4, "explanation": "병원 = hospital" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "I ______ a letter yesterday. (write)", "answer": "wrote", "accept": ["I wrote a letter yesterday"], "points": 4, "explanation": "yesterday → write의 과거형 wrote" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (우리 형은 나보다 키가 크다.)", "stimulus": "( than / taller / my brother / is / me )", "answer": "My brother is taller than me.", "points": 4, "explanation": "주어(My brother) + is + 비교급(taller) + than me" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> be going to를 사용할 것", "stimulus": "나는 다음 주에 할머니를 방문할 것이다.", "answer": "I am going to visit my grandmother next week.", "accept": ["I'm going to visit my grandmother next week", "I am going to visit my grandma next week", "I'm going to visit my grandma next week", "Next week, I am going to visit my grandmother", "Next week, I'm going to visit my grandmother"], "points": 4, "explanation": "be going to + 동사원형 → I am going to visit my grandmother next week." }
+  ]
+}

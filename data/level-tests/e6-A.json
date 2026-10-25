@@ -1,0 +1,50 @@
+{
+  "id": "e6-A",
+  "grade": "초6",
+  "form": "A",
+  "title": "초6 레벨테스트 A형",
+  "description": "초급~중급: 장소·서수·날짜·동작 단어, was·will·비교급·최상급·Because·didn't 기초, 자기소개 글·길 묻기 대화 읽기",
+  "timeMinutes": 30,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "My Favorite Subject",
+      "text": "Hi, I'm Sora. I'm in the sixth grade.\nMy favorite subject is science.\nI like doing experiments with my friends.\nLast week, we made a volcano with clay. It was exciting!\nI want to be a scientist in the future."
+    },
+    {
+      "id": "p2",
+      "title": "Excuse Me",
+      "text": "A: Excuse me. Where is the post office?\nB: Go straight one block and turn right.\nIt's next to the bakery.\nA: Thank you!"
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 장소를 고르세요.", "stimulus": "🏥", "choices": ["school", "hospital", "bank", "station"], "answer": 1, "points": 4, "explanation": "🏥 병원 = hospital" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "favorite", "choices": ["가장 좋아하는", "유명한", "특별한", "비싼"], "answer": 0, "points": 4, "explanation": "favorite = 가장 좋아하는 (유명한 famous, 특별한 special, 비싼 expensive)" },
+    { "id": "v3", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "'다섯 번째'를 영어로 고르세요.", "choices": ["five", "fifteen", "fifty", "fifth"], "answer": 3, "points": 4, "explanation": "다섯 번째 = fifth (five 5, fifteen 15, fifty 50)" },
+    { "id": "v4", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 동작을 고르세요.", "stimulus": "🍳", "choices": ["run", "read", "cook", "sing"], "answer": 2, "points": 4, "explanation": "🍳 요리하다 = cook" },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "borrow", "choices": ["빌리다", "사다", "팔다", "버리다"], "answer": 0, "points": 4, "explanation": "borrow = 빌리다 (사다 buy, 팔다 sell, 버리다 throw away)" },
+    { "id": "v6", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "같은 종류가 아닌 것을 고르세요.", "choices": ["spring", "summer", "winter", "Sunday"], "answer": 3, "points": 4, "explanation": "spring 봄, summer 여름, winter 겨울은 계절이고 Sunday(일요일)는 요일이다." },
+    { "id": "v7", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I brush my teeth ____ meals.", "choices": ["under", "after", "on", "into"], "answer": 1, "points": 4, "explanation": "식사 후에 = after meals" },
+    { "id": "v8", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "주어진 단어와 반대 뜻의 단어를 고르세요.", "stimulus": "heavy", "choices": ["hard", "dark", "light", "long"], "answer": 2, "points": 4, "explanation": "heavy(무거운) ↔ light(가벼운)" },
+    { "id": "v9", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "'What's the date today?'에 알맞은 대답을 고르세요.  (오늘은 5월 5일)", "choices": ["It's May fifteenth.", "It's March fifth.", "It's May fifty.", "It's May fifth."], "answer": 3, "points": 4, "explanation": "날짜는 서수로 말한다. 5월 5일 → May fifth (March는 3월)" },
+    { "id": "v10", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "다음 설명에 알맞은 장소를 고르세요.", "stimulus": "a place where you can buy food and other things", "choices": ["museum", "market", "library", "hospital"], "answer": 1, "points": 4, "explanation": "음식과 여러 물건을 살 수 있는 곳 = market(시장)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I ____ very busy yesterday.", "choices": ["am", "was", "were", "is"], "answer": 1, "points": 4, "explanation": "yesterday → am의 과거형 was (were는 you/we/they)" },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "He ____ play soccer tomorrow.", "choices": ["will", "wills", "is", "does"], "answer": 0, "points": 4, "explanation": "tomorrow(내일) → will + 동사원형. will에는 -s를 붙이지 않는다." },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "My bag is ____ than yours.", "choices": ["heavy", "heaviest", "heavier", "more heavy"], "answer": 2, "points": 4, "explanation": "than 앞 비교급. y로 끝나면 y를 i로 → heavier" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: Why are you happy?  B: ____ I got a present.", "choices": ["So", "Because", "But", "And"], "answer": 1, "points": 4, "explanation": "Why(왜)로 물으면 Because(왜냐하면)로 대답한다." },
+    { "id": "g5", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I ____ go to school yesterday. It was a holiday.", "choices": ["didn't", "don't", "doesn't", "wasn't"], "answer": 0, "points": 4, "explanation": "과거의 부정 → didn't + 동사원형 (I didn't go ~)" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Mt. Everest is the ____ mountain in the world.", "choices": ["high", "higher", "most high", "highest"], "answer": 3, "points": 4, "explanation": "the + 최상급 + in the world(세계에서 가장 ~한) → highest" },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "소라는 몇 학년인가요?", "choices": ["4학년", "5학년", "6학년", "중학교 1학년"], "answer": 2, "points": 4, "explanation": "'I'm in the sixth grade.' → 6학년" },
+    { "id": "r2", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "소라가 가장 좋아하는 과목은 무엇인가요?", "choices": ["science", "math", "music", "English"], "answer": 0, "points": 4, "explanation": "'My favorite subject is science.'" },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "지난주에 소라는 친구들과 무엇을 만들었나요?", "choices": ["로봇", "화산 모형", "비행기 모형", "집 모형"], "answer": 1, "points": 4, "explanation": "'we made a volcano with clay.' → 찰흙으로 화산을 만들었다." },
+    { "id": "r4", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "소라의 장래 희망은 무엇인가요?", "choices": ["teacher", "doctor", "singer", "scientist"], "answer": 3, "points": 4, "explanation": "'I want to be a scientist in the future.' → 과학자" },
+    { "id": "r5", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "우체국은 무엇 옆에 있나요?", "choices": ["은행", "빵집", "학교", "공원"], "answer": 1, "points": 4, "explanation": "'It's next to the bakery.' → 빵집(bakery) 옆" },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "그림을 보고 단어를 쓰세요.", "stimulus": "🐰", "hint": "r _ _ _ _ t", "answer": "rabbit", "points": 4, "explanation": "🐰 토끼 = rabbit" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "과학", "answer": "science", "points": 4, "explanation": "과학 = science" },
+    { "id": "w3", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "This box is ______ than that box. (big)", "answer": "bigger", "accept": ["This box is bigger than that box"], "points": 4, "explanation": "than 앞 비교급. big은 g를 한 번 더 쓰고 -er → bigger" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> busy를 사용할 것", "stimulus": "나는 어제 매우 바빴다.", "answer": "I was very busy yesterday.", "accept": ["Yesterday I was very busy", "Yesterday, I was very busy", "I was so busy yesterday"], "points": 4, "explanation": "어제(과거) → I was very busy yesterday." }
+  ]
+}

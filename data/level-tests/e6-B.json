@@ -1,0 +1,50 @@
+{
+  "id": "e6-B",
+  "grade": "초6",
+  "form": "B",
+  "title": "초6 레벨테스트 B형",
+  "description": "중급~고급: 환경·감정·여행 단어, There were·will·최상급(most)·want to·has to·how to, 환경 설명문·문자 대화 읽기, 문장 쓰기",
+  "timeMinutes": 35,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "Plastic and Our Earth",
+      "text": "Every day, people throw away a lot of plastic.\nPlastic does not break down easily, so it stays on Earth for hundreds of years.\nSome of it goes into the sea, and sea animals eat it by mistake.\nWhat can we do?\nFirst, we can use our own cups and bags.\nSecond, we should recycle plastic bottles.\nSmall actions can make a big difference."
+    },
+    {
+      "id": "p2",
+      "title": "Text Messages",
+      "text": "Mina: Junho, are you free this Saturday?\nJunho: Yes. Why?\nMina: Let's go to the new science museum. It opens at 10 a.m.\nJunho: Sounds great! How about meeting at 9:30 at the bus stop?\nMina: OK. See you then!"
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "environment", "choices": ["경제", "환경", "문화", "역사"], "answer": 1, "points": 4, "explanation": "environment = 환경 (경제 economy, 문화 culture, 역사 history)" },
+    { "id": "v2", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "Turn off the tap. Let's ____ water.", "choices": ["waste", "drink", "save", "spill"], "answer": 2, "points": 4, "explanation": "수도꼭지를 잠그자 → 물을 아끼자(save water) (waste 낭비하다, spill 쏟다)" },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "I was ____ because I lost my phone.", "choices": ["upset", "excited", "proud", "glad"], "answer": 0, "points": 4, "explanation": "휴대폰을 잃어버려서 → 속상한(upset)" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "두 단어의 관계가 같도록 빈칸에 알맞은 말을 고르세요.", "stimulus": "child : children = mouse : ____", "choices": ["mouses", "mice", "mices", "mouse"], "answer": 1, "points": 4, "explanation": "child의 복수형 children처럼 불규칙 복수형 → mouse의 복수형은 mice" },
+    { "id": "v5", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "a person who visits a place for fun", "choices": ["guide", "worker", "driver", "tourist"], "answer": 3, "points": 4, "explanation": "놀러(구경하러) 어떤 곳을 방문하는 사람 = tourist(관광객)" },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "Recycling helps ____ the Earth.", "choices": ["destroy", "protect", "waste", "pollute"], "answer": 1, "points": 4, "explanation": "재활용은 지구를 보호하는(protect) 데 도움이 된다. (destroy 파괴하다, pollute 오염시키다)" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "주어진 문장과 뜻이 가장 가까운 것을 고르세요.", "stimulus": "I'm good at drawing.", "choices": ["I don't like drawing.", "I want to draw.", "I draw well.", "I can't draw."], "answer": 2, "points": 4, "explanation": "be good at -ing = ~을 잘하다 → I draw well.(나는 그림을 잘 그린다.)" },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "Excuse me. Can you tell me the ____ to the station?", "choices": ["way", "time", "name", "price"], "answer": 0, "points": 4, "explanation": "the way to ~ = ~로 가는 길 (길을 묻는 표현)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "There ____ many people at the park yesterday.", "choices": ["was", "were", "is", "are"], "answer": 1, "points": 4, "explanation": "many people(복수) + yesterday(과거) → There were" },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "She ____ her homework tomorrow.", "choices": ["will finish", "finished", "finishing", "has finish"], "answer": 0, "points": 4, "explanation": "tomorrow(내일) → 미래 will + 동사원형" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "This is the ____ book in the library.", "choices": ["interestinger", "more interesting", "most interesting", "interestingest"], "answer": 2, "points": 4, "explanation": "긴 단어의 최상급은 the most + 형용사 → the most interesting" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I want ____ a doctor.", "choices": ["be", "to be", "being", "am"], "answer": 1, "points": 4, "explanation": "want + to부정사 → I want to be a doctor.(나는 의사가 되고 싶다.)" },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "He has a test tomorrow. He ____ get up early.", "choices": ["have to", "having to", "had to", "has to"], "answer": 3, "points": 4, "explanation": "주어 He + 현재·미래의 의무 → has to (had to는 과거)" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Do you know how ____ a kite?", "choices": ["make", "making", "to make", "made"], "answer": 2, "points": 4, "explanation": "how to + 동사원형 = ~하는 방법 → how to make a kite(연 만드는 방법)" },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["I went to Busan last year.", "She is more taller than me.", "We will meet tomorrow.", "He has to study."], "answer": 1, "points": 4, "explanation": "taller가 이미 비교급이므로 more를 함께 쓰지 않는다 → She is taller than me." },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "글의 주제로 알맞은 것은 무엇인가요?", "choices": ["바다 동물의 종류", "플라스틱의 역사", "플라스틱 문제와 줄이는 방법", "컵을 만드는 방법"], "answer": 2, "points": 4, "explanation": "플라스틱이 오래 남아 바다 동물에게 피해를 준다 → 우리가 할 수 있는 일(개인 컵·가방, 재활용)" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "플라스틱이 지구에 수백 년 동안 남는 이유는 무엇인가요?", "choices": ["너무 가벼워서", "쉽게 분해되지 않아서", "바다에 버려서", "색이 다양해서"], "answer": 1, "points": 4, "explanation": "'Plastic does not break down easily, so it stays on Earth for hundreds of years.' (break down = 분해되다)" },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "바다로 간 플라스틱 때문에 생기는 문제는 무엇인가요?", "choices": ["바다가 따뜻해진다", "먹이가 많아진다", "바다 동물이 집을 잃는다", "바다 동물이 실수로 플라스틱을 먹는다"], "answer": 3, "points": 4, "explanation": "'sea animals eat it by mistake.' (by mistake = 실수로)" },
+    { "id": "r4", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "글쓴이가 제안한 방법이 아닌 것을 고르세요.", "choices": ["플라스틱 제품을 절대 사지 않기", "자기 컵 사용하기", "자기 가방 사용하기", "플라스틱 병 재활용하기"], "answer": 0, "points": 4, "explanation": "자기 컵·가방 사용(First)과 플라스틱 병 재활용(Second)만 제안했다. 절대 사지 말자는 말은 없다." },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "두 사람은 토요일에 어디에 가기로 했나요?", "choices": ["도서관", "과학관", "영화관", "수영장"], "answer": 1, "points": 4, "explanation": "'Let's go to the new science museum.' → 새로 생긴 과학관" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "두 사람이 만나기로 한 시각과 장소는 어디인가요?", "choices": ["9시 30분, 과학관 앞", "10시, 버스 정류장", "9시 30분, 버스 정류장", "10시, 과학관 앞"], "answer": 2, "points": 4, "explanation": "'How about meeting at 9:30 at the bus stop?' — 'OK.' 10시는 과학관이 문을 여는 시각이다." },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "그림을 보고 단어를 쓰세요.", "stimulus": "🌍", "hint": "E _ _ _ h", "answer": "Earth", "accept": ["the Earth"], "points": 4, "explanation": "🌍 지구 = Earth" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "재활용하다", "answer": "recycle", "points": 4, "explanation": "재활용하다 = recycle (재활용 recycling)" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (그는 우리 반에서 가장 키가 큰 소년이다.)", "stimulus": "( the / is / tallest / he / in my class / boy )", "answer": "He is the tallest boy in my class.", "points": 4, "explanation": "He is + the 최상급(tallest) + 명사(boy) + in my class" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> should를 사용할 것", "stimulus": "우리는 물을 아껴야 한다.", "answer": "We should save water.", "points": 4, "explanation": "should + 동사원형 → We should save water." }
+  ]
+}
