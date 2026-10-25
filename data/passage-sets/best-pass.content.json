@@ -1,0 +1,2179 @@
+{
+  "school": {
+    "tagged_body": "The Best Pass\n\nDohun was the best basketball player on his school team. Last {{v:season}}, he {{v:scored}} more than {{v:half}} of the team's {{v:points}}. {{g:Every time he got the ball|every time + 주어 + 동사: ~할 때마다}}, he tried to shoot. He shot {{g:even when|even when + 주어 + 동사: ~할 때조차도}} three players were {{v:guarding}} him.\n\nBut the team {{g:kept losing|keep + -ing: 계속 ~하다}}. In the {{v:semifinal}} game, Dohun {{v:missed}} {{g:shot after shot|명사 + after + 명사: 연이은 ~ (계속해서)}}. The team {{g:lost by ten points|by + 차이: ~만큼 (점수 차이)}}. After the game, {{v:Coach}} Kim sat down {{v:next to}} him.\n\n\"Dohun, you are a great player,\" she said. \"But {{t:basketball is not a one-person game}}. When you have the ball, {{g:look around|명령문: 동사원형으로 시작 (~해라)}}. Your {{v:teammates}} are {{v:open}}.\"\n\nFor the next month, Dohun {{v:practiced}} passing very hard. He practiced it {{g:as hard as|as + 원급 + as: ~만큼 …하게}} shooting. {{v:At first}}, it felt {{v:strange}}. But slowly, he {{g:began to trust|begin + to부정사: ~하기 시작하다}} his teammates, and they began to {{v:trust}} him, too.\n\nIn the final game of the season, the team was {{v:behind}} by two points. There were only five seconds {{v:left}}. Dohun got the ball. Everyone thought, \"He will shoot.\" But he saw Jaewon. Jaewon {{g:was standing|과거진행형: was + -ing (~하고 있었다)}} {{v:alone}} at the three-point line. Dohun passed the ball to him. Jaewon shot, and the ball went in {{g:just as|just as + 주어 + 동사: 바로 ~할 때}} the {{v:whistle}} blew.\n\nThe team jumped into the air together. Dohun did not score the {{v:winning}} shot, but he {{g:did not care anymore|not ~ anymore: 더 이상 ~하지 않다}}. {{t:It was the best pass of his life}}.",
+    "tags": {
+      "vocab": [
+        "season",
+        "score",
+        "half",
+        "point",
+        "guard",
+        "semifinal",
+        "miss",
+        "coach",
+        "next to",
+        "teammate",
+        "open",
+        "practice",
+        "at first",
+        "strange",
+        "trust",
+        "behind",
+        "left",
+        "alone",
+        "whistle",
+        "winning"
+      ],
+      "grammar": [
+        "every time + 주어 + 동사",
+        "even when",
+        "keep + -ing",
+        "명사 after 명사",
+        "by + 차이",
+        "명령문",
+        "as + 원급 + as",
+        "begin + to부정사",
+        "과거진행형",
+        "just as",
+        "not ~ anymore"
+      ],
+      "topic": [
+        "팀워크",
+        "동료에 대한 신뢰",
+        "성장 이야기 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "fdba39df-dc0f-43fc-8460-e047a96b2759",
+        "type": "mc",
+        "q": "What is the story mainly about?",
+        "choices": [
+          "A boy who wants to become a coach",
+          "A star player who learns to trust his teammates",
+          "A team that never loses a game",
+          "A player who stops playing basketball",
+          "A coach who scores the winning shot"
+        ],
+        "answer": "A star player who learns to trust his teammates",
+        "explanation": "혼자 슛만 하던 도훈이 팀 동료를 믿게 되는 이야기이다."
+      },
+      {
+        "qid": "134b4495-6b0b-4e6b-aed8-ac1a6ca5cb80",
+        "type": "mc",
+        "q": "What did Dohun do every time he got the ball?",
+        "choices": [
+          "He passed it to Jaewon.",
+          "He gave it to the coach.",
+          "He looked around first.",
+          "He tried to shoot.",
+          "He stopped and waited."
+        ],
+        "answer": "He tried to shoot.",
+        "explanation": "'Every time he got the ball, he tried to shoot.'"
+      },
+      {
+        "qid": "1e2e7041-8509-460b-b74f-061dab62c0c8",
+        "type": "mc",
+        "q": "How many of the team's points did Dohun score last season?",
+        "choices": [
+          "More than half",
+          "Less than half",
+          "Only ten points",
+          "None of them",
+          "Exactly two points"
+        ],
+        "answer": "More than half",
+        "explanation": "'he scored more than half of the team's points.'"
+      },
+      {
+        "qid": "b5a738a0-adfa-403a-a217-d13dff05c240",
+        "type": "mc",
+        "q": "What happened in the semifinal game?",
+        "choices": [
+          "The team won by ten points.",
+          "Dohun scored the winning shot.",
+          "Jaewon got hurt.",
+          "The game was stopped.",
+          "The team lost by ten points."
+        ],
+        "answer": "The team lost by ten points.",
+        "explanation": "'The team lost by ten points.'"
+      },
+      {
+        "qid": "55673426-b917-4199-9eca-4ca61aa0b98e",
+        "type": "mc",
+        "q": "Who sat down next to Dohun after the game?",
+        "choices": [
+          "Jaewon",
+          "Dohun's mother",
+          "Coach Kim",
+          "Three players",
+          "The other team's coach"
+        ],
+        "answer": "Coach Kim",
+        "explanation": "'After the game, Coach Kim sat down next to him.'"
+      },
+      {
+        "qid": "681b1ddd-eef3-4de8-aad8-0fddbc63f91f",
+        "type": "mc",
+        "q": "What did Coach Kim mean by \"basketball is not a one-person game\"?",
+        "choices": [
+          "Only one player should shoot.",
+          "Players should play together as a team.",
+          "Basketball is an easy game.",
+          "Dohun should stop playing.",
+          "Five players are too many."
+        ],
+        "answer": "Players should play together as a team.",
+        "explanation": "농구는 혼자 하는 경기가 아니다 → 팀으로 함께 해야 한다."
+      },
+      {
+        "qid": "298b90e8-1f93-40a3-8c7f-69607ceb0f7d",
+        "type": "mc",
+        "q": "What did Coach Kim tell Dohun to do when he has the ball?",
+        "choices": [
+          "Shoot right away",
+          "Run to the coach",
+          "Close his eyes",
+          "Throw it out",
+          "Look around"
+        ],
+        "answer": "Look around",
+        "explanation": "'When you have the ball, look around.'"
+      },
+      {
+        "qid": "12b301c5-11dd-4ad5-a298-222a732b151c",
+        "type": "mc",
+        "q": "What did Dohun practice hard for the next month?",
+        "choices": [
+          "Passing",
+          "Only shooting",
+          "Running",
+          "Jumping",
+          "Swimming"
+        ],
+        "answer": "Passing",
+        "explanation": "'Dohun practiced passing very hard.'"
+      },
+      {
+        "qid": "a53b1609-35af-4ea0-9bbf-0e4a5d23f89b",
+        "type": "mc",
+        "q": "How did passing feel to Dohun at first?",
+        "choices": [
+          "Easy",
+          "Exciting",
+          "Perfect",
+          "Strange",
+          "Funny"
+        ],
+        "answer": "Strange",
+        "explanation": "'At first, it felt strange.'"
+      },
+      {
+        "qid": "e34e8adc-dcc6-4114-b452-56305ead09bd",
+        "type": "mc",
+        "q": "What happened slowly?",
+        "choices": [
+          "Dohun stopped practicing.",
+          "Coach Kim left the team.",
+          "Dohun and his teammates began to trust each other.",
+          "The team stopped playing.",
+          "Dohun began to shoot more."
+        ],
+        "answer": "Dohun and his teammates began to trust each other.",
+        "explanation": "'he began to trust his teammates, and they began to trust him, too.'"
+      },
+      {
+        "qid": "99986967-f853-48c9-956d-4053ae8b3570",
+        "type": "mc",
+        "q": "In the final game, how many seconds were left?",
+        "choices": [
+          "Five",
+          "Two",
+          "Ten",
+          "Three",
+          "Fifteen"
+        ],
+        "answer": "Five",
+        "explanation": "'There were only five seconds left.' (2는 뒤진 점수, 10은 준결승 점수 차, 3은 3점 라인)"
+      },
+      {
+        "qid": "97163b8d-6e11-445a-a774-54bbe94a40aa",
+        "type": "mc",
+        "q": "What did everyone think Dohun would do?",
+        "choices": [
+          "Pass to Jaewon",
+          "Call the coach",
+          "Stop the game",
+          "Leave the court",
+          "Shoot the ball"
+        ],
+        "answer": "Shoot the ball",
+        "explanation": "Everyone thought, \"He will shoot.\""
+      },
+      {
+        "qid": "89de16ed-7629-4709-81d3-b924f7683ae2",
+        "type": "mc",
+        "q": "Where was Jaewon standing?",
+        "choices": [
+          "Next to Coach Kim",
+          "Alone at the three-point line",
+          "Behind three players",
+          "Outside the gym",
+          "Next to Dohun"
+        ],
+        "answer": "Alone at the three-point line",
+        "explanation": "'Jaewon was standing alone at the three-point line.'"
+      },
+      {
+        "qid": "f00942a4-459b-4442-b5b9-31b591dc9cd5",
+        "type": "mc",
+        "q": "What happened just as the whistle blew?",
+        "choices": [
+          "Dohun's shot went in.",
+          "Jaewon missed the shot.",
+          "The ball went out.",
+          "Jaewon's shot went in.",
+          "The other team scored."
+        ],
+        "answer": "Jaewon's shot went in.",
+        "explanation": "'Jaewon shot, and the ball went in just as the whistle blew.'"
+      },
+      {
+        "qid": "86f95654-c6fe-4a83-93f2-2307e285b3fc",
+        "type": "mc",
+        "q": "How did Dohun feel at the end of the story?",
+        "choices": [
+          "Angry because he did not score",
+          "Sad because the team lost",
+          "Happy, even though he did not score",
+          "Jealous of Jaewon",
+          "Tired and bored"
+        ],
+        "answer": "Happy, even though he did not score",
+        "explanation": "그는 결승골을 넣지 않았지만 더 이상 신경 쓰지 않았다 → 기뻤다."
+      },
+      {
+        "qid": "dbc62882-8c64-4e16-913c-913ba1fc2557",
+        "type": "mc",
+        "q": "Why was it \"the best pass of his life\"?",
+        "choices": [
+          "It was the longest pass in the game.",
+          "He scored three points with it.",
+          "Coach Kim made the pass for him.",
+          "It was the first pass of his life.",
+          "It helped his team win, and it showed his trust in his teammates."
+        ],
+        "answer": "It helped his team win, and it showed his trust in his teammates.",
+        "explanation": "팀이 이기게 했고, 동료를 믿는 마음을 보여 준 패스이기 때문이다."
+      },
+      {
+        "qid": "9d416949-26fb-4870-9f50-fb7a861bbefb",
+        "type": "mc",
+        "q": "Which is NOT true about the story?",
+        "choices": [
+          "Dohun scored the winning shot.",
+          "Dohun was the best player on his team.",
+          "The team kept losing.",
+          "Coach Kim talked to Dohun.",
+          "Jaewon was standing alone."
+        ],
+        "answer": "Dohun scored the winning shot.",
+        "explanation": "결승골은 재원이가 넣었다. 도훈은 패스를 했다."
+      },
+      {
+        "qid": "267b4e8d-1ce0-4376-af30-e3f8d723a553",
+        "type": "mc",
+        "q": "Which sentence is correct, like \"The team kept losing\"?",
+        "choices": [
+          "She kept talk during the movie.",
+          "She kept to talk during the movie.",
+          "She kept talking during the movie.",
+          "She kept talked during the movie.",
+          "She keep talking during the movie."
+        ],
+        "answer": "She kept talking during the movie.",
+        "explanation": "keep + -ing: 계속 ~하다. 과거이므로 kept."
+      },
+      {
+        "qid": "c22b5211-44f2-4edc-9fc2-b5ea7a0bfb96",
+        "type": "order",
+        "items": [
+          "Coach Kim told Dohun to look around.",
+          "Dohun passed to Jaewon, and the team won.",
+          "Dohun tried to shoot every time he got the ball.",
+          "Dohun practiced passing for a month.",
+          "The team lost the semifinal game by ten points."
+        ],
+        "answer": [
+          "Dohun tried to shoot every time he got the ball.",
+          "The team lost the semifinal game by ten points.",
+          "Coach Kim told Dohun to look around.",
+          "Dohun practiced passing for a month.",
+          "Dohun passed to Jaewon, and the team won."
+        ]
+      },
+      {
+        "qid": "fb99f528-824f-4e97-8ff8-e0fe081ceaf5",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "season",
+            "meaning": "시즌"
+          },
+          {
+            "word": "semifinal",
+            "meaning": "준결승"
+          },
+          {
+            "word": "guard",
+            "meaning": "(상대를) 막다"
+          },
+          {
+            "word": "teammate",
+            "meaning": "팀 동료"
+          },
+          {
+            "word": "strange",
+            "meaning": "이상한, 낯선"
+          },
+          {
+            "word": "trust",
+            "meaning": "믿다"
+          },
+          {
+            "word": "alone",
+            "meaning": "혼자"
+          },
+          {
+            "word": "whistle",
+            "meaning": "호루라기"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "b769cf7d-735b-4146-a425-20dfdc6b7332",
+        "q": "우리말로 쓰시오: 준결승 경기가 끝난 뒤 김 코치가 도훈에게 한 말의 내용을 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "도훈은 훌륭한 선수지만 농구는 혼자 하는 경기가 아니다. 공을 가지면 주위를 둘러봐라. 팀 동료들이 비어 있다.",
+        "rubric": "① 칭찬(훌륭한 선수) ② 혼자 하는 경기가 아님 ③ 주위를 둘러봐라 / 동료가 비어 있다",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "8b21ad20-cb30-4d05-ae77-f55bfaa97bec",
+        "q": "What did Dohun practice for the next month? Answer in English.",
+        "wordLimit": 10,
+        "sampleAnswer": "He practiced passing (very hard).",
+        "rubric": "① practiced ② passing ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "964a256f-ac03-40d8-91e3-4393950da060",
+        "q": "우리말로 쓰시오: 마지막 경기에서 도훈이 직접 슛하지 않고 재원이에게 패스한 이유를 추측하여 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "재원이가 3점 라인에 혼자 비어 있었고, 도훈은 코치의 말대로 주위를 둘러보고 팀 동료를 믿게 되었기 때문이다.",
+        "rubric": "① 재원이가 혼자(비어) 있음 ② 동료를 믿게 됨 또는 코치의 조언",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "92538a51-47b7-4616-a201-75300d6f7af4",
+        "q": "다음 우리말을 영어로 쓰시오. '도훈은 슛만큼 열심히 패스를 연습했다.' <조건> as ~ as를 사용할 것",
+        "wordLimit": 10,
+        "sampleAnswer": "Dohun practiced passing as hard as shooting.",
+        "rubric": "① practiced passing ② as hard as ③ shooting"
+      },
+      {
+        "qid": "e1a0cbff-b832-4d49-987a-ebfb9dad31df",
+        "q": "Do you like to play sports alone or with a team? Write your answer and the reason in 2 English sentences.",
+        "wordLimit": 30,
+        "sampleAnswer": "I like to play sports with a team. It is more fun when we help each other.",
+        "rubric": "① 혼자/팀 선택 ② 이유 ③ 완전한 영어 문장 2개"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "season",
+        "surface": "season",
+        "pos": "명",
+        "meaning": "시즌, (경기) 철",
+        "sentence": "Last season, he scored more than half of the team's points."
+      },
+      {
+        "word": "score",
+        "surface": "scored",
+        "pos": "동",
+        "meaning": "득점하다",
+        "sentence": "Last season, he scored more than half of the team's points."
+      },
+      {
+        "word": "half",
+        "surface": "half",
+        "pos": "명",
+        "meaning": "절반",
+        "sentence": "Last season, he scored more than half of the team's points."
+      },
+      {
+        "word": "point",
+        "surface": "points",
+        "pos": "명",
+        "meaning": "점수, 득점",
+        "sentence": "Last season, he scored more than half of the team's points."
+      },
+      {
+        "word": "guard",
+        "surface": "guarding",
+        "pos": "동",
+        "meaning": "(상대 선수를) 막다, 수비하다",
+        "sentence": "He shot even when three players were guarding him."
+      },
+      {
+        "word": "semifinal",
+        "surface": "semifinal",
+        "pos": "명",
+        "meaning": "준결승",
+        "sentence": "In the semifinal game, Dohun missed shot after shot."
+      },
+      {
+        "word": "miss",
+        "surface": "missed",
+        "pos": "동",
+        "meaning": "놓치다, (슛을) 실패하다",
+        "sentence": "In the semifinal game, Dohun missed shot after shot."
+      },
+      {
+        "word": "coach",
+        "surface": "Coach",
+        "pos": "명",
+        "meaning": "코치, 감독",
+        "sentence": "After the game, Coach Kim sat down next to him."
+      },
+      {
+        "word": "next to",
+        "surface": "next to",
+        "pos": "숙",
+        "meaning": "~ 옆에",
+        "sentence": "After the game, Coach Kim sat down next to him."
+      },
+      {
+        "word": "teammate",
+        "surface": "teammates",
+        "pos": "명",
+        "meaning": "팀 동료",
+        "sentence": "Your teammates are open.\""
+      },
+      {
+        "word": "open",
+        "surface": "open",
+        "pos": "형",
+        "meaning": "(수비가 붙지 않아) 비어 있는",
+        "sentence": "Your teammates are open.\""
+      },
+      {
+        "word": "practice",
+        "surface": "practiced",
+        "pos": "동",
+        "meaning": "연습하다",
+        "sentence": "For the next month, Dohun practiced passing very hard."
+      },
+      {
+        "word": "at first",
+        "surface": "At first",
+        "pos": "숙",
+        "meaning": "처음에는",
+        "sentence": "At first, it felt strange."
+      },
+      {
+        "word": "strange",
+        "surface": "strange",
+        "pos": "형",
+        "meaning": "이상한, 낯선",
+        "sentence": "At first, it felt strange."
+      },
+      {
+        "word": "trust",
+        "surface": "trust",
+        "pos": "동",
+        "meaning": "믿다, 신뢰하다",
+        "sentence": "But slowly, he began to trust his teammates, and they began to trust him, too."
+      },
+      {
+        "word": "behind",
+        "surface": "behind",
+        "pos": "부",
+        "meaning": "(점수가) 뒤져서",
+        "sentence": "In the final game of the season, the team was behind by two points."
+      },
+      {
+        "word": "left",
+        "surface": "left",
+        "pos": "형",
+        "meaning": "남아 있는 (leave의 과거분사)",
+        "sentence": "There were only five seconds left."
+      },
+      {
+        "word": "alone",
+        "surface": "alone",
+        "pos": "부",
+        "meaning": "혼자, 홀로",
+        "sentence": "Jaewon was standing alone at the three-point line."
+      },
+      {
+        "word": "whistle",
+        "surface": "whistle",
+        "pos": "명",
+        "meaning": "호루라기 (소리)",
+        "sentence": "Jaewon shot, and the ball went in just as the whistle blew."
+      },
+      {
+        "word": "winning",
+        "surface": "winning",
+        "pos": "형",
+        "meaning": "승리를 결정짓는, 이긴",
+        "sentence": "Dohun did not score the winning shot, but he did not care anymore."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "The Best Pass\n\nDohun was the best basketball player on his school team. Last {{v:season}}, he {{g:had scored|과거완료: had + p.p. (과거의 어느 때보다 더 이전의 일)}} more than {{v:half}} of the team's {{v:points}}. {{g:Whenever|복합관계부사 whenever: ~할 때마다}} he got the ball, he tried to shoot, {{g:even when|even when + 주어 + 동사: ~할 때조차도}} three players were {{v:guarding}} him.\n\nBut the team {{g:kept losing|keep + -ing: 계속 ~하다}}. In the {{v:semifinal}} game, Dohun {{v:missed}} {{g:shot after shot|명사 + after + 명사: 연이은 ~ (계속해서)}}, and the team {{g:lost by ten points|by + 차이: ~만큼 (점수 차이)}}. After the game, {{v:Coach}} Kim sat down {{v:next to}} him.\n\n\"Dohun, you are a great player,\" she said. \"But {{t:basketball is not a one-person game}}. When you have the ball, {{g:look around|명령문: 동사원형으로 시작 (~해라)}}. Your {{v:teammates}} are {{v:open}}.\"\n\nFor the next month, Dohun {{v:practiced}} passing {{g:as hard as he had practiced shooting|as + 원급 + as + 주어 + 동사: ~했던 만큼 …하게 (had practiced: 과거완료)}}. {{v:At first}}, it felt {{v:strange}}. But slowly, he {{g:began to trust|begin + to부정사: ~하기 시작하다}} his teammates, and they began to {{v:trust}} him.\n\nIn the final game of the season, the team was {{v:behind}} by two points {{g:with only five seconds left|with + 명사 + 과거분사: ~가 …된 채로 (5초만 남은 상태로)}}. Dohun got the ball, and everyone {{g:expected him to shoot|expect + 목적어 + to부정사: (목적어)가 ~할 거라고 기대하다}}. {{v:Instead}}, he saw Jaewon, {{g:who was standing|계속적 용법 주격 관계대명사 who: , and he (그런데 그는 ~하고 있었다)}} {{v:alone}} at the three-point line, and passed. Jaewon shot, and the ball went in {{g:just as|just as + 주어 + 동사: 바로 ~할 때}} the {{v:whistle}} blew.\n\nThe team jumped into the air together. Dohun had not scored the {{v:winning}} shot, but he {{g:no longer|no longer: 더 이상 ~하지 않다 (= not ~ anymore)}} {{v:cared}}. {{t:It was the best pass of his life}}.",
+    "tags": {
+      "vocab": [
+        "season",
+        "half",
+        "point",
+        "guard",
+        "semifinal",
+        "miss",
+        "coach",
+        "next to",
+        "teammate",
+        "open",
+        "practice",
+        "at first",
+        "strange",
+        "trust",
+        "behind",
+        "instead",
+        "alone",
+        "whistle",
+        "winning",
+        "care"
+      ],
+      "grammar": [
+        "과거완료",
+        "복합관계부사 whenever",
+        "even when",
+        "keep + -ing",
+        "명사 after 명사",
+        "by + 차이",
+        "명령문",
+        "as + 원급 + as",
+        "begin + to부정사",
+        "with + 명사 + 분사",
+        "expect + 목적어 + to부정사",
+        "계속적 용법 관계대명사 who",
+        "just as",
+        "no longer"
+      ],
+      "topic": [
+        "팀워크",
+        "동료에 대한 신뢰",
+        "성장 이야기 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "960a8580-3c54-4455-903f-362174a5c511",
+        "type": "mc",
+        "q": "What is the lesson of the story?",
+        "choices": [
+          "You should practice shooting more than passing.",
+          "Teamwork can be more valuable than one player's success.",
+          "Winning is the only important thing in sports.",
+          "Great players never need a coach.",
+          "Losing a game is always the coach's fault."
+        ],
+        "answer": "Teamwork can be more valuable than one player's success.",
+        "explanation": "혼자 득점하는 것보다 팀 동료를 믿는 것이 더 값지다는 교훈이다."
+      },
+      {
+        "qid": "9474ffef-7b0c-46d5-b020-6446ae99d512",
+        "type": "mc",
+        "q": "Why did the team keep losing?",
+        "choices": [
+          "The other players were hurt.",
+          "Coach Kim did not come to the games.",
+          "Dohun did not practice shooting.",
+          "Dohun tried to do everything by himself.",
+          "The team had too many players."
+        ],
+        "answer": "Dohun tried to do everything by himself.",
+        "explanation": "세 명이 막고 있어도 혼자 슛을 하려 했고, 비어 있는 동료를 활용하지 않았다."
+      },
+      {
+        "qid": "cd89d917-c3e4-43ef-89c1-f5dd10bc0823",
+        "type": "mc",
+        "q": "What does 'even when three players were guarding him' show about Dohun?",
+        "choices": [
+          "He tried to shoot even in very difficult situations.",
+          "He was afraid of the other players.",
+          "Three of his teammates helped him.",
+          "He always passed when he was guarded.",
+          "He was a bad shooter."
+        ],
+        "answer": "He tried to shoot even in very difficult situations.",
+        "explanation": "세 명이 수비할 때조차 슛을 했다 → 무리하게 혼자 하려 했다."
+      },
+      {
+        "qid": "5a951975-709c-4b29-92f7-ca555df46030",
+        "type": "mc",
+        "q": "What does 'Dohun missed shot after shot' mean?",
+        "choices": [
+          "He made every shot.",
+          "He missed only one shot.",
+          "He shot after the game.",
+          "He passed after each shot.",
+          "He missed many shots, one after another."
+        ],
+        "answer": "He missed many shots, one after another.",
+        "explanation": "shot after shot = 연이은 슛 → 계속해서 슛을 놓쳤다."
+      },
+      {
+        "qid": "7f8b13b7-0855-4bb6-bc20-20cac4f9d998",
+        "type": "mc",
+        "q": "In 'Your teammates are open,' 'open' means ____.",
+        "choices": [
+          "not closed",
+          "not busy",
+          "not guarded by any player",
+          "honest",
+          "not tired"
+        ],
+        "answer": "not guarded by any player",
+        "explanation": "농구에서 open = 수비가 붙지 않아 비어 있는."
+      },
+      {
+        "qid": "a4720665-9847-47e6-9f16-3195ae4d0b86",
+        "type": "mc",
+        "q": "How did Coach Kim talk to Dohun after the game?",
+        "choices": [
+          "She shouted at him angrily.",
+          "She praised him first and then gave him advice.",
+          "She did not say anything to him.",
+          "She told him to leave the team.",
+          "She blamed his teammates."
+        ],
+        "answer": "She praised him first and then gave him advice.",
+        "explanation": "'you are a great player'로 먼저 칭찬하고 '농구는 혼자 하는 경기가 아니다'라고 조언했다."
+      },
+      {
+        "qid": "4e4d41ca-8fe4-4df9-a841-333f08e68fcb",
+        "type": "mc",
+        "q": "How hard did Dohun practice passing?",
+        "choices": [
+          "Less hard than he had practiced shooting",
+          "Only once a week",
+          "Not hard at all",
+          "Only on the day of the final game",
+          "As hard as he had practiced shooting"
+        ],
+        "answer": "As hard as he had practiced shooting",
+        "explanation": "'Dohun practiced passing as hard as he had practiced shooting.'"
+      },
+      {
+        "qid": "9a282d02-d379-4651-b862-b2232140fb8f",
+        "type": "mc",
+        "q": "Which best describes how Dohun changed?",
+        "choices": [
+          "From a player who only shot to a player who trusted his teammates",
+          "From a good passer to a good shooter",
+          "From a coach to a player",
+          "From a team player to a selfish player",
+          "From a bad player to the best player"
+        ],
+        "answer": "From a player who only shot to a player who trusted his teammates",
+        "explanation": "혼자 슛만 하던 선수 → 동료를 믿는 선수."
+      },
+      {
+        "qid": "97eedcf7-1228-4765-a260-5360ef597982",
+        "type": "mc",
+        "q": "What was the situation near the end of the final game?",
+        "choices": [
+          "The team was ten points ahead.",
+          "The score was tied.",
+          "The team was two points ahead.",
+          "The team was two points behind with five seconds left.",
+          "The team was five points behind."
+        ],
+        "answer": "The team was two points behind with five seconds left.",
+        "explanation": "'the team was behind by two points with only five seconds left.'"
+      },
+      {
+        "qid": "cab3a301-0e4a-4e16-bb9d-cd4f2081d76f",
+        "type": "mc",
+        "q": "Why did everyone expect Dohun to shoot?",
+        "choices": [
+          "Because Jaewon told everyone to watch him",
+          "Because Coach Kim shouted at him to shoot",
+          "Because he had always tried to shoot when he got the ball",
+          "Because he was the tallest player",
+          "Because he never shot the ball"
+        ],
+        "answer": "Because he had always tried to shoot when he got the ball",
+        "explanation": "예전에는 공만 잡으면 슛을 했기 때문에 모두 그가 슛할 거라고 예상했다."
+      },
+      {
+        "qid": "cc286abc-4816-4b67-aeb5-f2e0883a1112",
+        "type": "mc",
+        "q": "What does the word 'Instead' show in the fifth paragraph?",
+        "choices": [
+          "Dohun did something different from what people expected.",
+          "Dohun shot the ball as people expected.",
+          "Dohun gave up the game.",
+          "Coach Kim stopped the game.",
+          "Jaewon passed the ball to Dohun."
+        ],
+        "answer": "Dohun did something different from what people expected.",
+        "explanation": "Instead = 그 대신에 → 기대(슛)와 다르게 패스를 했다."
+      },
+      {
+        "qid": "07986a01-338b-4984-9df6-b7a76e3d778c",
+        "type": "mc",
+        "q": "Why did Dohun pass the ball to Jaewon?",
+        "choices": [
+          "Jaewon asked for the ball loudly.",
+          "Dohun was hurt and could not shoot.",
+          "Coach Kim told him to pass to Jaewon.",
+          "Jaewon was guarded by three players.",
+          "Jaewon was standing alone at the three-point line."
+        ],
+        "answer": "Jaewon was standing alone at the three-point line.",
+        "explanation": "'he saw Jaewon, who was standing alone at the three-point line, and passed.'"
+      },
+      {
+        "qid": "dafef0ff-763b-4be5-a37b-0420223c3ffd",
+        "type": "mc",
+        "q": "What does 'the ball went in just as the whistle blew' mean?",
+        "choices": [
+          "The ball went in after the game ended.",
+          "The ball went in at the very moment the game ended.",
+          "The ball went in before Jaewon shot.",
+          "The ball missed the basket.",
+          "The whistle blew two times."
+        ],
+        "answer": "The ball went in at the very moment the game ended.",
+        "explanation": "just as = 바로 ~할 때 → 경기 종료 휘슬과 동시에 들어갔다."
+      },
+      {
+        "qid": "4604da10-2744-40a7-91ed-9a759bfc995d",
+        "type": "mc",
+        "q": "What does 'he no longer cared' mean?",
+        "choices": [
+          "He did not care about his team.",
+          "He wanted to quit basketball.",
+          "He was angry at Jaewon.",
+          "Scoring the winning shot was not important to him anymore.",
+          "He cared more about scoring than before."
+        ],
+        "answer": "Scoring the winning shot was not important to him anymore.",
+        "explanation": "no longer = 더 이상 ~않다 → 자신이 결승골을 넣지 않은 것은 이제 상관없었다."
+      },
+      {
+        "qid": "cf073fc4-6a6f-4627-b81d-2216e3f05ed0",
+        "type": "mc",
+        "q": "Which uses the past perfect correctly, like 'he had scored more than half of the team's points'?",
+        "choices": [
+          "When I had arrived, the movie already starts.",
+          "When I arrive, the movie had started.",
+          "When I arrived, the movie had already started.",
+          "When I arrived, the movie has already started.",
+          "When I arrived, the movie had already start."
+        ],
+        "answer": "When I arrived, the movie had already started.",
+        "explanation": "과거(arrived)보다 더 이전에 일어난 일 → had + p.p.(had started)."
+      },
+      {
+        "qid": "b8ba242c-6cd6-466f-9444-a693b6ff2017",
+        "type": "mc",
+        "q": "Which sentence is correct, like 'everyone expected him to shoot'?",
+        "choices": [
+          "My parents expected me win the game.",
+          "My parents expected me winning the game.",
+          "My parents expected I to win the game.",
+          "My parents expected me to won the game.",
+          "My parents expected me to win the game."
+        ],
+        "answer": "My parents expected me to win the game.",
+        "explanation": "expect + 목적어(me) + to + 동사원형(win)."
+      },
+      {
+        "qid": "c302cb56-2e3e-403e-ad0b-09f6b3fcbddd",
+        "type": "mc",
+        "q": "Which sentence is correct, like 'he saw Jaewon, who was standing alone'?",
+        "choices": [
+          "I met Mina, who lives next door.",
+          "I met Mina, which lives next door.",
+          "I met Mina, that lives next door.",
+          "I met Mina, who live next door.",
+          "I met Mina, whom lives next door."
+        ],
+        "answer": "I met Mina, who lives next door.",
+        "explanation": "계속적 용법: 사람 → , who (that은 콤마 뒤에 쓸 수 없다). Mina는 단수 → lives."
+      },
+      {
+        "qid": "07c47515-590a-46d7-9505-fd2e29c4ec03",
+        "type": "mc",
+        "q": "Which is NOT true according to the story?",
+        "choices": [
+          "Dohun had scored more than half of the team's points.",
+          "The team lost the semifinal by ten points.",
+          "Coach Kim told Dohun to shoot more often.",
+          "Passing felt strange to Dohun at first.",
+          "Jaewon shot the ball as the whistle blew."
+        ],
+        "answer": "Coach Kim told Dohun to shoot more often.",
+        "explanation": "코치는 슛을 더 하라는 것이 아니라 주위를 둘러보라고(패스하라고) 했다."
+      },
+      {
+        "qid": "23ca6a4c-2748-4fee-8621-c9f9295931e9",
+        "type": "order",
+        "items": [
+          "Dohun and his teammates began to trust each other.",
+          "Dohun missed shot after shot, and the team lost the semifinal.",
+          "Dohun passed to Jaewon, and the ball went in.",
+          "Dohun practiced passing for the next month.",
+          "Coach Kim told Dohun that basketball is not a one-person game."
+        ],
+        "answer": [
+          "Dohun missed shot after shot, and the team lost the semifinal.",
+          "Coach Kim told Dohun that basketball is not a one-person game.",
+          "Dohun practiced passing for the next month.",
+          "Dohun and his teammates began to trust each other.",
+          "Dohun passed to Jaewon, and the ball went in."
+        ]
+      },
+      {
+        "qid": "9d5c0176-ace5-4ca3-94e9-8316dea98b0e",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "season",
+            "meaning": "시즌"
+          },
+          {
+            "word": "guard",
+            "meaning": "(상대를) 막다"
+          },
+          {
+            "word": "semifinal",
+            "meaning": "준결승"
+          },
+          {
+            "word": "teammate",
+            "meaning": "팀 동료"
+          },
+          {
+            "word": "strange",
+            "meaning": "이상한, 낯선"
+          },
+          {
+            "word": "trust",
+            "meaning": "믿다"
+          },
+          {
+            "word": "instead",
+            "meaning": "대신에"
+          },
+          {
+            "word": "whistle",
+            "meaning": "호루라기"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "f4bad1f5-4489-4531-84f4-1ee8083f367a",
+        "q": "Summarize the story in two English sentences: (1) Dohun's problem and (2) how he changed.",
+        "wordLimit": 50,
+        "sampleAnswer": "Dohun was the best player on his team, but he always tried to shoot by himself, so the team kept losing. After his coach's advice, he learned to trust his teammates and made the pass that won the final game.",
+        "rubric": "① 문제(혼자 슛) ② 변화(동료 신뢰) ③ 결과(결승 패스) ④ 영어 2문장"
+      },
+      {
+        "qid": "d000d943-31ae-41b0-82d0-98cd94c453ed",
+        "q": "우리말로 쓰시오: 김 코치의 말 \"basketball is not a one-person game\"의 의미를 쓰고, 이 말을 들은 뒤 도훈이 어떻게 변했는지 쓰시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "농구는 혼자 하는 경기가 아니라 팀이 함께 하는 경기라는 뜻이다. 이 말을 들은 뒤 도훈은 한 달 동안 슛을 연습했던 만큼 열심히 패스를 연습했고, 점차 동료를 믿게 되어 마지막 경기에서 비어 있는 재원이에게 패스했다.",
+        "rubric": "① 말의 의미(팀 경기) ② 패스 연습 ③ 동료를 믿게 됨 / 결승 패스",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "e86dff22-4a5d-4143-9d1c-78201a462162",
+        "q": "Why was it 'the best pass of Dohun's life'? Answer in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "Because it helped his team win the final game, and it showed that he trusted his teammates.",
+        "rubric": "① 팀의 승리 ② 동료에 대한 신뢰 ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "40652c9c-d467-4d2a-813f-d758a5f52404",
+        "q": "다음 우리말을 영어로 쓰시오. '모두가 그가 슛을 할 거라고 기대했다.' <조건> expect + 목적어 + to부정사, 과거시제",
+        "wordLimit": 8,
+        "sampleAnswer": "Everyone expected him to shoot.",
+        "rubric": "① Everyone ② expected ③ him ④ to shoot"
+      },
+      {
+        "qid": "65a8bf55-b36f-4920-b194-cc455c0bd478",
+        "q": "두 문장을 관계대명사 who를 사용하여 한 문장으로 쓰시오. 'He saw Jaewon. Jaewon was standing alone at the three-point line.'",
+        "wordLimit": 16,
+        "sampleAnswer": "He saw Jaewon, who was standing alone at the three-point line.",
+        "rubric": "① , who (계속적 용법) ② was standing ③ 나머지 내용 일치"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "season",
+        "surface": "season",
+        "pos": "명",
+        "meaning": "시즌, (경기) 철",
+        "sentence": "Last season, he had scored more than half of the team's points."
+      },
+      {
+        "word": "half",
+        "surface": "half",
+        "pos": "명",
+        "meaning": "절반",
+        "sentence": "Last season, he had scored more than half of the team's points."
+      },
+      {
+        "word": "point",
+        "surface": "points",
+        "pos": "명",
+        "meaning": "점수, 득점",
+        "sentence": "Last season, he had scored more than half of the team's points."
+      },
+      {
+        "word": "guard",
+        "surface": "guarding",
+        "pos": "동",
+        "meaning": "(상대 선수를) 막다, 수비하다",
+        "sentence": "Whenever he got the ball, he tried to shoot, even when three players were guarding him."
+      },
+      {
+        "word": "semifinal",
+        "surface": "semifinal",
+        "pos": "명",
+        "meaning": "준결승",
+        "sentence": "In the semifinal game, Dohun missed shot after shot, and the team lost by ten points."
+      },
+      {
+        "word": "miss",
+        "surface": "missed",
+        "pos": "동",
+        "meaning": "놓치다, (슛을) 실패하다",
+        "sentence": "In the semifinal game, Dohun missed shot after shot, and the team lost by ten points."
+      },
+      {
+        "word": "coach",
+        "surface": "Coach",
+        "pos": "명",
+        "meaning": "코치, 감독",
+        "sentence": "After the game, Coach Kim sat down next to him."
+      },
+      {
+        "word": "next to",
+        "surface": "next to",
+        "pos": "숙",
+        "meaning": "~ 옆에",
+        "sentence": "After the game, Coach Kim sat down next to him."
+      },
+      {
+        "word": "teammate",
+        "surface": "teammates",
+        "pos": "명",
+        "meaning": "팀 동료",
+        "sentence": "Your teammates are open.\""
+      },
+      {
+        "word": "open",
+        "surface": "open",
+        "pos": "형",
+        "meaning": "(수비가 붙지 않아) 비어 있는",
+        "sentence": "Your teammates are open.\""
+      },
+      {
+        "word": "practice",
+        "surface": "practiced",
+        "pos": "동",
+        "meaning": "연습하다",
+        "sentence": "For the next month, Dohun practiced passing as hard as he had practiced shooting."
+      },
+      {
+        "word": "at first",
+        "surface": "At first",
+        "pos": "숙",
+        "meaning": "처음에는",
+        "sentence": "At first, it felt strange."
+      },
+      {
+        "word": "strange",
+        "surface": "strange",
+        "pos": "형",
+        "meaning": "이상한, 낯선",
+        "sentence": "At first, it felt strange."
+      },
+      {
+        "word": "trust",
+        "surface": "trust",
+        "pos": "동",
+        "meaning": "믿다, 신뢰하다",
+        "sentence": "But slowly, he began to trust his teammates, and they began to trust him."
+      },
+      {
+        "word": "behind",
+        "surface": "behind",
+        "pos": "부",
+        "meaning": "(점수가) 뒤져서",
+        "sentence": "In the final game of the season, the team was behind by two points with only five seconds left."
+      },
+      {
+        "word": "instead",
+        "surface": "Instead",
+        "pos": "부",
+        "meaning": "대신에",
+        "sentence": "Instead, he saw Jaewon, who was standing alone at the three-point line, and passed."
+      },
+      {
+        "word": "alone",
+        "surface": "alone",
+        "pos": "부",
+        "meaning": "혼자, 홀로",
+        "sentence": "Instead, he saw Jaewon, who was standing alone at the three-point line, and passed."
+      },
+      {
+        "word": "whistle",
+        "surface": "whistle",
+        "pos": "명",
+        "meaning": "호루라기 (소리)",
+        "sentence": "Jaewon shot, and the ball went in just as the whistle blew."
+      },
+      {
+        "word": "winning",
+        "surface": "winning",
+        "pos": "형",
+        "meaning": "승리를 결정짓는, 이긴",
+        "sentence": "Dohun had not scored the winning shot, but he no longer cared."
+      },
+      {
+        "word": "care",
+        "surface": "cared",
+        "pos": "동",
+        "meaning": "신경 쓰다, 상관하다",
+        "sentence": "Dohun had not scored the winning shot, but he no longer cared."
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "The Best Pass\n\nDohun was, {{v:without question}}, the most {{v:talented}} basketball player on his school team. Last season, he {{g:had scored|과거완료: had + p.p. (과거보다 더 이전의 일)}} more than half of the team's points {{v:on his own}}. {{g:Whenever the ball came to him|복합관계부사 whenever: ~할 때마다}}, he {{v:attempted}} a shot, even when he {{g:was surrounded by|수동태: be + p.p. + by (~에게 둘러싸이다)}} three {{v:defenders}}.\n\n{{v:Nevertheless}}, the team kept losing. In the semifinal, Dohun missed {{g:one shot after another|one ~ after another: 잇따라, 연달아}}, and the team {{g:was defeated by ten points|수동태 + by 차이: 10점 차로 패배했다}}. After the game, Coach Kim sat down {{v:beside}} him.\n\n\"Dohun, you are a {{v:remarkable}} player,\" she said. \"But {{t:basketball is not a one-person game}}. Whenever you have the ball, look around. Your teammates {{g:are often left|5형식 수동태: be left + 형용사 (~한 상태로 남겨지다)}} {{v:wide open}}.\"\n\nFor the following month, Dohun practiced passing {{g:as intensely as he had once practiced shooting|as + 원급 + as: 예전에 슛을 연습했던 만큼 강도 높게}}. At first, it felt {{v:unnatural}} to him. {{v:Gradually}}, however, he learned to {{v:rely on}} his teammates, and they, {{v:in turn}}, {{g:came to trust|come to + 동사원형: (점차) ~하게 되다}} him.\n\nIn the final game of the season, the team was {{v:trailing}} by two points {{g:with only five seconds remaining|with + 명사 + 현재분사: ~가 …하는 채로}}. When Dohun received the ball, {{g:everyone assumed that he would take the shot|시제 일치: 주절이 과거(assumed) → that절 will도 would}}. Instead, he {{v:spotted}} Jaewon, {{g:who was standing|계속적 용법 주격 관계대명사 who}} {{v:unguarded}} at the three-point line, and passed. Jaewon shot, and the ball dropped through the net just as the final whistle blew.\n\nThe whole team {{v:leapt}} into the air together. {{g:Although Dohun had not scored|양보 접속사 although + 과거완료 부정(had not p.p.)}} the winning basket, it no longer {{v:mattered}} to him. {{t:It was the best pass he had ever made}}.",
+    "tags": {
+      "vocab": [
+        "without question",
+        "talented",
+        "on one's own",
+        "attempt",
+        "defender",
+        "nevertheless",
+        "beside",
+        "remarkable",
+        "wide open",
+        "unnatural",
+        "gradually",
+        "rely on",
+        "in turn",
+        "trail",
+        "spot",
+        "unguarded",
+        "leap",
+        "matter"
+      ],
+      "grammar": [
+        "과거완료",
+        "복합관계부사 whenever",
+        "수동태",
+        "one ~ after another",
+        "5형식 수동태(be left + 형용사)",
+        "as + 원급 + as",
+        "come to + 동사원형",
+        "with + 명사 + 분사",
+        "시제 일치",
+        "계속적 용법 관계대명사 who",
+        "양보 접속사 although"
+      ],
+      "topic": [
+        "팀워크",
+        "동료에 대한 신뢰",
+        "인물의 변화 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "654413d7-d0de-4b1f-a741-8d7a51dab242",
+        "type": "mc",
+        "q": "Which of the following best expresses the theme of the story?",
+        "choices": [
+          "Talented players should always take the most important shots.",
+          "True success in a team sport comes from trusting and working with teammates.",
+          "Hard work at shooting is the only way to win a championship.",
+          "Coaches should never criticize their best players.",
+          "Winning a game matters more than how the team plays."
+        ],
+        "answer": "True success in a team sport comes from trusting and working with teammates.",
+        "explanation": "혼자 득점하던 도훈이 동료를 믿게 되면서 진정한 성공을 얻는다."
+      },
+      {
+        "qid": "d7482375-d580-49f2-9491-b20ea9b24e1c",
+        "type": "mc",
+        "q": "Which of the following would be the best title for the story?",
+        "choices": [
+          "The Coach Who Never Lost a Game",
+          "Three Defenders and One Ball",
+          "Why Dohun Quit Basketball",
+          "From Star Shooter to Team Player",
+          "The Longest Season in School History"
+        ],
+        "answer": "From Star Shooter to Team Player",
+        "explanation": "슛만 하던 스타 선수가 팀 플레이어로 변하는 이야기이다."
+      },
+      {
+        "qid": "57bdb320-682f-445f-a846-35b2b02fd8d1",
+        "type": "mc",
+        "q": "In the passage, 'remarkable' is closest in meaning to ____.",
+        "choices": [
+          "outstanding",
+          "ordinary",
+          "careless",
+          "nervous",
+          "selfish"
+        ],
+        "answer": "outstanding",
+        "explanation": "remarkable = 놀라운, 뛰어난(outstanding)."
+      },
+      {
+        "qid": "3a9a31f0-d4fb-4038-a627-5bae28f5fe92",
+        "type": "mc",
+        "q": "In the passage, 'trailing' is closest in meaning to ____.",
+        "choices": [
+          "winning",
+          "tied",
+          "resting",
+          "cheating",
+          "behind"
+        ],
+        "answer": "behind",
+        "explanation": "be trailing by two points = 2점 뒤지고 있다."
+      },
+      {
+        "qid": "505ff55d-73bd-4f9e-95a0-f8fccb414113",
+        "type": "mc",
+        "q": "In the passage, 'spotted' is closest in meaning to ____.",
+        "choices": [
+          "hit",
+          "ignored",
+          "noticed",
+          "chased",
+          "blamed"
+        ],
+        "answer": "noticed",
+        "explanation": "spot = 발견하다, 알아채다(notice)."
+      },
+      {
+        "qid": "219bd791-0e9a-4a90-9bc6-94fd66a4f51a",
+        "type": "mc",
+        "q": "In the passage, 'unguarded' means ____.",
+        "choices": [
+          "not protected by the police",
+          "not covered by any defender",
+          "not wearing a uniform",
+          "not paying attention",
+          "not part of the team"
+        ],
+        "answer": "not covered by any defender",
+        "explanation": "농구에서 unguarded = 수비가 붙지 않은."
+      },
+      {
+        "qid": "defe0d8e-389d-4a9e-84e6-e683403cff48",
+        "type": "mc",
+        "q": "Before Coach Kim's advice, Dohun's style of play can best be described as ____.",
+        "choices": [
+          "cooperative",
+          "cautious",
+          "lazy",
+          "defensive",
+          "self-centered"
+        ],
+        "answer": "self-centered",
+        "explanation": "세 명에게 둘러싸여도 혼자 슛 → 자기중심적인 플레이."
+      },
+      {
+        "qid": "7fa066bc-513a-45c5-9c4d-3af9523c2864",
+        "type": "mc",
+        "q": "Why did the team keep losing despite Dohun's talent?",
+        "choices": [
+          "Dohun relied only on himself and did not use his open teammates.",
+          "Dohun was not talented enough to score.",
+          "The other players refused to pass to Dohun.",
+          "Coach Kim did not let Dohun play.",
+          "The team practiced passing too much."
+        ],
+        "answer": "Dohun relied only on himself and did not use his open teammates.",
+        "explanation": "코치의 말 'Your teammates are often left wide open'이 원인을 보여 준다."
+      },
+      {
+        "qid": "a1798542-d808-4c5d-a2ca-806427989243",
+        "type": "mc",
+        "q": "What does Coach Kim imply by saying 'Your teammates are often left wide open'?",
+        "choices": [
+          "His teammates were too lazy to play defense.",
+          "His teammates should leave the team.",
+          "The opponents were guarding his teammates closely.",
+          "Dohun had been missing chances to pass to free teammates.",
+          "His teammates wanted to rest during games."
+        ],
+        "answer": "Dohun had been missing chances to pass to free teammates.",
+        "explanation": "동료들이 자주 비어 있었는데도 도훈이 패스하지 않았다는 뜻이다."
+      },
+      {
+        "qid": "ac7668d8-39e3-4eb3-b237-3807f0509342",
+        "type": "mc",
+        "q": "Why did passing feel 'unnatural' to Dohun at first?",
+        "choices": [
+          "He had never played basketball before.",
+          "Coach Kim yelled at him during practice.",
+          "He was used to shooting rather than passing.",
+          "His teammates refused to catch the ball.",
+          "He had hurt his hand in the semifinal."
+        ],
+        "answer": "He was used to shooting rather than passing.",
+        "explanation": "시즌 내내 슛만 하던 습관 때문에 패스가 어색했다."
+      },
+      {
+        "qid": "75ac46fc-3b06-4f7b-82dd-479471dd0bfd",
+        "type": "mc",
+        "q": "The phrase 'they, in turn, came to trust him' suggests that ____.",
+        "choices": [
+          "trust between Dohun and his teammates grew in both directions",
+          "his teammates took turns trusting the coach",
+          "his teammates stopped trusting him",
+          "only Dohun trusted the others",
+          "his teammates trusted the opponents instead"
+        ],
+        "answer": "trust between Dohun and his teammates grew in both directions",
+        "explanation": "in turn = 이번에는 그들도 → 신뢰가 서로 쌓였다."
+      },
+      {
+        "qid": "3727b19a-5700-468a-8235-5e6f459bde0c",
+        "type": "mc",
+        "q": "Why did everyone assume Dohun would take the final shot?",
+        "choices": [
+          "Because Jaewon was guarded by three defenders",
+          "Because Coach Kim had told everyone his plan",
+          "Because Dohun had practiced only shooting that month",
+          "Because the team needed exactly three points",
+          "Because he had always shot whenever the ball came to him"
+        ],
+        "answer": "Because he had always shot whenever the ball came to him",
+        "explanation": "예전 습관(공만 오면 슛) 때문에 모두 슛을 예상했다. 2점 뒤지고 있었으므로 3점이 꼭 필요한 것은 아니었다."
+      },
+      {
+        "qid": "3724a1e2-f60a-4fce-a63f-301a04f847f6",
+        "type": "mc",
+        "q": "What did Dohun's final pass show?",
+        "choices": [
+          "He was too tired to shoot.",
+          "He had truly accepted his coach's advice.",
+          "He did not want to take responsibility.",
+          "He had lost confidence in his shooting.",
+          "He wanted Jaewon to miss the shot."
+        ],
+        "answer": "He had truly accepted his coach's advice.",
+        "explanation": "결정적인 순간에 주위를 둘러보고 비어 있는 동료에게 패스했다 → 조언을 받아들였다."
+      },
+      {
+        "qid": "5f6c6ac9-e5c2-4d06-af74-e10762446bc4",
+        "type": "mc",
+        "q": "How did Dohun most likely feel at the end of the story?",
+        "choices": [
+          "jealous and bitter",
+          "disappointed and lonely",
+          "nervous and scared",
+          "satisfied and proud",
+          "bored and indifferent"
+        ],
+        "answer": "satisfied and proud",
+        "explanation": "'it no longer mattered to him. It was the best pass he had ever made.' → 만족스럽고 뿌듯했다."
+      },
+      {
+        "qid": "186dcab2-2c02-4924-ab26-623e55febfa0",
+        "type": "mc",
+        "q": "Which sentence is correct, like 'he was surrounded by three defenders'?",
+        "choices": [
+          "The singer was surround by many fans.",
+          "The singer surrounded by many fans.",
+          "The singer was surrounded by many fans.",
+          "The singer was surrounding by many fans.",
+          "The singer is surround by many fans."
+        ],
+        "answer": "The singer was surrounded by many fans.",
+        "explanation": "수동태 = be동사 + 과거분사(surrounded) + by."
+      },
+      {
+        "qid": "50f708c6-f64f-4f0a-8dfc-21503487e01b",
+        "type": "mc",
+        "q": "Which sentence is correct, like 'they came to trust him'?",
+        "choices": [
+          "Over time, I came to liked my new school.",
+          "Over time, I came liking my new school.",
+          "Over time, I came to likes my new school.",
+          "Over time, I come to liking my new school.",
+          "Over time, I came to like my new school."
+        ],
+        "answer": "Over time, I came to like my new school.",
+        "explanation": "come to + 동사원형: (점차) ~하게 되다."
+      },
+      {
+        "qid": "a7e3ed90-884e-4dc5-b6b1-43e7cd0b8ef0",
+        "type": "mc",
+        "q": "Which has the same structure as 'with only five seconds remaining'?",
+        "choices": [
+          "She listened to music with her eyes closed.",
+          "She listened to music with her eyes close.",
+          "She listened to music with closing her eyes.",
+          "She listened to music with her eyes closes.",
+          "She listened to music with her eyes to close."
+        ],
+        "answer": "She listened to music with her eyes closed.",
+        "explanation": "with + 명사 + 분사: 눈은 감기는 대상 → 과거분사(closed). 초는 남아 있는 주체 → 현재분사(remaining)."
+      },
+      {
+        "qid": "b3f0fb1d-1437-4641-8f55-756538d598f5",
+        "type": "mc",
+        "q": "Which statement is NOT true according to the story?",
+        "choices": [
+          "Dohun had scored more than half of the team's points.",
+          "The team was defeated by ten points in the semifinal.",
+          "Dohun scored the winning basket in the final game.",
+          "Coach Kim sat down beside Dohun after the semifinal.",
+          "Jaewon was unguarded at the three-point line."
+        ],
+        "answer": "Dohun scored the winning basket in the final game.",
+        "explanation": "결승골은 재원이가 넣었다 (Although Dohun had not scored the winning basket)."
+      },
+      {
+        "qid": "5dfdf900-c414-4e59-912a-21d3faddba86",
+        "type": "order",
+        "items": [
+          "Dohun spotted Jaewon and passed, and the team won.",
+          "The team was defeated by ten points in the semifinal.",
+          "Dohun practiced passing and learned to rely on his teammates.",
+          "Dohun attempted a shot whenever the ball came to him.",
+          "Coach Kim told Dohun that his teammates were often left wide open."
+        ],
+        "answer": [
+          "Dohun attempted a shot whenever the ball came to him.",
+          "The team was defeated by ten points in the semifinal.",
+          "Coach Kim told Dohun that his teammates were often left wide open.",
+          "Dohun practiced passing and learned to rely on his teammates.",
+          "Dohun spotted Jaewon and passed, and the team won."
+        ]
+      },
+      {
+        "qid": "236f1f83-6ca4-4a41-acbd-88f1c81a96f8",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "talented",
+            "meaning": "재능 있는"
+          },
+          {
+            "word": "defender",
+            "meaning": "수비수"
+          },
+          {
+            "word": "nevertheless",
+            "meaning": "그럼에도 불구하고"
+          },
+          {
+            "word": "remarkable",
+            "meaning": "뛰어난"
+          },
+          {
+            "word": "rely on",
+            "meaning": "~에 의지하다"
+          },
+          {
+            "word": "trail",
+            "meaning": "(경기에서) 뒤지다"
+          },
+          {
+            "word": "spot",
+            "meaning": "발견하다"
+          },
+          {
+            "word": "leap",
+            "meaning": "뛰어오르다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "da0c5369-35a9-4ed7-a091-529ad45b5fe5",
+        "q": "Summarize the story in three English sentences: (1) Dohun's problem, (2) the turning point, and (3) the ending.",
+        "wordLimit": 70,
+        "sampleAnswer": "Dohun was the most talented player on his team, but he attempted a shot whenever he got the ball, so the team kept losing. After the semifinal, Coach Kim told him that basketball is not a one-person game, and he practiced passing and learned to rely on his teammates. In the final game, he passed to an unguarded Jaewon, whose shot won the game, and it was the best pass he had ever made.",
+        "rubric": "① 문제 ② 전환점(코치 조언·패스 연습) ③ 결말(결승 패스) ④ 영어 3문장, 정확성"
+      },
+      {
+        "qid": "de58a70b-e53d-4cef-b1c4-0d8d35eb3053",
+        "q": "우리말로 쓰시오: 마지막 문단의 \"it no longer mattered to him\"이 보여 주는 도훈의 생각 변화를 이야기 처음의 모습과 비교하여 설명하시오.",
+        "wordLimit": 90,
+        "sampleAnswer": "처음의 도훈은 공만 잡으면 혼자 슛을 하며 자신의 득점을 중요하게 여겼다. 하지만 마지막에는 자신이 결승골을 넣지 않았어도 전혀 상관없어 했다. 개인의 득점보다 팀의 승리와 동료에 대한 신뢰를 더 중요하게 여기게 된 것이다.",
+        "rubric": "① 처음 모습(개인 득점 중시) ② 마지막 모습(득점에 상관없음) ③ 팀·신뢰 중시로의 변화",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "a581c8b0-da8a-40b1-83b9-48fca7122805",
+        "q": "다음 우리말을 영어로 쓰시오. '그것은 그가 지금까지 했던 것 중 최고의 패스였다.' <조건> 최상급과 had ever를 사용할 것",
+        "wordLimit": 10,
+        "sampleAnswer": "It was the best pass he had ever made.",
+        "rubric": "① the best pass ② he had ever made ③ 과거완료"
+      },
+      {
+        "qid": "ca7e3a6e-b5eb-4782-b686-3cfd85ef2e89",
+        "q": "다음 문장을 수동태로 바꿔 쓰시오. 'Three defenders surrounded him.'",
+        "wordLimit": 8,
+        "sampleAnswer": "He was surrounded by three defenders.",
+        "rubric": "① He 주어 ② was surrounded ③ by three defenders"
+      },
+      {
+        "qid": "2b34a51d-e2a1-49b7-aa83-0970adea938e",
+        "q": "Have you ever needed to trust other people to reach a goal? Describe the experience in 2–3 English sentences.",
+        "wordLimit": 50,
+        "sampleAnswer": "Last year, I did a group project in science class. At first, I wanted to do everything by myself, but I learned to trust my group members. In the end, we made a better project together.",
+        "rubric": "① 구체적 경험 ② 신뢰와의 연결 ③ 영어 2~3문장, 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "without question",
+        "surface": "without question",
+        "pos": "숙",
+        "meaning": "의심할 여지 없이, 분명히",
+        "sentence": "Dohun was, without question, the most talented basketball player on his school team."
+      },
+      {
+        "word": "talented",
+        "surface": "talented",
+        "pos": "형",
+        "meaning": "재능 있는",
+        "sentence": "Dohun was, without question, the most talented basketball player on his school team."
+      },
+      {
+        "word": "on one's own",
+        "surface": "on his own",
+        "pos": "숙",
+        "meaning": "혼자서, 스스로",
+        "sentence": "Last season, he had scored more than half of the team's points on his own."
+      },
+      {
+        "word": "attempt",
+        "surface": "attempted",
+        "pos": "동",
+        "meaning": "시도하다",
+        "sentence": "Whenever the ball came to him, he attempted a shot, even when he was surrounded by three defenders."
+      },
+      {
+        "word": "defender",
+        "surface": "defenders",
+        "pos": "명",
+        "meaning": "수비수",
+        "sentence": "Whenever the ball came to him, he attempted a shot, even when he was surrounded by three defenders."
+      },
+      {
+        "word": "nevertheless",
+        "surface": "Nevertheless",
+        "pos": "부",
+        "meaning": "그럼에도 불구하고",
+        "sentence": "Nevertheless, the team kept losing."
+      },
+      {
+        "word": "beside",
+        "surface": "beside",
+        "pos": "전",
+        "meaning": "~ 옆에",
+        "sentence": "After the game, Coach Kim sat down beside him."
+      },
+      {
+        "word": "remarkable",
+        "surface": "remarkable",
+        "pos": "형",
+        "meaning": "놀라운, 뛰어난",
+        "sentence": "\"Dohun, you are a remarkable player,\" she said."
+      },
+      {
+        "word": "wide open",
+        "surface": "wide open",
+        "pos": "숙",
+        "meaning": "(수비 없이) 완전히 비어 있는",
+        "sentence": "Your teammates are often left wide open.\""
+      },
+      {
+        "word": "unnatural",
+        "surface": "unnatural",
+        "pos": "형",
+        "meaning": "부자연스러운",
+        "sentence": "At first, it felt unnatural to him."
+      },
+      {
+        "word": "gradually",
+        "surface": "Gradually",
+        "pos": "부",
+        "meaning": "점차, 서서히",
+        "sentence": "Gradually, however, he learned to rely on his teammates, and they, in turn, came to trust him."
+      },
+      {
+        "word": "rely on",
+        "surface": "rely on",
+        "pos": "숙",
+        "meaning": "~에 의지하다, ~을 믿다",
+        "sentence": "Gradually, however, he learned to rely on his teammates, and they, in turn, came to trust him."
+      },
+      {
+        "word": "in turn",
+        "surface": "in turn",
+        "pos": "숙",
+        "meaning": "이번에는 (그들도), 차례로",
+        "sentence": "Gradually, however, he learned to rely on his teammates, and they, in turn, came to trust him."
+      },
+      {
+        "word": "trail",
+        "surface": "trailing",
+        "pos": "동",
+        "meaning": "(경기에서) 뒤지다",
+        "sentence": "In the final game of the season, the team was trailing by two points with only five seconds remaining."
+      },
+      {
+        "word": "spot",
+        "surface": "spotted",
+        "pos": "동",
+        "meaning": "발견하다, 알아채다",
+        "sentence": "Instead, he spotted Jaewon, who was standing unguarded at the three-point line, and passed."
+      },
+      {
+        "word": "unguarded",
+        "surface": "unguarded",
+        "pos": "형",
+        "meaning": "수비가 붙지 않은",
+        "sentence": "Instead, he spotted Jaewon, who was standing unguarded at the three-point line, and passed."
+      },
+      {
+        "word": "leap",
+        "surface": "leapt",
+        "pos": "동",
+        "meaning": "뛰어오르다 (leap-leapt-leapt)",
+        "sentence": "The whole team leapt into the air together."
+      },
+      {
+        "word": "matter",
+        "surface": "mattered",
+        "pos": "동",
+        "meaning": "중요하다",
+        "sentence": "Although Dohun had not scored the winning basket, it no longer mattered to him."
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "The Best Pass\n\nDohun was {{v:indisputably}} the most {{v:gifted}} basketball player on his school's team. During the {{v:previous}} season, he {{g:had single-handedly accounted for|과거완료: had + p.p. (과거보다 더 이전의 일)}} more than half of the team's points. Whenever he gained {{v:possession}} of the ball, he {{g:would attempt|과거의 습관 would: ~하곤 했다}} a shot, even when three {{v:opponents}} were closely guarding him.\n\n{{g:Despite|despite + 명사(구): ~에도 불구하고 (전치사이므로 뒤에 절이 오지 않는다)}} his individual {{v:brilliance}}, however, the team {{g:continued to suffer|continue + to부정사: 계속 ~하다}} {{v:defeats}}. In the semifinal, Dohun missed shot after shot, and his team {{g:was eliminated by|수동태: be + p.p. + by (~ 차이로 탈락하다)}} a ten-point {{v:margin}}. After the game, Coach Kim quietly took a seat beside him.\n\n\"Dohun, you are an {{v:exceptional}} player,\" she {{v:remarked}}. \"But {{t:basketball is not a one-person game}}. Whenever you have the ball, {{v:survey}} the court. Your teammates {{g:are frequently left|5형식 수동태: be left + 형용사 (~한 상태로 남겨지다)}} {{v:unguarded}}.\"\n\nThroughout the following month, Dohun {{g:devoted himself to passing|devote oneself to + 동명사: ~에 전념하다 (to는 전치사)}} as {{v:relentlessly}} as he had once devoted himself to shooting. {{v:Initially}}, it felt {{v:awkward}} and {{v:unfamiliar}}. Gradually, though, he {{g:began to place his trust in|place one's trust in: ~을 신뢰하다 / begin + to부정사}} his teammates, and {{t:they, in turn, began to place their trust in him}}.\n\nIn the season's {{v:championship}} game, the team was {{v:trailing}} by two points {{g:with merely five seconds remaining|with + 명사 + 현재분사: ~가 …하는 채로}} on the clock. When Dohun received the ball, everyone {{v:anticipated}} that he would take the final shot. Instead, he noticed Jaewon, {{g:who was positioned|계속적 용법 관계대명사 who + 과거 수동태(was positioned)}} alone beyond the three-point line, and delivered a pass. Jaewon {{v:released}} the shot, and the ball {{v:swished}} through the net at the {{v:precise}} moment the {{v:buzzer}} sounded.\n\nThe entire team leapt into the air in {{v:celebration}}. Although Dohun {{g:had not been the one to score|과거완료 부정 + to부정사의 형용사적 용법 (the one to score: 득점한 사람)}} the {{v:decisive}} basket, this no longer mattered to him {{v:in the slightest}}. It was, without a doubt, {{g:the finest pass he had ever made|최상급 + 주어 + had ever p.p.: 그때까지 ~한 것 중 가장 …한}}.",
+    "tags": {
+      "vocab": [
+        "indisputably",
+        "gifted",
+        "previous",
+        "possession",
+        "opponent",
+        "brilliance",
+        "defeat",
+        "margin",
+        "exceptional",
+        "remark",
+        "survey",
+        "unguarded",
+        "relentlessly",
+        "initially",
+        "awkward",
+        "unfamiliar",
+        "championship",
+        "trail",
+        "anticipate",
+        "release",
+        "swish",
+        "precise",
+        "buzzer",
+        "celebration",
+        "decisive",
+        "in the slightest"
+      ],
+      "grammar": [
+        "과거완료",
+        "과거의 습관 would",
+        "despite + 명사",
+        "continue + to부정사",
+        "수동태",
+        "5형식 수동태(be left + 형용사)",
+        "devote oneself to + 동명사",
+        "place one's trust in",
+        "with + 명사 + 분사",
+        "계속적 용법 관계대명사 + 수동태",
+        "to부정사 형용사적 용법",
+        "최상급 + had ever p.p."
+      ],
+      "topic": [
+        "팀워크와 개인의 재능",
+        "상호 신뢰",
+        "인물의 변화와 주제 파악"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "013da746-af4c-4527-87cf-778d48bafee1",
+        "type": "mc",
+        "q": "Which of the following best captures the central theme of the story?",
+        "choices": [
+          "Exceptional players should be given the ball in every decisive moment.",
+          "Individual brilliance achieves its greatest value when it is placed in the service of the team.",
+          "Relentless practice at shooting is the only reliable path to a championship.",
+          "A coach's criticism is usually more harmful than helpful to talented athletes.",
+          "The outcome of a game matters far more than the way it is played."
+        ],
+        "answer": "Individual brilliance achieves its greatest value when it is placed in the service of the team.",
+        "explanation": "뛰어난 개인 능력도 팀을 위해 쓰일 때 가장 빛난다는 주제이다."
+      },
+      {
+        "qid": "73f64e1b-37c5-47dc-bbed-fa299577e4db",
+        "type": "mc",
+        "q": "How is the story mainly organized?",
+        "choices": [
+          "Events are told in reverse order, from the ending to the beginning.",
+          "Two unrelated stories about different players are compared.",
+          "An argument is presented and supported with statistics.",
+          "A problem is introduced, advice leads to change, and the change is tested at the climax.",
+          "The entire story is told through a conversation between two players."
+        ],
+        "answer": "A problem is introduced, advice leads to change, and the change is tested at the climax.",
+        "explanation": "문제(혼자 슛·패배) → 조언과 변화(패스 연습·신뢰) → 절정에서 시험(결승 패스)."
+      },
+      {
+        "qid": "47e5d9c1-0f87-4a0b-9276-2f3e6641b6ad",
+        "type": "mc",
+        "q": "In the passage, 'indisputably' is closest in meaning to ____.",
+        "choices": [
+          "unquestionably",
+          "possibly",
+          "barely",
+          "secretly",
+          "unfortunately"
+        ],
+        "answer": "unquestionably",
+        "explanation": "indisputably = 반박의 여지 없이(unquestionably)."
+      },
+      {
+        "qid": "12debfe8-d1ce-47b5-be4e-eb9bb6bbda5c",
+        "type": "mc",
+        "q": "In the passage, 'single-handedly' is closest in meaning to ____.",
+        "choices": [
+          "using only one hand",
+          "with great difficulty",
+          "against the rules",
+          "for a short time",
+          "without help from others"
+        ],
+        "answer": "without help from others",
+        "explanation": "single-handedly = 혼자 힘으로."
+      },
+      {
+        "qid": "8bf28b20-9f21-4a7e-99e2-970431186eb2",
+        "type": "mc",
+        "q": "In the passage, 'survey' in 'survey the court' is closest in meaning to ____.",
+        "choices": [
+          "ask questions to",
+          "clean",
+          "look carefully around",
+          "leave",
+          "measure the size of"
+        ],
+        "answer": "look carefully around",
+        "explanation": "survey = 둘러보다, 살피다."
+      },
+      {
+        "qid": "e0d5c461-c69b-44bb-8288-31bae41d1d7a",
+        "type": "mc",
+        "q": "In the passage, 'relentlessly' is closest in meaning to ____.",
+        "choices": [
+          "carelessly",
+          "without stopping or giving up",
+          "occasionally",
+          "unwillingly",
+          "quietly"
+        ],
+        "answer": "without stopping or giving up",
+        "explanation": "relentlessly = 끈질기게, 쉬지 않고."
+      },
+      {
+        "qid": "e8d22621-167b-4a5b-bcc0-f80fb29f61c1",
+        "type": "mc",
+        "q": "In the passage, 'anticipated' is closest in meaning to ____.",
+        "choices": [
+          "feared",
+          "forgot",
+          "denied",
+          "celebrated",
+          "expected"
+        ],
+        "answer": "expected",
+        "explanation": "anticipate = 예상하다(expect)."
+      },
+      {
+        "qid": "9ce852f9-dc56-43f5-88a3-048dfa3e26c7",
+        "type": "mc",
+        "q": "Despite Dohun's individual brilliance, why did the team continue to suffer defeats?",
+        "choices": [
+          "His insistence on shooting kept the team from using its unguarded players.",
+          "His teammates were less skilled than the opponents in every way.",
+          "Coach Kim refused to give him enough playing time.",
+          "He had stopped practicing his shooting during the season.",
+          "The opponents always had more players on the court."
+        ],
+        "answer": "His insistence on shooting kept the team from using its unguarded players.",
+        "explanation": "'Your teammates are frequently left unguarded.' → 비어 있는 동료를 쓰지 않았다."
+      },
+      {
+        "qid": "ad4a38a0-035a-4a24-97cf-f9f6e1377f54",
+        "type": "mc",
+        "q": "What does Coach Kim's way of speaking to Dohun reveal about her?",
+        "choices": [
+          "She preferred harsh criticism to encouragement.",
+          "She was indifferent to the result of the game.",
+          "She planned to remove him from the team.",
+          "She acknowledged his talent before redirecting it toward teamwork.",
+          "She believed he lacked basketball talent."
+        ],
+        "answer": "She acknowledged his talent before redirecting it toward teamwork.",
+        "explanation": "'you are an exceptional player'로 인정한 뒤 팀플레이를 조언했다."
+      },
+      {
+        "qid": "80c48562-ab3f-4a0c-9d2b-3eeb69bd5fbf",
+        "type": "mc",
+        "q": "Passing felt 'awkward and unfamiliar' at first mainly because ____.",
+        "choices": [
+          "he had injured his hand in the semifinal",
+          "his teammates were unwilling to practice with him",
+          "it went against the habits he had built over the season",
+          "the coach had never taught passing before",
+          "the court was too small to pass properly"
+        ],
+        "answer": "it went against the habits he had built over the season",
+        "explanation": "시즌 내내 혼자 슛하던 습관과 정반대였기 때문이다."
+      },
+      {
+        "qid": "b140e074-9919-4dcf-8bc9-52423302bb64",
+        "type": "mc",
+        "q": "The clause 'they, in turn, began to place their trust in him' suggests that ____.",
+        "choices": [
+          "Dohun's change earned his teammates' trust in return",
+          "his teammates took turns guarding him",
+          "his teammates had always trusted him completely",
+          "the opponents began to trust Dohun",
+          "his teammates trusted Coach Kim more than Dohun"
+        ],
+        "answer": "Dohun's change earned his teammates' trust in return",
+        "explanation": "in turn = 이번에는 그들도 → 도훈의 변화가 동료들의 신뢰로 돌아왔다."
+      },
+      {
+        "qid": "6ade7a67-f968-4396-87bc-d3b3ec8ccc75",
+        "type": "mc",
+        "q": "Why is Dohun's decision in the final seconds significant?",
+        "choices": [
+          "It proved that he had lost confidence in his own shooting.",
+          "It showed that he was following a play Jaewon had designed.",
+          "It was the first time he had ever touched the ball in a final.",
+          "It allowed him to avoid blame if the team lost.",
+          "Under the greatest pressure, he chose what best served the team rather than his own glory."
+        ],
+        "answer": "Under the greatest pressure, he chose what best served the team rather than his own glory.",
+        "explanation": "모두가 슛을 예상한 가장 중요한 순간에 팀을 위한 선택(패스)을 했다."
+      },
+      {
+        "qid": "d8264081-fbdf-4a83-a35c-a03e58502780",
+        "type": "mc",
+        "q": "The phrase 'at the precise moment the buzzer sounded' means ____.",
+        "choices": [
+          "a few seconds after the game ended",
+          "exactly when the game ended",
+          "long before the final buzzer",
+          "when the referee stopped the game for a foul",
+          "at the start of the championship game"
+        ],
+        "answer": "exactly when the game ended",
+        "explanation": "precise moment = 바로 그 순간, buzzer = 경기 종료 버저."
+      },
+      {
+        "qid": "731ca5ca-c43a-41fb-968b-84111c381713",
+        "type": "mc",
+        "q": "What can be inferred from 'this no longer mattered to him in the slightest'?",
+        "choices": [
+          "He regretted not taking the final shot himself.",
+          "He had lost interest in basketball entirely.",
+          "He felt that Jaewon did not deserve the credit.",
+          "His idea of success had shifted from personal scoring to team victory.",
+          "He cared only about the opinion of his coach."
+        ],
+        "answer": "His idea of success had shifted from personal scoring to team victory.",
+        "explanation": "결승골을 직접 넣지 않은 것이 조금도 중요하지 않았다 → 성공의 기준이 팀 승리로 바뀌었다."
+      },
+      {
+        "qid": "2d3a987e-cfae-4013-bcf8-0ff60ac071f1",
+        "type": "mc",
+        "q": "Which 'would' expresses a past habit, as in 'he would attempt a shot'?",
+        "choices": [
+          "I would like a glass of water, please.",
+          "He said that he would come to the party.",
+          "When I was young, I would visit my grandmother every summer.",
+          "If I were you, I would apologize to her.",
+          "Would you open the window for me?"
+        ],
+        "answer": "When I was young, I would visit my grandmother every summer.",
+        "explanation": "과거의 습관 would = ~하곤 했다."
+      },
+      {
+        "qid": "9cc48801-4aec-4a74-9337-cf4d67dc4b5c",
+        "type": "mc",
+        "q": "Which uses the to-infinitive in the same way as 'the one to score the decisive basket'?",
+        "choices": [
+          "She wanted to finish the test early.",
+          "She went to the library to study.",
+          "It is hard to finish the test in an hour.",
+          "She decided to finish the test first.",
+          "She was the first student to finish the test."
+        ],
+        "answer": "She was the first student to finish the test.",
+        "explanation": "to부정사의 형용사적 용법: 앞의 명사(the one / the first student)를 꾸민다."
+      },
+      {
+        "qid": "0a58ea28-1daf-4789-b2c3-db5182ab8ae4",
+        "type": "mc",
+        "q": "Which sentence is correct, like 'Dohun devoted himself to passing'?",
+        "choices": [
+          "He devoted himself to helping poor children.",
+          "He devoted himself to help poor children.",
+          "He devoted him to helping poor children.",
+          "He devoted himself helping poor children.",
+          "He devoted to himself helping poor children."
+        ],
+        "answer": "He devoted himself to helping poor children.",
+        "explanation": "devote oneself to + 동명사: to는 전치사이므로 -ing. 주어와 같은 대상 → 재귀대명사 himself."
+      },
+      {
+        "qid": "3b579aeb-3d75-4eae-9acf-7fa63e4d4d71",
+        "type": "mc",
+        "q": "Which statement is NOT true according to the story?",
+        "choices": [
+          "Dohun had accounted for more than half of the team's points.",
+          "The team was eliminated from the semifinal by ten points.",
+          "Coach Kim criticized Dohun harshly in front of the whole team.",
+          "Jaewon was positioned beyond the three-point line.",
+          "The team was trailing by two points with five seconds remaining."
+        ],
+        "answer": "Coach Kim criticized Dohun harshly in front of the whole team.",
+        "explanation": "코치는 경기 후 도훈 옆에 조용히 앉아 칭찬과 함께 조언했다."
+      },
+      {
+        "qid": "a7f1285e-7067-4d7a-8a09-3d9e7ba426b7",
+        "type": "order",
+        "items": [
+          "Dohun devoted himself to passing and placed his trust in his teammates.",
+          "Dohun would attempt a shot even when three opponents guarded him.",
+          "Dohun delivered a pass to Jaewon, whose shot swished through the net.",
+          "Coach Kim told Dohun to survey the court.",
+          "The team was eliminated in the semifinal by a ten-point margin."
+        ],
+        "answer": [
+          "Dohun would attempt a shot even when three opponents guarded him.",
+          "The team was eliminated in the semifinal by a ten-point margin.",
+          "Coach Kim told Dohun to survey the court.",
+          "Dohun devoted himself to passing and placed his trust in his teammates.",
+          "Dohun delivered a pass to Jaewon, whose shot swished through the net."
+        ]
+      },
+      {
+        "qid": "9065c11e-aaed-4ab4-aa1a-05fe7fe10076",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "indisputably",
+            "meaning": "반박의 여지 없이"
+          },
+          {
+            "word": "possession",
+            "meaning": "(공) 점유"
+          },
+          {
+            "word": "margin",
+            "meaning": "(득점) 차이"
+          },
+          {
+            "word": "remark",
+            "meaning": "말하다"
+          },
+          {
+            "word": "relentlessly",
+            "meaning": "끈질기게"
+          },
+          {
+            "word": "awkward",
+            "meaning": "어색한"
+          },
+          {
+            "word": "anticipate",
+            "meaning": "예상하다"
+          },
+          {
+            "word": "decisive",
+            "meaning": "결정적인"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "124825b5-07cd-42c3-b7ef-490cab2f91a3",
+        "q": "Summarize the story in three English sentences: (1) Dohun's flaw, (2) the turning point, and (3) the significance of the ending.",
+        "wordLimit": 80,
+        "sampleAnswer": "Although Dohun was the most gifted player on his team, he insisted on shooting whenever he had the ball, and the team continued to suffer defeats. After the semifinal, Coach Kim reminded him that basketball is not a one-person game, so he devoted himself to passing and began to trust his teammates. In the final seconds of the championship, he passed to an open Jaewon instead of shooting, which showed that team victory now mattered more to him than personal glory.",
+        "rubric": "① 결점 ② 전환점 ③ 결말의 의미 ④ 영어 3문장, 정확성"
+      },
+      {
+        "qid": "22d819f9-b3f9-4b22-b572-ea30e8a9e582",
+        "q": "우리말로 쓰시오: 김 코치가 도훈에게 조언한 방식(칭찬 → 조언)을 설명하고, 이 방식이 도훈에게 어떤 효과가 있었는지 지문에 근거해 쓰시오.",
+        "wordLimit": 100,
+        "sampleAnswer": "김 코치는 먼저 \"넌 특출한 선수다\"라고 도훈의 재능을 인정한 뒤, \"농구는 혼자 하는 경기가 아니다, 코트를 둘러봐라\"라고 조언했다. 비난하지 않고 인정해 주었기 때문에 도훈은 조언을 받아들여 한 달 동안 끈질기게 패스를 연습했고, 결국 동료를 믿게 되어 결승전에서 결정적인 패스를 했다.",
+        "rubric": "① 칭찬 후 조언이라는 방식 ② 패스 연습·신뢰라는 효과 ③ 지문 근거",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "5eea72bb-0685-4770-8e53-5af1ae98eba8",
+        "q": "다음 우리말을 영어로 쓰시오. '도훈은 패스 연습에 전념했다.' <조건> devote oneself to를 사용할 것",
+        "wordLimit": 8,
+        "sampleAnswer": "Dohun devoted himself to practicing passing.",
+        "rubric": "① devoted himself ② to + 동명사(practicing) ③ passing"
+      },
+      {
+        "qid": "b8b60238-41d0-4bc4-b847-b0a46f71f486",
+        "q": "다음 문장을 expect + 목적어 + to부정사를 사용하여 같은 뜻으로 바꿔 쓰시오. 'When Dohun received the ball, everyone anticipated that he would take the final shot.'",
+        "wordLimit": 18,
+        "sampleAnswer": "When Dohun received the ball, everyone expected him to take the final shot.",
+        "rubric": "① everyone expected ② him ③ to take the final shot ④ 나머지 내용 유지"
+      },
+      {
+        "qid": "57b80dfb-e0fc-4da1-bf51-a11853d7a272",
+        "q": "Which is more important for a team: one exceptional player or players who trust one another? Give your opinion with a reason or example in 3–4 English sentences.",
+        "wordLimit": 70,
+        "sampleAnswer": "I think players who trust one another are more important. Even an exceptional player cannot win alone when the opponents guard him closely, as Dohun's story shows. When players trust each other, they can find the open player and make better decisions. That is why a team with trust usually beats a team that depends on one star.",
+        "rubric": "① 입장 ② 이유 또는 예시(지문 활용 가능) ③ 영어 3~4문장, 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "indisputably",
+        "surface": "indisputably",
+        "pos": "부",
+        "meaning": "반박의 여지 없이, 확실히",
+        "sentence": "Dohun was indisputably the most gifted basketball player on his school's team."
+      },
+      {
+        "word": "gifted",
+        "surface": "gifted",
+        "pos": "형",
+        "meaning": "타고난 재능이 있는",
+        "sentence": "Dohun was indisputably the most gifted basketball player on his school's team."
+      },
+      {
+        "word": "previous",
+        "surface": "previous",
+        "pos": "형",
+        "meaning": "이전의",
+        "sentence": "During the previous season, he had single-handedly accounted for more than half of the team's points."
+      },
+      {
+        "word": "possession",
+        "surface": "possession",
+        "pos": "명",
+        "meaning": "소유, (공) 점유",
+        "sentence": "Whenever he gained possession of the ball, he would attempt a shot, even when three opponents were closely guarding him."
+      },
+      {
+        "word": "opponent",
+        "surface": "opponents",
+        "pos": "명",
+        "meaning": "상대, 상대 선수",
+        "sentence": "Whenever he gained possession of the ball, he would attempt a shot, even when three opponents were closely guarding him."
+      },
+      {
+        "word": "brilliance",
+        "surface": "brilliance",
+        "pos": "명",
+        "meaning": "뛰어남, 탁월함",
+        "sentence": "Despite his individual brilliance, however, the team continued to suffer defeats."
+      },
+      {
+        "word": "defeat",
+        "surface": "defeats",
+        "pos": "명",
+        "meaning": "패배",
+        "sentence": "Despite his individual brilliance, however, the team continued to suffer defeats."
+      },
+      {
+        "word": "margin",
+        "surface": "margin",
+        "pos": "명",
+        "meaning": "(득점) 차이",
+        "sentence": "In the semifinal, Dohun missed shot after shot, and his team was eliminated by a ten-point margin."
+      },
+      {
+        "word": "exceptional",
+        "surface": "exceptional",
+        "pos": "형",
+        "meaning": "특출한, 뛰어난",
+        "sentence": "\"Dohun, you are an exceptional player,\" she remarked."
+      },
+      {
+        "word": "remark",
+        "surface": "remarked",
+        "pos": "동",
+        "meaning": "말하다, 언급하다",
+        "sentence": "\"Dohun, you are an exceptional player,\" she remarked."
+      },
+      {
+        "word": "survey",
+        "surface": "survey",
+        "pos": "동",
+        "meaning": "둘러보다, 살피다",
+        "sentence": "Whenever you have the ball, survey the court."
+      },
+      {
+        "word": "unguarded",
+        "surface": "unguarded",
+        "pos": "형",
+        "meaning": "수비가 붙지 않은",
+        "sentence": "Your teammates are frequently left unguarded.\""
+      },
+      {
+        "word": "relentlessly",
+        "surface": "relentlessly",
+        "pos": "부",
+        "meaning": "끈질기게, 쉬지 않고",
+        "sentence": "Throughout the following month, Dohun devoted himself to passing as relentlessly as he had once devoted himself to shooting."
+      },
+      {
+        "word": "initially",
+        "surface": "Initially",
+        "pos": "부",
+        "meaning": "처음에",
+        "sentence": "Initially, it felt awkward and unfamiliar."
+      },
+      {
+        "word": "awkward",
+        "surface": "awkward",
+        "pos": "형",
+        "meaning": "어색한",
+        "sentence": "Initially, it felt awkward and unfamiliar."
+      },
+      {
+        "word": "unfamiliar",
+        "surface": "unfamiliar",
+        "pos": "형",
+        "meaning": "익숙하지 않은, 낯선",
+        "sentence": "Initially, it felt awkward and unfamiliar."
+      },
+      {
+        "word": "championship",
+        "surface": "championship",
+        "pos": "명",
+        "meaning": "결승전, 선수권 대회",
+        "sentence": "In the season's championship game, the team was trailing by two points with merely five seconds remaining on the clock."
+      },
+      {
+        "word": "trail",
+        "surface": "trailing",
+        "pos": "동",
+        "meaning": "(경기에서) 뒤지다",
+        "sentence": "In the season's championship game, the team was trailing by two points with merely five seconds remaining on the clock."
+      },
+      {
+        "word": "anticipate",
+        "surface": "anticipated",
+        "pos": "동",
+        "meaning": "예상하다, 기대하다",
+        "sentence": "When Dohun received the ball, everyone anticipated that he would take the final shot."
+      },
+      {
+        "word": "release",
+        "surface": "released",
+        "pos": "동",
+        "meaning": "(공을) 놓다, 던지다",
+        "sentence": "Jaewon released the shot, and the ball swished through the net at the precise moment the buzzer sounded."
+      },
+      {
+        "word": "swish",
+        "surface": "swished",
+        "pos": "동",
+        "meaning": "(공이) 휙 하고 (림에 닿지 않고) 들어가다",
+        "sentence": "Jaewon released the shot, and the ball swished through the net at the precise moment the buzzer sounded."
+      },
+      {
+        "word": "precise",
+        "surface": "precise",
+        "pos": "형",
+        "meaning": "정확한, 바로 그",
+        "sentence": "Jaewon released the shot, and the ball swished through the net at the precise moment the buzzer sounded."
+      },
+      {
+        "word": "buzzer",
+        "surface": "buzzer",
+        "pos": "명",
+        "meaning": "(경기 종료) 버저",
+        "sentence": "Jaewon released the shot, and the ball swished through the net at the precise moment the buzzer sounded."
+      },
+      {
+        "word": "celebration",
+        "surface": "celebration",
+        "pos": "명",
+        "meaning": "축하",
+        "sentence": "The entire team leapt into the air in celebration."
+      },
+      {
+        "word": "decisive",
+        "surface": "decisive",
+        "pos": "형",
+        "meaning": "결정적인",
+        "sentence": "Although Dohun had not been the one to score the decisive basket, this no longer mattered to him in the slightest."
+      },
+      {
+        "word": "in the slightest",
+        "surface": "in the slightest",
+        "pos": "숙",
+        "meaning": "(부정문에서) 조금도",
+        "sentence": "Although Dohun had not been the one to score the decisive basket, this no longer mattered to him in the slightest."
+      }
+    ]
+  }
+}
