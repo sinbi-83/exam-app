@@ -1,0 +1,2093 @@
+{
+  "school": {
+    "tagged_body": "Needs or Wants?\n\nEvery day, we {{g:spend money on|spend + 돈 + on + 명사: ~에 돈을 쓰다}} many different things. But do you really need everything you buy? Stop and ask yourself this question.\n\n{{v:Economists}} put the things we buy into two {{v:groups}}: {{v:needs}} and {{v:wants}}. Needs are things for living, like food, {{v:clothes}}, and {{g:a place to stay|to부정사 형용사적 용법: 머물 (장소)}}. We {{g:must have|must + 동사원형: ~해야 한다 (의무)}} them. Wants {{g:make life more fun or comfortable|make + 목적어 + 형용사: (목적어)를 ~하게 만들다}}, but we do not need them. New games, {{v:designer}} shoes, and {{v:the latest}} phone are wants.\n\nYou can buy things you want. That is OK. But {{t:there is a limit to our money, and there is no limit to our wants}}. {{v:Advertisements}} and {{v:social media}} {{g:make us feel|사역동사 make + 목적어 + 동사원형: (목적어)가 ~하게 하다}}, \"I need something new!\" {{g:If we spend too much money on wants|조건의 if: 만약 ~라면 (미래의 일도 현재시제)}}, we may not have {{v:enough}} money for our needs or for the {{v:future}}.\n\nSo {{t:you should make a budget}}. A {{v:budget}} is a {{v:plan}} for your money. It shows {{g:how much money you will spend and save|간접의문문: how much + 명사 + 주어 + 동사}}. Here is one {{v:helpful}} {{v:tip}}: the \"24-hour {{v:rule}}.\" Sometimes you want to buy something, but it is not a need. Then {{g:wait for 24 hours|명령문: 동사원형으로 시작 / for + 기간: ~ 동안}} before you buy it. Often, you {{g:will not really want it anymore|not ~ anymore: 더 이상 ~하지 않다}}.\n\nYou should {{g:learn to manage|learn + to부정사: ~하는 것을 배우다}} money {{v:wisely}}. {{t:This skill will help you for the rest of your life}}.",
+    "tags": {
+      "vocab": [
+        "economist",
+        "group",
+        "need",
+        "want",
+        "clothes",
+        "designer",
+        "the latest",
+        "advertisement",
+        "social media",
+        "enough",
+        "future",
+        "budget",
+        "plan",
+        "helpful",
+        "tip",
+        "rule",
+        "wisely"
+      ],
+      "grammar": [
+        "spend + 돈 + on",
+        "to부정사 형용사적 용법",
+        "must + 동사원형",
+        "make + 목적어 + 형용사",
+        "사역동사 make + 목적어 + 동사원형",
+        "조건의 if",
+        "간접의문문",
+        "명령문",
+        "not ~ anymore",
+        "learn + to부정사"
+      ],
+      "topic": [
+        "필요한 것과 원하는 것",
+        "예산과 24시간 규칙",
+        "설명문 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "4c6d45b4-93df-4ae4-b117-62819427636a",
+        "type": "mc",
+        "q": "What is the passage mainly about?",
+        "choices": [
+          "How to make new games",
+          "The difference between needs and wants, and how to manage money",
+          "Why phones are so expensive",
+          "How economists make money",
+          "How to sell designer shoes"
+        ],
+        "answer": "The difference between needs and wants, and how to manage money",
+        "explanation": "필요한 것(needs)과 원하는 것(wants)의 차이, 그리고 돈 관리 방법에 대한 글이다."
+      },
+      {
+        "qid": "a86ae7dd-a188-4159-8b68-a641a6d50268",
+        "type": "mc",
+        "q": "What are the two groups of things we buy?",
+        "choices": [
+          "Games and shoes",
+          "Food and clothes",
+          "Money and plans",
+          "Needs and wants",
+          "Ads and social media"
+        ],
+        "answer": "Needs and wants",
+        "explanation": "'two groups: needs and wants.'"
+      },
+      {
+        "qid": "e1b0c3d8-eb97-4943-a1d1-a2a48e54f950",
+        "type": "mc",
+        "q": "Which is a need?",
+        "choices": [
+          "Food",
+          "New games",
+          "Designer shoes",
+          "The latest phone",
+          "A concert ticket"
+        ],
+        "answer": "Food",
+        "explanation": "음식, 옷, 머물 곳이 needs이다."
+      },
+      {
+        "qid": "b2f574e8-b1c1-4e94-adb8-f61ec1856dd3",
+        "type": "mc",
+        "q": "Which is a want?",
+        "choices": [
+          "Food",
+          "Clothes",
+          "A place to stay",
+          "Water",
+          "The latest phone"
+        ],
+        "answer": "The latest phone",
+        "explanation": "새 게임, 명품 신발, 최신 휴대폰이 wants이다."
+      },
+      {
+        "qid": "f92b124e-6c7b-4505-ac06-098ba580fca5",
+        "type": "mc",
+        "q": "What do wants do?",
+        "choices": [
+          "They keep us alive.",
+          "We must have them to live.",
+          "They make life more fun or comfortable.",
+          "They help us save money.",
+          "They make a budget for us."
+        ],
+        "answer": "They make life more fun or comfortable.",
+        "explanation": "'Wants make life more fun or comfortable, but we do not need them.'"
+      },
+      {
+        "qid": "a1b9c7a1-10be-4326-b51b-3bcfb9c6f239",
+        "type": "mc",
+        "q": "What is the problem, according to the writer?",
+        "choices": [
+          "We have too much money.",
+          "Our money has a limit, but our wants do not.",
+          "Our wants are limited.",
+          "Money is not important.",
+          "We cannot buy any wants."
+        ],
+        "answer": "Our money has a limit, but our wants do not.",
+        "explanation": "'there is a limit to our money, and there is no limit to our wants.' 돈은 한정되어 있지만 원하는 것은 끝이 없다."
+      },
+      {
+        "qid": "d20fe52c-2f30-4bfb-a8f3-4a2bf75cf787",
+        "type": "mc",
+        "q": "What do advertisements and social media make us feel?",
+        "choices": [
+          "That we have enough things",
+          "That we should save money",
+          "That money is bad",
+          "That old things are the best",
+          "That we need something new"
+        ],
+        "answer": "That we need something new",
+        "explanation": "'make us feel, \"I need something new!\"'"
+      },
+      {
+        "qid": "9974df99-b9e4-4329-89f9-4472f7f605d9",
+        "type": "mc",
+        "q": "What may happen if we spend too much money on wants?",
+        "choices": [
+          "We may not have enough money for our needs.",
+          "We will become rich.",
+          "We will need fewer things.",
+          "Our future will be easier.",
+          "We will not need a budget."
+        ],
+        "answer": "We may not have enough money for our needs.",
+        "explanation": "'we may not have enough money for our needs or for the future.'"
+      },
+      {
+        "qid": "63794b80-93a4-4f7b-a85c-c3ec9d68b0bc",
+        "type": "mc",
+        "q": "What does the writer say we should make?",
+        "choices": [
+          "A new game",
+          "An advertisement",
+          "A list of wants",
+          "A budget",
+          "A social media page"
+        ],
+        "answer": "A budget",
+        "explanation": "'So you should make a budget.'"
+      },
+      {
+        "qid": "947bf926-98d6-4fde-8636-78139532d940",
+        "type": "mc",
+        "q": "What is a budget?",
+        "choices": [
+          "A kind of bank",
+          "A new game",
+          "A plan for your money",
+          "An advertisement",
+          "A new phone"
+        ],
+        "answer": "A plan for your money",
+        "explanation": "'A budget is a plan for your money.'"
+      },
+      {
+        "qid": "5bf4b29e-686b-4747-a9dd-6970664252ca",
+        "type": "mc",
+        "q": "What does a budget show?",
+        "choices": [
+          "How much money you will spend and save",
+          "How many friends you have",
+          "Where to buy shoes",
+          "Which games are popular",
+          "How old you are"
+        ],
+        "answer": "How much money you will spend and save",
+        "explanation": "'It shows how much money you will spend and save.'"
+      },
+      {
+        "qid": "e11870ca-353a-4476-98fa-9b1e2600efc4",
+        "type": "mc",
+        "q": "What is the \"24-hour rule\"?",
+        "choices": [
+          "Go shopping for 24 hours.",
+          "Buy everything within 24 hours.",
+          "Save money for 24 days.",
+          "Use your phone for 24 hours.",
+          "Wait 24 hours before you buy something that is not a need."
+        ],
+        "answer": "Wait 24 hours before you buy something that is not a need.",
+        "explanation": "'Sometimes you want to buy something, but it is not a need. Then wait for 24 hours before you buy it.'"
+      },
+      {
+        "qid": "c4d05683-3dc8-4dac-b754-fc4b62919373",
+        "type": "mc",
+        "q": "Jiho wants new designer shoes at 5 p.m. on Monday. When should he decide to buy them?",
+        "choices": [
+          "At 5 p.m. on Monday",
+          "At 5 p.m. on Tuesday",
+          "At 5 a.m. on Tuesday",
+          "On Sunday",
+          "At 6 p.m. on Monday"
+        ],
+        "answer": "At 5 p.m. on Tuesday",
+        "explanation": "명품 신발은 want → 24시간을 기다린다 → 화요일 오후 5시."
+      },
+      {
+        "qid": "4060ef12-0c33-4ca6-81e1-4c472fb7ee4e",
+        "type": "mc",
+        "q": "What often happens after you wait for 24 hours?",
+        "choices": [
+          "You want it even more.",
+          "The price goes down.",
+          "You lose your money.",
+          "You do not really want it anymore.",
+          "You buy two of them."
+        ],
+        "answer": "You do not really want it anymore.",
+        "explanation": "'Often, you will not really want it anymore.'"
+      },
+      {
+        "qid": "d34cf304-c0bf-46e1-9115-c8bc101f8098",
+        "type": "mc",
+        "q": "What does the writer think about buying things we want?",
+        "choices": [
+          "It is always wrong.",
+          "We should never spend money.",
+          "It is OK, but we should be careful.",
+          "We should buy everything we want.",
+          "Only economists can buy wants."
+        ],
+        "answer": "It is OK, but we should be careful.",
+        "explanation": "'You can buy things you want. That is OK. But our money is limited...'"
+      },
+      {
+        "qid": "91e497e2-fbc1-494a-b862-074dd1da90e3",
+        "type": "mc",
+        "q": "Why should we learn to manage money wisely?",
+        "choices": [
+          "It will make us famous.",
+          "It will help us buy more games.",
+          "It is easy and fun.",
+          "Economists will pay us.",
+          "It will help us for the rest of our lives."
+        ],
+        "answer": "It will help us for the rest of our lives.",
+        "explanation": "'This skill will help you for the rest of your life.'"
+      },
+      {
+        "qid": "7cdeb10f-5a64-4c8d-a92f-2ca7a4ad4ccd",
+        "type": "mc",
+        "q": "Which is NOT true about the passage?",
+        "choices": [
+          "Needs are things that make life more fun.",
+          "Food is a need.",
+          "Designer shoes are wants.",
+          "Our money is limited.",
+          "A budget is a plan for money."
+        ],
+        "answer": "Needs are things that make life more fun.",
+        "explanation": "삶을 더 재미있게 만드는 것은 wants이다. needs는 살기 위해 꼭 있어야 하는 것이다."
+      },
+      {
+        "qid": "42f79a45-2135-4fc5-8418-aed89003a4c1",
+        "type": "mc",
+        "q": "Which sentence is correct, like \"Advertisements make us feel ...\"?",
+        "choices": [
+          "My mom made me to clean my room.",
+          "My mom made me cleaning my room.",
+          "My mom made me clean my room.",
+          "My mom made me cleaned my room.",
+          "My mom made me cleans my room."
+        ],
+        "answer": "My mom made me clean my room.",
+        "explanation": "사역동사 make + 목적어 + 동사원형(clean)."
+      },
+      {
+        "qid": "6aeeeab9-06a2-46ba-9d3b-5d0699be393a",
+        "type": "order",
+        "items": [
+          "It is a want, so you wait for 24 hours.",
+          "Often, you do not want it anymore.",
+          "You want to buy something.",
+          "After 24 hours, you think about it again.",
+          "You ask yourself, \"Is it a need or a want?\""
+        ],
+        "answer": [
+          "You want to buy something.",
+          "You ask yourself, \"Is it a need or a want?\"",
+          "It is a want, so you wait for 24 hours.",
+          "After 24 hours, you think about it again.",
+          "Often, you do not want it anymore."
+        ]
+      },
+      {
+        "qid": "0aa966bf-b066-4450-b60b-46d6394b6bbb",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "economist",
+            "meaning": "경제학자"
+          },
+          {
+            "word": "need",
+            "meaning": "필요한 것"
+          },
+          {
+            "word": "want",
+            "meaning": "원하는 것"
+          },
+          {
+            "word": "limited",
+            "meaning": "한정된"
+          },
+          {
+            "word": "advertisement",
+            "meaning": "광고"
+          },
+          {
+            "word": "budget",
+            "meaning": "예산"
+          },
+          {
+            "word": "rule",
+            "meaning": "규칙"
+          },
+          {
+            "word": "wisely",
+            "meaning": "현명하게"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "a0f248aa-1d16-4120-949a-d8200f6bb66a",
+        "q": "우리말로 쓰시오: needs와 wants의 차이를 쓰고, 지문에 나온 예를 각각 두 가지씩 쓰시오.",
+        "wordLimit": 70,
+        "sampleAnswer": "needs는 살기 위해 꼭 있어야 하는 것이고(예: 음식, 옷, 머물 곳), wants는 삶을 더 재미있거나 편하게 해 주지만 꼭 필요하지는 않은 것이다(예: 새 게임, 명품 신발, 최신 휴대폰).",
+        "rubric": "① needs 뜻 ② wants 뜻 ③ 예시 각 2개",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "1b6a56e7-4bd3-424e-b482-7e4fbb60182c",
+        "q": "What is a budget? Answer in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "A budget is a plan for your money. It shows how much money you will spend and save.",
+        "rubric": "① a plan for your money ② spend and save ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "09786af4-e043-4dfe-a835-3066e06d15df",
+        "q": "우리말로 쓰시오: \"24시간 규칙\"이 무엇인지 쓰고, 이 규칙이 왜 도움이 되는지 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "꼭 필요하지 않은 물건을 사고 싶을 때 사기 전에 24시간을 기다리는 규칙이다. 기다리고 나면 그 물건을 더 이상 정말 원하지 않게 되는 경우가 많아서 돈을 아낄 수 있다.",
+        "rubric": "① 규칙 내용(필요 없는 물건, 24시간 기다림) ② 도움 이유(더 이상 원하지 않게 됨)",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "c83a1387-9229-4c04-93b9-9bffcee9cc8c",
+        "q": "다음 우리말을 영어로 쓰시오. '광고는 우리가 새로운 것이 필요하다고 느끼게 만든다.' <조건> make + 목적어 + 동사원형을 사용할 것",
+        "wordLimit": 12,
+        "sampleAnswer": "Advertisements make us feel that we need something new.",
+        "rubric": "① Advertisements make ② us feel ③ (that) we need something new"
+      },
+      {
+        "qid": "f239272d-0803-431c-bb46-2324189b8d3b",
+        "q": "Write one need and one want in your life. Use 2 English sentences.",
+        "wordLimit": 30,
+        "sampleAnswer": "My school uniform is a need. A new video game is a want.",
+        "rubric": "① need 1개 ② want 1개 ③ 완전한 영어 문장 2개"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "economist",
+        "surface": "Economists",
+        "pos": "명",
+        "meaning": "경제학자",
+        "sentence": "Economists put the things we buy into two groups: needs and wants."
+      },
+      {
+        "word": "group",
+        "surface": "groups",
+        "pos": "명",
+        "meaning": "무리, 집단",
+        "sentence": "Economists put the things we buy into two groups: needs and wants."
+      },
+      {
+        "word": "need",
+        "surface": "needs",
+        "pos": "명",
+        "meaning": "필요한 것 (꼭 있어야 하는 것)",
+        "sentence": "Needs or Wants?"
+      },
+      {
+        "word": "want",
+        "surface": "wants",
+        "pos": "명",
+        "meaning": "원하는 것 (없어도 되는 것)",
+        "sentence": "Needs or Wants?"
+      },
+      {
+        "word": "clothes",
+        "surface": "clothes",
+        "pos": "명",
+        "meaning": "옷",
+        "sentence": "Needs are things for living, like food, clothes, and a place to stay."
+      },
+      {
+        "word": "designer",
+        "surface": "designer",
+        "pos": "형",
+        "meaning": "유명 디자이너 브랜드의, 명품의",
+        "sentence": "New games, designer shoes, and the latest phone are wants."
+      },
+      {
+        "word": "the latest",
+        "surface": "the latest",
+        "pos": "숙",
+        "meaning": "최신의 (것)",
+        "sentence": "New games, designer shoes, and the latest phone are wants."
+      },
+      {
+        "word": "advertisement",
+        "surface": "Advertisements",
+        "pos": "명",
+        "meaning": "광고",
+        "sentence": "Advertisements and social media make us feel, \"I need something new!\""
+      },
+      {
+        "word": "social media",
+        "surface": "social media",
+        "pos": "명",
+        "meaning": "소셜 미디어, SNS",
+        "sentence": "Advertisements and social media make us feel, \"I need something new!\""
+      },
+      {
+        "word": "enough",
+        "surface": "enough",
+        "pos": "형",
+        "meaning": "충분한; (명) 충분한 양",
+        "sentence": "If we spend too much money on wants, we may not have enough money for our needs or for the future."
+      },
+      {
+        "word": "future",
+        "surface": "future",
+        "pos": "명",
+        "meaning": "미래",
+        "sentence": "If we spend too much money on wants, we may not have enough money for our needs or for the future."
+      },
+      {
+        "word": "budget",
+        "surface": "budget",
+        "pos": "명",
+        "meaning": "예산, 예산안",
+        "sentence": "So you should make a budget."
+      },
+      {
+        "word": "plan",
+        "surface": "plan",
+        "pos": "명",
+        "meaning": "계획",
+        "sentence": "A budget is a plan for your money."
+      },
+      {
+        "word": "helpful",
+        "surface": "helpful",
+        "pos": "형",
+        "meaning": "도움이 되는",
+        "sentence": "Here is one helpful tip: the \"24-hour rule.\""
+      },
+      {
+        "word": "tip",
+        "surface": "tip",
+        "pos": "명",
+        "meaning": "조언, 요령",
+        "sentence": "Here is one helpful tip: the \"24-hour rule.\""
+      },
+      {
+        "word": "rule",
+        "surface": "rule",
+        "pos": "명",
+        "meaning": "규칙",
+        "sentence": "Here is one helpful tip: the \"24-hour rule.\""
+      },
+      {
+        "word": "wisely",
+        "surface": "wisely",
+        "pos": "부",
+        "meaning": "현명하게",
+        "sentence": "You should learn to manage money wisely."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Needs or Wants?\n\nEvery day, we {{g:spend money on|spend + 돈 + on + 명사: ~에 돈을 쓰다}} many different things. But {{g:have you ever stopped to ask|현재완료(경험) + stop + to부정사: ~하기 위해 멈춰 본 적이 있니?}} yourself {{g:whether you really need what you are buying|whether: ~인지 아닌지 (명사절) / what: ~하는 것 (관계대명사)}}?\n\n{{v:Economists}} {{v:divide}} the things we buy into two {{v:groups}}: {{v:needs}} and {{v:wants}}. Needs are things {{g:that we must have to live|목적격 관계대명사 that + to부정사 부사적 용법(목적): 살기 위해 꼭 가져야 하는}}, such as food, {{v:clothes}}, and a place to stay. Wants are things {{g:that make life more fun or comfortable|주격 관계대명사 that + make + 목적어 + 형용사}} but are not {{v:necessary}}, such as new games, {{v:designer}} shoes, or {{v:the latest}} phone.\n\n{{g:It is not wrong to buy things we want|가주어 it, 진주어 to부정사: ~하는 것은 잘못이 아니다}}. {{t:The problem is that our money is limited, but our wants are not}}. {{v:Advertisements}} and {{v:social media}} {{g:make us feel|사역동사 make + 목적어 + 동사원형: (목적어)가 ~하게 하다}} that we always need something new. If we spend too much money on wants, we may not have {{v:enough}} for our needs or for the {{v:future}}.\n\n{{g:That is why|That is why + 주어 + 동사: 그래서 ~하다}} {{g:making a budget is important|동명사 주어: making ~ (단수 취급 → is)}}. A {{v:budget}} is a plan {{g:that shows|주격 관계대명사 that: 앞의 a plan을 꾸민다}} how much money you will spend and {{v:save}}. One {{v:helpful}} {{v:tip}} is the \"24-hour {{v:rule}}.\" When you want to buy something that is not a need, wait for 24 hours {{g:before buying it|전치사 before + 동명사: ~하기 전에}}. Often, you will find that you don't really want it {{v:anymore}}.\n\n{{t:Managing money wisely is a skill that will help you for the rest of your life}}.",
+    "tags": {
+      "vocab": [
+        "economist",
+        "divide",
+        "group",
+        "need",
+        "want",
+        "clothes",
+        "necessary",
+        "designer",
+        "the latest",
+        "advertisement",
+        "social media",
+        "enough",
+        "future",
+        "budget",
+        "save",
+        "helpful",
+        "tip",
+        "rule",
+        "anymore"
+      ],
+      "grammar": [
+        "spend + 돈 + on",
+        "현재완료(경험) + stop + to부정사",
+        "whether 명사절 / 관계대명사 what",
+        "관계대명사 that",
+        "make + 목적어 + 형용사",
+        "가주어 it, 진주어 to부정사",
+        "사역동사 make + 목적어 + 동사원형",
+        "That is why",
+        "동명사 주어",
+        "전치사 + 동명사"
+      ],
+      "topic": [
+        "필요한 것과 원하는 것",
+        "예산과 24시간 규칙",
+        "설명문 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "acf47a15-7599-4f84-9fe0-083d7ee561f0",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "We should never buy things we want.",
+          "We should tell needs from wants and manage our money with a budget.",
+          "Advertisements give us useful information about needs.",
+          "Economists should make budgets for everyone.",
+          "The latest phone is a need for students."
+        ],
+        "answer": "We should tell needs from wants and manage our money with a budget.",
+        "explanation": "needs와 wants를 구별하고, 예산과 24시간 규칙으로 돈을 현명하게 관리하자는 글이다."
+      },
+      {
+        "qid": "32476535-fd99-4a8d-aab9-588da734e98c",
+        "type": "mc",
+        "q": "Why does the writer ask a question in the first paragraph?",
+        "choices": [
+          "To ask readers for money",
+          "To explain what economists do",
+          "To advertise a new phone",
+          "To make readers think about their own spending",
+          "To describe a large store"
+        ],
+        "answer": "To make readers think about their own spending",
+        "explanation": "\"really need what you are buying?\" → 독자가 자신의 소비를 돌아보게 한다."
+      },
+      {
+        "qid": "ffcf52a3-2589-4f1b-9925-14ff8009ee1a",
+        "type": "mc",
+        "q": "Which group has only needs?",
+        "choices": [
+          "food, clothes, a place to stay",
+          "food, new games, clothes",
+          "designer shoes, the latest phone, food",
+          "new games, designer shoes, the latest phone",
+          "a place to stay, the latest phone, clothes"
+        ],
+        "answer": "food, clothes, a place to stay",
+        "explanation": "needs: food, clothes, a place to stay. 나머지는 wants가 섞여 있다."
+      },
+      {
+        "qid": "95d73e96-c462-4fe1-acd8-c47e39aee92a",
+        "type": "mc",
+        "q": "In the passage, 'necessary' is closest in meaning to ____.",
+        "choices": [
+          "expensive",
+          "popular",
+          "fun",
+          "wrong",
+          "needed"
+        ],
+        "answer": "needed",
+        "explanation": "necessary = 필요한(needed)."
+      },
+      {
+        "qid": "d02e7eae-dcda-49fe-8f14-76d6cbd2d4fd",
+        "type": "mc",
+        "q": "In 'our money is limited, but our wants are not,' 'our wants are not' means ____.",
+        "choices": [
+          "our wants are not important",
+          "we do not have any wants",
+          "our wants are not limited",
+          "our wants are not fun",
+          "our wants are not money"
+        ],
+        "answer": "our wants are not limited",
+        "explanation": "반복되는 limited가 생략되었다 → 원하는 것은 끝이 없다."
+      },
+      {
+        "qid": "a833aabd-d892-482c-a15d-9ba454a376e6",
+        "type": "mc",
+        "q": "What role do advertisements and social media play, according to the passage?",
+        "choices": [
+          "They help us make a budget.",
+          "They make us feel that we always need something new.",
+          "They teach us about needs.",
+          "They make our money unlimited.",
+          "They tell us to wait 24 hours."
+        ],
+        "answer": "They make us feel that we always need something new.",
+        "explanation": "'Advertisements and social media make us feel that we always need something new.'"
+      },
+      {
+        "qid": "f5c8e9fb-f3ff-48ff-8d3c-700e787fef52",
+        "type": "mc",
+        "q": "What may happen if we spend too much money on wants?",
+        "choices": [
+          "We will have more money for the future.",
+          "Our wants will become needs.",
+          "We will not want anything new.",
+          "Our budget will become bigger.",
+          "We may not have enough for our needs or the future."
+        ],
+        "answer": "We may not have enough for our needs or the future.",
+        "explanation": "'we may not have enough for our needs or for the future.'"
+      },
+      {
+        "qid": "ef2b3426-10fb-4f78-b823-9d08e9911545",
+        "type": "mc",
+        "q": "What does 'That' in 'That is why making a budget is important' refer to?",
+        "choices": [
+          "Spending too much on wants can leave us without enough for our needs.",
+          "Economists divide things into two groups.",
+          "Food and clothes are needs.",
+          "Social media is fun to use.",
+          "The 24-hour rule is easy."
+        ],
+        "answer": "Spending too much on wants can leave us without enough for our needs.",
+        "explanation": "앞 문단(돈은 한정, 원하는 것은 끝없음, 과소비하면 필요한 것에 쓸 돈이 부족함)이 예산이 중요한 이유이다."
+      },
+      {
+        "qid": "3266e97a-cc53-4b19-8d66-fe47d1eb6ffe",
+        "type": "mc",
+        "q": "According to the passage, what is a budget?",
+        "choices": [
+          "A list of things you want to buy",
+          "A store that sells needs",
+          "A rule about waiting 24 hours",
+          "A plan that shows how much money you will spend and save",
+          "An advertisement on social media"
+        ],
+        "answer": "A plan that shows how much money you will spend and save",
+        "explanation": "'A budget is a plan that shows how much money you will spend and save.'"
+      },
+      {
+        "qid": "4f0857e5-71f7-430a-95e0-641b77d9c4b8",
+        "type": "mc",
+        "q": "What is the purpose of the \"24-hour rule\"?",
+        "choices": [
+          "To help us buy things faster",
+          "To help us find cheaper food",
+          "To help us avoid buying things we do not really want",
+          "To make us use social media less",
+          "To help economists study us"
+        ],
+        "answer": "To help us avoid buying things we do not really want",
+        "explanation": "24시간 기다리면 정말 원하지 않는다는 걸 알게 된다 → 불필요한 구매를 막는다."
+      },
+      {
+        "qid": "2765851a-a102-47d9-8ec8-c8378dca51f8",
+        "type": "mc",
+        "q": "Seoyeon sees a cool phone case online at 8 p.m. on Friday. It is not a need. What should she do?",
+        "choices": [
+          "Wait until at least 8 p.m. on Saturday before deciding",
+          "Buy it right away before it sells out",
+          "Wait 24 minutes and then buy it",
+          "Buy two phone cases",
+          "Ask an economist to buy it"
+        ],
+        "answer": "Wait until at least 8 p.m. on Saturday before deciding",
+        "explanation": "필요한 것이 아니므로 24시간 기다린다 → 토요일 오후 8시."
+      },
+      {
+        "qid": "6fda1512-8597-4f97-8ea9-bca66caacab5",
+        "type": "mc",
+        "q": "Which person uses the \"24-hour rule\" correctly?",
+        "choices": [
+          "Minsu bought new headphones as soon as he saw an ad.",
+          "Minsu was hungry, but he waited 24 hours to buy food.",
+          "Minsu bought new headphones and then waited 24 hours.",
+          "Minsu waited 24 days to buy his school uniform.",
+          "Minsu wanted new headphones, so he waited a day before deciding."
+        ],
+        "answer": "Minsu wanted new headphones, so he waited a day before deciding.",
+        "explanation": "규칙은 need가 아닌 것을 사기 \"전에\" 24시간을 기다리는 것이다. 음식·교복은 needs이다."
+      },
+      {
+        "qid": "baad6fa5-0f7b-453a-9cd7-041b51c72256",
+        "type": "mc",
+        "q": "What does the writer think about wants?",
+        "choices": [
+          "Wants are bad, so we should not buy them.",
+          "Buying wants is fine if we control our spending.",
+          "Wants are more important than needs.",
+          "Wants are the same as needs.",
+          "Only adults can buy wants."
+        ],
+        "answer": "Buying wants is fine if we control our spending.",
+        "explanation": "'It is not wrong to buy things we want.' 문제는 과소비이다."
+      },
+      {
+        "qid": "36416b21-f562-4e0c-bfd0-0b70df0d154f",
+        "type": "mc",
+        "q": "In the passage, 'limited' is closest in meaning to ____.",
+        "choices": [
+          "free",
+          "endless",
+          "heavy",
+          "restricted in amount",
+          "hidden"
+        ],
+        "answer": "restricted in amount",
+        "explanation": "limited = 한정된, 양이 정해진."
+      },
+      {
+        "qid": "ec675da0-2d2a-4a7d-a9ac-ac34eaac5afc",
+        "type": "mc",
+        "q": "Which sentence is correct, like 'making a budget is important'?",
+        "choices": [
+          "Read books is good for you.",
+          "Reading books are good for you.",
+          "Reading books is good for you.",
+          "To reading books is good for you.",
+          "Reads books is good for you."
+        ],
+        "answer": "Reading books is good for you.",
+        "explanation": "동명사 주어(Reading books)는 단수 취급 → is."
+      },
+      {
+        "qid": "3216c988-b7bd-4648-97ef-333a5712b2ed",
+        "type": "mc",
+        "q": "Which sentence is correct, like 'It is not wrong to buy things we want'?",
+        "choices": [
+          "It is important save money.",
+          "That is important to saving money.",
+          "It is important saving to money.",
+          "It important to save money.",
+          "It is important to save money."
+        ],
+        "answer": "It is important to save money.",
+        "explanation": "가주어 it + be + 형용사 + 진주어 to부정사."
+      },
+      {
+        "qid": "a94208d8-b917-4aed-a5ee-c2b90c4ca673",
+        "type": "mc",
+        "q": "Which 'that' is used in the same way as in 'a plan that shows how much money you will spend'?",
+        "choices": [
+          "I lost the watch that my father gave me.",
+          "I know that she is honest.",
+          "That is my new phone.",
+          "The news that he won surprised us.",
+          "It is clear that he told a lie."
+        ],
+        "answer": "I lost the watch that my father gave me.",
+        "explanation": "관계대명사 that: 앞 명사(the watch)를 꾸민다. \"The news that he won\"은 동격의 that."
+      },
+      {
+        "qid": "31614e4b-e9c4-4357-9c2e-3b9bee246381",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "Economists divide the things we buy into two groups.",
+          "A place to stay is a need.",
+          "The writer says we should never buy things we want.",
+          "Our money is limited.",
+          "A budget shows how much money you will spend and save."
+        ],
+        "answer": "The writer says we should never buy things we want.",
+        "explanation": "'It is not wrong to buy things we want.'"
+      },
+      {
+        "qid": "c127d583-e3f2-4e72-8098-4d27777709b9",
+        "type": "order",
+        "items": [
+          "You think about it again.",
+          "You want to buy something that is not a need.",
+          "You find that you do not really want it anymore.",
+          "You wait for 24 hours before buying it.",
+          "You remember the \"24-hour rule.\""
+        ],
+        "answer": [
+          "You want to buy something that is not a need.",
+          "You remember the \"24-hour rule.\"",
+          "You wait for 24 hours before buying it.",
+          "You think about it again.",
+          "You find that you do not really want it anymore."
+        ]
+      },
+      {
+        "qid": "542a6dc0-eb42-4e73-b308-4727a07efca9",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "economist",
+            "meaning": "경제학자"
+          },
+          {
+            "word": "divide",
+            "meaning": "나누다"
+          },
+          {
+            "word": "necessary",
+            "meaning": "필요한"
+          },
+          {
+            "word": "limited",
+            "meaning": "한정된"
+          },
+          {
+            "word": "advertisement",
+            "meaning": "광고"
+          },
+          {
+            "word": "budget",
+            "meaning": "예산"
+          },
+          {
+            "word": "save",
+            "meaning": "저축하다"
+          },
+          {
+            "word": "tip",
+            "meaning": "조언, 요령"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "d3004037-2a96-440d-80cd-8847b15d5aac",
+        "q": "Summarize the passage in two English sentences: (1) the difference between needs and wants and (2) the writer's advice.",
+        "wordLimit": 50,
+        "sampleAnswer": "Needs are things we must have to live, while wants make life more fun or comfortable but are not necessary. Because our money is limited, we should make a budget and wait 24 hours before buying things we do not need.",
+        "rubric": "① needs/wants 구별 ② 예산 ③ 24시간 규칙 ④ 영어 2문장"
+      },
+      {
+        "qid": "37fceeb0-9a8a-4231-8462-612b72fa503c",
+        "q": "우리말로 쓰시오: \"our money is limited, but our wants are not\"의 의미를 쓰고, 이것이 왜 문제가 되는지 지문에 근거해 쓰시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "우리가 가진 돈은 한정되어 있지만 원하는 것은 끝이 없다는 뜻이다. 광고와 SNS 때문에 늘 새로운 것이 필요하다고 느끼게 되는데, 원하는 것에 돈을 너무 많이 쓰면 꼭 필요한 것이나 미래를 위한 돈이 부족해질 수 있기 때문에 문제가 된다.",
+        "rubric": "① 의미(돈은 한정, 원하는 것은 무한) ② 광고·SNS ③ 필요한 것·미래를 위한 돈 부족",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "d09ea817-109c-44a6-8bfc-ef51039f321e",
+        "q": "How does the \"24-hour rule\" help us? Answer in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "It helps us avoid buying things we do not really want, because we often stop wanting them after 24 hours.",
+        "rubric": "① 불필요한 구매를 막음 ② 24시간 후 원하지 않게 됨 ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "86066929-5d4b-457f-b345-facc69ff0306",
+        "q": "다음 우리말을 영어로 쓰시오. '우리가 원하는 것들을 사는 것은 잘못이 아니다.' <조건> 가주어 it과 진주어 to부정사를 사용할 것",
+        "wordLimit": 12,
+        "sampleAnswer": "It is not wrong to buy things we want.",
+        "rubric": "① It is not wrong ② to buy ③ things (that) we want"
+      },
+      {
+        "qid": "1c240a95-e039-433d-9245-ac96954a58b0",
+        "q": "다음 문장을 동명사 주어를 사용하여 다시 쓰시오. 'To make a budget is important.'",
+        "wordLimit": 6,
+        "sampleAnswer": "Making a budget is important.",
+        "rubric": "① Making a budget ② is important (단수 동사)"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "economist",
+        "surface": "Economists",
+        "pos": "명",
+        "meaning": "경제학자",
+        "sentence": "Economists divide the things we buy into two groups: needs and wants."
+      },
+      {
+        "word": "divide",
+        "surface": "divide",
+        "pos": "동",
+        "meaning": "나누다 (divide A into B: A를 B로 나누다)",
+        "sentence": "Economists divide the things we buy into two groups: needs and wants."
+      },
+      {
+        "word": "group",
+        "surface": "groups",
+        "pos": "명",
+        "meaning": "무리, 집단",
+        "sentence": "Economists divide the things we buy into two groups: needs and wants."
+      },
+      {
+        "word": "need",
+        "surface": "needs",
+        "pos": "명",
+        "meaning": "필요한 것 (꼭 있어야 하는 것)",
+        "sentence": "Needs or Wants?"
+      },
+      {
+        "word": "want",
+        "surface": "wants",
+        "pos": "명",
+        "meaning": "원하는 것 (없어도 되는 것)",
+        "sentence": "Needs or Wants?"
+      },
+      {
+        "word": "clothes",
+        "surface": "clothes",
+        "pos": "명",
+        "meaning": "옷",
+        "sentence": "Needs are things that we must have to live, such as food, clothes, and a place to stay."
+      },
+      {
+        "word": "necessary",
+        "surface": "necessary",
+        "pos": "형",
+        "meaning": "필요한, 꼭 있어야 하는",
+        "sentence": "Wants are things that make life more fun or comfortable but are not necessary, such as new games, designer shoes, or the latest phone."
+      },
+      {
+        "word": "designer",
+        "surface": "designer",
+        "pos": "형",
+        "meaning": "유명 디자이너 브랜드의, 명품의",
+        "sentence": "Wants are things that make life more fun or comfortable but are not necessary, such as new games, designer shoes, or the latest phone."
+      },
+      {
+        "word": "the latest",
+        "surface": "the latest",
+        "pos": "숙",
+        "meaning": "최신의 (것)",
+        "sentence": "Wants are things that make life more fun or comfortable but are not necessary, such as new games, designer shoes, or the latest phone."
+      },
+      {
+        "word": "advertisement",
+        "surface": "Advertisements",
+        "pos": "명",
+        "meaning": "광고",
+        "sentence": "Advertisements and social media make us feel that we always need something new."
+      },
+      {
+        "word": "social media",
+        "surface": "social media",
+        "pos": "명",
+        "meaning": "소셜 미디어, SNS",
+        "sentence": "Advertisements and social media make us feel that we always need something new."
+      },
+      {
+        "word": "enough",
+        "surface": "enough",
+        "pos": "형",
+        "meaning": "충분한; (명) 충분한 양",
+        "sentence": "If we spend too much money on wants, we may not have enough for our needs or for the future."
+      },
+      {
+        "word": "future",
+        "surface": "future",
+        "pos": "명",
+        "meaning": "미래",
+        "sentence": "If we spend too much money on wants, we may not have enough for our needs or for the future."
+      },
+      {
+        "word": "budget",
+        "surface": "budget",
+        "pos": "명",
+        "meaning": "예산, 예산안",
+        "sentence": "That is why making a budget is important."
+      },
+      {
+        "word": "save",
+        "surface": "save",
+        "pos": "동",
+        "meaning": "저축하다, 아끼다",
+        "sentence": "A budget is a plan that shows how much money you will spend and save."
+      },
+      {
+        "word": "helpful",
+        "surface": "helpful",
+        "pos": "형",
+        "meaning": "도움이 되는",
+        "sentence": "One helpful tip is the \"24-hour rule.\""
+      },
+      {
+        "word": "tip",
+        "surface": "tip",
+        "pos": "명",
+        "meaning": "조언, 요령",
+        "sentence": "One helpful tip is the \"24-hour rule.\""
+      },
+      {
+        "word": "rule",
+        "surface": "rule",
+        "pos": "명",
+        "meaning": "규칙",
+        "sentence": "One helpful tip is the \"24-hour rule.\""
+      },
+      {
+        "word": "anymore",
+        "surface": "anymore",
+        "pos": "부",
+        "meaning": "(부정문에서) 더 이상",
+        "sentence": "Often, you will find that you don't really want it anymore."
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Needs or Wants?\n\nEvery day, we spend money on {{v:a wide variety of}} things. But {{g:have you ever paused to ask|현재완료(경험) + pause + to부정사: ~하기 위해 멈춰 본 적이 있니?}} yourself {{g:whether|whether: ~인지 아닌지 (명사절 접속사)}} you {{v:truly}} need what you are {{v:purchasing}}?\n\nEconomists {{v:classify}} the things we buy into two {{v:categories}}: needs and wants. Needs are things {{g:that are essential for|주격 관계대명사 that / be essential for: ~에 필수적이다}} {{v:survival}}, such as food, {{v:clothing}}, and {{v:shelter}}. Wants, {{v:on the other hand}}, are things that make life more {{v:enjoyable}} or comfortable but are not necessary, such as new video games, designer shoes, or the latest smartphone.\n\n{{g:There is nothing wrong with buying|There is nothing wrong with + 동명사: ~하는 것에는 잘못이 없다}} things we want. {{t:The problem is that while our money is limited, our wants are endless}}. Advertisements and social media {{v:constantly}} make us feel {{g:as if we need something new|as if + 주어 + 동사: 마치 ~인 것처럼}}. If we spend too much on wants, we may not have {{g:enough left|enough + 과거분사 left: (돈이) 충분히 남아 있는}} for our needs or for the future.\n\n{{g:This is why|This is why + 주어 + 동사: 이것이 ~하는 이유이다}} {{g:creating a budget is so important|동명사 주어 (단수 취급 → is)}}. A budget is a plan that shows how much money you {{v:intend}} to spend and how much you will save. One useful {{v:strategy}} is the \"24-hour rule.\" {{g:Whenever|복합관계부사 whenever: ~할 때마다}} you feel {{v:the urge}} to buy something that is not a need, wait 24 hours {{g:before making the purchase|before + 동명사: ~하기 전에}}. {{v:In many cases}}, you will {{v:discover}} that you no longer want it.\n\n{{t:Managing money wisely is a skill that will benefit you for the rest of your life}}.",
+    "tags": {
+      "vocab": [
+        "a wide variety of",
+        "truly",
+        "purchase",
+        "classify",
+        "category",
+        "survival",
+        "clothing",
+        "shelter",
+        "on the other hand",
+        "enjoyable",
+        "constantly",
+        "intend",
+        "strategy",
+        "urge",
+        "in many cases",
+        "discover"
+      ],
+      "grammar": [
+        "현재완료(경험) + pause + to부정사",
+        "whether 명사절",
+        "주격 관계대명사 that",
+        "There is nothing wrong with + 동명사",
+        "대조의 while",
+        "as if",
+        "enough + left",
+        "This is why",
+        "동명사 주어",
+        "복합관계부사 whenever",
+        "before + 동명사"
+      ],
+      "topic": [
+        "필요한 것과 원하는 것",
+        "과소비와 광고",
+        "예산과 24시간 규칙"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "a504240d-4ed0-464c-9a87-be263e1568ad",
+        "type": "mc",
+        "q": "Which of the following best states the main idea of the passage?",
+        "choices": [
+          "Buying things we want is always a waste of money.",
+          "Because our money is limited, we should distinguish needs from wants and plan our spending carefully.",
+          "Advertisements are the best way to learn about new products.",
+          "Economists believe everyone should stop spending money.",
+          "The latest smartphone has become a basic need for survival."
+        ],
+        "answer": "Because our money is limited, we should distinguish needs from wants and plan our spending carefully.",
+        "explanation": "돈은 한정 → needs/wants 구별 + 예산·24시간 규칙으로 계획적으로 소비하자."
+      },
+      {
+        "qid": "b6c33bac-4294-4b93-a64f-40f505c07462",
+        "type": "mc",
+        "q": "Which of the following would be the best title for the passage?",
+        "choices": [
+          "The History of Advertising",
+          "Why Video Games Are Bad for You",
+          "How to Become an Economist",
+          "Spend Smart: Telling Needs from Wants",
+          "The Best Smartphones of the Year"
+        ],
+        "answer": "Spend Smart: Telling Needs from Wants",
+        "explanation": "needs와 wants를 구별해 현명하게 소비하자는 내용이다."
+      },
+      {
+        "qid": "73ba482c-467a-466b-9d88-c2c579dc1f09",
+        "type": "mc",
+        "q": "In the passage, 'classify' is closest in meaning to ____.",
+        "choices": [
+          "sort",
+          "hide",
+          "buy",
+          "count",
+          "sell"
+        ],
+        "answer": "sort",
+        "explanation": "classify = 분류하다(sort)."
+      },
+      {
+        "qid": "d44d01af-a4fa-4569-a64b-473804ae9066",
+        "type": "mc",
+        "q": "In the passage, 'endless' is closest in meaning to ____.",
+        "choices": [
+          "useless",
+          "careful",
+          "small",
+          "short",
+          "without limit"
+        ],
+        "answer": "without limit",
+        "explanation": "endless = 끝없는(without limit)."
+      },
+      {
+        "qid": "db1573ed-ac56-4b9f-9501-f90dc4d24c07",
+        "type": "mc",
+        "q": "In the passage, 'urge' is closest in meaning to ____.",
+        "choices": [
+          "careful plan",
+          "deep fear",
+          "strong desire",
+          "strict rule",
+          "high price"
+        ],
+        "answer": "strong desire",
+        "explanation": "urge = (강한) 욕구, 충동."
+      },
+      {
+        "qid": "49baa8f7-dd2a-4355-a018-52e2ec7269b0",
+        "type": "mc",
+        "q": "In the passage, 'constantly' is closest in meaning to ____.",
+        "choices": [
+          "rarely",
+          "all the time",
+          "never",
+          "carefully",
+          "only once"
+        ],
+        "answer": "all the time",
+        "explanation": "constantly = 끊임없이(all the time)."
+      },
+      {
+        "qid": "5235e32e-d7d4-4692-8c1c-e69b27cf657b",
+        "type": "mc",
+        "q": "Which pair is correctly classified according to the passage?",
+        "choices": [
+          "food – want / designer shoes – need",
+          "clothing – want / video games – need",
+          "shelter – want / food – need",
+          "designer shoes – need / clothing – need",
+          "shelter – need / the latest smartphone – want"
+        ],
+        "answer": "shelter – need / the latest smartphone – want",
+        "explanation": "needs: food, clothing, shelter / wants: video games, designer shoes, the latest smartphone."
+      },
+      {
+        "qid": "b1e92a68-9d81-4656-bb86-119c8ef7fa44",
+        "type": "mc",
+        "q": "Why does the writer say 'There is nothing wrong with buying things we want'?",
+        "choices": [
+          "To make clear that the problem is overspending, not wants themselves",
+          "To encourage readers to buy more designer shoes",
+          "To show that wants are more important than needs",
+          "To argue that budgets are unnecessary",
+          "To explain how advertisements work"
+        ],
+        "answer": "To make clear that the problem is overspending, not wants themselves",
+        "explanation": "원하는 것 자체가 아니라 과소비가 문제라는 점을 분명히 하려는 것이다."
+      },
+      {
+        "qid": "d958cf03-1d05-4660-b7cb-0494e75283b7",
+        "type": "mc",
+        "q": "The sentence 'while our money is limited, our wants are endless' mainly highlights ____.",
+        "choices": [
+          "the similarity between money and wants",
+          "the reason why economists study games",
+          "the way social media saves us money",
+          "the imbalance between our resources and our desires",
+          "the fact that needs are endless"
+        ],
+        "answer": "the imbalance between our resources and our desires",
+        "explanation": "while(대조): 한정된 돈 vs 끝없는 욕구의 불균형."
+      },
+      {
+        "qid": "56b233ae-5d82-42d8-8d55-db35a50ec7ba",
+        "type": "mc",
+        "q": "The phrase 'make us feel as if we need something new' implies that ____.",
+        "choices": [
+          "new things are always necessary for survival",
+          "advertisements show only needs",
+          "we often don't actually need the new things",
+          "we never want anything new",
+          "social media helps us save money"
+        ],
+        "answer": "we often don't actually need the new things",
+        "explanation": "as if = 마치 ~인 것처럼 → 실제로는 필요하지 않은데 필요한 것처럼 느끼게 한다."
+      },
+      {
+        "qid": "9d120053-eadb-4834-aec1-61dc33b3985d",
+        "type": "mc",
+        "q": "Which statement would the writer most likely agree with?",
+        "choices": [
+          "Thinking before buying helps us use limited money more wisely.",
+          "Advertisements give reliable information about our needs.",
+          "Saving money is not necessary for young people.",
+          "Needs and wants are basically the same thing.",
+          "People should buy only the cheapest products."
+        ],
+        "answer": "Thinking before buying helps us use limited money more wisely.",
+        "explanation": "예산과 24시간 규칙 → 사기 전에 생각하는 것이 현명한 소비이다."
+      },
+      {
+        "qid": "a943f749-f9e1-4013-aeb5-189301493bfc",
+        "type": "mc",
+        "q": "According to the passage, what does a budget show?",
+        "choices": [
+          "Which products are the most popular",
+          "How much money other people spend",
+          "What advertisements you have seen",
+          "Which needs are the most expensive",
+          "How much money you intend to spend and how much you will save"
+        ],
+        "answer": "How much money you intend to spend and how much you will save",
+        "explanation": "'A budget is a plan that shows how much money you intend to spend and how much you will save.'"
+      },
+      {
+        "qid": "7b66ba76-9ca2-42bd-a297-146545ce54cc",
+        "type": "mc",
+        "q": "Junho feels the urge to buy a limited-edition hoodie at noon on Saturday. Following the 24-hour rule, what should he do?",
+        "choices": [
+          "Buy it immediately before it sells out",
+          "Wait until noon on Sunday before deciding",
+          "Buy it and return it after 24 hours",
+          "Wait until midnight on Saturday",
+          "Ask his friends to buy it for him"
+        ],
+        "answer": "Wait until noon on Sunday before deciding",
+        "explanation": "후드티는 need가 아니다 → 구매 전 24시간 → 일요일 정오."
+      },
+      {
+        "qid": "894f8721-d829-413e-9c73-bfc0c38ded3c",
+        "type": "mc",
+        "q": "Which person is NOT following the 24-hour rule correctly?",
+        "choices": [
+          "Mina waits a day before deciding to buy designer shoes.",
+          "Tom waits 24 hours and then decides he does not need the latest phone.",
+          "Jin waits 24 hours before buying a concert ticket.",
+          "Hana sees a new game, buys it at once, and waits 24 hours to play it.",
+          "Yuna buys groceries for dinner without waiting."
+        ],
+        "answer": "Hana sees a new game, buys it at once, and waits 24 hours to play it.",
+        "explanation": "규칙은 \"사기 전에\" 기다리는 것이다. 장보기(음식)는 need라 기다릴 필요가 없다."
+      },
+      {
+        "qid": "391e5d4f-9042-4baf-8981-8466d2977ed8",
+        "type": "mc",
+        "q": "The sentence 'you will discover that you no longer want it' suggests that ____.",
+        "choices": [
+          "our wants become needs after a day",
+          "prices always go up after 24 hours",
+          "many urges to buy are only temporary",
+          "waiting makes us want things more",
+          "we should buy things before they disappear"
+        ],
+        "answer": "many urges to buy are only temporary",
+        "explanation": "하루 지나면 더 이상 원하지 않는다 → 구매 충동은 일시적인 경우가 많다."
+      },
+      {
+        "qid": "69caec8b-a39a-48aa-b950-b872e6927932",
+        "type": "mc",
+        "q": "Which sentence is grammatically correct, using 'as if' as in the passage?",
+        "choices": [
+          "He talks as if he know everything.",
+          "He talks as if he knowing everything.",
+          "He talks as if knows everything.",
+          "He talks as if to knew everything.",
+          "He talks as if he knew everything."
+        ],
+        "answer": "He talks as if he knew everything.",
+        "explanation": "as if + 주어 + 동사: 마치 ~인 것처럼 (사실과 반대면 과거형 knew)."
+      },
+      {
+        "qid": "fe86bb0d-5dae-47a0-a321-d6e05c4a3a7f",
+        "type": "mc",
+        "q": "Which sentence is correct, like 'There is nothing wrong with buying things we want'?",
+        "choices": [
+          "There is nothing wrong with asking for help.",
+          "There is nothing wrong with ask for help.",
+          "There is nothing wrong with to ask for help.",
+          "There is nothing wrong with asked for help.",
+          "There is nothing wrong to with asking for help."
+        ],
+        "answer": "There is nothing wrong with asking for help.",
+        "explanation": "with는 전치사 → 뒤에 동명사(asking)."
+      },
+      {
+        "qid": "f20cef3b-f4a5-442b-9df4-cbf13e7461a1",
+        "type": "mc",
+        "q": "Which statement is NOT true according to the passage?",
+        "choices": [
+          "Economists classify the things we buy into two categories.",
+          "Clothing and shelter are needs.",
+          "The writer believes advertisements help us save money.",
+          "Our wants are endless.",
+          "A budget shows how much money you will save."
+        ],
+        "answer": "The writer believes advertisements help us save money.",
+        "explanation": "광고와 SNS는 늘 새것이 필요한 것처럼 느끼게 한다 → 돈을 아끼게 돕지 않는다."
+      },
+      {
+        "qid": "76c3db6f-72c9-4c13-a8ac-00a0aa6e411d",
+        "type": "order",
+        "items": [
+          "In many cases, you discover that you no longer want it.",
+          "You ask yourself whether it is a need or a want.",
+          "After 24 hours, you think about the purchase again.",
+          "You feel the urge to buy something.",
+          "Since it is not a need, you wait 24 hours."
+        ],
+        "answer": [
+          "You feel the urge to buy something.",
+          "You ask yourself whether it is a need or a want.",
+          "Since it is not a need, you wait 24 hours.",
+          "After 24 hours, you think about the purchase again.",
+          "In many cases, you discover that you no longer want it."
+        ]
+      },
+      {
+        "qid": "0f7e2dcb-b58a-4ea8-98db-eafec31132e1",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "classify",
+            "meaning": "분류하다"
+          },
+          {
+            "word": "survival",
+            "meaning": "생존"
+          },
+          {
+            "word": "shelter",
+            "meaning": "주거지"
+          },
+          {
+            "word": "endless",
+            "meaning": "끝없는"
+          },
+          {
+            "word": "constantly",
+            "meaning": "끊임없이"
+          },
+          {
+            "word": "intend",
+            "meaning": "~할 작정이다"
+          },
+          {
+            "word": "strategy",
+            "meaning": "전략"
+          },
+          {
+            "word": "urge",
+            "meaning": "욕구, 충동"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "71d961db-ccbd-4458-b0a8-275220d6b9a3",
+        "q": "Summarize the passage in three English sentences: (1) how needs and wants differ, (2) why overspending happens, and (3) the writer's solutions.",
+        "wordLimit": 70,
+        "sampleAnswer": "Needs are things essential for survival, such as food and shelter, while wants make life more enjoyable but are not necessary. Because our money is limited but our wants are endless, and advertisements make us feel as if we need something new, we can easily overspend. To avoid this, the writer suggests creating a budget and following the \"24-hour rule.\"",
+        "rubric": "① needs/wants 차이 ② 과소비 원인(한정된 돈·끝없는 욕구·광고) ③ 해결책(예산·24시간 규칙) ④ 영어 3문장"
+      },
+      {
+        "qid": "89fd7424-c011-4582-801b-cc5bc8d101af",
+        "q": "우리말로 쓰시오: 광고와 SNS가 우리의 소비에 어떤 영향을 주는지 쓰고, \"24시간 규칙\"이 그 영향을 어떻게 줄여 줄 수 있는지 설명하시오.",
+        "wordLimit": 90,
+        "sampleAnswer": "광고와 SNS는 끊임없이 우리가 마치 새로운 것이 필요한 것처럼 느끼게 만들어 필요하지 않은 것을 사고 싶은 충동을 일으킨다. 24시간 규칙은 사기 전에 하루를 기다리게 해서 그 충동이 사라질 시간을 주므로, 정말 원하는 것인지 다시 생각하고 충동구매를 줄일 수 있게 해 준다.",
+        "rubric": "① 광고·SNS의 영향(새것이 필요하다고 느끼게 함) ② 24시간 규칙의 역할(충동이 사라질 시간)",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "773fa00b-e3b4-4b34-b18a-50daf86fd04d",
+        "q": "다음 우리말을 영어로 쓰시오. '광고는 우리가 마치 새로운 것이 필요한 것처럼 느끼게 만든다.' <조건> make + 목적어 + 동사원형, as if를 사용할 것",
+        "wordLimit": 12,
+        "sampleAnswer": "Advertisements make us feel as if we need something new.",
+        "rubric": "① make us feel ② as if ③ we need something new"
+      },
+      {
+        "qid": "de4e1e85-dd31-4bc2-ba32-d246004f466e",
+        "q": "두 문장을 whenever를 사용하여 한 문장으로 쓰시오. 'You feel the urge to buy something that is not a need. Each time, wait 24 hours.'",
+        "wordLimit": 18,
+        "sampleAnswer": "Whenever you feel the urge to buy something that is not a need, wait 24 hours.",
+        "rubric": "① Whenever ② you feel the urge ③ wait 24 hours"
+      },
+      {
+        "qid": "1657702d-5aa9-404a-8c9d-3d18e1f6ec5a",
+        "q": "Describe something you bought that was a want. Would the 24-hour rule have helped you? Explain in 2–3 English sentences.",
+        "wordLimit": 50,
+        "sampleAnswer": "Last month, I bought a new phone case because I saw it on social media. If I had waited 24 hours, I would not have bought it, because I already had a good case. The 24-hour rule would have helped me save money.",
+        "rubric": "① 구체적 경험 ② 24시간 규칙과 연결 ③ 영어 2~3문장, 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "a wide variety of",
+        "surface": "a wide variety of",
+        "pos": "숙",
+        "meaning": "매우 다양한",
+        "sentence": "Every day, we spend money on a wide variety of things."
+      },
+      {
+        "word": "truly",
+        "surface": "truly",
+        "pos": "부",
+        "meaning": "진정으로, 정말로",
+        "sentence": "But have you ever paused to ask yourself whether you truly need what you are purchasing?"
+      },
+      {
+        "word": "purchase",
+        "surface": "purchasing",
+        "pos": "동",
+        "meaning": "구입하다",
+        "sentence": "But have you ever paused to ask yourself whether you truly need what you are purchasing?"
+      },
+      {
+        "word": "classify",
+        "surface": "classify",
+        "pos": "동",
+        "meaning": "분류하다",
+        "sentence": "Economists classify the things we buy into two categories: needs and wants."
+      },
+      {
+        "word": "category",
+        "surface": "categories",
+        "pos": "명",
+        "meaning": "범주, 종류",
+        "sentence": "Economists classify the things we buy into two categories: needs and wants."
+      },
+      {
+        "word": "survival",
+        "surface": "survival",
+        "pos": "명",
+        "meaning": "생존",
+        "sentence": "Needs are things that are essential for survival, such as food, clothing, and shelter."
+      },
+      {
+        "word": "clothing",
+        "surface": "clothing",
+        "pos": "명",
+        "meaning": "의류, 옷",
+        "sentence": "Needs are things that are essential for survival, such as food, clothing, and shelter."
+      },
+      {
+        "word": "shelter",
+        "surface": "shelter",
+        "pos": "명",
+        "meaning": "주거지, 살 곳",
+        "sentence": "Needs are things that are essential for survival, such as food, clothing, and shelter."
+      },
+      {
+        "word": "on the other hand",
+        "surface": "on the other hand",
+        "pos": "숙",
+        "meaning": "반면에, 다른 한편으로는",
+        "sentence": "Wants, on the other hand, are things that make life more enjoyable or comfortable but are not necessary, such as new video games, designer shoes, or the latest smartphone."
+      },
+      {
+        "word": "enjoyable",
+        "surface": "enjoyable",
+        "pos": "형",
+        "meaning": "즐거운",
+        "sentence": "Wants, on the other hand, are things that make life more enjoyable or comfortable but are not necessary, such as new video games, designer shoes, or the latest smartphone."
+      },
+      {
+        "word": "constantly",
+        "surface": "constantly",
+        "pos": "부",
+        "meaning": "끊임없이, 계속",
+        "sentence": "Advertisements and social media constantly make us feel as if we need something new."
+      },
+      {
+        "word": "intend",
+        "surface": "intend",
+        "pos": "동",
+        "meaning": "~할 작정이다, 의도하다",
+        "sentence": "A budget is a plan that shows how much money you intend to spend and how much you will save."
+      },
+      {
+        "word": "strategy",
+        "surface": "strategy",
+        "pos": "명",
+        "meaning": "전략, 방법",
+        "sentence": "One useful strategy is the \"24-hour rule.\""
+      },
+      {
+        "word": "urge",
+        "surface": "the urge",
+        "pos": "명",
+        "meaning": "(강한) 욕구, 충동",
+        "sentence": "Whenever you feel the urge to buy something that is not a need, wait 24 hours before making the purchase."
+      },
+      {
+        "word": "in many cases",
+        "surface": "In many cases",
+        "pos": "숙",
+        "meaning": "많은 경우에",
+        "sentence": "In many cases, you will discover that you no longer want it."
+      },
+      {
+        "word": "discover",
+        "surface": "discover",
+        "pos": "동",
+        "meaning": "알게 되다, 발견하다",
+        "sentence": "In many cases, you will discover that you no longer want it."
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Needs or Wants?\n\n{{v:On a daily basis}}, we spend money on an {{v:astonishing}} {{v:array}} of goods and services. Yet have you ever paused to consider {{g:whether you genuinely require what you are purchasing|whether 명사절: ~인지 아닌지 / 관계대명사 what: ~하는 것}}?\n\nEconomists {{v:categorize}} our purchases into two {{v:fundamental}} groups: needs and wants. Needs are {{g:items indispensable to survival|형용사구 후치 수식: items (that are) indispensable to ~ (~에 없어서는 안 될)}}, such as food, clothing, and shelter. Wants, {{v:by contrast}}, are items that {{v:enhance}} our enjoyment or comfort but are {{v:by no means}} {{v:essential}}, such as new video games, designer {{v:footwear}}, or the latest smartphone.\n\n{{g:Purchasing things we desire is not inherently wrong|동명사 주어 + 목적격 관계대명사 생략: things (that) we desire}}. The difficulty {{g:lies in the fact that|lie in: ~에 있다 / 동격의 that: the fact that ~ (~라는 사실)}} {{g:whereas|대조 접속사 whereas: ~인 반면에}} our {{v:financial}} resources are {{v:finite}}, our wants are {{v:virtually}} limitless. Advertisements and social media relentlessly create {{g:the impression that|동격의 that: ~라는 인상}} we are {{v:perpetually}} in need of something new. {{g:Should we spend|if 생략 도치: Should + 주어 + 동사원형 = If we should spend (혹시 ~한다면)}} {{v:excessively}} on wants, we {{g:may be left with|수동태: be left with ~ (~만 남게 되다)}} {{v:insufficient}} {{v:funds}} for our needs or for the future.\n\n{{g:It is for this reason that|It is ~ that 강조 구문: 바로 이 이유 때문에 ~하다}} establishing a budget is {{v:crucial}}. A budget is a financial plan that {{v:specifies}} how much money you intend to spend and how much you aim to save. One practical strategy is {{g:the so-called|so-called: 이른바, 소위}} \"24-hour rule.\" Whenever you {{g:are tempted to buy|be tempted to + 동사원형: ~하고 싶은 유혹을 느끼다}} something that is not a {{v:necessity}}, {{v:postpone}} the purchase for 24 hours. {{v:More often than not}}, you will find that your desire for it {{g:has faded|현재완료(결과): 사라져 버렸다}}.\n\n{{t:Managing money prudently is a skill that will serve you well throughout your life}}.",
+    "tags": {
+      "vocab": [
+        "on a daily basis",
+        "astonishing",
+        "array",
+        "categorize",
+        "fundamental",
+        "by contrast",
+        "enhance",
+        "by no means",
+        "essential",
+        "footwear",
+        "financial",
+        "finite",
+        "virtually",
+        "perpetually",
+        "excessively",
+        "insufficient",
+        "fund",
+        "crucial",
+        "specify",
+        "necessity",
+        "postpone",
+        "more often than not"
+      ],
+      "grammar": [
+        "whether 명사절 / 관계대명사 what",
+        "형용사구 후치 수식",
+        "동명사 주어 / 목적격 관계대명사 생략",
+        "lie in / 동격의 that",
+        "대조 접속사 whereas",
+        "if 생략 도치(Should)",
+        "수동태(be left with)",
+        "It is ~ that 강조 구문",
+        "so-called",
+        "be tempted to + 동사원형",
+        "현재완료(결과)"
+      ],
+      "topic": [
+        "유한한 자원과 무한한 욕구",
+        "광고와 소비 심리",
+        "예산과 지연 전략"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "52cba30f-3b53-4737-b8b7-6ae582b5b3a0",
+        "type": "mc",
+        "q": "Which of the following best summarizes the writer's central argument?",
+        "choices": [
+          "Desiring non-essential goods is inherently harmful and should be avoided.",
+          "Since finite resources cannot satisfy limitless wants, distinguishing needs from wants and budgeting deliberately is essential.",
+          "Advertisements provide the most reliable guidance for identifying our needs.",
+          "Economists recommend spending all of our income on necessities.",
+          "The 24-hour rule is useful only for expensive luxury products."
+        ],
+        "answer": "Since finite resources cannot satisfy limitless wants, distinguishing needs from wants and budgeting deliberately is essential.",
+        "explanation": "유한한 자원 vs 무한한 욕구 → needs/wants 구별 + 예산이 필수라는 주장이다."
+      },
+      {
+        "qid": "7a2923ea-c7d8-424f-becc-1b8db4ddbf1a",
+        "type": "mc",
+        "q": "How is the passage mainly organized?",
+        "choices": [
+          "A personal story told in time order",
+          "A comparison of two economists' opinions",
+          "A list of advertisements and their effects",
+          "A question, definitions, a problem, practical solutions, and a conclusion",
+          "An argument followed only by statistics"
+        ],
+        "answer": "A question, definitions, a problem, practical solutions, and a conclusion",
+        "explanation": "질문 → needs/wants 정의 → 문제(유한한 돈) → 해결책(예산·24시간 규칙) → 결론."
+      },
+      {
+        "qid": "4ca8e1ef-da04-4f17-a89d-236b21588790",
+        "type": "mc",
+        "q": "In the passage, 'indispensable' is closest in meaning to ____.",
+        "choices": [
+          "absolutely necessary",
+          "easily replaced",
+          "very expensive",
+          "rarely used",
+          "slightly useful"
+        ],
+        "answer": "absolutely necessary",
+        "explanation": "indispensable = 없어서는 안 될."
+      },
+      {
+        "qid": "b7a1b791-b90c-40a3-a49a-28a0873d998e",
+        "type": "mc",
+        "q": "In the passage, 'finite' is closest in meaning to ____.",
+        "choices": [
+          "endless",
+          "unknown",
+          "growing",
+          "shared",
+          "limited"
+        ],
+        "answer": "limited",
+        "explanation": "finite = 한정된(limited). 반대는 limitless."
+      },
+      {
+        "qid": "794f75b6-cb4b-4a63-b70d-905b2021e176",
+        "type": "mc",
+        "q": "In the passage, 'perpetually' is closest in meaning to ____.",
+        "choices": [
+          "occasionally",
+          "briefly",
+          "constantly",
+          "never",
+          "recently"
+        ],
+        "answer": "constantly",
+        "explanation": "perpetually = 끊임없이(constantly)."
+      },
+      {
+        "qid": "0b397b0e-bd0e-4a76-9a77-7fc622c85f7b",
+        "type": "mc",
+        "q": "In the passage, 'postpone' is closest in meaning to ____.",
+        "choices": [
+          "cancel",
+          "delay",
+          "repeat",
+          "hurry",
+          "complete"
+        ],
+        "answer": "delay",
+        "explanation": "postpone = 미루다(delay). 취소(cancel)가 아니다."
+      },
+      {
+        "qid": "f07c4bf0-c51b-4291-b4ff-2b9dab905a4c",
+        "type": "mc",
+        "q": "In the passage, 'more often than not' is closest in meaning to ____.",
+        "choices": [
+          "rarely",
+          "never",
+          "immediately",
+          "only once",
+          "usually"
+        ],
+        "answer": "usually",
+        "explanation": "more often than not = 대개(usually)."
+      },
+      {
+        "qid": "8a74b792-a510-4ef8-8bd8-6558584abad6",
+        "type": "mc",
+        "q": "Which statement correctly applies the passage's definitions?",
+        "choices": [
+          "Designer footwear enhances enjoyment or comfort but is not essential, so it is a want.",
+          "Shelter is a want because it enhances our comfort.",
+          "The latest smartphone is a need because many people own one.",
+          "Food is a want because it can be enjoyable.",
+          "Clothing is a want because it can be fashionable."
+        ],
+        "answer": "Designer footwear enhances enjoyment or comfort but is not essential, so it is a want.",
+        "explanation": "지문 기준: food, clothing, shelter = needs / video games, designer footwear, the latest smartphone = wants."
+      },
+      {
+        "qid": "1a8f2b7e-5846-4d7c-8a3a-142693a91388",
+        "type": "mc",
+        "q": "What is the purpose of the sentence 'Purchasing things we desire is not inherently wrong'?",
+        "choices": [
+          "To encourage readers to purchase more luxury goods",
+          "To argue that needs are less important than wants",
+          "To criticize economists for dividing goods into groups",
+          "To clarify that the writer's concern is overspending, not desire itself",
+          "To explain how social media creates impressions"
+        ],
+        "answer": "To clarify that the writer's concern is overspending, not desire itself",
+        "explanation": "욕구 자체가 아니라 과도한 지출이 문제라는 점을 분명히 한다."
+      },
+      {
+        "qid": "e143c5b1-8625-4d00-af33-36580a7eb7a1",
+        "type": "mc",
+        "q": "The contrast 'whereas our financial resources are finite, our wants are virtually limitless' implies that ____.",
+        "choices": [
+          "our financial resources will eventually become limitless",
+          "our wants are actually smaller than our resources",
+          "not every want can be satisfied, so we must make choices",
+          "needs and wants are equally limited",
+          "budgets make our wants disappear completely"
+        ],
+        "answer": "not every want can be satisfied, so we must make choices",
+        "explanation": "whereas(대조): 돈은 유한, 욕구는 무한 → 모든 욕구를 채울 수 없으니 선택해야 한다."
+      },
+      {
+        "qid": "be2df35d-1613-4782-8314-90354addbf0d",
+        "type": "mc",
+        "q": "The phrase 'create the impression that we are perpetually in need of something new' suggests that advertisements ____.",
+        "choices": [
+          "blur the line between needs and wants",
+          "help us identify our true needs",
+          "reduce our desire for new products",
+          "make our financial resources limitless",
+          "teach us how to make a budget"
+        ],
+        "answer": "blur the line between needs and wants",
+        "explanation": "원하는 것을 필요한 것처럼 느끼게 만든다 → needs와 wants의 경계를 흐린다."
+      },
+      {
+        "qid": "20483cf9-af71-4f20-a7e3-0a9bb3868dff",
+        "type": "mc",
+        "q": "The clause 'Should we spend excessively on wants' can best be rewritten as ____.",
+        "choices": [
+          "Because we spend excessively on wants",
+          "Although we spent excessively on wants",
+          "Unless we spend excessively on wants",
+          "As we must spend excessively on wants",
+          "If we should spend excessively on wants"
+        ],
+        "answer": "If we should spend excessively on wants",
+        "explanation": "if 생략 도치: Should + 주어 + 동사원형 = If + 주어 + should + 동사원형."
+      },
+      {
+        "qid": "3084750c-ce8e-441d-b78c-e2f8d90e4265",
+        "type": "mc",
+        "q": "Why does the 24-hour rule most likely work?",
+        "choices": [
+          "It makes products cheaper after a day.",
+          "It allows a temporary impulse to fade so that a more rational decision can be made.",
+          "It forces stores to offer discounts.",
+          "It turns wants into needs over time.",
+          "It prevents people from ever buying wants."
+        ],
+        "answer": "It allows a temporary impulse to fade so that a more rational decision can be made.",
+        "explanation": "하루 기다리는 동안 일시적인 충동이 사라져 이성적으로 판단할 수 있다."
+      },
+      {
+        "qid": "0d4f3da6-d1de-4f35-9ce9-ae9708b8713b",
+        "type": "mc",
+        "q": "A student is tempted to buy wireless earbuds at 9 p.m. on Thursday. They are not a necessity. When is the earliest she should make the purchase, following the rule?",
+        "choices": [
+          "At 9 a.m. on Friday",
+          "At 9 p.m. on Thursday",
+          "At 9 p.m. on Saturday",
+          "At 9 p.m. on Friday",
+          "At 9:24 p.m. on Thursday"
+        ],
+        "answer": "At 9 p.m. on Friday",
+        "explanation": "24시간 미룬다 → 가장 이른 시점은 금요일 오후 9시."
+      },
+      {
+        "qid": "50f586b3-5da8-406f-8730-4a4abf582ff5",
+        "type": "mc",
+        "q": "Which sentence uses the same emphasis structure as 'It is for this reason that establishing a budget is crucial'?",
+        "choices": [
+          "It is true that she is very kind.",
+          "It is important to save money every month.",
+          "It was in the library that I first met her.",
+          "It seems that he is busy today.",
+          "It is getting dark outside."
+        ],
+        "answer": "It was in the library that I first met her.",
+        "explanation": "It is/was + 강조 대상(in the library) + that ~: 강조 구문. 나머지는 가주어·비인칭 it."
+      },
+      {
+        "qid": "bd267baa-bc37-4888-b9fb-0f57b4e20da6",
+        "type": "mc",
+        "q": "Which 'that' is used in the same way as in 'the impression that we are perpetually in need of something new'?",
+        "choices": [
+          "The news that he told me was false.",
+          "I think that he will come soon.",
+          "She is so kind that everyone likes her.",
+          "That book on the desk is mine.",
+          "The news that our team had won surprised everyone."
+        ],
+        "answer": "The news that our team had won surprised everyone.",
+        "explanation": "동격의 that: the news = our team had won (완전한 절). \"that he told me\"는 관계대명사(told의 목적어가 없음)."
+      },
+      {
+        "qid": "7d1812a4-817e-4716-a99a-6aa8e35503e5",
+        "type": "mc",
+        "q": "Which sentence is correct, like 'Whenever you are tempted to buy something'?",
+        "choices": [
+          "I was tempted to eat the whole cake.",
+          "I was tempted eating the whole cake.",
+          "I was tempted to ate the whole cake.",
+          "I was tempting to eat the whole cake.",
+          "I was tempted for eat the whole cake."
+        ],
+        "answer": "I was tempted to eat the whole cake.",
+        "explanation": "be tempted to + 동사원형: ~하고 싶은 유혹을 느끼다."
+      },
+      {
+        "qid": "d8e32492-c38a-4757-8d3b-dec95c158054",
+        "type": "mc",
+        "q": "Which statement is NOT true according to the passage?",
+        "choices": [
+          "Economists categorize purchases into needs and wants.",
+          "Shelter is indispensable to survival.",
+          "The writer argues that we should purchase only necessities.",
+          "A budget specifies how much money you aim to save.",
+          "The 24-hour rule applies to things that are not necessities."
+        ],
+        "answer": "The writer argues that we should purchase only necessities.",
+        "explanation": "'Purchasing things we desire is not inherently wrong.' → 필수품만 사라는 것이 아니다."
+      },
+      {
+        "qid": "34053fa7-c387-466b-bf79-b6b19c151aa6",
+        "type": "order",
+        "items": [
+          "You reconsider whether you genuinely require it.",
+          "You recall the so-called \"24-hour rule.\"",
+          "More often than not, your desire for it has faded.",
+          "You are tempted to buy something that is not a necessity.",
+          "You postpone the purchase for 24 hours."
+        ],
+        "answer": [
+          "You are tempted to buy something that is not a necessity.",
+          "You recall the so-called \"24-hour rule.\"",
+          "You postpone the purchase for 24 hours.",
+          "You reconsider whether you genuinely require it.",
+          "More often than not, your desire for it has faded."
+        ]
+      },
+      {
+        "qid": "e53762c5-530f-488b-ba01-c9e92a3c473d",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "categorize",
+            "meaning": "분류하다"
+          },
+          {
+            "word": "indispensable",
+            "meaning": "없어서는 안 될"
+          },
+          {
+            "word": "enhance",
+            "meaning": "향상시키다"
+          },
+          {
+            "word": "finite",
+            "meaning": "한정된"
+          },
+          {
+            "word": "perpetually",
+            "meaning": "끊임없이"
+          },
+          {
+            "word": "insufficient",
+            "meaning": "불충분한"
+          },
+          {
+            "word": "specify",
+            "meaning": "명시하다"
+          },
+          {
+            "word": "postpone",
+            "meaning": "미루다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "ecb53417-44d8-4afb-8053-bf2891498643",
+        "q": "Summarize the passage in three English sentences: (1) the distinction between needs and wants, (2) the central problem, and (3) the proposed solutions.",
+        "wordLimit": 80,
+        "sampleAnswer": "Economists categorize purchases into needs, which are indispensable to survival, and wants, which enhance enjoyment but are by no means essential. The central problem is that our financial resources are finite while our wants are virtually limitless, and advertisements make us feel perpetually in need of something new. To address this, the writer recommends establishing a budget and postponing non-essential purchases for 24 hours.",
+        "rubric": "① needs/wants 구별 ② 핵심 문제(유한 vs 무한, 광고) ③ 해결책(예산·24시간 규칙) ④ 영어 3문장, 정확성"
+      },
+      {
+        "qid": "4079728c-eb4c-4c72-83f4-c360cd0805f6",
+        "q": "우리말로 쓰시오: 이 글이 제시한 핵심 문제를 쓰고, 두 가지 해결책(예산, 24시간 규칙)이 각각 그 문제를 어떻게 해결하는지 설명하시오.",
+        "wordLimit": 100,
+        "sampleAnswer": "핵심 문제는 쓸 수 있는 돈은 한정되어 있는데 원하는 것은 거의 끝이 없고, 광고와 SNS가 늘 새것이 필요하다고 느끼게 만든다는 것이다. 예산은 얼마를 쓰고 얼마를 저축할지 미리 정해 한정된 돈을 계획적으로 쓰게 해 준다. 24시간 규칙은 필요하지 않은 물건의 구매를 하루 미뤄 일시적인 충동이 사라지게 해 충동구매를 막는다.",
+        "rubric": "① 핵심 문제 ② 예산의 역할 ③ 24시간 규칙의 역할",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "cf0351e8-400f-4695-9512-8161c4c4d6b5",
+        "q": "다음 문장을 If를 사용하여 다시 쓰시오. 'Should we spend excessively on wants, we may be left with insufficient funds for our needs.'",
+        "wordLimit": 18,
+        "sampleAnswer": "If we should spend excessively on wants, we may be left with insufficient funds for our needs.",
+        "rubric": "① If we should spend ② excessively on wants ③ 주절 유지"
+      },
+      {
+        "qid": "af092105-09df-4798-bcde-c474946ba947",
+        "q": "다음 우리말을 영어로 쓰시오. '예산을 세우는 것이 매우 중요한 것은 바로 이 이유 때문이다.' <조건> It is ~ that 강조 구문, 동명사 주어를 사용할 것",
+        "wordLimit": 14,
+        "sampleAnswer": "It is for this reason that establishing (making) a budget is crucial.",
+        "rubric": "① It is for this reason that ② establishing/making a budget ③ is crucial/important"
+      },
+      {
+        "qid": "57e65523-664a-476f-94c2-8cbbc1cbe1c5",
+        "q": "Do you think the 24-hour rule is effective for teenagers? Give your opinion and suggest one more way to manage money wisely in 3–4 English sentences.",
+        "wordLimit": 70,
+        "sampleAnswer": "I think the 24-hour rule is effective for teenagers because many of our purchases are impulsive. After waiting a day, we can think more clearly about whether we really need something. Another good way is to save a fixed amount of money every week before spending any. This habit helps us prepare for the future.",
+        "rubric": "① 입장과 이유 ② 추가 방법 1가지 ③ 영어 3~4문장, 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "on a daily basis",
+        "surface": "On a daily basis",
+        "pos": "숙",
+        "meaning": "매일, 날마다",
+        "sentence": "On a daily basis, we spend money on an astonishing array of goods and services."
+      },
+      {
+        "word": "astonishing",
+        "surface": "astonishing",
+        "pos": "형",
+        "meaning": "놀라운",
+        "sentence": "On a daily basis, we spend money on an astonishing array of goods and services."
+      },
+      {
+        "word": "array",
+        "surface": "array",
+        "pos": "명",
+        "meaning": "(다양한) 집합, 다수 (an array of: 다양한)",
+        "sentence": "On a daily basis, we spend money on an astonishing array of goods and services."
+      },
+      {
+        "word": "categorize",
+        "surface": "categorize",
+        "pos": "동",
+        "meaning": "분류하다",
+        "sentence": "Economists categorize our purchases into two fundamental groups: needs and wants."
+      },
+      {
+        "word": "fundamental",
+        "surface": "fundamental",
+        "pos": "형",
+        "meaning": "기본적인, 근본적인",
+        "sentence": "Economists categorize our purchases into two fundamental groups: needs and wants."
+      },
+      {
+        "word": "by contrast",
+        "surface": "by contrast",
+        "pos": "숙",
+        "meaning": "그에 반해서, 대조적으로",
+        "sentence": "Wants, by contrast, are items that enhance our enjoyment or comfort but are by no means essential, such as new video games, designer footwear, or the latest smartphone."
+      },
+      {
+        "word": "enhance",
+        "surface": "enhance",
+        "pos": "동",
+        "meaning": "높이다, 향상시키다",
+        "sentence": "Wants, by contrast, are items that enhance our enjoyment or comfort but are by no means essential, such as new video games, designer footwear, or the latest smartphone."
+      },
+      {
+        "word": "by no means",
+        "surface": "by no means",
+        "pos": "숙",
+        "meaning": "결코 ~이 아닌",
+        "sentence": "Wants, by contrast, are items that enhance our enjoyment or comfort but are by no means essential, such as new video games, designer footwear, or the latest smartphone."
+      },
+      {
+        "word": "essential",
+        "surface": "essential",
+        "pos": "형",
+        "meaning": "필수적인",
+        "sentence": "Wants, by contrast, are items that enhance our enjoyment or comfort but are by no means essential, such as new video games, designer footwear, or the latest smartphone."
+      },
+      {
+        "word": "footwear",
+        "surface": "footwear",
+        "pos": "명",
+        "meaning": "신발류",
+        "sentence": "Wants, by contrast, are items that enhance our enjoyment or comfort but are by no means essential, such as new video games, designer footwear, or the latest smartphone."
+      },
+      {
+        "word": "financial",
+        "surface": "financial",
+        "pos": "형",
+        "meaning": "재정의, 금전상의",
+        "sentence": "The difficulty lies in the fact that whereas our financial resources are finite, our wants are virtually limitless."
+      },
+      {
+        "word": "finite",
+        "surface": "finite",
+        "pos": "형",
+        "meaning": "한정된, 유한한",
+        "sentence": "The difficulty lies in the fact that whereas our financial resources are finite, our wants are virtually limitless."
+      },
+      {
+        "word": "virtually",
+        "surface": "virtually",
+        "pos": "부",
+        "meaning": "사실상, 거의",
+        "sentence": "The difficulty lies in the fact that whereas our financial resources are finite, our wants are virtually limitless."
+      },
+      {
+        "word": "perpetually",
+        "surface": "perpetually",
+        "pos": "부",
+        "meaning": "끊임없이, 영원히",
+        "sentence": "Advertisements and social media relentlessly create the impression that we are perpetually in need of something new."
+      },
+      {
+        "word": "excessively",
+        "surface": "excessively",
+        "pos": "부",
+        "meaning": "지나치게, 과도하게",
+        "sentence": "Should we spend excessively on wants, we may be left with insufficient funds for our needs or for the future."
+      },
+      {
+        "word": "insufficient",
+        "surface": "insufficient",
+        "pos": "형",
+        "meaning": "불충분한",
+        "sentence": "Should we spend excessively on wants, we may be left with insufficient funds for our needs or for the future."
+      },
+      {
+        "word": "fund",
+        "surface": "funds",
+        "pos": "명",
+        "meaning": "자금, 돈",
+        "sentence": "Should we spend excessively on wants, we may be left with insufficient funds for our needs or for the future."
+      },
+      {
+        "word": "crucial",
+        "surface": "crucial",
+        "pos": "형",
+        "meaning": "매우 중요한, 결정적인",
+        "sentence": "It is for this reason that establishing a budget is crucial."
+      },
+      {
+        "word": "specify",
+        "surface": "specifies",
+        "pos": "동",
+        "meaning": "명시하다, 구체적으로 정하다",
+        "sentence": "A budget is a financial plan that specifies how much money you intend to spend and how much you aim to save."
+      },
+      {
+        "word": "necessity",
+        "surface": "necessity",
+        "pos": "명",
+        "meaning": "필수품, 꼭 필요한 것",
+        "sentence": "Whenever you are tempted to buy something that is not a necessity, postpone the purchase for 24 hours."
+      },
+      {
+        "word": "postpone",
+        "surface": "postpone",
+        "pos": "동",
+        "meaning": "미루다, 연기하다",
+        "sentence": "Whenever you are tempted to buy something that is not a necessity, postpone the purchase for 24 hours."
+      },
+      {
+        "word": "more often than not",
+        "surface": "More often than not",
+        "pos": "숙",
+        "meaning": "대개, 자주",
+        "sentence": "More often than not, you will find that your desire for it has faded."
+      }
+    ]
+  }
+}
