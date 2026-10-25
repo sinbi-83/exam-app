@@ -1,0 +1,1741 @@
+{
+  "school": {
+    "tagged_body": "My Family Trip to Hanoi\nPosted by Yuri | August 15, 2026\n\nLast week, my family spent five days in Hanoi. Hanoi is the {{v:capital}} of Vietnam. It was my first trip to another country. I want to share some of my favorite memories.\n\n{{g:The first thing that surprised me|주격 관계대명사 that: 나를 놀라게 한 첫 번째 것}} was the {{v:traffic}}. There were thousands of {{v:motorbikes}} on the streets. When we crossed the road, it felt like an {{v:adventure}}! Our tour guide {{g:told us to walk|tell + 목적어 + to부정사: ~에게 …하라고 말하다}} slowly and {{v:steadily}}. That way, drivers could see us and go around us.\n\nOn the second day, we visited Hoan Kiem Lake. It is in the center of the city. In the evening, cars could not go on the streets around the lake. {{v:Local}} families {{g:came out to dance|to부정사 부사적 용법(목적): ~하기 위해}}, play games, and enjoy street food.\n\nI really loved Vietnamese food. My favorite was bun cha. It is {{v:grilled}} pork with rice noodles and fresh {{v:herbs}}. It cost only about 50,000 dong. That is less than 3,000 won!\n\nThe best part of our trip was a boat tour of Ha Long Bay. Ha Long Bay is {{v:famous for}} its thousands of limestone islands. The {{v:view}} was {{g:so beautiful that I couldn't stop|so + 형용사 + that + 주어 + 동사: 너무 ~해서 …하다}} {{g:taking pictures|stop + -ing: ~하는 것을 멈추다}}.\n\n{{t:If you ever have a chance, please visit Hanoi.}} I really recommend it!",
+    "tags": {
+      "vocab": [
+        "capital",
+        "traffic",
+        "motorbike",
+        "adventure",
+        "steadily",
+        "local",
+        "grilled",
+        "herbs",
+        "famous for",
+        "view"
+      ],
+      "grammar": [
+        "주격 관계대명사 that",
+        "tell + 목적어 + to부정사",
+        "to부정사 부사적 용법(목적)",
+        "so ~ that 구문",
+        "stop + -ing",
+        "If 조건절 + 명령문"
+      ],
+      "topic": [
+        "해외여행",
+        "베트남 하노이",
+        "여행 블로그"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "48bdf0a5-6b2d-4418-8bad-c62aefae2aae",
+        "type": "mc",
+        "q": "What is the passage mainly about?",
+        "choices": [
+          "How to cross a busy road safely",
+          "The writer's favorite memories from a family trip to Hanoi",
+          "How to cook Vietnamese food",
+          "The history of Vietnam",
+          "How to choose a good tour guide"
+        ],
+        "answer": "The writer's favorite memories from a family trip to Hanoi",
+        "explanation": "하노이 가족 여행에서 가장 좋았던 기억들(교통, 호수, 음식, 하롱베이)을 소개하는 글이다."
+      },
+      {
+        "qid": "325c0ef1-1dae-42bb-998a-b29df538cbd2",
+        "type": "mc",
+        "q": "When did the writer's family go to Hanoi?",
+        "choices": [
+          "Last month",
+          "On August 15",
+          "Last year",
+          "Last week",
+          "Two weeks ago"
+        ],
+        "answer": "Last week",
+        "explanation": "'Last week, my family spent five days in Hanoi.'과 일치한다. August 15는 글을 올린 날짜이다."
+      },
+      {
+        "qid": "ff6c2608-0765-4f75-9be3-621167d92471",
+        "type": "mc",
+        "q": "How long did the family stay in Hanoi?",
+        "choices": [
+          "Five days",
+          "Three days",
+          "Four days",
+          "A week",
+          "Two weeks"
+        ],
+        "answer": "Five days",
+        "explanation": "'my family spent five days in Hanoi'과 일치한다."
+      },
+      {
+        "qid": "2e19a586-cc9b-4cd4-becb-b25612fe51d1",
+        "type": "mc",
+        "q": "What surprised the writer first?",
+        "choices": [
+          "The food",
+          "The weather",
+          "The traffic",
+          "The lake",
+          "The prices"
+        ],
+        "answer": "The traffic",
+        "explanation": "'The first thing that surprised me was the traffic.'과 일치한다."
+      },
+      {
+        "qid": "a4ad1ab6-4274-42c2-97dc-21198d5ef936",
+        "type": "mc",
+        "q": "What did the tour guide tell them to do?",
+        "choices": [
+          "Run across the road quickly",
+          "Wait for a green light",
+          "Take a taxi",
+          "Stay at the hotel",
+          "Walk slowly and steadily"
+        ],
+        "answer": "Walk slowly and steadily",
+        "explanation": "'Our tour guide told us to walk slowly and steadily.'과 일치한다."
+      },
+      {
+        "qid": "3f5f2ffe-c519-476c-8d4b-288870632002",
+        "type": "mc",
+        "q": "Why did the guide tell them to walk slowly and steadily?",
+        "choices": [
+          "To take pictures of the motorbikes",
+          "So drivers could see them and go around them",
+          "To save time",
+          "Because the road was wet",
+          "To find a good restaurant"
+        ],
+        "answer": "So drivers could see them and go around them",
+        "explanation": "'That way, drivers could see us and go around us.' — 천천히 꾸준히 걸어야 운전자들이 보고 피해 갈 수 있다."
+      },
+      {
+        "qid": "56584282-2b0f-43be-83c6-273f102ec3dc",
+        "type": "mc",
+        "q": "What happened on the streets around Hoan Kiem Lake in the evening?",
+        "choices": [
+          "The lake was closed.",
+          "There was a boat race.",
+          "It rained a lot.",
+          "All the shops closed early.",
+          "Cars could not go on the streets."
+        ],
+        "answer": "Cars could not go on the streets.",
+        "explanation": "'In the evening, cars could not go on the streets around the lake.'과 일치한다."
+      },
+      {
+        "qid": "b2653ffc-1a33-45b9-81c5-655eb01cf5f5",
+        "type": "mc",
+        "q": "Which is NOT something local families did around the lake?",
+        "choices": [
+          "Swim in the lake",
+          "Dance",
+          "Play games",
+          "Enjoy street food",
+          "Come out in the evening"
+        ],
+        "answer": "Swim in the lake",
+        "explanation": "가족들은 저녁에 나와서 춤추고, 게임하고, 길거리 음식을 즐겼다. 호수에서 수영했다는 내용은 없다."
+      },
+      {
+        "qid": "8587f6b5-8343-49ee-b885-538faa009239",
+        "type": "mc",
+        "q": "What is bun cha?",
+        "choices": [
+          "Fried chicken with rice",
+          "Noodle soup with beef",
+          "A sweet rice cake",
+          "Grilled pork with rice noodles and fresh herbs",
+          "Fresh fruit juice"
+        ],
+        "answer": "Grilled pork with rice noodles and fresh herbs",
+        "explanation": "'It is grilled pork with rice noodles and fresh herbs.'과 일치한다."
+      },
+      {
+        "qid": "9d10437d-8a37-417e-be7e-3aec049ab891",
+        "type": "mc",
+        "q": "How much did bun cha cost?",
+        "choices": [
+          "About 3,000 dong",
+          "About 50,000 won",
+          "About 50,000 dong",
+          "About 5,000 dong",
+          "About 30,000 won"
+        ],
+        "answer": "About 50,000 dong",
+        "explanation": "'It cost only about 50,000 dong.' — 우리 돈으로는 3,000원이 안 된다."
+      },
+      {
+        "qid": "f5f08b60-23c3-4d8f-9a9e-2414a2640b88",
+        "type": "mc",
+        "q": "What was the best part of the trip?",
+        "choices": [
+          "A boat tour of Ha Long Bay",
+          "Eating bun cha",
+          "Crossing the road",
+          "Visiting Hoan Kiem Lake",
+          "Shopping at a market"
+        ],
+        "answer": "A boat tour of Ha Long Bay",
+        "explanation": "'The best part of our trip was a boat tour of Ha Long Bay.'과 일치한다."
+      },
+      {
+        "qid": "8c4ba2c6-e65a-4a6b-8469-27c4fd194c58",
+        "type": "mc",
+        "q": "What is Ha Long Bay famous for?",
+        "choices": [
+          "Its motorbikes",
+          "Its street food",
+          "Its thousands of limestone islands",
+          "Its tall buildings",
+          "Its night markets"
+        ],
+        "answer": "Its thousands of limestone islands",
+        "explanation": "'Ha Long Bay is famous for its thousands of limestone islands.'과 일치한다."
+      },
+      {
+        "qid": "58f9150c-5b4d-4d1c-9f1f-fa204d1e1608",
+        "type": "mc",
+        "q": "다음 중 'capital'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "항구",
+          "시골",
+          "섬",
+          "시장",
+          "수도"
+        ],
+        "answer": "수도",
+        "explanation": "capital은 '수도'라는 뜻이다. Hanoi is the capital of Vietnam. (하노이는 베트남의 수도이다.)"
+      },
+      {
+        "qid": "c36bbcb4-b3fe-4984-85b3-00a91828a01b",
+        "type": "mc",
+        "q": "다음 중 'adventure'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "사고",
+          "모험",
+          "실수",
+          "휴가",
+          "운동"
+        ],
+        "answer": "모험",
+        "explanation": "adventure는 '모험'이라는 뜻이다. 오토바이가 가득한 길을 건너는 것이 모험처럼 느껴졌다는 말이다."
+      },
+      {
+        "qid": "2d6cc2ea-99d7-4c68-8a9d-51aaafc5adc2",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "Hanoi is the capital of Vietnam.",
+          "It was the writer's first trip to another country.",
+          "Bun cha cost less than 3,000 won.",
+          "The writer's family stayed in Hanoi for a week.",
+          "The writer took a lot of pictures at Ha Long Bay."
+        ],
+        "answer": "The writer's family stayed in Hanoi for a week.",
+        "explanation": "가족은 하노이에서 일주일이 아니라 5일(five days)을 보냈다."
+      },
+      {
+        "qid": "f8035bf6-7ff3-4ee9-b0b5-aca7c707107d",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "Our tour guide told us walk slowly and steadily.",
+          "The first thing that surprised me was the traffic.",
+          "Local families came out to dance.",
+          "The view was so beautiful that I couldn't stop taking pictures.",
+          "If you ever have a chance, please visit Hanoi."
+        ],
+        "answer": "Our tour guide told us walk slowly and steadily.",
+        "explanation": "tell + 목적어 + to부정사이므로 told us to walk가 되어야 한다."
+      },
+      {
+        "qid": "dff4bbd4-ffcc-478c-9c4c-a1798e1d8bf8",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"The view was ____ beautiful that I couldn't stop taking pictures.\"",
+        "choices": [
+          "very",
+          "too",
+          "so",
+          "such",
+          "much"
+        ],
+        "answer": "so",
+        "explanation": "so + 형용사 + that + 주어 + 동사: 너무 ~해서 …하다. such는 뒤에 명사(구)가 온다 (such a beautiful view that ~)."
+      },
+      {
+        "qid": "052147b9-7dc7-4c1b-bb1a-b11d4e401e26",
+        "type": "mc",
+        "q": "What does the writer want to say in the last sentence?",
+        "choices": [
+          "Never travel abroad alone.",
+          "Don't eat street food.",
+          "Stay away from motorbikes.",
+          "Learn Vietnamese before you visit.",
+          "Visit Hanoi if you have a chance."
+        ],
+        "answer": "Visit Hanoi if you have a chance.",
+        "explanation": "'If you ever have a chance, please visit Hanoi. I really recommend it!' — 하노이 방문을 추천한다."
+      },
+      {
+        "qid": "66328bfd-889b-47ee-89d3-d7da769e1cac",
+        "type": "order",
+        "items": [
+          "The writer talked about a favorite Vietnamese food.",
+          "The writer was surprised by thousands of motorbikes.",
+          "The writer went on a boat tour of Ha Long Bay.",
+          "The writer visited Hoan Kiem Lake on the second day."
+        ],
+        "answer": [
+          "The writer was surprised by thousands of motorbikes.",
+          "The writer visited Hoan Kiem Lake on the second day.",
+          "The writer talked about a favorite Vietnamese food.",
+          "The writer went on a boat tour of Ha Long Bay."
+        ]
+      },
+      {
+        "qid": "6adce752-9063-4c11-8c25-77a86c481141",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "capital",
+            "meaning": "수도"
+          },
+          {
+            "word": "traffic",
+            "meaning": "교통(량)"
+          },
+          {
+            "word": "adventure",
+            "meaning": "모험"
+          },
+          {
+            "word": "grilled",
+            "meaning": "구운"
+          },
+          {
+            "word": "herb",
+            "meaning": "허브, 향신 채소"
+          },
+          {
+            "word": "view",
+            "meaning": "경치, 풍경"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "6d53d0a5-bf98-4e5b-b47c-69d367149389",
+        "q": "Why did the tour guide tell the family to walk slowly and steadily? Write in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "Because drivers could see them and go around them.",
+        "rubric": "① 운전자가 볼 수 있음(see) ② 피해 갈 수 있음(go around) — 두 요소가 영어 문장에 들어가면 만점"
+      },
+      {
+        "qid": "3851a4c8-3a0e-4889-8db7-d5efe5c2489f",
+        "q": "우리말로 쓰시오: 저녁에 호안끼엠 호수 주변 거리에서 지역 가족들이 한 일 세 가지를 쓰시오.",
+        "wordLimit": 40,
+        "sampleAnswer": "① 춤을 췄다. ② 게임을 했다. ③ 길거리 음식을 즐겼다.",
+        "rubric": "세 가지를 모두 쓰면 만점, 두 가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "72832ca7-3001-406c-8558-d36cd901348e",
+        "q": "우리말로 쓰시오: 분짜(bun cha)는 어떤 음식인지, 그리고 가격이 얼마였는지 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "구운 돼지고기에 쌀국수와 신선한 허브를 곁들인 음식이다. 약 50,000동으로, 우리 돈 3,000원도 안 되었다.",
+        "rubric": "① 구운 돼지고기 ② 쌀국수 ③ 신선한 허브 ④ 약 50,000동(3,000원 미만) — 네 요소 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "e64f47f3-951b-4d6e-9c1e-766e02b309c9",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '경치가 너무 아름다워서 나는 사진 찍는 것을 멈출 수 없었다.' <조건> so ~ that 구문을 사용할 것 / stop을 사용할 것",
+        "wordLimit": 15,
+        "sampleAnswer": "The view was so beautiful that I couldn't stop taking pictures.",
+        "rubric": "① so beautiful that ② couldn't stop ③ taking pictures (stop + -ing) ④ 의미 일치"
+      },
+      {
+        "qid": "55c91755-47f3-443d-99d2-03ca13b33793",
+        "q": "If you visit Hanoi, what do you want to do most? Write one sentence using \"I want to ~ because ~\".",
+        "wordLimit": 25,
+        "sampleAnswer": "I want to take a boat tour of Ha Long Bay because I want to see the beautiful islands.",
+        "rubric": "① 본문에 나온 활동 하나 ② I want to ~ because ~ 구조 ③ 이유가 자연스러움 ④ 문법 오류 없음"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "capital",
+        "surface": "capital",
+        "pos": "명",
+        "meaning": "수도",
+        "sentence": "Hanoi is the capital of Vietnam."
+      },
+      {
+        "word": "traffic",
+        "surface": "traffic",
+        "pos": "명",
+        "meaning": "교통(량), 차량들",
+        "sentence": "The first thing that surprised me was the traffic."
+      },
+      {
+        "word": "motorbike",
+        "surface": "motorbikes",
+        "pos": "명",
+        "meaning": "오토바이",
+        "sentence": "There were thousands of motorbikes on the streets."
+      },
+      {
+        "word": "adventure",
+        "surface": "adventure",
+        "pos": "명",
+        "meaning": "모험",
+        "sentence": "When we crossed the road, it felt like an adventure!"
+      },
+      {
+        "word": "steadily",
+        "surface": "steadily",
+        "pos": "부",
+        "meaning": "꾸준히, 일정하게",
+        "sentence": "Our tour guide told us to walk slowly and steadily."
+      },
+      {
+        "word": "local",
+        "surface": "Local",
+        "pos": "형",
+        "meaning": "지역의, 현지의",
+        "sentence": "Local families came out to dance, play games, and enjoy street food."
+      },
+      {
+        "word": "grill",
+        "surface": "grilled",
+        "pos": "동",
+        "meaning": "(석쇠에) 굽다",
+        "sentence": "It is grilled pork with rice noodles and fresh herbs."
+      },
+      {
+        "word": "herb",
+        "surface": "herbs",
+        "pos": "명",
+        "meaning": "허브, 향초",
+        "sentence": "It is grilled pork with rice noodles and fresh herbs."
+      },
+      {
+        "word": "famous for",
+        "surface": "famous for",
+        "pos": "숙",
+        "meaning": "~로 유명한",
+        "sentence": "Ha Long Bay is famous for its thousands of limestone islands."
+      },
+      {
+        "word": "view",
+        "surface": "view",
+        "pos": "명",
+        "meaning": "경치, 전망",
+        "sentence": "The view was so beautiful that I couldn't stop taking pictures."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "My Family Trip to Hanoi\nPosted by Yuri | August 15, 2026\n\nLast week, my family spent five days in Hanoi, the {{v:capital}} of Vietnam. It was my first trip {{v:abroad}}, and I want to share some of my favorite memories.\n\n{{g:The first thing that surprised me|주격 관계대명사 that: 나를 놀라게 한 첫 번째 것}} was the {{v:traffic}}. There were thousands of motorbikes on the streets, and crossing the road felt like an {{v:adventure}}! Our tour guide {{g:told us to walk|tell + 목적어 + to부정사: ~에게 …하라고 말하다}} slowly and {{v:steadily}} {{g:so that drivers could see us|so that + 주어 + could: ~가 …할 수 있도록 (목적)}} and go around us.\n\nOn the second day, we visited Hoan Kiem Lake in the center of the city. In the evening, the streets around the lake were {{g:closed to cars|수동태 be closed to: ~에게 통행이 금지되다}}, and local families came out to dance, play games, and enjoy street food.\n\nSpeaking of food, I fell in love with Vietnamese {{v:cuisine}}. My favorite was bun cha, {{g:grilled pork served with|과거분사의 명사 수식: ~와 함께 나오는(제공되는) 구운 돼지고기}} rice noodles and fresh herbs. It cost only about 50,000 dong, {{g:which is less than 3,000 won|계속적 용법 관계대명사 which = and it (앞 내용 50,000 dong을 보충 설명)}}!\n\nThe {{v:highlight}} of our trip was a boat tour of Ha Long Bay, {{g:which is famous for|계속적 용법 관계대명사 which: 앞의 Ha Long Bay를 보충 설명}} its thousands of {{v:limestone}} islands. The view was {{g:so beautiful that I couldn't stop taking pictures|so ~ that 구문 + stop -ing: 너무 ~해서 …하는 것을 멈출 수 없었다}}.\n\nIf you ever have a chance, {{t:I highly recommend visiting Hanoi!}}",
+    "tags": {
+      "vocab": [
+        "capital",
+        "abroad",
+        "traffic",
+        "adventure",
+        "steadily",
+        "cuisine",
+        "grilled",
+        "herbs",
+        "highlight",
+        "limestone"
+      ],
+      "grammar": [
+        "주격 관계대명사 that",
+        "tell + 목적어 + to부정사",
+        "so that + 주어 + could (목적)",
+        "과거분사의 명사 수식",
+        "계속적 용법 관계대명사 which",
+        "so ~ that 구문",
+        "recommend + -ing"
+      ],
+      "topic": [
+        "해외여행",
+        "베트남 하노이",
+        "여행 블로그",
+        "음식 문화"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "8d3796ea-686e-4b2c-866f-c2bdf3f9c93f",
+        "type": "mc",
+        "q": "What is the purpose of the passage?",
+        "choices": [
+          "To explain the history of Vietnam",
+          "To share memories of a family trip to Hanoi and recommend visiting it",
+          "To warn people about dangerous traffic",
+          "To advertise a boat tour company",
+          "To compare Korean and Vietnamese food"
+        ],
+        "answer": "To share memories of a family trip to Hanoi and recommend visiting it",
+        "explanation": "여행에서 가장 좋았던 기억을 나누고(I want to share ~), 마지막에 하노이 방문을 추천한다(I highly recommend visiting Hanoi)."
+      },
+      {
+        "qid": "6b0f63f2-dd53-404e-8117-002d0ca7db55",
+        "type": "mc",
+        "q": "What kind of writing is this?",
+        "choices": [
+          "A news article",
+          "A letter of complaint",
+          "A restaurant menu",
+          "A travel blog post",
+          "A science report"
+        ],
+        "answer": "A travel blog post",
+        "explanation": "'Posted by Yuri | August 15, 2026'과 개인적인 여행 경험을 공유하는 내용으로 보아 여행 블로그 글이다."
+      },
+      {
+        "qid": "d498ba9f-0353-4edf-a954-e3c7d56a8f7e",
+        "type": "mc",
+        "q": "Which is true about the trip?",
+        "choices": [
+          "It was the writer's first trip abroad.",
+          "The family stayed in Hanoi for a week.",
+          "The writer traveled alone.",
+          "The trip happened last year.",
+          "The writer visited Ha Long Bay on the first day."
+        ],
+        "answer": "It was the writer's first trip abroad.",
+        "explanation": "'It was my first trip abroad'과 일치한다. 5일 동안 가족과 함께, 지난주에 다녀왔다."
+      },
+      {
+        "qid": "0521bece-142e-4ac5-8326-2b55da78ac06",
+        "type": "mc",
+        "q": "Why did the tour guide tell them to walk slowly and steadily?",
+        "choices": [
+          "So that they could take pictures of the motorbikes",
+          "So that they could arrive at the lake on time",
+          "So that drivers could see them and go around them",
+          "Because walking fast was against the law",
+          "Because the guide was tired"
+        ],
+        "answer": "So that drivers could see them and go around them",
+        "explanation": "'so that drivers could see us and go around us'에서 so that은 '~하도록'이라는 목적을 나타낸다."
+      },
+      {
+        "qid": "a43f2ff3-cafb-413f-83ac-80d31869c5ee",
+        "type": "mc",
+        "q": "What does \"crossing the road felt like an adventure\" suggest?",
+        "choices": [
+          "Crossing the road was boring.",
+          "Crossing the road was very easy.",
+          "Crossing the road was not allowed.",
+          "Crossing the road took several hours.",
+          "Crossing the road was exciting but a little scary."
+        ],
+        "answer": "Crossing the road was exciting but a little scary.",
+        "explanation": "수천 대의 오토바이 사이로 길을 건너는 것이 모험처럼 느껴졌다는 것은 짜릿하면서도 조금 무서웠다는 뜻이다."
+      },
+      {
+        "qid": "f95958cd-7a6b-4e52-97ec-c5fa0dd761ac",
+        "type": "mc",
+        "q": "Why could local families dance and play games in the streets around the lake?",
+        "choices": [
+          "Because it was a national holiday",
+          "Because the streets were closed to cars in the evening",
+          "Because the tour guide asked them to",
+          "Because there were no motorbikes in Hanoi",
+          "Because the lake was dry"
+        ],
+        "answer": "Because the streets were closed to cars in the evening",
+        "explanation": "'In the evening, the streets around the lake were closed to cars'이므로 가족들이 거리로 나와 놀 수 있었다."
+      },
+      {
+        "qid": "89403446-b151-4cf4-a473-0f9c83fef26e",
+        "type": "mc",
+        "q": "What is the role of \"Speaking of food\" in the fourth paragraph?",
+        "choices": [
+          "It shows that the writer does not like food.",
+          "It gives a reason for the traffic problem.",
+          "It ends the story of the trip.",
+          "It introduces a different person.",
+          "It moves to a new topic connected to the street food mentioned before."
+        ],
+        "answer": "It moves to a new topic connected to the street food mentioned before.",
+        "explanation": "앞 문단 끝의 'enjoy street food'를 이어 받아 음식 이야기로 자연스럽게 넘어가는 표현이다 (~ 얘기가 나와서 말인데)."
+      },
+      {
+        "qid": "c568dc48-4619-4ed0-89c0-5d6d71143da1",
+        "type": "mc",
+        "q": "Which is NOT mentioned about bun cha?",
+        "choices": [
+          "It is the most popular dish in Vietnam.",
+          "It includes grilled pork.",
+          "It is served with rice noodles.",
+          "It comes with fresh herbs.",
+          "It cost about 50,000 dong."
+        ],
+        "answer": "It is the most popular dish in Vietnam.",
+        "explanation": "분짜가 베트남에서 가장 인기 있는 음식이라는 내용은 없다. 글쓴이가 가장 좋아한(My favorite) 음식일 뿐이다."
+      },
+      {
+        "qid": "73c55fcd-35a7-4686-89fc-f3791b1037f6",
+        "type": "mc",
+        "q": "What can be inferred from \"It cost only about 50,000 dong, which is less than 3,000 won!\"?",
+        "choices": [
+          "The writer thought bun cha was too expensive.",
+          "Bun cha costs the same in Korea.",
+          "The writer paid in Korean won.",
+          "The writer thought bun cha was very cheap.",
+          "The writer did not finish the meal."
+        ],
+        "answer": "The writer thought bun cha was very cheap.",
+        "explanation": "only와 느낌표(!), '3,000원도 안 된다'는 비교로 보아 아주 싸다고 느꼈음을 알 수 있다."
+      },
+      {
+        "qid": "530860aa-570a-4487-830d-1557a6c203c3",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'cuisine'?",
+        "choices": [
+          "a kitchen tool",
+          "a restaurant owner",
+          "a style of cooking or food",
+          "a kind of drink",
+          "a cooking class"
+        ],
+        "answer": "a style of cooking or food",
+        "explanation": "cuisine은 '(특정 나라·지역의) 요리, 요리법'이라는 뜻이다. Vietnamese cuisine = 베트남 요리."
+      },
+      {
+        "qid": "e2d899f3-f715-44cd-9e39-380d1b2d7cab",
+        "type": "mc",
+        "q": "What does 'highlight' mean in the passage?",
+        "choices": [
+          "the best or most exciting part",
+          "the first part",
+          "the most expensive part",
+          "the most boring part",
+          "the shortest part"
+        ],
+        "answer": "the best or most exciting part",
+        "explanation": "highlight는 '가장 좋은(흥미로운) 부분'이라는 뜻이다. 여행의 백미가 하롱베이 보트 투어였다는 말이다."
+      },
+      {
+        "qid": "880f5156-62b8-407a-a6d8-28285cc50c47",
+        "type": "mc",
+        "q": "'abroad'의 의미로 가장 알맞은 것은?",
+        "choices": [
+          "혼자서",
+          "가족과 함께",
+          "외국으로, 해외로",
+          "배를 타고",
+          "처음으로"
+        ],
+        "answer": "외국으로, 해외로",
+        "explanation": "abroad는 '외국으로, 해외로'라는 뜻이다. my first trip abroad = 나의 첫 해외여행."
+      },
+      {
+        "qid": "a683aed3-7ddf-487b-b326-26363f07d4a4",
+        "type": "mc",
+        "q": "What does \"which\" in the fifth paragraph refer to?",
+        "choices": [
+          "Our trip",
+          "A boat tour",
+          "Thousands of islands",
+          "The view",
+          "Ha Long Bay"
+        ],
+        "answer": "Ha Long Bay",
+        "explanation": "'Ha Long Bay, which is famous for its thousands of limestone islands' — 수천 개의 석회암 섬으로 유명한 것은 하롱베이이다."
+      },
+      {
+        "qid": "f872661c-c257-4804-aefe-8fb6f8f65de0",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "Hanoi is the capital of Vietnam.",
+          "The streets around the lake were closed to cars all day long.",
+          "There were thousands of motorbikes on the streets.",
+          "Bun cha comes with rice noodles and fresh herbs.",
+          "The writer took many pictures at Ha Long Bay."
+        ],
+        "answer": "The streets around the lake were closed to cars all day long.",
+        "explanation": "거리는 하루 종일이 아니라 저녁에(In the evening) 차량 통행이 금지되었다."
+      },
+      {
+        "qid": "ecf18bd2-c4fa-4775-9405-e43684e55e79",
+        "type": "mc",
+        "q": "Where would the following sentence best fit? \"Some of them looked like giant animals rising out of the green water.\"",
+        "choices": [
+          "After \"...so that drivers could see us and go around us.\"",
+          "After \"...and enjoy street food.\"",
+          "After \"...rice noodles and fresh herbs.\"",
+          "After \"...famous for its thousands of limestone islands.\"",
+          "After \"If you ever have a chance, I highly recommend visiting Hanoi!\""
+        ],
+        "answer": "After \"...famous for its thousands of limestone islands.\"",
+        "explanation": "Some of them(그것들 중 일부)은 수천 개의 석회암 섬(thousands of limestone islands)을 가리키므로 그 바로 뒤가 알맞다."
+      },
+      {
+        "qid": "b04bf20c-02a1-41cd-8108-a268afad2b4e",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "Bun cha is grilled pork serving with rice noodles.",
+          "The view was so beautiful that I couldn't stop taking pictures.",
+          "Our guide told us to walk slowly.",
+          "Ha Long Bay is famous for its limestone islands.",
+          "It was my first trip abroad."
+        ],
+        "answer": "Bun cha is grilled pork serving with rice noodles.",
+        "explanation": "돼지고기가 '제공되는' 것이므로 수동의 의미인 과거분사 served가 와야 한다 (grilled pork served with ~)."
+      },
+      {
+        "qid": "c6d44ae6-e0f8-4537-b877-e23a370ca151",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Our tour guide told us to walk slowly and steadily ____ drivers could see us.\"",
+        "choices": [
+          "because of",
+          "even though",
+          "so that",
+          "unless",
+          "in order to"
+        ],
+        "answer": "so that",
+        "explanation": "'~가 …할 수 있도록'의 목적은 so that + 주어 + could. because of·in order to 뒤에는 절(주어+동사)이 올 수 없다."
+      },
+      {
+        "qid": "357ec89b-f0ec-4bc2-bf4e-8c303604a319",
+        "type": "mc",
+        "q": "Which best completes the summary? \"During the trip, the writer experienced exciting (A) ____, enjoyed tasty and (B) ____ food, and saw beautiful islands.\"",
+        "choices": [
+          "(A) traffic – (B) expensive",
+          "(A) weather – (B) cheap",
+          "(A) concerts – (B) spicy",
+          "(A) weather – (B) expensive",
+          "(A) traffic – (B) cheap"
+        ],
+        "answer": "(A) traffic – (B) cheap",
+        "explanation": "모험 같았던 교통(traffic), 3,000원도 안 되는 싼(cheap) 분짜, 하롱베이의 섬들을 요약한 것이다."
+      },
+      {
+        "qid": "7d600acf-47e8-445a-b161-d525b178abf0",
+        "type": "order",
+        "items": [
+          "The writer described the highlight: a boat tour of Ha Long Bay.",
+          "The writer visited Hoan Kiem Lake on the second day.",
+          "The writer recommended visiting Hanoi.",
+          "The writer was surprised by thousands of motorbikes.",
+          "The writer introduced a favorite Vietnamese dish."
+        ],
+        "answer": [
+          "The writer was surprised by thousands of motorbikes.",
+          "The writer visited Hoan Kiem Lake on the second day.",
+          "The writer introduced a favorite Vietnamese dish.",
+          "The writer described the highlight: a boat tour of Ha Long Bay.",
+          "The writer recommended visiting Hanoi."
+        ]
+      },
+      {
+        "qid": "eb5126de-4e61-42db-9c05-481063c4c881",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "abroad",
+            "meaning": "해외로, 외국으로"
+          },
+          {
+            "word": "traffic",
+            "meaning": "교통(량)"
+          },
+          {
+            "word": "steadily",
+            "meaning": "꾸준히, 일정하게"
+          },
+          {
+            "word": "cuisine",
+            "meaning": "요리, 요리법"
+          },
+          {
+            "word": "highlight",
+            "meaning": "가장 좋은 부분, 백미"
+          },
+          {
+            "word": "limestone",
+            "meaning": "석회암"
+          },
+          {
+            "word": "recommend",
+            "meaning": "추천하다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "82c08b10-0d85-41c3-8baf-7663626f19a0",
+        "q": "Why did the tour guide tell the family to walk slowly and steadily? Answer in a complete English sentence.",
+        "wordLimit": 25,
+        "sampleAnswer": "The guide told them to walk slowly and steadily so that drivers could see them and go around them.",
+        "rubric": "① 운전자가 볼 수 있도록(see them) ② 피해 갈 수 있도록(go around them) ③ 완전한 영어 문장, 문법 오류 없음"
+      },
+      {
+        "qid": "12619958-5e39-448d-862b-984f29fd9dbc",
+        "q": "우리말로 쓰시오: 저녁에 호안끼엠 호수 주변 거리는 어떤 모습이었는지, 차량 통행과 지역 가족들의 활동을 포함하여 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "저녁에는 호수 주변 거리에 차가 다닐 수 없었고, 지역 가족들이 나와서 춤을 추고, 게임을 하고, 길거리 음식을 즐겼다.",
+        "rubric": "① 저녁에 차량 통행 금지 ② 춤 ③ 게임 ④ 길거리 음식 — 네 요소 모두 쓰면 만점, 세 개면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "c768a98a-7ec4-4021-8529-b512df680b36",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '가이드는 운전자들이 우리를 볼 수 있도록 천천히 걸으라고 우리에게 말했다.' <조건> tell + 목적어 + to부정사를 사용할 것 / so that을 사용할 것 / 과거시제로 쓸 것",
+        "wordLimit": 20,
+        "sampleAnswer": "The guide told us to walk slowly so that drivers could see us.",
+        "rubric": "① told us to walk ② so that + 주어 + could ③ 과거시제 ④ 의미 일치"
+      },
+      {
+        "qid": "1760d783-3ec8-495d-9c8a-302c8c5d7dbf",
+        "q": "우리말로 쓰시오: 글쓴이가 분짜(bun cha)를 아주 싸다고 느꼈다는 것을 알 수 있는 근거를 본문에서 두 가지 찾아 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "① '단지(only) 약 50,000동'이라고 only를 써서 강조했다. ② 그 가격이 우리 돈 3,000원도 안 된다고 비교하며 느낌표(!)로 놀라움을 나타냈다.",
+        "rubric": "① only의 강조 ② 3,000원 미만이라는 비교(또는 느낌표의 놀라움) — 두 근거 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "8b6abb4d-cc92-489b-824f-1bd04fac2cca",
+        "q": "Write two English sentences recommending a place you have visited. Use \"If you ever have a chance, I highly recommend ~ing\" in one of them.",
+        "wordLimit": 40,
+        "sampleAnswer": "Last summer, I visited Jeju Island with my family. If you ever have a chance, I highly recommend climbing Hallasan.",
+        "rubric": "① 장소와 경험 ② If you ever have a chance, I highly recommend + -ing 구조 ③ 영어 문장 2개, 문법 오류 없음"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "capital",
+        "surface": "capital",
+        "pos": "명",
+        "meaning": "수도",
+        "sentence": "Last week, my family spent five days in Hanoi, the capital of Vietnam."
+      },
+      {
+        "word": "abroad",
+        "surface": "abroad",
+        "pos": "부",
+        "meaning": "해외로, 해외에서",
+        "sentence": "It was my first trip abroad, and I want to share some of my favorite memories."
+      },
+      {
+        "word": "traffic",
+        "surface": "traffic",
+        "pos": "명",
+        "meaning": "교통(량), 차량들",
+        "sentence": "The first thing that surprised me was the traffic."
+      },
+      {
+        "word": "adventure",
+        "surface": "adventure",
+        "pos": "명",
+        "meaning": "모험",
+        "sentence": "There were thousands of motorbikes on the streets, and crossing the road felt like an adventure!"
+      },
+      {
+        "word": "steadily",
+        "surface": "steadily",
+        "pos": "부",
+        "meaning": "꾸준히, 일정하게",
+        "sentence": "Our tour guide told us to walk slowly and steadily so that drivers could see us and go around us."
+      },
+      {
+        "word": "cuisine",
+        "surface": "cuisine",
+        "pos": "명",
+        "meaning": "(특정 지역의) 요리",
+        "sentence": "Speaking of food, I fell in love with Vietnamese cuisine."
+      },
+      {
+        "word": "highlight",
+        "surface": "highlight",
+        "pos": "명",
+        "meaning": "가장 좋은 부분, 하이라이트",
+        "sentence": "The highlight of our trip was a boat tour of Ha Long Bay, which is famous for its thousands of limestone islands."
+      },
+      {
+        "word": "limestone",
+        "surface": "limestone",
+        "pos": "명",
+        "meaning": "석회암",
+        "sentence": "The highlight of our trip was a boat tour of Ha Long Bay, which is famous for its thousands of limestone islands."
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "My Family Trip to Hanoi\nPosted by Yuri | August 15, 2026\n\nLast week, my family spent five {{v:unforgettable}} days in Hanoi, the capital city of Vietnam. Since it was my very first trip {{v:abroad}}, I would like to share some of {{g:the memories that I treasure most|목적격 관계대명사 that: 내가 가장 소중히 여기는 기억들}}.\n\nThe first thing that {{v:caught me by surprise}} was the traffic. Thousands of motorbikes filled the streets, {{g:so crossing the road felt like a real adventure|동명사 주어(crossing the road) + feel like + 명사: ~처럼 느껴지다}}! Our tour guide {{g:advised us to walk|advise + 목적어 + to부정사: ~에게 …하라고 조언하다}} slowly and {{v:steadily}} so that drivers could {{g:see us coming|지각동사 see + 목적어 + -ing: ~가 …하고 있는 것을 보다}} and simply go around us.\n\nOn our second day, we visited Hoan Kiem Lake, {{g:which is located in|계속적 용법 관계대명사 which + be located in: ~에 위치해 있다}} the heart of the city. In the evening, the streets {{v:surrounding}} the lake were closed to cars, and local families gathered there to dance, play games, and enjoy street food.\n\nSpeaking of food, I completely fell in love with Vietnamese {{v:cuisine}}. My favorite dish was bun cha, which {{v:consists of}} grilled pork served with rice noodles and fresh herbs. Surprisingly, it cost only about 50,000 dong, which is less than 3,000 won!\n\nThe {{v:highlight}} of the entire trip was a boat tour of Ha Long Bay, {{g:a place famous for|동격: Ha Long Bay = a place (which is) famous for ~}} its thousands of limestone islands. The scenery was {{g:so breathtaking that I couldn't stop taking pictures|so ~ that 구문 + stop -ing}}.\n\nIf you ever get the chance, {{g:I highly recommend that you visit Hanoi!|recommend that + 주어 + (should) 동사원형: 당위의 should가 생략되어 visits가 아닌 visit}}",
+    "tags": {
+      "vocab": [
+        "unforgettable",
+        "abroad",
+        "treasure",
+        "steadily",
+        "located",
+        "surrounding",
+        "cuisine",
+        "consist of",
+        "highlight",
+        "breathtaking"
+      ],
+      "grammar": [
+        "목적격 관계대명사 that",
+        "advise + 목적어 + to부정사",
+        "so that + 주어 + could (목적)",
+        "지각동사 see + 목적어 + -ing",
+        "계속적 용법 관계대명사 which",
+        "so ~ that 구문",
+        "recommend that + 주어 + (should) 동사원형"
+      ],
+      "topic": [
+        "해외여행",
+        "베트남 하노이",
+        "여행 블로그",
+        "음식 문화"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "a63cdb3f-9b13-4f84-96f8-4faa1224192e",
+        "type": "mc",
+        "q": "Which best states the main idea of the passage?",
+        "choices": [
+          "The writer warns readers that Hanoi is too dangerous for tourists.",
+          "The writer recounts memorable experiences from a first trip abroad and recommends Hanoi to readers.",
+          "The writer explains how Vietnamese food is cooked.",
+          "The writer compares Hanoi with other Asian capitals.",
+          "The writer complains about the high prices in Vietnam."
+        ],
+        "answer": "The writer recounts memorable experiences from a first trip abroad and recommends Hanoi to readers.",
+        "explanation": "첫 해외여행에서 소중한 기억(교통, 호수, 음식, 하롱베이)을 나누고 하노이를 추천하는 글이다."
+      },
+      {
+        "qid": "028e156c-ffbe-4a23-be14-ed59a24405a4",
+        "type": "mc",
+        "q": "Which best describes how the passage is organized?",
+        "choices": [
+          "A problem → its causes → possible solutions",
+          "A comparison of two cities → a conclusion",
+          "A recommendation → reasons → a counterargument",
+          "An introduction → specific memories in time order → a recommendation",
+          "A scientific fact → examples → a question"
+        ],
+        "answer": "An introduction → specific memories in time order → a recommendation",
+        "explanation": "여행 소개 → 교통, 둘째 날 호수, 음식, 하롱베이 기억 → 방문 추천의 순서이다."
+      },
+      {
+        "qid": "7588c769-b54e-437d-9ca7-88b81f4921db",
+        "type": "mc",
+        "q": "What does \"caught me by surprise\" mean in the second paragraph?",
+        "choices": [
+          "surprised me unexpectedly",
+          "made me very angry",
+          "made me feel sleepy",
+          "helped me relax",
+          "made me lost"
+        ],
+        "answer": "surprised me unexpectedly",
+        "explanation": "catch ~ by surprise는 '~를 깜짝 놀라게 하다(예상치 못하게)'라는 뜻이다."
+      },
+      {
+        "qid": "d2449675-3a14-46e2-8ebc-f4ae3236401c",
+        "type": "mc",
+        "q": "Why did the tour guide advise them to walk slowly and steadily?",
+        "choices": [
+          "So that they could keep up with the motorbikes",
+          "So that they could take pictures of the traffic",
+          "So that drivers could notice them and simply go around them",
+          "Because running in the streets was against the law",
+          "Because the guide wanted them to arrive late"
+        ],
+        "answer": "So that drivers could notice them and simply go around them",
+        "explanation": "'so that drivers could see us coming and simply go around us'와 일치한다."
+      },
+      {
+        "qid": "c3bad470-2ca5-4954-8b31-1aa5862d2d0c",
+        "type": "mc",
+        "q": "What can be inferred about traffic in Hanoi?",
+        "choices": [
+          "There are traffic lights at every corner.",
+          "Cars are not allowed anywhere in the city.",
+          "Most people in Hanoi travel by boat.",
+          "Tourists are not allowed to walk in the streets.",
+          "Motorbike drivers are used to moving around people who cross the road."
+        ],
+        "answer": "Motorbike drivers are used to moving around people who cross the road.",
+        "explanation": "천천히 꾸준히 걸으면 운전자들이 알아서 피해 간다는 조언으로 보아, 운전자들은 길을 건너는 사람들을 피해 다니는 데 익숙하다고 추론할 수 있다."
+      },
+      {
+        "qid": "a301248f-5ea8-4f32-abba-8c9b5d1cd725",
+        "type": "mc",
+        "q": "Which best describes the atmosphere around the lake in the evening?",
+        "choices": [
+          "quiet and lonely",
+          "lively and friendly",
+          "dangerous and noisy",
+          "sad and gloomy",
+          "tense and nervous"
+        ],
+        "answer": "lively and friendly",
+        "explanation": "차가 다니지 않는 거리에 가족들이 모여 춤추고, 게임하고, 음식을 즐기는 활기차고 정겨운 분위기이다."
+      },
+      {
+        "qid": "722d3440-c097-4119-b81c-ef83843a0bd5",
+        "type": "mc",
+        "q": "What is the role of \"Speaking of food\" in the fourth paragraph?",
+        "choices": [
+          "It shows that the writer was hungry during the boat tour.",
+          "It introduces a problem the writer had with food.",
+          "It contrasts Vietnamese food with Korean food.",
+          "It summarizes the whole passage.",
+          "It links the street food mentioned before to a new paragraph about Vietnamese cuisine."
+        ],
+        "answer": "It links the street food mentioned before to a new paragraph about Vietnamese cuisine.",
+        "explanation": "앞 문단의 'enjoy street food'를 받아 베트남 요리 이야기로 넘어가는 연결 표현이다."
+      },
+      {
+        "qid": "4fd0306d-6eef-42bf-af34-29fab1edbcbb",
+        "type": "mc",
+        "q": "Which is NOT mentioned about bun cha?",
+        "choices": [
+          "It is usually eaten for breakfast.",
+          "It consists of grilled pork.",
+          "It is served with rice noodles.",
+          "It comes with fresh herbs.",
+          "It cost less than 3,000 won."
+        ],
+        "answer": "It is usually eaten for breakfast.",
+        "explanation": "분짜를 주로 아침으로 먹는다는 내용은 본문에 없다."
+      },
+      {
+        "qid": "180e77be-061a-4eac-9672-3c1549dcb5d6",
+        "type": "mc",
+        "q": "Why does the writer use the word \"Surprisingly\" before mentioning the price?",
+        "choices": [
+          "Because the dish was more expensive than in Korea",
+          "Because the writer could not pay in won",
+          "Because the restaurant was closed",
+          "Because the dish was much cheaper than the writer expected",
+          "Because the writer did not like the dish"
+        ],
+        "answer": "Because the dish was much cheaper than the writer expected",
+        "explanation": "맛있는 음식이 3,000원도 안 되는 가격이라 예상보다 훨씬 싸서 놀랐다는 뜻이다."
+      },
+      {
+        "qid": "e24e84c4-9af9-4422-936f-615a6fde9593",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'treasure' in \"the memories that I treasure most\"?",
+        "choices": [
+          "forget easily",
+          "buy quickly",
+          "value greatly",
+          "hide carefully",
+          "share widely"
+        ],
+        "answer": "value greatly",
+        "explanation": "여기서 treasure는 동사로 '소중히 여기다'라는 뜻이다."
+      },
+      {
+        "qid": "b0010b92-11f2-4da9-8360-6772e72b286e",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'consists of'?",
+        "choices": [
+          "is made up of",
+          "is different from",
+          "is cooked without",
+          "is cheaper than",
+          "is famous for"
+        ],
+        "answer": "is made up of",
+        "explanation": "consist of는 '~로 구성되다(이루어지다)'라는 뜻으로 be made up of와 같다."
+      },
+      {
+        "qid": "aa0ae66e-2384-4f9e-ba22-c2304b900e68",
+        "type": "mc",
+        "q": "Which word can replace 'breathtaking' without changing the meaning?",
+        "choices": [
+          "boring",
+          "tiring",
+          "stunning",
+          "frightening",
+          "ordinary"
+        ],
+        "answer": "stunning",
+        "explanation": "breathtaking은 '숨이 막힐 정도로 아름다운'이라는 뜻으로 stunning과 비슷하다."
+      },
+      {
+        "qid": "7ca4fad8-5db4-402e-b3d5-95aaada48fdb",
+        "type": "mc",
+        "q": "What does \"which\" in the third paragraph refer to?",
+        "choices": [
+          "Our second day",
+          "The city",
+          "The streets",
+          "Local families",
+          "Hoan Kiem Lake"
+        ],
+        "answer": "Hoan Kiem Lake",
+        "explanation": "'Hoan Kiem Lake, which is located in the heart of the city' — 도시 한가운데 있는 것은 호안끼엠 호수이다."
+      },
+      {
+        "qid": "ed166d08-a764-412d-9f3b-9d0055f18951",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "The writer had never traveled abroad before this trip.",
+          "The streets around the lake were closed to cars throughout the day.",
+          "Thousands of motorbikes filled the streets.",
+          "The family visited Hoan Kiem Lake on their second day.",
+          "Ha Long Bay is famous for its limestone islands."
+        ],
+        "answer": "The streets around the lake were closed to cars throughout the day.",
+        "explanation": "차량 통제는 하루 종일이 아니라 저녁에(In the evening)만 있었다."
+      },
+      {
+        "qid": "46d9af16-b9f9-4730-b393-8f37ad82bad0",
+        "type": "mc",
+        "q": "Where would the following sentence best fit? \"Some of them rise straight out of the emerald water like giant stone towers.\"",
+        "choices": [
+          "After \"...simply go around us.\"",
+          "After \"...and enjoy street food.\"",
+          "After \"...rice noodles and fresh herbs.\"",
+          "After \"...famous for its thousands of limestone islands.\"",
+          "After \"...that I couldn't stop taking pictures.\""
+        ],
+        "answer": "After \"...famous for its thousands of limestone islands.\"",
+        "explanation": "Some of them은 thousands of limestone islands를 가리키고, 그 섬들의 모습 묘사가 경치(scenery)가 아름다웠다는 문장으로 자연스럽게 이어진다."
+      },
+      {
+        "qid": "85685488-8a8b-4976-8352-92e3cc39321a",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "Our guide advised us walking slowly.",
+          "I highly recommend that you visit Hanoi.",
+          "My favorite dish was bun cha, which consists of grilled pork.",
+          "The scenery was so breathtaking that I couldn't stop taking pictures.",
+          "The streets surrounding the lake were closed to cars."
+        ],
+        "answer": "Our guide advised us walking slowly.",
+        "explanation": "advise + 목적어 + to부정사이므로 advised us to walk가 되어야 한다."
+      },
+      {
+        "qid": "87c13e46-acf5-47d8-82aa-487f40994dd4",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"I highly recommend that you ____ Hanoi.\"",
+        "choices": [
+          "visits",
+          "visited",
+          "visit",
+          "to visit",
+          "visiting"
+        ],
+        "answer": "visit",
+        "explanation": "recommend(추천하다)처럼 제안·요구의 동사 뒤 that절에는 (should) + 동사원형을 쓴다. should가 생략되어 visit이 된다."
+      },
+      {
+        "qid": "8f748ee9-5cf4-4a90-92e9-21c44a9a1685",
+        "type": "mc",
+        "q": "Which best completes the summary? \"On the writer's first trip (A) ____, the writer was impressed by Hanoi's lively streets, (B) ____ food, and stunning scenery.\"",
+        "choices": [
+          "(A) abroad – (B) expensive",
+          "(A) alone – (B) affordable",
+          "(A) by boat – (B) spicy",
+          "(A) alone – (B) expensive",
+          "(A) abroad – (B) affordable"
+        ],
+        "answer": "(A) abroad – (B) affordable",
+        "explanation": "첫 해외여행(trip abroad)이었고, 분짜는 3,000원도 안 되는 저렴한(affordable) 음식이었다."
+      },
+      {
+        "qid": "ce68b87f-7d59-4cdc-b868-5454ffe5b1aa",
+        "type": "order",
+        "items": [
+          "The writer describes the lively evening around Hoan Kiem Lake.",
+          "The writer calls the Ha Long Bay boat tour the highlight and recommends Hanoi.",
+          "The writer introduces the family's five-day trip to Hanoi.",
+          "The writer praises bun cha and its low price.",
+          "The writer describes the surprising traffic and the guide's advice."
+        ],
+        "answer": [
+          "The writer introduces the family's five-day trip to Hanoi.",
+          "The writer describes the surprising traffic and the guide's advice.",
+          "The writer describes the lively evening around Hoan Kiem Lake.",
+          "The writer praises bun cha and its low price.",
+          "The writer calls the Ha Long Bay boat tour the highlight and recommends Hanoi."
+        ]
+      },
+      {
+        "qid": "ccb1a7be-ae2f-40f3-a2d1-71ee8b47b62e",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "treasure",
+            "meaning": "소중히 여기다"
+          },
+          {
+            "word": "steadily",
+            "meaning": "꾸준히, 일정하게"
+          },
+          {
+            "word": "surrounding",
+            "meaning": "주변의, 둘러싼"
+          },
+          {
+            "word": "cuisine",
+            "meaning": "요리, 요리법"
+          },
+          {
+            "word": "consist of",
+            "meaning": "~로 구성되다"
+          },
+          {
+            "word": "highlight",
+            "meaning": "가장 좋은 부분, 백미"
+          },
+          {
+            "word": "breathtaking",
+            "meaning": "숨이 막힐 정도로 아름다운"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "7e6ccfb8-f6be-4523-8b86-ffc324d3e9a3",
+        "q": "Explain in two English sentences why crossing the road felt like an adventure and how the guide's advice helped.",
+        "wordLimit": 40,
+        "sampleAnswer": "Crossing the road felt like an adventure because thousands of motorbikes filled the streets. The guide advised the family to walk slowly and steadily so that drivers could see them and go around them.",
+        "rubric": "① 수천 대의 오토바이 ② 천천히 꾸준히 걷기 ③ 운전자가 보고 피해 갈 수 있음 ④ 영어 문장 2개, 문법 오류 없음"
+      },
+      {
+        "qid": "454c6e12-7fbe-431b-9f0e-8e9559b8449b",
+        "q": "우리말로 쓰시오: 'I highly recommend that you visit Hanoi!'를 해석하고, 주어가 you인데도 동사 visit 형태가 쓰인 문법적 이유를 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "해석: 나는 여러분이 하노이를 방문하기를 강력히 추천한다! 이유: recommend처럼 제안·추천을 나타내는 동사 뒤의 that절에는 '(should) + 동사원형'을 쓰는데, should가 생략되어 동사원형 visit이 남았다.",
+        "rubric": "① 자연스러운 해석 ② 제안·추천 동사 + that절 ③ (should) + 동사원형, should 생략 — 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "c44d5d2a-11b3-4419-874a-08f64e5d6f2f",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '그 경치는 숨이 막힐 정도로 아름다워서 나는 사진 찍는 것을 멈출 수 없었다.' <조건> so ~ that 구문을 사용할 것 / breathtaking과 stop을 사용할 것",
+        "wordLimit": 15,
+        "sampleAnswer": "The scenery was so breathtaking that I couldn't stop taking pictures.",
+        "rubric": "① so breathtaking that ② couldn't stop taking (stop + -ing) ③ 주어 The scenery(또는 The view) ④ 의미 일치"
+      },
+      {
+        "qid": "b85189d0-2a54-4b31-a738-7e4485988c0e",
+        "q": "우리말로 쓰시오: 글쓴이의 하노이 여행 기억 네 가지(교통, 호수, 음식, 하롱베이)를 각각 한 문장으로 요약하시오.",
+        "wordLimit": 100,
+        "sampleAnswer": "① 교통: 수천 대의 오토바이 때문에 길 건너기가 모험 같았고, 가이드의 조언대로 천천히 꾸준히 걸었다. ② 호수: 저녁에 차가 통제된 호안끼엠 호수 주변에서 가족들이 춤추고 게임하며 길거리 음식을 즐겼다. ③ 음식: 구운 돼지고기와 쌀국수, 허브로 된 분짜가 가장 좋았고 3,000원도 안 될 만큼 쌌다. ④ 하롱베이: 수천 개의 석회암 섬이 있는 하롱베이 보트 투어가 최고였고 경치가 너무 아름다워 계속 사진을 찍었다.",
+        "rubric": "네 가지 기억을 각각 핵심 내용과 함께 쓰면 만점, 세 가지면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "000498a6-41f5-4d53-ba3a-4b84a658663a",
+        "q": "Which of the four experiences in the passage would you most like to have? Give your answer and one reason in 2–3 English sentences.",
+        "wordLimit": 50,
+        "sampleAnswer": "I would most like to take a boat tour of Ha Long Bay. I have never seen limestone islands before, and I want to see them with my own eyes. I think it would be an unforgettable experience.",
+        "rubric": "① 본문의 경험 하나 선택 ② 구체적 이유 1개 이상 ③ 영어 문장 2~3개, 문법 오류 없음"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "unforgettable",
+        "surface": "unforgettable",
+        "pos": "형",
+        "meaning": "잊을 수 없는",
+        "sentence": "Last week, my family spent five unforgettable days in Hanoi, the capital city of Vietnam."
+      },
+      {
+        "word": "abroad",
+        "surface": "abroad",
+        "pos": "부",
+        "meaning": "해외로, 해외에서",
+        "sentence": "Since it was my very first trip abroad, I would like to share some of the memories that I treasure most."
+      },
+      {
+        "word": "catch A by surprise",
+        "surface": "caught me by surprise",
+        "pos": "숙",
+        "meaning": "A를 깜짝 놀라게 하다",
+        "sentence": "The first thing that caught me by surprise was the traffic."
+      },
+      {
+        "word": "steadily",
+        "surface": "steadily",
+        "pos": "부",
+        "meaning": "꾸준히, 일정하게",
+        "sentence": "Our tour guide advised us to walk slowly and steadily so that drivers could see us coming and simply go around us."
+      },
+      {
+        "word": "surround",
+        "surface": "surrounding",
+        "pos": "동",
+        "meaning": "둘러싸다 (surrounding: 주변의)",
+        "sentence": "In the evening, the streets surrounding the lake were closed to cars, and local families gathered there to dance, play games, and enjoy street food."
+      },
+      {
+        "word": "cuisine",
+        "surface": "cuisine",
+        "pos": "명",
+        "meaning": "(특정 지역의) 요리",
+        "sentence": "Speaking of food, I completely fell in love with Vietnamese cuisine."
+      },
+      {
+        "word": "consist of",
+        "surface": "consists of",
+        "pos": "숙",
+        "meaning": "~로 구성되다",
+        "sentence": "My favorite dish was bun cha, which consists of grilled pork served with rice noodles and fresh herbs."
+      },
+      {
+        "word": "highlight",
+        "surface": "highlight",
+        "pos": "명",
+        "meaning": "가장 좋은 부분, 하이라이트",
+        "sentence": "The highlight of the entire trip was a boat tour of Ha Long Bay, a place famous for its thousands of limestone islands."
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "My Family Trip to Hanoi\nPosted by Yuri | August 15, 2026\n\nLast week, my family spent five memorable days in Hanoi, the {{v:bustling}} capital of Vietnam. {{g:Having never traveled overseas before|완료 분사구문(부정): = Because I had never traveled overseas before}}, I would like to share a few of {{g:the experiences that left the deepest impression on me|주격 관계대명사 that + leave an impression on: ~에게 깊은 인상을 남기다}}.\n\n{{g:What astonished me first|관계대명사 what이 이끄는 명사절 주어: 나를 처음 깜짝 놀라게 한 것}} was the traffic: thousands of motorbikes flooded the streets, {{g:turning every road crossing into an adventure|분사구문(결과) + turn A into B: A를 B로 바꾸다}}! Our tour guide {{g:instructed us to walk|instruct + 목적어 + to부정사: ~에게 …하라고 지시하다}} slowly and steadily so that drivers could {{v:anticipate}} our movements and {{v:steer}} around us.\n\nOn the second day, we visited Hoan Kiem Lake, {{g:situated in|과거분사구의 명사 수식: (which is) situated in ~ (~에 위치한)}} the very center of the city. In the evening, the surrounding streets were closed to vehicles, and local families poured out to dance, play games, and {{v:savor}} street food.\n\nSpeaking of food, I became utterly {{v:captivated}} by Vietnamese cuisine. My personal favorite was bun cha, a dish of grilled pork {{v:accompanied by}} rice noodles and fresh herbs. Remarkably, it cost {{g:a mere 50,000 dong|a mere + 수량: 겨우 ~에 불과한 (양이 적음을 강조)}}, which amounts to less than 3,000 won!\n\nWithout a doubt, the highlight of our journey was a boat tour of Ha Long Bay, {{v:renowned for}} its thousands of limestone islands. {{g:So breathtaking was the scenery that|so ~ that 도치: So + 형용사 + 동사 + 주어 + that (= The scenery was so breathtaking that)}} I could not stop taking photographs.\n\n{{g:Should you ever have the opportunity|if 생략 도치: = If you should ever have the opportunity}}, {{t:I would wholeheartedly recommend visiting Hanoi!}}",
+    "tags": {
+      "vocab": [
+        "bustling",
+        "astonished",
+        "anticipate",
+        "steer",
+        "situated",
+        "savor",
+        "captivated",
+        "accompanied by",
+        "renowned",
+        "wholeheartedly"
+      ],
+      "grammar": [
+        "완료 분사구문 (Having never p.p.)",
+        "관계대명사 what (명사절 주어)",
+        "분사구문(결과) + turn A into B",
+        "instruct + 목적어 + to부정사",
+        "a mere + 수량",
+        "so ~ that 도치 (So + 형용사 + V + S)",
+        "if 생략 도치 (Should you ~)"
+      ],
+      "topic": [
+        "해외여행",
+        "베트남 하노이",
+        "여행 블로그",
+        "문화 체험"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "7af688b3-9f46-449d-84a5-c4ed5a173d47",
+        "type": "mc",
+        "q": "What is the primary purpose of the passage?",
+        "choices": [
+          "To argue that motorbikes should be banned in Hanoi",
+          "To recount the writer's most memorable experiences in Hanoi and encourage readers to visit",
+          "To provide a detailed history of Ha Long Bay",
+          "To compare the cost of living in Korea and Vietnam",
+          "To criticize the tour guide for poor service"
+        ],
+        "answer": "To recount the writer's most memorable experiences in Hanoi and encourage readers to visit",
+        "explanation": "가장 깊은 인상을 남긴 경험들을 소개하고 마지막에 하노이 방문을 진심으로 추천한다."
+      },
+      {
+        "qid": "d7e39f16-5488-4919-8ca4-24209ebfe2c7",
+        "type": "mc",
+        "q": "Which is closest in meaning to \"Having never traveled overseas before\"?",
+        "choices": [
+          "Although I had traveled overseas many times",
+          "After I traveled overseas for the first time",
+          "If I never travel overseas again",
+          "Because I had never traveled overseas before",
+          "While I was traveling overseas"
+        ],
+        "answer": "Because I had never traveled overseas before",
+        "explanation": "완료 분사구문으로 이유를 나타낸다: Because I had never traveled overseas before (전에 해외여행을 해 본 적이 없었기 때문에)."
+      },
+      {
+        "qid": "c81ae14a-efe7-47aa-af6c-e6778c3a1faa",
+        "type": "mc",
+        "q": "What does \"turning every road crossing into an adventure\" imply?",
+        "choices": [
+          "Crossing any road in Hanoi was thrilling and somewhat risky.",
+          "The writer enjoyed riding a motorbike.",
+          "There were very few roads in Hanoi.",
+          "The family avoided crossing roads.",
+          "Road crossings in Hanoi were well organized."
+        ],
+        "answer": "Crossing any road in Hanoi was thrilling and somewhat risky.",
+        "explanation": "오토바이가 거리를 가득 메워 길을 건널 때마다 모험이 되었다 — 짜릿하면서도 다소 위험했다는 뜻이다."
+      },
+      {
+        "qid": "8faa7798-12c5-4245-bfc1-789d4fef017c",
+        "type": "mc",
+        "q": "Why did the tour guide instruct them to walk slowly and steadily?",
+        "choices": [
+          "So that they could blend in with the local people",
+          "So that they could stop the motorbikes",
+          "So that drivers could predict their movements and steer around them",
+          "Because the streets were slippery",
+          "Because the guide could not walk fast"
+        ],
+        "answer": "So that drivers could predict their movements and steer around them",
+        "explanation": "'so that drivers could anticipate our movements and steer around us'와 일치한다."
+      },
+      {
+        "qid": "76adcea1-2cbd-4a75-bb23-11c313bc208b",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'anticipate' in the second paragraph?",
+        "choices": [
+          "ignore",
+          "block",
+          "record",
+          "copy",
+          "predict"
+        ],
+        "answer": "predict",
+        "explanation": "anticipate는 '예상하다, 예측하다'라는 뜻으로 predict와 같다."
+      },
+      {
+        "qid": "7140a753-8476-4e0c-9f22-ac848b3bc5a2",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'savor'?",
+        "choices": [
+          "cook quickly",
+          "enjoy slowly",
+          "sell cheaply",
+          "throw away",
+          "share equally"
+        ],
+        "answer": "enjoy slowly",
+        "explanation": "savor는 '(맛을) 음미하다, 천천히 즐기다'라는 뜻이다."
+      },
+      {
+        "qid": "2c2eac53-ec35-4569-8cc7-6190105998c2",
+        "type": "mc",
+        "q": "Which word can replace 'captivated' without changing the meaning?",
+        "choices": [
+          "disappointed",
+          "confused",
+          "frightened",
+          "bored",
+          "fascinated"
+        ],
+        "answer": "fascinated",
+        "explanation": "captivated는 '매료된, 마음을 빼앗긴'이라는 뜻으로 fascinated와 같다."
+      },
+      {
+        "qid": "abba7aef-a22b-4082-8cfd-a80c4491121f",
+        "type": "mc",
+        "q": "What does the word \"mere\" in \"a mere 50,000 dong\" emphasize?",
+        "choices": [
+          "How small the amount of money is",
+          "How large the amount of money is",
+          "How difficult it was to pay",
+          "How the price changed over time",
+          "How popular the dish is"
+        ],
+        "answer": "How small the amount of money is",
+        "explanation": "a mere + 수량은 '겨우 ~에 불과한'이라는 뜻으로 금액이 적다는 것을 강조한다."
+      },
+      {
+        "qid": "3574ca97-8ffe-4e49-a1ff-3604f1bdb683",
+        "type": "mc",
+        "q": "Which best describes the writer's attitude toward Hanoi?",
+        "choices": [
+          "indifferent and bored",
+          "critical and disappointed",
+          "anxious and regretful",
+          "enthusiastic and appreciative",
+          "neutral and objective"
+        ],
+        "answer": "enthusiastic and appreciative",
+        "explanation": "astonished, captivated, breathtaking, wholeheartedly recommend 등의 표현으로 보아 열광적이고 감사하는 태도이다."
+      },
+      {
+        "qid": "76d530ab-2b3c-4a4b-b4f2-f1560724f257",
+        "type": "mc",
+        "q": "Which is NOT stated in the passage?",
+        "choices": [
+          "The family spent five days in Hanoi.",
+          "The guide gave advice on crossing the road.",
+          "The writer bought souvenirs at a night market.",
+          "The streets near the lake were closed to vehicles in the evening.",
+          "Bun cha is served with fresh herbs."
+        ],
+        "answer": "The writer bought souvenirs at a night market.",
+        "explanation": "야시장에서 기념품을 샀다는 내용은 본문에 없다."
+      },
+      {
+        "qid": "8759225d-cf57-4d61-9646-8232fc7037e5",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "The writer had traveled overseas several times before.",
+          "Hanoi is the capital of Vietnam.",
+          "Hoan Kiem Lake is in the center of the city.",
+          "Bun cha cost less than 3,000 won.",
+          "Ha Long Bay is renowned for its limestone islands."
+        ],
+        "answer": "The writer had traveled overseas several times before.",
+        "explanation": "'Having never traveled overseas before'로 보아 이번이 첫 해외여행이었다."
+      },
+      {
+        "qid": "ab68acc5-6ee6-41b3-a1ff-76db1c68891d",
+        "type": "mc",
+        "q": "Where would the following sentence best fit? \"Some of them rise abruptly from the emerald water like colossal stone towers.\"",
+        "choices": [
+          "After \"...steer around us.\"",
+          "After \"...savor street food.\"",
+          "After \"...renowned for its thousands of limestone islands.\"",
+          "After \"...less than 3,000 won!\"",
+          "After \"...I could not stop taking photographs.\""
+        ],
+        "answer": "After \"...renowned for its thousands of limestone islands.\"",
+        "explanation": "Some of them은 thousands of limestone islands를 가리키고, 섬의 모습 묘사가 경치(scenery)에 대한 감탄으로 이어진다."
+      },
+      {
+        "qid": "8c02968d-4d5d-4edd-9d3f-26e772de87f8",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "Should you ever have the opportunity, visit Hanoi.",
+          "Having never traveled overseas, I was very excited.",
+          "What astonished me first was the traffic.",
+          "Our guide instructed us to walk slowly.",
+          "So breathtaking the scenery was that I could not stop taking photographs."
+        ],
+        "answer": "So breathtaking the scenery was that I could not stop taking photographs.",
+        "explanation": "So + 형용사가 문장 앞에 오면 동사와 주어가 도치되어야 한다: So breathtaking was the scenery that ~."
+      },
+      {
+        "qid": "70e728c9-f5b7-4035-a5dd-85b0f3da6262",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"____ you ever have the opportunity, I would wholeheartedly recommend visiting Hanoi.\"",
+        "choices": [
+          "Would",
+          "Should",
+          "Had",
+          "Were",
+          "Did"
+        ],
+        "answer": "Should",
+        "explanation": "If you should ever have the opportunity에서 if를 생략하고 should를 주어 앞으로 보낸 도치 구문이다. 뒤에 동사원형 have가 오므로 Should가 알맞다."
+      },
+      {
+        "qid": "3abbcb90-28e0-42e3-8a21-ebe0951a93f8",
+        "type": "mc",
+        "q": "Which sentence has the same structure as \"So breathtaking was the scenery that I could not stop taking photographs\"?",
+        "choices": [
+          "He was so exhausted that he fell asleep at once.",
+          "He was exhausted, so he fell asleep at once.",
+          "He fell asleep so that he could rest.",
+          "So exhausted was he that he fell asleep at once.",
+          "It was so late that he fell asleep at once."
+        ],
+        "answer": "So exhausted was he that he fell asleep at once.",
+        "explanation": "So + 형용사 + 동사 + 주어 + that ~ 의 도치 구문은 So exhausted was he that ~ 이다."
+      },
+      {
+        "qid": "e6a56cdc-5f4c-4c12-9def-4bb875cb6b3b",
+        "type": "mc",
+        "q": "Which is closest in meaning to 'renowned'?",
+        "choices": [
+          "famous",
+          "hidden",
+          "dangerous",
+          "crowded",
+          "ancient"
+        ],
+        "answer": "famous",
+        "explanation": "renowned for는 '~로 유명한'이라는 뜻으로 famous for와 같다."
+      },
+      {
+        "qid": "5f04cb8e-7365-41b6-aa46-a44763eee7d3",
+        "type": "mc",
+        "q": "What does \"What astonished me first\" refer to?",
+        "choices": [
+          "The lake",
+          "The food",
+          "The traffic",
+          "The price of bun cha",
+          "The boat tour"
+        ],
+        "answer": "The traffic",
+        "explanation": "'What astonished me first was the traffic.' — 관계대명사 what이 이끄는 명사절이 주어이고, 그것은 교통이었다."
+      },
+      {
+        "qid": "84478c5d-5909-4bfc-87ed-807aad2987af",
+        "type": "mc",
+        "q": "Which best completes the summary? \"The writer's first trip overseas was full of (A) ____ moments, from crossing motorbike-filled streets to cruising past (B) ____ islands.\"",
+        "choices": [
+          "(A) dull – (B) limestone",
+          "(A) thrilling – (B) volcanic",
+          "(A) frightening – (B) sandy",
+          "(A) dull – (B) volcanic",
+          "(A) thrilling – (B) limestone"
+        ],
+        "answer": "(A) thrilling – (B) limestone",
+        "explanation": "길 건너기는 모험이었고 하롱베이는 수천 개의 석회암(limestone) 섬으로 유명하다 — 짜릿한(thrilling) 순간들로 가득했다."
+      },
+      {
+        "qid": "2910432d-7aa4-46f5-8455-b695ec5762e7",
+        "type": "order",
+        "items": [
+          "A boat tour of Ha Long Bay becomes the highlight of the trip.",
+          "Motorbike-filled streets make crossing the road an adventure.",
+          "Bun cha impresses the writer with its taste and low price.",
+          "The writer explains that the trip to Hanoi was the first journey overseas.",
+          "Families gather in the car-free streets around Hoan Kiem Lake."
+        ],
+        "answer": [
+          "The writer explains that the trip to Hanoi was the first journey overseas.",
+          "Motorbike-filled streets make crossing the road an adventure.",
+          "Families gather in the car-free streets around Hoan Kiem Lake.",
+          "Bun cha impresses the writer with its taste and low price.",
+          "A boat tour of Ha Long Bay becomes the highlight of the trip."
+        ]
+      },
+      {
+        "qid": "069f0a15-c386-4ffe-8c7c-02f036d27c6c",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "bustling",
+            "meaning": "북적거리는, 부산한"
+          },
+          {
+            "word": "astonish",
+            "meaning": "깜짝 놀라게 하다"
+          },
+          {
+            "word": "anticipate",
+            "meaning": "예상하다"
+          },
+          {
+            "word": "steer",
+            "meaning": "방향을 틀다, 조종하다"
+          },
+          {
+            "word": "savor",
+            "meaning": "음미하다"
+          },
+          {
+            "word": "captivated",
+            "meaning": "매료된"
+          },
+          {
+            "word": "renowned",
+            "meaning": "유명한, 명성 있는"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "2976c052-6c78-4721-ba07-318f9157beb5",
+        "q": "Explain in 2–3 English sentences why walking slowly and steadily was safer than running when crossing the streets of Hanoi.",
+        "wordLimit": 60,
+        "sampleAnswer": "When pedestrians walk slowly and steadily, drivers can anticipate where they will be. As a result, the drivers can steer around them safely. If people run suddenly, drivers cannot predict their movements, which can cause accidents.",
+        "rubric": "① 운전자가 움직임을 예측 가능 ② 피해 갈 수 있음 ③ 갑자기 뛰면 예측 불가(대조) ④ 영어 문장 2~3개, 문법 오류 없음"
+      },
+      {
+        "qid": "201fa0df-4008-42e2-a389-2eefb77f8b14",
+        "q": "우리말로 쓰시오: 'Having never traveled overseas before, I would like to share ~'에서 분사구문을 접속사가 있는 절로 바꿔 영어로 쓰고, Having + p.p. 형태를 쓴 이유를 설명하시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "절: Because I had never traveled overseas before / 이유: 해외여행을 해 본 적이 없었던 것이 글을 쓰는 시점(주절)보다 먼저 일어난 일이므로 완료 분사구문(Having + p.p.)을 썼고, 부정어 never는 분사 앞에 둔다.",
+        "rubric": "① Because I had never traveled overseas before ② 주절보다 앞선 시점 → 완료 분사구문 ③ never의 위치 — 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "c886632b-340c-4fa8-a470-dc2bb6ede01d",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '그 음식이 너무 맛있어서 나는 두 그릇을 먹었다.' <조건> So로 시작하는 도치 구문을 사용할 것 / delicious와 bowls를 사용할 것 / 과거시제로 쓸 것",
+        "wordLimit": 15,
+        "sampleAnswer": "So delicious was the food that I ate two bowls.",
+        "rubric": "① So delicious was the food (도치) ② that I ate ③ two bowls ④ 과거시제, 의미 일치"
+      },
+      {
+        "qid": "0a55ae3f-02b9-4c06-a2fb-7df53b18b8c9",
+        "q": "우리말로 쓰시오: 글쓴이가 하노이에서 겪은 네 가지 장면(교통, 호수, 음식, 하롱베이)에서 각각 어떤 감정을 느꼈는지, 그 감정을 드러내는 본문 표현과 함께 쓰시오.",
+        "wordLimit": 100,
+        "sampleAnswer": "① 교통: 깜짝 놀라고 짜릿함 — astonished, adventure ② 호수: 활기차고 즐거움 — families poured out to dance, play games ③ 음식: 매료되고 놀람 — utterly captivated, Remarkably, a mere ④ 하롱베이: 감탄 — highlight, So breathtaking was the scenery",
+        "rubric": "네 장면마다 감정 + 근거 표현을 쓰면 만점, 세 장면이면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "7e280144-7c9c-4899-b3ff-58c79b90ed5b",
+        "q": "Summarize the passage in about 40 English words. Include the traffic, the lake, the food, and Ha Long Bay.",
+        "wordLimit": 50,
+        "sampleAnswer": "On the writer's first trip overseas, crossing Hanoi's motorbike-filled streets felt like an adventure, and families enjoyed car-free evenings by Hoan Kiem Lake. The writer loved cheap, tasty bun cha, and a boat tour of Ha Long Bay was the highlight.",
+        "rubric": "① 교통 ② 호수 ③ 음식(분짜) ④ 하롱베이 ⑤ 40단어 내외"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "bustling",
+        "surface": "bustling",
+        "pos": "형",
+        "meaning": "북적거리는, 부산한",
+        "sentence": "Last week, my family spent five memorable days in Hanoi, the bustling capital of Vietnam."
+      },
+      {
+        "word": "anticipate",
+        "surface": "anticipate",
+        "pos": "동",
+        "meaning": "예상하다, 예측하다",
+        "sentence": "Our tour guide instructed us to walk slowly and steadily so that drivers could anticipate our movements and steer around us."
+      },
+      {
+        "word": "steer",
+        "surface": "steer",
+        "pos": "동",
+        "meaning": "(차를) 조종하다, 방향을 틀다",
+        "sentence": "Our tour guide instructed us to walk slowly and steadily so that drivers could anticipate our movements and steer around us."
+      },
+      {
+        "word": "savor",
+        "surface": "savor",
+        "pos": "동",
+        "meaning": "맛보다, 음미하다",
+        "sentence": "In the evening, the surrounding streets were closed to vehicles, and local families poured out to dance, play games, and savor street food."
+      },
+      {
+        "word": "captivate",
+        "surface": "captivated",
+        "pos": "동",
+        "meaning": "마음을 사로잡다 (be captivated by: ~에 매료되다)",
+        "sentence": "Speaking of food, I became utterly captivated by Vietnamese cuisine."
+      },
+      {
+        "word": "accompanied by",
+        "surface": "accompanied by",
+        "pos": "숙",
+        "meaning": "~을 곁들인, ~와 함께",
+        "sentence": "My personal favorite was bun cha, a dish of grilled pork accompanied by rice noodles and fresh herbs."
+      },
+      {
+        "word": "renowned for",
+        "surface": "renowned for",
+        "pos": "숙",
+        "meaning": "~로 유명한",
+        "sentence": "Without a doubt, the highlight of our journey was a boat tour of Ha Long Bay, renowned for its thousands of limestone islands."
+      }
+    ]
+  }
+}

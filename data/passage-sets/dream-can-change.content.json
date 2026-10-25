@@ -1,0 +1,1691 @@
+{
+  "school": {
+    "tagged_body": "Your Dream Can Change\n\nWhen I was eight, I wanted to be a {{v:firefighter}}. At eleven, I wanted to be a {{v:famous}} singer. Now I am fifteen, and I want to be a science teacher. Every time my dream changed, I felt a little {{v:embarrassed}}. {{g:I felt like I failed|feel like + 주어 + 동사: ~인 것처럼 느끼다}} at something.\n\nBut recently, I learned something. {{t:Dreams can change, and that is natural.}} {{g:As we grow older|as + 주어 + 동사: ~함에 따라}}, we learn more about the world and about ourselves. We find new {{v:interests}}. We also find out {{g:what we are really good at|관계대명사 what: ~하는 것 (= the thing that)}}. {{g:If our dreams never changed, that would be strange|가정법 과거: If + 과거동사, would + 동사원형 (현재 사실과 반대)}}.\n\nMy old dreams were not {{v:a waste of time}}. {{g:My dream of being a firefighter|전치사 of + 동명사(being): ~이 되는 것}} taught me that helping others is important. I practiced singing a lot, so now I can speak in front of people with {{v:confidence}}. These two experiences will {{g:help me become|help + 목적어 + 동사원형: ~가 …하도록 돕다}} a better teacher someday.\n\nSo don't worry if you don't have a clear dream yet. Don't worry if your dream {{g:keeps changing|keep + -ing: 계속 ~하다}}. You don't need the \"right\" answer now. Just keep {{v:exploring}}, try new things, and learn about yourself. {{t:Every step is part of your journey.}}",
+    "tags": {
+      "vocab": [
+        "firefighter",
+        "famous",
+        "embarrassed",
+        "natural",
+        "interest",
+        "a waste of time",
+        "confidence",
+        "explore",
+        "journey"
+      ],
+      "grammar": [
+        "feel like + 주어 + 동사",
+        "관계대명사 what",
+        "가정법 과거",
+        "전치사 + 동명사",
+        "help + 목적어 + 동사원형",
+        "keep + -ing",
+        "명령문"
+      ],
+      "topic": [
+        "꿈",
+        "진로",
+        "성장"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "3fbff2fe-0645-4a42-a5c9-adc74a87a048",
+        "type": "mc",
+        "q": "What is the passage mainly about?",
+        "choices": [
+          "How to become a firefighter",
+          "It is natural for our dreams to change.",
+          "Why singing is a good hobby",
+          "How to be a good science teacher",
+          "Why we should choose one dream early"
+        ],
+        "answer": "It is natural for our dreams to change.",
+        "explanation": "글쓴이는 꿈이 여러 번 바뀌었지만, 꿈이 바뀌는 것은 자연스럽다(natural)고 말한다."
+      },
+      {
+        "qid": "e02bc45f-32c4-4bf7-b5b1-a6db7435e347",
+        "type": "mc",
+        "q": "What did the writer want to be at the age of eight?",
+        "choices": [
+          "A famous singer",
+          "A science teacher",
+          "A doctor",
+          "A firefighter",
+          "A police officer"
+        ],
+        "answer": "A firefighter",
+        "explanation": "'When I was eight, I wanted to be a firefighter.'와 일치한다."
+      },
+      {
+        "qid": "7b94c8e3-94a7-4044-9479-fe8d2449dc9e",
+        "type": "mc",
+        "q": "How old is the writer now?",
+        "choices": [
+          "Fifteen",
+          "Eight",
+          "Eleven",
+          "Thirteen",
+          "Eighteen"
+        ],
+        "answer": "Fifteen",
+        "explanation": "'Now I am fifteen'과 일치한다."
+      },
+      {
+        "qid": "c5ab8871-70a2-4bb0-b138-34d3497f8cd3",
+        "type": "mc",
+        "q": "What does the writer want to be now?",
+        "choices": [
+          "A firefighter",
+          "A famous singer",
+          "A scientist",
+          "A music teacher",
+          "A science teacher"
+        ],
+        "answer": "A science teacher",
+        "explanation": "'I want to be a science teacher.'와 일치한다."
+      },
+      {
+        "qid": "432500ac-6f1b-460b-a51c-87b82aacab1a",
+        "type": "mc",
+        "q": "How did the writer feel every time the dream changed?",
+        "choices": [
+          "Very happy",
+          "Proud",
+          "A little embarrassed",
+          "Excited",
+          "Angry"
+        ],
+        "answer": "A little embarrassed",
+        "explanation": "'Every time my dream changed, I felt a little embarrassed.'와 일치한다."
+      },
+      {
+        "qid": "2622a077-7ef6-4585-b4e1-7e4c0a9d1d5d",
+        "type": "mc",
+        "q": "다음 중 'embarrassed'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "자랑스러운",
+          "신이 난",
+          "당황한, 창피한",
+          "지루한",
+          "무서운"
+        ],
+        "answer": "당황한, 창피한",
+        "explanation": "embarrassed는 '당황한, 창피한'이라는 뜻이다."
+      },
+      {
+        "qid": "5dec1a51-2978-4898-92ab-7c4855e688eb",
+        "type": "mc",
+        "q": "As we grow older, what do we learn more about?",
+        "choices": [
+          "The world and ourselves",
+          "Only science",
+          "Only our friends",
+          "Famous singers",
+          "Fire and firefighters"
+        ],
+        "answer": "The world and ourselves",
+        "explanation": "'we learn more about the world and about ourselves'와 일치한다."
+      },
+      {
+        "qid": "45bce11b-12e0-474d-8756-662a25fb7dd4",
+        "type": "mc",
+        "q": "What did the writer's dream of being a firefighter teach the writer?",
+        "choices": [
+          "Fire is dangerous.",
+          "Singing is fun.",
+          "Science is difficult.",
+          "Helping others is important.",
+          "Dreams never change."
+        ],
+        "answer": "Helping others is important.",
+        "explanation": "'My dream of being a firefighter taught me that helping others is important.'"
+      },
+      {
+        "qid": "1a4445a7-a04e-43aa-b253-1b985e3c2103",
+        "type": "mc",
+        "q": "What can the writer do now because of practicing singing?",
+        "choices": [
+          "Sing on TV",
+          "Speak in front of people with confidence",
+          "Teach music at school",
+          "Put out fires",
+          "Do science experiments"
+        ],
+        "answer": "Speak in front of people with confidence",
+        "explanation": "'I practiced singing a lot, so now I can speak in front of people with confidence.'"
+      },
+      {
+        "qid": "f5e7cfe6-c336-434c-8c57-93c35314896c",
+        "type": "mc",
+        "q": "다음 중 'confidence'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "걱정",
+          "실수",
+          "흥미",
+          "여행",
+          "자신감"
+        ],
+        "answer": "자신감",
+        "explanation": "confidence는 '자신감'이라는 뜻이다. with confidence = 자신감 있게."
+      },
+      {
+        "qid": "030ec9b1-1fcd-4b7d-9abe-7985ca97dae9",
+        "type": "mc",
+        "q": "'a waste of time'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "시간 약속",
+          "좋은 시간",
+          "자유 시간",
+          "시간 낭비",
+          "시간표"
+        ],
+        "answer": "시간 낭비",
+        "explanation": "waste는 '낭비'이므로 a waste of time은 '시간 낭비'이다."
+      },
+      {
+        "qid": "b9a60066-8c3f-4517-bc8c-b7f28dfc900f",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "The writer wanted to be a firefighter at eight.",
+          "The writer still wants to be a famous singer.",
+          "The writer felt embarrassed when the dream changed.",
+          "The writer practiced singing a lot.",
+          "The writer thinks old dreams were not a waste of time."
+        ],
+        "answer": "The writer still wants to be a famous singer.",
+        "explanation": "글쓴이는 지금 과학 선생님이 되고 싶어 한다. 가수는 11살 때의 꿈이다."
+      },
+      {
+        "qid": "2c9d3f49-c7ab-4077-b43e-b49aaf619564",
+        "type": "mc",
+        "q": "In \"These two experiences will help me become a better teacher,\" what are \"These two experiences\"?",
+        "choices": [
+          "Teaching science and singing songs",
+          "Growing older and learning more",
+          "Feeling embarrassed and failing",
+          "Finding new interests and making friends",
+          "Dreaming of being a firefighter and practicing singing"
+        ],
+        "answer": "Dreaming of being a firefighter and practicing singing",
+        "explanation": "바로 앞에 나온 소방관 꿈과 노래 연습, 두 가지 경험을 가리킨다."
+      },
+      {
+        "qid": "0701c9fb-07d3-4015-8011-dd27d224dcdc",
+        "type": "mc",
+        "q": "What is the writer's advice for readers without a clear dream?",
+        "choices": [
+          "Keep exploring and try new things.",
+          "Choose one dream and never change it.",
+          "Feel embarrassed about your dream.",
+          "Stop thinking about your future.",
+          "Become a science teacher."
+        ],
+        "answer": "Keep exploring and try new things.",
+        "explanation": "'Just keep exploring, try new things, and learn about yourself.'"
+      },
+      {
+        "qid": "6569a5c7-0f8c-47fb-b5e9-3e7f78dc978c",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"These two experiences will help me ____ a better teacher.\"",
+        "choices": [
+          "became",
+          "becomes",
+          "become",
+          "becoming",
+          "to becoming"
+        ],
+        "answer": "become",
+        "explanation": "help + 목적어 + 동사원형(또는 to부정사)이므로 become이 알맞다."
+      },
+      {
+        "qid": "648bb52b-2b2b-41ce-872e-018f6680d9fd",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"Don't worry if your dream keeps ____.\"",
+        "choices": [
+          "change",
+          "changing",
+          "changed",
+          "to change",
+          "changes"
+        ],
+        "answer": "changing",
+        "explanation": "keep 뒤에는 -ing(동명사)가 와서 '계속 ~하다'의 뜻이 된다."
+      },
+      {
+        "qid": "fda5fe15-d33f-4c98-8ef7-952552aedebb",
+        "type": "mc",
+        "q": "빈칸에 알맞은 것은? \"We also find out ____ we are really good at.\"",
+        "choices": [
+          "what",
+          "who",
+          "that",
+          "when",
+          "where"
+        ],
+        "answer": "what",
+        "explanation": "'~하는 것'이라는 뜻의 관계대명사 what이 알맞다. good at의 목적어가 빠져 있으므로 what이 필요하다."
+      },
+      {
+        "qid": "ec312c45-c216-45de-adc0-0a2a1eb5340b",
+        "type": "mc",
+        "q": "What is the writer's tone in the last paragraph?",
+        "choices": [
+          "Angry",
+          "Sad",
+          "Worried",
+          "Encouraging",
+          "Bored"
+        ],
+        "answer": "Encouraging",
+        "explanation": "'don't worry', 'Every step is part of your journey'처럼 독자를 격려하고 있다."
+      },
+      {
+        "qid": "c19f01e1-b5a8-46bc-bde6-6aabf7caf9f0",
+        "type": "order",
+        "items": [
+          "The writer learned that changing dreams is natural.",
+          "The writer's dream changed several times.",
+          "The writer tells readers not to worry.",
+          "The writer felt a little embarrassed.",
+          "The writer found that old dreams were not a waste of time."
+        ],
+        "answer": [
+          "The writer's dream changed several times.",
+          "The writer felt a little embarrassed.",
+          "The writer learned that changing dreams is natural.",
+          "The writer found that old dreams were not a waste of time.",
+          "The writer tells readers not to worry."
+        ]
+      },
+      {
+        "qid": "aa9f8144-5ee8-48a0-83ba-0e998aa11895",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "firefighter",
+            "meaning": "소방관"
+          },
+          {
+            "word": "famous",
+            "meaning": "유명한"
+          },
+          {
+            "word": "embarrassed",
+            "meaning": "당황한, 창피한"
+          },
+          {
+            "word": "natural",
+            "meaning": "자연스러운"
+          },
+          {
+            "word": "interest",
+            "meaning": "흥미, 관심"
+          },
+          {
+            "word": "confidence",
+            "meaning": "자신감"
+          },
+          {
+            "word": "journey",
+            "meaning": "여정, 여행"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "d57d7a83-ba5b-4417-8dcc-34dd3913c30a",
+        "q": "우리말로 쓰시오: 글쓴이의 꿈이 나이에 따라 어떻게 바뀌었는지 순서대로 쓰시오.",
+        "wordLimit": 40,
+        "sampleAnswer": "8살 때는 소방관, 11살 때는 유명한 가수, 지금 15살에는 과학 선생님이 되고 싶어 한다.",
+        "rubric": "① 8살-소방관 ② 11살-유명한 가수 ③ 15살-과학 선생님, 세 가지 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "ca1ccc8d-0a03-499f-8804-f713709e93a9",
+        "q": "What did the writer learn from each old dream? Answer in English.",
+        "wordLimit": 30,
+        "sampleAnswer": "The writer learned that helping others is important. The writer also learned to speak in front of people with confidence.",
+        "rubric": "① 소방관 꿈 → 남을 돕는 것이 중요함 ② 노래 연습 → 사람들 앞에서 자신감 있게 말하기, 완전한 영어 문장"
+      },
+      {
+        "qid": "53561409-d4d9-45ab-808e-00bbfa1fea18",
+        "q": "다음 우리말을 영어로 쓰시오. '나는 사람들 앞에서 자신감 있게 말할 수 있다.' <조건> in front of, with confidence를 사용할 것",
+        "wordLimit": 12,
+        "sampleAnswer": "I can speak in front of people with confidence.",
+        "rubric": "① can + 동사원형 ② in front of people ③ with confidence ④ 의미 일치"
+      },
+      {
+        "qid": "b8c75d5d-4427-4e59-844f-5a8ea7fad438",
+        "q": "우리말로 쓰시오: 마지막 문단에서 글쓴이가 꿈이 없거나 자주 바뀌는 사람에게 주는 조언을 정리하시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "걱정하지 말고, 지금 정답이 없어도 되니 계속 탐색하고 새로운 것을 시도하며 자신에 대해 알아가라고 조언한다.",
+        "rubric": "① 걱정하지 마라 ② 지금 정답이 필요 없다 ③ 계속 탐색·새로운 시도·자신 알기 중 2가지 이상",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "12eebf09-753e-4f2e-9dcb-c74040ce40f9",
+        "q": "Write about your dream in 2-3 English sentences. Has it changed? What did you learn from it?",
+        "wordLimit": 40,
+        "sampleAnswer": "When I was younger, I wanted to be a soccer player. Now I want to be a game designer. Playing soccer taught me how to work with others.",
+        "rubric": "① 자신의 꿈 소개 ② 꿈의 변화 또는 배운 점 ③ 완전한 영어 문장 2~3개"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "firefighter",
+        "surface": "firefighter",
+        "pos": "명",
+        "meaning": "소방관",
+        "sentence": "When I was eight, I wanted to be a firefighter."
+      },
+      {
+        "word": "famous",
+        "surface": "famous",
+        "pos": "형",
+        "meaning": "유명한",
+        "sentence": "At eleven, I wanted to be a famous singer."
+      },
+      {
+        "word": "embarrassed",
+        "surface": "embarrassed",
+        "pos": "형",
+        "meaning": "당황한, 창피한",
+        "sentence": "Every time my dream changed, I felt a little embarrassed."
+      },
+      {
+        "word": "interest",
+        "surface": "interests",
+        "pos": "명",
+        "meaning": "관심사, 흥미",
+        "sentence": "We find new interests."
+      },
+      {
+        "word": "a waste of time",
+        "surface": "a waste of time",
+        "pos": "숙",
+        "meaning": "시간 낭비",
+        "sentence": "My old dreams were not a waste of time."
+      },
+      {
+        "word": "confidence",
+        "surface": "confidence",
+        "pos": "명",
+        "meaning": "자신감",
+        "sentence": "I practiced singing a lot, so now I can speak in front of people with confidence."
+      },
+      {
+        "word": "explore",
+        "surface": "exploring",
+        "pos": "동",
+        "meaning": "탐구하다, 탐험하다",
+        "sentence": "Just keep exploring, try new things, and learn about yourself."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Your Dream Can Change\n\nWhen I was eight, I wanted to be a firefighter. At eleven, I {{g:dreamed of becoming|dream of + 동명사: ~하는 것을 꿈꾸다}} a famous singer. Now, at fifteen, I want to be a science teacher. {{v:Whenever}} my dream changed, I felt a little {{v:embarrassed}}, {{g:as if I had failed|as if + 가정법 과거완료: 마치 ~했던 것처럼 (실제로는 실패하지 않음)}} at something.\n\nRecently, however, I realized that {{g:changing dreams is completely natural|동명사 주어(changing dreams)는 단수 취급 → is}}. {{g:As we grow older|as + 주어 + 동사: ~함에 따라}}, we learn more about the world and about ourselves. We {{v:discover}} new interests and find out {{g:what we are truly good at|관계대명사 what: ~하는 것}}. {{g:It would actually be strange if our dreams stayed the same forever|가정법 과거: 주절 would + 동사원형, if절 과거동사}}.\n\nInterestingly, {{t:none of my old dreams were a waste of time}}. Wanting to be a firefighter taught me {{g:how important it is to help others|간접의문문(how + 형용사 + 주어 + 동사) + 가주어 it / 진주어 to부정사}}. Practicing singing gave me the {{v:confidence}} to speak in front of people. Both of these experiences will {{g:help me become|help + 목적어 + 동사원형}} a better teacher someday.\n\nSo if you don't have a clear dream yet, or if your dream {{g:keeps changing|keep + -ing: 계속 ~하다}}, don't worry. {{g:What matters is not having the \"right\" answer now|관계대명사 what 주어(단수 취급) + 동명사 보어}}. What matters is continuing to {{v:explore}}, try new things, and learn about yourself. {{t:Every step you take is part of your journey.}}",
+    "tags": {
+      "vocab": [
+        "whenever",
+        "embarrassed",
+        "realize",
+        "natural",
+        "discover",
+        "interest",
+        "a waste of time",
+        "confidence",
+        "explore",
+        "journey"
+      ],
+      "grammar": [
+        "as if + 가정법 과거완료",
+        "동명사 주어",
+        "관계대명사 what",
+        "가정법 과거",
+        "간접의문문 + 가주어 it",
+        "help + 목적어 + 동사원형",
+        "keep + -ing",
+        "목적격 관계대명사 생략"
+      ],
+      "topic": [
+        "꿈",
+        "진로",
+        "성장",
+        "자기 탐색"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "6360389b-0c2b-44a6-baa5-f749655d8ef2",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "We should choose one dream when we are young.",
+          "Changing dreams is natural, and old dreams can still be useful.",
+          "Being a firefighter is the best job.",
+          "Teachers should be good at singing.",
+          "It is embarrassing to change your dream."
+        ],
+        "answer": "Changing dreams is natural, and old dreams can still be useful.",
+        "explanation": "꿈이 바뀌는 것은 자연스럽고(2문단), 예전 꿈도 시간 낭비가 아니었다(3문단)는 것이 중심 내용이다."
+      },
+      {
+        "qid": "d5753b98-7085-42ef-895a-9ed67d162e94",
+        "type": "mc",
+        "q": "Why did the writer feel embarrassed when the dream changed?",
+        "choices": [
+          "The writer's friends laughed at the writer.",
+          "The writer did not like science.",
+          "The writer could not sing well.",
+          "The writer felt as if the writer had failed at something.",
+          "The writer's parents were angry."
+        ],
+        "answer": "The writer felt as if the writer had failed at something.",
+        "explanation": "'I felt a little embarrassed, as if I had failed at something.'"
+      },
+      {
+        "qid": "bb67718c-5bb1-4bbd-aa36-f9fd02c2c8ef",
+        "type": "mc",
+        "q": "According to the writer, why do our dreams change?",
+        "choices": [
+          "We learn more about the world and ourselves as we grow older.",
+          "Our parents choose our dreams.",
+          "Dreams are not important.",
+          "We forget our old dreams.",
+          "Jobs disappear quickly."
+        ],
+        "answer": "We learn more about the world and ourselves as we grow older.",
+        "explanation": "'As we grow older, we learn more about the world and about ourselves. We discover new interests...'"
+      },
+      {
+        "qid": "db8287b1-94a5-4443-a518-1ac1eb905579",
+        "type": "mc",
+        "q": "'It would actually be strange if our dreams stayed the same forever.'의 의미로 가장 알맞은 것은?",
+        "choices": [
+          "우리의 꿈은 영원히 같아야 한다.",
+          "우리의 꿈이 바뀌는 것은 이상한 일이다.",
+          "우리의 꿈은 실제로 영원히 같았다.",
+          "우리의 꿈이 같으면 행복할 것이다.",
+          "우리의 꿈이 영원히 같다면 오히려 이상할 것이다."
+        ],
+        "answer": "우리의 꿈이 영원히 같다면 오히려 이상할 것이다.",
+        "explanation": "가정법 과거(would + 동사원형, if + 과거동사)로 현재 사실과 반대되는 상황을 가정한다. actually는 '오히려, 사실은'."
+      },
+      {
+        "qid": "5a6191b9-2254-44db-9519-4d55429f3e41",
+        "type": "mc",
+        "q": "What did wanting to be a firefighter teach the writer?",
+        "choices": [
+          "How to put out a fire",
+          "How to sing in front of people",
+          "How important it is to help others",
+          "How to teach science",
+          "How to choose a job"
+        ],
+        "answer": "How important it is to help others",
+        "explanation": "'Wanting to be a firefighter taught me how important it is to help others.'"
+      },
+      {
+        "qid": "06c2dd05-57ee-4977-aa19-2f74d3f769ee",
+        "type": "mc",
+        "q": "How will practicing singing help the writer as a teacher?",
+        "choices": [
+          "It will help the writer teach music.",
+          "It made the writer famous.",
+          "It gave the writer the confidence to speak in front of people.",
+          "It taught the writer about science.",
+          "It helped the writer make new friends."
+        ],
+        "answer": "It gave the writer the confidence to speak in front of people.",
+        "explanation": "'Practicing singing gave me the confidence to speak in front of people.' 교사는 사람들 앞에서 말해야 하므로 도움이 된다."
+      },
+      {
+        "qid": "d3c49976-2a19-4dcb-a326-aa6c5ffe2031",
+        "type": "mc",
+        "q": "'none of my old dreams were a waste of time'의 의미로 알맞은 것은?",
+        "choices": [
+          "예전 꿈들은 모두 쓸모가 있었다.",
+          "예전 꿈들은 모두 시간 낭비였다.",
+          "예전 꿈들 중 일부만 쓸모 있었다.",
+          "예전 꿈들을 위한 시간이 없었다.",
+          "예전 꿈들은 기억나지 않는다."
+        ],
+        "answer": "예전 꿈들은 모두 쓸모가 있었다.",
+        "explanation": "none of ~ = ~ 중 아무것도 …않다. 어떤 꿈도 시간 낭비가 아니었다 = 모두 의미가 있었다."
+      },
+      {
+        "qid": "3ae6c3d1-70ac-4468-86ba-a4b700c6cb53",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "The writer wanted to be a firefighter at eight.",
+          "The writer is fifteen years old now.",
+          "The writer thinks changing dreams is natural.",
+          "The writer still wants to become a famous singer.",
+          "The writer practiced singing before."
+        ],
+        "answer": "The writer still wants to become a famous singer.",
+        "explanation": "가수는 11살 때의 꿈이고, 지금은 과학 선생님이 되고 싶어 한다."
+      },
+      {
+        "qid": "9265ce6c-02a4-4d22-917d-7ccf4ef66e36",
+        "type": "mc",
+        "q": "'as if I had failed at something'이 의미하는 실제 사실은?",
+        "choices": [
+          "글쓴이는 실제로 시험에 떨어졌다.",
+          "글쓴이는 실제로 실패하지 않았다.",
+          "글쓴이는 실패를 자랑스러워했다.",
+          "글쓴이는 다른 사람을 실패하게 했다.",
+          "글쓴이는 앞으로 실패할 것이다."
+        ],
+        "answer": "글쓴이는 실제로 실패하지 않았다.",
+        "explanation": "as if + 가정법 과거완료(had p.p.)는 과거 사실과 반대 → 실제로는 실패한 것이 아니다."
+      },
+      {
+        "qid": "1bccf3f3-fe41-4fcc-8810-48048e8b06bd",
+        "type": "mc",
+        "q": "Which word is closest in meaning to 'natural' in the passage?",
+        "choices": [
+          "strange",
+          "difficult",
+          "special",
+          "dangerous",
+          "normal"
+        ],
+        "answer": "normal",
+        "explanation": "changing dreams is completely natural = 아주 자연스럽고 정상적인(normal) 일이다."
+      },
+      {
+        "qid": "86f1840e-31b6-420d-96f3-394b86e7e898",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "I dreamed of becoming a famous singer.",
+          "Practicing singing gave me confidence.",
+          "Your dream keeps changing.",
+          "Changing dreams are completely natural.",
+          "It would be strange if our dreams stayed the same."
+        ],
+        "answer": "Changing dreams are completely natural.",
+        "explanation": "동명사 주어(Changing dreams)는 단수 취급하므로 are → is."
+      },
+      {
+        "qid": "29bb7481-727f-44b3-b406-bcf6c884b896",
+        "type": "mc",
+        "q": "밑줄 친 what과 쓰임이 같은 것은? \"We find out what we are truly good at.\"",
+        "choices": [
+          "What is your dream?",
+          "This is what I really wanted.",
+          "What time is it now?",
+          "What a nice day it is!",
+          "I asked him what his name was."
+        ],
+        "answer": "This is what I really wanted.",
+        "explanation": "본문의 what은 '~하는 것'이라는 관계대명사이다. 나머지는 의문사 또는 감탄문의 what이다."
+      },
+      {
+        "qid": "d2351a99-315f-425d-af7c-501b3a2f5ddc",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Our dreams can (A) ____ as we grow, and our old dreams are not (B) ____.\"",
+        "choices": [
+          "(A) stay – (B) useful",
+          "(A) change – (B) important",
+          "(A) disappear – (B) natural",
+          "(A) stay – (B) useless",
+          "(A) change – (B) useless"
+        ],
+        "answer": "(A) change – (B) useless",
+        "explanation": "꿈은 자라면서 바뀔 수 있고(change), 예전 꿈도 쓸모없는(useless) 것이 아니다."
+      },
+      {
+        "qid": "4a87d4fb-21a8-44b6-83e0-bd3232fd496b",
+        "type": "mc",
+        "q": "Who is following the writer's advice?",
+        "choices": [
+          "Jisu joins a new club to find out what she likes.",
+          "Minho stops thinking about his future.",
+          "Yuna feels embarrassed and hides her new dream.",
+          "Tom chooses one job and never changes his mind.",
+          "Sora gives up because she has no clear dream."
+        ],
+        "answer": "Jisu joins a new club to find out what she likes.",
+        "explanation": "'continuing to explore, try new things, and learn about yourself'를 실천하는 사람은 지수이다."
+      },
+      {
+        "qid": "cb0b4fc5-739b-4420-8588-e51cf1d8b45e",
+        "type": "mc",
+        "q": "What is the writer's attitude toward changing dreams?",
+        "choices": [
+          "Angry and upset",
+          "Worried and afraid",
+          "Positive and accepting",
+          "Bored and uninterested",
+          "Doubtful and critical"
+        ],
+        "answer": "Positive and accepting",
+        "explanation": "꿈이 바뀌는 것을 자연스럽고 의미 있는 과정으로 긍정적으로 받아들인다."
+      },
+      {
+        "qid": "91cd2179-bd5e-4558-b889-a798eaa34d09",
+        "type": "mc",
+        "q": "Where would the following sentence best fit? \"For example, I used to love music, but now I enjoy doing science experiments.\"",
+        "choices": [
+          "After \"When I was eight, I wanted to be a firefighter.\"",
+          "After \"We discover new interests and find out what we are truly good at.\"",
+          "After \"Both of these experiences will help me become a better teacher someday.\"",
+          "After \"So if you don't have a clear dream yet, ... don't worry.\"",
+          "After \"Every step you take is part of your journey.\""
+        ],
+        "answer": "After \"We discover new interests and find out what we are truly good at.\"",
+        "explanation": "새로운 흥미를 발견한다는 문장 뒤에 음악 → 과학으로 흥미가 바뀐 예시가 오는 것이 자연스럽다."
+      },
+      {
+        "qid": "2b88ce4f-e9ce-4841-a8de-aa145a754bb2",
+        "type": "mc",
+        "q": "What does \"Both of these experiences\" refer to?",
+        "choices": [
+          "Wanting to be a firefighter and practicing singing",
+          "Growing older and learning more",
+          "Feeling embarrassed and failing",
+          "Teaching science and helping others",
+          "Exploring and trying new things"
+        ],
+        "answer": "Wanting to be a firefighter and practicing singing",
+        "explanation": "바로 앞 두 문장의 소방관 꿈과 노래 연습을 가리킨다."
+      },
+      {
+        "qid": "a5007e11-f002-45bd-8f2d-ec39ee037fb0",
+        "type": "mc",
+        "q": "Which is the best title for the passage?",
+        "choices": [
+          "How to Become a Firefighter",
+          "The Best Job for Teenagers",
+          "Why Singing Is Difficult",
+          "Every Dream Is a Step Forward",
+          "Never Change Your Dream"
+        ],
+        "answer": "Every Dream Is a Step Forward",
+        "explanation": "바뀐 꿈들도 모두 여정의 한 걸음이라는 내용이므로 '모든 꿈은 앞으로 나아가는 한 걸음'이 알맞다."
+      },
+      {
+        "qid": "06acc969-fdd0-4642-adee-3ec55e6ea4bf",
+        "type": "order",
+        "items": [
+          "Our dreams change.",
+          "We learn more about the world and about ourselves.",
+          "We grow older.",
+          "We discover new interests and what we are good at."
+        ],
+        "answer": [
+          "We grow older.",
+          "We learn more about the world and about ourselves.",
+          "We discover new interests and what we are good at.",
+          "Our dreams change."
+        ]
+      },
+      {
+        "qid": "8cc8f4be-b368-4f9e-828c-3fdb2363675a",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "whenever",
+            "meaning": "~할 때마다"
+          },
+          {
+            "word": "realize",
+            "meaning": "깨닫다"
+          },
+          {
+            "word": "natural",
+            "meaning": "자연스러운"
+          },
+          {
+            "word": "discover",
+            "meaning": "발견하다"
+          },
+          {
+            "word": "a waste of time",
+            "meaning": "시간 낭비"
+          },
+          {
+            "word": "confidence",
+            "meaning": "자신감"
+          },
+          {
+            "word": "explore",
+            "meaning": "탐색하다, 탐험하다"
+          },
+          {
+            "word": "journey",
+            "meaning": "여정"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "7ea518b5-5da2-4c86-ac61-caa786ddeb21",
+        "q": "Explain in English why it is natural for our dreams to change, according to the passage.",
+        "wordLimit": 35,
+        "sampleAnswer": "As we grow older, we learn more about the world and ourselves. We discover new interests and find out what we are truly good at, so our dreams can change.",
+        "rubric": "① 자라면서 세상·자신에 대해 더 알게 됨 ② 새 흥미·잘하는 것 발견 ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "9e3b1820-aee3-47f4-9b09-5976a082344a",
+        "q": "우리말로 쓰시오: 글쓴이가 예전 꿈 두 가지에서 각각 얻은 것과, 그것이 어떻게 도움이 될지 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "소방관 꿈에서는 남을 돕는 것이 중요하다는 것을, 노래 연습에서는 사람들 앞에서 말하는 자신감을 얻었다. 두 경험 모두 더 좋은 선생님이 되는 데 도움이 될 것이다.",
+        "rubric": "① 소방관 → 남을 돕는 것의 중요성 ② 노래 → 사람들 앞에서 말하는 자신감 ③ 더 좋은 교사가 되는 데 도움",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "cc0cc94f-0a69-4ec4-a16d-1432a8775207",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '너의 꿈이 계속 바뀌어도 걱정하지 마.' <조건> if와 keep을 사용할 것 / 8단어",
+        "wordLimit": 10,
+        "sampleAnswer": "Don't worry if your dream keeps changing.",
+        "rubric": "① Don't worry 명령문 ② if절 ③ keeps changing(3인칭 단수 + -ing) ④ 8단어"
+      },
+      {
+        "qid": "6481caa7-20d5-49c0-9ff8-d31d6d40e3a3",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '나는 마치 무언가에 실패했던 것처럼 느꼈다.' <조건> as if를 사용하여 가정법 과거완료로 쓸 것",
+        "wordLimit": 12,
+        "sampleAnswer": "I felt as if I had failed at something.",
+        "rubric": "① felt ② as if ③ had failed(과거완료) ④ at something"
+      },
+      {
+        "qid": "6a3944af-1741-4f25-892b-8e0f5a0d53ab",
+        "q": "Do you agree that changing dreams is natural? Give your opinion and one reason in English.",
+        "wordLimit": 40,
+        "sampleAnswer": "Yes, I agree. When I was young, I wanted to be a baker, but now I am interested in computers. I changed my dream because I learned more about myself.",
+        "rubric": "① 찬반 의견 ② 이유 1개 이상(자신의 경험 가능) ③ 완전한 영어 문장, 문법 오류 적음"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "whenever",
+        "surface": "Whenever",
+        "pos": "접",
+        "meaning": "~할 때마다",
+        "sentence": "Whenever my dream changed, I felt a little embarrassed, as if I had failed at something."
+      },
+      {
+        "word": "embarrassed",
+        "surface": "embarrassed",
+        "pos": "형",
+        "meaning": "당황한, 창피한",
+        "sentence": "Whenever my dream changed, I felt a little embarrassed, as if I had failed at something."
+      },
+      {
+        "word": "discover",
+        "surface": "discover",
+        "pos": "동",
+        "meaning": "발견하다, 알게 되다",
+        "sentence": "We discover new interests and find out what we are truly good at."
+      },
+      {
+        "word": "confidence",
+        "surface": "confidence",
+        "pos": "명",
+        "meaning": "자신감",
+        "sentence": "Practicing singing gave me the confidence to speak in front of people."
+      },
+      {
+        "word": "explore",
+        "surface": "explore",
+        "pos": "동",
+        "meaning": "탐구하다, 탐험하다",
+        "sentence": "What matters is continuing to explore, try new things, and learn about yourself."
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Your Dream Can Change\n\nWhen I was eight years old, I wanted to become a firefighter. By the age of eleven, {{g:I had started dreaming of becoming|과거완료(had p.p.): 과거 시점(11살)까지 이미 일어난 일}} a famous singer. {{g:Now that I am fifteen|now that + 주어 + 동사: 이제 ~이므로}}, my goal is to become a science teacher. Each time my dream changed, I felt slightly {{v:embarrassed}}, {{g:as if I had failed|as if + 가정법 과거완료: 마치 ~했던 것처럼}} at something important.\n\nRecently, however, {{g:I have come to realize|come to + 동사원형: ~하게 되다 / 현재완료}} that {{t:changing dreams is completely natural}}. As we grow older, we learn more about the world and discover more about ourselves. We develop new interests and find out what we are {{v:genuinely}} good at. In fact, {{g:it would be rather strange if our dreams remained exactly the same forever|가정법 과거: 현재 사실과 반대되는 가정}}.\n\nInterestingly, none of my earlier dreams {{v:turned out to be}} a waste of time. {{g:My desire to become|to부정사의 형용사적 용법: ~하려는 열망}} a firefighter taught me {{g:how important it is to help others|간접의문문 + 가주어 it / 진주어 to부정사}}. Practicing singing gave me the confidence to speak in front of an {{v:audience}}. Both of these experiences will {{v:undoubtedly}} help me become a better teacher someday.\n\nSo if you do not have a clear dream yet, or if your dream keeps changing, there is no need to worry. {{g:What really matters is not finding the \"right\" answer immediately|관계대명사 what 주어 + 동명사 보어}}. What matters is {{g:continuing to explore, trying new things, and learning about yourself|병렬 구조: 동명사 세 개}} along the way. {{t:Every step you take is a meaningful part of your journey.}}",
+    "tags": {
+      "vocab": [
+        "embarrassed",
+        "realize",
+        "genuinely",
+        "remain",
+        "turn out",
+        "desire",
+        "audience",
+        "undoubtedly",
+        "meaningful",
+        "explore"
+      ],
+      "grammar": [
+        "과거완료",
+        "now that",
+        "as if + 가정법 과거완료",
+        "come to + 동사원형",
+        "가정법 과거",
+        "to부정사 형용사적 용법",
+        "간접의문문 + 가주어 it",
+        "병렬 구조(동명사)"
+      ],
+      "topic": [
+        "꿈",
+        "진로",
+        "성장",
+        "자기 탐색"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "ac2223f1-4eaf-4de0-b867-7a2c20694b8d",
+        "type": "mc",
+        "q": "What is the main point of the passage?",
+        "choices": [
+          "Students should decide on their future jobs as early as possible.",
+          "Changing dreams is a natural part of growing up, and every dream teaches us something.",
+          "Firefighters and singers make good teachers.",
+          "People who change their dreams usually fail.",
+          "Science teachers need to be good at singing."
+        ],
+        "answer": "Changing dreams is a natural part of growing up, and every dream teaches us something.",
+        "explanation": "꿈이 바뀌는 것은 성장의 자연스러운 과정이고, 각각의 꿈에서 배우는 것이 있다는 것이 요지이다."
+      },
+      {
+        "qid": "2fc5f6c1-06cf-44e1-b711-0f69bd7419ba",
+        "type": "mc",
+        "q": "What is the main purpose of the passage?",
+        "choices": [
+          "To explain how to become a science teacher",
+          "To advertise a singing class",
+          "To describe the job of a firefighter",
+          "To encourage readers whose dreams are unclear or changing",
+          "To warn readers about failing"
+        ],
+        "answer": "To encourage readers whose dreams are unclear or changing",
+        "explanation": "마지막 문단에서 꿈이 없거나 바뀌는 독자들에게 걱정하지 말라고 격려한다."
+      },
+      {
+        "qid": "f34e84a8-4f15-49b5-8d2f-d3cd01b3306a",
+        "type": "mc",
+        "q": "'Now that I am fifteen'에서 Now that의 의미로 알맞은 것은?",
+        "choices": [
+          "이제 ~이므로",
+          "~하자마자",
+          "~에도 불구하고",
+          "~하는 동안",
+          "~할 때까지"
+        ],
+        "answer": "이제 ~이므로",
+        "explanation": "now that + 주어 + 동사 = '이제 ~이므로/~이니까'."
+      },
+      {
+        "qid": "a8f1246a-4efe-4fd5-8cf0-6df618f35a28",
+        "type": "mc",
+        "q": "Why is 'had started' used in \"By the age of eleven, I had started dreaming of becoming a famous singer\"?",
+        "choices": [
+          "Because it is happening now.",
+          "Because it will happen in the future.",
+          "Because it never happened.",
+          "Because it is a general truth.",
+          "Because it happened before a point in the past."
+        ],
+        "answer": "Because it happened before a point in the past.",
+        "explanation": "By the age of eleven(과거 시점)까지 이미 일어난 일이므로 과거완료(had p.p.)를 쓴다."
+      },
+      {
+        "qid": "3d6ed7ed-539c-47d5-874c-738166c63eaf",
+        "type": "mc",
+        "q": "What does 'turned out to be' mean in \"none of my earlier dreams turned out to be a waste of time\"?",
+        "choices": [
+          "refused to be",
+          "pretended to be",
+          "proved to be",
+          "wanted to be",
+          "used to be"
+        ],
+        "answer": "proved to be",
+        "explanation": "turn out to be = ~인 것으로 드러나다(= prove to be)."
+      },
+      {
+        "qid": "8cc2712e-3171-4184-a551-3411b2519660",
+        "type": "mc",
+        "q": "Which word can best replace 'genuinely'?",
+        "choices": [
+          "rarely",
+          "slightly",
+          "truly",
+          "hardly",
+          "quickly"
+        ],
+        "answer": "truly",
+        "explanation": "genuinely = 진정으로, 정말로(truly)."
+      },
+      {
+        "qid": "b5351762-2d9a-41cb-8d56-ceee8e88a8f2",
+        "type": "mc",
+        "q": "What can be inferred about the writer as a future teacher?",
+        "choices": [
+          "The writer will want to help students and speak to them with confidence.",
+          "The writer will teach music instead of science.",
+          "The writer will be too shy to speak in class.",
+          "The writer will quit teaching to become a firefighter.",
+          "The writer will not care about students."
+        ],
+        "answer": "The writer will want to help students and speak to them with confidence.",
+        "explanation": "소방관 꿈 → 남을 돕는 마음, 노래 → 사람들 앞에서 말하는 자신감이 교사 생활에 도움이 될 것이다."
+      },
+      {
+        "qid": "b0dcc07f-f320-4caa-baa8-509274d6ee51",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "The writer wanted to become a firefighter at eight.",
+          "The writer has realized that changing dreams is natural.",
+          "Practicing singing helped the writer speak in front of an audience.",
+          "The writer was proud whenever the dream changed.",
+          "The writer believes old dreams were not a waste of time."
+        ],
+        "answer": "The writer was proud whenever the dream changed.",
+        "explanation": "꿈이 바뀔 때마다 글쓴이는 약간 창피함(embarrassed)을 느꼈다."
+      },
+      {
+        "qid": "2ba4405c-5702-431f-91e9-784a4440c6e1",
+        "type": "mc",
+        "q": "문맥상 낱말의 쓰임이 적절하지 않은 것은?",
+        "choices": [
+          "we learn more about the world",
+          "changing dreams is completely unnatural",
+          "we develop new interests",
+          "none of my earlier dreams turned out to be a waste of time",
+          "there is no need to worry"
+        ],
+        "answer": "changing dreams is completely unnatural",
+        "explanation": "글 전체가 꿈이 바뀌는 것이 자연스럽다는 내용이므로 unnatural → natural이 되어야 한다."
+      },
+      {
+        "qid": "2b48a836-e560-4535-b1d9-360f981c6861",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "It taught me how important it is to help others.",
+          "I felt as if I had failed at something.",
+          "Now that I am fifteen, my goal is to become a teacher.",
+          "It would be strange if our dreams remained the same.",
+          "What really matter are continuing to explore."
+        ],
+        "answer": "What really matter are continuing to explore.",
+        "explanation": "관계대명사 what이 이끄는 절이 주어일 때는 단수 취급 → What really matters is ~."
+      },
+      {
+        "qid": "a7354b14-f056-458a-9c42-9ee7ddd849d1",
+        "type": "mc",
+        "q": "Which is grammatically correct?",
+        "choices": [
+          "It taught me how important is it to help others.",
+          "It taught me how is it important to help others.",
+          "It taught me how it is important helping others.",
+          "It taught me how important it is to help others.",
+          "It taught me how important it is help others."
+        ],
+        "answer": "It taught me how important it is to help others.",
+        "explanation": "간접의문문은 '의문사(how important) + 주어 + 동사' 어순이고, 진주어는 to부정사이다."
+      },
+      {
+        "qid": "12286604-bb48-420c-9217-79d3db15b1be",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Dreams naturally (A) ____ as we grow, and even our earlier dreams (B) ____ us in some way.\"",
+        "choices": [
+          "(A) disappear – (B) hurt",
+          "(A) change – (B) help",
+          "(A) remain – (B) help",
+          "(A) change – (B) embarrass",
+          "(A) remain – (B) confuse"
+        ],
+        "answer": "(A) change – (B) help",
+        "explanation": "꿈은 자라면서 자연스럽게 바뀌고(change), 예전 꿈도 어떤 식으로든 도움이 된다(help)."
+      },
+      {
+        "qid": "4789afe7-df4a-4997-936c-f228f3588047",
+        "type": "mc",
+        "q": "Where would the following sentence best fit? \"Teachers, after all, must stand in front of students every day.\"",
+        "choices": [
+          "After \"When I was eight years old, I wanted to become a firefighter.\"",
+          "After \"We develop new interests and find out what we are genuinely good at.\"",
+          "After \"there is no need to worry.\"",
+          "After \"Every step you take is a meaningful part of your journey.\"",
+          "After \"Practicing singing gave me the confidence to speak in front of an audience.\""
+        ],
+        "answer": "After \"Practicing singing gave me the confidence to speak in front of an audience.\"",
+        "explanation": "사람들 앞에서 말하는 자신감 → 교사는 매일 학생들 앞에 서야 한다는 연결이 자연스럽다."
+      },
+      {
+        "qid": "11a252eb-b163-459e-89fd-538231dcc423",
+        "type": "mc",
+        "q": "What does \"Both of these experiences\" refer to?",
+        "choices": [
+          "The desire to become a firefighter and practicing singing",
+          "Feeling embarrassed and failing",
+          "Learning about the world and ourselves",
+          "Exploring and trying new things",
+          "Becoming a teacher and a singer"
+        ],
+        "answer": "The desire to become a firefighter and practicing singing",
+        "explanation": "바로 앞 두 문장의 소방관이 되려는 열망과 노래 연습을 가리킨다."
+      },
+      {
+        "qid": "292ccb67-f7df-4df6-808b-66ce3fd4d4ae",
+        "type": "mc",
+        "q": "Which word is closest in meaning to 'remained' in the passage?",
+        "choices": [
+          "changed",
+          "grew",
+          "stayed",
+          "failed",
+          "started"
+        ],
+        "answer": "stayed",
+        "explanation": "remain = (그대로) 남아 있다, 유지되다(stay)."
+      },
+      {
+        "qid": "79951150-90f2-4798-aff5-62b923946746",
+        "type": "mc",
+        "q": "Which of the following would the writer most likely agree with?",
+        "choices": [
+          "You should feel ashamed if your dream changes.",
+          "A changing dream is a sign of growth, not failure.",
+          "Only people with clear dreams can succeed.",
+          "Old dreams are useless once you give them up.",
+          "Finding the right answer early is what matters most."
+        ],
+        "answer": "A changing dream is a sign of growth, not failure.",
+        "explanation": "꿈의 변화는 실패가 아니라 성장의 과정이라는 것이 글쓴이의 생각이다."
+      },
+      {
+        "qid": "27ec4173-e0c4-4709-9adc-e70416b269d6",
+        "type": "mc",
+        "q": "Who is following the writer's advice?",
+        "choices": [
+          "Daniel is taking a coding class to see if he enjoys it.",
+          "Eunji refuses to try anything new.",
+          "Kevin worries every night because he has no dream.",
+          "Hara thinks her old dream was a waste of time.",
+          "Sumin hides her new dream because she is embarrassed."
+        ],
+        "answer": "Daniel is taking a coding class to see if he enjoys it.",
+        "explanation": "새로운 것을 시도하며(trying new things) 자신을 알아가는 사람은 Daniel이다."
+      },
+      {
+        "qid": "832b98c6-61e9-45fa-b573-5e4a8314b8df",
+        "type": "mc",
+        "q": "Which is the best title for the passage?",
+        "choices": [
+          "Why Firefighters Are Brave",
+          "The Secret to Becoming a Famous Singer",
+          "Choose Your Job Before You Turn Fifteen",
+          "Changing Dreams: Not Failures but Steps Forward",
+          "Science Teachers Who Can Sing"
+        ],
+        "answer": "Changing Dreams: Not Failures but Steps Forward",
+        "explanation": "바뀐 꿈은 실패가 아니라 앞으로 나아가는 걸음이라는 주제를 가장 잘 나타낸다."
+      },
+      {
+        "qid": "c77ab9ae-b56a-44f4-afa7-97f52787aff4",
+        "type": "order",
+        "items": [
+          "The writer saw that each old dream taught something useful.",
+          "The writer's dream changed from a firefighter to a singer to a science teacher.",
+          "The writer encourages readers to keep exploring.",
+          "The writer came to realize that changing dreams is natural.",
+          "Each change made the writer feel slightly embarrassed."
+        ],
+        "answer": [
+          "The writer's dream changed from a firefighter to a singer to a science teacher.",
+          "Each change made the writer feel slightly embarrassed.",
+          "The writer came to realize that changing dreams is natural.",
+          "The writer saw that each old dream taught something useful.",
+          "The writer encourages readers to keep exploring."
+        ]
+      },
+      {
+        "qid": "64cbb35d-9dc9-4ef6-96a3-4848e768011a",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "genuinely",
+            "meaning": "진정으로"
+          },
+          {
+            "word": "remain",
+            "meaning": "(여전히) ~인 채로 있다"
+          },
+          {
+            "word": "turn out to be",
+            "meaning": "~인 것으로 드러나다"
+          },
+          {
+            "word": "desire",
+            "meaning": "열망, 바람"
+          },
+          {
+            "word": "audience",
+            "meaning": "청중"
+          },
+          {
+            "word": "undoubtedly",
+            "meaning": "의심할 여지 없이"
+          },
+          {
+            "word": "meaningful",
+            "meaning": "의미 있는"
+          },
+          {
+            "word": "immediately",
+            "meaning": "즉시"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "31918272-ba33-4c9a-a2d1-4228e0356896",
+        "q": "Explain in 2-3 English sentences how each of the writer's earlier dreams will help the writer become a better teacher.",
+        "wordLimit": 50,
+        "sampleAnswer": "The desire to become a firefighter taught the writer how important it is to help others, so the writer will care about students. Practicing singing gave the writer the confidence to speak in front of an audience, which is necessary for teaching.",
+        "rubric": "① 소방관 → 남을 돕는 것의 중요성 ② 노래 → 청중 앞에서 말하는 자신감 ③ 교사 일과의 연결 ④ 영어 2~3문장"
+      },
+      {
+        "qid": "4596182f-2a1d-447d-bc44-6b3c99dcb00b",
+        "q": "우리말로 쓰시오: 'I felt slightly embarrassed, as if I had failed at something important.'에서 as if 뒤에 had failed를 쓴 이유와, 그 문장이 암시하는 실제 사실을 설명하시오.",
+        "wordLimit": 70,
+        "sampleAnswer": "as if + 가정법 과거완료(had p.p.)는 과거 사실과 반대되는 상황을 나타낸다. 따라서 실제로는 글쓴이가 무언가에 실패한 것이 아니었다는 뜻이다.",
+        "rubric": "① as if + 가정법 과거완료 = 과거 사실의 반대 ② 실제로는 실패하지 않았음, 두 내용 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "8fc2b4c9-948d-4d1f-b23e-be912e3b62d7",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '그 경험은 나에게 다른 사람을 돕는 것이 얼마나 중요한지 가르쳐 주었다.' <조건> how important와 가주어 it을 사용할 것",
+        "wordLimit": 15,
+        "sampleAnswer": "The experience taught me how important it is to help others.",
+        "rubric": "① taught me ② how important + it is(간접의문문 어순) ③ to help others(진주어) ④ 의미 일치"
+      },
+      {
+        "qid": "fbfe2fcf-9c19-4e83-96ea-0ae3c3ced9ef",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '만약 우리의 꿈이 영원히 똑같다면 오히려 이상할 것이다.' <조건> 가주어 it, 가정법 과거, remain을 사용할 것",
+        "wordLimit": 16,
+        "sampleAnswer": "It would be rather strange if our dreams remained the same forever.",
+        "rubric": "① It would be ② (rather) strange ③ if + remained(과거형) ④ the same forever"
+      },
+      {
+        "qid": "6bdf43c5-63c5-4edd-8d3b-71f51a5943e8",
+        "q": "The writer says, \"What matters is continuing to explore.\" Do you agree? Write your opinion with a reason or an example in English.",
+        "wordLimit": 60,
+        "sampleAnswer": "I agree with the writer. Last year I joined a robotics club just for fun, and I found out that I love building things. If I had not explored, I would not know about this interest. Exploring helps us find what we are truly good at.",
+        "rubric": "① 찬반 의견 명확 ② 이유 또는 구체적 예시 ③ 영어 문장의 정확성과 논리적 연결"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "embarrassed",
+        "surface": "embarrassed",
+        "pos": "형",
+        "meaning": "당황한, 창피한",
+        "sentence": "Each time my dream changed, I felt slightly embarrassed, as if I had failed at something important."
+      },
+      {
+        "word": "genuinely",
+        "surface": "genuinely",
+        "pos": "부",
+        "meaning": "진정으로, 정말로",
+        "sentence": "We develop new interests and find out what we are genuinely good at."
+      },
+      {
+        "word": "turn out to be",
+        "surface": "turned out to be",
+        "pos": "숙",
+        "meaning": "~인 것으로 드러나다(밝혀지다)",
+        "sentence": "Interestingly, none of my earlier dreams turned out to be a waste of time."
+      },
+      {
+        "word": "audience",
+        "surface": "audience",
+        "pos": "명",
+        "meaning": "청중, 관객",
+        "sentence": "Practicing singing gave me the confidence to speak in front of an audience."
+      },
+      {
+        "word": "undoubtedly",
+        "surface": "undoubtedly",
+        "pos": "부",
+        "meaning": "의심할 여지 없이, 틀림없이",
+        "sentence": "Both of these experiences will undoubtedly help me become a better teacher someday."
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Your Dream Can Change\n\nAt the age of eight, I {{v:aspired to become}} a firefighter. By eleven, I was fantasizing about becoming a {{v:renowned}} singer. Now, at fifteen, {{g:I am determined to become|be determined to + 동사원형: ~하기로 굳게 결심하다}} a science teacher. Whenever my {{v:aspirations}} shifted, I felt somewhat embarrassed, {{g:as though I had failed|as though + 가정법 과거완료: 마치 ~했던 것처럼}} at something significant.\n\nRecently, however, {{t:I have come to recognize that changing one's dreams is an entirely natural process}}. As we mature, we {{v:accumulate}} knowledge about the world and gain a deeper understanding of ourselves. We encounter unfamiliar interests and identify {{g:what we are genuinely capable of|관계대명사 what + 전치사 of로 끝나는 절}}. Indeed, {{g:it would be peculiar if our dreams remained unchanged|가정법 과거 + 가주어 it}} throughout our entire lives.\n\nRemarkably, none of my previous dreams {{v:proved to be}} a waste of time. {{g:Aspiring to be a firefighter|동명사 주어(단수 취급) → taught}} taught me {{g:how essential it is to assist others|간접의문문 + 가주어 it / 진주어 to부정사}}. Practicing singing, meanwhile, {{g:provided me with|provide A with B: A에게 B를 제공하다}} the confidence to speak in front of an audience. Both of these experiences will undoubtedly {{g:contribute to making|contribute to + 동명사 (to는 전치사)}} me a better teacher someday.\n\nTherefore, if {{g:you have yet to discover|have yet to + 동사원형: 아직 ~하지 않았다}} a clear dream, or if your dream continues to {{v:evolve}}, there is no reason for concern. {{g:What truly matters is not possessing the \"correct\" answer|관계대명사 what 주어 + not A, rather B 구조}} at this particular moment. Rather, what matters is continuing to explore, experimenting with unfamiliar things, and deepening your understanding of yourself. {{t:Every step you take constitutes a valuable part of your journey.}}",
+    "tags": {
+      "vocab": [
+        "aspire",
+        "renowned",
+        "determined",
+        "aspiration",
+        "shift",
+        "accumulate",
+        "peculiar",
+        "prove",
+        "assist",
+        "evolve",
+        "possess",
+        "constitute"
+      ],
+      "grammar": [
+        "be determined to",
+        "as though + 가정법 과거완료",
+        "관계대명사 what",
+        "가정법 과거 + 가주어 it",
+        "동명사 주어",
+        "간접의문문 + 가주어 it",
+        "provide A with B",
+        "contribute to + 동명사",
+        "have yet to"
+      ],
+      "topic": [
+        "꿈",
+        "진로",
+        "성장",
+        "정체성",
+        "자기 탐색"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "a3e80b7a-de29-4bb2-ad53-8ac2493c2490",
+        "type": "mc",
+        "q": "Which best summarizes the central claim of the passage?",
+        "choices": [
+          "Teenagers should commit to a single career as early as possible.",
+          "Shifting dreams reflect personal growth, and each abandoned dream still leaves something valuable.",
+          "Feeling embarrassed is a sign that one has truly failed.",
+          "Only dreams that are achieved have any real value.",
+          "Becoming a science teacher requires musical talent."
+        ],
+        "answer": "Shifting dreams reflect personal growth, and each abandoned dream still leaves something valuable.",
+        "explanation": "꿈의 변화는 성장을 반영하고, 포기한 꿈도 가치 있는 것을 남긴다는 것이 핵심 주장이다."
+      },
+      {
+        "qid": "2d21ceb4-a6e5-420e-a58c-8b7d4be837f9",
+        "type": "mc",
+        "q": "What is the writer's primary purpose in the final paragraph?",
+        "choices": [
+          "To criticize readers who keep changing their minds",
+          "To persuade readers to become teachers",
+          "To explain the scientific basis of dreams",
+          "To reassure readers who have not found a clear dream",
+          "To describe the writer's daily routine"
+        ],
+        "answer": "To reassure readers who have not found a clear dream",
+        "explanation": "'there is no reason for concern'처럼 꿈이 분명하지 않은 독자를 안심시키는 것이 목적이다."
+      },
+      {
+        "qid": "b2bdefc0-2bef-4ad7-961a-540dc6b024a4",
+        "type": "mc",
+        "q": "In the passage, 'aspired to' is closest in meaning to ____.",
+        "choices": [
+          "hoped to",
+          "refused to",
+          "pretended to",
+          "forgot to",
+          "happened to"
+        ],
+        "answer": "hoped to",
+        "explanation": "aspire to = ~을 열망하다, ~하기를 바라다(hope to)."
+      },
+      {
+        "qid": "61d33dda-87e8-409b-9df9-26d347c57ac4",
+        "type": "mc",
+        "q": "What does the phrase 'as though I had failed at something significant' imply?",
+        "choices": [
+          "The writer actually failed an important exam.",
+          "The writer wanted others to fail.",
+          "The writer was certain to fail in the future.",
+          "The writer was proud of failing.",
+          "The writer had not actually failed, but felt that way."
+        ],
+        "answer": "The writer had not actually failed, but felt that way.",
+        "explanation": "as though + 가정법 과거완료는 과거 사실과 반대 → 실제로는 실패하지 않았다."
+      },
+      {
+        "qid": "ab18323a-0e3f-42be-8e00-c948eb7f84b7",
+        "type": "mc",
+        "q": "'if you have yet to discover a clear dream'의 의미로 가장 알맞은 것은?",
+        "choices": [
+          "이미 분명한 꿈을 찾았다면",
+          "분명한 꿈을 찾을 필요가 없다면",
+          "아직 분명한 꿈을 찾지 못했다면",
+          "분명한 꿈을 다시 찾아야 한다면",
+          "분명한 꿈을 찾기 싫다면"
+        ],
+        "answer": "아직 분명한 꿈을 찾지 못했다면",
+        "explanation": "have yet to + 동사원형 = 아직 ~하지 않았다(= have not p.p. yet)."
+      },
+      {
+        "qid": "e5089078-5212-4e3e-9d66-7ad11a1c5db7",
+        "type": "mc",
+        "q": "Which word is closest in meaning to 'peculiar'?",
+        "choices": [
+          "ordinary",
+          "pleasant",
+          "strange",
+          "essential",
+          "obvious"
+        ],
+        "answer": "strange",
+        "explanation": "peculiar = 이상한, 기묘한(strange)."
+      },
+      {
+        "qid": "37d73021-e8fa-4ec2-a464-56dec849d245",
+        "type": "mc",
+        "q": "In the passage, 'evolve' is closest in meaning to ____.",
+        "choices": [
+          "develop gradually",
+          "disappear suddenly",
+          "stay the same",
+          "become clear immediately",
+          "repeat exactly"
+        ],
+        "answer": "develop gradually",
+        "explanation": "evolve = 서서히 발전하다, 진화하다."
+      },
+      {
+        "qid": "51dedf11-9020-4203-b4bb-079514a5c3cd",
+        "type": "mc",
+        "q": "Which sentence is grammatically INCORRECT?",
+        "choices": [
+          "I am determined to become a science teacher.",
+          "Singing provided me with confidence.",
+          "It taught me how essential it is to assist others.",
+          "These experiences will contribute to make me a better teacher.",
+          "Aspiring to be a firefighter taught me a lot."
+        ],
+        "answer": "These experiences will contribute to make me a better teacher.",
+        "explanation": "contribute to의 to는 전치사이므로 뒤에 동명사가 온다 → contribute to making."
+      },
+      {
+        "qid": "f19e8284-b2e6-4a0e-a67b-18ac0f532d9c",
+        "type": "mc",
+        "q": "Which is grammatically correct?",
+        "choices": [
+          "What truly matter is not possessing the correct answer.",
+          "What truly matters is not possessing the correct answer.",
+          "What truly matters are not possessing the correct answer.",
+          "That truly matters is not possessing the correct answer.",
+          "What truly matters is not possess the correct answer."
+        ],
+        "answer": "What truly matters is not possessing the correct answer.",
+        "explanation": "관계대명사 what절 주어는 단수 취급(matters, is)하고, 보어로 동명사(possessing)를 쓴다."
+      },
+      {
+        "qid": "d384df94-a904-4f81-af8e-d7c5056285fb",
+        "type": "mc",
+        "q": "How does the writer view the earlier dreams that were abandoned?",
+        "choices": [
+          "As embarrassing mistakes to forget",
+          "As proof that the writer lacks focus",
+          "As goals the writer will return to later",
+          "As a complete waste of time",
+          "As experiences that built useful qualities"
+        ],
+        "answer": "As experiences that built useful qualities",
+        "explanation": "소방관 꿈은 남을 돕는 마음, 노래 연습은 자신감을 길러 주었다고 본다."
+      },
+      {
+        "qid": "0a26df60-7d30-4d70-877c-8e5554cd4ddb",
+        "type": "mc",
+        "q": "Which is NOT consistent with the passage?",
+        "choices": [
+          "The writer felt somewhat embarrassed when aspirations shifted.",
+          "The writer considers changing dreams a natural process.",
+          "Practicing singing gave the writer confidence.",
+          "The writer still intends to become a renowned singer.",
+          "The writer is now determined to become a science teacher."
+        ],
+        "answer": "The writer still intends to become a renowned singer.",
+        "explanation": "가수는 11살 때의 꿈이고, 지금은 과학 교사가 되기로 결심했다."
+      },
+      {
+        "qid": "424b871f-2f20-4fac-81f5-6c47d53b441c",
+        "type": "mc",
+        "q": "Which best completes the summary? \"Although changing dreams may feel like (A) ____, it is actually a natural result of (B) ____.\"",
+        "choices": [
+          "(A) success – (B) growth",
+          "(A) failure – (B) growth",
+          "(A) failure – (B) laziness",
+          "(A) progress – (B) confusion",
+          "(A) success – (B) failure"
+        ],
+        "answer": "(A) failure – (B) growth",
+        "explanation": "꿈이 바뀌는 것은 실패(failure)처럼 느껴질 수 있지만, 실제로는 성장(growth)의 자연스러운 결과이다."
+      },
+      {
+        "qid": "e4e4fb6d-9175-4bc9-ba40-83dc6fcb9322",
+        "type": "mc",
+        "q": "Where would the following sentence best fit? \"What once seemed like a detour turned out to be a training ground.\"",
+        "choices": [
+          "After \"At the age of eight, I aspired to become a firefighter.\"",
+          "After \"As we mature, we accumulate knowledge about the world...\"",
+          "After \"there is no reason for concern.\"",
+          "After \"Every step you take constitutes a valuable part of your journey.\"",
+          "After \"Remarkably, none of my previous dreams proved to be a waste of time.\""
+        ],
+        "answer": "After \"Remarkably, none of my previous dreams proved to be a waste of time.\"",
+        "explanation": "예전 꿈이 시간 낭비가 아니었다는 문장 뒤에, 돌아가는 길처럼 보였던 것이 훈련장이었다는 문장이 이어지는 것이 자연스럽다."
+      },
+      {
+        "qid": "32c5a559-6356-4f8c-a50a-da91f9e392df",
+        "type": "mc",
+        "q": "What is the function of 'Rather' in \"Rather, what matters is continuing to explore...\"?",
+        "choices": [
+          "It introduces the correct idea in contrast to the previous one.",
+          "It gives an example of the previous idea.",
+          "It shows the result of the previous idea.",
+          "It repeats the previous idea in the same way.",
+          "It introduces a new topic unrelated to the previous one."
+        ],
+        "answer": "It introduces the correct idea in contrast to the previous one.",
+        "explanation": "앞 문장의 'not possessing the correct answer'와 대조하여 '오히려 중요한 것은 ~'을 제시한다."
+      },
+      {
+        "qid": "a5b72517-a13a-4220-a8f6-b0c1112485b6",
+        "type": "mc",
+        "q": "In the last sentence, 'constitutes' is closest in meaning to ____.",
+        "choices": [
+          "destroys",
+          "ignores",
+          "forms",
+          "delays",
+          "replaces"
+        ],
+        "answer": "forms",
+        "explanation": "constitute = ~을 구성하다, ~이 되다(form)."
+      },
+      {
+        "qid": "2d1e3a01-f489-4160-98af-8d43beeb5c90",
+        "type": "mc",
+        "q": "Which statement would the writer most likely agree with?",
+        "choices": [
+          "A dream that changes was never a real dream.",
+          "Self-discovery matters more than having a fixed answer early on.",
+          "Teenagers who lack a clear goal are falling behind.",
+          "Our interests remain the same throughout our lives.",
+          "Only practical experiences can help us in the future."
+        ],
+        "answer": "Self-discovery matters more than having a fixed answer early on.",
+        "explanation": "정답을 일찍 갖는 것보다 계속 탐색하며 자신을 이해하는 것이 중요하다는 것이 글쓴이의 관점이다."
+      },
+      {
+        "qid": "5e4eec60-ff69-4850-a89d-178d25f1bfb3",
+        "type": "mc",
+        "q": "Which is the most appropriate title for the passage?",
+        "choices": [
+          "Detours, Not Dead Ends: Why Changing Dreams Is Natural",
+          "The Dangers of Having Too Many Dreams",
+          "How to Become a Renowned Singer",
+          "Choosing a Career Before Fifteen",
+          "Firefighting as a Path to Teaching"
+        ],
+        "answer": "Detours, Not Dead Ends: Why Changing Dreams Is Natural",
+        "explanation": "바뀐 꿈은 막다른 길이 아니라 돌아가는 길일 뿐이라는 주제를 잘 담고 있다."
+      },
+      {
+        "qid": "ea84f289-e788-4bfc-aac9-ea3f028ec4b4",
+        "type": "mc",
+        "q": "Which is closest in meaning to \"Aspiring to be a firefighter taught me how essential it is to assist others\"?",
+        "choices": [
+          "Being a firefighter is more essential than helping others.",
+          "Firefighters taught me how to become essential.",
+          "I helped firefighters because it was essential.",
+          "Wanting to be a firefighter showed me that helping others is very important.",
+          "I wanted others to assist me in becoming a firefighter."
+        ],
+        "answer": "Wanting to be a firefighter showed me that helping others is very important.",
+        "explanation": "aspire = want, essential = very important, assist = help로 바꾸어 표현한 문장이다."
+      },
+      {
+        "qid": "a6507498-ca41-4e83-b298-5c08ede73348",
+        "type": "order",
+        "items": [
+          "The writer recognized that changing one's dreams is natural.",
+          "The writer reassures readers and encourages them to keep exploring.",
+          "The writer's aspirations shifted several times.",
+          "The writer saw that each previous dream left something valuable.",
+          "The writer felt somewhat embarrassed by these changes."
+        ],
+        "answer": [
+          "The writer's aspirations shifted several times.",
+          "The writer felt somewhat embarrassed by these changes.",
+          "The writer recognized that changing one's dreams is natural.",
+          "The writer saw that each previous dream left something valuable.",
+          "The writer reassures readers and encourages them to keep exploring."
+        ]
+      },
+      {
+        "qid": "5ad02154-c425-4452-8c69-f99e6d61bcd3",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "aspire",
+            "meaning": "열망하다"
+          },
+          {
+            "word": "renowned",
+            "meaning": "유명한, 명성 있는"
+          },
+          {
+            "word": "determined",
+            "meaning": "굳게 결심한"
+          },
+          {
+            "word": "accumulate",
+            "meaning": "축적하다, 모으다"
+          },
+          {
+            "word": "peculiar",
+            "meaning": "이상한, 기묘한"
+          },
+          {
+            "word": "assist",
+            "meaning": "돕다"
+          },
+          {
+            "word": "evolve",
+            "meaning": "서서히 발전하다"
+          },
+          {
+            "word": "constitute",
+            "meaning": "구성하다, ~이 되다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "53cd2917-eccd-4ec0-8244-41bb9b888a38",
+        "q": "Summarize the passage in about three English sentences, including (1) what happened to the writer's dreams, (2) what the writer realized, and (3) the writer's advice.",
+        "wordLimit": 70,
+        "sampleAnswer": "The writer's dream changed from a firefighter to a singer and then to a science teacher, which made the writer feel embarrassed. However, the writer realized that changing dreams is natural and that each old dream taught something valuable. The writer advises readers not to worry and to keep exploring themselves.",
+        "rubric": "① 꿈의 변화 ② 깨달음(자연스러움 + 예전 꿈의 가치) ③ 조언 ④ 영어 3문장 내외, 정확성"
+      },
+      {
+        "qid": "1150c3d8-b147-4bd4-b91a-78c65a10b65d",
+        "q": "우리말로 쓰시오: 'if you have yet to discover a clear dream'에서 have yet to의 의미를 쓰고, 'Rather, what matters is ~'에서 Rather가 앞 문장과 어떤 관계를 만드는지 설명하시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "have yet to + 동사원형은 '아직 ~하지 않았다'는 뜻으로, 아직 분명한 꿈을 찾지 못했다는 의미이다. Rather는 앞 문장의 '정답을 갖는 것이 중요한 것이 아니다'와 대조하여 '오히려 중요한 것은 계속 탐색하는 것'이라는 올바른 생각을 제시한다.",
+        "rubric": "① have yet to = 아직 ~하지 않았다 ② Rather = 앞 내용과 대조, 대신 올바른 내용을 제시, 두 가지 모두 쓰면 만점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "cf6e40a5-7c2d-4fdb-96ec-1ffe0d56b934",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '이 경험들은 내가 더 좋은 선생님이 되는 데 기여할 것이다.' <조건> contribute to를 사용할 것 / make를 알맞은 형태로 바꿀 것",
+        "wordLimit": 15,
+        "sampleAnswer": "These experiences will contribute to making me a better teacher.",
+        "rubric": "① will contribute to ② making(전치사 to + 동명사) ③ me a better teacher(5형식) ④ 의미 일치"
+      },
+      {
+        "qid": "3c86d9a7-858a-4de4-9056-9090fb7bdd7f",
+        "q": "다음 우리말을 <조건>에 맞게 영작하시오. '중요한 것은 정답을 갖는 것이 아니라 계속 탐색하는 것이다.' <조건> 관계대명사 what으로 시작하고 not A but B를 사용할 것",
+        "wordLimit": 16,
+        "sampleAnswer": "What matters is not having the right answer but continuing to explore.",
+        "rubric": "① What matters is ② not A but B ③ A·B 모두 동명사(having / continuing)로 병렬 ④ 의미 일치"
+      },
+      {
+        "qid": "5b4bdb38-f495-4877-985b-8298e05ab123",
+        "q": "Some people say teenagers should decide on their future careers as early as possible. Do you agree? Write your opinion in English, referring to the passage.",
+        "wordLimit": 80,
+        "sampleAnswer": "I disagree. As the passage says, we gain a deeper understanding of ourselves as we mature, so an early decision may not reflect who we really are. Moreover, even dreams we give up can teach us valuable skills. Therefore, teenagers should explore various interests before making a final decision.",
+        "rubric": "① 찬반 입장 명확 ② 본문 내용을 근거로 활용 ③ 논리적 연결어 사용 ④ 영어 문장의 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "aspire to become",
+        "surface": "aspired to become",
+        "pos": "숙",
+        "meaning": "~이 되기를 열망하다",
+        "sentence": "At the age of eight, I aspired to become a firefighter."
+      },
+      {
+        "word": "renowned",
+        "surface": "renowned",
+        "pos": "형",
+        "meaning": "유명한, 명성 있는",
+        "sentence": "By eleven, I was fantasizing about becoming a renowned singer."
+      },
+      {
+        "word": "aspiration",
+        "surface": "aspirations",
+        "pos": "명",
+        "meaning": "열망, 포부",
+        "sentence": "Whenever my aspirations shifted, I felt somewhat embarrassed, as though I had failed at something significant."
+      },
+      {
+        "word": "accumulate",
+        "surface": "accumulate",
+        "pos": "동",
+        "meaning": "쌓다, 축적하다",
+        "sentence": "As we mature, we accumulate knowledge about the world and gain a deeper understanding of ourselves."
+      },
+      {
+        "word": "prove to be",
+        "surface": "proved to be",
+        "pos": "숙",
+        "meaning": "~인 것으로 판명되다",
+        "sentence": "Remarkably, none of my previous dreams proved to be a waste of time."
+      },
+      {
+        "word": "evolve",
+        "surface": "evolve",
+        "pos": "동",
+        "meaning": "발전하다, 진화하다",
+        "sentence": "Therefore, if you have yet to discover a clear dream, or if your dream continues to evolve, there is no reason for concern."
+      }
+    ]
+  }
+}
