@@ -1,0 +1,50 @@
+{
+  "id": "e3-A",
+  "grade": "초3",
+  "form": "A",
+  "title": "초3 레벨테스트 A형",
+  "description": "초급~중급: 알파벳·기초 단어·기본 문장(I am / This is)·아주 짧은 글 읽기",
+  "timeMinutes": 30,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "Hi!",
+      "text": "Hi! My name is Jisu.\nI am nine years old.\nI like cats.\nI have a cat. Its name is Coco.\nCoco is white."
+    },
+    {
+      "id": "p2",
+      "title": "What's this?",
+      "text": "A: What's this?\nB: It's a ruler.\nA: Is it your ruler?\nB: No, it isn't. It's Tom's."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 단어를 고르세요.", "stimulus": "🍎", "choices": ["apple", "banana", "orange", "grape"], "answer": 0, "points": 4, "explanation": "🍎 사과 = apple" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 단어를 고르세요.", "stimulus": "🐶", "choices": ["cat", "dog", "pig", "bird"], "answer": 1, "points": 4, "explanation": "🐶 개 = dog" },
+    { "id": "v3", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "'빨간색'을 영어로 고르세요.", "stimulus": "🔴", "choices": ["blue", "yellow", "red", "green"], "answer": 2, "points": 4, "explanation": "빨간색 = red (blue 파란색, yellow 노란색, green 초록색)" },
+    { "id": "v4", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "숫자 5를 영어로 고르세요.", "stimulus": "5", "choices": ["two", "four", "six", "five"], "answer": 3, "points": 4, "explanation": "5 = five (two 2, four 4, six 6)" },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "pencil", "choices": ["연필", "지우개", "가방", "책"], "answer": 0, "points": 4, "explanation": "pencil = 연필 (지우개 eraser, 가방 bag, 책 book)" },
+    { "id": "v6", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "happy", "choices": ["슬픈", "행복한", "배고픈", "졸린"], "answer": 1, "points": 4, "explanation": "happy = 행복한 (슬픈 sad, 배고픈 hungry, 졸린 sleepy)" },
+    { "id": "v7", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "같은 종류가 아닌 것을 고르세요.", "choices": ["cat", "dog", "rabbit", "desk"], "answer": 3, "points": 4, "explanation": "cat, dog, rabbit은 동물이고 desk(책상)는 물건이다." },
+    { "id": "v8", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "첫소리가 다른 단어를 고르세요.", "choices": ["bag", "ball", "cup", "bed"], "answer": 2, "points": 4, "explanation": "bag, ball, bed는 [b] 소리로 시작하고 cup은 [k] 소리로 시작한다." },
+    { "id": "v9", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "주어진 단어와 반대 뜻의 단어를 고르세요.", "stimulus": "big", "choices": ["small", "tall", "long", "fast"], "answer": 0, "points": 4, "explanation": "big(큰) ↔ small(작은)" },
+    { "id": "v10", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "아침에 만났을 때 하는 인사를 고르세요.", "choices": ["Good night.", "Good morning.", "Thank you.", "Goodbye."], "answer": 1, "points": 4, "explanation": "아침 인사 = Good morning. (Good night 잘 자, Goodbye 잘 가)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "알파벳 b의 대문자를 고르세요.", "stimulus": "b", "choices": ["D", "P", "B", "R"], "answer": 2, "points": 4, "explanation": "b의 대문자는 B이다. (d와 헷갈리지 않기)" },
+    { "id": "g2", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I ____ Mina.", "choices": ["am", "is", "are", "be"], "answer": 0, "points": 4, "explanation": "I 다음에는 am을 쓴다. I am Mina. (나는 미나야.)" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "This ____ my bag.", "choices": ["am", "is", "are", "be"], "answer": 1, "points": 4, "explanation": "This 다음에는 is를 쓴다. This is my bag. (이것은 내 가방이야.)" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I have ____ apple.", "choices": ["a", "an", "two", "three"], "answer": 1, "points": 4, "explanation": "apple은 모음(a) 소리로 시작해서 an을 쓴다. two·three 뒤에는 apples처럼 -s가 붙어야 한다." },
+    { "id": "g5", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "'How are you?'에 알맞은 대답을 고르세요.", "choices": ["I'm ten.", "It's a dog.", "I'm fine, thank you.", "Yes, it is."], "answer": 2, "points": 4, "explanation": "How are you?(잘 지내?) → I'm fine, thank you.(잘 지내, 고마워.)" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "You ____ my friend.", "choices": ["am", "is", "are", "be"], "answer": 2, "points": 4, "explanation": "You 다음에는 are를 쓴다. You are my friend. (너는 내 친구야.)" },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "지수는 몇 살인가요?", "choices": ["7살", "8살", "9살", "10살"], "answer": 2, "points": 4, "explanation": "'I am nine years old.' → 9살" },
+    { "id": "r2", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "지수가 좋아하는 동물은 무엇인가요?", "choices": ["dogs", "cats", "birds", "fish"], "answer": 1, "points": 4, "explanation": "'I like cats.' → 고양이" },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "지수의 고양이 이름은 무엇인가요?", "choices": ["Jisu", "Mimi", "Coco", "Toto"], "answer": 2, "points": 4, "explanation": "'Its name is Coco.' → 코코" },
+    { "id": "r4", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "코코는 무슨 색인가요?", "choices": ["black", "brown", "yellow", "white"], "answer": 3, "points": 4, "explanation": "'Coco is white.' → 흰색" },
+    { "id": "r5", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "자(ruler)는 누구의 것인가요?", "choices": ["Tom의 것", "B의 것", "A의 것", "선생님의 것"], "answer": 0, "points": 4, "explanation": "'No, it isn't. It's Tom's.' → B의 것이 아니라 Tom의 것이다." },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "그림을 보고 빈칸에 알맞은 알파벳 한 글자를 쓰세요.", "stimulus": "🐱  c _ t", "answer": "a", "accept": ["cat"], "points": 4, "explanation": "고양이 = cat → 빈칸은 a" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "그림을 보고 단어를 쓰세요.", "stimulus": "📖", "hint": "b _ _ k", "answer": "book", "points": 4, "explanation": "책 = book" },
+    { "id": "w3", "section": "writing", "difficulty": 2, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "엄마", "answer": "mom", "accept": ["mother", "mommy", "mum"], "points": 4, "explanation": "엄마 = mom (mother, mommy도 정답)" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 빈칸에 알맞은 단어를 쓰세요.  나는 사과를 좋아한다.", "stimulus": "I ______ apples.", "answer": "like", "accept": ["I like apples"], "points": 4, "explanation": "좋아하다 = like → I like apples." }
+  ]
+}

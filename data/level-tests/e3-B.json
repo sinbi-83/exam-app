@@ -1,0 +1,50 @@
+{
+  "id": "e3-B",
+  "grade": "초3",
+  "form": "B",
+  "title": "초3 레벨테스트 B형",
+  "description": "중급~고급: 생활 단어·be동사(am/is/are)·can·복수형·짧은 글과 초대장 읽기·문장 쓰기",
+  "timeMinutes": 35,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "I Love Sundays!",
+      "text": "My name is Minho. I am ten years old.\nOn Sundays, I go to the park with my dad.\nWe ride our bikes there.\nAfter that, we eat ice cream. I like chocolate ice cream.\nMy dad likes strawberry ice cream.\nI love Sundays!"
+    },
+    {
+      "id": "p2",
+      "title": "Birthday Party",
+      "text": "Dear Yuna,\nCome to my birthday party!\nDate: Saturday, May 10\nTime: 2 p.m.\nPlace: My house\nSee you!\nJiwoo"
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 단어를 고르세요.", "stimulus": "🦒", "choices": ["elephant", "giraffe", "monkey", "tiger"], "answer": 1, "points": 4, "explanation": "🦒 기린 = giraffe" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "Wednesday", "choices": ["월요일", "화요일", "수요일", "목요일"], "answer": 2, "points": 4, "explanation": "Wednesday = 수요일 (Monday 월, Tuesday 화, Thursday 목)" },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "가족을 나타내는 단어가 아닌 것을 고르세요.", "choices": ["father", "sister", "grandma", "teacher"], "answer": 3, "points": 4, "explanation": "teacher(선생님)는 가족이 아니다. father 아빠, sister 언니·누나·여동생, grandma 할머니" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "It's cold. Wear your ____.", "choices": ["sunglasses", "swimsuit", "jacket", "sandals"], "answer": 2, "points": 4, "explanation": "추우니까(cold) 재킷(jacket)을 입어야 한다." },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "서로 반대 뜻의 짝이 아닌 것을 고르세요.", "choices": ["hot – cold", "tall – short", "fast – slow", "big – large"], "answer": 3, "points": 4, "explanation": "big과 large는 둘 다 '큰'이라는 뜻으로 비슷한 말이다." },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "hungry", "choices": ["배고픈", "목마른", "졸린", "아픈"], "answer": 0, "points": 4, "explanation": "hungry = 배고픈 (목마른 thirsty, 졸린 sleepy, 아픈 sick)" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 장소를 고르세요.", "stimulus": "I brush my teeth in the ____.", "choices": ["kitchen", "bathroom", "garden", "classroom"], "answer": 1, "points": 4, "explanation": "이를 닦는(brush my teeth) 곳은 욕실(bathroom)이다." },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: Thank you.  B: You're ____.", "choices": ["good", "fine", "happy", "welcome"], "answer": 3, "points": 4, "explanation": "Thank you.(고마워.) → You're welcome.(천만에.)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "They ____ my friends.", "choices": ["am", "is", "are", "be"], "answer": 2, "points": 4, "explanation": "They(그들) 다음에는 are를 쓴다." },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "복수형(여러 개)이 바르지 않은 것을 고르세요.", "choices": ["book – books", "box – boxes", "baby – babys", "dog – dogs"], "answer": 2, "points": 4, "explanation": "baby의 복수형은 y를 i로 바꾸고 -es를 붙인 babies이다." },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I can ____.", "choices": ["swim", "swims", "swimming", "to swim"], "answer": 0, "points": 4, "explanation": "can 다음에는 동사원형을 쓴다. I can swim." },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "'Can you ride a bike?'에 '응'이라고 대답하는 말을 고르세요.", "choices": ["Yes, I do.", "Yes, I can.", "Yes, it is.", "No, I am."], "answer": 1, "points": 4, "explanation": "Can you ~?로 물으면 Yes, I can. / No, I can't.로 대답한다." },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "He ____ a cap.", "choices": ["have", "has", "haves", "having"], "answer": 1, "points": 4, "explanation": "He(그) 다음에는 have가 아니라 has를 쓴다." },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "고양이가 상자 '안에' 있어요. 빈칸에 알맞은 말을 고르세요.", "stimulus": "The cat is ____ the box.", "choices": ["on", "under", "in", "by"], "answer": 2, "points": 4, "explanation": "~ 안에 = in (on 위에, under 아래에, by 옆에)" },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "'She is a nurse.'를 묻는 문장(의문문)으로 바르게 바꾼 것을 고르세요.", "choices": ["She is a nurse?", "Does she a nurse?", "Are she a nurse?", "Is she a nurse?"], "answer": 3, "points": 4, "explanation": "be동사(is)를 맨 앞으로 보낸다. Is she a nurse?" },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "민호는 일요일에 누구와 공원에 가나요?", "choices": ["엄마", "아빠", "누나", "친구"], "answer": 1, "points": 4, "explanation": "'I go to the park with my dad.' → 아빠" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "민호와 아빠는 공원에서 무엇을 하나요?", "choices": ["축구를 한다", "연을 날린다", "수영을 한다", "자전거를 탄다"], "answer": 3, "points": 4, "explanation": "'We ride our bikes there.' → 자전거를 탄다" },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "아빠가 좋아하는 아이스크림은 무엇인가요?", "choices": ["chocolate", "vanilla", "strawberry", "mint"], "answer": 2, "points": 4, "explanation": "'My dad likes strawberry ice cream.' → 딸기. 초콜릿은 민호가 좋아하는 맛이다." },
+    { "id": "r4", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "글의 내용과 같은 것을 고르세요.", "choices": ["민호와 아빠는 자전거를 탄 뒤 아이스크림을 먹는다.", "민호는 아홉 살이다.", "민호는 토요일을 가장 좋아한다.", "민호는 딸기 아이스크림을 좋아한다."], "answer": 0, "points": 4, "explanation": "'After that, we eat ice cream.' 민호는 열 살이고, 일요일을 좋아하며, 초콜릿 아이스크림을 좋아한다." },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "생일 파티는 무슨 요일에 하나요?", "choices": ["금요일", "토요일", "일요일", "월요일"], "answer": 1, "points": 4, "explanation": "'Date: Saturday, May 10' → 토요일" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "이 초대장을 쓴 사람은 누구인가요?", "choices": ["Yuna", "Minho", "Jiwoo", "Mom"], "answer": 2, "points": 4, "explanation": "'Dear Yuna'는 받는 사람, 맨 아래 'Jiwoo'가 쓴 사람이다." },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "그림을 보고 단어를 쓰세요.", "stimulus": "🐟", "hint": "f _ _ h", "answer": "fish", "points": 4, "explanation": "물고기 = fish" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "학교", "answer": "school", "points": 4, "explanation": "학교 = school" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 단어를 바르게 배열하여 문장을 쓰세요.  (나는 바나나를 좋아한다.)", "stimulus": "( like / I / bananas )", "answer": "I like bananas.", "points": 4, "explanation": "주어(I) + 동사(like) + 목적어(bananas) → I like bananas." },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> can을 사용할 것", "stimulus": "나는 수영을 할 수 있다.", "answer": "I can swim.", "points": 4, "explanation": "can + 동사원형 → I can swim." }
+  ]
+}

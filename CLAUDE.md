@@ -110,6 +110,14 @@ public/brand/signature.png  ← fallback 서명 (원본: 싸인.png)
   - 단독 지문: `data/passages/*.json` 에 같은 `"wordbook"` 칸 → `add-passage` 가 같이 저장.
   - 이미 DB 에 있는 지문의 단어장만 따로: `data/wordbooks/*.json` + `npm run add-wordbook` (또는 세트는 `add-passage-set-questions … --wordbook-only`).
 
+### 레벨테스트 (API 호출 없음, 2026-10-25)
+
+- 경로: `/materials/level-tests` (학년 폴더 초3~고3) → `/materials/level-tests/[e3|…|h3]` → `/[A|B]/print?mode=test|sheet|key` (시험지·답안지·정답해설), `/[A|B]/grade` (종이 답 입력·채점), `/[A|B]/take` (태블릿·휴대폰 응시), `/materials/level-tests/results/[id]` (결과·상담용 결과지 `/print`)
+- 향미님 결정: 학년마다 **A형 = 초급~중급, B형 = 중급~고급**. 영역 = 어휘·문법·독해·서술형(**단어 쓰기·짧은 영작만**). **듣기 없음**. 종이 인쇄 위주지만 태블릿 응시도 갖춤.
+- 시험지 내용 = `data/level-tests/{slug}-{A|B}.json` (Claude Code 가 직접 작성, 형식은 `types/levelTest.ts`). 25문항 × 4점 = 100점, 객관식 보기 4개. 새 파일을 만들면 `lib/levelTest.ts` 의 import + `LEVEL_TESTS` 배열에 한 줄 추가.
+- 추천 반 기준표 = `config/levelTestBands.ts` (4단계 학교형/일반학원형/상위학원형/선행형 + 기초반, A형 고득점 → B형 추가 응시 권장).
+- 응시 결과 = DB 표 `level_test_results` (`level-test-results-migration.sql`, 한 줄 SQL 은 향미님이 SQL Editor 에서 실행).
+
 ---
 
 ## 안전 규칙

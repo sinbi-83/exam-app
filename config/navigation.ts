@@ -7,6 +7,7 @@
 // 6단계 A (2026-09-29): 문항 검색(/materials/questions/search)과 외부지문저장소를 자료 아래 메뉴 항목으로 꺼냈다
 //   (전에는 자료·지문 첫 화면 카드에서만 들어갈 수 있었다). 주소는 5단계 그대로.
 // 지문 단어장 (2026-10-19): 외부지문 🔵 단어 → A4 단어지·단어 테스트지 (/materials/wordbooks).
+// 레벨테스트 (2026-10-25): 학년(초3~고3)별 A형·B형 시험지 인쇄·태블릿 응시·채점·추천 반 (/materials/level-tests).
 
 export type NavItem = {
   label: string
@@ -32,6 +33,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { label: '문항 검색', href: '/materials/questions/search', icon: '🔎' },
       { label: '단어은행', href: '/materials/vocabulary', icon: '📒' },
       { label: '지문 단어장', href: '/materials/wordbooks', icon: '📗' },
+      { label: '레벨테스트', href: '/materials/level-tests', icon: '📏' },
     ],
   },
   {
