@@ -1,0 +1,2129 @@
+{
+  "school": {
+    "tagged_body": "How Does AI Learn?\n\n{{v:Artificial intelligence}}, or AI, is everywhere today. It {{v:recommends}} videos and {{v:translates}} languages. It even {{g:helps doctors find|help + 목적어 + 동사원형: (목적어)가 ~하도록 돕다}} {{v:diseases}}. But how does AI learn?\n\n{{t:AI learns a little like children}}. Let's say you {{g:want to teach|to부정사 명사적 용법(목적어): ~하기를 원하다}} a computer about cats. First, you show the computer {{v:thousands of}} pictures. Each picture has a {{v:label}}: \"cat\" or \"not cat.\" The computer studies these {{v:examples}}. Slowly, it finds {{v:patterns}}, like {{v:pointed}} ears and {{v:whiskers}}. {{g:When it makes a mistake|시간 접속사 when + 주어 + 동사: ~할 때}}, it changes its {{v:guess}} and tries again. {{g:The more examples it sees, the better it becomes|the 비교급 + 주어 + 동사, the 비교급 + 주어 + 동사: ~할수록 더 …하다}}.\n\nBut AI is not {{v:perfect}}. It only learns from {{v:data}}, and people give it this data. {{g:If the data has mistakes|조건의 if: if절은 미래의 일이라도 현재시제(has)를 쓴다}}, the AI will learn those mistakes, too. For example, let's say an AI sees pictures of white cats {{v:most of the time}}. Then it {{g:may not|may not + 동사원형: ~하지 못할지도 모른다}} {{v:recognize}} black cats well. For the same reason, AI can sometimes make {{v:unfair}} {{v:decisions}} about people.\n\nSo we {{g:should always check|should + 동사원형: ~해야 한다 (빈도부사 always는 조동사 뒤)}} AI's answers again. {{t:AI is a powerful tool}}, but it cannot {{v:take the place of}} human thinking and {{v:judgment}}.",
+    "tags": {
+      "vocab": [
+        "artificial intelligence",
+        "recommend",
+        "translate",
+        "disease",
+        "thousands of",
+        "label",
+        "example",
+        "pattern",
+        "pointed",
+        "whisker",
+        "guess",
+        "perfect",
+        "data",
+        "most of the time",
+        "recognize",
+        "unfair",
+        "decision",
+        "take the place of",
+        "judgment"
+      ],
+      "grammar": [
+        "help + 목적어 + 동사원형",
+        "to부정사 명사적 용법",
+        "시간 접속사 when",
+        "the 비교급, the 비교급",
+        "조건의 if (현재시제)",
+        "may not + 동사원형",
+        "should + 동사원형"
+      ],
+      "topic": [
+        "AI의 학습 방식",
+        "AI의 한계와 데이터",
+        "설명문 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "0c5b6ca1-f0e9-4bfe-8b6d-b7373574686d",
+        "type": "mc",
+        "q": "What is the passage mainly about?",
+        "choices": [
+          "How to take good pictures of cats",
+          "Why children like computers",
+          "How AI learns and why it is not perfect",
+          "How doctors find diseases",
+          "How to learn new languages"
+        ],
+        "answer": "How AI learns and why it is not perfect",
+        "explanation": "AI가 어떻게 배우는지, 그리고 왜 완벽하지 않은지에 대한 글이다."
+      },
+      {
+        "qid": "6862adc0-2653-4756-a796-ac924ec932e7",
+        "type": "mc",
+        "q": "Which is NOT something AI does in the passage?",
+        "choices": [
+          "It cooks food for people.",
+          "It recommends videos.",
+          "It translates languages.",
+          "It helps doctors find diseases.",
+          "It learns from data."
+        ],
+        "answer": "It cooks food for people.",
+        "explanation": "영상 추천, 번역, 의사가 질병을 찾도록 돕기는 나오지만 요리는 나오지 않는다."
+      },
+      {
+        "qid": "2d018b9e-a0a8-4033-8f8c-ab75dd84046a",
+        "type": "mc",
+        "q": "The writer says AI learns a little like ____.",
+        "choices": [
+          "doctors",
+          "cats",
+          "teachers",
+          "robots",
+          "children"
+        ],
+        "answer": "children",
+        "explanation": "'AI learns a little like children.'"
+      },
+      {
+        "qid": "ec57affb-2ebb-4441-a702-41c7f998de82",
+        "type": "mc",
+        "q": "In the example, what does the computer learn about?",
+        "choices": [
+          "Dogs",
+          "Cats",
+          "Doctors",
+          "Languages",
+          "Videos"
+        ],
+        "answer": "Cats",
+        "explanation": "고양이를 알아보도록 컴퓨터를 가르치는 예시이다."
+      },
+      {
+        "qid": "244dfab9-6c7c-4839-83bc-38c16514de02",
+        "type": "mc",
+        "q": "What does each picture have?",
+        "choices": [
+          "The name of a doctor",
+          "A price",
+          "A short video",
+          "A label, \"cat\" or \"not cat\"",
+          "A funny story"
+        ],
+        "answer": "A label, \"cat\" or \"not cat\"",
+        "explanation": "'Each picture has a label: \"cat\" or \"not cat.\"'"
+      },
+      {
+        "qid": "ad09a5e7-b148-46ac-be61-48f50f286b90",
+        "type": "mc",
+        "q": "What patterns does the computer find?",
+        "choices": [
+          "Pointed ears and whiskers",
+          "Long tails and big eyes",
+          "White and black colors",
+          "Round ears and short legs",
+          "Sharp teeth and wings"
+        ],
+        "answer": "Pointed ears and whiskers",
+        "explanation": "'it finds patterns, like pointed ears and whiskers.'"
+      },
+      {
+        "qid": "7ed63891-f1f3-4505-a810-b84e89741eaa",
+        "type": "mc",
+        "q": "What does the computer do when it makes a mistake?",
+        "choices": [
+          "It stops learning.",
+          "It asks a doctor for help.",
+          "It changes its guess and tries again.",
+          "It deletes all the pictures.",
+          "It shows a video."
+        ],
+        "answer": "It changes its guess and tries again.",
+        "explanation": "'When it makes a mistake, it changes its guess and tries again.'"
+      },
+      {
+        "qid": "265afa15-0344-492d-a6ab-182577562e58",
+        "type": "mc",
+        "q": "\"The more examples it sees, the better it becomes.\" What does this mean?",
+        "choices": [
+          "AI needs only one example.",
+          "AI gets worse with more examples.",
+          "Examples are not important to AI.",
+          "AI can see only a few pictures.",
+          "More examples help AI learn better."
+        ],
+        "answer": "More examples help AI learn better.",
+        "explanation": "the 비교급 ~, the 비교급 …: 예시를 더 많이 볼수록 더 나아진다."
+      },
+      {
+        "qid": "f579b3cd-e172-426c-9bb6-52b6f52c9c04",
+        "type": "mc",
+        "q": "Where does AI get its data?",
+        "choices": [
+          "From cats",
+          "From people",
+          "From itself only",
+          "From its dreams",
+          "From the weather"
+        ],
+        "answer": "From people",
+        "explanation": "'It only learns from data, and people give it this data.'"
+      },
+      {
+        "qid": "912a6b10-b31e-443f-81f9-d2cfbafd4d55",
+        "type": "mc",
+        "q": "What happens if the data has mistakes?",
+        "choices": [
+          "The AI fixes the mistakes by itself.",
+          "The AI stops working.",
+          "The AI becomes perfect.",
+          "The AI learns those mistakes, too.",
+          "People cannot use the AI."
+        ],
+        "answer": "The AI learns those mistakes, too.",
+        "explanation": "'If the data has mistakes, the AI will learn those mistakes, too.'"
+      },
+      {
+        "qid": "c2afd40f-bb5c-4578-94be-863444b51cab",
+        "type": "mc",
+        "q": "An AI sees pictures of white cats most of the time. What may happen?",
+        "choices": [
+          "It may not recognize white cats.",
+          "It may become a cat.",
+          "It may not recognize black cats well.",
+          "It may find diseases.",
+          "It may like dogs more."
+        ],
+        "answer": "It may not recognize black cats well.",
+        "explanation": "'Then it may not recognize black cats well.' 흰 고양이 사진만 주로 보면 검은 고양이를 잘 못 알아본다."
+      },
+      {
+        "qid": "8f9a15a6-f88f-4f50-8715-93e8a3bd8155",
+        "type": "mc",
+        "q": "Why can AI sometimes make unfair decisions about people?",
+        "choices": [
+          "Because it does not like people",
+          "Because it can learn mistakes in its data",
+          "Because it works too fast",
+          "Because it has no pictures",
+          "Because children teach it"
+        ],
+        "answer": "Because it can learn mistakes in its data",
+        "explanation": "'For the same reason' = 데이터에 있는 실수를 그대로 배우기 때문이다."
+      },
+      {
+        "qid": "75ef09a9-72ac-4905-87da-a43e0cf7b2f7",
+        "type": "mc",
+        "q": "What should we always do?",
+        "choices": [
+          "Believe everything AI says",
+          "Stop using AI",
+          "Give AI more cat pictures",
+          "Teach AI about whiskers",
+          "Check AI's answers again"
+        ],
+        "answer": "Check AI's answers again",
+        "explanation": "'So we should always check AI's answers again.'"
+      },
+      {
+        "qid": "2c68aa91-fe3c-4524-9def-77f390cc989a",
+        "type": "mc",
+        "q": "What does \"it\" in \"it changes its guess\" mean?",
+        "choices": [
+          "The computer",
+          "The picture",
+          "The cat",
+          "The child",
+          "The label"
+        ],
+        "answer": "The computer",
+        "explanation": "it은 앞 문장의 the computer를 가리킨다."
+      },
+      {
+        "qid": "925ca979-5586-4946-bf02-60feb7936c2b",
+        "type": "mc",
+        "q": "According to the writer, AI is a powerful ____.",
+        "choices": [
+          "friend",
+          "doctor",
+          "child",
+          "tool",
+          "teacher"
+        ],
+        "answer": "tool",
+        "explanation": "'AI is a powerful tool.'"
+      },
+      {
+        "qid": "848d3616-3626-4df4-a118-2acf08fa1757",
+        "type": "mc",
+        "q": "Which is true about the passage?",
+        "choices": [
+          "AI is perfect.",
+          "AI cannot take the place of human thinking.",
+          "The computer sees only ten pictures.",
+          "AI never makes mistakes.",
+          "Data never has mistakes."
+        ],
+        "answer": "AI cannot take the place of human thinking.",
+        "explanation": "'it cannot take the place of human thinking and judgment.'"
+      },
+      {
+        "qid": "56e85bc5-5151-43f4-99ef-3246582df145",
+        "type": "mc",
+        "q": "Which is NOT true about the passage?",
+        "choices": [
+          "AI can make mistakes.",
+          "People give AI data.",
+          "AI finds patterns in examples.",
+          "AI can help doctors.",
+          "AI can learn without any data."
+        ],
+        "answer": "AI can learn without any data.",
+        "explanation": "AI는 사람이 준 데이터로만 배운다. 데이터 없이 배울 수 없다."
+      },
+      {
+        "qid": "d81c94ba-6cbe-423e-a931-41d3abb04a04",
+        "type": "mc",
+        "q": "Which sentence is correct, like \"It helps doctors find diseases\"?",
+        "choices": [
+          "My sister helps me doing my homework.",
+          "My sister helps me does my homework.",
+          "My sister helps me do my homework.",
+          "My sister helps me did my homework.",
+          "My sister help me do my homework."
+        ],
+        "answer": "My sister helps me do my homework.",
+        "explanation": "help + 목적어 + 동사원형(do). 주어가 3인칭 단수이므로 helps."
+      },
+      {
+        "qid": "e23186fd-26ba-4101-9e31-8a68e219717c",
+        "type": "order",
+        "items": [
+          "It finds patterns, like pointed ears and whiskers.",
+          "You show the computer thousands of pictures.",
+          "When it makes a mistake, it changes its guess and tries again.",
+          "The computer studies the examples.",
+          "Each picture has a label: \"cat\" or \"not cat.\""
+        ],
+        "answer": [
+          "You show the computer thousands of pictures.",
+          "Each picture has a label: \"cat\" or \"not cat.\"",
+          "The computer studies the examples.",
+          "It finds patterns, like pointed ears and whiskers.",
+          "When it makes a mistake, it changes its guess and tries again."
+        ]
+      },
+      {
+        "qid": "946e8cbd-75da-4dfe-8e5c-fefba9d09138",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "artificial intelligence",
+            "meaning": "인공지능"
+          },
+          {
+            "word": "recommend",
+            "meaning": "추천하다"
+          },
+          {
+            "word": "translate",
+            "meaning": "번역하다"
+          },
+          {
+            "word": "disease",
+            "meaning": "질병"
+          },
+          {
+            "word": "pattern",
+            "meaning": "패턴, 특징"
+          },
+          {
+            "word": "whisker",
+            "meaning": "(고양이) 수염"
+          },
+          {
+            "word": "recognize",
+            "meaning": "알아보다"
+          },
+          {
+            "word": "judgment",
+            "meaning": "판단"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "8910c947-5484-4a3b-b58f-208faf22bfc7",
+        "q": "우리말로 쓰시오: 컴퓨터가 고양이를 알아보는 법을 배우는 과정을 순서대로 쓰시오.",
+        "wordLimit": 60,
+        "sampleAnswer": "① 고양이인지 아닌지 이름표가 붙은 사진 수천 장을 컴퓨터에 보여 준다. ② 컴퓨터가 예시를 공부한다. ③ 뾰족한 귀, 수염 같은 패턴을 찾는다. ④ 틀리면 추측을 바꾸고 다시 해 본다.",
+        "rubric": "네 단계를 순서대로 쓰면 만점, 세 단계면 부분 점수",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "449a4260-3bf1-469a-a401-8ef8bb6c8fda",
+        "q": "What happens if the data has mistakes? Answer in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "If the data has mistakes, the AI will learn those mistakes, too.",
+        "rubric": "① if the data has mistakes ② the AI will learn those mistakes ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "7edb7853-5e5b-4c12-bb54-935602c9acec",
+        "q": "우리말로 쓰시오: 흰 고양이 사진 예시가 보여 주는 AI의 문제점을 쓰시오.",
+        "wordLimit": 50,
+        "sampleAnswer": "AI가 대부분 흰 고양이 사진만 보고 배우면 검은 고양이를 잘 알아보지 못한다. AI는 받은 데이터로만 배우기 때문에 데이터가 치우치면 AI도 틀린다.",
+        "rubric": "① 검은 고양이를 잘 못 알아봄 ② 데이터로만 배우기 때문(데이터 문제)",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "e9bf91ea-589d-48c0-8d7b-73bd86fdd1d2",
+        "q": "다음 우리말을 영어로 쓰시오. '그것은 예시를 더 많이 볼수록, 더 나아진다.' <조건> the 비교급, the 비교급을 사용할 것",
+        "wordLimit": 10,
+        "sampleAnswer": "The more examples it sees, the better it becomes.",
+        "rubric": "① The more examples ② it sees ③ the better ④ it becomes"
+      },
+      {
+        "qid": "8cefc974-61f9-4fef-9b77-b8c47ff4b68a",
+        "q": "Do you check AI's answers? Write your answer and the reason in 2 English sentences.",
+        "wordLimit": 30,
+        "sampleAnswer": "Yes, I check AI's answers. AI can make mistakes, so I look for the answer in my textbook again.",
+        "rubric": "① 예/아니오 ② 이유 ③ 완전한 영어 문장 2개"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "artificial intelligence",
+        "surface": "Artificial intelligence",
+        "pos": "명",
+        "meaning": "인공지능",
+        "sentence": "Artificial intelligence, or AI, is everywhere today."
+      },
+      {
+        "word": "recommend",
+        "surface": "recommends",
+        "pos": "동",
+        "meaning": "추천하다",
+        "sentence": "It recommends videos and translates languages."
+      },
+      {
+        "word": "translate",
+        "surface": "translates",
+        "pos": "동",
+        "meaning": "번역하다, 통역하다",
+        "sentence": "It recommends videos and translates languages."
+      },
+      {
+        "word": "disease",
+        "surface": "diseases",
+        "pos": "명",
+        "meaning": "질병",
+        "sentence": "It even helps doctors find diseases."
+      },
+      {
+        "word": "thousands of",
+        "surface": "thousands of",
+        "pos": "숙",
+        "meaning": "수천의, 수많은",
+        "sentence": "First, you show the computer thousands of pictures."
+      },
+      {
+        "word": "label",
+        "surface": "label",
+        "pos": "명",
+        "meaning": "라벨, 이름표",
+        "sentence": "Each picture has a label: \"cat\" or \"not cat.\""
+      },
+      {
+        "word": "example",
+        "surface": "examples",
+        "pos": "명",
+        "meaning": "예, 예시",
+        "sentence": "The computer studies these examples."
+      },
+      {
+        "word": "pattern",
+        "surface": "patterns",
+        "pos": "명",
+        "meaning": "패턴, (반복되는) 특징",
+        "sentence": "Slowly, it finds patterns, like pointed ears and whiskers."
+      },
+      {
+        "word": "pointed",
+        "surface": "pointed",
+        "pos": "형",
+        "meaning": "뾰족한",
+        "sentence": "Slowly, it finds patterns, like pointed ears and whiskers."
+      },
+      {
+        "word": "whisker",
+        "surface": "whiskers",
+        "pos": "명",
+        "meaning": "(고양이 등의) 수염",
+        "sentence": "Slowly, it finds patterns, like pointed ears and whiskers."
+      },
+      {
+        "word": "guess",
+        "surface": "guess",
+        "pos": "명",
+        "meaning": "추측",
+        "sentence": "When it makes a mistake, it changes its guess and tries again."
+      },
+      {
+        "word": "perfect",
+        "surface": "perfect",
+        "pos": "형",
+        "meaning": "완벽한",
+        "sentence": "But AI is not perfect."
+      },
+      {
+        "word": "data",
+        "surface": "data",
+        "pos": "명",
+        "meaning": "데이터, 자료",
+        "sentence": "It only learns from data, and people give it this data."
+      },
+      {
+        "word": "most of the time",
+        "surface": "most of the time",
+        "pos": "숙",
+        "meaning": "대부분의 경우, 대개",
+        "sentence": "For example, let's say an AI sees pictures of white cats most of the time."
+      },
+      {
+        "word": "recognize",
+        "surface": "recognize",
+        "pos": "동",
+        "meaning": "알아보다, 인식하다",
+        "sentence": "Then it may not recognize black cats well."
+      },
+      {
+        "word": "unfair",
+        "surface": "unfair",
+        "pos": "형",
+        "meaning": "불공평한, 부당한",
+        "sentence": "For the same reason, AI can sometimes make unfair decisions about people."
+      },
+      {
+        "word": "decision",
+        "surface": "decisions",
+        "pos": "명",
+        "meaning": "결정",
+        "sentence": "For the same reason, AI can sometimes make unfair decisions about people."
+      },
+      {
+        "word": "take the place of",
+        "surface": "take the place of",
+        "pos": "숙",
+        "meaning": "~을 대신하다",
+        "sentence": "AI is a powerful tool, but it cannot take the place of human thinking and judgment."
+      },
+      {
+        "word": "judgment",
+        "surface": "judgment",
+        "pos": "명",
+        "meaning": "판단, 판단력",
+        "sentence": "AI is a powerful tool, but it cannot take the place of human thinking and judgment."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "How Does AI Learn?\n\n{{v:Artificial intelligence}}, or AI, is everywhere today. It {{v:recommends}} videos, {{v:translates}} languages, and even {{g:helps doctors find|help + 목적어 + 동사원형: (목적어)가 ~하도록 돕다}} {{v:diseases}}. But {{g:have you ever wondered|현재완료(경험): ~해 본 적이 있니?}} {{g:how AI learns|간접의문문: 의문사 + 주어 + 동사}}?\n\n{{t:AI learns in a way that is a little like how children learn}}. {{g:Imagine teaching|imagine + 동명사: ~하는 것을 상상하다}} a computer to {{v:recognize}} cats. First, the computer {{g:is shown|수동태: be shown + 목적어 (~을 보게 되다)}} {{v:thousands of}} pictures, and each picture {{g:is labeled|수동태: be + p.p. (~라는 이름표가 붙다)}} \"cat\" or \"not cat.\" {{g:By studying|by + 동명사: ~함으로써}} these {{v:examples}}, the computer slowly finds {{v:patterns}}, such as {{v:pointed}} ears and {{v:whiskers}}. When it makes a mistake, it changes its {{v:guess}} and tries again. {{g:The more examples it sees, the better it becomes|the 비교급 + 주어 + 동사, the 비교급 + 주어 + 동사: ~할수록 더 …하다}}.\n\nHowever, AI is not {{v:perfect}}. It can only learn from the {{v:data}} {{g:that people give it|목적격 관계대명사 that: 앞의 the data를 꾸민다}}. If the data has mistakes, the AI will learn those mistakes, too. For example, if an AI {{g:is trained|수동태: be + p.p. (훈련되다)}} {{v:mostly}} with pictures of white cats, it may not recognize black cats well. Sometimes AI can even make {{v:unfair}} {{v:decisions}} about people for the same reason.\n\n{{g:That is why|That is why + 주어 + 동사: 그래서 ~하다 (그것이 ~하는 이유이다)}} we should always {{v:double-check}} {{g:what AI tells us|관계대명사 what: ~하는 것 (= the thing that)}}. {{t:AI is a powerful tool}}, but it cannot {{v:replace}} human thinking and {{v:judgment}}.",
+    "tags": {
+      "vocab": [
+        "artificial intelligence",
+        "recommend",
+        "translate",
+        "disease",
+        "recognize",
+        "thousands of",
+        "example",
+        "pattern",
+        "pointed",
+        "whisker",
+        "guess",
+        "perfect",
+        "data",
+        "mostly",
+        "unfair",
+        "decision",
+        "double-check",
+        "replace",
+        "judgment"
+      ],
+      "grammar": [
+        "help + 목적어 + 동사원형",
+        "현재완료(경험)",
+        "간접의문문",
+        "imagine + 동명사",
+        "수동태",
+        "by + 동명사",
+        "the 비교급, the 비교급",
+        "목적격 관계대명사 that",
+        "That is why",
+        "관계대명사 what"
+      ],
+      "topic": [
+        "AI의 학습 방식",
+        "AI의 한계와 데이터",
+        "설명문 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "ff4f2769-d42f-495a-9232-e73f71f5877f",
+        "type": "mc",
+        "q": "What is the main idea of the passage?",
+        "choices": [
+          "AI is already smarter than humans in every way.",
+          "Children learn better when they use AI.",
+          "AI learns from data like children do, but it can make mistakes, so we should check it.",
+          "Doctors should not use AI because it makes mistakes.",
+          "Computers can recognize cats better than people."
+        ],
+        "answer": "AI learns from data like children do, but it can make mistakes, so we should check it.",
+        "explanation": "AI가 데이터로 배우는 방식과 그 한계, 그리고 다시 확인해야 한다는 주장이 중심이다."
+      },
+      {
+        "qid": "b13de3d2-7728-4b94-af01-3cec539ec23f",
+        "type": "mc",
+        "q": "Why does the writer talk about videos, languages, and diseases in the first paragraph?",
+        "choices": [
+          "To show that AI is everywhere today",
+          "To explain how doctors use videos",
+          "To teach how to translate languages",
+          "To show that AI is dangerous",
+          "To compare AI with children"
+        ],
+        "answer": "To show that AI is everywhere today",
+        "explanation": "'AI is everywhere today.'의 예시로 쓰였다."
+      },
+      {
+        "qid": "9f5c8666-3cda-45c5-8f43-a2094233bdca",
+        "type": "mc",
+        "q": "Which is NOT mentioned as something AI does?",
+        "choices": [
+          "It recommends videos.",
+          "It translates languages.",
+          "It helps doctors find diseases.",
+          "It learns to recognize cats.",
+          "It drives buses in every city."
+        ],
+        "answer": "It drives buses in every city.",
+        "explanation": "버스 운전은 지문에 나오지 않는다."
+      },
+      {
+        "qid": "f1811790-c740-4c17-9e32-0ab3b3084c2e",
+        "type": "mc",
+        "q": "How does the computer learn to recognize cats?",
+        "choices": [
+          "By watching cat videos all day",
+          "By studying thousands of labeled pictures",
+          "By listening to cats",
+          "By asking children questions",
+          "By reading books about cats"
+        ],
+        "answer": "By studying thousands of labeled pictures",
+        "explanation": "'the computer is shown thousands of pictures, and each picture is labeled \"cat\" or \"not cat.\" By studying these examples, ...'"
+      },
+      {
+        "qid": "17740dbc-0b4f-44d2-a7a2-3473ce1379ab",
+        "type": "mc",
+        "q": "In the passage, 'labeled' is closest in meaning to ____.",
+        "choices": [
+          "deleted",
+          "painted",
+          "sold",
+          "marked",
+          "hidden"
+        ],
+        "answer": "marked",
+        "explanation": "be labeled = ~라는 이름표가 붙다(marked)."
+      },
+      {
+        "qid": "5ac1dd29-f4d7-49fb-93bb-fe47753bf50d",
+        "type": "mc",
+        "q": "What are \"pointed ears and whiskers\" examples of?",
+        "choices": [
+          "Patterns the computer finds",
+          "Mistakes in the data",
+          "Pictures of black cats",
+          "Unfair decisions",
+          "Human judgment"
+        ],
+        "answer": "Patterns the computer finds",
+        "explanation": "'the computer slowly finds patterns, such as pointed ears and whiskers.'"
+      },
+      {
+        "qid": "c710a4c1-15ce-46cc-b545-aa2e2de1a12d",
+        "type": "mc",
+        "q": "What does the computer do when it makes a mistake?",
+        "choices": [
+          "It gives up and stops learning.",
+          "It asks people for new pictures.",
+          "It changes its guess and tries again.",
+          "It removes the label.",
+          "It makes an unfair decision."
+        ],
+        "answer": "It changes its guess and tries again.",
+        "explanation": "'When it makes a mistake, it changes its guess and tries again.'"
+      },
+      {
+        "qid": "abce9ca6-17fb-4725-93e4-4032949ab988",
+        "type": "mc",
+        "q": "Why is AI not perfect, according to the passage?",
+        "choices": [
+          "It cannot see pictures well.",
+          "It learns too slowly.",
+          "It does not like cats.",
+          "It has no patterns to find.",
+          "It can only learn from the data that people give it."
+        ],
+        "answer": "It can only learn from the data that people give it.",
+        "explanation": "'It can only learn from the data that people give it.'"
+      },
+      {
+        "qid": "369c47a3-f44f-437c-b278-9ca0ddac0d0f",
+        "type": "mc",
+        "q": "If an AI is trained mostly with pictures of white cats, what may happen?",
+        "choices": [
+          "It may recognize all cats perfectly.",
+          "It may not recognize black cats well.",
+          "It may only like white cats.",
+          "It may stop learning about cats.",
+          "It may change white cats into black cats."
+        ],
+        "answer": "It may not recognize black cats well.",
+        "explanation": "'it may not recognize black cats well.'"
+      },
+      {
+        "qid": "e225cbaa-958b-49e9-b985-69c7b3037185",
+        "type": "mc",
+        "q": "What does \"for the same reason\" in the third paragraph mean?",
+        "choices": [
+          "Because AI hates some people",
+          "Because AI sees too many cats",
+          "Because people do not use AI",
+          "Because AI learns the mistakes in its data",
+          "Because AI changes its guess"
+        ],
+        "answer": "Because AI learns the mistakes in its data",
+        "explanation": "데이터의 실수를 그대로 배우기 때문에 사람에 대해서도 불공정한 결정을 할 수 있다."
+      },
+      {
+        "qid": "f9cc756d-6def-46ae-9d58-51db75394434",
+        "type": "mc",
+        "q": "What does \"That\" in \"That is why we should always double-check\" refer to?",
+        "choices": [
+          "The fact that AI is everywhere",
+          "The fact that children learn fast",
+          "The fact that AI can learn mistakes from its data",
+          "The fact that cats have whiskers",
+          "The fact that AI recommends videos"
+        ],
+        "answer": "The fact that AI can learn mistakes from its data",
+        "explanation": "앞 문단 내용(AI는 데이터의 실수를 배우고 불공정한 결정도 할 수 있다)이 다시 확인해야 하는 이유이다."
+      },
+      {
+        "qid": "669dbf4d-dd94-4fd0-a1f2-97a12dae08ee",
+        "type": "mc",
+        "q": "In the passage, 'replace' is closest in meaning to ____.",
+        "choices": [
+          "help",
+          "take the place of",
+          "copy",
+          "improve",
+          "follow"
+        ],
+        "answer": "take the place of",
+        "explanation": "replace = ~을 대신하다(take the place of)."
+      },
+      {
+        "qid": "c205d247-197d-42d2-aaed-179c2304e669",
+        "type": "mc",
+        "q": "Which sentence has the same structure as 'The more examples it sees, the better it becomes'?",
+        "choices": [
+          "The harder you study, higher your score will be.",
+          "Harder you study, the higher your score will be.",
+          "The most you study, the higher your score will be.",
+          "The hard you study, the higher your score will be.",
+          "The harder you study, the higher your score will be."
+        ],
+        "answer": "The harder you study, the higher your score will be.",
+        "explanation": "the 비교급 + 주어 + 동사, the 비교급 + 주어 + 동사 형태가 맞는 것은 harder / higher 앞에 모두 the가 있는 문장이다."
+      },
+      {
+        "qid": "34566a92-fdbb-49a6-bcda-ab7e34c799c9",
+        "type": "mc",
+        "q": "Which sentence uses the passive voice like 'each picture is labeled \"cat\"'?",
+        "choices": [
+          "The letter was written by my grandmother.",
+          "My grandmother wrote the letter.",
+          "My grandmother is writing a letter.",
+          "My grandmother has written a letter.",
+          "My grandmother will write a letter."
+        ],
+        "answer": "The letter was written by my grandmother.",
+        "explanation": "수동태 = be + 과거분사(was written)."
+      },
+      {
+        "qid": "4366dd0a-49b2-4d9b-92ce-c5b4ded9d253",
+        "type": "mc",
+        "q": "Which 'that' is used in the same way as in 'the data that people give it'?",
+        "choices": [
+          "I think that he is kind.",
+          "That is my bag.",
+          "She was so tired that she fell asleep.",
+          "This is the book that my friend gave me.",
+          "It is true that AI is useful."
+        ],
+        "answer": "This is the book that my friend gave me.",
+        "explanation": "목적격 관계대명사 that: 앞 명사(the book)를 꾸민다."
+      },
+      {
+        "qid": "ba7ee912-92ba-4465-9d01-d712ef4a0371",
+        "type": "mc",
+        "q": "What does 'By studying these examples' tell us?",
+        "choices": [
+          "When the computer was made",
+          "How the computer finds patterns",
+          "Where the pictures come from",
+          "Who labels the pictures",
+          "Why AI is unfair"
+        ],
+        "answer": "How the computer finds patterns",
+        "explanation": "by + 동명사 = ~함으로써 (방법)."
+      },
+      {
+        "qid": "40bd7ec0-773f-483c-8f31-b32d73eb0071",
+        "type": "mc",
+        "q": "Which is true according to the passage?",
+        "choices": [
+          "AI never makes the same mistake twice.",
+          "People do not give data to AI.",
+          "Each picture is labeled with a cat's name.",
+          "AI can replace human judgment.",
+          "AI can make unfair decisions about people."
+        ],
+        "answer": "AI can make unfair decisions about people.",
+        "explanation": "'Sometimes AI can even make unfair decisions about people for the same reason.'"
+      },
+      {
+        "qid": "3535cd73-53e3-4034-8cf2-96801c6b83e3",
+        "type": "mc",
+        "q": "Which is NOT true according to the passage?",
+        "choices": [
+          "AI learns in a way like children.",
+          "The computer is shown thousands of pictures.",
+          "AI can fix mistakes in its data by itself.",
+          "AI is a powerful tool.",
+          "We should double-check what AI tells us."
+        ],
+        "answer": "AI can fix mistakes in its data by itself.",
+        "explanation": "데이터에 실수가 있으면 AI는 그 실수도 배운다. 스스로 고친다는 말은 없다."
+      },
+      {
+        "qid": "4cd95899-c89d-414f-899c-bf8effdaeea1",
+        "type": "order",
+        "items": [
+          "The computer studies the examples and finds patterns.",
+          "It tries again and becomes better.",
+          "The computer is shown thousands of pictures.",
+          "When it makes a mistake, it changes its guess.",
+          "Each picture is labeled \"cat\" or \"not cat.\""
+        ],
+        "answer": [
+          "The computer is shown thousands of pictures.",
+          "Each picture is labeled \"cat\" or \"not cat.\"",
+          "The computer studies the examples and finds patterns.",
+          "When it makes a mistake, it changes its guess.",
+          "It tries again and becomes better."
+        ]
+      },
+      {
+        "qid": "09fdced9-9a42-485f-9c01-7047b841a72b",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "recommend",
+            "meaning": "추천하다"
+          },
+          {
+            "word": "translate",
+            "meaning": "번역하다"
+          },
+          {
+            "word": "recognize",
+            "meaning": "알아보다, 인식하다"
+          },
+          {
+            "word": "pattern",
+            "meaning": "패턴, 특징"
+          },
+          {
+            "word": "whisker",
+            "meaning": "(고양이) 수염"
+          },
+          {
+            "word": "unfair",
+            "meaning": "불공평한"
+          },
+          {
+            "word": "double-check",
+            "meaning": "다시 확인하다"
+          },
+          {
+            "word": "replace",
+            "meaning": "대신하다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "7c7c1366-1694-485d-8683-0f5203bc4fec",
+        "q": "Summarize the passage in two English sentences: (1) how AI learns and (2) why we should check it.",
+        "wordLimit": 50,
+        "sampleAnswer": "AI learns by studying many labeled examples and finding patterns, like children do. However, it can learn mistakes from its data, so we should always double-check what AI tells us.",
+        "rubric": "① 예시·패턴으로 배움 ② 데이터의 실수를 배움 ③ 다시 확인해야 함 ④ 영어 2문장"
+      },
+      {
+        "qid": "c7762898-47fe-49f2-8871-488620c48045",
+        "q": "우리말로 쓰시오: AI가 실수를 배우게 되는 이유를 쓰고, 지문에 나온 예시 두 가지를 쓰시오.",
+        "wordLimit": 70,
+        "sampleAnswer": "AI는 사람이 준 데이터로만 배우기 때문에, 데이터에 실수가 있으면 그 실수도 배운다. 예시 ① 주로 흰 고양이 사진으로 훈련된 AI는 검은 고양이를 잘 알아보지 못한다. ② 같은 이유로 사람에 대해 불공정한 결정을 할 수 있다.",
+        "rubric": "① 이유(데이터로만 배움) ② 흰/검은 고양이 예시 ③ 불공정한 결정 예시",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "fa0b655e-250c-49bc-8d0e-1d650fbce417",
+        "q": "Why should we always double-check what AI tells us? Answer in English.",
+        "wordLimit": 25,
+        "sampleAnswer": "Because AI can learn mistakes from its data and sometimes makes unfair decisions.",
+        "rubric": "① 데이터의 실수를 배움 ② 불공정한 결정 ③ 완전한 영어 문장"
+      },
+      {
+        "qid": "a0aedb8c-537e-4055-b399-6aaf697f7206",
+        "q": "다음 우리말을 영어로 쓰시오. '만약 데이터에 실수가 있다면, AI는 그 실수들도 배울 것이다.' <조건> if, will, too를 사용할 것",
+        "wordLimit": 15,
+        "sampleAnswer": "If the data has mistakes, the AI will learn those mistakes, too.",
+        "rubric": "① If + 현재시제(has) ② will learn ③ those mistakes ④ too"
+      },
+      {
+        "qid": "fff5c1d0-388e-4354-a8de-b1111d17e82c",
+        "q": "다음 문장을 수동태로 바꿔 쓰시오. 'People label each picture \"cat\" or \"not cat.\"'",
+        "wordLimit": 10,
+        "sampleAnswer": "Each picture is labeled \"cat\" or \"not cat\" (by people).",
+        "rubric": "① Each picture 주어 ② is labeled ③ \"cat\" or \"not cat\""
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "artificial intelligence",
+        "surface": "Artificial intelligence",
+        "pos": "명",
+        "meaning": "인공지능",
+        "sentence": "Artificial intelligence, or AI, is everywhere today."
+      },
+      {
+        "word": "recommend",
+        "surface": "recommends",
+        "pos": "동",
+        "meaning": "추천하다",
+        "sentence": "It recommends videos, translates languages, and even helps doctors find diseases."
+      },
+      {
+        "word": "translate",
+        "surface": "translates",
+        "pos": "동",
+        "meaning": "번역하다, 통역하다",
+        "sentence": "It recommends videos, translates languages, and even helps doctors find diseases."
+      },
+      {
+        "word": "disease",
+        "surface": "diseases",
+        "pos": "명",
+        "meaning": "질병",
+        "sentence": "It recommends videos, translates languages, and even helps doctors find diseases."
+      },
+      {
+        "word": "recognize",
+        "surface": "recognize",
+        "pos": "동",
+        "meaning": "알아보다, 인식하다",
+        "sentence": "Imagine teaching a computer to recognize cats."
+      },
+      {
+        "word": "thousands of",
+        "surface": "thousands of",
+        "pos": "숙",
+        "meaning": "수천의, 수많은",
+        "sentence": "First, the computer is shown thousands of pictures, and each picture is labeled \"cat\" or \"not cat.\""
+      },
+      {
+        "word": "example",
+        "surface": "examples",
+        "pos": "명",
+        "meaning": "예, 예시",
+        "sentence": "By studying these examples, the computer slowly finds patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "pattern",
+        "surface": "patterns",
+        "pos": "명",
+        "meaning": "패턴, (반복되는) 특징",
+        "sentence": "By studying these examples, the computer slowly finds patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "pointed",
+        "surface": "pointed",
+        "pos": "형",
+        "meaning": "뾰족한",
+        "sentence": "By studying these examples, the computer slowly finds patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "whisker",
+        "surface": "whiskers",
+        "pos": "명",
+        "meaning": "(고양이 등의) 수염",
+        "sentence": "By studying these examples, the computer slowly finds patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "guess",
+        "surface": "guess",
+        "pos": "명",
+        "meaning": "추측",
+        "sentence": "When it makes a mistake, it changes its guess and tries again."
+      },
+      {
+        "word": "perfect",
+        "surface": "perfect",
+        "pos": "형",
+        "meaning": "완벽한",
+        "sentence": "However, AI is not perfect."
+      },
+      {
+        "word": "data",
+        "surface": "data",
+        "pos": "명",
+        "meaning": "데이터, 자료",
+        "sentence": "It can only learn from the data that people give it."
+      },
+      {
+        "word": "mostly",
+        "surface": "mostly",
+        "pos": "부",
+        "meaning": "주로, 대부분",
+        "sentence": "For example, if an AI is trained mostly with pictures of white cats, it may not recognize black cats well."
+      },
+      {
+        "word": "unfair",
+        "surface": "unfair",
+        "pos": "형",
+        "meaning": "불공평한, 부당한",
+        "sentence": "Sometimes AI can even make unfair decisions about people for the same reason."
+      },
+      {
+        "word": "decision",
+        "surface": "decisions",
+        "pos": "명",
+        "meaning": "결정",
+        "sentence": "Sometimes AI can even make unfair decisions about people for the same reason."
+      },
+      {
+        "word": "double-check",
+        "surface": "double-check",
+        "pos": "동",
+        "meaning": "다시 확인하다",
+        "sentence": "That is why we should always double-check what AI tells us."
+      },
+      {
+        "word": "replace",
+        "surface": "replace",
+        "pos": "동",
+        "meaning": "대신하다, 대체하다",
+        "sentence": "AI is a powerful tool, but it cannot replace human thinking and judgment."
+      },
+      {
+        "word": "judgment",
+        "surface": "judgment",
+        "pos": "명",
+        "meaning": "판단, 판단력",
+        "sentence": "AI is a powerful tool, but it cannot replace human thinking and judgment."
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "How Does AI Learn?\n\n{{v:Artificial intelligence}}, or AI, {{g:has become|현재완료(결과): ~이 되었다 (지금도 그렇다)}} part of our everyday lives. It recommends {{g:videos we might enjoy|목적격 관계대명사 생략: videos (that) we might enjoy}}, translates between languages in seconds, and even {{v:assists}} doctors in {{v:detecting}} diseases. But have you ever wondered how AI actually learns?\n\nIn some ways, {{t:AI learns much like children do}}. {{g:Suppose you wanted|Suppose + 가정법 과거: ~한다고 가정해 보자 (과거형으로 현재 상황을 가정)}} to teach a computer to {{v:recognize}} cats. First, the computer {{g:would be shown|조동사 + 수동태: would be + p.p.}} thousands of images, {{g:each labeled|독립분사구문: each (being) labeled — 각각 ~라고 표시된 채로}} either \"cat\" or \"not cat.\" By {{v:analyzing}} these examples, the computer {{v:gradually}} {{v:identifies}} common patterns, such as pointed ears and whiskers. {{g:Whenever|복합관계부사 whenever: ~할 때마다}} it makes an error, it {{v:adjusts}} its guess and tries again. {{g:The more examples it is exposed to, the more accurate it becomes|the 비교급 ~, the 비교급 …: ~할수록 더 …하다 / be exposed to: ~에 노출되다}}.\n\nHowever, AI is {{v:far from}} perfect. It can learn only from the data {{g:that humans provide|목적격 관계대명사 that: 앞의 the data를 꾸민다}}. If that data {{v:contains}} errors, the AI will {{v:inevitably}} {{v:absorb}} those errors as well. For instance, if an AI {{g:is trained|수동태: be + p.p. (훈련되다)}} mainly on images of white cats, it may {{v:struggle}} to recognize black cats. For the same reason, AI can sometimes make {{v:biased}} or unfair decisions about people.\n\n{{g:This is why|This is why + 주어 + 동사: 이것이 ~하는 이유이다 (그래서 ~하다)}} we should always double-check the information AI gives us. {{t:AI is undoubtedly a powerful tool, but it can never replace human thinking and judgment}}.",
+    "tags": {
+      "vocab": [
+        "artificial intelligence",
+        "assist",
+        "detect",
+        "recognize",
+        "analyze",
+        "gradually",
+        "identify",
+        "adjust",
+        "far from",
+        "contain",
+        "inevitably",
+        "absorb",
+        "struggle",
+        "biased"
+      ],
+      "grammar": [
+        "현재완료(결과)",
+        "목적격 관계대명사 생략",
+        "Suppose + 가정법 과거",
+        "조동사 + 수동태",
+        "독립분사구문",
+        "복합관계부사 whenever",
+        "the 비교급, the 비교급",
+        "목적격 관계대명사 that",
+        "수동태",
+        "This is why"
+      ],
+      "topic": [
+        "AI의 학습 방식",
+        "데이터 편향과 AI의 한계",
+        "설명문 읽기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "d654e6ea-f58e-4581-921b-be5b028d0724",
+        "type": "mc",
+        "q": "Which of the following best states the main idea of the passage?",
+        "choices": [
+          "AI has already become smarter than humans in every field.",
+          "Children learn faster than computers because they have better memories.",
+          "AI learns from examples much like children, but because it depends on human data, its results should be checked.",
+          "Doctors should stop using AI because it often makes errors.",
+          "Pictures of cats are the best data for training any kind of AI."
+        ],
+        "answer": "AI learns from examples much like children, but because it depends on human data, its results should be checked.",
+        "explanation": "AI의 학습 방식(예시·패턴) + 한계(데이터 의존) + 결론(다시 확인)을 모두 담은 것이 요지이다."
+      },
+      {
+        "qid": "4df6d64e-3c8a-413b-901c-6e1bf4737aac",
+        "type": "mc",
+        "q": "Which of the following would be the best title for the passage?",
+        "choices": [
+          "Learning from Data: The Power and Limits of AI",
+          "How to Take Better Pictures of Your Cat",
+          "Why Children Are Smarter Than Computers",
+          "AI Will Soon Replace Doctors Everywhere",
+          "The History of Video Recommendations"
+        ],
+        "answer": "Learning from Data: The Power and Limits of AI",
+        "explanation": "AI가 데이터로 배우는 방식과 그 한계를 다룬다."
+      },
+      {
+        "qid": "7a570aa6-4392-4928-88a9-82b0523fd3b9",
+        "type": "mc",
+        "q": "According to the passage, which is NOT something AI does in our everyday lives?",
+        "choices": [
+          "It recommends videos people might enjoy.",
+          "It translates between languages in seconds.",
+          "It assists doctors in detecting diseases.",
+          "It learns patterns by analyzing examples.",
+          "It decides which students pass their exams."
+        ],
+        "answer": "It decides which students pass their exams.",
+        "explanation": "시험 합격 여부 결정은 나오지 않는다."
+      },
+      {
+        "qid": "4040c72d-4f06-47e2-82b9-a52ba2bd9731",
+        "type": "mc",
+        "q": "In the passage, 'detecting' is closest in meaning to ____.",
+        "choices": [
+          "causing",
+          "finding",
+          "curing",
+          "ignoring",
+          "spreading"
+        ],
+        "answer": "finding",
+        "explanation": "detect = 발견하다, 감지하다(find)."
+      },
+      {
+        "qid": "9826e7cc-02fc-478e-aeca-87f4e116a596",
+        "type": "mc",
+        "q": "In the passage, 'gradually' is closest in meaning to ____.",
+        "choices": [
+          "suddenly",
+          "never",
+          "all at once",
+          "little by little",
+          "carelessly"
+        ],
+        "answer": "little by little",
+        "explanation": "gradually = 점차, 서서히(little by little)."
+      },
+      {
+        "qid": "0426da7b-813e-425b-985d-490d98d330b3",
+        "type": "mc",
+        "q": "In the passage, 'adjusts' is closest in meaning to ____.",
+        "choices": [
+          "changes",
+          "forgets",
+          "repeats",
+          "hides",
+          "ignores"
+        ],
+        "answer": "changes",
+        "explanation": "adjust = 조정하다, 바로잡다(change)."
+      },
+      {
+        "qid": "d8f7327d-d5f7-403f-97ea-794c7cf5f338",
+        "type": "mc",
+        "q": "According to the passage, how does the computer improve its ability to recognize cats?",
+        "choices": [
+          "It memorizes the names of all the cats in the pictures.",
+          "It watches children playing with cats.",
+          "It analyzes many labeled images, identifies patterns, and adjusts its guesses after errors.",
+          "It asks humans to correct every single image.",
+          "It deletes images that do not show white cats."
+        ],
+        "answer": "It analyzes many labeled images, identifies patterns, and adjusts its guesses after errors.",
+        "explanation": "이미지 분석 → 공통 패턴 식별 → 틀리면 추측 조정 후 재시도."
+      },
+      {
+        "qid": "464429c2-2440-4127-971f-762b54f44d74",
+        "type": "mc",
+        "q": "Why does the writer compare AI to children?",
+        "choices": [
+          "To argue that children should learn from AI",
+          "To prove that AI has feelings like children",
+          "To show that children make more mistakes than AI",
+          "To explain why AI likes pictures of cats",
+          "To show that both learn by studying examples and correcting their mistakes"
+        ],
+        "answer": "To show that both learn by studying examples and correcting their mistakes",
+        "explanation": "아이들처럼 예시를 보고 틀리면 고치며 배운다는 점을 보여 준다."
+      },
+      {
+        "qid": "21737fe9-f7bb-4451-9325-480438752823",
+        "type": "mc",
+        "q": "The sentence 'The more examples it is exposed to, the more accurate it becomes' suggests that ____.",
+        "choices": [
+          "AI becomes less accurate as it learns more",
+          "the amount of data affects how well AI performs",
+          "only one good example is needed for AI",
+          "AI does not need any labeled images",
+          "children are exposed to more examples than AI"
+        ],
+        "answer": "the amount of data affects how well AI performs",
+        "explanation": "노출되는 예시가 많을수록 더 정확해진다 → 데이터의 양이 성능에 영향을 준다."
+      },
+      {
+        "qid": "e8601f3c-0fc5-4369-a69a-81fc07c8bb0d",
+        "type": "mc",
+        "q": "What does the writer mean by saying AI is 'far from perfect'?",
+        "choices": [
+          "AI is almost perfect.",
+          "AI is far away from people.",
+          "AI works perfectly in distant places.",
+          "AI still has clear limitations.",
+          "AI is perfect only for cats."
+        ],
+        "answer": "AI still has clear limitations.",
+        "explanation": "far from = 결코 ~이 아닌. 완벽함과 거리가 멀다 → 한계가 분명하다."
+      },
+      {
+        "qid": "e9fad1e1-bbdc-4ba0-b3bd-b5d4c51c4613",
+        "type": "mc",
+        "q": "According to the passage, what is the main cause of the errors AI makes?",
+        "choices": [
+          "A lack of electricity",
+          "Children who teach it wrong words",
+          "Problems in the data that humans provide",
+          "Doctors who use it too often",
+          "Its dislike of black cats"
+        ],
+        "answer": "Problems in the data that humans provide",
+        "explanation": "'It can learn only from the data that humans provide. If that data contains errors, ...'"
+      },
+      {
+        "qid": "1c5bafec-11ac-4780-8cfd-e8acefe82af8",
+        "type": "mc",
+        "q": "What can be inferred about an AI trained mainly on images of white cats?",
+        "choices": [
+          "It will recognize every cat perfectly.",
+          "It might wrongly decide that a black cat is \"not cat.\"",
+          "It will refuse to look at images of dogs.",
+          "It will turn black cats into white cats.",
+          "It will learn faster than other AI systems."
+        ],
+        "answer": "It might wrongly decide that a black cat is \"not cat.\"",
+        "explanation": "흰 고양이 이미지로 주로 훈련되면 검은 고양이를 고양이로 알아보지 못할 수 있다."
+      },
+      {
+        "qid": "7669a8d9-e18e-4bb1-bb98-54ad13c144be",
+        "type": "mc",
+        "q": "The phrase 'For the same reason' in the third paragraph refers to ____.",
+        "choices": [
+          "the fact that AI recommends videos",
+          "the similarity between AI and children",
+          "the patterns of pointed ears and whiskers",
+          "the speed at which AI translates languages",
+          "AI's tendency to absorb the errors in its training data"
+        ],
+        "answer": "AI's tendency to absorb the errors in its training data",
+        "explanation": "데이터의 오류를 그대로 흡수하기 때문에 편향되거나 불공정한 결정을 할 수 있다."
+      },
+      {
+        "qid": "3b7dae9d-46c7-4fac-a0c5-2c1e7526e4bc",
+        "type": "mc",
+        "q": "In the passage, 'biased' is closest in meaning to ____.",
+        "choices": [
+          "one-sided",
+          "careful",
+          "correct",
+          "quick",
+          "fair"
+        ],
+        "answer": "one-sided",
+        "explanation": "biased = 편향된, 한쪽으로 치우친(one-sided)."
+      },
+      {
+        "qid": "4d4264a1-c41b-4255-a990-68c00f3831ef",
+        "type": "mc",
+        "q": "Which sentence correctly uses the same structure as 'The more examples it is exposed to, the more accurate it becomes'?",
+        "choices": [
+          "The more you practice, the confident you become.",
+          "More you practice, the more confident you become.",
+          "The much you practice, the more confident you become.",
+          "The more you practice, the more confident you become.",
+          "The more you practice, more confident you become."
+        ],
+        "answer": "The more you practice, the more confident you become.",
+        "explanation": "the 비교급 + 주어 + 동사, the 비교급 + 주어 + 동사. 두 비교급 앞에 모두 the가 있어야 한다."
+      },
+      {
+        "qid": "d9744404-8ab2-4184-98f2-fbd431686325",
+        "type": "mc",
+        "q": "Which 'that' is used in the same way as in 'the data that humans provide'?",
+        "choices": [
+          "I believe that AI is useful.",
+          "The movie that we watched last night was exciting.",
+          "It is important that we check the facts.",
+          "That idea sounds great.",
+          "He spoke so fast that I couldn't follow him."
+        ],
+        "answer": "The movie that we watched last night was exciting.",
+        "explanation": "목적격 관계대명사 that: 앞 명사(the movie)를 꾸민다."
+      },
+      {
+        "qid": "cf7d7d62-bee9-4dd6-a6bf-5f574ded1f4c",
+        "type": "mc",
+        "q": "Which statement is true according to the passage?",
+        "choices": [
+          "The computer is shown only a few dozen images.",
+          "AI never repeats the errors found in its data.",
+          "The writer believes AI can replace human judgment.",
+          "Each image in the example is labeled with the cat's name.",
+          "AI can make unfair decisions about people for the same reason it fails to recognize black cats."
+        ],
+        "answer": "AI can make unfair decisions about people for the same reason it fails to recognize black cats.",
+        "explanation": "흰 고양이 예시와 사람에 대한 불공정한 결정은 같은 이유(데이터의 오류)에서 나온다."
+      },
+      {
+        "qid": "4bf110a4-eced-476f-ba92-c824cd2a0d45",
+        "type": "mc",
+        "q": "Which statement is NOT true according to the passage?",
+        "choices": [
+          "AI identifies patterns such as pointed ears and whiskers.",
+          "Humans provide the data from which AI learns.",
+          "The writer argues that people should stop using AI completely.",
+          "AI adjusts its guess whenever it makes an error.",
+          "We should double-check the information AI gives us."
+        ],
+        "answer": "The writer argues that people should stop using AI completely.",
+        "explanation": "글쓴이는 AI가 강력한 도구라고 인정하며, 쓰지 말자는 것이 아니라 다시 확인하자고 한다."
+      },
+      {
+        "qid": "baa670f8-5478-4f61-a10e-4554c3af264d",
+        "type": "order",
+        "items": [
+          "As it is exposed to more examples, it becomes more accurate.",
+          "The computer analyzes the examples and identifies common patterns.",
+          "The computer is shown thousands of images.",
+          "Whenever it makes an error, it adjusts its guess.",
+          "Each image is labeled either \"cat\" or \"not cat.\""
+        ],
+        "answer": [
+          "The computer is shown thousands of images.",
+          "Each image is labeled either \"cat\" or \"not cat.\"",
+          "The computer analyzes the examples and identifies common patterns.",
+          "Whenever it makes an error, it adjusts its guess.",
+          "As it is exposed to more examples, it becomes more accurate."
+        ]
+      },
+      {
+        "qid": "cbf0d9a5-95b4-4539-bca0-9517df891d7c",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "detect",
+            "meaning": "발견하다, 감지하다"
+          },
+          {
+            "word": "analyze",
+            "meaning": "분석하다"
+          },
+          {
+            "word": "gradually",
+            "meaning": "점차"
+          },
+          {
+            "word": "adjust",
+            "meaning": "조정하다"
+          },
+          {
+            "word": "inevitably",
+            "meaning": "불가피하게"
+          },
+          {
+            "word": "absorb",
+            "meaning": "흡수하다"
+          },
+          {
+            "word": "struggle",
+            "meaning": "어려움을 겪다"
+          },
+          {
+            "word": "biased",
+            "meaning": "편향된"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "aae923b1-6fb8-47a3-9e02-2b219c80d035",
+        "q": "Summarize the passage in three English sentences: (1) how AI learns, (2) its main limitation, and (3) the writer's advice.",
+        "wordLimit": 70,
+        "sampleAnswer": "AI learns much like children, by analyzing many labeled examples, finding patterns, and adjusting its guesses after errors. However, it can learn only from the data humans provide, so it absorbs any errors or biases in that data. Therefore, we should always double-check what AI tells us, because it cannot replace human judgment.",
+        "rubric": "① 학습 방식 ② 한계(데이터 의존·오류 흡수) ③ 조언(다시 확인) ④ 영어 3문장, 정확성"
+      },
+      {
+        "qid": "63dfdfe6-0347-4062-a862-21180a747354",
+        "q": "우리말로 쓰시오: 흰 고양이 예시와 \"사람에 대한 편향되거나 불공정한 결정\"이 어떻게 같은 이유로 연결되는지 설명하시오.",
+        "wordLimit": 80,
+        "sampleAnswer": "AI는 사람이 준 데이터로만 배우므로 데이터의 오류나 치우침을 그대로 흡수한다. 흰 고양이 이미지로 주로 훈련된 AI가 검은 고양이를 잘 알아보지 못하듯이, 특정 사람들에 대한 데이터가 치우쳐 있으면 AI는 그 사람들에 대해 편향되거나 불공정한 결정을 할 수 있다.",
+        "rubric": "① 데이터에만 의존 ② 오류·치우침 흡수 ③ 고양이 예시와 사람 결정의 공통점",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "cf789832-e77e-4765-96e4-709978ba3399",
+        "q": "다음 우리말을 영어로 쓰시오. 'AI가 더 많은 예시에 노출될수록, 그것은 더 정확해진다.' <조건> the 비교급, the 비교급 / be exposed to를 사용할 것",
+        "wordLimit": 14,
+        "sampleAnswer": "The more examples AI is exposed to, the more accurate it becomes.",
+        "rubric": "① The more examples ② AI is exposed to ③ the more accurate ④ it becomes"
+      },
+      {
+        "qid": "70672f40-3674-46eb-9e82-edf4065699be",
+        "q": "다음 문장을 수동태로 바꿔 쓰시오. 'People trained the AI mainly on images of white cats.'",
+        "wordLimit": 14,
+        "sampleAnswer": "The AI was trained mainly on images of white cats (by people).",
+        "rubric": "① The AI 주어 ② was trained (과거 수동태) ③ mainly on images of white cats"
+      },
+      {
+        "qid": "a9b73022-c17a-4033-880e-8751cec204de",
+        "q": "Give one situation in your life where you should double-check information from AI. Explain why in 2–3 English sentences.",
+        "wordLimit": 50,
+        "sampleAnswer": "When I use AI to help with my history homework, I should double-check the dates it gives me. AI can learn errors from its data, so some dates might be wrong. I can check them in my textbook.",
+        "rubric": "① 구체적 상황 ② 지문 내용과 연결된 이유 ③ 영어 2~3문장, 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "artificial intelligence",
+        "surface": "Artificial intelligence",
+        "pos": "명",
+        "meaning": "인공지능",
+        "sentence": "Artificial intelligence, or AI, has become part of our everyday lives."
+      },
+      {
+        "word": "assist",
+        "surface": "assists",
+        "pos": "동",
+        "meaning": "돕다 (assist A in -ing: A가 ~하는 것을 돕다)",
+        "sentence": "It recommends videos we might enjoy, translates between languages in seconds, and even assists doctors in detecting diseases."
+      },
+      {
+        "word": "detect",
+        "surface": "detecting",
+        "pos": "동",
+        "meaning": "발견하다, 감지하다",
+        "sentence": "It recommends videos we might enjoy, translates between languages in seconds, and even assists doctors in detecting diseases."
+      },
+      {
+        "word": "recognize",
+        "surface": "recognize",
+        "pos": "동",
+        "meaning": "알아보다, 인식하다",
+        "sentence": "Suppose you wanted to teach a computer to recognize cats."
+      },
+      {
+        "word": "analyze",
+        "surface": "analyzing",
+        "pos": "동",
+        "meaning": "분석하다",
+        "sentence": "By analyzing these examples, the computer gradually identifies common patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "gradually",
+        "surface": "gradually",
+        "pos": "부",
+        "meaning": "점차, 서서히",
+        "sentence": "By analyzing these examples, the computer gradually identifies common patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "identify",
+        "surface": "identifies",
+        "pos": "동",
+        "meaning": "찾아내다, 식별하다",
+        "sentence": "By analyzing these examples, the computer gradually identifies common patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "adjust",
+        "surface": "adjusts",
+        "pos": "동",
+        "meaning": "조정하다, 바로잡다",
+        "sentence": "Whenever it makes an error, it adjusts its guess and tries again."
+      },
+      {
+        "word": "far from",
+        "surface": "far from",
+        "pos": "숙",
+        "meaning": "결코 ~이 아닌, ~와는 거리가 먼",
+        "sentence": "However, AI is far from perfect."
+      },
+      {
+        "word": "contain",
+        "surface": "contains",
+        "pos": "동",
+        "meaning": "포함하다, 담고 있다",
+        "sentence": "If that data contains errors, the AI will inevitably absorb those errors as well."
+      },
+      {
+        "word": "inevitably",
+        "surface": "inevitably",
+        "pos": "부",
+        "meaning": "불가피하게, 반드시",
+        "sentence": "If that data contains errors, the AI will inevitably absorb those errors as well."
+      },
+      {
+        "word": "absorb",
+        "surface": "absorb",
+        "pos": "동",
+        "meaning": "흡수하다, 받아들이다",
+        "sentence": "If that data contains errors, the AI will inevitably absorb those errors as well."
+      },
+      {
+        "word": "struggle",
+        "surface": "struggle",
+        "pos": "동",
+        "meaning": "애쓰다, 어려움을 겪다",
+        "sentence": "For instance, if an AI is trained mainly on images of white cats, it may struggle to recognize black cats."
+      },
+      {
+        "word": "biased",
+        "surface": "biased",
+        "pos": "형",
+        "meaning": "편향된, 치우친",
+        "sentence": "For the same reason, AI can sometimes make biased or unfair decisions about people."
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "How Does AI Learn?\n\nArtificial intelligence, or AI, {{g:has become|현재완료(결과): ~이 되었다}} deeply {{v:embedded}} in {{v:contemporary}} life. It {{v:curates}} video recommendations, translates languages almost {{v:instantaneously}}, and even assists {{v:physicians}} in {{v:diagnosing}} diseases. Yet have you ever stopped {{g:to consider|stop + to부정사: ~하기 위해 멈추다 (stop + -ing: ~하던 것을 멈추다와 구별)}} how AI actually {{v:acquires}} its abilities?\n\nRemarkably, {{g:the way AI learns|the way + 주어 + 동사: ~하는 방식 (the way와 how는 함께 쓰지 않는다)}} somewhat {{v:resembles}} the way children learn. {{g:Imagine attempting to train|imagine + 동명사 / attempt + to부정사}} a computer to {{v:identify}} cats. {{v:Initially}}, the computer {{g:is presented with|수동태: be presented with ~을 제시받다}} thousands of images, {{g:each of which has been labeled|계속적 용법 관계대명사(each of which) + 현재완료 수동태(has been p.p.)}} either \"cat\" or \"not cat.\" By {{v:examining}} these examples, the computer {{v:progressively}} {{v:detects}} {{v:recurring}} patterns, such as pointed ears and whiskers. Whenever it makes an {{v:incorrect}} {{v:prediction}}, it {{v:modifies}} its guess and attempts once more. {{g:The more examples it encounters, the more accurate its predictions become|the 비교급 ~, the 비교급 …: ~할수록 더 …하다}}.\n\nNevertheless, AI is {{v:by no means}} {{v:infallible}}. It {{g:is capable of learning|be capable of + 동명사: ~할 수 있다}} only from the data that humans {{v:supply}}. {{g:Should that data contain flaws|if 생략 도치: Should + 주어 + 동사원형 = If that data should contain flaws (혹시 ~라면)}}, the AI will inevitably {{v:reproduce}} those {{v:flaws}}. For instance, {{g:an AI trained predominantly on images of white cats|과거분사구 후치 수식: trained ~ 가 an AI를 꾸민다}} may fail to recognize black cats {{v:reliably}}. For precisely the same reason, AI systems can {{v:occasionally}} make biased or {{v:discriminatory}} decisions about people.\n\n{{v:Consequently}}, {{t:we should always verify the information that AI provides}}. {{g:Although|양보 접속사 although: 비록 ~이지만}} AI is an {{v:extraordinarily}} powerful tool, {{t:it can never substitute for human reasoning and judgment}}.",
+    "tags": {
+      "vocab": [
+        "embedded",
+        "contemporary",
+        "curate",
+        "instantaneously",
+        "physician",
+        "diagnose",
+        "acquire",
+        "resemble",
+        "identify",
+        "initially",
+        "examine",
+        "progressively",
+        "detect",
+        "recurring",
+        "incorrect",
+        "prediction",
+        "modify",
+        "by no means",
+        "infallible",
+        "supply",
+        "reproduce",
+        "flaw",
+        "reliably",
+        "occasionally",
+        "discriminatory",
+        "consequently",
+        "extraordinarily"
+      ],
+      "grammar": [
+        "현재완료(결과)",
+        "stop + to부정사",
+        "the way + 주어 + 동사",
+        "imagine + 동명사 / attempt + to부정사",
+        "수동태(be presented with)",
+        "계속적 용법 관계대명사(each of which)",
+        "the 비교급, the 비교급",
+        "be capable of + 동명사",
+        "if 생략 도치(Should)",
+        "과거분사 후치 수식",
+        "양보 접속사 although"
+      ],
+      "topic": [
+        "AI의 학습 방식",
+        "데이터 편향과 차별",
+        "AI 결과 검증의 필요성"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "662d046f-2ecd-4a9c-a899-5c8ee6469171",
+        "type": "mc",
+        "q": "Which of the following best summarizes the writer's central argument?",
+        "choices": [
+          "AI has become so accurate that human reasoning is no longer necessary in most fields.",
+          "Children and computers learn in exactly the same way, so they should be taught together.",
+          "Because AI learns only from human-supplied data, it can reproduce that data's flaws, so its output must be verified by human judgment.",
+          "AI should be banned from medicine because it occasionally makes incorrect predictions.",
+          "The quality of AI depends mainly on how fast its computer can process images."
+        ],
+        "answer": "Because AI learns only from human-supplied data, it can reproduce that data's flaws, so its output must be verified by human judgment.",
+        "explanation": "데이터 의존 → 결함 재현 → 사람의 검증 필요, 이것이 중심 주장이다."
+      },
+      {
+        "qid": "8c9997f8-bc3a-43aa-87e8-d2c3893f43d6",
+        "type": "mc",
+        "q": "Which of the following would be the most appropriate title for the passage?",
+        "choices": [
+          "Only as Good as Its Data: How AI Learns and Why We Must Verify It",
+          "The Day Computers Became Smarter Than Children",
+          "Why Physicians No Longer Need Medical Training",
+          "A Complete Guide to Photographing Cats",
+          "The Rapid Decline of Artificial Intelligence"
+        ],
+        "answer": "Only as Good as Its Data: How AI Learns and Why We Must Verify It",
+        "explanation": "AI가 데이터만큼만 좋다(학습 방식 + 한계 + 검증)는 내용을 담은 제목이다."
+      },
+      {
+        "qid": "fd0cb6e1-94f0-45fd-9f23-b9e707be0960",
+        "type": "mc",
+        "q": "In the passage, 'curates' is closest in meaning to ____.",
+        "choices": [
+          "deletes",
+          "records",
+          "invents",
+          "pays for",
+          "selects and organizes"
+        ],
+        "answer": "selects and organizes",
+        "explanation": "curate = (콘텐츠를) 골라 정리하다(select and organize)."
+      },
+      {
+        "qid": "dfb9a437-d1e3-4453-ab03-69ee4de1a950",
+        "type": "mc",
+        "q": "In the passage, 'instantaneously' is closest in meaning to ____.",
+        "choices": [
+          "carefully",
+          "immediately",
+          "rarely",
+          "slowly",
+          "partially"
+        ],
+        "answer": "immediately",
+        "explanation": "instantaneously = 즉각적으로(immediately)."
+      },
+      {
+        "qid": "53d2903b-bfa6-4a18-ac45-59e1738c6bad",
+        "type": "mc",
+        "q": "In the passage, 'infallible' is closest in meaning to ____.",
+        "choices": [
+          "easy to use",
+          "expensive to build",
+          "difficult to understand",
+          "incapable of making mistakes",
+          "likely to break down"
+        ],
+        "answer": "incapable of making mistakes",
+        "explanation": "infallible = 절대 틀리지 않는. by no means infallible = 결코 완벽하지 않다."
+      },
+      {
+        "qid": "ab0873a9-74e8-4eab-84f2-6f3dbe1d0790",
+        "type": "mc",
+        "q": "In the passage, 'recurring' is closest in meaning to ____.",
+        "choices": [
+          "repeated",
+          "rare",
+          "hidden",
+          "changing",
+          "dangerous"
+        ],
+        "answer": "repeated",
+        "explanation": "recurring = 반복되는(repeated)."
+      },
+      {
+        "qid": "0393ee27-68de-40aa-8feb-c296588c0d80",
+        "type": "mc",
+        "q": "How does the comparison between AI and children function in the second paragraph?",
+        "choices": [
+          "It proves that computers have the same emotions as children.",
+          "It suggests that children should be trained with labeled images.",
+          "It makes the abstract process of machine learning easier to understand through a familiar example.",
+          "It criticizes parents who let their children use AI.",
+          "It shows that AI learns much faster than children do."
+        ],
+        "answer": "It makes the abstract process of machine learning easier to understand through a familiar example.",
+        "explanation": "익숙한 아이들의 학습에 빗대어 추상적인 AI 학습 과정을 쉽게 설명한다."
+      },
+      {
+        "qid": "3e31b27b-5fb2-4e11-99ec-2c030a161c95",
+        "type": "mc",
+        "q": "According to the second paragraph, which correctly describes how the computer learns?",
+        "choices": [
+          "It receives the correct answer for every image before it makes any guess.",
+          "It learns only from images of cats with pointed ears.",
+          "It stops learning as soon as it makes its first incorrect prediction.",
+          "It labels the images by itself before humans examine them.",
+          "It examines labeled images, detects recurring features, and modifies its guesses after incorrect predictions."
+        ],
+        "answer": "It examines labeled images, detects recurring features, and modifies its guesses after incorrect predictions.",
+        "explanation": "이름표 붙은 이미지 검토 → 반복 패턴 감지 → 틀리면 추측 수정 후 재시도."
+      },
+      {
+        "qid": "6261be10-b16c-454c-ac54-d3f7ea576300",
+        "type": "mc",
+        "q": "What does the sentence 'The more examples it encounters, the more accurate its predictions become' imply about training AI?",
+        "choices": [
+          "A single high-quality image is enough to train an AI.",
+          "Larger amounts of labeled data generally lead to better performance.",
+          "AI predictions become less reliable with additional data.",
+          "The accuracy of AI does not depend on its examples.",
+          "AI needs fewer examples than children to learn."
+        ],
+        "answer": "Larger amounts of labeled data generally lead to better performance.",
+        "explanation": "더 많은 예시를 접할수록 예측이 더 정확해진다 → 데이터 양이 성능을 좌우한다."
+      },
+      {
+        "qid": "8c9c009c-daf5-4802-8cc8-a6dbf9ee16d3",
+        "type": "mc",
+        "q": "The clause 'Should that data contain flaws' can best be rewritten as ____.",
+        "choices": [
+          "Because that data contains flaws",
+          "Although that data contained flaws",
+          "Unless that data contains flaws",
+          "If that data should contain flaws",
+          "Since that data must contain flaws"
+        ],
+        "answer": "If that data should contain flaws",
+        "explanation": "if 생략 도치: Should + 주어 + 동사원형 = If + 주어 + should + 동사원형."
+      },
+      {
+        "qid": "4c92674a-d161-4430-b297-d206ca053e22",
+        "type": "mc",
+        "q": "Which situation is most similar to the example of white cats in the passage?",
+        "choices": [
+          "A calculator gives the correct answer to every math problem.",
+          "A student reads many different kinds of books to prepare for a test.",
+          "A translation AI trained mostly on formal writing struggles to understand casual slang.",
+          "A doctor uses AI and then checks the results carefully.",
+          "A phone runs out of battery after a long day."
+        ],
+        "answer": "A translation AI trained mostly on formal writing struggles to understand casual slang.",
+        "explanation": "한쪽으로 치우친 데이터(격식체)로 훈련된 AI가 다른 종류(구어체)를 잘 처리하지 못하는 경우가 같은 구조이다."
+      },
+      {
+        "qid": "c716a7b6-94a2-4cb7-b510-d78253ed8c61",
+        "type": "mc",
+        "q": "According to the passage, why might AI make discriminatory decisions about people?",
+        "choices": [
+          "Because AI systems are designed to dislike certain people",
+          "Because the data it learned from may contain flaws or unbalanced examples",
+          "Because physicians give it incorrect information on purpose",
+          "Because it cannot process images of people at all",
+          "Because it learns much more slowly than children"
+        ],
+        "answer": "Because the data it learned from may contain flaws or unbalanced examples",
+        "explanation": "'For precisely the same reason' = 데이터의 결함을 그대로 재현하기 때문이다."
+      },
+      {
+        "qid": "fb9505c3-61f2-4b16-b901-6f7f94e55f71",
+        "type": "mc",
+        "q": "The phrase 'precisely the same reason' refers to ____.",
+        "choices": [
+          "the fact that AI curates video recommendations",
+          "the similarity between AI and the way children learn",
+          "the pointed ears and whiskers of cats",
+          "the speed at which AI translates languages",
+          "the fact that AI reproduces flaws in the data it learns from"
+        ],
+        "answer": "the fact that AI reproduces flaws in the data it learns from",
+        "explanation": "앞 문장들: 데이터에 결함이 있으면 AI가 그 결함을 그대로 재현한다."
+      },
+      {
+        "qid": "16bb64b3-dc92-4969-9a27-fdd594331927",
+        "type": "mc",
+        "q": "In the passage, 'substitute for' is closest in meaning to ____.",
+        "choices": [
+          "take the place of",
+          "depend on",
+          "compete with",
+          "look after",
+          "apply for"
+        ],
+        "answer": "take the place of",
+        "explanation": "substitute for = ~을 대신하다(take the place of)."
+      },
+      {
+        "qid": "a7af3beb-3616-43a9-af3d-9857bd4e380c",
+        "type": "mc",
+        "q": "Which sentence is grammatically correct, like 'thousands of images, each of which has been labeled'?",
+        "choices": [
+          "She has three brothers, all of them live in Seoul.",
+          "She has three brothers, all of who live in Seoul.",
+          "She has three brothers, all of that live in Seoul.",
+          "She has three brothers, all of whom live in Seoul.",
+          "She has three brothers, all of whom lives in Seoul."
+        ],
+        "answer": "She has three brothers, all of whom live in Seoul.",
+        "explanation": "계속적 용법: 수량 표현 + of + whom/which. 사람이므로 whom, 복수이므로 live."
+      },
+      {
+        "qid": "207c0ec9-4b97-4945-9232-6b7e4ed94edd",
+        "type": "mc",
+        "q": "Which sentence contains a past participle modifying the noun before it, as in 'an AI trained predominantly on images of white cats'?",
+        "choices": [
+          "The students wrote letters to the hospital.",
+          "The letters written by the students were sent to the hospital.",
+          "The students have written many letters.",
+          "Writing letters is fun for the students.",
+          "The students were writing letters all day."
+        ],
+        "answer": "The letters written by the students were sent to the hospital.",
+        "explanation": "과거분사구(written by the students)가 앞 명사 the letters를 꾸민다."
+      },
+      {
+        "qid": "d565e268-6d22-41b3-ac61-d4b15012abe4",
+        "type": "mc",
+        "q": "Which statement is true according to the passage?",
+        "choices": [
+          "The computer is presented with only a handful of images.",
+          "AI can learn from data that humans have never supplied.",
+          "The writer believes AI is completely infallible.",
+          "Physicians no longer diagnose diseases themselves.",
+          "The writer acknowledges AI's power while insisting that it cannot replace human reasoning."
+        ],
+        "answer": "The writer acknowledges AI's power while insisting that it cannot replace human reasoning.",
+        "explanation": "'Although AI is an extraordinarily powerful tool, it can never substitute for human reasoning and judgment.'"
+      },
+      {
+        "qid": "90cf2e00-93cf-4d28-9549-efe9433a4497",
+        "type": "mc",
+        "q": "Which statement is NOT true according to the passage?",
+        "choices": [
+          "AI is deeply embedded in contemporary life.",
+          "The computer modifies its guess after an incorrect prediction.",
+          "According to the writer, AI corrects the flaws in its data on its own.",
+          "AI systems can occasionally make discriminatory decisions.",
+          "We should always verify the information that AI provides."
+        ],
+        "answer": "According to the writer, AI corrects the flaws in its data on its own.",
+        "explanation": "데이터에 결함이 있으면 AI는 그 결함을 그대로 재현한다(reproduce). 스스로 고친다는 내용은 없다."
+      },
+      {
+        "qid": "e49339d5-17bf-43c9-a19f-4d6faa9a04a0",
+        "type": "order",
+        "items": [
+          "Whenever it makes an incorrect prediction, it modifies its guess.",
+          "Each image has been labeled either \"cat\" or \"not cat.\"",
+          "As it encounters more examples, its predictions become more accurate.",
+          "The computer is presented with thousands of images.",
+          "The computer examines the examples and detects recurring patterns."
+        ],
+        "answer": [
+          "The computer is presented with thousands of images.",
+          "Each image has been labeled either \"cat\" or \"not cat.\"",
+          "The computer examines the examples and detects recurring patterns.",
+          "Whenever it makes an incorrect prediction, it modifies its guess.",
+          "As it encounters more examples, its predictions become more accurate."
+        ]
+      },
+      {
+        "qid": "f18c82c2-e235-488c-b1fb-4ace2b5e792c",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "curate",
+            "meaning": "골라 정리하다"
+          },
+          {
+            "word": "instantaneously",
+            "meaning": "즉각적으로"
+          },
+          {
+            "word": "acquire",
+            "meaning": "습득하다"
+          },
+          {
+            "word": "resemble",
+            "meaning": "닮다"
+          },
+          {
+            "word": "infallible",
+            "meaning": "절대 틀리지 않는"
+          },
+          {
+            "word": "reproduce",
+            "meaning": "재현하다"
+          },
+          {
+            "word": "discriminatory",
+            "meaning": "차별적인"
+          },
+          {
+            "word": "substitute for",
+            "meaning": "~을 대신하다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "6bd5866c-bdf4-4bb1-90a7-4def8221a393",
+        "q": "Summarize the passage in three English sentences: (1) how AI learns, (2) why its results can be flawed, and (3) what the writer recommends.",
+        "wordLimit": 80,
+        "sampleAnswer": "AI learns in a way that resembles children, by examining many labeled examples, detecting recurring patterns, and modifying its guesses after incorrect predictions. Because it can learn only from the data humans supply, it reproduces any flaws in that data, which can even lead to discriminatory decisions about people. Consequently, the writer recommends that we always verify what AI provides, since it can never substitute for human reasoning and judgment.",
+        "rubric": "① 학습 방식 ② 결함의 원인(데이터) ③ 권고(검증) ④ 영어 3문장, 정확성"
+      },
+      {
+        "qid": "4bf82314-439a-4631-87e2-7b4b42fd6395",
+        "q": "다음 문장을 If를 사용한 문장으로 바꿔 쓰시오. 'Should that data contain flaws, the AI will inevitably reproduce those flaws.'",
+        "wordLimit": 15,
+        "sampleAnswer": "If that data should contain flaws, the AI will inevitably reproduce those flaws.",
+        "rubric": "① If ② that data should contain flaws ③ 주절 유지"
+      },
+      {
+        "qid": "2c6ccde6-a79d-40e7-88c0-bd512fbe8189",
+        "q": "우리말로 쓰시오: AI가 사람에 대해 차별적인 결정을 할 수 있는 이유를 지문에 근거해 쓰고, 이를 줄이기 위한 방법을 두 가지 제안하시오.",
+        "wordLimit": 100,
+        "sampleAnswer": "이유: AI는 사람이 제공한 데이터로만 배우기 때문에, 데이터에 결함이나 치우침이 있으면 그것을 그대로 재현한다. 방법: ① 다양한 사람들의 데이터를 골고루 넣어 훈련시킨다. ② AI의 결정을 사람이 반드시 다시 검토한다.",
+        "rubric": "① 데이터 결함 재현이라는 이유 ② 타당한 방법 2가지",
+        "answerLang": "ko"
+      },
+      {
+        "qid": "9b26cc18-3472-4043-84fb-5d7f776ec09f",
+        "q": "다음 우리말을 영어로 쓰시오. '비록 AI는 매우 강력한 도구이지만, 그것은 결코 인간의 판단을 대신할 수 없다.' <조건> although, substitute for를 사용할 것",
+        "wordLimit": 16,
+        "sampleAnswer": "Although AI is a very powerful tool, it can never substitute for human judgment.",
+        "rubric": "① Although + 주어 + 동사 ② a very powerful tool ③ can never substitute for ④ human judgment"
+      },
+      {
+        "qid": "31ba305a-cab7-4caa-99e2-e45b2f973732",
+        "q": "Do you agree that AI can never substitute for human judgment? Give your opinion and one reason or example in 3–4 English sentences.",
+        "wordLimit": 70,
+        "sampleAnswer": "I agree that AI can never substitute for human judgment. AI only learns from the data people supply, so it can reproduce the flaws in that data. For example, a hiring AI trained on biased data might reject good candidates unfairly. Humans must check its decisions and take responsibility for them.",
+        "rubric": "① 찬반 입장 ② 이유 또는 예시 ③ 지문 내용 활용 ④ 영어 3~4문장, 정확성"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "embedded",
+        "surface": "embedded",
+        "pos": "형",
+        "meaning": "깊이 박힌, 깊숙이 자리 잡은",
+        "sentence": "Artificial intelligence, or AI, has become deeply embedded in contemporary life."
+      },
+      {
+        "word": "contemporary",
+        "surface": "contemporary",
+        "pos": "형",
+        "meaning": "현대의, 동시대의",
+        "sentence": "Artificial intelligence, or AI, has become deeply embedded in contemporary life."
+      },
+      {
+        "word": "curate",
+        "surface": "curates",
+        "pos": "동",
+        "meaning": "(콘텐츠를) 골라 정리하다, 큐레이션하다",
+        "sentence": "It curates video recommendations, translates languages almost instantaneously, and even assists physicians in diagnosing diseases."
+      },
+      {
+        "word": "instantaneously",
+        "surface": "instantaneously",
+        "pos": "부",
+        "meaning": "즉각적으로, 순식간에",
+        "sentence": "It curates video recommendations, translates languages almost instantaneously, and even assists physicians in diagnosing diseases."
+      },
+      {
+        "word": "physician",
+        "surface": "physicians",
+        "pos": "명",
+        "meaning": "의사 (특히 내과 의사)",
+        "sentence": "It curates video recommendations, translates languages almost instantaneously, and even assists physicians in diagnosing diseases."
+      },
+      {
+        "word": "diagnose",
+        "surface": "diagnosing",
+        "pos": "동",
+        "meaning": "진단하다",
+        "sentence": "It curates video recommendations, translates languages almost instantaneously, and even assists physicians in diagnosing diseases."
+      },
+      {
+        "word": "acquire",
+        "surface": "acquires",
+        "pos": "동",
+        "meaning": "얻다, 습득하다",
+        "sentence": "Yet have you ever stopped to consider how AI actually acquires its abilities?"
+      },
+      {
+        "word": "resemble",
+        "surface": "resembles",
+        "pos": "동",
+        "meaning": "닮다, 비슷하다",
+        "sentence": "Remarkably, the way AI learns somewhat resembles the way children learn."
+      },
+      {
+        "word": "identify",
+        "surface": "identify",
+        "pos": "동",
+        "meaning": "식별하다, 알아보다",
+        "sentence": "Imagine attempting to train a computer to identify cats."
+      },
+      {
+        "word": "initially",
+        "surface": "Initially",
+        "pos": "부",
+        "meaning": "처음에",
+        "sentence": "Initially, the computer is presented with thousands of images, each of which has been labeled either \"cat\" or \"not cat.\""
+      },
+      {
+        "word": "examine",
+        "surface": "examining",
+        "pos": "동",
+        "meaning": "조사하다, 검토하다",
+        "sentence": "By examining these examples, the computer progressively detects recurring patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "progressively",
+        "surface": "progressively",
+        "pos": "부",
+        "meaning": "점진적으로, 차츰",
+        "sentence": "By examining these examples, the computer progressively detects recurring patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "detect",
+        "surface": "detects",
+        "pos": "동",
+        "meaning": "감지하다, 발견하다",
+        "sentence": "By examining these examples, the computer progressively detects recurring patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "recurring",
+        "surface": "recurring",
+        "pos": "형",
+        "meaning": "반복되는, 되풀이되는",
+        "sentence": "By examining these examples, the computer progressively detects recurring patterns, such as pointed ears and whiskers."
+      },
+      {
+        "word": "incorrect",
+        "surface": "incorrect",
+        "pos": "형",
+        "meaning": "틀린, 부정확한",
+        "sentence": "Whenever it makes an incorrect prediction, it modifies its guess and attempts once more."
+      },
+      {
+        "word": "prediction",
+        "surface": "prediction",
+        "pos": "명",
+        "meaning": "예측",
+        "sentence": "Whenever it makes an incorrect prediction, it modifies its guess and attempts once more."
+      },
+      {
+        "word": "modify",
+        "surface": "modifies",
+        "pos": "동",
+        "meaning": "수정하다, 바꾸다",
+        "sentence": "Whenever it makes an incorrect prediction, it modifies its guess and attempts once more."
+      },
+      {
+        "word": "by no means",
+        "surface": "by no means",
+        "pos": "숙",
+        "meaning": "결코 ~이 아닌",
+        "sentence": "Nevertheless, AI is by no means infallible."
+      },
+      {
+        "word": "infallible",
+        "surface": "infallible",
+        "pos": "형",
+        "meaning": "절대 틀리지 않는",
+        "sentence": "Nevertheless, AI is by no means infallible."
+      },
+      {
+        "word": "supply",
+        "surface": "supply",
+        "pos": "동",
+        "meaning": "공급하다, 제공하다",
+        "sentence": "It is capable of learning only from the data that humans supply."
+      },
+      {
+        "word": "reproduce",
+        "surface": "reproduce",
+        "pos": "동",
+        "meaning": "재현하다, 그대로 되풀이하다",
+        "sentence": "Should that data contain flaws, the AI will inevitably reproduce those flaws."
+      },
+      {
+        "word": "flaw",
+        "surface": "flaws",
+        "pos": "명",
+        "meaning": "결함, 결점",
+        "sentence": "Should that data contain flaws, the AI will inevitably reproduce those flaws."
+      },
+      {
+        "word": "reliably",
+        "surface": "reliably",
+        "pos": "부",
+        "meaning": "확실하게, 믿을 수 있게",
+        "sentence": "For instance, an AI trained predominantly on images of white cats may fail to recognize black cats reliably."
+      },
+      {
+        "word": "occasionally",
+        "surface": "occasionally",
+        "pos": "부",
+        "meaning": "가끔, 때때로",
+        "sentence": "For precisely the same reason, AI systems can occasionally make biased or discriminatory decisions about people."
+      },
+      {
+        "word": "discriminatory",
+        "surface": "discriminatory",
+        "pos": "형",
+        "meaning": "차별적인",
+        "sentence": "For precisely the same reason, AI systems can occasionally make biased or discriminatory decisions about people."
+      },
+      {
+        "word": "consequently",
+        "surface": "Consequently",
+        "pos": "부",
+        "meaning": "그 결과, 따라서",
+        "sentence": "Consequently, we should always verify the information that AI provides."
+      },
+      {
+        "word": "extraordinarily",
+        "surface": "extraordinarily",
+        "pos": "부",
+        "meaning": "엄청나게, 대단히",
+        "sentence": "Although AI is an extraordinarily powerful tool, it can never substitute for human reasoning and judgment."
+      }
+    ]
+  }
+}
