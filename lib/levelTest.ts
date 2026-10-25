@@ -14,6 +14,8 @@ import type {
 import { LEVEL_TEST_BANDS, LEVEL_TEST_STRENGTH_MIN, LEVEL_TEST_WEAKNESS_MAX } from '@/config/levelTestBands'
 import e3A from '@/data/level-tests/e3-A.json'
 import e3B from '@/data/level-tests/e3-B.json'
+import e4A from '@/data/level-tests/e4-A.json'
+import e4B from '@/data/level-tests/e4-B.json'
 
 // 학년 폴더 (주소에는 slug 를 쓴다: /materials/level-tests/e3)
 export const LEVEL_TEST_GRADES = [
@@ -42,7 +44,7 @@ export const SECTION_LABELS: Record<LevelTestSection, string> = {
 }
 export const SECTION_ORDER: LevelTestSection[] = ['vocab', 'grammar', 'reading', 'writing']
 
-const LEVEL_TESTS: LevelTest[] = [e3A, e3B] as LevelTest[]
+const LEVEL_TESTS: LevelTest[] = [e3A, e3B, e4A, e4B] as LevelTest[]
 
 export function gradeBySlug(slug: string) {
   return LEVEL_TEST_GRADES.find((g) => g.slug === slug) ?? null

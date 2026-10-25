@@ -1,0 +1,50 @@
+{
+  "id": "e4-B",
+  "grade": "초4",
+  "form": "B",
+  "title": "초4 레벨테스트 B형",
+  "description": "중급~고급: 계절·장소·가족 단어, 3인칭 -s·현재진행형·소유대명사·과거형(went) 기초, 생활 글과 안내문 읽기, 문장 쓰기",
+  "timeMinutes": 35,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "Hi, I'm Daniel",
+      "text": "Hi, I'm Daniel. I live in Seoul with my family.\nEvery Saturday, I go to the swimming pool with my sister.\nShe swims very fast, but I swim slowly.\nAfter swimming, we eat lunch at a noodle restaurant near the pool.\nNext Saturday is my sister's birthday.\nI want to buy her a pair of swimming goggles."
+    },
+    {
+      "id": "p2",
+      "title": "Green Town Library",
+      "text": "Green Town Library\nOpen: Tuesday – Sunday, 9 a.m. – 6 p.m.\nClosed: Monday\nStory Time for kids: Saturday, 2 p.m.\nPlease be quiet in the library!"
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 계절을 고르세요.", "stimulus": "⛄", "choices": ["spring", "summer", "fall", "winter"], "answer": 3, "points": 4, "explanation": "⛄ 눈사람 → 겨울 = winter (spring 봄, summer 여름, fall 가을)" },
+    { "id": "v2", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "library", "choices": ["박물관", "도서관", "병원", "우체국"], "answer": 1, "points": 4, "explanation": "library = 도서관 (박물관 museum, 병원 hospital, 우체국 post office)" },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "I'm ____. I want some water.", "choices": ["thirsty", "sleepy", "angry", "full"], "answer": 0, "points": 4, "explanation": "물을 마시고 싶다 → 목이 마른 = thirsty" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "두 단어의 관계가 같도록 빈칸에 알맞은 말을 고르세요.", "stimulus": "write : writer = sing : ____", "choices": ["song", "sang", "singer", "singing"], "answer": 2, "points": 4, "explanation": "write(쓰다) → writer(작가)처럼 '~하는 사람' → sing(노래하다) → singer(가수)" },
+    { "id": "v5", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "My ____ is my mother's mother.", "choices": ["aunt", "grandmother", "sister", "uncle"], "answer": 1, "points": 4, "explanation": "엄마의 엄마 = 할머니(grandmother)" },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "다음 설명에 알맞은 장소를 고르세요.", "stimulus": "a place where you can see many animals", "choices": ["park", "school", "bank", "zoo"], "answer": 3, "points": 4, "explanation": "여러 동물을 볼 수 있는 곳 = zoo(동물원)" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "길 안내를 하는 말입니다. 빈칸에 알맞은 말을 고르세요.", "stimulus": "Go straight and turn ____ at the corner.", "choices": ["left", "up", "under", "into"], "answer": 0, "points": 4, "explanation": "turn left = 왼쪽으로 돌다 (길 안내 표현)" },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: How's the weather?  B: It's ____. Take your umbrella.", "choices": ["sunny", "rainy", "hot", "clear"], "answer": 1, "points": 4, "explanation": "우산을 챙기라고 했으니 비가 온다 → rainy" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "There ____ three apples on the table.", "choices": ["is", "are", "am", "be"], "answer": 1, "points": 4, "explanation": "three apples(여러 개)이므로 There are를 쓴다." },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "He ____ to school by bus.", "choices": ["goes", "go", "going", "gone"], "answer": 0, "points": 4, "explanation": "He(그)가 주어인 현재 문장 → go에 -es를 붙여 goes" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: What is she doing?  B: She is ____ a book.", "choices": ["read", "reads", "reading", "readed"], "answer": 2, "points": 4, "explanation": "지금 하는 일 → be동사(is) + -ing (She is reading a book.)" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: Whose shoes are these?  B: They're ____.", "choices": ["me", "my", "I", "mine"], "answer": 3, "points": 4, "explanation": "뒤에 명사 없이 '나의 것'은 mine을 쓴다. They're mine." },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Yesterday, I ____ to the park.", "choices": ["go", "goes", "went", "going"], "answer": 2, "points": 4, "explanation": "Yesterday(어제)는 과거 → go의 과거형 went" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "'Do you like carrots?'에 '아니'라고 대답하는 말을 고르세요.", "choices": ["No, I'm not.", "No, I don't.", "No, I can't.", "No, it isn't."], "answer": 1, "points": 4, "explanation": "Do you ~?로 물으면 Yes, I do. / No, I don't.로 대답한다." },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["They are my friends.", "There is a dog.", "I have two cats.", "She can swims."], "answer": 3, "points": 4, "explanation": "can 다음에는 동사원형을 쓴다. She can swims. → She can swim." },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "Daniel은 어디에 사나요?", "choices": ["부산", "서울", "대구", "인천"], "answer": 1, "points": 4, "explanation": "'I live in Seoul with my family.' → 서울" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "Daniel은 매주 토요일 누구와 수영장에 가나요?", "choices": ["his dad", "his friend", "his sister", "his mom"], "answer": 2, "points": 4, "explanation": "'I go to the swimming pool with my sister.'" },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "수영을 한 뒤 어디에서 점심을 먹나요?", "choices": ["at home", "at school", "at the park", "at a noodle restaurant"], "answer": 3, "points": 4, "explanation": "'we eat lunch at a noodle restaurant near the pool.' → 수영장 근처 국수 식당" },
+    { "id": "r4", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "글의 내용과 다른 것을 고르세요.", "choices": ["Daniel은 sister보다 수영을 빨리 한다.", "Daniel은 가족과 서울에 산다.", "다음 주 토요일은 sister의 생일이다.", "Daniel은 sister에게 수경을 사 주고 싶어 한다."], "answer": 0, "points": 4, "explanation": "'She swims very fast, but I swim slowly.' → sister가 빠르고 Daniel은 느리다." },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "도서관이 문을 닫는 요일은 언제인가요?", "choices": ["Monday", "Tuesday", "Saturday", "Sunday"], "answer": 0, "points": 4, "explanation": "'Closed: Monday' → 월요일" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "안내문을 보고 알 수 없는 것을 고르세요.", "choices": ["문을 여는 시간", "쉬는 요일", "어린이 이야기 시간", "한 번에 빌릴 수 있는 책의 수"], "answer": 3, "points": 4, "explanation": "여는 시간(9시~6시), 쉬는 날(월요일), 이야기 시간(토요일 2시)은 나오지만 빌릴 수 있는 책의 수는 없다." },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "그림을 보고 단어를 쓰세요.", "stimulus": "🌙", "hint": "m _ _ n", "answer": "moon", "points": 4, "explanation": "🌙 달 = moon" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "목요일", "answer": "Thursday", "points": 4, "explanation": "목요일 = Thursday (Tuesday 화요일과 헷갈리지 않기)" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (그녀는 책을 읽고 있다.)", "stimulus": "( is / she / a book / reading )", "answer": "She is reading a book.", "points": 4, "explanation": "주어(She) + be동사(is) + -ing(reading) + a book" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> drink를 알맞은 형태로 바꿀 것", "stimulus": "그는 매일 아침 우유를 마신다.", "answer": "He drinks milk every morning.", "points": 4, "explanation": "He가 주어인 현재 문장 → drink에 -s → He drinks milk every morning." }
+  ]
+}

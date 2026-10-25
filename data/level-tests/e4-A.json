@@ -1,0 +1,50 @@
+{
+  "id": "e4-A",
+  "grade": "초4",
+  "form": "A",
+  "title": "초4 레벨테스트 A형",
+  "description": "초급~중급: 날씨·옷·시각·직업 단어, There is / Let's / 현재진행형 기초, 짧은 일기·가게 대화 읽기",
+  "timeMinutes": 30,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "My Day",
+      "text": "Today is Monday. It is cold and snowy.\nI wear my blue jacket and my red cap.\nAfter school, I play with my friend Hana.\nWe make a big snowman.\nIt is fun!"
+    },
+    {
+      "id": "p2",
+      "title": "At the Store",
+      "text": "A: Can I help you?\nB: Yes, please. How much is this pencil?\nA: It's 500 won.\nB: I'll take two."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 날씨 단어를 고르세요.", "stimulus": "🌧️", "choices": ["sunny", "rainy", "snowy", "windy"], "answer": 1, "points": 4, "explanation": "🌧️ 비가 오는 = rainy (sunny 맑은, snowy 눈이 오는, windy 바람이 부는)" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "그림에 알맞은 단어를 고르세요.", "stimulus": "🚌", "choices": ["bike", "train", "bus", "car"], "answer": 2, "points": 4, "explanation": "🚌 버스 = bus" },
+    { "id": "v3", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "숫자 12를 영어로 고르세요.", "stimulus": "12", "choices": ["twelve", "twenty", "two", "eleven"], "answer": 0, "points": 4, "explanation": "12 = twelve (twenty 20, two 2, eleven 11)" },
+    { "id": "v4", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "kitchen", "choices": ["거실", "침실", "욕실", "부엌"], "answer": 3, "points": 4, "explanation": "kitchen = 부엌 (거실 living room, 침실 bedroom, 욕실 bathroom)" },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "옷이나 모자가 아닌 것을 고르세요.", "choices": ["shirt", "pants", "cap", "spoon"], "answer": 3, "points": 4, "explanation": "spoon(숟가락)은 입는 것이 아니다. shirt 셔츠, pants 바지, cap 모자" },
+    { "id": "v6", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "tired", "choices": ["배고픈", "피곤한", "화난", "무서운"], "answer": 1, "points": 4, "explanation": "tired = 피곤한 (배고픈 hungry, 화난 angry, 무서운 scared)" },
+    { "id": "v7", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "I wash my hands with ____.", "choices": ["soap", "milk", "paper", "sand"], "answer": 0, "points": 4, "explanation": "손은 비누(soap)로 씻는다." },
+    { "id": "v8", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "두 단어의 관계가 같도록 빈칸에 알맞은 말을 고르세요.", "stimulus": "fast : slow = up : ____", "choices": ["in", "on", "down", "over"], "answer": 2, "points": 4, "explanation": "fast(빠른) ↔ slow(느린)처럼 반대말 → up(위로) ↔ down(아래로)" },
+    { "id": "v9", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 직업을 고르세요.", "stimulus": "He teaches students at school. He is a ____.", "choices": ["doctor", "cook", "teacher", "farmer"], "answer": 2, "points": 4, "explanation": "학교에서 학생을 가르치는(teaches) 사람 = teacher(선생님)" },
+    { "id": "v10", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "그림을 보고 'What time is it?'에 알맞은 대답을 고르세요.", "stimulus": "🕒", "choices": ["It's four o'clock.", "It's three o'clock.", "It's one o'clock.", "It's two o'clock."], "answer": 1, "points": 4, "explanation": "🕒 시계가 3시를 가리킨다 → It's three o'clock." },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "There ____ a cat on the bed.", "choices": ["is", "are", "am", "be"], "answer": 0, "points": 4, "explanation": "a cat(한 마리)이므로 There is를 쓴다." },
+    { "id": "g2", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Let's ____ soccer.", "choices": ["plays", "play", "playing", "played"], "answer": 1, "points": 4, "explanation": "Let's 다음에는 동사원형을 쓴다. Let's play soccer.(축구하자.)" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: Whose bag is this?  B: It's ____ bag.", "choices": ["I", "me", "my", "mine"], "answer": 2, "points": 4, "explanation": "명사(bag) 앞에서 '나의'는 my를 쓴다. It's my bag." },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: What are you doing?  B: I'm ____ a book.", "choices": ["read", "reads", "to read", "reading"], "answer": 3, "points": 4, "explanation": "지금 하고 있는 일은 be동사 + -ing (I'm reading a book.)" },
+    { "id": "g5", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I have three ____.", "choices": ["boxs", "boxes", "box", "boxies"], "answer": 1, "points": 4, "explanation": "x로 끝나는 단어의 복수형은 -es를 붙인다. box → boxes" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "She ____ milk every morning.", "choices": ["drinks", "drink", "drinking", "to drink"], "answer": 0, "points": 4, "explanation": "She(그녀)가 매일 하는 일은 동사에 -s를 붙인다. She drinks milk." },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "오늘은 무슨 요일인가요?", "choices": ["월요일", "화요일", "수요일", "금요일"], "answer": 0, "points": 4, "explanation": "'Today is Monday.' → 월요일" },
+    { "id": "r2", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "오늘 날씨는 어떤가요?", "choices": ["덥고 맑다", "춥고 눈이 온다", "따뜻하고 비가 온다", "시원하고 바람이 분다"], "answer": 1, "points": 4, "explanation": "'It is cold and snowy.' → 춥고 눈이 온다" },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글쓴이가 입은 것 중 빨간색인 것은 무엇인가요?", "choices": ["jacket", "gloves", "cap", "shoes"], "answer": 2, "points": 4, "explanation": "'my blue jacket and my red cap' → 빨간색은 모자(cap), 재킷은 파란색이다." },
+    { "id": "r4", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글쓴이는 방과 후에 하나와 무엇을 했나요?", "choices": ["축구를 했다", "숙제를 했다", "책을 읽었다", "눈사람을 만들었다"], "answer": 3, "points": 4, "explanation": "'We make a big snowman.' → 큰 눈사람을 만들었다." },
+    { "id": "r5", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "B는 모두 얼마를 내야 하나요?", "choices": ["500원", "1,000원", "1,500원", "2,000원"], "answer": 1, "points": 4, "explanation": "연필 한 자루가 500원이고 'I'll take two.'(두 개 살게요.) → 500 × 2 = 1,000원" },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "그림을 보고 날씨 단어를 쓰세요.", "stimulus": "☀️", "hint": "s _ _ _ y", "answer": "sunny", "points": 4, "explanation": "☀️ 맑은, 해가 나는 = sunny" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "의사", "answer": "doctor", "points": 4, "explanation": "의사 = doctor" },
+    { "id": "w3", "section": "writing", "difficulty": 2, "type": "write", "prompt": "그림을 보고 빈칸에 알맞은 숫자 단어를 영어로 쓰세요.", "stimulus": "🕖  It's ______ o'clock.", "answer": "seven", "accept": ["It's seven o'clock"], "points": 4, "explanation": "🕖 7시 → It's seven o'clock." },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> Let's를 사용할 것", "stimulus": "우리 축구하자.", "answer": "Let's play soccer.", "accept": ["Lets play soccer"], "points": 4, "explanation": "Let's + 동사원형 → Let's play soccer." }
+  ]
+}
