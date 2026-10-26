@@ -9,7 +9,7 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import A4SheetPrint, { type PrintBlock } from '@/components/A4SheetPrint'
 import { copyrightNotice } from '@/config/copyright'
 import { LEVEL_TEST_BANDS } from '@/config/levelTestBands'
-import { CHOICE_MARKS, SECTION_ORDER, findLevelTest, gradeBySlug, orderedItems } from '@/lib/levelTest'
+import { CHOICE_MARKS, SECTION_ORDER, bandAdvice, findLevelTest, gradeBySlug, orderedItems } from '@/lib/levelTest'
 import { ItemHead, PassageBox, PrintChoices, sectionTitle } from '@/components/levelTest/LevelTestParts'
 import type { LevelTest, LevelTestItem } from '@/types/levelTest'
 
@@ -147,7 +147,7 @@ function buildBlocks(test: LevelTest, mode: Mode): PrintBlock[] {
           <p className="mb-1 font-semibold text-gray-800">추천 반 기준 ({test.form}형)</p>
           {LEVEL_TEST_BANDS[test.form].map((b, i, arr) => (
             <p key={b.min} className="text-gray-700">
-              {b.min}~{i === 0 ? 100 : arr[i - 1].min - 1}점 → <b>{b.band}</b> · {b.advice}
+              {b.min}~{i === 0 ? 100 : arr[i - 1].min - 1}점 → <b>{b.band}</b>{bandAdvice(b, test.grade) && ` · ${bandAdvice(b, test.grade)}`}
             </p>
           ))}
         </div>

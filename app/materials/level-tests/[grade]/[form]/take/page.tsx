@@ -95,7 +95,7 @@ export default function LevelTestTakePage() {
         if (j.tableMissing) {
           // 저장 표가 없어도 점수는 보여 준다
           const score = scoreLevelTest(test!, answers)
-          setLocalResult({ total: score.total, band: recommendLevel(test!.form, score.percent).band })
+          setLocalResult({ total: score.total, band: recommendLevel(test!.form, score.percent, test!.grade).band })
         }
         setError(j.error ?? '저장하지 못했습니다.')
         return

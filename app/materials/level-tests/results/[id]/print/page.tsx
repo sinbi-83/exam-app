@@ -134,7 +134,7 @@ function buildBlocks(row: LevelTestResultRow, test: LevelTest, brand: Brand): Pr
     node: (
       <div className="rounded border border-gray-300 p-3 text-[13px] leading-6">
         <p className="mb-1 font-semibold text-gray-800">선생님 의견</p>
-        <p className="text-gray-800">{row.recommendation.advice}</p>
+        {row.recommendation.advice && <p className="text-gray-800">{row.recommendation.advice}</p>}
         {row.memo && <p className="mt-1 whitespace-pre-line text-gray-700">{row.memo}</p>}
       </div>
     ),

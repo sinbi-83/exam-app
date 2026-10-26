@@ -28,7 +28,7 @@ export default function LevelTestPaperGradePage() {
 
   const score = useMemo(() => (test ? scoreLevelTest(test, answers, overrides) : null), [test, answers, overrides])
   if (!test || !info || !score) return <p className="py-20 text-center text-sm text-gray-400">시험지를 찾을 수 없습니다.</p>
-  const rec = recommendLevel(test.form, score.percent)
+  const rec = recommendLevel(test.form, score.percent, test.grade)
 
   function setOverride(id: string, v: boolean | null) {
     setOverrides((o) => {

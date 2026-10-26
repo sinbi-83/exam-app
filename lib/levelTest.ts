@@ -11,7 +11,7 @@ import type {
   LevelTestScore,
   LevelTestSection,
 } from '@/types/levelTest'
-import { LEVEL_TEST_BANDS, LEVEL_TEST_STRENGTH_MIN, LEVEL_TEST_WEAKNESS_MAX } from '@/config/levelTestBands'
+import { LEVEL_TEST_BANDS, LEVEL_TEST_STRENGTH_MIN, LEVEL_TEST_WEAKNESS_MAX, type LevelTestBand } from '@/config/levelTestBands'
 import e3A from '@/data/level-tests/e3-A.json'
 import e3B from '@/data/level-tests/e3-B.json'
 import e4A from '@/data/level-tests/e4-A.json'
@@ -129,9 +129,14 @@ export function scoreLevelTest(test: LevelTest, answers: LevelTestAnswers, overr
   return { total, max, percent: max ? Math.round((total / max) * 100) : 0, sections, correctIds }
 }
 
-export function recommendLevel(form: LevelTestForm, percent: number): LevelTestRecommendation {
+// 기초반 안내(알파벳·기초 단어부터)는 초등용 — 중·고등은 안내 문구를 비운다 (2026-10-26 향미님)
+export function bandAdvice(band: LevelTestBand, grade: string): string {
+  return band.band === '기초반' && !grade.startsWith('초') ? '' : band.advice
+}
+
+export function recommendLevel(form: LevelTestForm, percent: number, grade: string): LevelTestRecommendation {
   const band = LEVEL_TEST_BANDS[form].find((b) => percent >= b.min) ?? LEVEL_TEST_BANDS[form][LEVEL_TEST_BANDS[form].length - 1]
-  return { band: band.band, summary: band.summary, advice: band.advice }
+  return { band: band.band, summary: band.summary, advice: bandAdvice(band, grade) }
 }
 
 // 영역별 강점·약점 (영역 백분율 기준)

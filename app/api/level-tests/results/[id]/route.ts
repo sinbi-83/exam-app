@@ -37,7 +37,7 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
     answers,
     overrides,
     score,
-    recommendation: recommendLevel(test.form, score.percent),
+    recommendation: recommendLevel(test.form, score.percent, test.grade),
     updated_at: new Date().toISOString(),
   }
   if (typeof body.student_name === 'string' && body.student_name.trim()) patch.student_name = body.student_name.trim()

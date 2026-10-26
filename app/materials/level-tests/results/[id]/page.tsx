@@ -102,7 +102,7 @@ export default function LevelTestResultPage() {
           <p className="text-xs text-blue-600">추천 반</p>
           <p className="text-2xl font-bold text-blue-800">{row.recommendation.band}</p>
           <p className="mt-1 text-sm text-gray-700">{row.recommendation.summary}</p>
-          <p className="mt-1 text-sm font-medium text-gray-800">👉 {row.recommendation.advice}</p>
+          {row.recommendation.advice && <p className="mt-1 text-sm font-medium text-gray-800">👉 {row.recommendation.advice}</p>}
         </div>
       </div>
 

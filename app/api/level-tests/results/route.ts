@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       answers,
       overrides,
       score,
-      recommendation: recommendLevel(test.form, score.percent),
+      recommendation: recommendLevel(test.form, score.percent, test.grade),
       memo: body.memo ? String(body.memo) : null,
       taken_at: body.taken_at || new Date().toISOString(),
     })
