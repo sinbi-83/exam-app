@@ -20,6 +20,18 @@ import e5A from '@/data/level-tests/e5-A.json'
 import e5B from '@/data/level-tests/e5-B.json'
 import e6A from '@/data/level-tests/e6-A.json'
 import e6B from '@/data/level-tests/e6-B.json'
+import m1A from '@/data/level-tests/m1-A.json'
+import m1B from '@/data/level-tests/m1-B.json'
+import m2A from '@/data/level-tests/m2-A.json'
+import m2B from '@/data/level-tests/m2-B.json'
+import m3A from '@/data/level-tests/m3-A.json'
+import m3B from '@/data/level-tests/m3-B.json'
+import h1A from '@/data/level-tests/h1-A.json'
+import h1B from '@/data/level-tests/h1-B.json'
+import h2A from '@/data/level-tests/h2-A.json'
+import h2B from '@/data/level-tests/h2-B.json'
+import h3A from '@/data/level-tests/h3-A.json'
+import h3B from '@/data/level-tests/h3-B.json'
 
 // 학년 폴더 (주소에는 slug 를 쓴다: /materials/level-tests/e3)
 export const LEVEL_TEST_GRADES = [
@@ -48,7 +60,10 @@ export const SECTION_LABELS: Record<LevelTestSection, string> = {
 }
 export const SECTION_ORDER: LevelTestSection[] = ['vocab', 'grammar', 'reading', 'writing']
 
-const LEVEL_TESTS: LevelTest[] = [e3A, e3B, e4A, e4B, e5A, e5B, e6A, e6B] as LevelTest[]
+const LEVEL_TESTS: LevelTest[] = [
+  e3A, e3B, e4A, e4B, e5A, e5B, e6A, e6B,
+  m1A, m1B, m2A, m2B, m3A, m3B, h1A, h1B, h2A, h2B, h3A, h3B,
+] as LevelTest[]
 
 export function gradeBySlug(slug: string) {
   return LEVEL_TEST_GRADES.find((g) => g.slug === slug) ?? null

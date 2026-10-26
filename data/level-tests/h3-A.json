@@ -1,0 +1,50 @@
+{
+  "id": "h3-A",
+  "grade": "고3",
+  "form": "A",
+  "title": "고3 레벨테스트 A형",
+  "description": "초급~중급: 수능 기본 어휘·숙어((A)/(B) 고르기 포함), 관계대명사·동명사·미래 수동태·I wish·as if·It ~ that 강조·수 일치, 실패에 관한 글(요지·추론)·마라톤 안내문 읽기",
+  "timeMinutes": 40,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "Learning from Failure",
+      "text": "Failure is often seen as something to avoid at all costs.\nHowever, many successful people say that their failures taught them more than their successes.\nWhen we fail, we are forced to look at what went wrong and find better ways.\nThomas Edison reportedly tested thousands of materials before he found one that worked for the light bulb.\nInstead of fearing failure, we should treat it as a valuable step toward success."
+    },
+    {
+      "id": "p2",
+      "title": "Riverside City Marathon",
+      "text": "• Date: Sunday, November 15\n• Courses: 5 km / 10 km / Half marathon (21 km)\n• Registration: Online only, until October 31\n• Fee: 5 km – 20,000 won / 10 km – 30,000 won / Half – 40,000 won\n• All runners will receive a T-shirt and a medal.\n• Runners under 15 can join the 5 km course only."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "valuable", "choices": ["위험한", "소중한, 가치 있는", "쓸모없는", "값싼"], "answer": 1, "points": 4, "explanation": "valuable = 소중한, 가치 있는 (쓸모없는 useless, 값싼 cheap)" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "registration", "choices": ["등록, 신청", "취소", "대회", "결과"], "answer": 0, "points": 4, "explanation": "registration = 등록, 신청 (동사 register)" },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "We were ____ to cancel the trip because of the storm.", "choices": ["allowed", "excited", "forced", "pleased"], "answer": 2, "points": 4, "explanation": "폭풍 때문에 → 여행을 취소할 수밖에 없었다(be forced to ~ = 어쩔 수 없이 ~하다)" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "to stay away from something or someone", "choices": ["approach", "accept", "attend", "avoid"], "answer": 3, "points": 4, "explanation": "무엇·누구에게서 멀리 떨어져 있다 = avoid(피하다) (approach 다가가다, attend 참석하다)" },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "at all costs와 뜻이 가장 가까운 것을 고르세요.", "stimulus": "something to avoid at all costs", "choices": ["no matter what", "by mistake", "for free", "at last"], "answer": 0, "points": 4, "explanation": "at all costs = 무슨 수를 써서라도 ≒ no matter what (by mistake 실수로, for free 무료로, at last 마침내)" },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "문맥상 단어의 쓰임이 어색한 문장을 고르세요.", "choices": ["He was humble even after winning the award.", "The company went bankrupt because its profits rose sharply.", "The plan was flexible enough to change.", "She remained calm during the emergency."], "answer": 1, "points": 4, "explanation": "이익이 급격히 늘어서(rose sharply) 파산했다(went bankrupt)는 어색하다. → its profits fell sharply" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "(A), (B)에 들어갈 말이 바르게 짝지어진 것을 고르세요.", "stimulus": "Instead of (A) [fearing / welcoming] failure, we should (B) [treat / ignore] it as a valuable step toward success.", "choices": ["fearing – treat", "fearing – ignore", "welcoming – treat", "welcoming – ignore"], "answer": 0, "points": 4, "explanation": "(A) Instead of(~ 대신에) 뒤 → 실패를 두려워하는(fearing) 대신 (B) 성공으로 가는 소중한 단계로 여겨야(treat A as B) 한다." },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "The results were ____: some were good, and some were bad.", "choices": ["perfect", "mixed", "terrible", "identical"], "answer": 1, "points": 4, "explanation": "좋은 것도 나쁜 것도 있었다 → 결과가 엇갈렸다(mixed) (identical 똑같은)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "He tested many materials before he found one ____ worked.", "choices": ["that", "what", "who", "where"], "answer": 0, "points": 4, "explanation": "선행사 one(= a material) + 주격 관계대명사 that" },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Instead of ____ failure, treat it as a lesson.", "choices": ["fear", "fearing", "to fear", "feared"], "answer": 1, "points": 4, "explanation": "전치사 of 뒤 → 동명사 fearing" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "T-shirts ____ to all runners after the race.", "choices": ["give", "will give", "will be given", "giving"], "answer": 2, "points": 4, "explanation": "티셔츠는 '주어지는' 것 → 미래 수동태 will be given" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I wish I ____ more time to practice.", "choices": ["have", "will have", "having", "had"], "answer": 3, "points": 4, "explanation": "I wish + 가정법 과거(현재 이루기 어려운 소망) → had" },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["Failure teaches us more than success does.", "It is important that he be on time.", "The number of runners have increased.", "Having finished the race, she drank some water."], "answer": 2, "points": 4, "explanation": "The number of ~는 단수 취급 → The number of runners has increased." },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "She looked at me as if she ____ me, but we had never met.", "choices": ["knows", "knew", "has known", "will know"], "answer": 1, "points": 4, "explanation": "as if + 가정법 과거(사실은 모르는데 아는 것처럼) → knew" },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "It was my brother ____ broke the window.", "choices": ["what", "which", "that", "where"], "answer": 2, "points": 4, "explanation": "It is/was ~ that … 강조 구문 → 창문을 깬 것은 바로 내 남동생(형)이었다. 사람을 강조할 때 that 대신 who도 쓸 수 있다." },
+
+    { "id": "r1", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글의 요지로 알맞은 것은 무엇인가요?", "choices": ["실패는 무슨 수를 써서라도 피해야 한다.", "성공한 사람은 실패를 숨긴다.", "실패를 두려워하지 말고 성공으로 가는 소중한 단계로 여겨야 한다.", "에디슨은 한 번도 실패하지 않았다."], "answer": 2, "points": 4, "explanation": "통념(실패는 피해야 한다) → However 실패가 더 많이 가르쳐 준다 → 마지막 문장이 요지" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글에 따르면 실패했을 때 우리는 무엇을 하게 되나요?", "choices": ["더 이상 도전하지 않게 된다.", "무엇이 잘못되었는지 살피고 더 나은 방법을 찾게 된다.", "다른 사람을 탓하게 된다.", "운이 좋아진다."], "answer": 1, "points": 4, "explanation": "'When we fail, we are forced to look at what went wrong and find better ways.'" },
+    { "id": "r3", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "에디슨의 예가 뒷받침하는 내용으로 알맞은 것은 무엇인가요?", "choices": ["발명은 한 번에 이루어진다.", "전구는 위험한 발명품이다.", "재료가 비쌀수록 결과가 좋다.", "여러 번의 실패를 거쳐 성공에 이를 수 있다."], "answer": 3, "points": 4, "explanation": "수천 가지 재료를 시험한(실패를 거듭한) 끝에 맞는 재료를 찾았다 → 실패가 성공으로 가는 단계라는 주장의 근거" },
+    { "id": "r4", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p2", "prompt": "마라톤 대회가 열리는 날은 언제인가요?", "choices": ["10월 31일 토요일", "11월 15일 일요일", "11월 16일 월요일", "11월 15일 토요일"], "answer": 1, "points": 4, "explanation": "'Date: Sunday, November 15' 10월 31일은 등록 마감일이다." },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "15세인 학생이 10km 코스에 참가할 때 내야 하는 참가비는 얼마인가요?", "choices": ["20,000원", "40,000원", "30,000원", "무료"], "answer": 2, "points": 4, "explanation": "15세는 15세 '미만(under 15)'이 아니므로 10km 코스에 참가할 수 있다. '10 km – 30,000 won'" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "안내문의 내용과 일치하지 않는 것을 고르세요.", "choices": ["온라인으로만 등록할 수 있다.", "모든 참가자에게 티셔츠와 메달을 준다.", "15세 미만은 5km 코스에만 참가할 수 있다.", "하프 코스 참가비는 30,000원이다."], "answer": 3, "points": 4, "explanation": "'Half – 40,000 won' → 하프 코스는 40,000원" },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "피하다", "hint": "a _ _ _ d", "answer": "avoid", "points": 4, "explanation": "피하다 = avoid (avoid + 동명사: avoid making mistakes)" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "I wish I ______ how to swim. (know)", "answer": "knew", "accept": ["I wish I knew how to swim"], "points": 4, "explanation": "I wish + 가정법 과거 → know의 과거형 knew" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (실패를 두려워하는 대신, 그것을 소중한 단계로 여겨라.)", "stimulus": "( of / instead / fearing failure / , treat it as a valuable step )", "answer": "Instead of fearing failure, treat it as a valuable step.", "accept": ["Instead of fearing failure treat it as a valuable step"], "points": 4, "explanation": "Instead of + 동명사(~하는 대신), 명령문 treat A as B(A를 B로 여겨라)" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> as if를 사용할 것", "stimulus": "그는 마치 모든 것을 아는 것처럼 말한다.", "answer": "He talks as if he knew everything.", "accept": ["He speaks as if he knew everything"], "points": 4, "explanation": "사실은 다 알지 못한다 → as if + 가정법 과거 knew" }
+  ]
+}

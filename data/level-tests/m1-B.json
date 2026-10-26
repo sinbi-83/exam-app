@@ -1,0 +1,50 @@
+{
+  "id": "m1-B",
+  "grade": "중1",
+  "form": "B",
+  "title": "중1 레벨테스트 B형",
+  "description": "중급~고급: 감정·관계·구동사, 동명사·to부정사 목적어·감각동사+형용사·수여동사·If·that절, 할아버지 이야기·결석 이메일 읽기, 배열·영작",
+  "timeMinutes": 40,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "A Special Student",
+      "text": "My grandfather is 75 years old, but he is learning to use a smartphone.\nEvery Tuesday, I teach him how to send text messages and take pictures.\nAt first, it was hard for him. He often pressed the wrong buttons.\nBut he never gave up.\nNow he sends me a funny photo every morning.\nTeaching him was not easy, but it made me feel proud."
+    },
+    {
+      "id": "p2",
+      "title": "An Email to My Teacher",
+      "text": "Dear Ms. Park,\nI'm Jiwoo Lee in Class 1-3. I'm sorry, but I can't come to school tomorrow.\nI have to go to the hospital because I hurt my leg during P.E. class.\nCould you tell me about the homework?\nI will finish it by Friday.\nThank you.\nJiwoo"
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "practice", "choices": ["연습하다", "약속하다", "준비하다", "발표하다"], "answer": 0, "points": 4, "explanation": "practice = 연습하다 (약속하다 promise, 준비하다 prepare, 발표하다 present)" },
+    { "id": "v2", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "I ____ my leg, so I can't run.", "choices": ["fixed", "grew", "hurt", "washed"], "answer": 2, "points": 4, "explanation": "달릴 수 없다 → 다리를 다쳤다(hurt). hurt는 과거형도 hurt이다." },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "a person who lives next to you", "choices": ["stranger", "neighbor", "cousin", "classmate"], "answer": 1, "points": 4, "explanation": "옆집에 사는 사람 = neighbor(이웃) (stranger 낯선 사람, cousin 사촌, classmate 반 친구)" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "두 단어의 관계가 나머지와 다른 것을 고르세요.", "choices": ["happy – sad", "easy – difficult", "begin – start", "cheap – expensive"], "answer": 2, "points": 4, "explanation": "나머지는 반대말 짝이고 begin – start는 '시작하다'라는 같은 뜻의 짝이다." },
+    { "id": "v5", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "I'm so ____ about the school trip. I can't wait!", "choices": ["bored", "worried", "tired", "excited"], "answer": 3, "points": 4, "explanation": "I can't wait!(너무 기다려진다) → 신이 난(excited)" },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "문장 속 give up과 뜻이 가장 가까운 것을 고르세요.", "stimulus": "Don't give up. You can do it!", "choices": ["continue", "quit", "hurry", "agree"], "answer": 1, "points": 4, "explanation": "give up = 포기하다 = quit (continue 계속하다는 반대)" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "두 문장의 빈칸에 공통으로 들어갈 말을 고르세요.", "stimulus": "Can you take care ____ my dog?  /  The box is full ____ toys.", "choices": ["of", "for", "with", "at"], "answer": 0, "points": 4, "explanation": "take care of ~ = ~을 돌보다 / be full of ~ = ~로 가득 차다" },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: I failed the test.  B: ____", "choices": ["Congratulations!", "Good for you.", "You're welcome.", "That's too bad."], "answer": 3, "points": 4, "explanation": "시험에 떨어졌다는 말에는 위로하는 That's too bad.(안됐다)가 알맞다." },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I enjoy ____ books in my free time.", "choices": ["read", "to read", "reading", "reads"], "answer": 2, "points": 4, "explanation": "enjoy는 동명사(-ing)를 목적어로 쓴다 → enjoy reading" },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "You look ____ today.", "choices": ["happily", "happy", "happiness", "to happy"], "answer": 1, "points": 4, "explanation": "감각동사 look + 형용사 → look happy(행복해 보인다). 부사 happily는 쓰지 않는다." },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "My uncle gave ____ a nice watch.", "choices": ["me", "I", "my", "mine"], "answer": 0, "points": 4, "explanation": "give + 사람(목적격) + 물건 → gave me a nice watch" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "____ it rains tomorrow, we will stay home.", "choices": ["But", "So", "If", "Because"], "answer": 2, "points": 4, "explanation": "'내일 비가 오면' → 조건의 If. If절에서는 미래 일도 현재형(rains)으로 쓴다." },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["I want to visit Paris.", "She is good at swimming.", "They decided to buy a car.", "He finished to do his homework."], "answer": 3, "points": 4, "explanation": "finish는 동명사를 목적어로 쓴다 → He finished doing his homework." },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 들어갈 수 없는 것을 고르세요.", "stimulus": "I ____ to learn Chinese.", "choices": ["want", "hope", "plan", "enjoy"], "answer": 3, "points": 4, "explanation": "want·hope·plan은 to부정사를 목적어로 쓰지만 enjoy는 동명사만 쓴다 (enjoy learning)." },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I think ____ he is honest.", "choices": ["what", "that", "who", "which"], "answer": 1, "points": 4, "explanation": "think 뒤에 '~라고'를 이끄는 접속사 that → I think that he is honest." },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "할아버지가 배우고 있는 것은 무엇인가요?", "choices": ["컴퓨터 타자", "스마트폰 사용하기", "요리하기", "영어 회화"], "answer": 1, "points": 4, "explanation": "'he is learning to use a smartphone.' → 스마트폰 사용법" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "처음에 할아버지가 어려워한 점은 무엇인가요?", "choices": ["버튼을 자주 잘못 눌렀다.", "글씨가 잘 안 보였다.", "휴대폰이 없었다.", "배울 시간이 없었다."], "answer": 0, "points": 4, "explanation": "'At first, it was hard for him. He often pressed the wrong buttons.'" },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글에서 알 수 있는 할아버지의 성격으로 알맞은 것은 무엇인가요?", "choices": ["게으른", "겁이 많은", "무뚝뚝한", "포기하지 않는"], "answer": 3, "points": 4, "explanation": "'But he never gave up.' → 어려워도 포기하지 않았다. 지금은 매일 아침 사진을 보낸다." },
+    { "id": "r4", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "마지막 문장에 나타난 글쓴이의 심정으로 알맞은 것은 무엇인가요?", "choices": ["angry", "bored", "proud", "scared"], "answer": 2, "points": 4, "explanation": "'it made me feel proud.' → 뿌듯한(proud)" },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "지우가 이메일을 쓴 목적으로 알맞은 것은 무엇인가요?", "choices": ["숙제를 제출하려고", "결석을 알리고 숙제를 물어보려고", "병원을 추천하려고", "체육 수업 시간을 바꾸려고"], "answer": 1, "points": 4, "explanation": "'I can't come to school tomorrow.' + 'Could you tell me about the homework?'" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "이메일의 내용과 일치하지 않는 것을 고르세요.", "choices": ["지우는 1학년 3반이다.", "지우는 체육 시간에 다리를 다쳤다.", "지우는 내일 병원에 가야 한다.", "지우는 숙제를 목요일까지 끝내겠다고 했다."], "answer": 3, "points": 4, "explanation": "'I will finish it by Friday.' → 금요일까지" },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "연습하다", "hint": "p _ _ _ _ _ _ e", "answer": "practice", "points": 4, "explanation": "연습하다 = practice" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "My brother enjoys ______ soccer. (play)", "answer": "playing", "accept": ["My brother enjoys playing soccer"], "points": 4, "explanation": "enjoy + 동명사 → playing" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (나는 그에게 편지 한 통을 보냈다.)", "stimulus": "( sent / a letter / him / I )", "answer": "I sent him a letter.", "points": 4, "explanation": "주어 + 동사 + 사람 + 물건 → I sent him a letter." },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> want와 to를 사용할 것", "stimulus": "나는 과학자가 되고 싶다.", "answer": "I want to be a scientist.", "accept": ["I want to become a scientist"], "points": 4, "explanation": "want + to부정사 → I want to be a scientist." }
+  ]
+}

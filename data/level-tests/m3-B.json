@@ -1,0 +1,50 @@
+{
+  "id": "m3-B",
+  "grade": "중3",
+  "form": "B",
+  "title": "중3 레벨테스트 B형",
+  "description": "중급~고급: 추상 어휘·연결어, 관계부사·관계대명사 what·가정법 과거·과거완료·사역동사·분사구문, 습관 설명문·봉사 경험 글 읽기, 배열·영작",
+  "timeMinutes": 40,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "How to Change a Habit",
+      "text": "Have you ever tried to change a bad habit and failed?\nMost people think that strong willpower is the key.\nHowever, researchers say that changing your environment is more effective.\nFor example, if you want to eat less junk food, don't keep it at home.\nIf you want to read more, put a book where you can easily see it.\nWhen good choices become easy, you don't need much willpower.\nIn short, it is not you but your surroundings that you should change first."
+    },
+    {
+      "id": "p2",
+      "title": "My Friend Coco",
+      "text": "Last winter, I joined a volunteer program at a local animal shelter.\nAt first, I was afraid of big dogs, so I only cleaned the cages.\nOne day, a shy dog named Coco came close and sat next to me.\nSince then, I have walked Coco every weekend.\nI'm glad I joined the program. Coco taught me what true friendship is."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "effective", "choices": ["효과적인", "비싼", "위험한", "평범한"], "answer": 0, "points": 4, "explanation": "effective = 효과적인 (expensive 비싼, dangerous 위험한, ordinary 평범한)" },
+    { "id": "v2", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "surroundings", "choices": ["결과", "주변 환경", "습관", "의지"], "answer": 1, "points": 4, "explanation": "surroundings = 주변 환경 (결과 result, 습관 habit, 의지 will)" },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "a place where animals without homes are kept and cared for", "choices": ["zoo", "farm", "shelter", "market"], "answer": 2, "points": 4, "explanation": "집 없는 동물을 데려와 돌보는 곳 = (animal) shelter(보호소)" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "She ____ to her friend for being late.", "choices": ["complained", "argued", "refused", "apologized"], "answer": 3, "points": 4, "explanation": "늦은 것에 대해(for being late) → 사과했다(apologize to + 사람 + for ~)" },
+    { "id": "v5", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "두 단어가 반대 뜻의 짝이 아닌 것을 고르세요.", "choices": ["accept – refuse", "increase – decrease", "ancient – modern", "huge – enormous"], "answer": 3, "points": 4, "explanation": "huge와 enormous는 둘 다 '거대한'으로 비슷한 뜻이다." },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "Thanks to the new traffic rule, the number of accidents ____ by half.", "choices": ["doubled", "decreased", "appeared", "rose"], "answer": 1, "points": 4, "explanation": "Thanks to(~ 덕분에) → 사고가 절반으로 줄었다(decreased by half). doubled·rose는 늘어난 것." },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "표현의 뜻을 고르세요.", "stimulus": "In short, …", "choices": ["요약하면", "예를 들어", "게다가", "반면에"], "answer": 0, "points": 4, "explanation": "in short = 요약하면, 간단히 말해 (예를 들어 for example, 게다가 in addition, 반면에 on the other hand)" },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "The class was canceled ____ the heavy snow.", "choices": ["because", "although", "due to", "so that"], "answer": 2, "points": 4, "explanation": "뒤에 명사(the heavy snow)가 오므로 전치사구 due to(~ 때문에). because 뒤에는 '주어 + 동사'가 온다." },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "This is the town ____ I was born.", "choices": ["where", "which", "what", "who"], "answer": 0, "points": 4, "explanation": "장소 선행사 the town + 완전한 문장(I was born) → 관계부사 where (= in which)" },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "____ he said was not true.", "choices": ["That", "Which", "What", "Who"], "answer": 2, "points": 4, "explanation": "'그가 말한 것' → 선행사를 품은 관계대명사 what (= the thing which)" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "If I ____ rich, I would travel around the world.", "choices": ["am", "were", "will be", "have been"], "answer": 1, "points": 4, "explanation": "가정법 과거: If + 주어 + 과거형(be동사는 were), 주어 + would + 동사원형" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "When I arrived at the station, the train ____ already ____.", "choices": ["has – left", "was – leaving", "is – left", "had – left"], "answer": 3, "points": 4, "explanation": "내가 도착한 과거 시점보다 더 먼저 떠났다 → 과거완료 had left" },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "My mom made me ____ the dishes.", "choices": ["wash", "to wash", "washing", "washed"], "answer": 0, "points": 4, "explanation": "사역동사 make + 목적어 + 동사원형 → made me wash" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["I don't know what to do.", "The man whom I met was kind.", "I wish I can fly.", "She had finished it before I came."], "answer": 2, "points": 4, "explanation": "I wish + 가정법 과거 → I wish I could fly." },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "주어진 문장과 뜻이 같은 것을 고르세요.", "stimulus": "Walking down the street, I saw an old friend.", "choices": ["Because I walked down the street, I saw an old friend.", "While I was walking down the street, I saw an old friend.", "Although I walked down the street, I saw an old friend.", "If I walk down the street, I will see an old friend."], "answer": 1, "points": 4, "explanation": "분사구문 Walking ~ = '길을 걷다가(걷는 동안)' → While I was walking ~" },
+
+    { "id": "r1", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글의 요지로 알맞은 것은 무엇인가요?", "choices": ["의지력을 기르는 것이 가장 중요하다.", "나쁜 습관은 절대 바꿀 수 없다.", "습관을 바꾸려면 먼저 주변 환경을 바꾸는 것이 효과적이다.", "정크푸드는 건강에 해롭다."], "answer": 2, "points": 4, "explanation": "'changing your environment is more effective' + 마지막 문장 'it is not you but your surroundings that you should change first.'" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "책을 더 많이 읽고 싶을 때 글에서 제안한 방법은 무엇인가요?", "choices": ["매일 도서관에 가기", "잘 보이는 곳에 책을 두기", "독서 모임에 가입하기", "하루 목표 쪽수를 정하기"], "answer": 1, "points": 4, "explanation": "'put a book where you can easily see it.'" },
+    { "id": "r3", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "글의 내용과 일치하지 않는 것을 고르세요.", "choices": ["많은 사람은 강한 의지력이 핵심이라고 생각한다.", "연구자들은 환경을 바꾸는 것이 더 효과적이라고 말한다.", "정크푸드를 줄이려면 집에 두지 말라고 한다.", "좋은 선택이 쉬워져도 강한 의지력이 꼭 필요하다."], "answer": 3, "points": 4, "explanation": "'When good choices become easy, you don't need much willpower.' → 의지력이 많이 필요하지 않다." },
+    { "id": "r4", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p2", "prompt": "글쓴이가 봉사 활동을 한 곳은 어디인가요?", "choices": ["동물 보호소", "병원", "도서관", "양로원"], "answer": 0, "points": 4, "explanation": "'a volunteer program at a local animal shelter' → 동물 보호소" },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "처음에 글쓴이가 우리(cage) 청소만 한 까닭은 무엇인가요?", "choices": ["청소를 좋아해서", "시간이 부족해서", "담당자가 시켜서", "큰 개를 무서워해서"], "answer": 3, "points": 4, "explanation": "'At first, I was afraid of big dogs, so I only cleaned the cages.'" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "글쓴이의 심경 변화로 알맞은 것은 무엇인가요?", "choices": ["기쁨 → 슬픔", "지루함 → 화남", "두려움 → 기쁨·고마움", "기대 → 실망"], "answer": 2, "points": 4, "explanation": "처음에는 큰 개를 무서워했지만(afraid) 코코와 친해진 뒤 'I'm glad I joined the program.' → 기쁘고 고마운 마음" },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "습관", "hint": "h _ _ _ t", "answer": "habit", "points": 4, "explanation": "습관 = habit" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "빈칸에 알맞은 관계대명사를 쓰세요.  (나는 네가 나에게 말한 것을 믿는다.)", "stimulus": "I believe ______ you told me.", "answer": "what", "accept": ["I believe what you told me"], "points": 4, "explanation": "'네가 말한 것' → 선행사를 품은 관계대명사 what" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (내가 너라면, 나는 그에게 사과할 텐데.)", "stimulus": "( were / I / you / if / , I would apologize to him )", "answer": "If I were you, I would apologize to him.", "accept": ["If I were you I would apologize to him"], "points": 4, "explanation": "가정법 과거: If + 주어 + were ~, 주어 + would + 동사원형" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> make를 사용할 것", "stimulus": "그 영화는 나를 울게 만들었다.", "answer": "The movie made me cry.", "accept": ["The film made me cry", "That movie made me cry"], "points": 4, "explanation": "사역동사 make + 목적어 + 동사원형 → made me cry" }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "m3-A",
+  "grade": "중3",
+  "form": "A",
+  "title": "중3 레벨테스트 A형",
+  "description": "초급~중급: 생활·감정 어휘와 숙어, 수동태·관계대명사 which·so ~ that·현재분사·if(~인지)·too ~ to, 소셜 미디어 설명문·발표 걱정 대화 읽기",
+  "timeMinutes": 35,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "Social Media and Teens",
+      "text": "Many teenagers spend hours on social media every day.\nIt is a good way to keep in touch with friends and share interesting news.\nHowever, using it too much can cause problems.\nSome students stay up late watching videos, so they feel tired in class.\nOthers feel sad when they compare their lives with the perfect photos of others.\nExperts suggest that we set a time limit for using social media."
+    },
+    {
+      "id": "p2",
+      "title": "A Big Presentation",
+      "text": "A: You look worried. What's wrong?\nB: I have to give a presentation in English tomorrow, but I'm so nervous.\nA: Why don't you practice in front of your family tonight?\nB: That's a good idea. I'll try it.\nA: Don't worry. I'm sure you'll do well."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "compare", "choices": ["준비하다", "비교하다", "완성하다", "공유하다"], "answer": 1, "points": 4, "explanation": "compare = 비교하다 (준비하다 prepare, 완성하다 complete, 공유하다 share)" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "표현의 뜻을 고르세요.", "stimulus": "keep in touch with", "choices": ["~와 연락하고 지내다", "~와 싸우다", "~을 돌보다", "~을 기다리다"], "answer": 0, "points": 4, "explanation": "keep in touch with ~ = ~와 연락하고 지내다" },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "I was so ____ before the speech that my hands were shaking.", "choices": ["calm", "bored", "nervous", "proud"], "answer": 2, "points": 4, "explanation": "손이 떨릴 정도로 → 긴장한(nervous) (calm 차분한)" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "a person who knows a lot about a subject", "choices": ["beginner", "customer", "stranger", "expert"], "answer": 3, "points": 4, "explanation": "어떤 분야를 아주 잘 아는 사람 = expert(전문가) (beginner 초보자, customer 손님)" },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "표현의 뜻을 고르세요.", "stimulus": "stay up late", "choices": ["늦잠을 자다", "늦게까지 깨어 있다", "늦게 도착하다", "일찍 잠자리에 들다"], "answer": 1, "points": 4, "explanation": "stay up late = 늦게까지 (자지 않고) 깨어 있다" },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "문맥상 단어의 쓰임이 어색한 문장을 고르세요.", "choices": ["The medicine had a bad side effect.", "He suggested going to the beach.", "She lost weight because she ate too much.", "We must protect wildlife."], "answer": 2, "points": 4, "explanation": "너무 많이 먹어서 살이 빠졌다(lost weight)는 어색하다. → gained weight(살이 쪘다)" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "Too much screen time can ____ eye problems.", "choices": ["cause", "solve", "prevent", "cure"], "answer": 0, "points": 4, "explanation": "화면을 너무 오래 보면 눈 문제를 일으킬(cause) 수 있다. (solve 해결하다, prevent 막다, cure 치료하다)" },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "두 단어의 관계가 같도록 빈칸에 알맞은 말을 고르세요.", "stimulus": "succeed : success = decide : ____", "choices": ["decisive", "decision", "deciding", "decided"], "answer": 1, "points": 4, "explanation": "succeed(성공하다) → success(성공, 명사)처럼 decide(결정하다) → decision(결정, 명사)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "English is ____ in many countries.", "choices": ["speak", "spoke", "spoken", "speaking"], "answer": 2, "points": 4, "explanation": "영어는 '말해진다' → 수동태 is + 과거분사 spoken" },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "This is the house ____ my grandfather built.", "choices": ["who", "which", "what", "whose"], "answer": 1, "points": 4, "explanation": "선행사 the house(사물) + 목적격 관계대명사 → which (that도 가능)" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "The movie was ____ that I watched it twice.", "choices": ["so interesting", "too interesting", "very interesting", "such interesting"], "answer": 0, "points": 4, "explanation": "so + 형용사 + that ~ = 너무 ~해서 …하다 → so interesting that" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Look at the ____ baby.", "choices": ["sleep", "slept", "to sleep", "sleeping"], "answer": 3, "points": 4, "explanation": "'자고 있는' 아기 → 능동·진행의 현재분사 sleeping이 명사를 꾸민다." },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I don't know ____ he will come or not.", "choices": ["that", "if", "what", "which"], "answer": 1, "points": 4, "explanation": "'~인지 아닌지' → if(= whether) ~ or not" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["The letter was written by her.", "I have been to China twice.", "He is the boy who I met yesterday.", "She is interesting in music."], "answer": 3, "points": 4, "explanation": "사람이 관심을 느끼는 것은 과거분사 → She is interested in music." },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "He is too young ____ a car.", "choices": ["drive", "driving", "to drive", "drives"], "answer": 2, "points": 4, "explanation": "too + 형용사 + to부정사 = 너무 ~해서 …할 수 없다 → too young to drive" },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "글의 주제로 알맞은 것은 무엇인가요?", "choices": ["소셜 미디어의 장점과 지나친 사용의 문제", "좋은 사진을 찍는 방법", "10대의 운동 습관", "인기 있는 동영상 순위"], "answer": 0, "points": 4, "explanation": "장점(연락·소식 공유) → However(그러나) 지나친 사용의 문제 → 사용 시간 제한 제안" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "소셜 미디어의 좋은 점으로 글에 나온 것은 무엇인가요?", "choices": ["공부 시간이 늘어난다.", "친구와 연락하고 소식을 나눌 수 있다.", "돈을 벌 수 있다.", "운동을 더 하게 된다."], "answer": 1, "points": 4, "explanation": "'It is a good way to keep in touch with friends and share interesting news.'" },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "어떤 학생들이 슬픔을 느끼는 까닭은 무엇인가요?", "choices": ["친구가 없어서", "동영상이 재미없어서", "수업이 어려워서", "다른 사람의 완벽한 사진과 자기 삶을 비교해서"], "answer": 3, "points": 4, "explanation": "'Others feel sad when they compare their lives with the perfect photos of others.'" },
+    { "id": "r4", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "전문가들이 제안한 것은 무엇인가요?", "choices": ["소셜 미디어를 완전히 끊기", "소셜 미디어 사용 시간을 정해 두기", "밤에만 사용하기", "부모님과 함께 사용하기"], "answer": 1, "points": 4, "explanation": "'Experts suggest that we set a time limit for using social media.' (time limit = 시간 제한)" },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "B가 걱정하는 까닭은 무엇인가요?", "choices": ["시험 성적이 나빠서", "가족과 다퉈서", "내일 영어 발표를 해야 해서", "숙제를 잃어버려서"], "answer": 2, "points": 4, "explanation": "'I have to give a presentation in English tomorrow, but I'm so nervous.'" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "A가 B에게 한 조언으로 알맞은 것은 무엇인가요?", "choices": ["오늘 일찍 자라.", "선생님께 말씀드려라.", "오늘 밤 가족 앞에서 연습해 봐라.", "발표를 다음으로 미뤄라."], "answer": 2, "points": 4, "explanation": "'Why don't you practice in front of your family tonight?' (Why don't you ~? = ~하는 게 어때?)" },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "전문가", "hint": "e _ _ _ _ t", "answer": "expert", "points": 4, "explanation": "전문가 = expert" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "This song is ______ by many people. (love)", "answer": "loved", "accept": ["This song is loved by many people"], "points": 4, "explanation": "노래가 '사랑받는다' → 수동태 is + 과거분사 loved" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (이것은 내가 어제 읽은 책이다.)", "stimulus": "( I / the book / read yesterday / this is / which )", "answer": "This is the book which I read yesterday.", "points": 4, "explanation": "선행사 the book + 목적격 관계대명사 which + 주어 I + 동사 read" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> so ~ that을 사용할 것", "stimulus": "나는 너무 피곤해서 일찍 잠자리에 들었다.", "answer": "I was so tired that I went to bed early.", "accept": ["I was so tired that I slept early", "I was so tired that I went to sleep early", "I was so tired that I went to bed early", "I was so tired that I fell asleep early"], "points": 4, "explanation": "so + 형용사 + that + 주어 + 동사 → I was so tired that I went to bed early." }
+  ]
+}

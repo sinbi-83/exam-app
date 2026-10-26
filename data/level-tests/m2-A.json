@@ -1,0 +1,50 @@
+{
+  "id": "m2-A",
+  "grade": "중2",
+  "form": "A",
+  "title": "중2 레벨테스트 A형",
+  "description": "초급~중급: 환경·학교생활 단어와 구동사, 현재완료·to부정사(명사·형용사)·비교급 강조·because, 재활용 행사 글·여행 대화 읽기",
+  "timeMinutes": 35,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "Recycling Day",
+      "text": "Our school has a Recycling Day every month.\nOn that day, students bring old books, clothes, and toys to the gym.\nThey exchange things they don't need for things they want.\nLast month, I gave away my old comic books and got a soccer ball.\nThis event is fun, and it also helps us reduce waste.\nI'm looking forward to the next Recycling Day."
+    },
+    {
+      "id": "p2",
+      "title": "A Trip to Jeju",
+      "text": "A: Have you ever been to Jeju Island?\nB: Yes, I have. I went there with my family last summer.\nA: What did you do there?\nB: We climbed Hallasan. It was hard, but the view from the top was amazing.\nA: Wow, I'd like to go there someday."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "exchange", "choices": ["교환하다", "수리하다", "기부하다", "예약하다"], "answer": 0, "points": 4, "explanation": "exchange = 교환하다 (수리하다 repair, 기부하다 donate, 예약하다 book·reserve)" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "It's cold outside. ____ your coat.", "choices": ["Take off", "Put on", "Turn off", "Give up"], "answer": 1, "points": 4, "explanation": "밖이 춥다 → 코트를 입어라(put on). take off는 '벗다'." },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "주어진 단어와 반대 뜻의 단어를 고르세요.", "stimulus": "increase", "choices": ["grow", "raise", "add", "reduce"], "answer": 3, "points": 4, "explanation": "increase(늘리다, 늘다) ↔ reduce(줄이다)" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "a person who writes books", "choices": ["reader", "painter", "writer", "singer"], "answer": 2, "points": 4, "explanation": "책을 쓰는 사람 = writer(작가)" },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "The movie was so ____ that I fell asleep.", "choices": ["boring", "exciting", "scary", "funny"], "answer": 0, "points": 4, "explanation": "잠이 들 정도로 → 지루한(boring)" },
+    { "id": "v6", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 중 형용사가 아닌 것을 고르세요.", "choices": ["careful", "useful", "quickly", "famous"], "answer": 2, "points": 4, "explanation": "quickly(빠르게)는 부사이다. careful 조심스러운, useful 유용한, famous 유명한은 형용사." },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "문장 속 look forward to와 뜻이 가장 가까운 것을 고르세요.", "stimulus": "I'm looking forward to the next Recycling Day.", "choices": ["worry about", "can't wait for", "look after", "get over"], "answer": 1, "points": 4, "explanation": "look forward to ~ = ~을 기대하다, 고대하다 ≒ can't wait for (worry about 걱정하다, look after 돌보다, get over 극복하다)" },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "두 문장의 빈칸에 공통으로 들어갈 말을 고르세요.", "stimulus": "Don't throw ____ your trash here.  /  I gave ____ my old books.", "choices": ["off", "up", "on", "away"], "answer": 3, "points": 4, "explanation": "throw away = 버리다 / give away = 거저 주다, 나눠 주다" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I have ____ this movie before.", "choices": ["see", "saw", "seen", "seeing"], "answer": 2, "points": 4, "explanation": "현재완료 = have + 과거분사. see – saw – seen → have seen" },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "It's important ____ breakfast every day.", "choices": ["eat", "to eat", "eats", "ate"], "answer": 1, "points": 4, "explanation": "가주어 It + to부정사(진주어) → It's important to eat breakfast.(아침을 먹는 것은 중요하다.)" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "This bag is ____ than that one.", "choices": ["expensiver", "most expensive", "much more expensive", "very expensive"], "answer": 2, "points": 4, "explanation": "than 앞 비교급. 긴 단어는 more expensive, 비교급 강조는 much (very는 비교급을 꾸미지 못한다)" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I have something ____ you.", "choices": ["tell", "to tell", "telling", "told"], "answer": 1, "points": 4, "explanation": "something을 꾸미는 to부정사(형용사적 용법) → something to tell(말할 것)" },
+    { "id": "g5", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: Have you finished your homework?  B: No, I ____.", "choices": ["haven't", "don't", "didn't", "wasn't"], "answer": 0, "points": 4, "explanation": "Have you ~?(현재완료)로 물으면 have로 대답 → No, I haven't." },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["I have lived here since 2020.", "She has been to London twice.", "He has visited Japan last year.", "We have known each other for five years."], "answer": 2, "points": 4, "explanation": "last year처럼 분명한 과거를 나타내는 말은 현재완료와 쓰지 않는다 → He visited Japan last year." },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Please be quiet ____ the baby is sleeping.", "choices": ["but", "or", "so", "because"], "answer": 3, "points": 4, "explanation": "아기가 자고 있기 '때문에' 조용히 해 달라 → 이유의 because" },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "Recycling Day는 얼마나 자주 열리나요?", "choices": ["매주", "매달", "1년에 한 번", "방학마다"], "answer": 1, "points": 4, "explanation": "'Our school has a Recycling Day every month.' → 매달" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글쓴이가 지난달에 받은 것은 무엇인가요?", "choices": ["만화책", "옷", "축구공", "장난감 자동차"], "answer": 2, "points": 4, "explanation": "'I gave away my old comic books and got a soccer ball.' 만화책은 준 것이다." },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글에서 말한 이 행사의 좋은 점은 무엇인가요?", "choices": ["재미있고, 쓰레기를 줄여 준다.", "돈을 벌고, 친구를 사귄다.", "책을 많이 읽고, 운동을 한다.", "선물을 받고, 상을 탄다."], "answer": 0, "points": 4, "explanation": "'This event is fun, and it also helps us reduce waste.'" },
+    { "id": "r4", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "마지막 문장에 나타난 글쓴이의 심정으로 알맞은 것은 무엇인가요?", "choices": ["실망한", "걱정하는", "지루한", "기대하는"], "answer": 3, "points": 4, "explanation": "'I'm looking forward to the next Recycling Day.' → 다음 행사를 기대한다." },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "B가 제주도에 간 때는 언제인가요?", "choices": ["지난겨울", "지난여름", "작년 봄", "올해 가을"], "answer": 1, "points": 4, "explanation": "'I went there with my family last summer.'" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "대화의 내용과 일치하는 것을 고르세요.", "choices": ["A는 제주도에 가 본 적이 있다.", "B는 친구들과 제주도에 갔다.", "B는 한라산 정상의 경치가 멋졌다고 했다.", "B는 한라산 등반이 쉬웠다고 했다."], "answer": 2, "points": 4, "explanation": "'It was hard, but the view from the top was amazing.' A는 언젠가 가 보고 싶다고 했고, B는 가족과 갔으며 등반은 힘들었다." },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "쓰레기", "hint": "t _ _ _ h", "answer": "trash", "accept": ["garbage", "waste", "rubbish"], "points": 4, "explanation": "쓰레기 = trash (garbage, waste, rubbish도 정답)" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "I have already ______ my homework. (finish)", "answer": "finished", "accept": ["I have already finished my homework"], "points": 4, "explanation": "현재완료 have + 과거분사 → finished" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (나는 마실 물이 좀 필요하다.)", "stimulus": "( need / some water / to drink / I )", "answer": "I need some water to drink.", "points": 4, "explanation": "명사(some water) 뒤에서 꾸미는 to부정사 → some water to drink(마실 물)" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> ever를 사용할 것", "stimulus": "너는 제주도에 가 본 적이 있니?", "answer": "Have you ever been to Jeju Island?", "accept": ["Have you ever been to Jeju", "Have you ever been to Jejudo", "Have you ever visited Jeju Island", "Have you ever visited Jeju"], "points": 4, "explanation": "경험을 묻는 현재완료 → Have you ever been to ~?(~에 가 본 적이 있니?)" }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "h2-A",
+  "grade": "고2",
+  "form": "A",
+  "title": "고2 레벨테스트 A형",
+  "description": "초급~중급: 생활·환경 어휘와 숙어, 관계대명사 that·동명사·수동태 미래·사역 have·consider -ing·so ~ that·상관접속사 수 일치, 유통기한 설명문·분실물 안내문 읽기(주제·일치)",
+  "timeMinutes": 40,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "Best Before",
+      "text": "Many people throw away food that is still safe to eat because of the \"best before\" date.\nHowever, this date tells us when food is at its best quality, not when it becomes unsafe.\nFor example, crackers past their best before date may taste less crispy, but they are usually still safe.\nMisunderstanding these labels leads to a huge amount of food waste every year.\nBy learning what the labels really mean, we can save money and help the environment."
+    },
+    {
+      "id": "p2",
+      "title": "Lost and Found",
+      "text": "We found a black backpack in the school library on Monday, May 11.\nIt contains a math textbook, a pencil case, and a blue water bottle.\nIf it is yours, please visit the teachers' office on the second floor.\nYou will need to describe what is inside the bag.\nItems that are not claimed within two weeks will be donated."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "quality", "choices": ["수량", "품질", "가격", "장소"], "answer": 1, "points": 4, "explanation": "quality = 품질, 질 (수량 quantity, 가격 price)" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "contain", "choices": ["포함하다, 담고 있다", "운반하다", "잃어버리다", "수리하다"], "answer": 0, "points": 4, "explanation": "contain = 포함하다, (안에) 담고 있다" },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "Please ____ what the bag looks like, so we can find it.", "choices": ["delay", "destroy", "describe", "deny"], "answer": 2, "points": 4, "explanation": "가방이 어떻게 생겼는지 설명해(describe) 달라 (delay 미루다, destroy 파괴하다, deny 부인하다)" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "to give money or goods to help people or an organization", "choices": ["borrow", "donate", "waste", "earn"], "answer": 1, "points": 4, "explanation": "사람이나 단체를 돕기 위해 돈·물건을 주다 = donate(기부하다)" },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "misunderstand", "choices": ["이해하다", "무시하다", "기억하다", "오해하다"], "answer": 3, "points": 4, "explanation": "mis-(잘못) + understand(이해하다) = 오해하다" },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "문맥상 단어의 쓰임이 어색한 문장을 고르세요.", "choices": ["The bread is still fresh, so let's throw it away.", "The label shows the expiration date.", "Wasting food harms the environment.", "He saved money by cooking at home."], "answer": 0, "points": 4, "explanation": "빵이 아직 신선한데 버리자(throw away)는 어색하다. → so let's eat it" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "This medicine is ____ for children under 12. Do not give it to them.", "choices": ["suitable", "unsuitable", "available", "valuable"], "answer": 1, "points": 4, "explanation": "아이에게 주지 말라 → 12세 미만에게 적합하지 않은(unsuitable)" },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "a huge amount of와 뜻이 가장 가까운 것을 고르세요.", "stimulus": "a huge amount of food waste", "choices": ["a little", "a few", "a large amount of", "a small amount of"], "answer": 2, "points": 4, "explanation": "a huge amount of ~ = 엄청난 양의 ~ ≒ a large amount of" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "People throw away food ____ is still safe to eat.", "choices": ["who", "what", "that", "whose"], "answer": 2, "points": 4, "explanation": "선행사 food(사물) + 주격 관계대명사 that(= which). what은 선행사를 품으므로 앞에 명사가 있으면 쓸 수 없다." },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "By ____ the labels, we can reduce food waste.", "choices": ["understand", "understanding", "understood", "to understand"], "answer": 1, "points": 4, "explanation": "전치사 By 뒤 → 동명사 understanding (by -ing = ~함으로써)" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Items that are not claimed ____ donated.", "choices": ["will be", "will", "are being", "have"], "answer": 0, "points": 4, "explanation": "물건이 '기부될' 것이다 → 미래 수동태 will be + p.p." },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I had my bike ____ yesterday.", "choices": ["repair", "repairing", "to repair", "repaired"], "answer": 3, "points": 4, "explanation": "have + 목적어 + p.p. = (남이) ~하게 하다. 자전거는 '수리되는' 것 → had my bike repaired" },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["The crackers taste less crispy.", "She made him clean the room.", "I'm considering to move to another city.", "He seems to be tired."], "answer": 2, "points": 4, "explanation": "consider는 동명사를 목적어로 쓴다 → I'm considering moving to another city." },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "It was so cold ____ we stayed inside all day.", "choices": ["which", "that", "what", "as"], "answer": 1, "points": 4, "explanation": "so + 형용사 + that ~ = 너무 ~해서 …했다" },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Neither Tom nor his friends ____ coming to the party.", "choices": ["are", "is", "was", "has"], "answer": 0, "points": 4, "explanation": "neither A nor B는 B에 수를 맞춘다 → his friends(복수) → are" },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "글의 주제로 알맞은 것은 무엇인가요?", "choices": ["과자를 바삭하게 보관하는 법", "식품 가격이 오르는 까닭", "'best before' 표시에 대한 오해와 음식 낭비", "건강한 식단을 짜는 법"], "answer": 2, "points": 4, "explanation": "best before 날짜를 '안전하지 않은 날'로 오해해 음식을 버린다 → 라벨의 뜻을 알면 낭비를 줄인다" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글에 따르면 'best before' 날짜가 알려 주는 것은 무엇인가요?", "choices": ["음식이 상하는 날짜", "음식의 품질이 가장 좋은 기간", "음식을 만든 날짜", "음식 가격이 바뀌는 날짜"], "answer": 1, "points": 4, "explanation": "'this date tells us when food is at its best quality, not when it becomes unsafe.'" },
+    { "id": "r3", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "글의 내용과 일치하지 않는 것을 고르세요.", "choices": ["best before 날짜가 지난 크래커는 덜 바삭할 수 있다.", "라벨을 잘못 이해해 많은 음식이 버려진다.", "라벨의 뜻을 알면 돈을 아낄 수 있다.", "best before 날짜가 지나면 반드시 버려야 한다."], "answer": 3, "points": 4, "explanation": "날짜가 지난 크래커도 'usually still safe'(대개 여전히 안전하다)고 했다." },
+    { "id": "r4", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p2", "prompt": "안내문의 목적으로 알맞은 것은 무엇인가요?", "choices": ["주운 가방의 주인을 찾으려고", "도서관 이용 시간을 알리려고", "기부 행사를 홍보하려고", "중고 교과서를 팔려고"], "answer": 0, "points": 4, "explanation": "도서관에서 주운 검은 배낭 → 'If it is yours, please visit the teachers' office'" },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "가방 안에 들어 있다고 언급되지 않은 것을 고르세요.", "choices": ["수학 교과서", "휴대폰", "필통", "파란 물병"], "answer": 1, "points": 4, "explanation": "'a math textbook, a pencil case, and a blue water bottle' → 휴대폰은 없다." },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "가방을 찾아가려면 어떻게 해야 하나요?", "choices": ["도서관에 전화한다.", "2주 뒤에 도서관으로 온다.", "학생증을 보여 준다.", "2층 교무실에 가서 가방 안의 물건을 설명한다."], "answer": 3, "points": 4, "explanation": "'visit the teachers' office on the second floor. You will need to describe what is inside the bag.' 2주 안에 찾아가지 않으면 기부된다." },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "기부하다", "hint": "d _ _ _ _ e", "answer": "donate", "points": 4, "explanation": "기부하다 = donate (기부 donation)" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "I had my hair ______ yesterday. (cut)", "answer": "cut", "accept": ["I had my hair cut yesterday"], "points": 4, "explanation": "have + 목적어 + p.p. (머리카락이 '잘리는' 것). cut의 과거분사는 cut 그대로이다." },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (라벨이 실제로 무엇을 뜻하는지 배워라.)", "stimulus": "( the labels / learn / really mean / what )", "answer": "Learn what the labels really mean.", "points": 4, "explanation": "명령문 Learn + 간접의문문(의문사 what + 주어 the labels + 동사 really mean)" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> 동명사로 시작할 것", "stimulus": "음식을 낭비하는 것은 환경에 해롭다.", "answer": "Wasting food is bad for the environment.", "accept": ["Wasting food is harmful to the environment", "Wasting food is harmful for the environment", "Wasting food harms the environment"], "points": 4, "explanation": "주어 자리의 동명사 Wasting food(음식을 낭비하는 것)는 단수 취급 → is" }
+  ]
+}

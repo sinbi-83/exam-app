@@ -1,0 +1,50 @@
+{
+  "id": "h1-A",
+  "grade": "고1",
+  "form": "A",
+  "title": "고1 레벨테스트 A형",
+  "description": "초급~중급: 고1 기본 어휘·숙어, 자동사·관계대명사·동명사·가정법 과거·분사·수 일치, 수면 설명문·교환 요청 이메일 읽기(주제·목적·일치)",
+  "timeMinutes": 40,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "Sleep and Learning",
+      "text": "Sleep is not just a time for rest.\nWhile we sleep, our brain organizes the information we learned during the day.\nThat is why students who sleep well often remember more.\nUnfortunately, many teenagers do not get enough sleep because of homework and smartphones.\nDoctors recommend that teenagers sleep eight to ten hours a night.\nIf you want to study better, start by going to bed earlier."
+    },
+    {
+      "id": "p2",
+      "title": "Wrong Size",
+      "text": "Dear Manager,\nI bought a pair of running shoes from your online store last week.\nWhen the package arrived, I found that the shoes were the wrong size.\nI ordered size 250, but I received size 270.\nI would like to exchange them for the correct size.\nPlease let me know how to send them back.\nSincerely,\nMinho Kim"
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "recommend", "choices": ["추천하다, 권하다", "거절하다", "기억하다", "보고하다"], "answer": 0, "points": 4, "explanation": "recommend = 추천하다, 권하다 (거절하다 refuse, 기억하다 remember, 보고하다 report)" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "organize", "choices": ["파괴하다", "정리하다", "잊어버리다", "복사하다"], "answer": 1, "points": 4, "explanation": "organize = 정리하다, 조직하다" },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "The shoes were the wrong size, so I asked for an ____.", "choices": ["discount", "invitation", "exchange", "address"], "answer": 2, "points": 4, "explanation": "사이즈가 틀렸다 → 교환(exchange)을 요청했다." },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "to bring or send something back to the place it came from", "choices": ["borrow", "return", "deliver", "receive"], "answer": 1, "points": 4, "explanation": "원래 있던 곳으로 되돌려 보내다 = return(반품하다, 돌려주다) (deliver 배달하다, receive 받다)" },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "unfortunately", "choices": ["다행히", "분명히", "놀랍게도", "불행히도, 안타깝게도"], "answer": 3, "points": 4, "explanation": "unfortunately = 불행히도, 안타깝게도 (다행히 fortunately, 분명히 clearly, 놀랍게도 surprisingly)" },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "문맥상 단어의 쓰임이 어색한 문장을 고르세요.", "choices": ["He was exhausted after running a marathon.", "The rumor turned out to be true.", "She is reliable, so I often worry about her promises.", "The museum attracts many visitors."], "answer": 2, "points": 4, "explanation": "믿을 만한(reliable) 사람인데 약속을 자주 걱정한다는 것은 어색하다. → so I trust her promises" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "Regular exercise can ____ the risk of heart disease.", "choices": ["reduce", "increase", "create", "ignore"], "answer": 0, "points": 4, "explanation": "규칙적인 운동은 심장병 위험을 줄일(reduce) 수 있다." },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "주어진 문장과 뜻이 가장 가까운 것을 고르세요.", "stimulus": "She is likely to win the race.", "choices": ["She wants to win the race.", "She already won the race.", "She hates winning races.", "She will probably win the race."], "answer": 3, "points": 4, "explanation": "be likely to ~ = ~할 것 같다 → will probably(아마 ~할 것이다)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "The package ____ yesterday.", "choices": ["arrive", "arrived", "was arrived", "arriving"], "answer": 1, "points": 4, "explanation": "arrive는 목적어가 없는 자동사라 수동태로 쓰지 않는다 → The package arrived." },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Students ____ sleep well often remember more.", "choices": ["who", "which", "whose", "what"], "answer": 0, "points": 4, "explanation": "선행사 Students(사람) + 주격 관계대명사 who" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I'm looking forward to ____ you again.", "choices": ["see", "seeing", "saw", "be seen"], "answer": 1, "points": 4, "explanation": "look forward to의 to는 전치사 → 뒤에 동명사 seeing" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "If I ____ more time, I would help you.", "choices": ["have", "will have", "had", "having"], "answer": 2, "points": 4, "explanation": "가정법 과거(현재 사실의 반대): If + 과거형, would + 동사원형 → had" },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "The book ____ on the desk is mine.", "choices": ["lie", "lain", "to lie", "lying"], "answer": 3, "points": 4, "explanation": "책상 위에 '놓여 있는' 책 → 능동의 현재분사 lying이 뒤에서 명사를 꾸민다 (lie – lay – lain, 현재분사 lying)" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["I found the movie boring.", "He has lived here since he was ten.", "The number of students are increasing.", "She let me use her phone."], "answer": 2, "points": 4, "explanation": "The number of ~(~의 수)는 단수 취급 → The number of students is increasing." },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I don't know what ____ next.", "choices": ["to do", "doing", "do", "done"], "answer": 0, "points": 4, "explanation": "의문사 + to부정사 = ~해야 할지 → what to do(무엇을 해야 할지)" },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "글의 주제로 알맞은 것은 무엇인가요?", "choices": ["스마트폰 중독의 위험", "잠과 학습의 관계", "좋은 침대 고르는 법", "꿈의 의미"], "answer": 1, "points": 4, "explanation": "자는 동안 뇌가 정보를 정리 → 잘 자는 학생이 더 많이 기억 → 공부를 잘하려면 일찍 자라." },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "글에 따르면 잠자는 동안 뇌가 하는 일은 무엇인가요?", "choices": ["새로운 정보를 지운다.", "아무 일도 하지 않고 쉰다.", "낮에 배운 정보를 정리한다.", "꿈을 오래 기억한다."], "answer": 2, "points": 4, "explanation": "'While we sleep, our brain organizes the information we learned during the day.'" },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "많은 십대가 잠이 부족한 까닭으로 글에 나온 것은 무엇인가요?", "choices": ["숙제와 스마트폰", "운동 부족", "카페인 음료", "밤의 소음"], "answer": 0, "points": 4, "explanation": "'many teenagers do not get enough sleep because of homework and smartphones.'" },
+    { "id": "r4", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "글쓴이가 마지막에 제안한 것은 무엇인가요?", "choices": ["낮잠을 자라.", "밤늦게 복습하라.", "잠들기 전에 스마트폰을 꺼라.", "더 일찍 잠자리에 들어라."], "answer": 3, "points": 4, "explanation": "'start by going to bed earlier.' 스마트폰을 끄라는 말은 직접 나오지 않는다." },
+    { "id": "r5", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "이메일을 쓴 목적으로 알맞은 것은 무엇인가요?", "choices": ["환불을 요청하려고", "맞는 사이즈로 교환을 요청하려고", "배송이 늦은 것을 항의하려고", "주문을 취소하려고"], "answer": 1, "points": 4, "explanation": "'I would like to exchange them for the correct size.'" },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "이메일의 내용과 일치하지 않는 것을 고르세요.", "choices": ["지난주 온라인 상점에서 운동화를 샀다.", "250 사이즈를 주문했다.", "270 사이즈를 받았다.", "돈을 돌려받고 싶다고 했다."], "answer": 3, "points": 4, "explanation": "돈을 돌려받는 환불(refund)이 아니라 맞는 사이즈로 교환(exchange)을 원한다." },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "추천하다, 권하다", "hint": "r _ _ _ _ _ _ _ d", "answer": "recommend", "points": 4, "explanation": "추천하다 = recommend (c 하나, m 둘)" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "I'm interested in ______ abroad. (study)", "answer": "studying", "accept": ["I'm interested in studying abroad", "I am interested in studying abroad"], "points": 4, "explanation": "전치사 in 뒤에는 동명사 → studying" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (그는 내가 믿을 수 있는 사람이다.)", "stimulus": "( I / he / a person / can trust / is / who )", "answer": "He is a person who I can trust.", "points": 4, "explanation": "선행사 a person + 목적격 관계대명사 who(m) + 주어 I + 동사 can trust" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> If와 had를 사용할 것", "stimulus": "내가 돈이 더 있다면, 그 컴퓨터를 살 텐데.", "answer": "If I had more money, I would buy the computer.", "accept": ["If I had more money I would buy the computer", "I would buy the computer if I had more money", "If I had more money, I could buy the computer", "If I had more money I could buy the computer", "I could buy the computer if I had more money", "If I had more money, I would buy that computer", "If I had more money I would buy that computer"], "points": 4, "explanation": "현재 사실의 반대 → 가정법 과거: If + 주어 + had ~, 주어 + would + 동사원형" }
+  ]
+}

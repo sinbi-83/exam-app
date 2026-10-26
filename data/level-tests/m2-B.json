@@ -1,0 +1,50 @@
+{
+  "id": "m2-B",
+  "grade": "중2",
+  "form": "B",
+  "title": "중2 레벨테스트 B형",
+  "description": "중급~고급: 환경·감정·구동사, 수동태·관계대명사 who·현재완료 for·want 목적어 to·It ~ for ~ to·간접의문문, 인물 전기·캠프 안내문 읽기, 배열·영작",
+  "timeMinutes": 40,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "The Woman Who Planted Trees",
+      "text": "Wangari Maathai was born in Kenya in 1940.\nWhen she was young, her village was full of green trees and clean rivers.\nYears later, many of the trees were cut down, and the rivers dried up.\nShe decided to do something about it.\nIn 1977, she started the Green Belt Movement, which encouraged women to plant trees.\nSince then, millions of trees have been planted in Kenya.\nIn 2004, she became the first African woman to win the Nobel Peace Prize."
+    },
+    {
+      "id": "p2",
+      "title": "Summer Science Camp",
+      "text": "Are you interested in robots? Then this camp is for you!\n• Date: July 24 – 26\n• Time: 10 a.m. – 3 p.m.\n• Fee: 30,000 won (lunch is included)\n• Students who want to join must sign up online by July 10.\n• Each student will build a small robot and take it home."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "encourage", "choices": ["방해하다", "격려하다", "비난하다", "설명하다"], "answer": 1, "points": 4, "explanation": "encourage = 격려하다, 권장하다 (방해하다 disturb, 비난하다 blame, 설명하다 explain)" },
+    { "id": "v2", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "The camp fee ____ lunch, so you don't need to bring food.", "choices": ["includes", "borrows", "wastes", "loses"], "answer": 0, "points": 4, "explanation": "음식을 가져올 필요가 없다 → 참가비가 점심을 포함한다(include)" },
+    { "id": "v3", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 설명에 알맞은 단어를 고르세요.", "stimulus": "a large area of land covered with trees", "choices": ["desert", "field", "forest", "island"], "answer": 2, "points": 4, "explanation": "나무로 덮인 넓은 땅 = forest(숲) (desert 사막, field 들판, island 섬)" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "문장 속 dried up의 뜻으로 알맞은 것을 고르세요.", "stimulus": "The rivers dried up.", "choices": ["물이 넘쳤다", "물이 말라 버렸다", "꽁꽁 얼었다", "깨끗해졌다"], "answer": 1, "points": 4, "explanation": "dry up = 말라 버리다, 바싹 마르다" },
+    { "id": "v5", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "문맥상 단어의 쓰임이 어색한 문장을 고르세요.", "choices": ["She was nervous before the speech.", "He was proud of his son.", "They were tired after the long walk.", "I was disappointed because I won the game."], "answer": 3, "points": 4, "explanation": "경기에 이겼는데 실망했다(disappointed)는 어색하다. → I was happy because I won the game." },
+    { "id": "v6", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "take part in과 뜻이 가장 가까운 것을 고르세요.", "stimulus": "Many students took part in the event.", "choices": ["participated in", "looked after", "gave up", "put off"], "answer": 0, "points": 4, "explanation": "take part in = ~에 참가하다 = participate in (look after 돌보다, give up 포기하다, put off 미루다)" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "두 문장의 빈칸에 공통으로 들어갈 말을 고르세요.", "stimulus": "I can't ____ the noise anymore.  /  A ____ is a big animal with thick fur.", "choices": ["lion", "hold", "stand", "bear"], "answer": 3, "points": 4, "explanation": "bear = 참다, 견디다 / bear = 곰. stand도 '참다'의 뜻이 있지만 두 번째 문장에는 들어갈 수 없다." },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "명사 – 형용사의 짝이 바르지 않은 것을 고르세요.", "choices": ["danger – dangerous", "health – healthy", "success – successful", "friend – friendship"], "answer": 3, "points": 4, "explanation": "friendship(우정)도 명사이다. friend의 형용사는 friendly(친절한, 다정한)." },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "This picture was ____ by my sister.", "choices": ["paint", "painted", "painting", "paints"], "answer": 1, "points": 4, "explanation": "수동태 = be동사 + 과거분사 (+ by 행위자) → was painted by my sister" },
+    { "id": "g2", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "I have a friend ____ lives in Canada.", "choices": ["which", "what", "who", "whose"], "answer": 2, "points": 4, "explanation": "선행사 a friend(사람) + 주격 관계대명사 → who" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "She has studied English ____ five years.", "choices": ["since", "for", "during", "ago"], "answer": 1, "points": 4, "explanation": "현재완료 + 기간(five years) → for. since 뒤에는 시작 시점(since 2020)이 온다." },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "My parents want me ____ my room.", "choices": ["to clean", "clean", "cleaning", "cleaned"], "answer": 0, "points": 4, "explanation": "want + 목적어 + to부정사 → want me to clean(내가 청소하기를 원하다)" },
+    { "id": "g5", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "It is difficult ____ me to solve this problem.", "choices": ["of", "to", "for", "with"], "answer": 2, "points": 4, "explanation": "It is + 형용사 + for + 의미상 주어 + to부정사 → for me" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 바른 문장을 고르세요.", "choices": ["The book which I bought it is interesting.", "The window was broken by Tom.", "I have seen him yesterday.", "She made me to cry."], "answer": 1, "points": 4, "explanation": "① which가 목적어 역할을 하므로 it을 빼야 한다. ③ yesterday는 과거형(saw)과 쓴다. ④ 사역동사 make + 목적어 + 동사원형 → made me cry" },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Can you tell me ____?", "choices": ["where is the station", "the station where is", "is where the station", "where the station is"], "answer": 3, "points": 4, "explanation": "간접의문문은 '의문사 + 주어 + 동사' 순서 → where the station is" },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "Wangari Maathai가 태어난 나라는 어디인가요?", "choices": ["Kenya", "Egypt", "South Africa", "Nigeria"], "answer": 0, "points": 4, "explanation": "'Wangari Maathai was born in Kenya in 1940.'" },
+    { "id": "r2", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "그녀가 Green Belt Movement를 시작하게 된 까닭으로 알맞은 것은 무엇인가요?", "choices": ["상을 받기 위해서", "나무가 베이고 강이 말라 버려서", "여성을 위한 학교를 세우려고", "관광객을 모으려고"], "answer": 1, "points": 4, "explanation": "'many of the trees were cut down, and the rivers dried up. She decided to do something about it.'" },
+    { "id": "r3", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "글의 내용과 일치하지 않는 것을 고르세요.", "choices": ["1940년에 케냐에서 태어났다.", "1977년에 Green Belt Movement를 시작했다.", "그 운동은 여성들이 나무를 심도록 격려했다.", "2004년에 노벨 평화상을 받은 세계 최초의 여성이 되었다."], "answer": 3, "points": 4, "explanation": "'the first African woman' → 노벨 평화상을 받은 최초의 '아프리카' 여성이다." },
+    { "id": "r4", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "캠프 참가비에 포함된 것은 무엇인가요?", "choices": ["교통비", "티셔츠", "점심", "숙박"], "answer": 2, "points": 4, "explanation": "'Fee: 30,000 won (lunch is included)'" },
+    { "id": "r5", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "안내문의 내용과 일치하는 것을 고르세요.", "choices": ["캠프는 이틀 동안 열린다.", "7월 10일까지 온라인으로 신청해야 한다.", "점심은 각자 가져와야 한다.", "만든 로봇은 학교에 기증한다."], "answer": 1, "points": 4, "explanation": "'must sign up online by July 10.' 캠프는 7월 24~26일(3일), 점심 포함, 로봇은 집에 가져간다." },
+    { "id": "r6", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "이 캠프에 가장 관심을 가질 학생은 누구인가요?", "choices": ["로봇에 관심이 있는 학생", "요리를 좋아하는 학생", "축구 선수가 되고 싶은 학생", "그림 그리기를 좋아하는 학생"], "answer": 0, "points": 4, "explanation": "'Are you interested in robots? Then this camp is for you!'" },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "숲", "hint": "f _ _ _ _ t", "answer": "forest", "points": 4, "explanation": "숲 = forest" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "This bridge was ______ in 1990. (build)", "answer": "built", "accept": ["This bridge was built in 1990"], "points": 4, "explanation": "수동태 be + 과거분사. build – built – built → was built" },
+    { "id": "w3", "section": "writing", "difficulty": 3, "type": "write", "prompt": "주어진 말을 바르게 배열하여 문장을 쓰세요.  (나는 영어를 잘하는 친구가 한 명 있다.)", "stimulus": "( a friend / who / I / speaks English well / have )", "answer": "I have a friend who speaks English well.", "points": 4, "explanation": "선행사 a friend + 주격 관계대명사 who + 동사(speaks)" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> 현재완료와 for를 사용할 것", "stimulus": "나는 3년 동안 피아노를 배워 왔다.", "answer": "I have learned the piano for three years.", "accept": ["I have learned piano for three years", "I've learned the piano for three years", "I've learned piano for three years", "I have learned the piano for 3 years", "I have learned piano for 3 years", "I've learned the piano for 3 years", "I've learned piano for 3 years", "I have learnt the piano for three years", "I have learnt piano for three years", "I have been learning the piano for three years", "I have been learning piano for three years"], "points": 4, "explanation": "과거부터 지금까지 계속 → 현재완료 have learned + for + 기간" }
+  ]
+}

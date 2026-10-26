@@ -1,0 +1,50 @@
+{
+  "id": "m1-A",
+  "grade": "중1",
+  "form": "A",
+  "title": "중1 레벨테스트 A형",
+  "description": "초급~중급: 일상·성격·학교 단어, be동사·3인칭 단수·현재진행·과거형·의문사·Does 의문문, 주말 생활 글·동아리 안내문 읽기",
+  "timeMinutes": 35,
+  "passages": [
+    {
+      "id": "p1",
+      "title": "My Weekend",
+      "text": "Hello, my name is Daniel. I'm a middle school student.\nOn weekends, I usually get up at eight.\nOn Saturday mornings, I play basketball with my brother at the park.\nIn the afternoon, I help my mom in the kitchen.\nLast Sunday, my family visited my grandparents in Jeonju.\nWe ate bibimbap together. It was delicious!"
+    },
+    {
+      "id": "p2",
+      "title": "Join the Drama Club!",
+      "text": "Do you like acting? Come and join us.\n• When: Every Wednesday, 3:30 p.m. – 5:00 p.m.\n• Where: Room 205\nWe will perform a play at the school festival in October.\nSign up with Ms. Kim by March 15."
+    }
+  ],
+  "items": [
+    { "id": "v1", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "단어의 뜻을 고르세요.", "stimulus": "usually", "choices": ["가끔", "보통, 대개", "절대 ~않다", "항상"], "answer": 1, "points": 4, "explanation": "usually = 보통, 대개 (가끔 sometimes, 절대 ~않다 never, 항상 always)" },
+    { "id": "v2", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "I'm hungry. Let's ____ lunch.", "choices": ["have", "sleep", "wear", "close"], "answer": 0, "points": 4, "explanation": "배가 고프다 → 점심을 먹자(have lunch). have는 '먹다'의 뜻으로도 쓴다." },
+    { "id": "v3", "section": "vocab", "difficulty": 1, "type": "mc", "prompt": "주어진 단어와 반대 뜻의 단어를 고르세요.", "stimulus": "early", "choices": ["fast", "soon", "slow", "late"], "answer": 3, "points": 4, "explanation": "early(이른, 일찍) ↔ late(늦은, 늦게)" },
+    { "id": "v4", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "같은 종류가 아닌 것을 고르세요.", "choices": ["math", "history", "science", "teacher"], "answer": 3, "points": 4, "explanation": "math 수학, history 역사, science 과학은 과목이고 teacher(선생님)는 사람이다." },
+    { "id": "v5", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "다음 설명에 알맞은 장소를 고르세요.", "stimulus": "the room where you cook food", "choices": ["bedroom", "bathroom", "kitchen", "living room"], "answer": 2, "points": 4, "explanation": "음식을 요리하는 방 = kitchen(부엌)" },
+    { "id": "v6", "section": "vocab", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 단어를 고르세요.", "stimulus": "She is very ____. She always helps her friends.", "choices": ["kind", "lazy", "rude", "angry"], "answer": 0, "points": 4, "explanation": "항상 친구를 돕는다 → 친절한(kind) (lazy 게으른, rude 무례한, angry 화난)" },
+    { "id": "v7", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "문장 속 difficult와 뜻이 가장 비슷한 단어를 고르세요.", "stimulus": "The test was very difficult.", "choices": ["easy", "hard", "short", "boring"], "answer": 1, "points": 4, "explanation": "difficult(어려운) = hard (easy는 반대말)" },
+    { "id": "v8", "section": "vocab", "difficulty": 3, "type": "mc", "prompt": "두 문장의 빈칸에 공통으로 들어갈 말을 고르세요.", "stimulus": "I'm interested ____ music.  /  She lives ____ Seoul.", "choices": ["in", "at", "on", "for"], "answer": 0, "points": 4, "explanation": "be interested in ~ = ~에 관심이 있다 / 도시 이름 앞에는 in (in Seoul)" },
+
+    { "id": "g1", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "My sister ____ a student.", "choices": ["am", "are", "is", "be"], "answer": 2, "points": 4, "explanation": "주어 My sister(3인칭 단수) → be동사 is" },
+    { "id": "g2", "section": "grammar", "difficulty": 1, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "He ____ to school every day.", "choices": ["walk", "walks", "walking", "is walk"], "answer": 1, "points": 4, "explanation": "주어 He(3인칭 단수) + 현재 습관 → 동사에 -s (walks)" },
+    { "id": "g3", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "Look! The children ____ in the pool.", "choices": ["swim", "swims", "are swimming", "is swimming"], "answer": 2, "points": 4, "explanation": "Look!(지금 보라) → 현재진행. children은 복수이므로 are swimming" },
+    { "id": "g4", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: ____ do you go to bed?  B: At ten.", "choices": ["What", "Where", "Who", "When"], "answer": 3, "points": 4, "explanation": "At ten(10시에)으로 대답 → 때를 묻는 When" },
+    { "id": "g5", "section": "grammar", "difficulty": 2, "type": "mc", "prompt": "빈칸에 알맞은 말을 고르세요.", "stimulus": "We ____ a movie last night.", "choices": ["watch", "watched", "watches", "are watching"], "answer": 1, "points": 4, "explanation": "last night(어젯밤) → 과거형 watched" },
+    { "id": "g6", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "어법상 틀린 문장을 고르세요.", "choices": ["She doesn't like carrots.", "Can you swim?", "He don't have a pen.", "They are my friends."], "answer": 2, "points": 4, "explanation": "주어 He(3인칭 단수)의 부정은 doesn't → He doesn't have a pen." },
+    { "id": "g7", "section": "grammar", "difficulty": 3, "type": "mc", "prompt": "대화의 빈칸에 알맞은 말을 고르세요.", "stimulus": "A: ____ your brother play the guitar?  B: Yes, he does.", "choices": ["Does", "Do", "Is", "Are"], "answer": 0, "points": 4, "explanation": "일반동사(play) 의문문, 주어 your brother(3인칭 단수) → Does. 대답도 he does." },
+
+    { "id": "r1", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "Daniel은 주말에 보통 몇 시에 일어나나요?", "choices": ["7시", "9시", "8시", "10시"], "answer": 2, "points": 4, "explanation": "'On weekends, I usually get up at eight.' → 8시" },
+    { "id": "r2", "section": "reading", "difficulty": 1, "type": "mc", "passageId": "p1", "prompt": "토요일 아침에 Daniel이 하는 일은 무엇인가요?", "choices": ["형제와 공원에서 농구하기", "엄마를 도와 요리하기", "조부모님 댁 방문하기", "숙제하기"], "answer": 0, "points": 4, "explanation": "'On Saturday mornings, I play basketball with my brother at the park.' 엄마를 돕는 것은 오후(In the afternoon)이다." },
+    { "id": "r3", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p1", "prompt": "지난 일요일에 Daniel의 가족이 한 일은 무엇인가요?", "choices": ["공원에서 농구를 했다", "부엌에서 요리를 배웠다", "새로 생긴 식당에 갔다", "전주에 계신 조부모님을 찾아갔다"], "answer": 3, "points": 4, "explanation": "'Last Sunday, my family visited my grandparents in Jeonju.' 그리고 함께 비빔밥을 먹었다." },
+    { "id": "r4", "section": "reading", "difficulty": 2, "type": "mc", "passageId": "p2", "prompt": "연극 동아리는 언제 모이나요?", "choices": ["매주 월요일", "매주 수요일", "매주 금요일", "매달 첫째 주"], "answer": 1, "points": 4, "explanation": "'When: Every Wednesday' → 매주 수요일 오후 3시 30분~5시" },
+    { "id": "r5", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p2", "prompt": "안내문의 내용과 일치하지 않는 것을 고르세요.", "choices": ["205호에서 모인다.", "오후 3시 30분에 시작한다.", "10월 학교 축제에서 연극을 한다.", "신청은 3월 15일부터 시작한다."], "answer": 3, "points": 4, "explanation": "'Sign up with Ms. Kim by March 15.' — by는 '~까지'. 3월 15일'까지' 신청해야 한다." },
+    { "id": "r6", "section": "reading", "difficulty": 3, "type": "mc", "passageId": "p1", "prompt": "글의 내용과 일치하는 것을 고르세요.", "choices": ["Daniel은 고등학생이다.", "Daniel은 일요일마다 농구를 한다.", "Daniel은 오후에 엄마를 도와 부엌일을 한다.", "Daniel의 조부모님은 서울에 사신다."], "answer": 2, "points": 4, "explanation": "'In the afternoon, I help my mom in the kitchen.' (중학생 middle school student, 농구는 토요일, 조부모님은 전주)" },
+
+    { "id": "w1", "section": "writing", "difficulty": 1, "type": "write", "prompt": "그림을 보고 단어를 쓰세요.", "stimulus": "🏀", "hint": "b _ _ _ _ _ _ _ _ l", "answer": "basketball", "points": 4, "explanation": "🏀 농구 = basketball" },
+    { "id": "w2", "section": "writing", "difficulty": 2, "type": "write", "prompt": "우리말 뜻에 맞는 영어 단어를 쓰세요.", "stimulus": "부엌", "answer": "kitchen", "points": 4, "explanation": "부엌 = kitchen" },
+    { "id": "w3", "section": "writing", "difficulty": 2, "type": "write", "prompt": "괄호 안의 단어를 알맞은 형태로 바꿔 빈칸에 쓰세요.", "stimulus": "She ______ TV every evening. (watch)", "answer": "watches", "accept": ["She watches TV every evening"], "points": 4, "explanation": "주어 She(3인칭 단수) + 현재. -ch로 끝나면 -es → watches" },
+    { "id": "w4", "section": "writing", "difficulty": 3, "type": "write", "prompt": "우리말에 맞게 영어 문장을 쓰세요.  <조건> visit를 사용할 것", "stimulus": "나는 어제 할머니를 방문했다.", "answer": "I visited my grandmother yesterday.", "accept": ["Yesterday I visited my grandmother", "Yesterday, I visited my grandmother", "I visited my grandma yesterday", "Yesterday I visited my grandma", "Yesterday, I visited my grandma"], "points": 4, "explanation": "어제(과거) → visit의 과거형 visited. I visited my grandmother yesterday." }
+  ]
+}
