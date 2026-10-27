@@ -8,6 +8,7 @@
 //   (전에는 자료·지문 첫 화면 카드에서만 들어갈 수 있었다). 주소는 5단계 그대로.
 // 지문 단어장 (2026-10-19): 외부지문 🔵 단어 → A4 단어지·단어 테스트지 (/materials/wordbooks).
 // 레벨테스트 (2026-10-25): 학년(초3~고3)별 A형·B형 시험지 인쇄·태블릿 응시·채점·추천 반 (/materials/level-tests).
+// 대시보드 (2026-10-27): 로그인 뒤 첫 화면 (/dashboard). 옛 문제 생성기(/)는 레거시 메뉴에 그대로.
 
 export type NavItem = {
   label: string
@@ -23,6 +24,11 @@ export type NavGroup = {
 }
 
 export const NAV_GROUPS: NavGroup[] = [
+  {
+    title: '대시보드',
+    href: '/dashboard',
+    items: [{ label: '오늘 할 일', href: '/dashboard', icon: '🏠' }],
+  },
   {
     title: '자료',
     href: '/materials',

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabaseBrowser'
+import { safeNextPath } from '@/lib/safeRedirect'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -29,7 +30,8 @@ export default function LoginPage() {
       return
     }
 
-    router.push('/')
+    // 원래 가려던 앱 안 주소로, 없거나 위험한 값이면 대시보드로 (lib/safeRedirect.ts)
+    router.push(safeNextPath(new URLSearchParams(window.location.search).get('next')))
     router.refresh()
   }
 

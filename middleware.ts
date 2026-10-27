@@ -34,6 +34,10 @@ export async function middleware(request: NextRequest) {
   if (!user && !isPublicPage) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
+    // 로그인 뒤 원래 가려던 곳으로 돌아가도록 주소를 넘긴다 (검사는 로그인 화면의 safeNextPath)
+    url.search = ''
+    const { pathname, search } = request.nextUrl
+    if (pathname !== '/') url.searchParams.set('next', pathname + search)
     return NextResponse.redirect(url)
   }
 
