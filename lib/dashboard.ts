@@ -1,4 +1,4 @@
-// 대시보드 1단계 (2026-10-27): "오늘 할 일" 계산 규칙. DB 를 읽는 쪽은 lib/dashboardData.ts.
+// 대시보드 (1단계 2026-10-27, 1차 조정 2026-10-28): 상단 지표·처리할 일·오늘 시간표 계산 규칙. DB 를 읽는 쪽은 lib/dashboardData.ts.
 // 보여주기만 한다 (자료를 고치지 않음). 금액은 다루지 않고 사람 수·건수만 센다.
 // 날짜는 한국 시간 기준 (Vercel 서버는 UTC 라서 new Date() 그대로 쓰면 아침 9시 전에는 어제가 된다).
 // 이 파일은 다른 모듈을 런타임 import 하지 않는다 (앱과 scripts/ 에서 그대로 쓰기 위해).
@@ -31,41 +31,85 @@ export function unpaidStudentCount(totalStudents: number, paidStudentIds: (strin
   return Math.max(0, totalStudents - distinctCount(paidStudentIds))
 }
 
-export type DashboardItem = {
-  key: 'classes' | 'homework_due' | 'homework_overdue' | 'tuition_unpaid' | 'level_tests'
-  label: string
-  count: number
-  unit: string
-  href: string
-  // 숫자가 있으면 눈에 띄게 보여줄지 (참고 정보는 false)
-  urgent: boolean
-  note?: string
-  // 표가 없거나 읽기에 실패하면 숫자 대신 안내
-  error?: string
-}
+// 대시보드 숫자를 누르면 그 학생들만 골라 보이는 처리 화면 주소 (1차 조정, 2026-10-28)
+// 숙제관리·원비관리 화면이 ?view= 를 읽는다 (lib/homeworkView.ts, app/tuition).
+export const HOMEWORK_OVERDUE_HREF = '/homework?view=overdue'
+export const HOMEWORK_DUE_HREF = '/homework?view=due'
+export const HOMEWORK_PENDING_HREF = '/homework?view=pending'
+export const TUITION_UNPAID_HREF = '/tuition?view=unpaid'
 
 export type DashboardCounts = {
   todayClasses: number
   homeworkDueStudents: number
   homeworkOverdueStudents: number
+  // 마감 지남 + 오늘·내일 마감 (두 쪽에 다 있는 학생은 1명)
+  homeworkPendingStudents: number
   tuitionUnpaidStudents: number
-  levelTestsLast7Days: number
 }
 
 export type DashboardErrors = Partial<Record<keyof DashboardCounts, string>>
 
-export function buildDashboardItems(c: DashboardCounts, errors: DashboardErrors = {}): DashboardItem[] {
+// 상단 지표 3칸 (관심 학생 칸은 3차 전까지 없음)
+export type SummaryTile = {
+  key: 'classes' | 'homework' | 'tuition'
+  label: string
+  count: number
+  unit: string
+  href: string
+  error?: string
+}
+
+export function buildSummaryTiles(c: DashboardCounts, errors: DashboardErrors = {}): SummaryTile[] {
   return [
-    { key: 'classes', label: '오늘 수업', count: c.todayClasses, unit: '개', href: '/schedule', urgent: true, error: errors.todayClasses },
-    { key: 'homework_due', label: '오늘·내일 마감 숙제 미완료', count: c.homeworkDueStudents, unit: '명', href: '/homework', urgent: true, error: errors.homeworkDueStudents },
-    { key: 'homework_overdue', label: '마감 지난 숙제 미완료', count: c.homeworkOverdueStudents, unit: '명', href: '/homework', urgent: true, error: errors.homeworkOverdueStudents },
-    { key: 'tuition_unpaid', label: '이번 달 원비 미납', count: c.tuitionUnpaidStudents, unit: '명', href: '/tuition', urgent: true, note: '등록한 학생 전체 기준', error: errors.tuitionUnpaidStudents },
-    { key: 'level_tests', label: '최근 7일 레벨테스트 응시', count: c.levelTestsLast7Days, unit: '건', href: '/materials/level-tests', urgent: false, note: '참고', error: errors.levelTestsLast7Days },
+    { key: 'classes', label: '오늘 수업', count: c.todayClasses, unit: '개', href: '/schedule', error: errors.todayClasses },
+    { key: 'homework', label: '숙제 미완료 (마감 지남·임박)', count: c.homeworkPendingStudents, unit: '명', href: HOMEWORK_PENDING_HREF, error: errors.homeworkPendingStudents },
+    { key: 'tuition', label: '이번 달 원비 미납', count: c.tuitionUnpaidStudents, unit: '명', href: TUITION_UNPAID_HREF, error: errors.tuitionUnpaidStudents },
   ]
 }
 
-// 처리할 게 있는 급한 항목 → 위에 크게, 0건·참고 항목 → 아래에 작게
-export function splitByAttention(items: DashboardItem[]): { attention: DashboardItem[]; quiet: DashboardItem[] } {
-  const needs = (i: DashboardItem) => !i.error && i.count > 0 && i.urgent
-  return { attention: items.filter(needs), quiet: items.filter((i) => !needs(i)) }
+// 처리할 일 색: 마감 지남 = 빨강, 임박 = 중립, 원비 = 회색
+export type TaskTone = 'danger' | 'neutral' | 'muted'
+
+export type TaskItem = {
+  key: 'homework_overdue' | 'homework_due' | 'tuition_unpaid'
+  label: string
+  count: number
+  unit: string
+  href: string
+  tone: TaskTone
+  note?: string
+  error?: string
+}
+
+// 처리할 게 있는 항목(또는 읽기 실패 항목)만, 급한 순서로
+export function buildTaskItems(c: DashboardCounts, errors: DashboardErrors = {}): TaskItem[] {
+  const all: TaskItem[] = [
+    { key: 'homework_overdue', label: '마감 지난 숙제 미완료', count: c.homeworkOverdueStudents, unit: '명', href: HOMEWORK_OVERDUE_HREF, tone: 'danger', error: errors.homeworkOverdueStudents },
+    { key: 'homework_due', label: '오늘·내일 마감 숙제 미완료', count: c.homeworkDueStudents, unit: '명', href: HOMEWORK_DUE_HREF, tone: 'neutral', error: errors.homeworkDueStudents },
+    { key: 'tuition_unpaid', label: '이번 달 원비 미납', count: c.tuitionUnpaidStudents, unit: '명', href: TUITION_UNPAID_HREF, tone: 'muted', note: '등록한 학생 전체 기준', error: errors.tuitionUnpaidStudents },
+  ]
+  return all.filter((i) => i.error || i.count > 0)
+}
+
+export type TodayEvent = {
+  id: string
+  title: string
+  start_time: string | null
+  end_time: string | null
+  event_type: string
+}
+
+// 시작 시각 순, 시각 없는 일정은 맨 뒤 (같으면 제목 순)
+export function sortTodayEvents<T extends TodayEvent>(events: T[]): T[] {
+  return [...events].sort((a, b) => {
+    if (a.start_time && b.start_time && a.start_time !== b.start_time) return a.start_time.localeCompare(b.start_time)
+    if (a.start_time && !b.start_time) return -1
+    if (!a.start_time && b.start_time) return 1
+    return a.title.localeCompare(b.title)
+  })
+}
+
+// '14:00:00' → '14:00'
+export function formatTime(t: string | null): string {
+  return t ? t.slice(0, 5) : ''
 }

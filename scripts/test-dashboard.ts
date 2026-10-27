@@ -1,8 +1,9 @@
-// 대시보드 1단계 점검 (DB·서버 접속 없음).
+// 대시보드 1단계 + 1차 조정 점검 (DB·서버 접속 없음).
 //   1) 로그인 뒤 이동 주소 검사 (safeNextPath): 앱 안 주소만, "//", "/\", 외부 주소, 빈 값 → /dashboard
 //   2) 한국 날짜·내일·이번 달 계산 (서버가 UTC 여도 한국 날짜)
 //   3) 학생 수 세기 / 원비 미납 = 전체 학생 − 완납 학생 (원비 화면과 같은 규칙)
-//   4) 처리할 게 있는 항목만 위로, 0건·참고·오류 항목은 아래 작게
+//   4) 상단 지표 3칸, 처리할 일(색·순서·필터 주소), 오늘 시간표 정렬, 빈 상태 문구
+//   6) 숙제 보기 필터(한국 날짜)와 숙제·원비 화면의 ?view=
 //   5) 메뉴에 대시보드가 있고, 로그인·미들웨어가 safeNextPath / next 를 쓰는지
 // 실행: npm run test-dashboard
 
@@ -12,13 +13,16 @@ import { resolve } from 'node:path'
 import { DEFAULT_AFTER_LOGIN, safeNextPath } from '../lib/safeRedirect.ts'
 import {
   addDays,
-  buildDashboardItems,
+  buildSummaryTiles,
+  buildTaskItems,
   distinctCount,
+  formatTime,
   kstDateString,
   monthOf,
-  splitByAttention,
+  sortTodayEvents,
   unpaidStudentCount,
 } from '../lib/dashboard.ts'
+import { inHomeworkView, isOverdueOn, parseHomeworkView } from '../lib/homeworkView.ts'
 import { NAV_GROUPS } from '../config/navigation.ts'
 
 const ROOT = process.cwd()
@@ -102,25 +106,87 @@ test('원비 미납 = 전체 학생 − 완납 학생 (기록 없음·부분납�
   assert.equal(unpaidStudentCount(2, ['a', 'b', 'c']), 0)
 })
 
-test('항목: 원비에 "등록한 학생 전체 기준", 레벨테스트는 참고·결과 목록으로', () => {
-  const items = buildDashboardItems({ todayClasses: 0, homeworkDueStudents: 0, homeworkOverdueStudents: 0, tuitionUnpaidStudents: 0, levelTestsLast7Days: 0 })
-  assert.deepEqual(items.map((i) => i.key), ['classes', 'homework_due', 'homework_overdue', 'tuition_unpaid', 'level_tests'])
-  const tuition = items.find((i) => i.key === 'tuition_unpaid')!
-  assert.equal(tuition.note, '등록한 학생 전체 기준')
-  assert.equal(tuition.unit, '명')
-  const level = items.find((i) => i.key === 'level_tests')!
-  assert.equal(level.urgent, false)
-  assert.equal(level.href, '/materials/level-tests')
+const ZERO = { todayClasses: 0, homeworkDueStudents: 0, homeworkOverdueStudents: 0, homeworkPendingStudents: 0, tuitionUnpaidStudents: 0 }
+
+test('상단 지표 3칸: 오늘 수업 / 숙제 미완료 / 원비 미납, 레벨테스트 칸 없음', () => {
+  const tiles = buildSummaryTiles(ZERO)
+  assert.deepEqual(tiles.map((t) => t.key), ['classes', 'homework', 'tuition'])
+  assert.equal(tiles[1].href, '/homework?view=pending')
+  assert.equal(tiles[2].href, '/tuition?view=unpaid')
+  const src = readFileSync(resolve(ROOT, 'lib/dashboardData.ts'), 'utf-8')
+  assert.doesNotMatch(src, /\.from\('level_test_results'\)/)
 })
 
-test('위·아래 나누기: 처리할 것만 위, 0건·참고·오류는 아래', () => {
-  const items = buildDashboardItems(
-    { todayClasses: 2, homeworkDueStudents: 0, homeworkOverdueStudents: 3, tuitionUnpaidStudents: 5, levelTestsLast7Days: 4 },
-    { tuitionUnpaidStudents: '불러오지 못했어요' },
-  )
-  const { attention, quiet } = splitByAttention(items)
-  assert.deepEqual(attention.map((i) => i.key), ['classes', 'homework_overdue'])
-  assert.deepEqual(quiet.map((i) => i.key), ['homework_due', 'tuition_unpaid', 'level_tests'])
+test('처리할 일: 있는 것만 급한 순서, 색은 마감 지남 빨강·임박 중립·원비 회색', () => {
+  assert.deepEqual(buildTaskItems(ZERO), [])
+  const items = buildTaskItems({ ...ZERO, homeworkDueStudents: 2, homeworkOverdueStudents: 3, tuitionUnpaidStudents: 5 })
+  assert.deepEqual(items.map((i) => [i.key, i.tone]), [
+    ['homework_overdue', 'danger'],
+    ['homework_due', 'neutral'],
+    ['tuition_unpaid', 'muted'],
+  ])
+  assert.deepEqual(items.map((i) => i.href), ['/homework?view=overdue', '/homework?view=due', '/tuition?view=unpaid'])
+  assert.equal(items[2].note, '등록한 학생 전체 기준')
+})
+
+test('처리할 일: 읽기 실패 항목은 0이어도 안내로 남긴다', () => {
+  const items = buildTaskItems({ ...ZERO, homeworkDueStudents: 1 }, { tuitionUnpaidStudents: '불러오지 못했어요' })
+  assert.deepEqual(items.map((i) => i.key), ['homework_due', 'tuition_unpaid'])
+})
+
+test('오늘 시간표: 시작 시각 순, 시각 없는 일정은 뒤, 표시는 HH:MM', () => {
+  const sorted = sortTodayEvents([
+    { id: '1', title: '중2', start_time: '18:00:00', end_time: null, event_type: 'class' },
+    { id: '2', title: '보강', start_time: null, end_time: null, event_type: 'other' },
+    { id: '3', title: '초5', start_time: '15:30:00', end_time: '16:30:00', event_type: 'class' },
+  ])
+  assert.deepEqual(sorted.map((e) => e.id), ['3', '1', '2'])
+  assert.equal(formatTime('15:30:00'), '15:30')
+  assert.equal(formatTime(null), '')
+})
+
+test('대시보드 화면 문구: 빈 상태 문구 2개, 폭 1,400px', () => {
+  const page = readFileSync(resolve(ROOT, 'app/dashboard/page.tsx'), 'utf-8')
+  assert.match(page, /오늘 등록된 수업 일정 없음/)
+  assert.match(page, /현재 처리 대기 중인 업무가 없습니다/)
+  assert.match(page, /max-w-\[1400px\]/)
+})
+
+test('숙제 보기 필터: 한국 날짜 기준 마감 지남·임박·둘 다', () => {
+  const today = '2026-10-28'
+  const tomorrow = '2026-10-29'
+  const hw = [
+    { id: 'a', status: 'assigned' as const, due_date: '2026-10-27' }, // 마감 지남
+    { id: 'b', status: 'assigned' as const, due_date: '2026-10-28' }, // 오늘 마감
+    { id: 'c', status: 'assigned' as const, due_date: '2026-10-29' }, // 내일 마감
+    { id: 'd', status: 'assigned' as const, due_date: '2026-10-30' }, // 모레
+    { id: 'e', status: 'done' as const, due_date: '2026-10-20' }, // 완료는 마감 지남 아님
+    { id: 'f', status: 'assigned' as const, due_date: null },
+  ]
+  const ids = (v: Parameters<typeof inHomeworkView>[1]) => hw.filter((h) => inHomeworkView(h, v, today, tomorrow)).map((h) => h.id)
+  assert.deepEqual(ids('overdue'), ['a'])
+  assert.deepEqual(ids('due'), ['b', 'c'])
+  assert.deepEqual(ids('pending'), ['a', 'b', 'c'])
+  assert.deepEqual(ids('assigned'), ['a', 'b', 'c', 'd', 'f'])
+  assert.deepEqual(ids('done'), ['e'])
+  assert.equal(ids('all').length, 6)
+  assert.equal(isOverdueOn(hw[0], today), true)
+})
+
+test('숙제 보기 주소: 모르는 값은 전체', () => {
+  assert.equal(parseHomeworkView('overdue'), 'overdue')
+  assert.equal(parseHomeworkView('pending'), 'pending')
+  assert.equal(parseHomeworkView('evil'), 'all')
+  assert.equal(parseHomeworkView(null), 'all')
+})
+
+test('숙제·원비 화면이 ?view= 를 읽고, 숙제는 UTC 날짜를 쓰지 않는다', () => {
+  const hwPage = readFileSync(resolve(ROOT, 'app/homework/page.tsx'), 'utf-8')
+  assert.match(hwPage, /parseHomeworkView\(/)
+  assert.match(hwPage, /kstDateString\(/)
+  assert.doesNotMatch(hwPage, /new Date\(\)\.toISOString\(\)\.slice\(0, 10\)/)
+  const tuitionPage = readFileSync(resolve(ROOT, 'app/tuition/page.tsx'), 'utf-8')
+  assert.match(tuitionPage, /get\('view'\) === 'unpaid'/)
 })
 
 test('메뉴 맨 위에 대시보드, 옛 생성기(/)는 그대로', () => {

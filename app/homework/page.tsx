@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { addDays, kstDateString } from '@/lib/dashboard'
+import { inHomeworkView, isOverdueOn, parseHomeworkView, type HomeworkView } from '@/lib/homeworkView'
 
 interface Student {
   id: string
@@ -18,25 +20,24 @@ interface Homework {
   students?: { name: string; grade: string }
 }
 
-type FilterKey = 'all' | 'assigned' | 'done'
-
-const FILTER_LABELS: Record<FilterKey, string> = {
+// 대시보드에서 ?view= 로 넘어오면 그 보기로 연다 (lib/homeworkView.ts). 날짜는 한국 날짜 기준.
+const FILTER_LABELS: Record<HomeworkView, string> = {
   all: '전체',
   assigned: '배정중',
   done: '완료',
+  pending: '마감 지남·임박',
+  overdue: '마감 지남',
+  due: '오늘·내일 마감',
 }
 
-function isOverdue(h: Homework): boolean {
-  if (h.status !== 'assigned' || !h.due_date) return false
-  const today = new Date().toISOString().slice(0, 10)
-  return h.due_date < today
-}
+// pending 은 대시보드에서 넘어왔을 때만 버튼으로 보인다
+const ALWAYS_SHOWN: HomeworkView[] = ['all', 'assigned', 'done', 'overdue', 'due']
 
 export default function HomeworkPage() {
   const [students, setStudents] = useState<Student[]>([])
   const [homework, setHomework] = useState<Homework[]>([])
   const [loading, setLoading] = useState(true)
-  const [filter, setFilter] = useState<FilterKey>('all')
+  const [filter, setFilter] = useState<HomeworkView>('all')
   const [savingId, setSavingId] = useState<string | null>(null)
 
   // 배정 폼
@@ -46,9 +47,18 @@ export default function HomeworkPage() {
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
+    setFilter(parseHomeworkView(new URLSearchParams(window.location.search).get('view')))
     loadStudents()
     loadHomework()
   }, [])
+
+  function changeFilter(view: HomeworkView) {
+    setFilter(view)
+    const url = new URL(window.location.href)
+    if (view === 'all') url.searchParams.delete('view')
+    else url.searchParams.set('view', view)
+    window.history.replaceState(null, '', url)
+  }
 
   async function loadStudents() {
     const res = await fetch('/api/students')
@@ -114,9 +124,11 @@ export default function HomeworkPage() {
     }
   }
 
-  const filtered = homework.filter((h) => filter === 'all' || h.status === filter)
-  const assignedCount = homework.filter((h) => h.status === 'assigned').length
-  const doneCount = homework.filter((h) => h.status === 'done').length
+  const today = kstDateString(new Date())
+  const tomorrow = addDays(today, 1)
+  const filtered = homework.filter((h) => inHomeworkView(h, filter, today, tomorrow))
+  const countOf = (view: HomeworkView) => homework.filter((h) => inHomeworkView(h, view, today, tomorrow)).length
+  const shownFilters = filter === 'pending' ? [...ALWAYS_SHOWN, 'pending' as const] : ALWAYS_SHOWN
 
   if (loading) return <div className="py-20 text-center text-sm text-gray-400">불러오는 중…</div>
 
@@ -169,17 +181,17 @@ export default function HomeworkPage() {
 
       {/* 요약 + 필터 */}
       <div className="mb-4 flex flex-wrap items-center gap-3">
-        {(Object.keys(FILTER_LABELS) as FilterKey[]).map((k) => (
+        {shownFilters.map((k) => (
           <button
             key={k}
-            onClick={() => setFilter(k)}
+            onClick={() => changeFilter(k)}
             className={`rounded-full border px-3 py-1 text-xs font-medium transition-all ${
               filter === k
                 ? 'border-blue-300 bg-blue-100 text-blue-700'
                 : 'border-gray-200 text-gray-400 hover:border-gray-300'
             }`}
           >
-            {FILTER_LABELS[k]} {k === 'all' ? homework.length : k === 'assigned' ? assignedCount : doneCount}
+            {FILTER_LABELS[k]} {countOf(k)}
           </button>
         ))}
       </div>
@@ -190,7 +202,7 @@ export default function HomeworkPage() {
         </div>
       ) : filtered.length === 0 ? (
         <div className="rounded-lg border border-gray-200 bg-white p-12 text-center text-gray-500">
-          배정된 숙제가 없습니다.
+          {filter === 'all' ? '배정된 숙제가 없습니다.' : `'${FILTER_LABELS[filter]}' 숙제가 없습니다.`}
         </div>
       ) : (
         <div className="overflow-hidden rounded-lg border border-gray-200 bg-white">
@@ -206,7 +218,7 @@ export default function HomeworkPage() {
             </thead>
             <tbody>
               {filtered.map((h) => {
-                const overdue = isOverdue(h)
+                const overdue = isOverdueOn(h, today)
                 return (
                 <tr key={h.id} className={`border-b border-gray-100 last:border-0 hover:bg-gray-50 ${overdue ? 'bg-red-50/40' : ''}`}>
                   <td className="px-4 py-3 font-medium text-gray-800">

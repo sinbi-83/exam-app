@@ -52,6 +52,8 @@ export default function TuitionPage() {
   const [deletingId, setDeletingId] = useState<string | null>(null)
   const [paidAmountSaving, setPaidAmountSaving] = useState<string | null>(null)
   const [paidAmountSaved, setPaidAmountSaved] = useState<string | null>(null)
+  // 대시보드에서 ?view=unpaid 로 넘어오면 미납(부분납부 포함) 학생만 보인다
+  const [unpaidOnly, setUnpaidOnly] = useState(false)
   const [defaultAmounts, setDefaultAmounts] = useState<Record<GradeGroup, string>>({
     초등: '200000',
     중학: '250000',
@@ -59,7 +61,19 @@ export default function TuitionPage() {
     기타: '250000',
   })
 
-  useEffect(() => { loadStudents() }, [])
+  useEffect(() => {
+    setUnpaidOnly(new URLSearchParams(window.location.search).get('view') === 'unpaid')
+    loadStudents()
+  }, [])
+
+  function toggleUnpaidOnly() {
+    const next = !unpaidOnly
+    setUnpaidOnly(next)
+    const url = new URL(window.location.href)
+    if (next) url.searchParams.set('view', 'unpaid')
+    else url.searchParams.delete('view')
+    window.history.replaceState(null, '', url)
+  }
   useEffect(() => { if (students.length > 0) loadRecords() }, [month, students])
 
   // 학년별 기본 원비가 바뀌면, 아직 저장되지 않은(=기본값으로 채워진) 학생 금액에만 반영
@@ -220,9 +234,10 @@ export default function TuitionPage() {
     return s
   }, 0)
 
+  const visibleStudents = unpaidOnly ? students.filter((s) => records[s.id]?.status !== 'paid') : students
   const studentsByGroup = GRADE_GROUPS.map((g) => ({
     group: g,
-    students: students.filter((s) => gradeGroup(s.grade) === g),
+    students: visibleStudents.filter((s) => gradeGroup(s.grade) === g),
   })).filter((g) => g.students.length > 0)
 
   if (loading) return <div className="py-20 text-center text-sm text-gray-400">불러오는 중…</div>
@@ -236,6 +251,14 @@ export default function TuitionPage() {
         <button onClick={() => changeMonth(-1)} className="rounded border border-gray-300 px-3 py-1.5 text-sm hover:bg-gray-50">‹</button>
         <span className="text-base font-semibold text-gray-700">{year}년 {mon}월</span>
         <button onClick={() => changeMonth(1)} className="rounded border border-gray-300 px-3 py-1.5 text-sm hover:bg-gray-50">›</button>
+        <button
+          onClick={toggleUnpaidOnly}
+          className={`rounded-full border px-3 py-1 text-xs font-medium transition-all ${
+            unpaidOnly ? 'border-red-300 bg-red-100 text-red-700' : 'border-gray-200 text-gray-400 hover:border-gray-300'
+          }`}
+        >
+          미납만 보기
+        </button>
       </div>
 
       {/* 학년별 기본 원비 */}
@@ -276,6 +299,10 @@ export default function TuitionPage() {
       {students.length === 0 ? (
         <div className="rounded-lg border border-gray-200 bg-white p-12 text-center text-gray-500">
           등록된 학생이 없습니다.
+        </div>
+      ) : visibleStudents.length === 0 ? (
+        <div className="rounded-lg border border-gray-200 bg-white p-12 text-center text-gray-500">
+          {year}년 {mon}월 미납 학생이 없습니다.
         </div>
       ) : (
         <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white">
