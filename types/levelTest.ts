@@ -82,4 +82,6 @@ export interface LevelTestResultRow {
   taken_at: string
   created_at: string
   updated_at: string
+  // 선생님이 확인한 때 (비면 확인 전) — report-status-level-test-review-migration.sql 실행 전에는 없음
+  reviewed_at?: string | null
 }

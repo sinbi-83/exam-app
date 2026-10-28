@@ -1,4 +1,7 @@
-# 대시보드용 새 표 설계안 (2026-10-28, 승인 전, DB 미반영)
+# 대시보드용 새 표 설계안 (2026-10-28)
+
+> **진행 상황**: ⑤⑥은 향미님 승인(2026-10-28)으로 앱 코드 반영 완료 → SQL 파일 `report-status-level-test-review-migration.sql`
+> (SQL Editor 실행은 향미님). ①②③④는 아직 설계안만.
 
 > 이 문서는 **설계안만** 담는다. Supabase 에는 아무것도 만들지 않았다.
 > 향미님이 승인하시면 그때 `*-migration.sql` 파일로 만들고, SQL Editor 실행은 향미님이 한다.
@@ -106,10 +109,11 @@ alter table reports
     check (status in ('draft', 'checked', 'sent')),
   add column if not exists checked_at timestamptz,
   add column if not exists sent_at timestamptz,
-  add column if not exists sent_via text;   -- 'print' | 'parent_link' | 'message' 등, 자유 입력
+  add column if not exists sent_via text
+    check (sent_via is null or sent_via in ('print', 'parent_link', 'message'));
 ```
 
-- 지금 있는 보고서는 모두 `draft` 가 된다. 이미 보낸 보고서는 향미님이 화면에서 "보냄"을 한 번 눌러 주셔야 한다.
+- 지금 있는 보고서는 이미 전달한 것으로 보고 `sent`(방법 비움)로 바꾼다. 그러지 않으면 대시보드에 지난 보고서가 전부 쌓인다. 화면에서 되돌릴 수 있다.
 - 대시보드 숫자: **확인 안 한 보고서** = `draft`, **보낼 보고서** = `checked`.
 - 따로 발송 기록 표를 만들지 않고 칸만 더한 이유: 보고서 하나를 여러 번 보내는 일이 드물다. 여러 번 보내게 되면 그때 `report_deliveries` 표로 나눈다.
 
@@ -119,7 +123,8 @@ alter table reports
 alter table level_test_results add column if not exists reviewed_at timestamptz;
 ```
 
-- 비어 있으면 선생님이 아직 안 본 결과다 (태블릿 응시는 학생이 끝내고 나면 비어 있음).
+- 비어 있으면 선생님이 아직 안 본 결과다. 종이 답은 선생님이 입력하므로 저장할 때 바로 채우고, 태블릿 응시만 비어 있다.
+- 지금 있는 결과는 모두 확인함으로 채운다.
 - 대시보드 숫자: **확인 안 한 레벨테스트** = `reviewed_at is null`. 1차 조정에서 뺀 "최근 7일 건수" 대신 이걸 쓴다.
 
 ## 만드는 순서 (추천)
@@ -128,7 +133,13 @@ alter table level_test_results add column if not exists reviewed_at timestamptz;
 2. ④ `exam_assignments`: 채점 대기를 셀 수 있게 된다. 반이 없어도 학생을 하나씩 골라 쓸 수 있다.
 3. ①②③ 반: 반 관리 화면을 새로 만들어야 해서 가장 크다. 반이 생기면 ④에서 반을 통째로 고를 수 있다.
 
-## 향미님께 확인할 것
+## 향미님 답 (2026-10-28)
+
+1. 반: **고정된 반 위주** → ①② 설계 그대로 간다.
+2. 보고서 발송: **인쇄, 학부모 조회 링크, 문자·카톡 모두 씀** → `sent_via` 값은 `'print' | 'parent_link' | 'message'` 세 가지로 정한다.
+3. 순서: **⑤ 보고서 상태 · ⑥ 레벨테스트 확인부터**.
+
+## 처음 물었던 것
 
 1. **반**: 반이 요일·시간이 고정된 묶음인가요? (예: '중2 월수금 6시반') 아니면 학생마다 시간이 다른 개인 수업이 많은가요? 개인 수업이 많으면 ①② 대신 학생별 시간표가 맞다.
 2. **보고서 발송**: 보고서를 주로 어떻게 보내시나요? (인쇄해서 전달 / 학부모 조회 링크 / 문자·카톡) `sent_via` 에 넣을 값을 정한다.

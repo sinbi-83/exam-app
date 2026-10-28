@@ -37,6 +37,9 @@ export const HOMEWORK_OVERDUE_HREF = '/homework?view=overdue'
 export const HOMEWORK_DUE_HREF = '/homework?view=due'
 export const HOMEWORK_PENDING_HREF = '/homework?view=pending'
 export const TUITION_UNPAID_HREF = '/tuition?view=unpaid'
+export const REPORTS_DRAFT_HREF = '/reports?view=draft'
+export const REPORTS_TO_SEND_HREF = '/reports?view=checked'
+export const LEVEL_TESTS_UNREVIEWED_HREF = '/materials/level-tests#unreviewed'
 
 export type DashboardCounts = {
   todayClasses: number
@@ -45,6 +48,10 @@ export type DashboardCounts = {
   // 마감 지남 + 오늘·내일 마감 (두 쪽에 다 있는 학생은 1명)
   homeworkPendingStudents: number
   tuitionUnpaidStudents: number
+  // 아래 셋은 report-status-level-test-review-migration.sql 실행 뒤에만 셀 수 있다 → 전에는 null (항목 숨김)
+  reportsDraft: number | null
+  reportsToSend: number | null
+  levelTestsUnreviewed: number | null
 }
 
 export type DashboardErrors = Partial<Record<keyof DashboardCounts, string>>
@@ -71,7 +78,7 @@ export function buildSummaryTiles(c: DashboardCounts, errors: DashboardErrors = 
 export type TaskTone = 'danger' | 'neutral' | 'muted'
 
 export type TaskItem = {
-  key: 'homework_overdue' | 'homework_due' | 'tuition_unpaid'
+  key: 'homework_overdue' | 'homework_due' | 'level_tests_unreviewed' | 'reports_to_send' | 'reports_draft' | 'tuition_unpaid'
   label: string
   count: number
   unit: string
@@ -81,11 +88,20 @@ export type TaskItem = {
   error?: string
 }
 
-// 처리할 게 있는 항목(또는 읽기 실패 항목)만, 급한 순서로
+// 처리할 게 있는 항목(또는 읽기 실패 항목)만, 급한 순서로. 셀 수 없는 항목(null)은 뺀다.
 export function buildTaskItems(c: DashboardCounts, errors: DashboardErrors = {}): TaskItem[] {
   const all: TaskItem[] = [
     { key: 'homework_overdue', label: '마감 지난 숙제 미완료', count: c.homeworkOverdueStudents, unit: '명', href: HOMEWORK_OVERDUE_HREF, tone: 'danger', error: errors.homeworkOverdueStudents },
     { key: 'homework_due', label: '오늘·내일 마감 숙제 미완료', count: c.homeworkDueStudents, unit: '명', href: HOMEWORK_DUE_HREF, tone: 'neutral', error: errors.homeworkDueStudents },
+    ...(c.levelTestsUnreviewed === null ? [] : [
+      { key: 'level_tests_unreviewed' as const, label: '확인 안 한 레벨테스트 결과', count: c.levelTestsUnreviewed, unit: '건', href: LEVEL_TESTS_UNREVIEWED_HREF, tone: 'neutral' as const, error: errors.levelTestsUnreviewed },
+    ]),
+    ...(c.reportsToSend === null ? [] : [
+      { key: 'reports_to_send' as const, label: '보낼 보고서', count: c.reportsToSend, unit: '건', href: REPORTS_TO_SEND_HREF, tone: 'neutral' as const, note: '확인 완료, 아직 안 보냄', error: errors.reportsToSend },
+    ]),
+    ...(c.reportsDraft === null ? [] : [
+      { key: 'reports_draft' as const, label: '확인 전 보고서', count: c.reportsDraft, unit: '건', href: REPORTS_DRAFT_HREF, tone: 'neutral' as const, error: errors.reportsDraft },
+    ]),
     { key: 'tuition_unpaid', label: '이번 달 원비 미납', count: c.tuitionUnpaidStudents, unit: '명', href: TUITION_UNPAID_HREF, tone: 'muted', note: '등록한 학생 전체 기준', error: errors.tuitionUnpaidStudents },
   ]
   return all.filter((i) => i.error || i.count > 0)

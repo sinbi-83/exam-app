@@ -13,11 +13,28 @@ interface ResultSummary {
   grade: string
 }
 
+// 확인 전 결과 (태블릿 응시 등) — 대시보드 "확인 안 한 레벨테스트"가 여기(#unreviewed)로 온다
+interface UnreviewedResult {
+  id: string
+  grade: string
+  student_name: string
+  taken_at: string
+  mode: 'paper' | 'online'
+}
+
 export default function LevelTestsPage() {
   const [results, setResults] = useState<ResultSummary[]>([])
   const [tableMissing, setTableMissing] = useState(false)
+  const [unreviewed, setUnreviewed] = useState<UnreviewedResult[]>([])
 
   useEffect(() => {
+    fetch('/api/level-tests/results?unreviewed=1')
+      .then((r) => r.json())
+      .then((j) => {
+        if (!j.error) setUnreviewed(j.data ?? [])
+      })
+      .catch(() => {})
+
     fetch('/api/level-tests/results')
       .then((r) => r.json())
       .then((j) => {
@@ -45,6 +62,23 @@ export default function LevelTestsPage() {
         채점하면 영역별 점수와 <b>추천 반</b>이 나옵니다.
       </p>
       {tableMissing && <TableMissingNotice />}
+
+      {unreviewed.length > 0 && (
+        <section id="unreviewed" className="mb-5 rounded-lg border border-amber-200 bg-amber-50 p-4">
+          <h2 className="mb-2 text-sm font-semibold text-amber-800">확인 안 한 결과 {unreviewed.length}건</h2>
+          <ul className="space-y-1">
+            {unreviewed.map((r) => (
+              <li key={r.id} className="flex items-center gap-2 text-sm">
+                <span className="w-20 shrink-0 text-xs text-gray-500">{new Date(r.taken_at).toLocaleDateString('ko-KR')}</span>
+                <span className={`rounded border px-1.5 py-0.5 text-[11px] font-medium ${schoolStageBadgeClass(r.grade)}`}>{r.grade}</span>
+                <span className="font-medium text-gray-800">{r.student_name}</span>
+                <span className="text-xs text-gray-500">{r.mode === 'online' ? '📱 태블릿' : '🖨️ 종이'}</span>
+                <Link href={`/materials/level-tests/results/${r.id}`} className="ml-auto text-xs text-blue-600 hover:underline">결과 보기</Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <div className="space-y-5">
         {stages.map((stage) => (

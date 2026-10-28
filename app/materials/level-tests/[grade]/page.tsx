@@ -9,7 +9,7 @@ import { LEVEL_TEST_FORMS, SECTION_LABELS, SECTION_ORDER, findLevelTest, gradeBy
 import { FormBadge, GradeBadge, TableMissingNotice } from '@/components/levelTest/LevelTestParts'
 import type { LevelTestResultRow } from '@/types/levelTest'
 
-type ResultSummary = Pick<LevelTestResultRow, 'id' | 'form' | 'student_name' | 'mode' | 'score' | 'recommendation' | 'taken_at'>
+type ResultSummary = Pick<LevelTestResultRow, 'id' | 'form' | 'student_name' | 'mode' | 'score' | 'recommendation' | 'taken_at' | 'reviewed_at'>
 
 export default function LevelTestGradePage() {
   const { grade: slug } = useParams<{ grade: string }>()
@@ -113,7 +113,12 @@ export default function LevelTestGradePage() {
               {results.map((r) => (
                 <tr key={r.id} className="border-t border-gray-100">
                   <td className="px-3 py-2 text-gray-500">{new Date(r.taken_at).toLocaleDateString('ko-KR')}</td>
-                  <td className="px-3 py-2 font-medium text-gray-800">{r.student_name}</td>
+                  <td className="px-3 py-2 font-medium text-gray-800">
+                    {r.student_name}
+                    {r.reviewed_at === null && (
+                      <span className="ml-1.5 rounded-full border border-amber-200 bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-700">확인 전</span>
+                    )}
+                  </td>
                   <td className="px-3 py-2"><FormBadge form={r.form} /></td>
                   <td className="px-3 py-2 text-right font-semibold">{r.score?.total ?? 0}점</td>
                   <td className="px-3 py-2 text-gray-700">{r.recommendation?.band ?? '-'}</td>

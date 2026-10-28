@@ -41,7 +41,7 @@ export default function LevelTestResultPage() {
   const { strengths, weaknesses } = strengthsAndWeaknesses(row.score)
   const slug = slugOfGrade(row.grade)
 
-  async function patch(body: { overrides?: LevelTestOverrides; memo?: string }, done: string) {
+  async function patch(body: { overrides?: LevelTestOverrides; memo?: string; reviewed?: boolean }, done: string) {
     setBusy(true)
     setMessage('')
     try {
@@ -88,6 +88,24 @@ export default function LevelTestResultPage() {
         <span className="text-sm text-gray-500">
           {new Date(row.taken_at).toLocaleDateString('ko-KR')} · {row.mode === 'online' ? '📱 태블릿 응시' : '🖨️ 종이 응시'}
         </span>
+        {/* 확인 칸(reviewed_at)은 report-status-level-test-review-migration.sql 실행 뒤에만 있다 */}
+        {'reviewed_at' in row &&
+          (row.reviewed_at ? (
+            <span className="ml-2 text-xs text-gray-500">
+              ✓ 확인함 {new Date(row.reviewed_at).toLocaleDateString('ko-KR')}
+              <button disabled={busy} onClick={() => patch({ reviewed: false }, '확인 전으로 되돌렸어요.')} className="ml-1.5 text-gray-400 hover:text-gray-600">
+                되돌리기
+              </button>
+            </span>
+          ) : (
+            <button
+              disabled={busy}
+              onClick={() => patch({ reviewed: true }, '확인함으로 표시했어요.')}
+              className="ml-2 rounded border border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-700 hover:bg-amber-100 disabled:opacity-50"
+            >
+              확인 완료
+            </button>
+          ))}
         <Link href={`/materials/level-tests/results/${id}/print`} className="ml-auto rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
           🖨️ 상담용 결과지
         </Link>

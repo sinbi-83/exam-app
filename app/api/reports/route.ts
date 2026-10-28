@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { isColumnMissing, isReportSentVia, isReportStatus, reportStatusPatch } from '@/lib/reportStatus'
 
 // GET: 저장된 보고서 목록
 export async function GET() {
@@ -63,6 +64,36 @@ export async function POST(request: NextRequest) {
     .single()
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+  return NextResponse.json({ data })
+}
+
+// PATCH ?id= { status, sent_via? }: 확인·발송 상태 바꾸기 (report-status-level-test-review-migration.sql)
+export async function PATCH(request: NextRequest) {
+  const supabase = await createClient()
+  const { data: { user }, error: userError } = await supabase.auth.getUser()
+  if (userError || !user) return NextResponse.json({ error: '로그인이 필요합니다.' }, { status: 401 })
+
+  const id = new URL(request.url).searchParams.get('id')
+  if (!id) return NextResponse.json({ error: 'id 필요' }, { status: 400 })
+  const body = await request.json()
+  if (!isReportStatus(body.status)) return NextResponse.json({ error: '상태 값이 올바르지 않습니다.' }, { status: 400 })
+  const via = isReportSentVia(body.sent_via) ? body.sent_via : null
+  if (body.status === 'sent' && !via) return NextResponse.json({ error: '보낸 방법을 골라 주세요.' }, { status: 400 })
+
+  const { data, error } = await supabase
+    .from('reports')
+    .update(reportStatusPatch(body.status, via, new Date().toISOString()))
+    .eq('id', id)
+    .eq('user_id', user.id)
+    .select()
+    .single()
+
+  if (error) {
+    if (isColumnMissing(error)) {
+      return NextResponse.json({ error: '보고서 상태 칸이 아직 없습니다. report-status-level-test-review-migration.sql 을 먼저 실행해 주세요.', columnMissing: true }, { status: 500 })
+    }
+    return NextResponse.json({ error: error.message }, { status: 500 })
+  }
   return NextResponse.json({ data })
 }
 
