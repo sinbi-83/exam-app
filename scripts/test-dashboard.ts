@@ -23,6 +23,7 @@ import {
   unpaidStudentCount,
 } from '../lib/dashboard.ts'
 import { inHomeworkView, isOverdueOn, parseHomeworkView } from '../lib/homeworkView.ts'
+import { assignmentStatus, diffAssignees, examProgress, gradedKeys, isTableMissing as isAssignTableMissing, waitingCount } from '../lib/examAssignments.ts'
 import { isColumnMissing, isReportSentVia, isReportStatus, reportStatusPatch } from '../lib/reportStatus.ts'
 import { NAV_GROUPS } from '../config/navigation.ts'
 
@@ -107,7 +108,7 @@ test('원비 미납 = 전체 학생 − 완납 학생 (기록 없음·부분납�
   assert.equal(unpaidStudentCount(2, ['a', 'b', 'c']), 0)
 })
 
-const ZERO = { todayClasses: 0, homeworkDueStudents: 0, homeworkOverdueStudents: 0, homeworkPendingStudents: 0, tuitionUnpaidStudents: 0, reportsDraft: null, reportsToSend: null, levelTestsUnreviewed: null }
+const ZERO = { todayClasses: 0, homeworkDueStudents: 0, homeworkOverdueStudents: 0, homeworkPendingStudents: 0, tuitionUnpaidStudents: 0, reportsDraft: null, reportsToSend: null, levelTestsUnreviewed: null, gradingWaiting: null }
 
 test('상단 지표 3칸: 오늘 수업 / 숙제 미완료 / 원비 미납, 레벨테스트 7일 건수 없음', () => {
   const tiles = buildSummaryTiles(ZERO)
@@ -166,6 +167,48 @@ test('migration SQL: 칸만 더하고 지우지 않음, 한 줄 SQL 포함', () 
   assert.doesNotMatch(sql, /drop|delete|truncate/i)
   assert.match(sql, /^-- alter table reports add column if not exists status .*reviewed_at.*;$/m)
   assert.match(sql, /sent_via in \('print', 'parent_link', 'message'\)/)
+})
+
+test('채점 대기: 성적 있으면 채점함, 결석, 시험 전, 나머지는 대기', () => {
+  const today = '2026-10-28'
+  const graded = gradedKeys([
+    { exam_id: 'e1', student_id: 's1' },
+    { exam_id: null, student_id: 's2' }, // 시험 카드 없이 직접 입력한 성적은 무시
+  ])
+  const a = (exam_id: string, student_id: string, absent = false) => ({ exam_id, student_id, absent })
+  assert.equal(assignmentStatus(a('e1', 's1'), '2026-10-27', graded, today), 'graded')
+  assert.equal(assignmentStatus(a('e1', 's2', true), '2026-10-27', graded, today), 'absent')
+  assert.equal(assignmentStatus(a('e1', 's3'), '2026-10-29', graded, today), 'upcoming')
+  assert.equal(assignmentStatus(a('e1', 's3'), '2026-10-28', graded, today), 'waiting')
+  assert.equal(assignmentStatus(a('e1', 's3'), null, graded, today), 'waiting')
+  // 결석이어도 성적이 들어오면 채점함
+  assert.equal(assignmentStatus(a('e1', 's1', true), '2026-10-27', graded, today), 'graded')
+
+  const list = [a('e1', 's1'), a('e1', 's2', true), a('e1', 's3'), a('e1', 's4')]
+  assert.deepEqual(examProgress(list, '2026-10-27', graded, today), { total: 4, graded: 1, waiting: 2, absent: 1, upcoming: 0 })
+  const dates = new Map<string, string | null>([['e1', '2026-10-27'], ['e2', '2026-11-01']])
+  assert.equal(waitingCount([...list, a('e2', 's1'), a('gone', 's1')], dates, graded, today), 2)
+})
+
+test('응시 대상 다시 고르기: 넣을 학생·뺄 학생', () => {
+  assert.deepEqual(diffAssignees(['a', 'b', 'c'], ['b', 'c', 'd']), { add: ['d'], remove: ['a'] })
+  assert.deepEqual(diffAssignees([], ['a', 'a']), { add: ['a'], remove: [] })
+  assert.ok(isAssignTableMissing({ code: '42P01', message: 'relation "exam_assignments" does not exist' }))
+  assert.ok(isAssignTableMissing({ message: "Could not find the table 'public.exam_assignments' in the schema cache" }))
+  assert.ok(!isAssignTableMissing({ code: '23505', message: 'duplicate key' }))
+})
+
+test('처리할 일: 채점 대기 — SQL 실행 전(null) 숨김, 숙제 다음 순서', () => {
+  const items = buildTaskItems({ ...ZERO, homeworkDueStudents: 1, gradingWaiting: 3, levelTestsUnreviewed: 1 })
+  assert.deepEqual(items.map((i) => i.key), ['homework_due', 'grading_waiting', 'level_tests_unreviewed'])
+  assert.equal(items[1].href, '/grading#waiting')
+})
+
+test('응시 대상 migration SQL: 새 표만, RLS, 한 줄 SQL 포함', () => {
+  const sql = readFileSync(resolve(ROOT, 'exam-assignments-migration.sql'), 'utf-8')
+  assert.doesNotMatch(sql.replace(/drop policy if exists|on delete cascade/gi, ''), /\bdrop\b|\bdelete\b|\btruncate\b|\balter table (?!exam_assignments)/i)
+  assert.match(sql, /^-- create table if not exists exam_assignments .*with check \(auth\.uid\(\) = user_id\);$/m)
+  assert.match(sql, /unique \(exam_id, student_id\)/)
 })
 
 test('오늘 시간표: 시작 시각 순, 시각 없는 일정은 뒤, 표시는 HH:MM', () => {

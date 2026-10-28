@@ -1,7 +1,7 @@
 # 대시보드용 새 표 설계안 (2026-10-28)
 
 > **진행 상황**: ⑤⑥은 향미님 승인(2026-10-28)으로 앱 코드 반영 완료 → SQL 파일 `report-status-level-test-review-migration.sql`
-> (SQL Editor 실행은 향미님). ①②③④는 아직 설계안만.
+> (SQL Editor 실행 완료). ④는 2026-10-28 구현 → `exam-assignments-migration.sql`. ①②③은 아직 설계안만.
 
 > 이 문서는 **설계안만** 담는다. Supabase 에는 아무것도 만들지 않았다.
 > 향미님이 승인하시면 그때 `*-migration.sql` 파일로 만들고, SQL Editor 실행은 향미님이 한다.
@@ -74,7 +74,11 @@ alter table schedule_events add column if not exists class_id uuid references cl
 - 비어 있어도 된다. 지금 있는 일정은 그대로 두고, 새로 만들 때만 반을 고른다.
 - 이렇게 되면 대시보드에서 "오늘 수업(반) → 그 반 학생 → 오늘 `attendance`" 를 따라가 **반별 출석 ○/○명**을 셀 수 있다.
 
-## ④ exam_assignments — 시험 응시 대상
+## ④ exam_assignments — 시험 응시 대상 (2026-10-28 구현, `exam-assignments-migration.sql`)
+
+처음 설계(상태 칸 `assigned/taken/graded/absent` + `exam_result_id`)에서 **단순하게 바꿨다**.
+채점관리 화면은 학생마다 점수를 바로 입력하는 방식이라 "봤지만 채점 전" 단계를 따로 누를 일이 없고,
+상태를 따로 저장하면 성적을 지웠을 때 어긋난다. 그래서 채점 여부는 **같은 시험·학생의 `exam_results` 가 있는지**로 판단한다.
 
 ```sql
 create table if not exists exam_assignments (
@@ -82,24 +86,17 @@ create table if not exists exam_assignments (
   user_id uuid not null references auth.users(id) on delete cascade,
   exam_id uuid not null references exams(id) on delete cascade,
   student_id uuid not null references students(id) on delete cascade,
-  due_date date,                      -- 이날까지 봐야 함 (없어도 됨)
-  status text not null default 'assigned'
-    check (status in ('assigned', 'taken', 'graded', 'absent')),
-  exam_result_id uuid references exam_results(id) on delete set null,  -- 채점이 끝나면 연결
+  absent boolean not null default false,
   created_at timestamptz not null default now(),
-  updated_at timestamptz not null default now(),
   unique (exam_id, student_id)
 );
-alter table exam_assignments enable row level security;
-create policy "exam_assignments_own" on exam_assignments for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
 ```
 
-- 대시보드 숫자:
-  - **채점 대기** = `status = 'taken'` (시험은 봤지만 점수 입력 전)
-  - **시험 진행** = 시험별 `graded 수 / 전체 대상 수`
-  - **미응시** = `due_date < 오늘` 이면서 `status = 'assigned'`
-- 반을 고르면 그 반 학생 전부를 한 번에 대상으로 넣는다 (② 사용).
-- 채점 화면에서 점수를 저장하면 `graded` 로 바꾸고 `exam_result_id` 를 채운다. 앱 코드만 고치면 되고 `exam_results` 는 건드리지 않는다.
+- 상태 (`lib/examAssignments.ts`): 성적 있음 = **채점함** / 결석 표시 = **결석** / 시험일이 내일 이후 = **시험 전** / 나머지 = **채점 대기**
+- 대시보드 "채점 대기 N명" → 채점관리 `#waiting` (이름을 누르면 성적 등록 칸에 학생·시험이 채워짐)
+- 채점관리 시험 카드마다 "응시 대상" 버튼(학생 고르기)과 "응시 대상 N명 · 채점 M/N · 대기 · 결석" 한 줄
+- 시험 카드 없이 "직접 입력"한 성적은 연결할 시험이 없어 세지 않는다.
+- 반이 생기면(①②) 반을 통째로 응시 대상으로 고르는 버튼을 더한다.
 
 ## ⑤ reports 상태 칸 ⚠️ 기존 표
 

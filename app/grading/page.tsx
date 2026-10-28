@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { kstDateString } from '@/lib/dashboard'
+import { assignmentStatus, examProgress, gradedKeys, type ExamAssignment } from '@/lib/examAssignments'
 
 interface Student {
   id: string
@@ -25,6 +27,20 @@ interface ExamResult {
   exam_date: string
   exam_id: string | null
   students: { name: string } | null
+}
+
+// 시험 카드 아래 한 줄: 응시 대상 N명 · 채점 M/N · 대기 · 결석 · 시험 전
+function ExamProgressLine({ assignments, examDate, graded, today }: { assignments: ExamAssignment[]; examDate: string | null; graded: Set<string>; today: string }) {
+  const p = examProgress(assignments, examDate, graded, today)
+  if (p.total === 0) return <p className="text-xs text-gray-400">응시 대상 없음</p>
+  return (
+    <p className="text-xs text-gray-500">
+      응시 대상 {p.total}명 · 채점 {p.graded}/{p.total}
+      {p.waiting > 0 && <span className="text-amber-700"> · 대기 {p.waiting}</span>}
+      {p.absent > 0 && ` · 결석 ${p.absent}`}
+      {p.upcoming > 0 && ` · 시험 전 ${p.upcoming}`}
+    </p>
+  )
 }
 
 export default function GradingPage() {
@@ -57,17 +73,30 @@ export default function GradingPage() {
   const [renameValue, setRenameValue] = useState('')
   const [deletingExamId, setDeletingExamId] = useState('')
 
+  // 응시 대상 (exam_assignments, exam-assignments-migration.sql) — 표가 없으면 고르기·채점 대기를 숨김
+  const [assignments, setAssignments] = useState<ExamAssignment[]>([])
+  const [assignTableMissing, setAssignTableMissing] = useState(true)
+  const [pickingExamId, setPickingExamId] = useState('')
+  const [pickedIds, setPickedIds] = useState<Set<string>>(new Set())
+  const [savingAssign, setSavingAssign] = useState(false)
+
   async function fetchAll() {
     setLoading(true)
     try {
-      const [studentsRes, resultsRes, examsRes] = await Promise.all([
+      const [studentsRes, resultsRes, examsRes, assignRes] = await Promise.all([
         fetch('/api/students'),
         fetch('/api/exam-results'),
         fetch('/api/exams'),
+        fetch('/api/exam-assignments'),
       ])
       const studentsData = await studentsRes.json()
       const resultsData = await resultsRes.json()
       const examsData = await examsRes.json()
+      const assignData = await assignRes.json()
+      if (assignRes.ok) {
+        setAssignments(assignData.data || [])
+        setAssignTableMissing(!!assignData.tableMissing)
+      }
 
       if (studentsRes.ok) {
         setStudents(studentsData.data || [])
@@ -207,6 +236,65 @@ export default function GradingPage() {
     }
   }
 
+  function openPicker(examId: string) {
+    if (pickingExamId === examId) {
+      setPickingExamId('')
+      return
+    }
+    setPickingExamId(examId)
+    setPickedIds(new Set(assignments.filter((a) => a.exam_id === examId).map((a) => a.student_id)))
+  }
+
+  function togglePicked(id: string) {
+    setPickedIds((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+  }
+
+  async function saveAssignees(examId: string) {
+    setSavingAssign(true)
+    try {
+      const res = await fetch('/api/exam-assignments', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ exam_id: examId, student_ids: Array.from(pickedIds) }),
+      })
+      const result = await res.json()
+      if (!res.ok) {
+        alert(result.error || '응시 대상 저장에 실패했습니다.')
+        return
+      }
+      setPickingExamId('')
+      await fetchAll()
+    } catch {
+      alert('서버와 통신 중 문제가 발생했어요.')
+    } finally {
+      setSavingAssign(false)
+    }
+  }
+
+  async function setAbsent(a: ExamAssignment, absent: boolean) {
+    if (!a.id) return
+    const res = await fetch(`/api/exam-assignments?id=${a.id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ absent }),
+    })
+    const result = await res.json()
+    if (!res.ok) alert(result.error || '저장에 실패했습니다.')
+    else setAssignments((prev) => prev.map((x) => (x.id === a.id ? { ...x, absent } : x)))
+  }
+
+  // 채점 대기 학생을 누르면 성적 등록 폼에 학생·시험을 채운다
+  function startGrading(examId: string, sid: string) {
+    setStudentId(sid)
+    handleSelectExam(examId)
+    document.getElementById('grading-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!studentId || !examTitle.trim()) {
@@ -267,6 +355,19 @@ export default function GradingPage() {
     }
   }
 
+  const today = kstDateString(new Date())
+  const graded = gradedKeys(results)
+  const studentName = (id: string) => students.find((s) => s.id === id)?.name ?? '알 수 없음'
+  const assignmentsOf = (examId: string) => assignments.filter((a) => a.exam_id === examId)
+  const waitingExams = assignTableMissing
+    ? []
+    : exams
+        .map((exam) => ({
+          exam,
+          waiting: assignmentsOf(exam.id).filter((a) => assignmentStatus(a, exam.exam_date, graded, today) === 'waiting'),
+        }))
+        .filter((x) => x.waiting.length > 0)
+
   if (students.length === 0 && !loading) {
     return (
       <div className="mx-auto max-w-2xl">
@@ -281,6 +382,37 @@ export default function GradingPage() {
   return (
     <div className="mx-auto max-w-2xl">
       <h1 className="mb-6 text-xl font-semibold text-gray-800">채점관리</h1>
+
+      {/* 채점 대기 — 대시보드 "채점 대기"가 여기(#waiting)로 온다 */}
+      {waitingExams.length > 0 && (
+        <section id="waiting" className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-4">
+          <h2 className="mb-1 text-sm font-semibold text-amber-800">
+            채점 대기 {waitingExams.reduce((n, x) => n + x.waiting.length, 0)}명
+          </h2>
+          <p className="mb-3 text-xs text-amber-700">이름을 누르면 아래 성적 등록 칸에 학생과 시험이 채워져요.</p>
+          <div className="space-y-3">
+            {waitingExams.map(({ exam, waiting }) => (
+              <div key={exam.id}>
+                <p className="mb-1 text-xs font-medium text-gray-700">
+                  {exam.title} <span className="text-gray-400">{exam.exam_date ?? ''}</span>
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {waiting.map((a) => (
+                    <span key={a.student_id} className="inline-flex items-center overflow-hidden rounded-full border border-amber-300 bg-white text-xs">
+                      <button type="button" onClick={() => startGrading(exam.id, a.student_id)} className="px-2.5 py-1 font-medium text-gray-800 hover:bg-amber-100">
+                        {studentName(a.student_id)}
+                      </button>
+                      <button type="button" onClick={() => setAbsent(a, true)} className="border-l border-amber-200 px-1.5 py-1 text-[11px] text-gray-400 hover:bg-gray-50" title="결석으로 표시">
+                        결석
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* 시험 카드 관리 영역 (신규 기능) */}
       <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
@@ -300,7 +432,7 @@ export default function GradingPage() {
                 {exams.map((exam) => (
                   <div
                     key={exam.id}
-                    className="flex items-center justify-between rounded border border-gray-200 px-3 py-2"
+                    className="flex flex-wrap items-center justify-between rounded border border-gray-200 px-3 py-2"
                   >
                     {renamingExamId === exam.id ? (
                       <div className="flex flex-1 items-center gap-2">
@@ -331,8 +463,17 @@ export default function GradingPage() {
                           <p className="text-xs text-gray-400">
                             {exam.exam_date || '날짜 없음'} · 총 {exam.total_questions ?? '?'}문항 · 만점 {exam.max_score ?? '?'}점
                           </p>
+                          {!assignTableMissing && <ExamProgressLine assignments={assignmentsOf(exam.id)} examDate={exam.exam_date} graded={graded} today={today} />}
                         </div>
                         <div className="flex gap-2">
+                          {!assignTableMissing && (
+                            <button
+                              onClick={() => openPicker(exam.id)}
+                              className="rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 hover:bg-gray-50"
+                            >
+                              응시 대상
+                            </button>
+                          )}
                           <button
                             onClick={() => {
                               setRenamingExamId(exam.id)
@@ -351,6 +492,41 @@ export default function GradingPage() {
                           </button>
                         </div>
                       </>
+                    )}
+                    {pickingExamId === exam.id && (
+                      <div className="mt-2 w-full basis-full rounded border border-gray-200 bg-gray-50 p-3">
+                        <div className="mb-2 flex items-center gap-3 text-xs">
+                          <span className="font-medium text-gray-600">이 시험을 볼 학생 ({pickedIds.size}명)</span>
+                          <button type="button" onClick={() => setPickedIds(new Set(students.map((s) => s.id)))} className="text-blue-600 hover:underline">전체 선택</button>
+                          <button type="button" onClick={() => setPickedIds(new Set())} className="text-gray-400 hover:underline">모두 해제</button>
+                        </div>
+                        <div className="grid grid-cols-2 gap-1 sm:grid-cols-3">
+                          {students.map((s) => {
+                            const a = assignmentsOf(exam.id).find((x) => x.student_id === s.id)
+                            return (
+                              <div key={s.id} className="flex items-center gap-1.5 text-xs text-gray-700">
+                                <label className="flex items-center gap-1.5">
+                                  <input type="checkbox" checked={pickedIds.has(s.id)} onChange={() => togglePicked(s.id)} />
+                                  {s.name} <span className="text-gray-400">{s.grade}</span>
+                                </label>
+                                {a?.absent && (
+                                  <button type="button" onClick={() => setAbsent(a, false)} className="rounded bg-gray-200 px-1 text-[10px] text-gray-600" title="결석 취소">
+                                    결석 ✕
+                                  </button>
+                                )}
+                              </div>
+                            )
+                          })}
+                        </div>
+                        <div className="mt-3 flex gap-2">
+                          <button type="button" onClick={() => saveAssignees(exam.id)} disabled={savingAssign} className="rounded bg-blue-600 px-3 py-1 text-xs font-medium text-white disabled:opacity-50">
+                            {savingAssign ? '저장 중...' : '저장'}
+                          </button>
+                          <button type="button" onClick={() => setPickingExamId('')} className="rounded border border-gray-300 px-3 py-1 text-xs text-gray-500">
+                            취소
+                          </button>
+                        </div>
+                      </div>
                     )}
                   </div>
                 ))}
@@ -404,7 +580,7 @@ export default function GradingPage() {
       </div>
 
       {/* 성적 등록 폼 */}
-      <form onSubmit={handleSubmit} className="mb-8 rounded-lg border border-gray-200 bg-white p-6 space-y-4">
+      <form id="grading-form" onSubmit={handleSubmit} className="mb-8 rounded-lg border border-gray-200 bg-white p-6 space-y-4">
         <div>
           <label className="block text-sm text-gray-600 mb-1">학생</label>
           <select

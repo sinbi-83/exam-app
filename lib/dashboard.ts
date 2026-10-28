@@ -40,6 +40,7 @@ export const TUITION_UNPAID_HREF = '/tuition?view=unpaid'
 export const REPORTS_DRAFT_HREF = '/reports?view=draft'
 export const REPORTS_TO_SEND_HREF = '/reports?view=checked'
 export const LEVEL_TESTS_UNREVIEWED_HREF = '/materials/level-tests#unreviewed'
+export const GRADING_WAITING_HREF = '/grading#waiting'
 
 export type DashboardCounts = {
   todayClasses: number
@@ -52,6 +53,8 @@ export type DashboardCounts = {
   reportsDraft: number | null
   reportsToSend: number | null
   levelTestsUnreviewed: number | null
+  // 시험 응시 대상 중 성적이 아직 없는 학생 (exam-assignments-migration.sql 실행 전에는 null)
+  gradingWaiting: number | null
 }
 
 export type DashboardErrors = Partial<Record<keyof DashboardCounts, string>>
@@ -78,7 +81,7 @@ export function buildSummaryTiles(c: DashboardCounts, errors: DashboardErrors = 
 export type TaskTone = 'danger' | 'neutral' | 'muted'
 
 export type TaskItem = {
-  key: 'homework_overdue' | 'homework_due' | 'level_tests_unreviewed' | 'reports_to_send' | 'reports_draft' | 'tuition_unpaid'
+  key: 'homework_overdue' | 'homework_due' | 'grading_waiting' | 'level_tests_unreviewed' | 'reports_to_send' | 'reports_draft' | 'tuition_unpaid'
   label: string
   count: number
   unit: string
@@ -93,6 +96,9 @@ export function buildTaskItems(c: DashboardCounts, errors: DashboardErrors = {})
   const all: TaskItem[] = [
     { key: 'homework_overdue', label: '마감 지난 숙제 미완료', count: c.homeworkOverdueStudents, unit: '명', href: HOMEWORK_OVERDUE_HREF, tone: 'danger', error: errors.homeworkOverdueStudents },
     { key: 'homework_due', label: '오늘·내일 마감 숙제 미완료', count: c.homeworkDueStudents, unit: '명', href: HOMEWORK_DUE_HREF, tone: 'neutral', error: errors.homeworkDueStudents },
+    ...(c.gradingWaiting === null ? [] : [
+      { key: 'grading_waiting' as const, label: '채점 대기', count: c.gradingWaiting, unit: '명', href: GRADING_WAITING_HREF, tone: 'neutral' as const, note: '시험을 봤는데 성적 입력 전', error: errors.gradingWaiting },
+    ]),
     ...(c.levelTestsUnreviewed === null ? [] : [
       { key: 'level_tests_unreviewed' as const, label: '확인 안 한 레벨테스트 결과', count: c.levelTestsUnreviewed, unit: '건', href: LEVEL_TESTS_UNREVIEWED_HREF, tone: 'neutral' as const, error: errors.levelTestsUnreviewed },
     ]),
