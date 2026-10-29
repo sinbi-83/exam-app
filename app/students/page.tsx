@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { schoolHrefForName } from '@/config/schools'
 
 interface Student {
   id: string
@@ -318,7 +319,14 @@ export default function StudentsPage() {
                     <p className="font-semibold text-gray-800 text-sm">{student.name}</p>
                     <p className="text-xs text-gray-500 mt-0.5">
                       {student.grade && <span className="font-medium text-blue-800 mr-1.5">{student.grade}</span>}
-                      {student.school_name && <span className="mr-1.5">{student.school_name}</span>}
+                      {student.school_name && (() => {
+                        const schoolHref = schoolHrefForName(student.school_name)
+                        return schoolHref ? (
+                          <Link href={schoolHref} onClick={e => e.stopPropagation()} className="mr-1.5 hover:text-blue-700 hover:underline" title="학교 정보 보기">🏫 {student.school_name}</Link>
+                        ) : (
+                          <span className="mr-1.5">{student.school_name}</span>
+                        )
+                      })()}
                       <span className="text-gray-400">PIN {student.pin}</span>
                     </p>
                   </div>

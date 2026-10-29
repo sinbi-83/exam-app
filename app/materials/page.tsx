@@ -1,6 +1,6 @@
 import HubCard from '@/app/components/HubCard'
 
-// 큰 메뉴 "자료" 첫 화면: 지문 / 문제은행 / 단어은행 / 지문 단어장 / 레벨테스트
+// 큰 메뉴 "자료" 첫 화면: 지문 / 문제은행 / 단어은행 / 지문 단어장 / 레벨테스트 / 학교 정보
 export default function MaterialsPage() {
   return (
     <div className="mx-auto max-w-4xl">
@@ -27,6 +27,7 @@ export default function MaterialsPage() {
         <HubCard icon="📒" title="단어은행" description="단어 뜻·난이도 검수, 확인 필요 단어 사용하기" href="/materials/vocabulary" />
         <HubCard icon="📗" title="지문 단어장" description="지문 속 단어로 A4 단어지·단어 테스트지 출력" href="/materials/wordbooks" />
         <HubCard icon="📏" title="레벨테스트" description="학년별 A형·B형 시험지 인쇄·태블릿 응시, 채점과 추천 반" href="/materials/level-tests" />
+        <HubCard icon="🏫" title="학교 정보" description="지역별 학교의 교과서·시험 일정·평가 비율·출제 경향" href="/materials/schools" />
       </div>
     </div>
   )

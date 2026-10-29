@@ -8,6 +8,7 @@
 //   (전에는 자료·지문 첫 화면 카드에서만 들어갈 수 있었다). 주소는 5단계 그대로.
 // 지문 단어장 (2026-10-19): 외부지문 🔵 단어 → A4 단어지·단어 테스트지 (/materials/wordbooks).
 // 레벨테스트 (2026-10-25): 학년(초3~고3)별 A형·B형 시험지 인쇄·태블릿 응시·채점·추천 반 (/materials/level-tests).
+// 학교 정보 (2026-10-29): 지역 폴더 → 학교 카드 → 학교 상세(교과서·시험 일정·평가 비율 등) (/materials/schools).
 // 대시보드 (2026-10-27): 로그인 뒤 첫 화면 (/dashboard). 옛 문제 생성기(/)는 레거시 메뉴에 그대로.
 
 export type NavItem = {
@@ -40,6 +41,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { label: '단어은행', href: '/materials/vocabulary', icon: '📒' },
       { label: '지문 단어장', href: '/materials/wordbooks', icon: '📗' },
       { label: '레벨테스트', href: '/materials/level-tests', icon: '📏' },
+      { label: '학교 정보', href: '/materials/schools', icon: '🏫' },
     ],
   },
   {
