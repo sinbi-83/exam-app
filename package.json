@@ -39,7 +39,8 @@
     "test-print-layout": "node scripts/test-print-layout.ts",
     "test-grammar-leak": "node scripts/test-grammar-leak.ts",
     "test-wordbook": "node scripts/test-wordbook.ts",
-    "test-dashboard": "node scripts/test-dashboard.ts"
+    "test-dashboard": "node scripts/test-dashboard.ts",
+    "test-class-stage0": "node scripts/test-class-stage0.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",

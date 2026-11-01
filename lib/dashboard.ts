@@ -22,6 +22,14 @@ export function monthOf(date: string): string {
   return date.slice(0, 7)
 }
 
+// 'YYYY-MM-DD' 가 속한 달의 첫날·말일 (브라우저·서버 시간대와 상관없이 같은 값)
+export function monthRange(date: string): { from: string; to: string } {
+  const [y, m] = date.split('-').map(Number)
+  const month = monthOf(date)
+  const lastDay = new Date(Date.UTC(y, m, 0)).getUTCDate()
+  return { from: `${month}-01`, to: `${month}-${String(lastDay).padStart(2, '0')}` }
+}
+
 export function distinctCount(ids: (string | null | undefined)[]): number {
   return new Set(ids.filter((id): id is string => !!id)).size
 }

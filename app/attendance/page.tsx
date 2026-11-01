@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { kstDateString, monthRange } from '@/lib/dashboard'
 
 interface Student {
   id: string
@@ -32,7 +33,7 @@ function makeDefaults(list: Student[]): Record<string, AttendanceRecord> {
 }
 
 export default function AttendancePage() {
-  const today = new Date().toISOString().slice(0, 10)
+  const today = kstDateString(new Date())
   const [date, setDate] = useState(today)
   const [students, setStudents] = useState<Student[]>([])
   const [records, setRecords] = useState<Record<string, AttendanceRecord>>({})
@@ -139,9 +140,7 @@ export default function AttendancePage() {
 
   async function loadMonthSummary() {
     setMonthSummaryLoading(true)
-    const [y, m] = date.split('-').map(Number)
-    const from = `${y}-${String(m).padStart(2, '0')}-01`
-    const to = new Date(y, m, 0).toISOString().slice(0, 10)
+    const { from, to } = monthRange(date)
     const res = await fetch(`/api/attendance?from=${from}&to=${to}`)
     const json = await res.json()
     const summary: Record<string, Record<StatusKey, number>> = {}

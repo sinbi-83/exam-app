@@ -2,8 +2,20 @@ import { NextRequest, NextResponse } from "next/server";
 import { GenerateRequestBody, GenerateResponse } from "@/types/exam";
 import { buildSystemPrompt, buildUserMessage } from "@/lib/promptBuilder";
 import { generateExamQuestions } from "@/lib/generateQuestions";
+import { createClient } from "@/lib/supabaseServer";
 
 export async function POST(req: NextRequest) {
+  const supabase = await createClient();
+  const { data: { user }, error: userError } = await supabase.auth.getUser();
+  if (userError || !user) {
+    const errorResponse: GenerateResponse = {
+      ok: false,
+      errorType: "unknown",
+      message: "로그인이 필요합니다.",
+    };
+    return NextResponse.json(errorResponse, { status: 401 });
+  }
+
   let body: GenerateRequestBody;
 
   try {

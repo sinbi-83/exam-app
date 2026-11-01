@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { checkExamOwnership } from '@/lib/examOwnership'
 
 // GET: 특정 시험의 문항 목록
 export async function GET(request: NextRequest) {
@@ -31,6 +32,9 @@ export async function POST(request: NextRequest) {
   const body = await request.json()
   const { exam_id, question_data, sort_order, points } = body
   if (!exam_id || !question_data) return NextResponse.json({ error: '필수 항목 누락.' }, { status: 400 })
+
+  const ownership = await checkExamOwnership(supabase, exam_id, user.id)
+  if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
 
   const { data, error } = await supabase
     .from('exam_questions')
