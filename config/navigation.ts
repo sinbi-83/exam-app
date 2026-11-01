@@ -65,6 +65,7 @@ export const NAV_GROUPS: NavGroup[] = [
     title: '학생관리',
     items: [
       { label: '학생관리', href: '/students', icon: '👥' },
+      { label: '반 관리', href: '/classes', icon: '🏫' },
       { label: '보고서 작성', href: '/report', icon: '📝' },
       { label: '보고서 목록', href: '/reports', icon: '🗂️' },
       { label: '성적분석', href: '/analytics', icon: '📈' },

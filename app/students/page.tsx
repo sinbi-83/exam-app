@@ -3,8 +3,14 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { schoolHrefForName } from '@/config/schools'
+import { STUDENT_STATUS_LABELS, STUDENT_STATUSES, studentStatusOf, type StudentStatus } from '@/lib/classManagement'
+import { NotReadyNotice } from '@/components/classes/ClassParts'
+import { AddToClassPanel, CreateClassPanel, WithdrawPanel, type ClassOption } from '@/components/classes/StudentBulkPanels'
 
 interface Student {
+  status?: string
+  withdrawn_on?: string | null
+  withdraw_note?: string | null
   id: string
   name: string
   grade: string
@@ -30,6 +36,14 @@ const EMPTY_FORM = {
 
 type FormState = typeof EMPTY_FORM
 type CopiedState = { id: string; type: 'link' | 'message' } | null
+type StatusFilter = StudentStatus | 'all'
+type BulkPanel = { kind: 'create' | 'add' } | { kind: 'withdraw'; ids: string[] } | null
+
+const STATUS_BADGE: Record<StudentStatus, string> = {
+  active: '',
+  paused: 'bg-amber-100 text-amber-700',
+  withdrawn: 'bg-gray-200 text-gray-600',
+}
 
 function GradeSelector({ value, onChange }: { value: string; onChange: (v: string) => void }) {
   return (
@@ -158,19 +172,58 @@ export default function StudentsPage() {
   const [editId, setEditId] = useState<string | null>(null)
   const [editForm, setEditForm] = useState<FormState>(EMPTY_FORM)
   const [expandedId, setExpandedId] = useState<string | null>(null)
+  // 반 관리 1단계: 상태 필터·여러 명 선택. SQL 적용 전이면(ready=false) 숨기고 안내만 보인다.
+  const [ready, setReady] = useState(true)
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>('active')
+  const [selected, setSelected] = useState<string[]>([])
+  const [panel, setPanel] = useState<BulkPanel>(null)
+  const [classes, setClasses] = useState<ClassOption[]>([])
+  const [memberships, setMemberships] = useState<{ class_id: string; student_id: string }[]>([])
 
   async function fetchStudents() {
     setLoading(true)
     try {
-      const res = await fetch('/api/students')
+      const [res, classRes] = await Promise.all([fetch('/api/students'), fetch('/api/classes', { cache: 'no-store' })])
       const result = await res.json()
       if (res.ok) setStudents(result.data || [])
+      const classResult = await classRes.json().catch(() => null)
+      setReady(res.ok && result.statusReady !== false && !classResult?.needsMigration)
+      if (classRes.ok) {
+        setClasses(classResult?.data ?? [])
+        setMemberships(classResult?.memberships ?? [])
+      }
     } finally {
       setLoading(false)
     }
   }
 
-  useEffect(() => { fetchStudents() }, [])
+  useEffect(() => {
+    // 대시보드에서 ?status=paused 처럼 넘어오면 그 상태로 연다
+    const status = new URLSearchParams(window.location.search).get('status')
+    if (status === 'paused' || status === 'withdrawn' || status === 'all') setStatusFilter(status)
+    fetchStudents()
+  }, [])
+
+  async function afterBulk() {
+    setPanel(null)
+    setSelected([])
+    await fetchStudents()
+  }
+
+  async function changeStatus(student: Student, status: 'active' | 'paused') {
+    const res = await fetch(`/api/students/${student.id}/status`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status }),
+    })
+    if (!res.ok) {
+      const r = await res.json().catch(() => null)
+      alert(r?.error || '상태를 바꾸지 못했습니다.')
+      return
+    }
+    if (studentStatusOf(student) === 'withdrawn') alert('재원으로 바꿨습니다. 예전 반에 자동으로 들어가지 않으니 필요하면 반에 넣어 주세요.')
+    fetchStudents()
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -197,7 +250,17 @@ export default function StudentsPage() {
 
   async function handleDelete(id: string) {
     if (!confirm('이 학생을 삭제하시겠습니까?')) return
-    await fetch(`/api/students/${id}`, { method: 'DELETE' })
+    const res = await fetch(`/api/students/${id}`, { method: 'DELETE' })
+    if (!res.ok) {
+      // 기록이 있으면 삭제되지 않는다 → 건수와 함께 퇴원 처리를 안내하고, 쓸 수 있으면 퇴원 양식을 연다
+      const r = await res.json().catch(() => null)
+      alert(r?.error || '삭제하지 못했습니다.')
+      if (r?.canWithdraw) {
+        setPanel({ kind: 'withdraw', ids: [id] })
+        window.scrollTo({ top: 0 })
+      }
+      return
+    }
     fetchStudents()
   }
 
@@ -240,9 +303,23 @@ export default function StudentsPage() {
     setTimeout(() => setCopied(null), 2000)
   }
 
+  const statusCount = (status: StudentStatus) => students.filter(s => studentStatusOf(s) === status).length
   const filtered = students.filter(s =>
-    s.name.includes(search) || s.grade.includes(search) || (s.school_name || '').includes(search)
+    (!ready || statusFilter === 'all' || studentStatusOf(s) === statusFilter) &&
+    (s.name.includes(search) || s.grade.includes(search) || (s.school_name || '').includes(search))
   )
+  // 필터나 검색으로 가려진 학생은 선택에서 뺀다 (안 보이는 학생이 처리되지 않게)
+  const visibleIds = new Set(filtered.map(s => s.id))
+  const selectedVisible = selected.filter(id => visibleIds.has(id))
+  const selectableIds = filtered.filter(s => studentStatusOf(s) !== 'withdrawn').map(s => s.id)
+  const allSelected = selectableIds.length > 0 && selectableIds.every(id => selected.includes(id))
+  const classNamesOf = (studentId: string) => memberships
+    .filter(m => m.student_id === studentId)
+    .map(m => classes.find(c => c.id === m.class_id))
+    .filter((c): c is ClassOption => !!c && c.status === 'active')
+  const panelStudents = panel?.kind === 'withdraw'
+    ? students.filter(s => panel.ids.includes(s.id)).map(s => ({ id: s.id, name: s.name }))
+    : []
 
   const gradeCounts: Record<string, number> = {}
   students.forEach(s => {
@@ -294,12 +371,58 @@ export default function StudentsPage() {
         />
       </div>
 
+      {!loading && !ready && <div className="mb-4"><NotReadyNotice /></div>}
+
+      {/* 상태 필터 (재원·휴원·퇴원) */}
+      {!loading && ready && (
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          {STUDENT_STATUSES.map(status => (
+            <button
+              key={status}
+              onClick={() => setStatusFilter(status)}
+              className={`rounded-full border px-3 py-1 text-xs font-medium ${statusFilter === status ? 'border-blue-300 bg-blue-100 text-blue-700' : 'border-gray-200 text-gray-500 hover:border-gray-300'}`}
+            >
+              {STUDENT_STATUS_LABELS[status]} {statusCount(status)}
+            </button>
+          ))}
+          <button
+            onClick={() => setStatusFilter('all')}
+            className={`rounded-full border px-3 py-1 text-xs font-medium ${statusFilter === 'all' ? 'border-blue-300 bg-blue-100 text-blue-700' : 'border-gray-200 text-gray-500 hover:border-gray-300'}`}
+          >
+            전체 {students.length}
+          </button>
+          {selectableIds.length > 0 && (
+            <label className="ml-auto flex items-center gap-1.5 text-xs text-gray-500">
+              <input
+                type="checkbox"
+                checked={allSelected}
+                onChange={e => setSelected(e.target.checked ? selectableIds : [])}
+              />
+              보이는 학생 모두 선택
+            </label>
+          )}
+        </div>
+      )}
+
+      {/* 고른 학생으로 할 일 */}
+      {ready && selectedVisible.length > 0 && !panel && (
+        <div className="mb-4 flex flex-wrap items-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3">
+          <span className="mr-auto text-sm font-medium text-blue-900">{selectedVisible.length}명 선택</span>
+          <button onClick={() => setPanel({ kind: 'create' })} className="rounded-md bg-blue-800 px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-900">반 만들기</button>
+          <button onClick={() => setPanel({ kind: 'add' })} className="rounded-md border border-blue-300 bg-white px-3 py-1.5 text-xs text-blue-800 hover:bg-blue-50">기존 반에 넣기</button>
+          <button onClick={() => setPanel({ kind: 'withdraw', ids: selectedVisible })} className="rounded-md border border-red-200 bg-white px-3 py-1.5 text-xs text-red-500 hover:bg-red-50">퇴원 처리</button>
+        </div>
+      )}
+      {panel?.kind === 'create' && <CreateClassPanel studentIds={selectedVisible} onDone={afterBulk} onCancel={() => setPanel(null)} />}
+      {panel?.kind === 'add' && <AddToClassPanel studentIds={selectedVisible} classes={classes} onDone={afterBulk} onCancel={() => setPanel(null)} />}
+      {panel?.kind === 'withdraw' && panelStudents.length > 0 && <WithdrawPanel students={panelStudents} onDone={afterBulk} onCancel={() => setPanel(null)} />}
+
       {/* 학생 목록 */}
       {loading ? (
         <p className="text-sm text-gray-400 text-center py-12">불러오는 중...</p>
       ) : filtered.length === 0 ? (
         <p className="text-sm text-gray-400 text-center py-12">
-          {search ? '검색 결과가 없습니다.' : '등록된 학생이 없습니다.'}
+          {search ? '검색 결과가 없습니다.' : students.length > 0 ? '이 상태의 학생이 없습니다.' : '등록된 학생이 없습니다.'}
         </p>
       ) : (
         <div className="space-y-3">
@@ -312,11 +435,33 @@ export default function StudentsPage() {
                 onClick={() => setExpandedId(expandedId === student.id ? null : student.id)}
               >
                 <div className="flex items-center gap-3">
+                  {ready && studentStatusOf(student) !== 'withdrawn' && (
+                    <input
+                      type="checkbox"
+                      aria-label={`${student.name} 선택`}
+                      checked={selected.includes(student.id)}
+                      onClick={e => e.stopPropagation()}
+                      onChange={e => setSelected(e.target.checked ? [...selected, student.id] : selected.filter(id => id !== student.id))}
+                      className="shrink-0"
+                    />
+                  )}
                   <div className="w-9 h-9 rounded-full bg-blue-800 flex items-center justify-center text-white font-bold text-sm shrink-0">
                     {student.name[0]}
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-800 text-sm">{student.name}</p>
+                    <p className="font-semibold text-gray-800 text-sm">
+                      {student.name}
+                      {studentStatusOf(student) !== 'active' && (
+                        <span className={`ml-1.5 rounded-full px-2 py-0.5 text-[11px] font-medium ${STATUS_BADGE[studentStatusOf(student)]}`}>
+                          {STUDENT_STATUS_LABELS[studentStatusOf(student)]}
+                        </span>
+                      )}
+                      {classNamesOf(student.id).map(c => (
+                        <Link key={c.id} href={`/classes/${c.id}`} onClick={e => e.stopPropagation()} className="ml-1.5 rounded-full border border-gray-200 px-2 py-0.5 text-[11px] font-normal text-gray-500 hover:border-blue-300 hover:text-blue-700">
+                          {c.name}
+                        </Link>
+                      ))}
+                    </p>
                     <p className="text-xs text-gray-500 mt-0.5">
                       {student.grade && <span className="font-medium text-blue-800 mr-1.5">{student.grade}</span>}
                       {student.school_name && (() => {
@@ -387,6 +532,12 @@ export default function StudentsPage() {
                             <span className="text-gray-700">{student.notes}</span>
                           </div>
                         )}
+                        {studentStatusOf(student) === 'withdrawn' && student.withdrawn_on && (
+                          <div className="flex items-center gap-3 sm:col-span-2">
+                            <span className="text-gray-400 text-xs w-20 shrink-0">퇴원일</span>
+                            <span className="text-gray-700">{student.withdrawn_on}{student.withdraw_note ? ` · ${student.withdraw_note}` : ''}</span>
+                          </div>
+                        )}
                         {!student.student_phone && !student.parent_phone && !student.enrolled_at && !student.notes && (
                           <p className="sm:col-span-2 text-xs text-gray-400">추가 정보가 없습니다. 수정 버튼으로 입력해보세요.</p>
                         )}
@@ -406,6 +557,24 @@ export default function StudentsPage() {
                           className="px-3 py-1.5 rounded-md border border-blue-200 text-xs text-blue-700 hover:bg-blue-50">
                           ✏️ 수정
                         </button>
+                        {ready && studentStatusOf(student) !== 'active' && (
+                          <button onClick={() => changeStatus(student, 'active')}
+                            className="px-3 py-1.5 rounded-md border border-gray-200 text-xs text-gray-600 hover:bg-gray-50">
+                            재원으로
+                          </button>
+                        )}
+                        {ready && studentStatusOf(student) === 'active' && (
+                          <button onClick={() => changeStatus(student, 'paused')}
+                            className="px-3 py-1.5 rounded-md border border-gray-200 text-xs text-gray-600 hover:bg-gray-50">
+                            휴원
+                          </button>
+                        )}
+                        {ready && studentStatusOf(student) !== 'withdrawn' && (
+                          <button onClick={() => { setPanel({ kind: 'withdraw', ids: [student.id] }); window.scrollTo({ top: 0 }) }}
+                            className="px-3 py-1.5 rounded-md border border-gray-200 text-xs text-gray-600 hover:bg-gray-50">
+                            퇴원 처리
+                          </button>
+                        )}
                         <button onClick={() => handleDelete(student.id)}
                           className="px-3 py-1.5 rounded-md border border-red-200 text-xs text-red-500 hover:bg-red-50 ml-auto">
                           🗑 삭제

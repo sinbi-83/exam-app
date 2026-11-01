@@ -57,6 +57,8 @@ export type DashboardCounts = {
   // 마감 지남 + 오늘·내일 마감 (두 쪽에 다 있는 학생은 1명)
   homeworkPendingStudents: number
   tuitionUnpaidStudents: number
+  // 숙제·원비를 재원 학생 기준으로 셌는지 (학생 상태 칸이 있을 때 true, class-management-migration.sql)
+  activeStudentBasis?: boolean
   // 아래 셋은 report-status-level-test-review-migration.sql 실행 뒤에만 셀 수 있다 → 전에는 null (항목 숨김)
   reportsDraft: number | null
   reportsToSend: number | null
@@ -65,7 +67,7 @@ export type DashboardCounts = {
   gradingWaiting: number | null
 }
 
-export type DashboardErrors = Partial<Record<keyof DashboardCounts, string>>
+export type DashboardErrors = Partial<Record<Exclude<keyof DashboardCounts, 'activeStudentBasis'>, string>>
 
 // 상단 지표 3칸 (관심 학생 칸은 3차 전까지 없음)
 export type SummaryTile = {
@@ -116,7 +118,7 @@ export function buildTaskItems(c: DashboardCounts, errors: DashboardErrors = {})
     ...(c.reportsDraft === null ? [] : [
       { key: 'reports_draft' as const, label: '확인 전 보고서', count: c.reportsDraft, unit: '건', href: REPORTS_DRAFT_HREF, tone: 'neutral' as const, error: errors.reportsDraft },
     ]),
-    { key: 'tuition_unpaid', label: '이번 달 원비 미납', count: c.tuitionUnpaidStudents, unit: '명', href: TUITION_UNPAID_HREF, tone: 'muted', note: '등록한 학생 전체 기준', error: errors.tuitionUnpaidStudents },
+    { key: 'tuition_unpaid', label: '이번 달 원비 미납', count: c.tuitionUnpaidStudents, unit: '명', href: TUITION_UNPAID_HREF, tone: 'muted', note: c.activeStudentBasis ? '재원 학생 기준' : '등록한 학생 전체 기준', error: errors.tuitionUnpaidStudents },
   ]
   return all.filter((i) => i.error || i.count > 0)
 }

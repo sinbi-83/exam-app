@@ -288,7 +288,8 @@ test('대시보드 화면 문구: "학원" 대신 교습소·보스턴S영어, �
     // 주석이 아닌 줄에서만 확인
     const code = src.split('\n').filter((l) => !l.trim().startsWith('//')).join('\n')
     assert.doesNotMatch(code, /학원/, f)
-    assert.doesNotMatch(code, /amount|toLocaleString|원비 \d|원'/, f)
+    // 재원·휴원·퇴원은 학생 상태 이름이라 금액 표시가 아니다
+    assert.doesNotMatch(code, /amount|toLocaleString|원비 \d|(?<![재휴퇴])원'/, f)
   }
   const page = readFileSync(resolve(ROOT, 'app/dashboard/page.tsx'), 'utf-8')
   assert.match(page, /보스턴S영어/)

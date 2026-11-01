@@ -4,11 +4,15 @@
 // 읽는 표: schedule_events / homework / students / tuition_records / reports / level_test_results / exam_assignments·exams·exam_results.
 // 보고서 상태·레벨테스트 확인 칸은 report-status-level-test-review-migration.sql 실행 뒤에만 있다 → 없으면 그 항목만 숨김.
 // (최근 7일 레벨테스트 건수는 1차 조정에서 뺐다, 2026-10-28)
+// 반 관리 1단계 (2026-11-01): 숙제 미완료·원비 미납은 재원 학생 기준. 학생 상태 칸은 class-management-migration.sql 적용 뒤에만 있다
+//   → 없으면 지금까지처럼 전체 학생 기준, 반 현황은 "준비 중". head 조회는 표·칸이 없어도 구별이 안 되므로 학생·반은 일반 조회로 읽는다.
 
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { selectAllPages } from '@/lib/supabasePaging'
 import { isColumnMissing } from '@/lib/reportStatus'
 import { gradedKeys, isTableMissing as isAssignTableMissing, waitingCount, type ExamAssignment, type ResultKeyRow } from '@/lib/examAssignments'
+import { isSchemaMissing, studentStatusOf } from '@/lib/classManagement'
+import { loadClassOverview, type ClassOverviewResult } from '@/lib/classManagementData'
 import {
   addDays,
   distinctCount,
@@ -22,6 +26,7 @@ import {
 } from '@/lib/dashboard'
 
 type StudentIdRow = { student_id: string | null }
+type StudentStatusRow = { id: string; status?: string | null }
 
 export async function loadDashboardCounts(
   supabase: SupabaseClient,
@@ -33,12 +38,13 @@ export async function loadDashboardCounts(
   errors: DashboardErrors
   events: TodayEvent[]
   eventsError?: string
+  classInfo: ClassOverviewResult
 }> {
   const today = kstDateString(now)
   const tomorrow = addDays(today, 1)
   const month = monthOf(today)
 
-  const [events, due, overdue, students, paid, reportsDraft, reportsToSend, levelUnreviewed, assigns, examRows, resultRows] = await Promise.all([
+  const [events, due, overdue, studentsWithStatus, paid, reportsDraft, reportsToSend, levelUnreviewed, assigns, examRows, resultRows, classInfo] = await Promise.all([
     // 오늘 일정 전부 (시간표용) — 하루치라 몇 줄 안 된다
     supabase
       .from('schedule_events')
@@ -66,7 +72,7 @@ export async function loadDashboardCounts(
         .order('id')
         .range(from, to),
     ),
-    supabase.from('students').select('id', { count: 'exact', head: true }).eq('user_id', userId),
+    selectAllPages<StudentStatusRow>((from, to) => supabase.from('students').select('id, status').eq('user_id', userId).order('id').range(from, to)),
     selectAllPages<StudentIdRow>((from, to) =>
       supabase
         .from('tuition_records')
@@ -89,14 +95,24 @@ export async function loadDashboardCounts(
     selectAllPages<ResultKeyRow>((from, to) =>
       supabase.from('exam_results').select('exam_id, student_id').eq('user_id', userId).not('exam_id', 'is', null).order('id').range(from, to),
     ),
+    loadClassOverview(supabase, userId),
   ])
+
+  // 상태 칸이 없으면(SQL 적용 전) 지금까지처럼 등록한 학생 전체를 센다
+  const statusReady = !studentsWithStatus.error
+  const students = statusReady || !isSchemaMissing(studentsWithStatus.error)
+    ? studentsWithStatus
+    : await selectAllPages<StudentStatusRow>((from, to) => supabase.from('students').select('id').eq('user_id', userId).order('id').range(from, to))
+  const activeIds = new Set(students.data.filter((s) => studentStatusOf(s) === 'active').map((s) => s.id))
+  // 재원 학생의 것만 남긴다 (휴원·퇴원 학생은 숙제·원비 미납에서 뺀다)
+  const onlyActive = (ids: (string | null)[]) => (statusReady ? ids.filter((id) => !!id && activeIds.has(id)) : ids)
 
   const errors: DashboardErrors = {}
   const fail = '불러오지 못했어요'
   if (events.error) errors.todayClasses = fail
-  if (due.error) errors.homeworkDueStudents = fail
-  if (overdue.error) errors.homeworkOverdueStudents = fail
-  if (due.error || overdue.error) errors.homeworkPendingStudents = fail
+  if (due.error || students.error) errors.homeworkDueStudents = fail
+  if (overdue.error || students.error) errors.homeworkOverdueStudents = fail
+  if (due.error || overdue.error || students.error) errors.homeworkPendingStudents = fail
   if (students.error || paid.error) errors.tuitionUnpaidStudents = fail
 
   // 칸이 없거나(SQL 실행 전) 표가 없으면 null → 항목 숨김, 그 밖의 오류는 안내
@@ -124,8 +140,8 @@ export async function loadDashboardCounts(
   }
 
   const todayEvents = sortTodayEvents((events.data ?? []) as TodayEvent[])
-  const dueIds = due.data.map((r) => r.student_id)
-  const overdueIds = overdue.data.map((r) => r.student_id)
+  const dueIds = onlyActive(due.data.map((r) => r.student_id))
+  const overdueIds = onlyActive(overdue.data.map((r) => r.student_id))
 
   return {
     today,
@@ -134,7 +150,8 @@ export async function loadDashboardCounts(
       homeworkDueStudents: distinctCount(dueIds),
       homeworkOverdueStudents: distinctCount(overdueIds),
       homeworkPendingStudents: distinctCount([...dueIds, ...overdueIds]),
-      tuitionUnpaidStudents: unpaidStudentCount(students.count ?? 0, paid.data.map((r) => r.student_id)),
+      tuitionUnpaidStudents: unpaidStudentCount(activeIds.size, onlyActive(paid.data.map((r) => r.student_id))),
+      activeStudentBasis: statusReady,
       reportsDraft: optionalCount(reportsDraft, 'reportsDraft'),
       reportsToSend: optionalCount(reportsToSend, 'reportsToSend'),
       levelTestsUnreviewed: optionalCount(levelUnreviewed, 'levelTestsUnreviewed'),
@@ -143,5 +160,6 @@ export async function loadDashboardCounts(
     errors,
     events: todayEvents,
     eventsError: events.error ? fail : undefined,
+    classInfo,
   }
 }

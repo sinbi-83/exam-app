@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabaseServer'
 import { loadDashboardCounts } from '@/lib/dashboardData'
+import { NOT_READY_MESSAGE } from '@/lib/classManagement'
+import type { ClassOverviewResult } from '@/lib/classManagementData'
 import {
   buildSummaryTiles,
   buildTaskItems,
@@ -94,6 +96,63 @@ function EventRow({ event }: { event: TodayEvent }) {
   )
 }
 
+// 반·재원 현황 (반 관리 1단계). SQL 적용 전에는 안내 문구만 보인다.
+function ClassOverviewSection({ info }: { info: ClassOverviewResult }) {
+  const { overview } = info
+  return (
+    <section className="mb-8">
+      <div className="mb-3 flex items-center justify-between">
+        <h2 className="text-sm font-semibold text-gray-600">반·재원 현황</h2>
+        <Link href="/classes" className="text-xs text-gray-400 hover:text-blue-600">
+          반 관리 →
+        </Link>
+      </div>
+      {!info.ready ? (
+        <p className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-500">{NOT_READY_MESSAGE}</p>
+      ) : !overview ? (
+        <p className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-400">{info.error}</p>
+      ) : (
+        <div className="grid gap-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-3 lg:col-span-3 sm:grid-cols-4">
+            {[
+              { label: '재원', count: overview.activeStudents, href: '/students' },
+              { label: '반 없는 재원 학생', count: overview.studentsWithoutClass, href: '/students' },
+              { label: '휴원', count: overview.pausedStudents, href: '/students?status=paused' },
+              { label: '퇴원', count: overview.withdrawnStudents, href: '/students?status=withdrawn' },
+            ].map((t) => (
+              <Link key={t.label} href={t.href} className="block rounded-lg border border-gray-200 bg-white p-4 hover:border-blue-300">
+                <p className="text-sm font-medium text-gray-600">{t.label}</p>
+                <p className="mt-1 text-2xl font-bold text-gray-800">
+                  {t.count}
+                  <span className="ml-0.5 text-base font-semibold">명</span>
+                </p>
+              </Link>
+            ))}
+          </div>
+          <div className="rounded-lg border border-gray-200 bg-white px-4 py-1 lg:col-span-2">
+            {overview.classes.length === 0 ? (
+              <p className="py-3 text-sm text-gray-500">운영 중인 반 없음</p>
+            ) : (
+              <ul>
+                {overview.classes.map((c) => (
+                  <li key={c.id} className="border-b border-gray-100 last:border-0">
+                    <Link href={`/classes/${c.id}`} className="flex items-center justify-between gap-3 py-2.5 hover:text-blue-700">
+                      <span className="truncate text-sm text-gray-800">{c.name}</span>
+                      <span className="shrink-0 text-sm font-medium tabular-nums text-gray-700">
+                        {c.active}명{c.paused > 0 && <span className="ml-1 text-xs font-normal text-gray-400">휴원 {c.paused}</span>}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      )}
+    </section>
+  )
+}
+
 export default async function DashboardPage() {
   const supabase = await createClient()
   const {
@@ -101,7 +160,7 @@ export default async function DashboardPage() {
   } = await supabase.auth.getUser()
   if (!user) redirect('/login?next=/dashboard')
 
-  const { today, counts, errors, events, eventsError } = await loadDashboardCounts(supabase, user.id)
+  const { today, counts, errors, events, eventsError, classInfo } = await loadDashboardCounts(supabase, user.id)
   const tiles = buildSummaryTiles(counts, errors)
   const tasks = buildTaskItems(counts, errors)
 
@@ -154,6 +213,8 @@ export default async function DashboardPage() {
           </div>
         </section>
       </div>
+
+      <ClassOverviewSection info={classInfo} />
 
       <section>
         <h2 className="mb-3 text-sm font-semibold text-gray-600">빠른 실행</h2>

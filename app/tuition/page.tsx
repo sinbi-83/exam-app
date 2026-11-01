@@ -2,11 +2,13 @@
 
 import { Fragment, useEffect, useState } from 'react'
 import { kstDateString } from '@/lib/dashboard'
+import { studentStatusOf } from '@/lib/classManagement'
 
 interface Student {
   id: string
   name: string
   grade: string
+  status?: string
 }
 
 interface TuitionRecord {
@@ -228,14 +230,20 @@ export default function TuitionPage() {
     if (r.status === 'partial') return s + (r.paid_amount ?? 0)
     return s
   }, 0)
-  const unpaidCount = Object.values(records).filter((r) => r.status !== 'paid').length
-  const totalUnpaid = Object.values(records).reduce((s, r) => {
+  // 미납은 재원 학생만 센다 (대시보드 숫자와 같은 기준). 상태 칸이 없으면 모두 재원으로 본다.
+  const isActiveStudent = (studentId: string) => {
+    const student = students.find((s) => s.id === studentId)
+    return !student || studentStatusOf(student) === 'active'
+  }
+  const activeRecords = Object.values(records).filter((r) => isActiveStudent(r.student_id))
+  const unpaidCount = activeRecords.filter((r) => r.status !== 'paid').length
+  const totalUnpaid = activeRecords.reduce((s, r) => {
     if (r.status === 'unpaid') return s + r.amount
     if (r.status === 'partial') return s + Math.max(r.amount - (r.paid_amount ?? 0), 0)
     return s
   }, 0)
 
-  const visibleStudents = unpaidOnly ? students.filter((s) => records[s.id]?.status !== 'paid') : students
+  const visibleStudents = unpaidOnly ? students.filter((s) => records[s.id]?.status !== 'paid' && isActiveStudent(s.id)) : students
   const studentsByGroup = GRADE_GROUPS.map((g) => ({
     group: g,
     students: visibleStudents.filter((s) => gradeGroup(s.grade) === g),

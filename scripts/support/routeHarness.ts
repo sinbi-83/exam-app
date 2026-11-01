@@ -78,6 +78,11 @@ export class FakeDb {
   rpcHandlers: Record<string, (args: Row) => { data?: unknown; error?: DbError | null }> = {}
   rpcCalls: { name: string; args: Row }[] = []
   loggedIn = true
+  // 표의 기본값 (DB 의 default 흉내)
+  defaults: Record<string, Row> = {
+    classes: { status: 'active', target_grades: [], closed_on: null },
+    class_students: { left_on: null },
+  }
   private seq = 0
 
   constructor(tables: Record<string, Row[]> = {}) {
@@ -212,7 +217,7 @@ class FakeQuery implements PromiseLike<{ data: unknown; error: unknown; count?: 
     let result: Row[]
 
     if (this.op === 'insert' || this.op === 'upsert') {
-      const added = this.payload.map((p) => ({ id: p.id ?? db.nextId(), ...p }))
+      const added = this.payload.map((p) => ({ id: p.id ?? db.nextId(), ...db.defaults[table], ...p }))
       rows.push(...added)
       db.writes.push({ table, op: this.op, rows: added })
       result = added

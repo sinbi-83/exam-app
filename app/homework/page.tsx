@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import { addDays, kstDateString } from '@/lib/dashboard'
+import { studentStatusOf } from '@/lib/classManagement'
 import { inHomeworkView, isOverdueOn, parseHomeworkView, type HomeworkView } from '@/lib/homeworkView'
 
 interface Student {
   id: string
   name: string
   grade: string
+  status?: string
 }
 
 interface Homework {
@@ -126,8 +128,12 @@ export default function HomeworkPage() {
 
   const today = kstDateString(new Date())
   const tomorrow = addDays(today, 1)
-  const filtered = homework.filter((h) => inHomeworkView(h, filter, today, tomorrow))
-  const countOf = (view: HomeworkView) => homework.filter((h) => inHomeworkView(h, view, today, tomorrow)).length
+  // 마감 지남·임박 보기는 재원 학생의 숙제만 (대시보드 숫자와 같은 기준). 상태 칸이 없으면 모두 재원으로 본다.
+  const nonActiveIds = new Set(students.filter((s) => studentStatusOf(s) !== 'active').map((s) => s.id))
+  const inView = (h: Homework, view: HomeworkView) =>
+    inHomeworkView(h, view, today, tomorrow) && !(['overdue', 'due', 'pending'].includes(view) && nonActiveIds.has(h.student_id))
+  const filtered = homework.filter((h) => inView(h, filter))
+  const countOf = (view: HomeworkView) => homework.filter((h) => inView(h, view)).length
   const shownFilters = filter === 'pending' ? [...ALWAYS_SHOWN, 'pending' as const] : ALWAYS_SHOWN
 
   if (loading) return <div className="py-20 text-center text-sm text-gray-400">불러오는 중…</div>

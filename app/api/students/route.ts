@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { isSchemaMissing } from '@/lib/classManagement'
 
 function generatePin(): string {
   return String(Math.floor(1000 + Math.random() * 9000))
@@ -11,12 +12,20 @@ export async function GET() {
   if (userError || !user) return NextResponse.json({ error: '로그인이 필요합니다.' }, { status: 401 })
 
   // 새 컬럼 포함해서 조회, 실패 시 기존 컬럼만으로 재시도
-  // eslint-disable-next-line prefer-const
-  let { data, error } = await supabase
+  const read = (columns: string) => supabase
     .from('students')
-    .select('id, name, grade, pin, created_at, school_name, student_phone, parent_phone, enrolled_at, notes')
+    .select(columns)
     .eq('user_id', user.id)
     .order('created_at', { ascending: false })
+  const COLUMNS = 'id, name, grade, pin, created_at, school_name, student_phone, parent_phone, enrolled_at, notes'
+
+  // 상태 칸은 class-management-migration.sql 적용 뒤에만 있다 → 없으면 빼고 읽는다 (statusReady: false)
+  const withStatus = await read(`${COLUMNS}, status, withdrawn_on, withdraw_note`)
+  if (!withStatus.error) return NextResponse.json({ data: withStatus.data, statusReady: true })
+  const statusReady = !isSchemaMissing(withStatus.error)
+
+  // eslint-disable-next-line prefer-const
+  let { data, error } = statusReady ? withStatus : await read(COLUMNS)
 
   if (error) {
     // 새 컬럼이 아직 없을 경우 기존 컬럼만 조회
@@ -29,7 +38,7 @@ export async function GET() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data = fallback.data as any
   }
-  return NextResponse.json({ data })
+  return NextResponse.json({ data, statusReady: false })
 }
 
 export async function POST(request: NextRequest) {
