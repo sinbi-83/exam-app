@@ -47,6 +47,7 @@ export const SCHOOL_PROFILE_SECTIONS = [
   { key: 'textbooks', label: '영어 교과서', placeholder: '학년별 출판사·저자 (예: 1학년 동아 윤정미)' },
   { key: 'exam_schedule', label: '시험 일정', placeholder: '학기별 중간·기말 날짜와 범위' },
   { key: 'evaluation', label: '평가 비율', placeholder: '지필·수행 %, 수행평가 내용' },
+  { key: 'exam_style', label: '출제스타일', placeholder: '문항 구성, 객관식·서술형 형식, 난이도, 교과서 변형 정도 등' },
   { key: 'trends', label: '출제 경향 메모', placeholder: '서술형 비중, 외부지문 여부, 자주 나오는 유형 등' },
   { key: 'materials', label: '시험 자료', placeholder: '모의고사·기출 자료 메모 (자료 연결은 다음 단계)' },
   { key: 'sources', label: '출처·확인 날짜', placeholder: '학교 홈페이지, 학교알리미, 학생 확인 등 + 날짜' },

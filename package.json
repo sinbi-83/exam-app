@@ -26,6 +26,7 @@
     "test-official-vocabulary": "node scripts/test-official-vocabulary.ts",
     "add-vocabulary-seed": "node scripts/add-vocabulary-seed.ts",
     "add-wordbook": "node scripts/add-wordbook.ts",
+    "add-school-profiles": "node scripts/add-school-profiles.ts",
     "test-vocabulary-calibration": "node scripts/test-vocabulary-calibration.ts",
     "test-vocabulary-list-filter": "node scripts/test-vocabulary-list-filter.ts",
     "test-passage-unified": "node scripts/test-passage-unified.ts",

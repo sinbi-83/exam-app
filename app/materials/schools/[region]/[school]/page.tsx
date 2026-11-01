@@ -1,6 +1,6 @@
 'use client'
 
-// 학교 상세: 기본정보(고정, config/schools.ts) + 고쳐 쓰는 칸 7개(school_profiles) + 우리 학생 목록.
+// 학교 상세: 기본정보(고정, config/schools.ts) + 고쳐 쓰는 칸 8개(school_profiles) + 우리 학생 목록.
 // 칸마다 확인됨/추정 표시. 확인 안 된 내용은 비워 두거나 "추정"으로 표시한다.
 
 import { useEffect, useState } from 'react'
