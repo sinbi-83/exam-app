@@ -1,6 +1,7 @@
 'use client'
 
 import { Fragment, useEffect, useState } from 'react'
+import { kstDateString } from '@/lib/dashboard'
 
 interface Student {
   id: string
@@ -122,7 +123,7 @@ export default function TuitionPage() {
     const newRec = {
       ...rec,
       status,
-      paid_at: status === 'paid' ? new Date().toISOString().slice(0, 10) : null,
+      paid_at: status === 'paid' ? kstDateString(new Date()) : null,
       paid_amount: status === 'unpaid' ? null : rec.paid_amount,
     }
     const res = await fetch('/api/tuition', {

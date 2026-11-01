@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { kstDateString } from '@/lib/dashboard'
 
 // GET: 로그인한 선생님이 등록한 성적 목록 가져오기 (최신순)
 export async function GET() {
@@ -55,7 +56,7 @@ export async function POST(request: NextRequest) {
       exam_title,
       score,
       max_score: max_score || 100,
-      exam_date: exam_date || new Date().toISOString().slice(0, 10),
+      exam_date: exam_date || kstDateString(new Date()),
       exam_id: exam_id || null,
     })
     .select()

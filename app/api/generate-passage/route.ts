@@ -5,6 +5,12 @@ import { logApiUsage } from "@/lib/apiUsageLog";
 const MODEL = "claude-sonnet-5";
 
 export async function POST(request: NextRequest) {
+  const supabase = await createClient();
+  const { data: { user }, error: userError } = await supabase.auth.getUser();
+  if (userError || !user) {
+    return NextResponse.json({ error: "로그인이 필요합니다." }, { status: 401 });
+  }
+
   try {
     const { grade, topic } = await request.json();
 
@@ -90,10 +96,8 @@ export async function POST(request: NextRequest) {
       .join("\n");
 
     if (data.usage) {
-      const supabase = await createClient();
-      const { data: { user } } = await supabase.auth.getUser();
       await logApiUsage(supabase, {
-        userId: user?.id ?? null,
+        userId: user.id,
         route: "generate-passage",
         model: MODEL,
         inputTokens: data.usage.input_tokens ?? 0,

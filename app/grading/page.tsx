@@ -55,7 +55,7 @@ export default function GradingPage() {
   const [examTitle, setExamTitle] = useState('')
   const [score, setScore] = useState('')
   const [maxScore, setMaxScore] = useState('100')
-  const [examDate, setExamDate] = useState(new Date().toISOString().slice(0, 10))
+  const [examDate, setExamDate] = useState(kstDateString(new Date()))
   const [submitting, setSubmitting] = useState(false)
   // 틀린 개수 입력 모드
   const [scoreMode, setScoreMode] = useState<'score' | 'wrong'>('score')
@@ -65,7 +65,7 @@ export default function GradingPage() {
   // 시험 카드 관리
   const [examManagerOpen, setExamManagerOpen] = useState(false)
   const [newExamTitle, setNewExamTitle] = useState('')
-  const [newExamDate, setNewExamDate] = useState(new Date().toISOString().slice(0, 10))
+  const [newExamDate, setNewExamDate] = useState(kstDateString(new Date()))
   const [newExamTotalQuestions, setNewExamTotalQuestions] = useState('')
   const [newExamMaxScore, setNewExamMaxScore] = useState('100')
   const [creatingExam, setCreatingExam] = useState(false)

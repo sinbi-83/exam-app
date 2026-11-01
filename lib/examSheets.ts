@@ -1,6 +1,7 @@
 import { ExamGenerationResult } from "@/types/exam";
 import { StyleParams } from "@/config/stylePresets";
 import { GradeLevel, QuestionConfigItem } from "@/config/questionTypes";
+import { kstDateString } from "@/lib/dashboard";
 
 export interface ExamSheetRow {
   id: string;
@@ -17,7 +18,7 @@ function buildAutoTitle(
   gradeLevel: GradeLevel,
   stylePresetName: string | null
 ): string {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = kstDateString(new Date());
   const styleLabel = stylePresetName ? `${stylePresetName}형` : "커스텀형";
   return `${today} ${gradeLevel} ${styleLabel} 독해`;
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import TimeSelect from '@/app/components/TimeSelect'
+import { kstDateString } from '@/lib/dashboard'
 
 interface ScheduleEvent {
   id: string
@@ -36,7 +37,7 @@ export default function SchedulePage() {
   const [saving, setSaving] = useState(false)
   const [form, setForm] = useState({
     title: '',
-    event_date: new Date().toISOString().slice(0, 10),
+    event_date: kstDateString(new Date()),
     start_time: '',
     end_time: '',
     event_type: 'class',
@@ -65,7 +66,7 @@ export default function SchedulePage() {
     const json = await res.json()
     if (!json.error) {
       setEvents((prev) => [...prev, json.data].sort((a, b) => a.event_date.localeCompare(b.event_date)))
-      setForm({ title: '', event_date: new Date().toISOString().slice(0, 10), start_time: '', end_time: '', event_type: 'class', note: '' })
+      setForm({ title: '', event_date: kstDateString(new Date()), start_time: '', end_time: '', event_type: 'class', note: '' })
       setShowForm(false)
       window.dispatchEvent(new Event('schedule-updated'))
     }

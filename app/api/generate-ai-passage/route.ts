@@ -38,6 +38,17 @@ function grammarProblems(p: { passage?: string; items?: PassageHighlightItem[]; 
 }
 
 export async function POST(req: NextRequest) {
+  const supabase = await createClient();
+  const { data: { user }, error: userError } = await supabase.auth.getUser();
+  if (userError || !user) {
+    const errorResponse: AiPassageResponse = {
+      ok: false,
+      errorType: "unknown",
+      message: "로그인이 필요합니다.",
+    };
+    return NextResponse.json(errorResponse, { status: 401 });
+  }
+
   let body: AiPassageRequestBody;
 
   try {
@@ -108,10 +119,8 @@ export async function POST(req: NextRequest) {
       const rawText = data.content?.[0]?.text ?? "";
 
       if (data.usage) {
-        const supabase = await createClient();
-        const { data: { user } } = await supabase.auth.getUser();
         await logApiUsage(supabase, {
-          userId: user?.id ?? null,
+          userId: user.id,
           route: "generate-ai-passage",
           model: MODEL,
           inputTokens: data.usage.input_tokens ?? 0,

@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { useParams, useRouter } from 'next/navigation'
 import { CHOICE_MARKS, SECTION_LABELS, SECTION_ORDER, findLevelTest, gradeBySlug, isItemCorrect, orderedItems, recommendLevel, scoreLevelTest } from '@/lib/levelTest'
 import { FormBadge, StudentPicker } from '@/components/levelTest/LevelTestParts'
+import { kstDateString } from '@/lib/dashboard'
 import type { LevelTestAnswers, LevelTestOverrides } from '@/types/levelTest'
 
 export default function LevelTestPaperGradePage() {
@@ -19,7 +20,7 @@ export default function LevelTestPaperGradePage() {
 
   const [name, setName] = useState('')
   const [studentId, setStudentId] = useState<string | null>(null)
-  const [takenAt, setTakenAt] = useState(() => new Date().toISOString().slice(0, 10))
+  const [takenAt, setTakenAt] = useState(() => kstDateString(new Date()))
   const [answers, setAnswers] = useState<LevelTestAnswers>({})
   const [overrides, setOverrides] = useState<LevelTestOverrides>({})
   const [memo, setMemo] = useState('')

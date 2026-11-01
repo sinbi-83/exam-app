@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
-
-function toISODate(d: Date) {
-  return d.toISOString().slice(0, 10)
-}
+import { addDays, kstDateString } from '@/lib/dashboard'
 
 export async function GET(request: NextRequest) {
   const supabase = await createClient()
@@ -13,9 +10,8 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const days = Number(searchParams.get('days') ?? 2)
 
-  const now = new Date()
-  const from = toISODate(now)
-  const to = toISODate(new Date(now.getTime() + days * 24 * 60 * 60 * 1000))
+  const from = kstDateString(new Date())
+  const to = addDays(from, days)
 
   const { data, error } = await supabase
     .from('schedule_events')

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { kstDateString } from '@/lib/dashboard'
 
 interface Student {
   id: string
@@ -293,7 +294,7 @@ function ReportForm() {
           student_name:  student?.name ?? '',
           student_grade: student?.grade ?? '',
           exam_title:    exam?.title ?? examTitleOverride ?? '(시험명 미지정)',
-          exam_date:     examDate || exam?.exam_date || new Date().toISOString().slice(0, 10),
+          exam_date:     examDate || exam?.exam_date || kstDateString(new Date()),
           score,
           max_score:     maxScore,
           strengths,
@@ -324,7 +325,7 @@ function ReportForm() {
       studentName:  student?.name ?? '',
       studentGrade: student?.grade ?? '',
       examTitle:    exam?.title ?? examTitleOverride ?? '(시험명 미지정)',
-      examDate:     examDate || exam?.exam_date || new Date().toISOString().slice(0, 10),
+      examDate:     examDate || exam?.exam_date || kstDateString(new Date()),
       score,
       maxScore,
       comment,

@@ -2,12 +2,14 @@
 //   1) 출석 화면: 한국 날짜 기본값, 월 말일이 월간 요약 범위에 들어가는지
 //   2) /api/generate: 로그인 검사가 AI 호출보다 먼저, 401
 //   3) POST /api/exam-questions: 시험 소유 확인이 저장보다 먼저, 내 시험이 아니면 403
+//   4) AI API 3개: 로그인 검사가 AI 호출보다 먼저, 401
+//   5) 나머지 화면·API 의 날짜: 한국 날짜 사용, UTC 날짜 만들기가 남아 있지 않은지
 // 실행: npm run test-class-stage0
 
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { kstDateString, monthRange } from '../lib/dashboard.ts'
+import { addDays, kstDateString, monthRange } from '../lib/dashboard.ts'
 import { checkExamOwnership } from '../lib/examOwnership.ts'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
@@ -124,6 +126,49 @@ await test('POST /api/exam-questions: 소유 확인이 저장보다 먼저', () 
   assert.ok(post.indexOf('auth.getUser()') < checkAt)
   assert.ok(checkAt < post.indexOf('.insert('))
   assert.match(post, /status: ownership\.status/)
+})
+
+for (const path of ['app/api/generate-ai-passage/route.ts', 'app/api/generate-passage/route.ts', 'app/api/generate-report/route.ts']) {
+  await test(`${path}: 로그인 없으면 401, 요청 읽기·AI 호출보다 먼저 검사`, () => {
+    const route = read(path)
+    assert.match(route, /status: 401/)
+    assert.match(route, /userError \|\| !user/)
+    const authAt = route.indexOf('auth.getUser()')
+    assert.ok(authAt > -1)
+    assert.equal(route.indexOf('auth.getUser()', authAt + 1), -1, '로그인 확인은 한 번만')
+    assert.ok(authAt < route.search(/(req|request)\.json\(\)/))
+    assert.ok(authAt < route.indexOf('api.anthropic.com'))
+    assert.match(route, /userId: user\.id/)
+  })
+}
+
+await test('generate-passage: 호출하는 곳은 없지만 파일은 그대로 있다', () => {
+  assert.match(read('app/api/generate-passage/route.ts'), /export async function POST/)
+})
+
+const KST_DATE_USES: Record<string, RegExp[]> = {
+  'app/grading/page.tsx': [/useState\(kstDateString\(new Date\(\)\)\)[\s\S]*useState\(kstDateString\(new Date\(\)\)\)/],
+  'app/api/exam-results/route.ts': [/exam_date: exam_date \|\| kstDateString\(new Date\(\)\)/],
+  'app/report/page.tsx': [/exam_date:\s+examDate \|\| exam\?\.exam_date \|\| kstDateString\(new Date\(\)\)/, /examDate:\s+examDate \|\| exam\?\.exam_date \|\| kstDateString\(new Date\(\)\)/],
+  'app/tuition/page.tsx': [/paid_at: status === 'paid' \? kstDateString\(new Date\(\)\) : null/],
+  'app/api/schedule/upcoming/route.ts': [/const from = kstDateString\(new Date\(\)\)/, /const to = addDays\(from, days\)/],
+  'app/schedule/page.tsx': [/event_date: kstDateString\(new Date\(\)\),\r?\n/, /setForm\(\{ title: '', event_date: kstDateString\(new Date\(\)\)/],
+  'app/materials/level-tests/[grade]/[form]/grade/page.tsx': [/useState\(\(\) => kstDateString\(new Date\(\)\)\)/],
+  'lib/examSheets.ts': [/const today = kstDateString\(new Date\(\)\)/],
+}
+for (const [path, patterns] of Object.entries(KST_DATE_USES)) {
+  await test(`${path}: 한국 날짜 사용, UTC 날짜 없음`, () => {
+    const source = read(path)
+    for (const pattern of patterns) assert.match(source, pattern)
+    assert.doesNotMatch(source, /toISOString\(\)\.(slice|split|substring)/)
+  })
+}
+
+await test('일정 알림 범위: 한국 아침에도 오늘부터, 달을 넘겨도 맞다', () => {
+  const from = kstDateString(new Date('2026-10-31T23:30:00Z')) // 한국 11/1 오전 8:30
+  assert.equal(from, '2026-11-01')
+  assert.equal(addDays(from, 2), '2026-11-03')
+  assert.equal(addDays('2026-12-31', 2), '2027-01-02')
 })
 
 console.log(`\n${passed}개 통과`)
