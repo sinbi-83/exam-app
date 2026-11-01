@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { checkStudentsOwnership } from '@/lib/ownership'
 
 export async function GET(request: NextRequest) {
   const supabase = await createClient()
@@ -36,6 +37,9 @@ export async function POST(request: NextRequest) {
   if (!Array.isArray(records) || records.length === 0) {
     return NextResponse.json({ error: '출석 데이터가 없습니다.' }, { status: 400 })
   }
+
+  const ownership = await checkStudentsOwnership(supabase, records.map((r: { student_id?: unknown }) => r?.student_id), user.id)
+  if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
 
   const rows = records.map((r: { student_id: string; date: string; status: string; note?: string }) => ({
     user_id: user.id,

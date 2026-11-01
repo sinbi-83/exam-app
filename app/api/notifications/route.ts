@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { checkStudentsOwnership } from '@/lib/ownership'
 
 export async function GET() {
   const supabase = await createClient()
@@ -26,6 +27,10 @@ export async function POST(request: NextRequest) {
   if (!title || !message) return NextResponse.json({ error: '제목과 내용은 필수입니다.' }, { status: 400 })
 
   const targets = Array.isArray(student_ids) && student_ids.length > 0 ? student_ids : [null]
+  // null 은 학생을 고르지 않은 전체 알림
+  const ownership = await checkStudentsOwnership(supabase, targets.filter((sid: unknown) => sid !== null), user.id)
+  if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
+
   const rows = targets.map((sid: string | null) => ({
     user_id: user.id,
     student_id: sid,

@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
 import { kstDateString } from '@/lib/dashboard'
+import { checkExamOwnership } from '@/lib/examOwnership'
+import { checkStudentOwnership } from '@/lib/ownership'
 
 // GET: 로그인한 선생님이 등록한 성적 목록 가져오기 (최신순)
 export async function GET() {
@@ -46,6 +48,13 @@ export async function POST(request: NextRequest) {
 
   if (!student_id || !exam_title || score === undefined) {
     return NextResponse.json({ error: '필수 항목이 누락되었습니다.' }, { status: 400 })
+  }
+
+  const studentOwnership = await checkStudentOwnership(supabase, student_id, user.id)
+  if (!studentOwnership.ok) return NextResponse.json({ error: studentOwnership.error }, { status: studentOwnership.status })
+  if (exam_id) {
+    const examOwnership = await checkExamOwnership(supabase, exam_id, user.id)
+    if (!examOwnership.ok) return NextResponse.json({ error: examOwnership.error }, { status: examOwnership.status })
   }
 
   const { data, error } = await supabase

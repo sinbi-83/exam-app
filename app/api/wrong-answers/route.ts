@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { checkExamOwnership } from '@/lib/examOwnership'
+import { checkStudentOwnership } from '@/lib/ownership'
 
 // GET: 오답 기록 조회 (?student_id=...&exam_id=...)
 export async function GET(request: NextRequest) {
@@ -37,6 +39,11 @@ export async function POST(request: NextRequest) {
   if (!exam_id || !student_id) {
     return NextResponse.json({ error: '시험과 학생을 선택해주세요.' }, { status: 400 })
   }
+
+  const examOwnership = await checkExamOwnership(supabase, exam_id, user.id)
+  if (!examOwnership.ok) return NextResponse.json({ error: examOwnership.error }, { status: examOwnership.status })
+  const studentOwnership = await checkStudentOwnership(supabase, student_id, user.id)
+  if (!studentOwnership.ok) return NextResponse.json({ error: studentOwnership.error }, { status: studentOwnership.status })
 
   // 기존 기록이 있으면 업데이트
   const { data: existing } = await supabase

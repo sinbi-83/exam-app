@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { checkStudentOwnership } from '@/lib/ownership'
 
 export async function GET(request: NextRequest) {
   const supabase = await createClient()
@@ -29,6 +30,9 @@ export async function POST(request: NextRequest) {
   const body = await request.json()
   const { student_id, month_name, amount, paid_amount, status, paid_at, note } = body
   if (!student_id || !month_name) return NextResponse.json({ error: '필수 항목 누락.' }, { status: 400 })
+
+  const ownership = await checkStudentOwnership(supabase, student_id, user.id)
+  if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
 
   const { data, error } = await supabase
     .from('tuition_records')

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
 import { findLevelTestById, recommendLevel, scoreLevelTest } from '@/lib/levelTest'
 import { isColumnMissing } from '@/lib/reportStatus'
+import { checkStudentOwnership } from '@/lib/ownership'
 import type { LevelTestAnswers, LevelTestOverrides } from '@/types/levelTest'
 
 // GET: 결과 한 개 (답 포함)
@@ -39,6 +40,11 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
       return NextResponse.json({ error: error.message }, { status: 500 })
     }
     return NextResponse.json({ data })
+  }
+
+  if (body.student_id) {
+    const ownership = await checkStudentOwnership(supabase, body.student_id, user.id)
+    if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
   }
 
   const { data: row, error: readError } = await supabase.from('level_test_results').select('*').eq('id', id).eq('user_id', user.id).maybeSingle()

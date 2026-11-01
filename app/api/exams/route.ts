@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { checkQuestionSetOwnership } from '@/lib/ownership'
 
 // GET: 로그인한 선생님이 등록한 시험 카드 목록 가져오기 (최신순)
 export async function GET() {
@@ -45,6 +46,11 @@ export async function POST(request: NextRequest) {
 
   if (!title || !title.trim()) {
     return NextResponse.json({ error: '시험명은 필수입니다.' }, { status: 400 })
+  }
+
+  if (question_set_id) {
+    const ownership = await checkQuestionSetOwnership(supabase, question_set_id, user.id)
+    if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
   }
 
   const { data, error } = await supabase

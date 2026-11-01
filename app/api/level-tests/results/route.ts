@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
 import { findLevelTestById, recommendLevel, scoreLevelTest } from '@/lib/levelTest'
 import { isColumnMissing } from '@/lib/reportStatus'
+import { checkStudentOwnership } from '@/lib/ownership'
 import type { LevelTestAnswers, LevelTestOverrides } from '@/types/levelTest'
 
 // 레벨테스트 응시 결과 (표: level_test_results, level-test-results-migration.sql)
@@ -53,6 +54,11 @@ export async function POST(request: NextRequest) {
   if (!test) return NextResponse.json({ error: '시험지를 찾을 수 없습니다.' }, { status: 400 })
   const studentName = String(body.student_name ?? '').trim()
   if (!studentName) return NextResponse.json({ error: '학생 이름을 입력해 주세요.' }, { status: 400 })
+  // 학생 연결은 선택 (아직 등록 안 한 응시생은 이름만 남는다)
+  if (body.student_id) {
+    const ownership = await checkStudentOwnership(supabase, body.student_id, user.id)
+    if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
+  }
 
   const answers = (body.answers ?? {}) as LevelTestAnswers
   const overrides = (body.overrides ?? {}) as LevelTestOverrides

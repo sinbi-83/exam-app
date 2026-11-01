@@ -40,7 +40,8 @@
     "test-grammar-leak": "node scripts/test-grammar-leak.ts",
     "test-wordbook": "node scripts/test-wordbook.ts",
     "test-dashboard": "node scripts/test-dashboard.ts",
-    "test-class-stage0": "node scripts/test-class-stage0.ts"
+    "test-class-stage0": "node scripts/test-class-stage0.ts",
+    "test-ownership": "node scripts/test-ownership.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.0",

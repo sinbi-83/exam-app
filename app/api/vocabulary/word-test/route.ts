@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { checkVocabularyEntriesOwnership } from '@/lib/ownership'
 import type { WordQuestionData } from '@/lib/wordTest'
 
 // POST: 단어은행 자동 단어시험 저장 → 기존 exams + exam_questions (새 저장소를 만들지 않는다)
@@ -26,6 +27,9 @@ export async function POST(request: NextRequest) {
       (q.direction !== 'en_ko' && q.direction !== 'ko_en') || !q.question || !q.answer || !Array.isArray(q.accepted_answers),
   )
   if (bad) return NextResponse.json({ error: '문항 형식이 올바르지 않습니다.' }, { status: 400 })
+
+  const ownership = await checkVocabularyEntriesOwnership(supabase, questions.map((q) => q.source_vocabulary_entry_id), user.id)
+  if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
 
   const { data: exam, error: examError } = await supabase
     .from('exams')

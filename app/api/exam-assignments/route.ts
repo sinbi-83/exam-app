@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
 import { diffAssignees, isTableMissing } from '@/lib/examAssignments'
+import { checkExamOwnership } from '@/lib/examOwnership'
+import { checkStudentsOwnership } from '@/lib/ownership'
 
 // 시험 응시 대상 (표: exam_assignments, exam-assignments-migration.sql)
 // 표가 아직 없으면 GET 은 빈 목록 + tableMissing 을 준다 (채점관리 화면이 고르기 버튼을 숨김).
@@ -35,8 +37,10 @@ export async function PUT(request: NextRequest) {
   const studentIds: string[] = Array.isArray(body.student_ids) ? body.student_ids.map(String) : []
   if (!examId) return NextResponse.json({ error: '시험을 골라 주세요.' }, { status: 400 })
 
-  const { data: exam } = await supabase.from('exams').select('id').eq('id', examId).eq('user_id', user.id).maybeSingle()
-  if (!exam) return NextResponse.json({ error: '시험을 찾을 수 없습니다.' }, { status: 404 })
+  const examOwnership = await checkExamOwnership(supabase, examId, user.id)
+  if (!examOwnership.ok) return NextResponse.json({ error: examOwnership.error }, { status: examOwnership.status })
+  const studentOwnership = await checkStudentsOwnership(supabase, studentIds, user.id)
+  if (!studentOwnership.ok) return NextResponse.json({ error: studentOwnership.error }, { status: studentOwnership.status })
 
   const { data: current, error: readError } = await supabase
     .from('exam_assignments')

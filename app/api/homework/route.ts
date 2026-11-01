@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
+import { checkStudentOwnership } from '@/lib/ownership'
 
 export async function GET(request: NextRequest) {
   const supabase = await createClient()
@@ -34,6 +35,9 @@ export async function POST(request: NextRequest) {
   if (!student_id || !title) {
     return NextResponse.json({ error: '학생과 숙제 내용을 입력해주세요.' }, { status: 400 })
   }
+
+  const ownership = await checkStudentOwnership(supabase, student_id, user.id)
+  if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
 
   const { data, error } = await supabase
     .from('homework')

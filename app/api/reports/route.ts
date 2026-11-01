@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabaseServer'
 import { isColumnMissing, isReportSentVia, isReportStatus, reportStatusPatch } from '@/lib/reportStatus'
+import { checkExamOwnership } from '@/lib/examOwnership'
+import { checkStudentOwnership } from '@/lib/ownership'
 
 // GET: 저장된 보고서 목록
 export async function GET() {
@@ -37,6 +39,15 @@ export async function POST(request: NextRequest) {
 
   if (!student_name || score === undefined) {
     return NextResponse.json({ error: '학생 이름과 점수는 필수입니다.' }, { status: 400 })
+  }
+
+  if (student_id) {
+    const ownership = await checkStudentOwnership(supabase, student_id, user.id)
+    if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
+  }
+  if (exam_id) {
+    const ownership = await checkExamOwnership(supabase, exam_id, user.id)
+    if (!ownership.ok) return NextResponse.json({ error: ownership.error }, { status: ownership.status })
   }
 
   const { data, error } = await supabase
