@@ -2,7 +2,13 @@
 // 5단계 메뉴 개편: 옛 주소 → 새 주소 (목록은 config/legacyRoutes.json 한 곳)
 const legacyRoutes = require('./config/legacyRoutes.json');
 
+// Preview 빌드만 시험용 DB 로 고정하고, 운영 값이 섞이면 빌드를 멈춘다 (Production·로컬은 영향 없음)
+const { assertPreviewSafe, previewEnvOverrides, withPreviewScan } = require('./config/previewGuard.js');
+assertPreviewSafe();
+
 const nextConfig = {
+  env: previewEnvOverrides(),
+  webpack: (config) => withPreviewScan(config),
   experimental: {
     serverActions: {
       bodySizeLimit: '2mb',
