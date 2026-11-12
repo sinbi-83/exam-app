@@ -96,7 +96,7 @@ export interface PassageInput {
   body: string; // 지문 원문 (마크업 없음)
   tagged_body: string; // {{v:단어}} {{g:구문|설명}} {{t:구문}} 마크업 포함
   tags: PassageTags;
-  questions: PassageQuestion[]; // 20개 (mc 10 + blank 5 + tf 3 + order 1 + match 1)
+  questions: PassageQuestion[]; // 20개 (mc 11 + blank 5 + tf 3 + match 1, 19번도 mc — 순서배열은 2026-11-12부터 안 만듦)
   essays: PassageEssay[]; // 5개
 }
 

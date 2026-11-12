@@ -98,6 +98,10 @@ public/brand/signature.png  ← fallback 서명 (원본: 싸인.png)
 위 JSON 형식으로 `data/passages/`에 만들고 `add-passage.ts`로 저장한다. **API는 호출하지 않는다**
 (Claude Code가 직접 JSON 내용을 작성한다).
 
+- **순서배열 문제 금지 (2026-11-12)**: 문제 20개에 순서배열(order)을 넣지 않는다. 예전 19번(순서배열) 자리는 객관식(mc)으로
+  어법·어휘·내용 일치·주제·지칭 등 답을 고르는 문제를 만든다. 배분 = mc11/blank5/tf3/match1 (또는 mc19/match1).
+  `check-passage-questions`·`add-passage` 가 order 를 막는다.
+
 ### 지문 단어장 (API 호출 없음, 2026-10-19)
 
 - 경로: `/materials/wordbooks` (목록), `/materials/wordbooks/[passageId]` (편집), `/materials/wordbooks/[passageId]/print?mode=list|test` (A4 단어지 / 단어 테스트지)

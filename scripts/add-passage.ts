@@ -69,6 +69,14 @@ async function main() {
     }
   }
 
+  // 순서배열(order) 문제는 더 이상 만들지 않는다 (2026-11-12). 19번 자리도 객관식(mc)으로.
+  // 예전 파일을 일부러 그대로 저장해야 할 때만 --allow-order
+  const orderCount = input.questions.filter((q) => q.type === 'order').length
+  if (orderCount > 0 && !process.argv.includes('--allow-order')) {
+    console.error(`❌ 순서배열(order) 문제가 ${orderCount}개 있습니다. 객관식(어법·어휘·내용 등 답 고르기)으로 바꿔 주세요.`)
+    process.exit(1)
+  }
+
   // 문항 영구 ID(qid) 검사 — 중복/형식 오류는 항상 중단, qid 없음은 --allow-legacy 일 때만 허용
   const allowLegacy = process.argv.includes('--allow-legacy')
   const qidProblems = qidErrors(inspectQids(input.questions, input.essays), !allowLegacy)

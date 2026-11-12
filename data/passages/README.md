@@ -21,7 +21,6 @@
     { "type": "mc", "q": "...", "choices": ["...", "...", "...", "...", "..."], "answer": "...", "explanation": "..." },
     { "type": "blank", "q": "...", "answer": "...", "explanation": "..." },
     { "type": "tf", "q": "...", "answer": true, "explanation": "..." },
-    { "type": "order", "items": ["문장A", "문장B", "문장C"], "answer": ["문장B", "문장A", "문장C"] },
     { "type": "match", "pairs": [{ "word": "단어", "meaning": "뜻" }] }
   ],
   "essays": [
@@ -30,7 +29,12 @@
 }
 ```
 
-- `questions`는 보통 mc 10개 + blank 5개 + tf 3개 + order 1개 + match 1개, 총 20개를 한 배열에 순서대로 담습니다.
+- `questions`는 mc 11개 + blank 5개 + tf 3개 + match 1개, 총 20개를 한 배열에 순서대로 담습니다
+  (blank·tf 대신 전부 객관식이면 mc 19개 + match 1개).
+- **순서배열(order) 문제는 만들지 않습니다** (2026-11-12 향미님 요청 — 문제 질이 낮음). 예전에 순서배열이던
+  **19번 자리도 객관식(mc)** 으로, 어법(밑줄 친 부분 중 어법상 틀린 것)·어휘(문맥상 낱말 쓰임)·내용 일치·
+  주제/제목·지칭 대상 등 **답을 고르는** 문제로 만듭니다. 같은 지문의 다른 mc 와 유형이 겹치지 않게 고릅니다.
+  (`check-passage-questions`·`add-passage` 가 order 가 있으면 막습니다. 이미 DB 에 있는 예전 순서배열 문제는 그대로 둡니다.)
 - `essays`는 5개.
 - 문항 영구 ID(`qid`): 문제·서술형마다 `"qid": "<UUID>"`가 있어야 저장됩니다. 직접 만들지 말고
   JSON을 다 쓴 뒤 `npm run assign-qids -- data/passages/파일이름.json`을 실행하면 없는 곳에만 붙습니다

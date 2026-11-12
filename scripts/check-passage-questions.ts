@@ -67,16 +67,24 @@ for (const v of ORDER) {
     errors.push(`${label}: tagged_body에서 마크업을 제거한 결과가 실제 본문과 다릅니다 (마크업이 단어를 바꿨을 가능성).`)
   }
 
-  // 2) 문제 정확히 20개, 유형 배분 mc10/blank5/tf3/order1/match1
+  // 2) 문제 정확히 20개, 유형 배분 mc11/blank5/tf3/match1
+  //    순서배열(order)은 더 이상 만들지 않는다 (향미님 요청 2026-11-12: 문제 질이 낮음).
+  //    19번 자리도 객관식(mc) — 어법·어휘·내용일치·주제 등 답을 고르는 문제로 만든다.
   const qs = c.questions ?? []
   const counts: Record<string, number> = {}
   for (const q of qs) counts[q.type] = (counts[q.type] ?? 0) + 1
   if (qs.length !== 20) errors.push(`${label}: 문제가 20개가 아니라 ${qs.length}개입니다.`)
-  //    단, blank·tf 는 객관식(mc)으로 대체할 수 있다 (예: mc18/order1/match1 — 본문 그대로 빈칸·T/F 대신)
+  //    단, blank·tf 는 객관식(mc)으로 대체할 수 있다 (예: mc19/match1 — 본문 그대로 빈칸·T/F 대신)
   const replacedByMc = (counts.blank ?? 0) === 0 && (counts.tf ?? 0) === 0
-  const expect = replacedByMc ? { mc: 18, order: 1, match: 1 } : { mc: 10, blank: 5, tf: 3, order: 1, match: 1 }
+  const expect = replacedByMc ? { mc: 19, match: 1 } : { mc: 11, blank: 5, tf: 3, match: 1 }
   for (const [t, n] of Object.entries(expect)) {
     if ((counts[t] ?? 0) !== n) errors.push(`${label}: ${t} 유형이 ${n}개가 아니라 ${counts[t] ?? 0}개입니다.`)
+  }
+  if (counts.order) {
+    errors.push(`${label}: 순서배열(order) 문제가 ${counts.order}개 있습니다. 순서배열은 쓰지 않고 객관식(어법·어휘·내용 등)으로 바꿔 주세요.`)
+  }
+  if (qs[18] && qs[18].type !== 'mc') {
+    errors.push(`${label}: 19번이 ${qs[18].type} 유형입니다. 19번은 객관식(mc, 어법·어휘·내용 등 답 고르기)이어야 합니다.`)
   }
 
   // 3) 서술형 정확히 5개
@@ -171,7 +179,7 @@ for (const v of ORDER) {
     난이도: label,
     문제: qs.length,
     서술형: es.length,
-    '유형(mc/blank/tf/order/match)': `${counts.mc ?? 0}/${counts.blank ?? 0}/${counts.tf ?? 0}/${counts.order ?? 0}/${counts.match ?? 0}`,
+    '유형(mc/blank/tf/match)': `${counts.mc ?? 0}/${counts.blank ?? 0}/${counts.tf ?? 0}/${counts.match ?? 0}`,
     '태그(어휘/어법/주제)': `${tagCounts.vocab}/${tagCounts.grammar}/${tagCounts.topic}`,
     '마크업 개수': markupCount,
     '한글답변 서술형': es.filter((e: any) => e.answerLang === 'ko').length,
