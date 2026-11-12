@@ -1,0 +1,1495 @@
+{
+  "school": {
+    "tagged_body": "Thursday, November 13\n\nToday we had a math test. It was about {{v:fractions}}. Last night, I {{g:studied|과거형: study → studied (자음+y는 y를 i로 바꾸고 -ed)}} for two hours. But I was {{v:nervous}} in the morning.\n\n{{g:There were twenty questions|There were + 복수명사: ~들이 있었다}} on the test. The first ten questions were easy. But questions 15 and 18 were very {{v:difficult}}. I {{v:solved}} them slowly. I {{v:checked}} all my answers two times.\n\nAfter lunch, Ms. Kang {{g:gave back|give back(돌려주다)의 과거형: give → gave (불규칙 동사)}} our tests. {{t:I got 90 points!}} Last month, I got 75 points. My {{v:score}} was 15 points {{g:higher|비교급: high → higher (더 높은)}}. My mom was very happy. She made pizza for dinner.\n\nNext time, I {{g:will|will + 동사원형: ~할 것이다 (미래)}} {{v:practice}} more word problems. I {{g:want to get|want to + 동사원형: ~하고 싶다}} 100 points.",
+    "tags": {
+      "vocab": [
+        "fractions",
+        "nervous",
+        "difficult",
+        "solved",
+        "checked",
+        "score",
+        "practice"
+      ],
+      "grammar": [
+        "과거형 (studied, gave)",
+        "There were + 복수명사",
+        "비교급 (higher)",
+        "will + 동사원형",
+        "want to + 동사원형"
+      ],
+      "topic": [
+        "시험",
+        "노력",
+        "성장"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "ed71e5f5-bd78-4a76-bdaf-5f218fdb2e3a",
+        "type": "mc",
+        "q": "오늘 본 수학 시험은 무엇에 관한 것이었나요?",
+        "choices": [
+          "도형",
+          "분수",
+          "시계 보기",
+          "돈 계산",
+          "그래프"
+        ],
+        "answer": "분수",
+        "explanation": "'It was about fractions.' fraction은 '분수'라는 뜻이다."
+      },
+      {
+        "qid": "b2232bc0-1848-4a00-8ad4-d87de092de5d",
+        "type": "mc",
+        "q": "글쓴이는 어젯밤 몇 시간 공부했나요?",
+        "choices": [
+          "1시간",
+          "2시간",
+          "3시간",
+          "4시간",
+          "5시간"
+        ],
+        "answer": "2시간",
+        "explanation": "'Last night, I studied for two hours.' 두 시간 공부했다."
+      },
+      {
+        "qid": "261a0e13-17b7-4b29-9a9a-b653b0f1a18e",
+        "type": "mc",
+        "q": "시험 날 아침, 글쓴이의 기분은 어땠나요?",
+        "choices": [
+          "긴장했다",
+          "화가 났다",
+          "졸렸다",
+          "심심했다",
+          "신났다"
+        ],
+        "answer": "긴장했다",
+        "explanation": "'I was nervous in the morning.' nervous는 '긴장한'이라는 뜻이다."
+      },
+      {
+        "qid": "a70857bd-ad2a-4ec0-b3ff-ea39d7fc7957",
+        "type": "mc",
+        "q": "시험은 모두 몇 문제였나요?",
+        "choices": [
+          "10문제",
+          "15문제",
+          "20문제",
+          "25문제",
+          "30문제"
+        ],
+        "answer": "20문제",
+        "explanation": "'There were twenty questions on the test.' twenty는 20이다."
+      },
+      {
+        "qid": "54f9dc4f-993b-4e4e-8c67-465b671c4c52",
+        "type": "mc",
+        "q": "글쓴이가 매우 어려웠다고 한 문제는 몇 번이었나요?",
+        "choices": [
+          "1번과 10번",
+          "5번과 15번",
+          "10번과 18번",
+          "15번과 20번",
+          "15번과 18번"
+        ],
+        "answer": "15번과 18번",
+        "explanation": "'But questions 15 and 18 were very difficult.'"
+      },
+      {
+        "qid": "ec679315-8568-4908-b0b3-443f56be721f",
+        "type": "mc",
+        "q": "시험지를 돌려준 사람은 누구인가요?",
+        "choices": [
+          "엄마",
+          "친구",
+          "교장 선생님",
+          "아빠",
+          "Kang 선생님"
+        ],
+        "answer": "Kang 선생님",
+        "explanation": "'After lunch, Ms. Kang gave back our tests.'"
+      },
+      {
+        "qid": "358181fc-ed44-491e-92c6-65d46792ab44",
+        "type": "mc",
+        "q": "글쓴이가 이번 시험에서 받은 점수는?",
+        "choices": [
+          "75점",
+          "80점",
+          "85점",
+          "90점",
+          "100점"
+        ],
+        "answer": "90점",
+        "explanation": "'I got 90 points!' 75점은 지난달 점수이다."
+      },
+      {
+        "qid": "91afd08a-469e-4e1a-a6f8-ba2159ca268e",
+        "type": "mc",
+        "q": "엄마가 저녁으로 만들어 주신 음식은?",
+        "choices": [
+          "피자",
+          "치킨",
+          "김밥",
+          "햄버거",
+          "떡볶이"
+        ],
+        "answer": "피자",
+        "explanation": "'She made pizza for dinner.'"
+      },
+      {
+        "qid": "fa660d9f-56f5-4d6c-af75-db5b9184bcae",
+        "type": "mc",
+        "q": "다음 중 'difficult'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "쉬운",
+          "빠른",
+          "어려운",
+          "즐거운",
+          "긴"
+        ],
+        "answer": "어려운",
+        "explanation": "difficult는 '어려운'이라는 뜻이다. 반대말은 easy(쉬운)."
+      },
+      {
+        "qid": "a222effb-b1aa-4136-a3a8-9d1cb2be6d57",
+        "type": "mc",
+        "q": "다음 중 'score'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "문제",
+          "시험",
+          "숙제",
+          "점수",
+          "정답"
+        ],
+        "answer": "점수",
+        "explanation": "'My score was 15 points higher.' score는 '점수'라는 뜻이다."
+      },
+      {
+        "qid": "4051a381-68d9-4af2-9fdd-1d9d2b5579e5",
+        "type": "blank",
+        "q": "Today we had a math ___.",
+        "answer": "test",
+        "explanation": "'Today we had a math test.' 오늘 수학 시험을 봤다."
+      },
+      {
+        "qid": "f1c260ff-63ba-4ed8-a39c-f2b13b359066",
+        "type": "blank",
+        "q": "The first ten questions were ___.",
+        "answer": "easy",
+        "explanation": "'The first ten questions were easy.' 처음 10문제는 쉬웠다."
+      },
+      {
+        "qid": "9d27db4a-9887-4f03-bd61-15244757d4c3",
+        "type": "blank",
+        "q": "I ___ them slowly.",
+        "answer": "solved",
+        "explanation": "solve(풀다)의 과거형 solved가 들어간다."
+      },
+      {
+        "qid": "b7b2197d-04d9-42d9-9da1-b3d7774ba522",
+        "type": "blank",
+        "q": "After lunch, Ms. Kang gave ___ our tests.",
+        "answer": "back",
+        "explanation": "give back은 '돌려주다'라는 뜻이다. 과거형 gave back."
+      },
+      {
+        "qid": "8bbc4fcc-28b9-45d2-8e03-73ac2e19613c",
+        "type": "blank",
+        "q": "I want to get 100 ___.",
+        "answer": "points",
+        "explanation": "'I want to get 100 points.' 100점을 받고 싶다."
+      },
+      {
+        "qid": "0042bd24-9d5c-4a94-bec9-cb23a6a5cc9e",
+        "type": "tf",
+        "q": "글쓴이는 처음 열 문제가 어려웠다.",
+        "answer": false,
+        "explanation": "'The first ten questions were easy.' 처음 열 문제는 쉬웠다."
+      },
+      {
+        "qid": "f7c8f99e-e9a4-48c5-920b-1ae17d11e93a",
+        "type": "tf",
+        "q": "글쓴이는 지난달 시험에서 75점을 받았다.",
+        "answer": true,
+        "explanation": "'Last month, I got 75 points.'"
+      },
+      {
+        "qid": "d77eabd7-5abe-4081-a934-3b6ee595d881",
+        "type": "tf",
+        "q": "엄마는 글쓴이의 점수를 보고 기뻐하셨다.",
+        "answer": true,
+        "explanation": "'My mom was very happy.'"
+      },
+      {
+        "qid": "1b3ab344-7fd9-437f-8e94-906b8c34b700",
+        "type": "mc",
+        "q": "빈칸에 알맞은 말은? \"Last night, I ____ for two hours.\"",
+        "choices": [
+          "study",
+          "studys",
+          "studied",
+          "studyed",
+          "studing"
+        ],
+        "answer": "studied",
+        "explanation": "Last night(어젯밤)은 과거이므로 과거형을 쓴다. study처럼 '자음+y'로 끝나는 동사는 y를 i로 바꾸고 -ed → studied."
+      },
+      {
+        "qid": "5175e399-108a-40a0-9581-cb97f560884f",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "fraction",
+            "meaning": "분수"
+          },
+          {
+            "word": "nervous",
+            "meaning": "긴장한"
+          },
+          {
+            "word": "difficult",
+            "meaning": "어려운"
+          },
+          {
+            "word": "solve",
+            "meaning": "풀다"
+          },
+          {
+            "word": "practice",
+            "meaning": "연습하다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "c8791255-8a76-4bcf-b06d-e9b489d045f7",
+        "q": "What was the math test about? Write in English.",
+        "wordLimit": 8,
+        "sampleAnswer": "It was about fractions.",
+        "rubric": "① 'fractions(분수)'를 정확히 씀 ② 완전한 문장 (It was about ~.)"
+      },
+      {
+        "qid": "ac766819-728f-4259-9d98-453a87dd0c7c",
+        "q": "How many points did the writer get? Write in English.",
+        "wordLimit": 8,
+        "sampleAnswer": "The writer got 90 points.",
+        "rubric": "① 90 points ② got(get의 과거형) 사용 ③ 완전한 문장"
+      },
+      {
+        "qid": "1031bdc0-d51e-4187-8aba-efea854efb3a",
+        "q": "다음 단어를 바르게 배열하여 문장을 완성하시오: ( points / got / I / 90 )",
+        "wordLimit": 6,
+        "sampleAnswer": "I got 90 points.",
+        "rubric": "① 주어-동사-목적어 순서 ② 첫 글자 대문자, 마침표"
+      },
+      {
+        "qid": "84951ac2-b600-4894-a86c-9c48c9e18fca",
+        "q": "What will the writer practice next time? Write in English.",
+        "wordLimit": 10,
+        "sampleAnswer": "The writer will practice more word problems.",
+        "rubric": "① 'will + practice' 사용 ② word problems 포함 ③ 완전한 문장"
+      },
+      {
+        "qid": "3731e306-48d4-4083-89b1-4046b167068a",
+        "q": "'I want to ~'를 사용해 나의 목표를 영어 1문장으로 쓰시오.",
+        "wordLimit": 12,
+        "sampleAnswer": "I want to get 100 points on my English test.",
+        "rubric": "① 'I want to + 동사원형' 정확히 사용 ② 목표가 드러남 ③ 완전한 문장"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "fraction",
+        "surface": "fractions",
+        "pos": "명",
+        "meaning": "분수",
+        "sentence": "It was about fractions."
+      },
+      {
+        "word": "nervous",
+        "surface": "nervous",
+        "pos": "형",
+        "meaning": "긴장한, 떨리는",
+        "sentence": "But I was nervous in the morning."
+      },
+      {
+        "word": "difficult",
+        "surface": "difficult",
+        "pos": "형",
+        "meaning": "어려운",
+        "sentence": "But questions 15 and 18 were very difficult."
+      },
+      {
+        "word": "solve",
+        "surface": "solved",
+        "pos": "동",
+        "meaning": "(문제를) 풀다",
+        "sentence": "I solved them slowly."
+      },
+      {
+        "word": "check",
+        "surface": "checked",
+        "pos": "동",
+        "meaning": "확인하다, 점검하다",
+        "sentence": "I checked all my answers two times."
+      },
+      {
+        "word": "score",
+        "surface": "score",
+        "pos": "명",
+        "meaning": "점수",
+        "sentence": "My score was 15 points higher."
+      },
+      {
+        "word": "practice",
+        "surface": "practice",
+        "pos": "동",
+        "meaning": "연습하다",
+        "sentence": "Next time, I will practice more word problems."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "Thursday, November 13\n\nToday we had a math test. It was about {{v:fractions}}. Last night, I {{g:studied|과거형: study → studied (자음+y는 y를 i로 바꾸고 -ed)}} for two hours, but I was still {{v:nervous}} in the morning.\n\n{{g:There were twenty questions|There were + 복수명사: ~들이 있었다}} on the test. The first ten questions were easy. But questions 15 and 18 were very {{v:difficult}}. I {{v:solved}} them slowly and {{v:checked}} all my answers two times.\n\nAfter lunch, Ms. Kang {{g:gave back|give back(돌려주다)의 과거형: give → gave (불규칙 동사)}} our tests. {{t:I got 90 points!}} Last month, I got 75 points, so my {{v:score}} was 15 points {{g:higher|비교급: high → higher (더 높은)}}. My mom was very happy, and she made pizza for dinner.\n\nNext time, I {{g:will|will + 동사원형: ~할 것이다 (미래)}} {{v:practice}} more word problems. I {{g:want to get|want to + 동사원형: ~하고 싶다}} 100 points.",
+    "tags": {
+      "vocab": [
+        "fractions",
+        "nervous",
+        "difficult",
+        "solved",
+        "checked",
+        "score",
+        "practice"
+      ],
+      "grammar": [
+        "과거형 (studied, gave)",
+        "There were + 복수명사",
+        "접속사 but/so/and",
+        "비교급 (higher)",
+        "will + 동사원형",
+        "want to + 동사원형"
+      ],
+      "topic": [
+        "시험",
+        "노력",
+        "성장"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "4ad73c61-e557-4b24-9684-5c1aba3e72f1",
+        "type": "mc",
+        "q": "What was the math test about?",
+        "choices": [
+          "shapes",
+          "fractions",
+          "time",
+          "money",
+          "graphs"
+        ],
+        "answer": "fractions",
+        "explanation": "'It was about fractions.' fraction은 '분수'라는 뜻이다."
+      },
+      {
+        "qid": "fb68016b-567b-4f99-9fc9-2495f053f73d",
+        "type": "mc",
+        "q": "How long did the writer study last night?",
+        "choices": [
+          "For thirty minutes",
+          "For one hour",
+          "For one and a half hours",
+          "For two hours",
+          "For three hours"
+        ],
+        "answer": "For two hours",
+        "explanation": "'Last night, I studied for two hours.'"
+      },
+      {
+        "qid": "b72318d6-daa2-4f01-acfd-1243dd5cbcf4",
+        "type": "mc",
+        "q": "How did the writer feel in the morning?",
+        "choices": [
+          "nervous",
+          "angry",
+          "sleepy",
+          "bored",
+          "excited"
+        ],
+        "answer": "nervous",
+        "explanation": "'I was still nervous in the morning.' 열심히 공부했지만 여전히 긴장했다."
+      },
+      {
+        "qid": "139fb08d-f064-4084-a393-337f75cc634b",
+        "type": "mc",
+        "q": "How many questions were on the test?",
+        "choices": [
+          "ten",
+          "fifteen",
+          "twenty",
+          "twenty-five",
+          "thirty"
+        ],
+        "answer": "twenty",
+        "explanation": "'There were twenty questions on the test.'"
+      },
+      {
+        "qid": "64eff755-f9c4-45da-9f9c-6c7ed57cf2c8",
+        "type": "mc",
+        "q": "Which questions were very difficult?",
+        "choices": [
+          "1 and 10",
+          "5 and 15",
+          "10 and 18",
+          "15 and 20",
+          "15 and 18"
+        ],
+        "answer": "15 and 18",
+        "explanation": "'But questions 15 and 18 were very difficult.'"
+      },
+      {
+        "qid": "c609d5b6-d081-4301-8f92-b90c674085f7",
+        "type": "mc",
+        "q": "How many times did the writer check the answers?",
+        "choices": [
+          "once",
+          "two times",
+          "three times",
+          "four times",
+          "never"
+        ],
+        "answer": "two times",
+        "explanation": "'checked all my answers two times'"
+      },
+      {
+        "qid": "c4d8cb2b-facb-48ed-a726-02be255e7df5",
+        "type": "mc",
+        "q": "Who gave back the tests?",
+        "choices": [
+          "Mom",
+          "a friend",
+          "the principal",
+          "Dad",
+          "Ms. Kang"
+        ],
+        "answer": "Ms. Kang",
+        "explanation": "'After lunch, Ms. Kang gave back our tests.'"
+      },
+      {
+        "qid": "79ca69c9-172d-49ce-a447-2effad002486",
+        "type": "mc",
+        "q": "What was the writer's score last month?",
+        "choices": [
+          "70 points",
+          "75 points",
+          "80 points",
+          "85 points",
+          "90 points"
+        ],
+        "answer": "75 points",
+        "explanation": "'Last month, I got 75 points.' 90점은 이번 점수이다."
+      },
+      {
+        "qid": "8806949f-539a-42a6-9431-a56cf9f57fdb",
+        "type": "mc",
+        "q": "글쓴이의 점수는 지난달보다 몇 점 올랐나요?",
+        "choices": [
+          "5점",
+          "10점",
+          "15점",
+          "20점",
+          "25점"
+        ],
+        "answer": "15점",
+        "explanation": "'my score was 15 points higher' 75점 → 90점, 15점 올랐다."
+      },
+      {
+        "qid": "a2a7aef9-8ff5-4d81-af63-23d6823f8909",
+        "type": "mc",
+        "q": "다음 중 'score'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "점수",
+          "문제",
+          "시험",
+          "숙제",
+          "정답"
+        ],
+        "answer": "점수",
+        "explanation": "score는 '점수'라는 뜻이다."
+      },
+      {
+        "qid": "662eec11-2111-4dbb-801b-1a78df5fa955",
+        "type": "blank",
+        "q": "Today we had a math ___.",
+        "answer": "test",
+        "explanation": "'Today we had a math test.'"
+      },
+      {
+        "qid": "10b01fca-95c8-4702-9d31-49ded758bf43",
+        "type": "blank",
+        "q": "Last night, I studied for two hours, but I was still ___ in the morning.",
+        "answer": "nervous",
+        "explanation": "nervous는 '긴장한, 떨리는'이라는 뜻이다."
+      },
+      {
+        "qid": "78fca43d-b36c-4115-9d87-c8867fbd6935",
+        "type": "blank",
+        "q": "The first ten questions were ___.",
+        "answer": "easy",
+        "explanation": "'The first ten questions were easy.'"
+      },
+      {
+        "qid": "629079a6-3bb3-4b1d-9e43-5d5ef1db7241",
+        "type": "blank",
+        "q": "I ___ them slowly and checked all my answers two times.",
+        "answer": "solved",
+        "explanation": "solve(풀다)의 과거형 solved가 들어간다."
+      },
+      {
+        "qid": "61984446-abd7-4295-b70f-9c7a6963d927",
+        "type": "blank",
+        "q": "Next time, I will practice more word ___.",
+        "answer": "problems",
+        "explanation": "word problems는 '문장제 문제(서술형 수학 문제)'라는 뜻이다."
+      },
+      {
+        "qid": "6e9b4ed8-95b4-4916-b2da-4fe70c93da53",
+        "type": "tf",
+        "q": "글쓴이는 처음 열 문제가 어려웠다고 했다.",
+        "answer": false,
+        "explanation": "'The first ten questions were easy.' 15번과 18번이 어려웠다."
+      },
+      {
+        "qid": "1643ee7a-bfa9-4a1f-baa9-f9418c764968",
+        "type": "tf",
+        "q": "엄마는 저녁으로 피자를 만들어 주셨다.",
+        "answer": true,
+        "explanation": "'she made pizza for dinner'"
+      },
+      {
+        "qid": "0409d61e-f59f-445a-9474-fce2414f187f",
+        "type": "tf",
+        "q": "Ms. Kang은 아침에 시험지를 돌려주었다.",
+        "answer": false,
+        "explanation": "'After lunch, Ms. Kang gave back our tests.' 점심 식사 후에 돌려주었다."
+      },
+      {
+        "qid": "59d6ee60-1455-4609-bb69-e32f42ec450a",
+        "type": "mc",
+        "q": "다음 중 어법상 틀린 문장은?",
+        "choices": [
+          "There were twenty questions on the test.",
+          "I solved them slowly.",
+          "My score was 15 points higher.",
+          "Last night, I studyed for two hours.",
+          "I want to get 100 points."
+        ],
+        "answer": "Last night, I studyed for two hours.",
+        "explanation": "study의 과거형은 studied이다. '자음+y'로 끝나는 동사는 y를 i로 바꾸고 -ed를 붙인다 (studyed ✕ → studied ○)."
+      },
+      {
+        "qid": "50851f63-2431-4a7c-9eab-52687f17c7ca",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "fraction",
+            "meaning": "분수"
+          },
+          {
+            "word": "nervous",
+            "meaning": "긴장한"
+          },
+          {
+            "word": "difficult",
+            "meaning": "어려운"
+          },
+          {
+            "word": "solve",
+            "meaning": "풀다"
+          },
+          {
+            "word": "score",
+            "meaning": "점수"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "156704f7-5059-4c31-a1d2-70ba86a77093",
+        "q": "글쓴이가 시험 점수를 올리기 위해 한 일 두 가지를 영어로 쓰시오. (The writer ~ 로 시작)",
+        "wordLimit": 30,
+        "sampleAnswer": "The writer studied for two hours last night. The writer checked all the answers two times.",
+        "rubric": "① 본문 내용(두 시간 공부, 답 두 번 확인, 천천히 풀기 중 두 가지) ② 과거형 동사 사용 ③ 완전한 문장 2개"
+      },
+      {
+        "qid": "2e90fab4-09db-4556-985e-43af8d1b0c51",
+        "q": "다음 두 문장을 so를 사용해 한 문장으로 쓰시오: \"Last month, I got 75 points.\" / \"My score was 15 points higher.\"",
+        "wordLimit": 20,
+        "sampleAnswer": "Last month, I got 75 points, so my score was 15 points higher.",
+        "rubric": "① so(그래서)로 두 문장 연결 ② 쉼표와 마침표 ③ 철자 정확"
+      },
+      {
+        "qid": "a39c035c-efaa-48d8-b899-a9b8827d5f14",
+        "q": "시험 전에 나는 기분이 어떤지 영어로 2문장 쓰시오. (I feel ~ 사용)",
+        "wordLimit": 30,
+        "sampleAnswer": "I feel nervous before a test. I study hard and I feel better.",
+        "rubric": "① 'I feel + 기분 형용사' 사용 ② 완전한 문장 2개 ③ 철자 오류 최소화"
+      },
+      {
+        "qid": "08c4ae29-e5cc-4f5d-b229-582dd2855f33",
+        "q": "다음 시험을 위해 내가 할 일을 영어로 2문장 쓰시오. (I will ~ 사용)",
+        "wordLimit": 30,
+        "sampleAnswer": "I will study every day. I will practice more word problems.",
+        "rubric": "① 'I will + 동사원형' 정확히 사용 ② 다짐 2가지 ③ 완전한 문장 2개"
+      },
+      {
+        "qid": "d3002014-0038-4393-b97b-452709bec7e2",
+        "q": "좋은 일이 있었던 하루를 일기처럼 영어로 3문장 쓰시오. (과거형 사용)",
+        "wordLimit": 40,
+        "sampleAnswer": "Last Saturday, I went to the park with my family. We played badminton. I was very happy.",
+        "rubric": "① 과거형 동사 2개 이상 ② 언제·무엇을 했는지·기분 포함 ③ 완전한 문장 3개"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "fraction",
+        "surface": "fractions",
+        "pos": "명",
+        "meaning": "분수",
+        "sentence": "It was about fractions."
+      },
+      {
+        "word": "nervous",
+        "surface": "nervous",
+        "pos": "형",
+        "meaning": "긴장한, 떨리는",
+        "sentence": "Last night, I studied for two hours, but I was still nervous in the morning."
+      },
+      {
+        "word": "difficult",
+        "surface": "difficult",
+        "pos": "형",
+        "meaning": "어려운",
+        "sentence": "But questions 15 and 18 were very difficult."
+      },
+      {
+        "word": "solve",
+        "surface": "solved",
+        "pos": "동",
+        "meaning": "(문제를) 풀다",
+        "sentence": "I solved them slowly and checked all my answers two times."
+      },
+      {
+        "word": "check",
+        "surface": "checked",
+        "pos": "동",
+        "meaning": "확인하다, 점검하다",
+        "sentence": "I solved them slowly and checked all my answers two times."
+      },
+      {
+        "word": "score",
+        "surface": "score",
+        "pos": "명",
+        "meaning": "점수",
+        "sentence": "Last month, I got 75 points, so my score was 15 points higher."
+      },
+      {
+        "word": "practice",
+        "surface": "practice",
+        "pos": "동",
+        "meaning": "연습하다",
+        "sentence": "Next time, I will practice more word problems."
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "Thursday, November 13\n\nToday we had a math test about {{v:fractions}}. Last night, I {{g:studied hard|과거형 studied + 부사 hard(열심히)}} for two hours, but I still felt {{v:nervous}} {{g:when I woke up|when + 주어 + 동사: ~할 때 (시간 접속사)}} in the morning.\n\nThere were twenty questions on the test. The first ten questions were easy, {{g:so I finished them quickly|so: 그래서 (결과를 나타내는 접속사)}}. {{v:However}}, questions 15 and 18 were really {{v:difficult}}. I {{v:solved}} them slowly and {{v:carefully}}, and then I {{v:checked}} all my answers two times.\n\nAfter lunch, Ms. Kang gave back our tests, and {{t:I got 90 points!}} Last month, I got only 75 points, so my {{v:score}} was 15 points {{g:higher this time|비교급: high → higher (더 높은)}}. My mom was very happy, and she made pizza for dinner {{g:to celebrate|to부정사(목적): ~하기 위해}}.\n\nNext time, I will {{v:practice}} more word problems {{g:because I want to get|because + 주어 + 동사: ~ 때문에 / want to + 동사원형: ~하고 싶다}} a {{v:perfect}} score of 100 points.",
+    "tags": {
+      "vocab": [
+        "fractions",
+        "nervous",
+        "However",
+        "difficult",
+        "solved",
+        "carefully",
+        "checked",
+        "score",
+        "practice",
+        "perfect"
+      ],
+      "grammar": [
+        "when + 주어 + 동사 (시간)",
+        "접속사 so (결과)",
+        "However (대조)",
+        "비교급 (higher)",
+        "to부정사 목적 (to celebrate)",
+        "because + 주어 + 동사 (이유)"
+      ],
+      "topic": [
+        "시험",
+        "노력",
+        "성장"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "43a0f82b-5318-4848-a52a-fee0b0db9332",
+        "type": "mc",
+        "q": "What is the diary mainly about?",
+        "choices": [
+          "A pizza party at home",
+          "A math test and a better score",
+          "How to make new friends",
+          "A trip with Ms. Kang",
+          "Learning a new sport"
+        ],
+        "answer": "A math test and a better score",
+        "explanation": "수학 시험을 보고 지난달보다 점수가 오른 이야기이다."
+      },
+      {
+        "qid": "ef7f16d9-f37e-4327-992c-b9b227c3f81b",
+        "type": "mc",
+        "q": "Why did the writer finish the first ten questions quickly?",
+        "choices": [
+          "Because they were easy",
+          "Because the writer skipped them",
+          "Because Ms. Kang helped",
+          "Because the time was short",
+          "Because they were about pizza"
+        ],
+        "answer": "Because they were easy",
+        "explanation": "'The first ten questions were easy, so I finished them quickly.'"
+      },
+      {
+        "qid": "b1341c3a-a56c-497d-9bf1-02c5a367b5e2",
+        "type": "mc",
+        "q": "How did the writer solve questions 15 and 18?",
+        "choices": [
+          "Quickly and easily",
+          "With a friend",
+          "Slowly and carefully",
+          "Without checking",
+          "By guessing"
+        ],
+        "answer": "Slowly and carefully",
+        "explanation": "'I solved them slowly and carefully'"
+      },
+      {
+        "qid": "e0b502b0-ddb7-412e-9931-6d2d2a77af7a",
+        "type": "mc",
+        "q": "What did the writer do after solving the difficult questions?",
+        "choices": [
+          "Went to lunch",
+          "Called Mom",
+          "Gave the test to a friend",
+          "Took a nap",
+          "Checked all the answers two times"
+        ],
+        "answer": "Checked all the answers two times",
+        "explanation": "'and then I checked all my answers two times.'"
+      },
+      {
+        "qid": "78251af6-8a85-4783-a3aa-d242af4bcc86",
+        "type": "mc",
+        "q": "How much higher was the writer's score than last month?",
+        "choices": [
+          "5 points",
+          "10 points",
+          "15 points",
+          "20 points",
+          "25 points"
+        ],
+        "answer": "15 points",
+        "explanation": "'my score was 15 points higher this time' (75점 → 90점)"
+      },
+      {
+        "qid": "d6e470f7-f7a4-44b1-a4b8-32e22616c588",
+        "type": "mc",
+        "q": "Why did Mom make pizza for dinner?",
+        "choices": [
+          "Because it was her birthday",
+          "Because the writer was hungry",
+          "Because Ms. Kang asked her",
+          "To celebrate the writer's score",
+          "Because pizza was cheap"
+        ],
+        "answer": "To celebrate the writer's score",
+        "explanation": "'she made pizza for dinner to celebrate.' 좋은 점수를 축하하기 위해서이다."
+      },
+      {
+        "qid": "d1539723-38dd-44b0-a459-fafdfa87a189",
+        "type": "mc",
+        "q": "What does \"them\" refer to in \"I solved them slowly and carefully\"?",
+        "choices": [
+          "the first ten questions",
+          "questions 15 and 18",
+          "all the tests",
+          "word problems",
+          "fractions"
+        ],
+        "answer": "questions 15 and 18",
+        "explanation": "바로 앞 문장의 'questions 15 and 18'을 가리킨다."
+      },
+      {
+        "qid": "bb758cdd-5353-4e5e-9df2-3bef12cc7c00",
+        "type": "mc",
+        "q": "What is the writer's goal for the next test?",
+        "choices": [
+          "To get 75 points",
+          "To get 90 points again",
+          "To finish the test first",
+          "To help a friend",
+          "To get a perfect score of 100 points"
+        ],
+        "answer": "To get a perfect score of 100 points",
+        "explanation": "'I want to get a perfect score of 100 points.'"
+      },
+      {
+        "qid": "82b69c23-a94f-4aca-9266-44fee9873b6b",
+        "type": "mc",
+        "q": "다음 중 'However'와 바꿔 쓸 수 있는 말은?",
+        "choices": [
+          "So",
+          "Because",
+          "But",
+          "And",
+          "Then"
+        ],
+        "answer": "But",
+        "explanation": "However는 '그러나, 하지만'이라는 뜻으로 But과 바꿔 쓸 수 있다."
+      },
+      {
+        "qid": "96a717b1-c2d2-41c1-839f-9d280df20cf5",
+        "type": "mc",
+        "q": "다음 중 'perfect'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "완벽한",
+          "어려운",
+          "긴장한",
+          "조용한",
+          "중요한"
+        ],
+        "answer": "완벽한",
+        "explanation": "a perfect score = 만점(완벽한 점수)."
+      },
+      {
+        "qid": "08a7b305-54d5-42c3-bdf6-55027c988c25",
+        "type": "blank",
+        "q": "Last night, I studied hard for two ___.",
+        "answer": "hours",
+        "explanation": "'I studied hard for two hours'"
+      },
+      {
+        "qid": "c40a445f-1509-4ff9-8577-4c0926012a28",
+        "type": "blank",
+        "q": "I still felt ___ when I woke up in the morning.",
+        "answer": "nervous",
+        "explanation": "nervous는 '긴장한, 떨리는'이라는 뜻이다."
+      },
+      {
+        "qid": "0a25ddf6-8b50-4853-81cb-7184738c8180",
+        "type": "blank",
+        "q": "However, questions 15 and 18 were really ___.",
+        "answer": "difficult",
+        "explanation": "'questions 15 and 18 were really difficult.'"
+      },
+      {
+        "qid": "24b39b00-bd40-4c26-9ee3-f7d99e90df73",
+        "type": "blank",
+        "q": "I solved them slowly and ___.",
+        "answer": "carefully",
+        "explanation": "carefully는 '신중하게, 조심스럽게'라는 뜻이다."
+      },
+      {
+        "qid": "9c37479e-e2ba-41bf-96bd-330fa8508083",
+        "type": "blank",
+        "q": "My mom made pizza for dinner to ___.",
+        "answer": "celebrate",
+        "explanation": "to celebrate: 축하하기 위해 (to부정사의 목적)"
+      },
+      {
+        "qid": "a2f2f078-9145-453f-9245-d191ea433358",
+        "type": "tf",
+        "q": "The writer felt nervous even after studying for two hours.",
+        "answer": true,
+        "explanation": "'I studied hard for two hours, but I still felt nervous'"
+      },
+      {
+        "qid": "47243a13-4458-4e5e-8d6c-bd62d4e799a1",
+        "type": "tf",
+        "q": "The writer got 75 points on this test.",
+        "answer": false,
+        "explanation": "75점은 지난달 점수이고, 이번에는 90점을 받았다."
+      },
+      {
+        "qid": "b9cb73b7-4662-4c0f-b0d9-7f94d43b1094",
+        "type": "tf",
+        "q": "The writer wants to practice more word problems.",
+        "answer": true,
+        "explanation": "'I will practice more word problems'"
+      },
+      {
+        "qid": "0db73aa8-ca79-41f8-ad01-7d73fed305ff",
+        "type": "mc",
+        "q": "빈칸에 알맞은 말은? \"The first ten questions were easy, ____ I finished them quickly.\"",
+        "choices": [
+          "because",
+          "so",
+          "but",
+          "when",
+          "or"
+        ],
+        "answer": "so",
+        "explanation": "앞 문장(쉬웠다)이 원인, 뒤 문장(빨리 끝냈다)이 결과이므로 결과를 나타내는 so(그래서)가 알맞다."
+      },
+      {
+        "qid": "66734172-23fb-427a-85a2-3bfdec75d650",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "However",
+            "meaning": "그러나"
+          },
+          {
+            "word": "carefully",
+            "meaning": "신중하게"
+          },
+          {
+            "word": "celebrate",
+            "meaning": "축하하다"
+          },
+          {
+            "word": "perfect",
+            "meaning": "완벽한"
+          },
+          {
+            "word": "practice",
+            "meaning": "연습하다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "00df96c4-11dc-40a3-89dc-9c03b61d1a32",
+        "q": "Why did the writer's mom make pizza for dinner? Write in English.",
+        "wordLimit": 15,
+        "sampleAnswer": "She made pizza to celebrate the writer's good score.",
+        "rubric": "① 이유(점수를 축하하려고) ② to celebrate 또는 because 사용 ③ 완전한 문장"
+      },
+      {
+        "qid": "d8db81a8-798d-49bd-b88f-4e25cff01b10",
+        "q": "Compare the writer's score this month and last month in one sentence. Use 'higher'.",
+        "wordLimit": 20,
+        "sampleAnswer": "The writer's score was 15 points higher than last month.",
+        "rubric": "① 비교급 higher (than) 사용 ② 15 points 포함 ③ 완전한 문장"
+      },
+      {
+        "qid": "e42e7939-0b1f-4c8f-a634-e4a909780181",
+        "q": "What did the writer do with questions 15 and 18? Write in English.",
+        "wordLimit": 20,
+        "sampleAnswer": "The writer solved them slowly and carefully and checked all the answers two times.",
+        "rubric": "① 천천히·신중하게 풀었다 ② 답을 두 번 확인했다 ③ 과거형 동사"
+      },
+      {
+        "qid": "6f848a92-5979-4eb8-ac2e-c15eac80fd9a",
+        "q": "Write your plan for your next test. Use 'because'.",
+        "wordLimit": 25,
+        "sampleAnswer": "I will study every day because I want to get a better score.",
+        "rubric": "① because + 주어 + 동사 ② will 또는 계획 표현 ③ 완전한 문장"
+      },
+      {
+        "qid": "873fe58d-e215-415c-b801-1f56f57388e9",
+        "q": "Write 3 sentences about a time you felt nervous. Use 'when'.",
+        "wordLimit": 40,
+        "sampleAnswer": "I felt nervous when I sang in front of my class. My hands were shaking. But my friends clapped, and I felt happy.",
+        "rubric": "① when + 주어 + 동사 사용 ② 과거형 ③ 완전한 문장 3개"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "fraction",
+        "surface": "fractions",
+        "pos": "명",
+        "meaning": "분수",
+        "sentence": "Today we had a math test about fractions."
+      },
+      {
+        "word": "nervous",
+        "surface": "nervous",
+        "pos": "형",
+        "meaning": "긴장한, 떨리는",
+        "sentence": "Last night, I studied hard for two hours, but I still felt nervous when I woke up in the morning."
+      },
+      {
+        "word": "however",
+        "surface": "However",
+        "pos": "부",
+        "meaning": "그러나, 하지만",
+        "sentence": "However, questions 15 and 18 were really difficult."
+      },
+      {
+        "word": "difficult",
+        "surface": "difficult",
+        "pos": "형",
+        "meaning": "어려운",
+        "sentence": "However, questions 15 and 18 were really difficult."
+      },
+      {
+        "word": "solve",
+        "surface": "solved",
+        "pos": "동",
+        "meaning": "(문제를) 풀다",
+        "sentence": "I solved them slowly and carefully, and then I checked all my answers two times."
+      },
+      {
+        "word": "carefully",
+        "surface": "carefully",
+        "pos": "부",
+        "meaning": "신중하게, 조심스럽게",
+        "sentence": "I solved them slowly and carefully, and then I checked all my answers two times."
+      },
+      {
+        "word": "check",
+        "surface": "checked",
+        "pos": "동",
+        "meaning": "확인하다, 점검하다",
+        "sentence": "I solved them slowly and carefully, and then I checked all my answers two times."
+      },
+      {
+        "word": "score",
+        "surface": "score",
+        "pos": "명",
+        "meaning": "점수",
+        "sentence": "Last month, I got only 75 points, so my score was 15 points higher this time."
+      },
+      {
+        "word": "practice",
+        "surface": "practice",
+        "pos": "동",
+        "meaning": "연습하다",
+        "sentence": "Next time, I will practice more word problems because I want to get a perfect score of 100 points."
+      },
+      {
+        "word": "perfect",
+        "surface": "perfect",
+        "pos": "형",
+        "meaning": "완벽한, 만점의",
+        "sentence": "Next time, I will practice more word problems because I want to get a perfect score of 100 points."
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Thursday, November 13\n\nToday our class took a math test on {{v:fractions}}. {{g:Although I studied for two hours|Although + 주어 + 동사: 비록 ~했지만 (양보)}} the night before, I was still {{v:extremely}} {{v:nervous}} when I arrived at school in the morning.\n\nThe test {{g:consisted of|consist of: ~로 이루어지다}} twenty questions. The first ten were {{g:simple enough for me to answer|형용사 + enough + for 목적어 + to부정사: ~가 …할 만큼 충분히 ~한}} quickly, but questions 15 and 18 were {{v:especially}} {{v:challenging}}. I worked through them slowly and carefully, and then I {{v:reviewed}} all of my answers twice {{g:to avoid|to부정사(목적): ~하기 위해}} {{v:careless}} mistakes.\n\nAfter lunch, Ms. Kang {{v:returned}} our {{v:graded}} tests, and I {{g:found out that|find out + that절: ~라는 것을 알게 되다 (find → found)}} {{t:I received 90 points!}} {{g:Since I scored|Since + 주어 + 동사: ~이기 때문에 (이유)}} only 75 points last month, my score {{v:improved}} by 15 points. My mom was {{g:so proud of me that|so + 형용사 + that ~: 너무 ~해서 …하다}} she made pizza for dinner to {{v:celebrate}}.\n\nFrom now on, I {{g:am going to practice|be going to + 동사원형: ~할 예정이다}} more word problems, because my {{v:goal}} is to {{v:earn}} a {{v:perfect}} score of 100 points next time.",
+    "tags": {
+      "vocab": [
+        "fractions",
+        "extremely",
+        "nervous",
+        "especially",
+        "challenging",
+        "reviewed",
+        "careless",
+        "returned",
+        "graded",
+        "improved",
+        "celebrate",
+        "goal",
+        "earn",
+        "perfect"
+      ],
+      "grammar": [
+        "Although (양보)",
+        "consist of",
+        "형용사 + enough + to부정사",
+        "to부정사 목적 (to avoid)",
+        "Since (이유)",
+        "so ~ that 구문",
+        "be going to + 동사원형"
+      ],
+      "topic": [
+        "시험",
+        "노력",
+        "성장",
+        "목표 세우기"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "ba31b00b-04e2-47c3-8900-ccd189acb96e",
+        "type": "mc",
+        "q": "What is the best title for the diary?",
+        "choices": [
+          "My Favorite Pizza",
+          "A Bad Day at School",
+          "Hard Work Brings a Better Score",
+          "Ms. Kang's Math Class",
+          "Why Fractions Are Easy"
+        ],
+        "answer": "Hard Work Brings a Better Score",
+        "explanation": "열심히 공부하고 신중하게 푼 결과 점수가 올랐다는 내용이므로 \"노력이 더 좋은 점수를 가져온다\"가 알맞다."
+      },
+      {
+        "qid": "d9ebde0a-ffb5-4492-b520-16696a8eab5d",
+        "type": "mc",
+        "q": "Which is true about the writer before the test?",
+        "choices": [
+          "The writer didn't study at all.",
+          "The writer studied but still felt nervous.",
+          "The writer felt very relaxed.",
+          "The writer studied with Ms. Kang.",
+          "The writer was sick."
+        ],
+        "answer": "The writer studied but still felt nervous.",
+        "explanation": "'Although I studied for two hours the night before, I was still extremely nervous'"
+      },
+      {
+        "qid": "21de99b8-40f4-4d2d-95e6-cc6392c10468",
+        "type": "mc",
+        "q": "What does \"consisted of\" mean in the passage?",
+        "choices": [
+          "~로 이루어져 있었다",
+          "~을 끝냈다",
+          "~을 잃어버렸다",
+          "~을 바꾸었다",
+          "~을 시작했다"
+        ],
+        "answer": "~로 이루어져 있었다",
+        "explanation": "'The test consisted of twenty questions.' 시험은 20문제로 이루어져 있었다."
+      },
+      {
+        "qid": "13c12da0-f320-48f9-9e7c-0e0bd73e117c",
+        "type": "mc",
+        "q": "Why did the writer review all of the answers twice?",
+        "choices": [
+          "To finish early",
+          "To help friends",
+          "To avoid careless mistakes",
+          "To get pizza",
+          "To please Ms. Kang"
+        ],
+        "answer": "To avoid careless mistakes",
+        "explanation": "'I reviewed all of my answers twice to avoid careless mistakes.'"
+      },
+      {
+        "qid": "b20d3be1-eb64-48b6-a644-96b363a493ad",
+        "type": "mc",
+        "q": "Which word is closest in meaning to \"challenging\"?",
+        "choices": [
+          "easy",
+          "boring",
+          "difficult",
+          "careless",
+          "simple"
+        ],
+        "answer": "difficult",
+        "explanation": "challenging은 '어려운, 도전적인'이라는 뜻으로 difficult와 비슷하다."
+      },
+      {
+        "qid": "b1e959a1-6166-4b99-a8d3-87bbb84c1281",
+        "type": "mc",
+        "q": "How did the writer's score change?",
+        "choices": [
+          "It dropped by 15 points.",
+          "It stayed the same.",
+          "It improved by 10 points.",
+          "It improved by 15 points.",
+          "It improved by 25 points."
+        ],
+        "answer": "It improved by 15 points.",
+        "explanation": "'my score improved by 15 points' (75점 → 90점)"
+      },
+      {
+        "qid": "8c3deb1b-1558-4e58-b861-e918d84251df",
+        "type": "mc",
+        "q": "What does \"graded\" mean in \"our graded tests\"?",
+        "choices": [
+          "채점된",
+          "찢어진",
+          "새로 받은",
+          "어려운",
+          "잃어버린"
+        ],
+        "answer": "채점된",
+        "explanation": "grade는 '채점하다'라는 뜻이고, graded tests는 '채점된 시험지'이다."
+      },
+      {
+        "qid": "c208a598-cd92-4010-b89b-fde03055d2c8",
+        "type": "mc",
+        "q": "Why did the writer's mom make pizza?",
+        "choices": [
+          "She was too tired to cook.",
+          "The writer asked for it.",
+          "It was a holiday.",
+          "Ms. Kang told her to.",
+          "She was proud of the writer's score."
+        ],
+        "answer": "She was proud of the writer's score.",
+        "explanation": "'My mom was so proud of me that she made pizza for dinner to celebrate.'"
+      },
+      {
+        "qid": "6743f282-9616-49b7-b7af-8c4175226bf4",
+        "type": "mc",
+        "q": "What is the writer's goal?",
+        "choices": [
+          "to study less",
+          "to earn a perfect score of 100 points",
+          "to earn 90 points again",
+          "to skip word problems",
+          "to become a math teacher"
+        ],
+        "answer": "to earn a perfect score of 100 points",
+        "explanation": "'my goal is to earn a perfect score of 100 points next time.'"
+      },
+      {
+        "qid": "7254e6e0-375f-4070-83d0-540ba41b70ba",
+        "type": "mc",
+        "q": "What lesson can we learn from the diary?",
+        "choices": [
+          "Tests are not important.",
+          "Effort can lead to improvement.",
+          "Pizza makes you smart.",
+          "Easy questions are the best.",
+          "Nervous students get low scores."
+        ],
+        "answer": "Effort can lead to improvement.",
+        "explanation": "공부하고, 신중하게 풀고, 다시 확인한 노력 덕분에 점수가 올랐다."
+      },
+      {
+        "qid": "e3dc6865-6eb9-481e-980d-b4f9e2d3b5c4",
+        "type": "blank",
+        "q": "Although I studied for two hours the night before, I was still extremely ___.",
+        "answer": "nervous",
+        "explanation": "nervous는 '긴장한, 떨리는'이라는 뜻이다."
+      },
+      {
+        "qid": "30ea3de2-6a29-430e-802b-eca7cf1cc9d0",
+        "type": "blank",
+        "q": "The first ten were simple ___ for me to answer quickly.",
+        "answer": "enough",
+        "explanation": "형용사 + enough + for 목적어 + to부정사: ~가 …할 만큼 충분히 ~한"
+      },
+      {
+        "qid": "d2a2e40f-da91-46d1-a18b-5297f590ab96",
+        "type": "blank",
+        "q": "I reviewed all of my answers twice to avoid ___ mistakes.",
+        "answer": "careless",
+        "explanation": "careless mistakes = 부주의한 실수"
+      },
+      {
+        "qid": "332bf3fe-f43c-4268-909b-bff31fbf0db1",
+        "type": "blank",
+        "q": "Since I scored only 75 points last month, my score ___ by 15 points.",
+        "answer": "improved",
+        "explanation": "improve(향상되다)의 과거형 improved."
+      },
+      {
+        "qid": "251bd6b9-4409-458a-9372-847687403887",
+        "type": "blank",
+        "q": "My goal is to ___ a perfect score of 100 points next time.",
+        "answer": "earn",
+        "explanation": "earn은 '(노력해서) 얻다, 받다'라는 뜻이다."
+      },
+      {
+        "qid": "29a283ab-1565-4875-884d-81bb41239737",
+        "type": "tf",
+        "q": "Questions 15 and 18 were the easiest ones on the test.",
+        "answer": false,
+        "explanation": "'questions 15 and 18 were especially challenging' 특히 어려운 문제였다."
+      },
+      {
+        "qid": "e5d80af4-c37c-4214-922f-8e5f00d6195a",
+        "type": "tf",
+        "q": "Ms. Kang returned the tests after lunch.",
+        "answer": true,
+        "explanation": "'After lunch, Ms. Kang returned our graded tests'"
+      },
+      {
+        "qid": "8bd90ffc-abe8-4b4b-b0e7-67373236e55b",
+        "type": "tf",
+        "q": "The writer scored 90 points last month.",
+        "answer": false,
+        "explanation": "지난달은 75점이었고, 이번에 90점을 받았다."
+      },
+      {
+        "qid": "35c90d69-c284-4e53-8528-50a3cfd5f5af",
+        "type": "mc",
+        "q": "다음 중 어법상 틀린 문장은?",
+        "choices": [
+          "The test consisted of twenty questions.",
+          "The first ten were simple enough for me to answer quickly.",
+          "I reviewed all of my answers twice to avoid careless mistakes.",
+          "My mom was so proud of me that she made pizza.",
+          "From now on, I am going to practicing more word problems."
+        ],
+        "answer": "From now on, I am going to practicing more word problems.",
+        "explanation": "be going to 뒤에는 동사원형이 온다 (am going to practicing ✕ → am going to practice ○)."
+      },
+      {
+        "qid": "d41dacd5-c29c-4510-9fde-4db682502acf",
+        "type": "match",
+        "pairs": [
+          {
+            "word": "extremely",
+            "meaning": "매우, 극도로"
+          },
+          {
+            "word": "especially",
+            "meaning": "특히"
+          },
+          {
+            "word": "challenging",
+            "meaning": "어려운"
+          },
+          {
+            "word": "careless",
+            "meaning": "부주의한"
+          },
+          {
+            "word": "improve",
+            "meaning": "향상되다"
+          }
+        ]
+      }
+    ],
+    "essays": [
+      {
+        "qid": "e3977004-9dc6-49dc-9fcc-0bc7870203bf",
+        "q": "Summarize the diary in one or two sentences in English.",
+        "wordLimit": 35,
+        "sampleAnswer": "The writer was nervous about a math test, but solved the questions carefully and got 90 points. Now the writer is going to practice more to get 100 points.",
+        "rubric": "① 시험·노력·점수 향상·다음 목표 중 3가지 이상 ② 문법 오류 최소화 ③ 1~2문장"
+      },
+      {
+        "qid": "7c21c928-15cf-4127-92c5-d22b36b8187b",
+        "q": "다음 두 문장을 'so ~ that'을 사용해 한 문장으로 쓰시오: \"My mom was very proud of me.\" / \"She made pizza for dinner.\"",
+        "wordLimit": 20,
+        "sampleAnswer": "My mom was so proud of me that she made pizza for dinner.",
+        "rubric": "① so + 형용사 + that 구조 ② 시제 일치(과거) ③ 완전한 문장"
+      },
+      {
+        "qid": "e4d8dc12-9033-491a-bf4c-686f5dc454fb",
+        "q": "Why did the writer review the answers twice? Answer with 'to + 동사원형'.",
+        "wordLimit": 20,
+        "sampleAnswer": "The writer reviewed the answers twice to avoid careless mistakes.",
+        "rubric": "① to부정사(목적) 사용 ② avoid careless mistakes 내용 ③ 완전한 문장"
+      },
+      {
+        "qid": "9bba4c12-ad60-48b5-8a41-1d1f2ffcc1f7",
+        "q": "What is your goal for your next English test? What are you going to do? Use 'be going to'. (3 sentences)",
+        "wordLimit": 45,
+        "sampleAnswer": "My goal is to get 95 points on my next English test. I am going to memorize ten new words every day. I am also going to review my mistakes carefully.",
+        "rubric": "① be going to + 동사원형 사용 ② 목표와 계획 모두 포함 ③ 완전한 문장 3개"
+      },
+      {
+        "qid": "5ca003fc-24c6-4e5f-8a05-e8752b7d2f49",
+        "q": "Do you think checking your answers is important? Write your opinion with a reason. (3-4 sentences)",
+        "wordLimit": 60,
+        "sampleAnswer": "Yes, I think checking my answers is very important. When I solve problems quickly, I often make careless mistakes. If I review my answers, I can find and fix them. That is why I always check my test twice.",
+        "rubric": "① 찬반 의견이 분명함 ② 이유 1가지 이상 ③ 접속사(when/if/because 등) 사용 ④ 3~4문장"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "fraction",
+        "surface": "fractions",
+        "pos": "명",
+        "meaning": "분수",
+        "sentence": "Today our class took a math test on fractions."
+      },
+      {
+        "word": "extremely",
+        "surface": "extremely",
+        "pos": "부",
+        "meaning": "매우, 극도로",
+        "sentence": "Although I studied for two hours the night before, I was still extremely nervous when I arrived at school in the morning."
+      },
+      {
+        "word": "nervous",
+        "surface": "nervous",
+        "pos": "형",
+        "meaning": "긴장한, 떨리는",
+        "sentence": "Although I studied for two hours the night before, I was still extremely nervous when I arrived at school in the morning."
+      },
+      {
+        "word": "especially",
+        "surface": "especially",
+        "pos": "부",
+        "meaning": "특히",
+        "sentence": "The first ten were simple enough for me to answer quickly, but questions 15 and 18 were especially challenging."
+      },
+      {
+        "word": "challenging",
+        "surface": "challenging",
+        "pos": "형",
+        "meaning": "어려운, 도전적인",
+        "sentence": "The first ten were simple enough for me to answer quickly, but questions 15 and 18 were especially challenging."
+      },
+      {
+        "word": "review",
+        "surface": "reviewed",
+        "pos": "동",
+        "meaning": "다시 살펴보다, 검토하다",
+        "sentence": "I worked through them slowly and carefully, and then I reviewed all of my answers twice to avoid careless mistakes."
+      },
+      {
+        "word": "careless",
+        "surface": "careless",
+        "pos": "형",
+        "meaning": "부주의한",
+        "sentence": "I worked through them slowly and carefully, and then I reviewed all of my answers twice to avoid careless mistakes."
+      },
+      {
+        "word": "return",
+        "surface": "returned",
+        "pos": "동",
+        "meaning": "돌려주다",
+        "sentence": "Kang returned our graded tests, and I found out that I received 90 points!"
+      },
+      {
+        "word": "grade",
+        "surface": "graded",
+        "pos": "동",
+        "meaning": "채점하다, 성적을 매기다",
+        "sentence": "Kang returned our graded tests, and I found out that I received 90 points!"
+      },
+      {
+        "word": "improve",
+        "surface": "improved",
+        "pos": "동",
+        "meaning": "향상되다, 나아지다",
+        "sentence": "Since I scored only 75 points last month, my score improved by 15 points."
+      },
+      {
+        "word": "celebrate",
+        "surface": "celebrate",
+        "pos": "동",
+        "meaning": "축하하다",
+        "sentence": "My mom was so proud of me that she made pizza for dinner to celebrate."
+      },
+      {
+        "word": "goal",
+        "surface": "goal",
+        "pos": "명",
+        "meaning": "목표",
+        "sentence": "From now on, I am going to practice more word problems, because my goal is to earn a perfect score of 100 points next time."
+      },
+      {
+        "word": "earn",
+        "surface": "earn",
+        "pos": "동",
+        "meaning": "얻다, 받다",
+        "sentence": "From now on, I am going to practice more word problems, because my goal is to earn a perfect score of 100 points next time."
+      },
+      {
+        "word": "perfect",
+        "surface": "perfect",
+        "pos": "형",
+        "meaning": "완벽한, 만점의",
+        "sentence": "From now on, I am going to practice more word problems, because my goal is to earn a perfect score of 100 points next time."
+      }
+    ]
+  }
+}
