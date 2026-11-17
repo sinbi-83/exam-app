@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 B
               </div>
               <div>
-                <p className="text-white font-semibold text-sm leading-tight">보스턴S영어</p>
+                <p className="text-white font-semibold text-sm leading-tight">봐스퉌S영어</p>
                 <p className="text-[11px]" style={{ color: 'var(--sidebar-text)' }}>관리 시스템</p>
               </div>
             </div>
