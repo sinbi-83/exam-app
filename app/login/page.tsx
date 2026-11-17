@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabaseBrowser'
 import { safeNextPath } from '@/lib/safeRedirect'
+import { BRAND } from '@/config/brand'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -36,11 +37,13 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
+    <div className="portal-login flex min-h-screen items-center justify-center px-5 py-10">
       <form
         onSubmit={handleLogin}
-        className="w-full max-w-sm rounded-lg bg-white p-8 shadow-md"
+        className="portal-login-card w-full max-w-sm rounded-lg bg-white p-8"
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={BRAND.logo} alt={`${BRAND.name} 로고`} width="112" height="90" className="portal-login-logo" />
         <h1 className="mb-6 text-xl font-semibold text-gray-800">
           보스턴S영어 로그인
         </h1>

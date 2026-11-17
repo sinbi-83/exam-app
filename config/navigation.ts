@@ -89,7 +89,7 @@ export const NAV_GROUPS: NavGroup[] = [
 ]
 
 export const NAV_LEGACY: NavItem[] = [
-  { label: '이전 문제 생성기', href: '/', icon: '🕐' },
+  { label: '이전 문제 생성기', href: '/legacy/generator', icon: '🕐' },
   { label: '시험지 기록', href: '/history', icon: '📜' },
 ]
 

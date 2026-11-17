@@ -25,7 +25,7 @@ import {
 import { inHomeworkView, isOverdueOn, parseHomeworkView } from '../lib/homeworkView.ts'
 import { assignmentStatus, diffAssignees, examProgress, gradedKeys, isTableMissing as isAssignTableMissing, waitingCount } from '../lib/examAssignments.ts'
 import { isColumnMissing, isReportSentVia, isReportStatus, reportStatusPatch } from '../lib/reportStatus.ts'
-import { NAV_GROUPS } from '../config/navigation.ts'
+import { NAV_GROUPS, NAV_LEGACY } from '../config/navigation.ts'
 
 const ROOT = process.cwd()
 
@@ -222,11 +222,12 @@ test('오늘 시간표: 시작 시각 순, 시각 없는 일정은 뒤, 표시�
   assert.equal(formatTime(null), '')
 })
 
-test('대시보드 화면 문구: 빈 상태 문구 2개, 폭 1,400px', () => {
+test('대시보드 화면 문구: 빈 상태 문구 2개, 포털 본문 폭 1,160px', () => {
   const page = readFileSync(resolve(ROOT, 'app/dashboard/page.tsx'), 'utf-8')
   assert.match(page, /오늘 등록된 수업 일정 없음/)
   assert.match(page, /현재 처리 대기 중인 업무가 없습니다/)
-  assert.match(page, /max-w-\[1400px\]/)
+  const css = readFileSync(resolve(ROOT, 'app/globals.css'), 'utf-8')
+  assert.match(css, /\.portal-container\s*\{[^}]*1160px/)
 })
 
 test('숙제 보기 필터: 한국 날짜 기준 마감 지남·임박·둘 다', () => {
@@ -266,11 +267,14 @@ test('숙제·원비 화면이 ?view= 를 읽고, 숙제는 UTC 날짜를 쓰지
   assert.match(tuitionPage, /get\('view'\) === 'unpaid'/)
 })
 
-test('메뉴 맨 위에 대시보드, 옛 생성기(/)는 그대로', () => {
+test('메뉴 맨 위에 대시보드, 옛 생성기는 별도 주소에서 보존', () => {
   assert.equal(NAV_GROUPS[0].href, '/dashboard')
   assert.ok(NAV_GROUPS[0].items.some((i) => i.href === '/dashboard'))
-  const nav = readFileSync(resolve(ROOT, 'config/navigation.ts'), 'utf-8')
-  assert.match(nav, /href: '\/', icon: '🕐'/)
+  assert.equal(NAV_LEGACY[0].href, '/legacy/generator')
+  const home = readFileSync(resolve(ROOT, 'app/page.tsx'), 'utf-8')
+  assert.match(home, /redirect\('\/dashboard'\)/)
+  const generator = readFileSync(resolve(ROOT, 'app/legacy/generator/page.tsx'), 'utf-8')
+  assert.match(generator, /handleGenerate/)
 })
 
 test('로그인 화면은 safeNextPath, 미들웨어는 next 로 원래 주소를 넘긴다', () => {

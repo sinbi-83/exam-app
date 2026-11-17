@@ -2,174 +2,65 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabaseServer'
 import { loadDashboardCounts } from '@/lib/dashboardData'
-import {
-  buildSummaryTiles,
-  buildTaskItems,
-  formatTime,
-  type SummaryTile,
-  type TaskItem,
-  type TaskTone,
-  type TodayEvent,
-} from '@/lib/dashboard'
-
-// 대시보드 (1단계 2026-10-27, 1차 조정 2026-10-28): 로그인 뒤 첫 화면.
-// 상단 지표 3칸 → 처리할 일(60%) | 오늘 수업 시간표(40%) → 빠른 실행.
-// 보여주기만 한다 — 숫자를 누르면 그 학생들만 골라 보이는 처리 화면으로 간다. 계산 규칙은 lib/dashboard.ts.
-// 휴대폰: 위에서 아래로 한 줄씩 / 큰 화면: 약 1,400px 폭으로 펼친다.
+import { buildTaskItems, formatTime, GRADING_WAITING_HREF, REPORTS_TO_SEND_HREF, type TodayEvent } from '@/lib/dashboard'
+import PortalIcon from '../components/PortalIcon'
 
 export const dynamic = 'force-dynamic'
-
 const QUICK_ACTIONS = [
-  { label: '시험 만들기', href: '/create', icon: '📋' },
-  { label: '채점하기', href: '/grading', icon: '✏️' },
-  { label: '보고서 작성', href: '/report', icon: '📝' },
-  { label: '레벨테스트 인쇄', href: '/materials/level-tests', icon: '📏' },
+  { label: '시험 만들기', href: '/create', icon: 'exam' },
+  { label: '채점하기', href: '/grading', icon: 'check' },
+  { label: '보고서 작성', href: '/report', icon: 'mail' },
+  { label: '레벨테스트', href: '/materials/level-tests', icon: 'book' },
 ]
-
-const TONE_CLASS: Record<TaskTone, { row: string; count: string }> = {
-  danger: { row: 'border-red-200 bg-red-50 hover:border-red-400', count: 'text-red-700' },
-  neutral: { row: 'border-gray-200 bg-white hover:border-gray-400', count: 'text-gray-800' },
-  muted: { row: 'border-gray-200 bg-gray-50 hover:border-gray-300', count: 'text-gray-500' },
-}
-
-const EVENT_TYPE_LABEL: Record<string, string> = { class: '수업', exam: '시험', holiday: '휴일', other: '기타' }
-
-function formatToday(date: string): string {
-  const d = new Date(`${date}T00:00:00Z`)
-  const day = ['일', '월', '화', '수', '목', '금', '토'][d.getUTCDay()]
-  return `${d.getUTCMonth() + 1}월 ${d.getUTCDate()}일 (${day})`
-}
-
-function SummaryCard({ tile }: { tile: SummaryTile }) {
-  return (
-    <Link href={tile.href} className="block rounded-lg border border-gray-200 bg-white p-4 hover:border-blue-300">
-      <p className="text-sm font-medium text-gray-600">{tile.label}</p>
-      {tile.error ? (
-        <p className="mt-1 text-sm text-gray-400">{tile.error}</p>
-      ) : (
-        <p className="mt-1 text-2xl font-bold text-gray-800">
-          {tile.count}
-          <span className="ml-0.5 text-base font-semibold">{tile.unit}</span>
-        </p>
-      )}
-    </Link>
-  )
-}
-
-function TaskRow({ item }: { item: TaskItem }) {
-  const tone = TONE_CLASS[item.tone]
-  return (
-    <Link href={item.href} className={`flex items-center justify-between gap-3 rounded-lg border px-4 py-3 ${tone.row}`}>
-      <span className="text-sm font-medium text-gray-700">
-        {item.label}
-        {item.note && <span className="ml-1.5 text-[11px] font-normal text-gray-400">· {item.note}</span>}
-      </span>
-      {item.error ? (
-        <span className="shrink-0 text-sm text-gray-400">{item.error}</span>
-      ) : (
-        <span className={`shrink-0 text-xl font-bold ${tone.count}`}>
-          {item.count}
-          <span className="ml-0.5 text-sm font-semibold">{item.unit}</span>
-        </span>
-      )}
-    </Link>
-  )
-}
-
+const EVENT_TYPE_LABEL: Record<string, string> = { class: '수업', exam: '시험', holiday: '휴일', other: '일정' }
 function EventRow({ event }: { event: TodayEvent }) {
   const start = formatTime(event.start_time)
   const end = formatTime(event.end_time)
-  return (
-    <li className="flex items-center gap-3 border-b border-gray-100 py-2.5 last:border-0">
-      <span className="w-24 shrink-0 text-sm font-medium tabular-nums text-gray-700">
-        {start ? (end ? `${start}~${end}` : start) : '시간 미정'}
-      </span>
-      <span className="flex-1 truncate text-sm text-gray-800">{event.title}</span>
-      {event.event_type !== 'class' && (
-        <span className="shrink-0 rounded-full border border-gray-200 px-2 py-0.5 text-[11px] text-gray-500">
-          {EVENT_TYPE_LABEL[event.event_type] ?? event.event_type}
-        </span>
-      )}
-    </li>
-  )
+  return <tr>
+    <td className="portal-schedule-time">{start || '시간 미정'}{end && <small>~ {end}</small>}</td>
+    <td><Link href="/schedule" className="portal-event-title">{event.title}</Link><span className="portal-event-type">{EVENT_TYPE_LABEL[event.event_type] ?? '일정'}</span></td>
+    <td className="portal-schedule-action"><Link href={event.event_type === 'class' ? '/attendance' : '/schedule'}>{event.event_type === 'class' ? '출석 확인' : '일정 보기'}<PortalIcon name="arrow" width="15" height="15" /></Link></td>
+  </tr>
 }
-
 export default async function DashboardPage() {
   const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login?next=/dashboard')
-
   const { today, counts, errors, events, eventsError } = await loadDashboardCounts(supabase, user.id)
-  const tiles = buildSummaryTiles(counts, errors)
   const tasks = buildTaskItems(counts, errors)
-
+  const date = new Date(`${today}T00:00:00Z`)
+  const dateLabel = new Intl.DateTimeFormat('ko-KR', { timeZone: 'UTC', month: 'long', day: 'numeric', weekday: 'long' }).format(date)
+  const summaries = [
+    { label: '오늘 수업', count: counts.todayClasses, href: '/schedule', error: errors.todayClasses, icon: 'calendar' },
+    { label: '채점 대기', count: counts.gradingWaiting, href: GRADING_WAITING_HREF, error: errors.gradingWaiting, icon: 'check' },
+    { label: '보낼 보고서', count: counts.reportsToSend, href: REPORTS_TO_SEND_HREF, error: errors.reportsToSend, icon: 'mail' },
+  ]
   return (
-    <div className="mx-auto max-w-[1400px]">
-      <h1 className="mb-1 text-xl font-semibold text-gray-800">보스턴S영어 대시보드</h1>
-      <p className="mb-6 text-sm text-gray-500">{formatToday(today)} · 오늘 교습소에서 처리할 일</p>
-
-      <section className="mb-6 grid gap-3 sm:grid-cols-3">
-        {tiles.map((tile) => (
-          <SummaryCard key={tile.key} tile={tile} />
-        ))}
+    <div className="portal-dashboard">
+      <div className="portal-page-heading">
+        <div><p className="portal-eyebrow">보스턴S영어 · 오늘의 교습소</p><h1>오늘의 수업과 업무</h1><p className="portal-page-description">{dateLabel} · 수업 준비부터 채점까지, 오늘 필요한 일을 한곳에서</p></div>
+        <Link href="/create" className="portal-primary"><PortalIcon name="plus" />시험 만들기</Link>
+      </div>
+      <section className="portal-summary" aria-label="오늘 업무 요약">
+        {summaries.map((item) => <Link key={item.label} href={item.href}>
+          <PortalIcon name={item.icon} /><span>{item.label}</span>
+          {item.error ? <small className="portal-summary-error">불러오기 실패</small> : item.count === null ? <small className="portal-summary-error">집계 준비 중</small> : <strong>{item.count}</strong>}
+        </Link>)}
       </section>
-
-      <div className="mb-8 grid gap-6 lg:grid-cols-5">
-        <section className="lg:col-span-3">
-          <h2 className="mb-3 text-sm font-semibold text-gray-600">처리할 일</h2>
-          {tasks.length > 0 ? (
-            <div className="space-y-2">
-              {tasks.map((item) => (
-                <TaskRow key={item.key} item={item} />
-              ))}
-            </div>
-          ) : (
-            <p className="rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-500">
-              현재 처리 대기 중인 업무가 없습니다
-            </p>
-          )}
+      <div className="portal-dashboard-grid">
+        <section className="portal-panel" aria-labelledby="today-schedule-title">
+          <div className="portal-panel-heading"><h2 id="today-schedule-title"><PortalIcon name="calendar" />오늘의 수업 일정</h2><Link href="/schedule">일정 관리<PortalIcon name="arrow" width="14" height="14" /></Link></div>
+          {eventsError ? <div className="portal-empty"><p>{eventsError}</p><Link href="/schedule">일정 화면에서 확인하기 →</Link></div> : events.length ? <div className="portal-table-scroll"><table className="portal-schedule"><thead><tr><th scope="col">시간</th><th scope="col">수업·일정</th><th scope="col">바로가기</th></tr></thead><tbody>{events.map((event) => <EventRow key={event.id} event={event} />)}</tbody></table></div> : <div className="portal-empty"><PortalIcon name="calendar" width="32" height="32" /><p>오늘 등록된 수업 일정 없음</p><span>수업 일정을 등록하면 이곳에 표시됩니다.</span><Link href="/schedule">수업 일정 등록하기 →</Link></div>}
         </section>
-
-        <section className="lg:col-span-2">
-          <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-gray-600">오늘 수업 시간표</h2>
-            <Link href="/schedule" className="text-xs text-gray-400 hover:text-blue-600">
-              일정 관리 →
-            </Link>
-          </div>
-          <div className="rounded-lg border border-gray-200 bg-white px-4 py-1">
-            {eventsError ? (
-              <p className="py-3 text-sm text-gray-400">{eventsError}</p>
-            ) : events.length > 0 ? (
-              <ul>
-                {events.map((e) => (
-                  <EventRow key={e.id} event={e} />
-                ))}
-              </ul>
-            ) : (
-              <p className="py-3 text-sm text-gray-500">오늘 등록된 수업 일정 없음</p>
-            )}
-          </div>
+        <section className="portal-panel" aria-labelledby="priority-tasks-title">
+          <div className="portal-panel-heading"><h2 id="priority-tasks-title"><PortalIcon name="check" />우선 처리 업무</h2></div>
+          {tasks.length ? <ul className="portal-tasks">{tasks.map((item) => <li key={item.key}><Link href={item.href} className={item.tone === 'danger' ? 'is-urgent' : ''}>
+            <span className="portal-task-marker" aria-hidden="true" /><span className="portal-task-copy"><strong>{item.label}</strong>{item.note && <small>{item.note}</small>}{item.error && <small className="portal-task-error">{item.error}</small>}</span>
+            {!item.error && <span className="portal-task-count">{item.count}<small>{item.unit}</small></span>}<PortalIcon name="arrow" width="17" height="17" />
+          </Link></li>)}</ul> : <div className="portal-empty"><PortalIcon name="check" width="32" height="32" /><p>현재 처리 대기 중인 업무가 없습니다</p><span>필요한 일이 생기면 이곳에서 바로 확인할 수 있어요.</span></div>}
         </section>
       </div>
-
-      <section>
-        <h2 className="mb-3 text-sm font-semibold text-gray-600">빠른 실행</h2>
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {QUICK_ACTIONS.map((a) => (
-            <Link
-              key={a.href + a.label}
-              href={a.href}
-              className="flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-3 text-sm font-medium text-gray-700 hover:border-blue-300 hover:bg-blue-50"
-            >
-              <span>{a.icon}</span>
-              {a.label}
-            </Link>
-          ))}
-        </div>
-      </section>
+      <section className="portal-quick-section" aria-label="자주 하는 작업"><h2>빠른 실행</h2><div className="portal-quick-actions">{QUICK_ACTIONS.map((action) => <Link href={action.href} key={action.href}><PortalIcon name={action.icon} width="27" height="27" /><span>{action.label}</span><PortalIcon name="arrow" width="16" height="16" /></Link>)}</div></section>
     </div>
   )
 }

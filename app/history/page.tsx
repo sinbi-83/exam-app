@@ -18,7 +18,7 @@ export default function HistoryPage() {
     <main className="space-y-4">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">지난 문제지</h1>
-        <Link href="/" className="text-sm text-indigo-600 underline underline-offset-2">
+        <Link href="/legacy/generator" className="text-sm text-indigo-600 underline underline-offset-2">
           새 문제 만들기
         </Link>
       </div>
