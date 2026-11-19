@@ -10,6 +10,7 @@ import { TaggedBody, stripTagMarkup } from '@/lib/passageTagRenderer'
 import { copyrightNotice } from '@/config/copyright'
 import A4SheetPrint, { type PrintBlock } from '@/components/A4SheetPrint'
 import { buildMatch } from '@/lib/externalPassageExam'
+import { passageEssayLimit } from '@/lib/passageEssay'
 
 const QTYPE_LABEL: Record<string, string> = {
   mc: '객관식',
@@ -166,7 +167,7 @@ function buildBlocks(
         node: (
           <div className="question-block">
             <p className="text-sm leading-relaxed text-gray-900">
-              {idx + 1}. {e.q} <span className="text-[10px] text-gray-400">({e.wordLimit}자 내외)</span>
+              {idx + 1}. {e.q} <span className="text-[10px] text-gray-400">({passageEssayLimit(e)})</span>
             </p>
             <div className="mt-1 h-16 rounded border border-gray-300" />
           </div>

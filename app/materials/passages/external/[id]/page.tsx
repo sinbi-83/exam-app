@@ -13,6 +13,7 @@ import {
   VARIANT_LABELS,
 } from '@/types/passageBank'
 import { TaggedBody, stripTagMarkup } from '@/lib/passageTagRenderer'
+import { passageEssayLimit } from '@/lib/passageEssay'
 
 export default function ExternalPassageDetailPage() {
   const params = useParams<{ id: string }>()
@@ -756,7 +757,7 @@ function EssayRow({
             {index + 1}
           </span>
           {!editMode && (
-            <span className="text-[11px] text-gray-400">{essay.wordLimit}자 내외</span>
+            <span className="text-[11px] text-gray-400">{passageEssayLimit(essay)}</span>
           )}
         </div>
         {editMode && (
@@ -778,7 +779,7 @@ function EssayRow({
             className="w-full rounded border border-gray-300 px-2 py-1.5 text-sm"
           />
           <div className="flex items-center gap-2">
-            <label className="text-xs text-gray-500">글자 수 제한</label>
+            <label className="text-xs text-gray-500">{essay.wordLimitUnit === 'words' ? '단어 수 제한' : '글자 수 제한'}</label>
             <input
               type="number"
               value={essay.wordLimit}

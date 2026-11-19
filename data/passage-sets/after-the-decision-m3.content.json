@@ -1,0 +1,1630 @@
+{
+  "school": {
+    "tagged_body": "I chose a high school last Friday. It had a science club I wanted to join. The bus ride took twenty minutes. {{g:Before choosing|before 뒤에 동명사: 선택하기 전에}}, I {{v:compared}} schools, talked with my parents, and {{v:visited}} the school. But I still felt {{v:worried}}.\n\nThat evening, my best friend told me {{g:she had chosen|과거완료: 친구가 말하기 전에 학교를 선택했음}} a {{v:different}} school. I worried about eating lunch {{v:alone}}. I also wondered {{g:if the lessons would be|if가 이끄는 간접의문문: 수업이 너무 어려울지}} too {{v:difficult}}. I looked at the school website again, but it did not answer my questions.\n\nMy older sister listened to me. She said, \"You thought carefully about your {{v:choice}}. You cannot know everything before school starts.\"\n\nI opened a {{v:notebook}} and made a list. I could say hello to a {{v:classmate}}, ask a teacher for help, and go to the science club's first {{v:meeting}}. {{t:I still had worries, but now I had a plan.}} I closed the website and put the notebook in my bag.",
+    "tags": {
+      "vocab": [
+        "compared",
+        "visited",
+        "worried",
+        "different",
+        "alone",
+        "difficult",
+        "choice",
+        "notebook",
+        "classmate",
+        "meeting"
+      ],
+      "grammar": [
+        "before 뒤에 동명사: 선택하기 전에",
+        "과거완료: 친구가 말하기 전에 학교를 선택했음",
+        "if가 이끄는 간접의문문: 수업이 너무 어려울지"
+      ],
+      "topic": [
+        "고등학교 선택",
+        "선택 후의 불안",
+        "작은 행동과 준비"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "854680d8-2b55-43ed-999d-10796c84b9fb",
+        "type": "mc",
+        "q": "글쓴이는 언제 고등학교를 선택했나요?",
+        "choices": [
+          "지난 월요일",
+          "지난 금요일",
+          "지난 수요일",
+          "지난 일요일",
+          "오늘 아침"
+        ],
+        "answer": "지난 금요일",
+        "explanation": "근거: \"I chose a high school last Friday.\" last Friday가 선택 시점이다. 다른 요일은 제시되지 않았다."
+      },
+      {
+        "qid": "481833bf-be17-4eac-95cf-6efa134d0375",
+        "type": "mc",
+        "q": "글쓴이가 선택한 학교에서 가입하고 싶은 동아리는 무엇인가요?",
+        "choices": [
+          "축구 동아리",
+          "미술 동아리",
+          "음악 동아리",
+          "과학 동아리",
+          "요리 동아리"
+        ],
+        "answer": "과학 동아리",
+        "explanation": "근거: \"It had a science club I wanted to join.\" science club을 직접 확인한다. 다른 동아리에 관심이 있다는 정보는 없다."
+      },
+      {
+        "qid": "a54bda23-e226-4361-a9cb-1ff671f7e1b2",
+        "type": "mc",
+        "q": "버스를 타고 학교까지 가는 데 걸리는 시간은?",
+        "choices": [
+          "20분",
+          "10분",
+          "15분",
+          "30분",
+          "40분"
+        ],
+        "answer": "20분",
+        "explanation": "근거: \"The bus ride took twenty minutes.\" twenty minutes는 20분이다."
+      },
+      {
+        "qid": "e618bdd2-0eac-46ab-9327-f0bcfeea4c6f",
+        "type": "mc",
+        "q": "학교를 고르기 전에 누구와 이야기했나요?",
+        "choices": [
+          "새 담임 선생님",
+          "동아리 회장",
+          "버스 기사",
+          "친구의 언니",
+          "부모님"
+        ],
+        "answer": "부모님",
+        "explanation": "근거: \"talked with my parents\" 학교를 고르기 전에 부모님과 이야기했다. 다른 대화 상대는 이 준비 과정에 제시되지 않았다."
+      },
+      {
+        "qid": "e0edc363-cd11-4966-b0ba-d3bd53165c70",
+        "type": "mc",
+        "q": "친한 친구가 전한 소식은 무엇인가요?",
+        "choices": [
+          "같은 학교에 간다는 소식",
+          "과학 동아리를 그만뒀다는 소식",
+          "다른 학교를 선택했다는 소식",
+          "학교를 아직 못 골랐다는 소식",
+          "부모님과 버스를 탔다는 소식"
+        ],
+        "answer": "다른 학교를 선택했다는 소식",
+        "explanation": "근거: \"my best friend told me she had chosen a different school\" different school은 글쓴이와 다른 학교이다."
+      },
+      {
+        "qid": "f38deb97-5aed-4496-a9ca-c66295a3678e",
+        "type": "mc",
+        "q": "친구의 소식을 들은 뒤 걱정한 것은 무엇인가요?",
+        "choices": [
+          "혼자 점심 먹기",
+          "버스가 너무 비싼 것",
+          "동아리가 없는 것",
+          "학교 건물이 낡은 것",
+          "누나가 전학 가는 것"
+        ],
+        "answer": "혼자 점심 먹기",
+        "explanation": "근거: \"I worried about eating lunch alone.\" 점심을 혼자 먹게 될 상황을 걱정했다. 나머지 걱정은 본문에 없다."
+      },
+      {
+        "qid": "e03399e1-f04e-460f-b600-75b16ad36705",
+        "type": "mc",
+        "q": "글쓴이의 이야기를 들어 준 가족은 누구인가요?",
+        "choices": [
+          "남동생",
+          "오빠 또는 형",
+          "할머니",
+          "언니 또는 누나",
+          "아버지"
+        ],
+        "answer": "언니 또는 누나",
+        "explanation": "근거: \"My older sister listened to me.\" older sister는 글쓴이 성별에 따라 언니 또는 누나이다. 본문은 글쓴이 성별을 정하지 않았다."
+      },
+      {
+        "qid": "bb82f340-8556-467c-b110-d9ea1e4741cc",
+        "type": "mc",
+        "q": "노트에 적은 행동으로 알맞은 것은?",
+        "choices": [
+          "학교를 매일 다시 고르기",
+          "도움이 필요할 때 선생님께 묻기",
+          "친구를 따라 전학하기",
+          "동아리 활동을 모두 피하기",
+          "점심을 먹지 않기"
+        ],
+        "answer": "도움이 필요할 때 선생님께 묻기",
+        "explanation": "근거: \"ask a teacher for help\" 도움을 요청하는 행동이 목록에 포함된다."
+      },
+      {
+        "qid": "e7c89350-e2b3-4070-a869-ec29a5cbe184",
+        "type": "mc",
+        "q": "글 마지막에서 글쓴이의 상태는 어떠한가요?",
+        "choices": [
+          "걱정이 완전히 사라졌다.",
+          "학교 선택을 취소했다.",
+          "친구와 같은 학교를 골랐다.",
+          "입학 후 첫 수업을 마쳤다.",
+          "걱정은 남았지만 계획이 생겼다."
+        ],
+        "answer": "걱정은 남았지만 계획이 생겼다.",
+        "explanation": "근거: \"I still had worries, but now I had a plan.\" still had worries와 had a plan을 함께 읽어야 한다."
+      },
+      {
+        "qid": "226b0f88-dfe1-47ed-9a70-14cd73b79ae7",
+        "type": "mc",
+        "q": "이 글에 가장 어울리는 제목은 무엇인가요?",
+        "choices": [
+          "첫 과학 실험에 실패한 날",
+          "친구와 같은 학교로 전학 가기",
+          "학교를 고른 뒤, 작은 준비 시작하기",
+          "버스 운전사가 되는 방법",
+          "고등학교 졸업식의 추억"
+        ],
+        "answer": "학교를 고른 뒤, 작은 준비 시작하기",
+        "explanation": "근거: \"I opened a notebook and made a list.\" 학교 선택 후 걱정하던 학생이 행동 목록을 만드는 이야기다. 아직 입학 전이므로 실험·졸업 이야기가 아니다."
+      },
+      {
+        "qid": "f15f52e5-ae7a-47e7-bd85-a52a576d2d22",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (선택했다)\nI ___ a high school last Friday.",
+        "answer": "chose",
+        "explanation": "\"I chose a high school last Friday.\" 문맥에서 '선택했다'에 해당하는 표현은 chose이다."
+      },
+      {
+        "qid": "8a72d960-5307-48e1-9634-3dfa4aa84593",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (어려운)\nI also wondered if the lessons would be too ___.",
+        "answer": "difficult",
+        "explanation": "\"I also wondered if the lessons would be too difficult.\" 문맥에서 '어려운'에 해당하는 표현은 difficult이다."
+      },
+      {
+        "qid": "65485106-7352-460d-805c-52f01f74dea0",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (웹사이트)\nI looked at the school ___ again, but it did not answer my questions.",
+        "answer": "website",
+        "explanation": "\"I looked at the school website again, but it did not answer my questions.\" 문맥에서 '웹사이트'에 해당하는 표현은 website이다."
+      },
+      {
+        "qid": "5047fd30-3e87-4d0f-9017-f71ebe6658c4",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (목록)\nI opened a notebook and made a ___.",
+        "answer": "list",
+        "explanation": "\"I opened a notebook and made a list.\" 문맥에서 '목록'에 해당하는 표현은 list이다."
+      },
+      {
+        "qid": "8def9f24-f75f-4f30-9a81-4b21b0d5a44e",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (가방)\nI closed the website and put the notebook in my ___.",
+        "answer": "bag",
+        "explanation": "\"I closed the website and put the notebook in my bag.\" 문맥에서 '가방'에 해당하는 표현은 bag이다."
+      },
+      {
+        "qid": "4a3726f1-6fd8-4512-956b-bddff726a2f4",
+        "type": "tf",
+        "q": "글쓴이는 학교를 선택하기 전에 부모님과 이야기했다.",
+        "answer": true,
+        "explanation": "근거: \"talked with my parents\" 선택 전에 했던 일 중 하나이다."
+      },
+      {
+        "qid": "582457fa-bddc-4da5-a41f-940dec073778",
+        "type": "tf",
+        "q": "학교 웹사이트는 친구 사귀기와 수업에 관한 모든 걱정을 해결했다.",
+        "answer": false,
+        "explanation": "근거: \"it did not answer my questions\" 웹사이트는 개인적인 질문에 답하지 못했다."
+      },
+      {
+        "qid": "420ea14a-2a5d-455f-8ad7-aae581b3f23c",
+        "type": "tf",
+        "q": "계획에는 과학 동아리의 첫 모임에 가는 것이 포함된다.",
+        "answer": true,
+        "explanation": "근거: \"go to the science club's first meeting\" 목록에 첫 동아리 모임 참석이 들어 있다."
+      },
+      {
+        "qid": "453378ba-e82f-4067-97c3-addaf9eec73e",
+        "type": "mc",
+        "q": "다음 새 문장의 빈칸에 어법상 알맞은 것은? Jina enjoys ___ books after school.",
+        "choices": [
+          "reading",
+          "read",
+          "reads",
+          "to reading",
+          "is reading"
+        ],
+        "answer": "reading",
+        "explanation": "근거: \"Before choosing\" 본문의 choosing처럼 동명사는 -ing 형태이다. 이 새 문장에서 enjoy는 목적어로 동명사를 취하므로 reading이다. 다른 보기들은 enjoy 뒤 구조에 맞지 않는다."
+      },
+      {
+        "qid": "45ee10ec-f8ba-48ea-a5a5-d6de09ef0306",
+        "type": "match",
+        "q": "영어 단어·표현과 이 지문에서의 우리말 뜻을 짝지으세요.",
+        "pairs": [
+          {
+            "word": "compared",
+            "meaning": "비교하다"
+          },
+          {
+            "word": "alone",
+            "meaning": "혼자"
+          },
+          {
+            "word": "choice",
+            "meaning": "선택"
+          },
+          {
+            "word": "classmate",
+            "meaning": "급우"
+          },
+          {
+            "word": "notebook",
+            "meaning": "공책"
+          }
+        ],
+        "explanation": "단어장의 지문 속 뜻을 기준으로 연결한다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "d1eee563-f48f-40b5-8c0e-8c8d67603a3f",
+        "q": "선택한 학교의 좋은 점 두 가지를 영어로 쓰세요. (It had ~ / The bus ride ~ 사용)",
+        "wordLimit": 35,
+        "sampleAnswer": "It had a science club I wanted to join. The bus ride took twenty minutes.",
+        "rubric": "① 과학 동아리와 20분 통학 모두 포함 ② 두 완전한 문장 ③ 같은 의미의 자연스러운 대체 표현 인정.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "aa367f2e-2ed4-467a-a658-5474335c75ca",
+        "q": "친구가 전한 소식을 영어로 쓰세요. (My best friend ~ 로 시작)",
+        "wordLimit": 20,
+        "sampleAnswer": "My best friend had chosen a different school.",
+        "rubric": "① 다른 학교 선택이라는 내용 ② 완전한 문장 ③ had chosen 또는 시점이 명료한 chose 인정.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "bdf852ac-2f7f-40ee-a764-773db231e4dd",
+        "q": "목록에 적힌 행동 중 하나를 영어로 쓰세요. (I could ~ 로 시작)",
+        "wordLimit": 20,
+        "sampleAnswer": "I could ask a teacher for help.",
+        "rubric": "① 인사·선생님께 도움 요청·과학 동아리 첫 모임 중 하나 ② could 뒤 동사원형 ③ 의미가 일치하는 대체 표현 인정.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "5a8e509a-92e6-4d47-a4b6-161be1df4e1e",
+        "q": "노트를 적은 뒤에도 걱정이 남았다는 내용을 but으로 연결하세요. I still had worries. Now I had a plan.",
+        "wordLimit": 25,
+        "sampleAnswer": "I still had worries, but now I had a plan.",
+        "rubric": "① 남은 걱정과 생긴 계획 모두 포함 ② but으로 연결 ③ worries가 완전히 없어졌다고 쓰면 내용 점수 감점.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "1aeae47e-b63d-4008-adbf-d3190a665ce3",
+        "q": "새 학교에서 해 보고 싶은 행동을 영어 두 문장으로 쓰세요. (I will ~ 사용, 자유 응답)",
+        "wordLimit": 30,
+        "sampleAnswer": "I will say hello to a classmate. I will ask a teacher for help.",
+        "rubric": "① 새 학교에서 가능한 행동 두 가지 ② will 뒤 동사원형 ③ 두 완전한 문장. 본문과 다른 적절한 행동도 인정.",
+        "wordLimitUnit": "words"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "compare",
+        "surface": "compared",
+        "pos": "동",
+        "meaning": "비교하다",
+        "sentence": "Before choosing, I compared schools, talked with my parents, and visited the school."
+      },
+      {
+        "word": "visit",
+        "surface": "visited",
+        "pos": "동",
+        "meaning": "방문하다",
+        "sentence": "Before choosing, I compared schools, talked with my parents, and visited the school."
+      },
+      {
+        "word": "worried",
+        "surface": "worried",
+        "pos": "형",
+        "meaning": "걱정하는",
+        "sentence": "But I still felt worried."
+      },
+      {
+        "word": "different",
+        "surface": "different",
+        "pos": "형",
+        "meaning": "다른",
+        "sentence": "That evening, my best friend told me she had chosen a different school."
+      },
+      {
+        "word": "alone",
+        "surface": "alone",
+        "pos": "부",
+        "meaning": "혼자",
+        "sentence": "I worried about eating lunch alone."
+      },
+      {
+        "word": "difficult",
+        "surface": "difficult",
+        "pos": "형",
+        "meaning": "어려운",
+        "sentence": "I also wondered if the lessons would be too difficult."
+      },
+      {
+        "word": "choice",
+        "surface": "choice",
+        "pos": "명",
+        "meaning": "선택",
+        "sentence": "She said, \"You thought carefully about your choice."
+      },
+      {
+        "word": "notebook",
+        "surface": "notebook",
+        "pos": "명",
+        "meaning": "공책",
+        "sentence": "I opened a notebook and made a list."
+      },
+      {
+        "word": "classmate",
+        "surface": "classmate",
+        "pos": "명",
+        "meaning": "급우",
+        "sentence": "I could say hello to a classmate, ask a teacher for help, and go to the science club's first meeting."
+      },
+      {
+        "word": "meeting",
+        "surface": "meeting",
+        "pos": "명",
+        "meaning": "모임",
+        "sentence": "I could say hello to a classmate, ask a teacher for help, and go to the science club's first meeting."
+      }
+    ]
+  },
+  "academy": {
+    "tagged_body": "I finally chose a high school last Friday. It had a science club I wanted to join, and I could get there by bus in twenty minutes. I had compared schools, talked with my parents, and visited the school. Still, I did not feel as {{v:relieved}} {{g:as I had expected|as + 형용사 + as: 예상했던 만큼 안도하는}}.\n\nThat evening, my best friend told me she had chosen a different school. Suddenly, I {{v:pictured}} myself eating lunch {{v:alone}}. {{g:What if|What if + 문장: ~하면 어떡하지?}} everyone else made friends quickly? What if I could not {{v:keep up with}} the lessons? I opened the school website again, but it could not answer those questions.\n\nMy older sister listened to me. \"You've thought {{v:carefully}} about your choice,\" she said. \"But you can't know every part of school life before you begin.\"\n\nI took out a notebook. {{v:Instead of}} comparing schools again, {{t:I wrote down three things I could try}}: say hello to a {{v:classmate}}, ask a teacher for help when {{v:necessary}}, and {{v:attend}} the science club's first meeting.\n\nThe list did not {{v:take away}} all my worries. However, it gave me {{g:something to do|to부정사의 형용사적 용법: 할 무언가}} {{v:besides}} worry. I closed the website and put the notebook in my bag.",
+    "tags": {
+      "vocab": [
+        "relieved",
+        "pictured",
+        "alone",
+        "keep up with",
+        "carefully",
+        "Instead of",
+        "classmate",
+        "necessary",
+        "attend",
+        "take away",
+        "besides"
+      ],
+      "grammar": [
+        "as + 형용사 + as: 예상했던 만큼 안도하는",
+        "What if + 문장: ~하면 어떡하지?",
+        "to부정사의 형용사적 용법: 할 무언가"
+      ],
+      "topic": [
+        "고등학교 선택",
+        "선택 후의 불안",
+        "작은 행동과 준비"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "9799029f-31d2-432f-869d-a8f7abd7faa7",
+        "type": "mc",
+        "q": "Which school activity interested the writer?",
+        "choices": [
+          "Joining a cooking class.",
+          "Joining a science club.",
+          "Playing in a school band.",
+          "Training for a bus race.",
+          "Making a school website."
+        ],
+        "answer": "Joining a science club.",
+        "explanation": "근거: \"a science club I wanted to join\" 원하는 활동은 과학 동아리 가입이다. 다른 활동은 언급되지 않는다."
+      },
+      {
+        "qid": "6a94fd74-1867-4354-a021-2b3868d0d463",
+        "type": "mc",
+        "q": "How could the writer reach the chosen school?",
+        "choices": [
+          "On foot in twenty minutes.",
+          "By bus in forty minutes.",
+          "By train in ten minutes.",
+          "By bus in twenty minutes.",
+          "By bike in thirty minutes."
+        ],
+        "answer": "By bus in twenty minutes.",
+        "explanation": "근거: \"I could get there by bus in twenty minutes\" 교통수단과 소요 시간을 함께 확인한다."
+      },
+      {
+        "qid": "422af242-f2bb-43e0-9521-c607904d747c",
+        "type": "mc",
+        "q": "What did the writer do before making the choice?",
+        "choices": [
+          "Compared schools and talked with parents.",
+          "Attended the first club meeting.",
+          "Ate lunch with new classmates.",
+          "Finished the first high school exam.",
+          "Asked a new teacher for homework."
+        ],
+        "answer": "Compared schools and talked with parents.",
+        "explanation": "근거: \"I had compared schools, talked with my parents, and visited the school.\" 비교·부모님과 대화·학교 방문이 선택 전 행동이다. 나머지는 아직 실행한 일이 아니다."
+      },
+      {
+        "qid": "b57927bf-a094-43c1-94f3-8c5ee35f7db9",
+        "type": "mc",
+        "q": "How did the writer feel after choosing the school?",
+        "choices": [
+          "Completely free from worry.",
+          "Angry with the older sister.",
+          "Certain that every lesson was easy.",
+          "Proud of winning a science prize.",
+          "Less relieved than expected."
+        ],
+        "answer": "Less relieved than expected.",
+        "explanation": "근거: \"I did not feel as relieved as I had expected.\" not as relieved as는 기대했던 만큼 안도하지 못했다는 뜻이다."
+      },
+      {
+        "qid": "26a89d93-136e-4624-a4c7-ac5f5e6ddde6",
+        "type": "mc",
+        "q": "What news did the best friend share that evening?",
+        "choices": [
+          "She had joined the same science club.",
+          "She had met all the new teachers.",
+          "She had chosen a different school.",
+          "She had missed the school bus.",
+          "She had finished visiting the writer."
+        ],
+        "answer": "She had chosen a different school.",
+        "explanation": "근거: \"my best friend told me she had chosen a different school\" 친구가 고른 학교가 다르다는 소식이다."
+      },
+      {
+        "qid": "32ab8105-23b0-4737-a99b-9a2e6ba7962a",
+        "type": "mc",
+        "q": "Which two worries appear in the passage?",
+        "choices": [
+          "Making friends and following the lessons.",
+          "Buying lunch and finding a bus driver.",
+          "Paying club fees and repairing a bag.",
+          "Meeting a sister and losing a notebook.",
+          "Visiting parents and changing a website."
+        ],
+        "answer": "Making friends and following the lessons.",
+        "explanation": "근거: \"What if everyone else made friends quickly? What if I could not keep up with the lessons?\" 친구 관계와 수업을 따라갈 수 있는지를 걱정한다."
+      },
+      {
+        "qid": "f783ee1d-8d21-4b68-8f15-1c546088c224",
+        "type": "mc",
+        "q": "What did the older sister say about school life?",
+        "choices": [
+          "Every school website answers every worry.",
+          "A careful choice prevents all difficulties.",
+          "The friend should change her decision.",
+          "Not every part can be known before starting.",
+          "The writer should avoid asking for help."
+        ],
+        "answer": "Not every part can be known before starting.",
+        "explanation": "근거: \"you can't know every part of school life before you begin\" 시작 전에 학교생활의 모든 부분을 알 수는 없다는 조언이다."
+      },
+      {
+        "qid": "9b5e0b9c-144a-4c0e-84e3-ad4a499f2689",
+        "type": "mc",
+        "q": "Which action was on the writer's new list?",
+        "choices": [
+          "Comparing schools every night again.",
+          "Attending the first science club meeting.",
+          "Telling the friend to change schools.",
+          "Waiting for every worry to disappear.",
+          "Asking the sister to attend all lessons."
+        ],
+        "answer": "Attending the first science club meeting.",
+        "explanation": "근거: \"attend the science club's first meeting\" 목록의 세 번째 행동과 직접 일치한다."
+      },
+      {
+        "qid": "03b9bd20-d172-45ec-93d4-9677eaf92252",
+        "type": "mc",
+        "q": "In \"it gave me something to do,\" what does \"it\" refer to?",
+        "choices": [
+          "The bus.",
+          "The school.",
+          "The website.",
+          "The friend.",
+          "The list."
+        ],
+        "answer": "The list.",
+        "explanation": "근거: \"The list did not take away all my worries. However, it gave me something to do besides worry.\" 앞 문장의 주어 The list를 대명사 it으로 받았다."
+      },
+      {
+        "qid": "ccf21602-8720-4948-bd71-b26656e39a1e",
+        "type": "mc",
+        "q": "What does \"keep up with the lessons\" mean here?",
+        "choices": [
+          "Teach all the lessons to the class.",
+          "Keep every lesson on a website.",
+          "Follow the lessons without falling behind.",
+          "Cancel the lessons before school starts.",
+          "Arrive before the teacher every day."
+        ],
+        "answer": "Follow the lessons without falling behind.",
+        "explanation": "근거: \"What if I could not keep up with the lessons?\" 학습 진도를 따라간다는 의미이다. 도착 시각이나 자료 보관을 뜻하지 않는다."
+      },
+      {
+        "qid": "ee0a0bec-7a02-409d-9e00-7ff222bedc68",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (마침내)\nI ___ chose a high school last Friday.",
+        "answer": "finally",
+        "explanation": "\"I finally chose a high school last Friday.\" 문맥에서 '마침내'에 해당하는 표현은 finally이다."
+      },
+      {
+        "qid": "bdf49e8c-693b-4aa1-bada-903b5f45f902",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (상상했다)\nSuddenly, I ___ myself eating lunch alone.",
+        "answer": "pictured",
+        "explanation": "\"Suddenly, I pictured myself eating lunch alone.\" 문맥에서 '상상했다'에 해당하는 표현은 pictured이다."
+      },
+      {
+        "qid": "1c9896c2-aa21-4a26-ba8f-af41cf954d81",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (귀 기울여 들었다)\nMy older sister ___ to me.",
+        "answer": "listened",
+        "explanation": "\"My older sister listened to me.\" 문맥에서 '귀 기울여 들었다'에 해당하는 표현은 listened이다."
+      },
+      {
+        "qid": "49540eb3-301f-4127-a1a3-3b091e141d79",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (필요한)\nInstead of comparing schools again, I wrote down three things I could try: say hello to a classmate, ask a teacher for help when ___, and attend the science club's first meeting.",
+        "answer": "necessary",
+        "explanation": "\"Instead of comparing schools again, I wrote down three things I could try: say hello to a classmate, ask a teacher for help when necessary, and attend the science club's first meeting.\" 문맥에서 '필요한'에 해당하는 표현은 necessary이다."
+      },
+      {
+        "qid": "2bde32b6-5d48-4a49-8949-74826d1cbd2e",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (없애다)\nThe list did not ___ all my worries.",
+        "answer": "take away",
+        "explanation": "\"The list did not take away all my worries.\" 문맥에서 '없애다'에 해당하는 표현은 take away이다."
+      },
+      {
+        "qid": "7dcc2413-fd6a-4772-bc93-588e888a3d28",
+        "type": "tf",
+        "q": "친구의 소식은 글쓴이가 학교를 고른 바로 그날 저녁에 전해졌다.",
+        "answer": true,
+        "explanation": "근거: \"That evening, my best friend told me\" 학교를 고른 last Friday 뒤의 That evening은 그날 저녁이다."
+      },
+      {
+        "qid": "99553846-652a-4fd0-8057-21762bcdc14b",
+        "type": "tf",
+        "q": "글쓴이는 행동 목록을 적자 모든 걱정이 사라졌다고 말했다.",
+        "answer": false,
+        "explanation": "근거: \"The list did not take away all my worries.\" not ... all이므로 전부 사라진 것이 아니다."
+      },
+      {
+        "qid": "164843b8-794f-479e-a5ed-1f1108e80f8b",
+        "type": "tf",
+        "q": "마지막에 노트는 가방 안에 들어갔다.",
+        "answer": true,
+        "explanation": "근거: \"put the notebook in my bag\" 끝부분에 명시된 행동이다."
+      },
+      {
+        "qid": "2ef0dcd7-e853-44db-86f1-81a987a5446e",
+        "type": "mc",
+        "q": "Choose the correct form for this NEW sentence: Ara checked the map before ___ home.",
+        "choices": [
+          "leaving",
+          "leave",
+          "leaves",
+          "to leaving",
+          "left"
+        ],
+        "answer": "leaving",
+        "explanation": "근거: \"Instead of comparing schools again\" 본문의 of comparing처럼 전치사 뒤 동작은 동명사로 나타낼 수 있다. 새 문장에서도 전치사 before 뒤 leaving이 적절하다."
+      },
+      {
+        "qid": "58124ccc-6d6f-446e-ae81-84f4cfcfdada",
+        "type": "match",
+        "q": "영어 단어·표현과 이 지문에서의 우리말 뜻을 짝지으세요.",
+        "pairs": [
+          {
+            "word": "relieved",
+            "meaning": "안도하는"
+          },
+          {
+            "word": "pictured",
+            "meaning": "상상하다"
+          },
+          {
+            "word": "keep up with",
+            "meaning": "~을 따라가다"
+          },
+          {
+            "word": "necessary",
+            "meaning": "필요한"
+          },
+          {
+            "word": "besides",
+            "meaning": "~외에"
+          }
+        ],
+        "explanation": "단어장의 지문 속 뜻을 기준으로 연결한다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "b1ae1c62-e7b0-4285-8aa5-251680882ed7",
+        "q": "학교 선택 전에 한 일 세 가지를 영어 한 문장으로 쓰세요. (I had ~ 로 시작)",
+        "wordLimit": 30,
+        "sampleAnswer": "I had compared schools, talked with my parents, and visited the school.",
+        "rubric": "① 비교·부모님과 대화·방문 ② had와 병렬 과거분사 ③ talked to 등 자연스러운 표현 인정.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "771f95e5-42db-4519-9dce-8f2376a1e61a",
+        "q": "다음 뜻을 영어로 쓰세요. 나는 수업을 따라가지 못하면 어떡하나 걱정했다. (I worried that ~ / keep up with 사용)",
+        "wordLimit": 30,
+        "sampleAnswer": "I worried that I could not keep up with the lessons.",
+        "rubric": "① 수업을 못 따라갈 가능성에 대한 걱정 ② worried that 뒤 주어·동사 ③ keep up with 표현. 실제 실패했다고 단정하지 않음.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "a2d87a87-457c-4307-84dc-2a930923beb8",
+        "q": "이야기 속 조언을 영어로 쓰세요. (You cannot ~ before ~ 구조 사용)",
+        "wordLimit": 30,
+        "sampleAnswer": "You cannot know every part of school life before you begin.",
+        "rubric": "① 시작 전 모든 학교생활을 알 수 없다는 내용 ② cannot과 before절 ③ 같은 의미의 자연스러운 답 인정.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "c06438fa-9bcf-45c0-bdb2-c022e8048d8d",
+        "q": "학교들을 다시 비교하는 대신 무엇을 했나요? (Instead of ~, I ~ 구조)",
+        "wordLimit": 30,
+        "sampleAnswer": "Instead of comparing schools again, I wrote down three things I could try.",
+        "rubric": "① 비교 대신 행동 목록 작성 ② Instead of 뒤 동명사 ③ 문장 완결성. 목록 행동을 구체적으로 써도 인정.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "7ac30290-8906-42bf-abb4-8cbac5ccc1ae",
+        "q": "목록이 준 도움과 그 한계를 영어 두 문장으로 설명하세요. (The list did not ~ / It gave ~)",
+        "wordLimit": 35,
+        "sampleAnswer": "The list did not take away all my worries. It gave me something to do besides worry.",
+        "rubric": "① 걱정 전부 제거는 아님 ② 할 수 있는 행동 제공 ③ 두 문장으로 내용 대조. 어휘가 달라도 의미가 맞으면 인정.",
+        "wordLimitUnit": "words"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "relieved",
+        "surface": "relieved",
+        "pos": "형",
+        "meaning": "안도하는",
+        "sentence": "Still, I did not feel as relieved as I had expected."
+      },
+      {
+        "word": "picture",
+        "surface": "pictured",
+        "pos": "동",
+        "meaning": "상상하다",
+        "sentence": "Suddenly, I pictured myself eating lunch alone."
+      },
+      {
+        "word": "alone",
+        "surface": "alone",
+        "pos": "부",
+        "meaning": "혼자",
+        "sentence": "Suddenly, I pictured myself eating lunch alone."
+      },
+      {
+        "word": "keep up with",
+        "surface": "keep up with",
+        "pos": "동",
+        "meaning": "~을 따라가다",
+        "sentence": "What if I could not keep up with the lessons?"
+      },
+      {
+        "word": "carefully",
+        "surface": "carefully",
+        "pos": "부",
+        "meaning": "신중하게",
+        "sentence": "\"You've thought carefully about your choice,\" she said."
+      },
+      {
+        "word": "instead of",
+        "surface": "Instead of",
+        "pos": "전",
+        "meaning": "~하는 대신에",
+        "sentence": "Instead of comparing schools again, I wrote down three things I could try: say hello to a classmate, ask a teacher for help when necessary, and attend the science club's first meeting."
+      },
+      {
+        "word": "classmate",
+        "surface": "classmate",
+        "pos": "명",
+        "meaning": "급우",
+        "sentence": "Instead of comparing schools again, I wrote down three things I could try: say hello to a classmate, ask a teacher for help when necessary, and attend the science club's first meeting."
+      },
+      {
+        "word": "necessary",
+        "surface": "necessary",
+        "pos": "형",
+        "meaning": "필요한",
+        "sentence": "Instead of comparing schools again, I wrote down three things I could try: say hello to a classmate, ask a teacher for help when necessary, and attend the science club's first meeting."
+      },
+      {
+        "word": "attend",
+        "surface": "attend",
+        "pos": "동",
+        "meaning": "참석하다",
+        "sentence": "Instead of comparing schools again, I wrote down three things I could try: say hello to a classmate, ask a teacher for help when necessary, and attend the science club's first meeting."
+      },
+      {
+        "word": "take away",
+        "surface": "take away",
+        "pos": "동",
+        "meaning": "없애다",
+        "sentence": "The list did not take away all my worries."
+      },
+      {
+        "word": "besides",
+        "surface": "besides",
+        "pos": "전",
+        "meaning": "~외에",
+        "sentence": "However, it gave me something to do besides worry."
+      }
+    ]
+  },
+  "advanced": {
+    "tagged_body": "I finally chose a high school last Friday. It {{v:offered}} a science club I wanted to join, and the bus {{v:journey}} took twenty minutes. {{g:Before deciding|전치사 before 뒤 동명사}}, I had compared schools, discussed them with my parents, and visited the school. I expected the decision to bring {{v:relief}}, yet some worries {{v:remained}}.\n\nThat evening, my best friend said she had chosen a different school. I {{v:immediately}} {{v:imagined}} eating lunch alone. Would everyone else make friends before I did? {{g:Would I be able to|be able to: ~할 수 있다; 미래에 대한 걱정}} {{v:keep up with}} the lessons? I returned to the school website, although its pages could not tell me how my own school life would {{v:turn out}}.\n\nMy older sister listened without telling me to choose again. \"You've {{v:considered}} your choice carefully,\" she said. \"You can't experience every part of a school before you start attending it.\"\n\nHer words helped me notice the {{v:difference}} between choosing a school and {{t:preparing to enter it}}. I opened a notebook and listed three actions: {{v:greet}} a classmate, ask a teacher for help when necessary, and attend the science club's first meeting.\n\nNone of these steps {{v:guaranteed}} an easy first day. They did, however, give me a way to {{v:take part in}} school life instead of only worrying about it. {{g:With|with + 목적어 + 과거분사: 일부 질문이 답을 얻지 못한 채}} some questions still {{v:unanswered}}, I closed the website and put the notebook in my bag.",
+    "tags": {
+      "vocab": [
+        "offered",
+        "journey",
+        "relief",
+        "remained",
+        "immediately",
+        "imagined",
+        "keep up with",
+        "turn out",
+        "considered",
+        "difference",
+        "greet",
+        "guaranteed",
+        "take part in",
+        "unanswered"
+      ],
+      "grammar": [
+        "전치사 before 뒤 동명사",
+        "be able to: ~할 수 있다; 미래에 대한 걱정",
+        "with + 목적어 + 과거분사: 일부 질문이 답을 얻지 못한 채"
+      ],
+      "topic": [
+        "고등학교 선택",
+        "선택 후의 불안",
+        "작은 행동과 준비"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "039b3310-9c6c-4943-b7bb-592f78ddcb6a",
+        "type": "mc",
+        "q": "Which detail shows that the choice was not made without preparation?",
+        "choices": [
+          "The writer already knew every future classmate.",
+          "The writer compared, discussed, and visited schools.",
+          "The sister selected the school without discussion.",
+          "The friend promised to attend the same school.",
+          "The website described the writer's future in detail."
+        ],
+        "answer": "The writer compared, discussed, and visited schools.",
+        "explanation": "근거: \"I had compared schools, discussed them with my parents, and visited the school.\" 이미 비교·상의·방문을 했으므로 충동적으로 고른 것은 아니다. 미래를 모두 알았다는 뜻은 아니다."
+      },
+      {
+        "qid": "dcf5013c-218b-4a07-9514-889733fa609c",
+        "type": "mc",
+        "q": "What made the writer imagine eating lunch alone?",
+        "choices": [
+          "Finding that the science club had closed.",
+          "Learning that the bus journey was too long.",
+          "Hearing that the sister had lost a notebook.",
+          "Hearing that the best friend chose another school.",
+          "Being told that new classmates disliked science."
+        ],
+        "answer": "Hearing that the best friend chose another school.",
+        "explanation": "근거: \"my best friend said she had chosen a different school\" 친구의 다른 학교 선택 직후 혼자 점심 먹는 모습을 상상한다. 다른 사건은 본문에 없다."
+      },
+      {
+        "qid": "0db13ed8-3df6-42d2-b1aa-b36638c6048a",
+        "type": "mc",
+        "q": "Why could the website not settle the writer's personal worries?",
+        "choices": [
+          "It could not reveal how the writer's own experiences would develop.",
+          "It contained no information about the school at all.",
+          "It required the writer to join every science meeting.",
+          "It had stopped working before the friend called.",
+          "It listed only the schools chosen by the sister."
+        ],
+        "answer": "It could not reveal how the writer's own experiences would develop.",
+        "explanation": "근거: \"its pages could not tell me how my own school life would turn out\" 웹사이트의 객관적 정보와 실제로 겪을 개인적 경험은 다르다. 고장·정보 전무는 언급되지 않았다."
+      },
+      {
+        "qid": "dd2a6f44-f1e9-4c68-bc83-7383adcbf50e",
+        "type": "mc",
+        "q": "Which response would agree with the older sister's words?",
+        "choices": [
+          "Choose again whenever a new worry appears.",
+          "Wait until every future experience is certain.",
+          "Ask the friend to make the final decision.",
+          "Avoid school activities until worries are gone.",
+          "Accept some unknowns while preparing for school."
+        ],
+        "answer": "Accept some unknowns while preparing for school.",
+        "explanation": "근거: \"You can't experience every part of a school before you start attending it.\" 모든 경험을 미리 해 볼 수 없으므로 불확실성이 있어도 준비하는 태도와 맞는다."
+      },
+      {
+        "qid": "aa86ddc1-8564-457d-abbb-3b5fc2287b15",
+        "type": "mc",
+        "q": "What does \"them\" refer to in \"discussed them with my parents\"?",
+        "choices": [
+          "The lessons.",
+          "The notebooks.",
+          "The schools.",
+          "The classmates.",
+          "The science experiments."
+        ],
+        "answer": "The schools.",
+        "explanation": "근거: \"I had compared schools, discussed them with my parents\" 비교하던 schools를 them이 받는다."
+      },
+      {
+        "qid": "df7f7dea-4b86-4ac0-a19b-0ea92d031bc0",
+        "type": "mc",
+        "q": "Which planned action most directly relates to concern about lessons?",
+        "choices": [
+          "Asking a teacher for help when necessary.",
+          "Greeting a classmate at the school entrance.",
+          "Attending the science club's first meeting.",
+          "Comparing the bus routes to other schools.",
+          "Checking the best friend's choice once more."
+        ],
+        "answer": "Asking a teacher for help when necessary.",
+        "explanation": "근거: \"ask a teacher for help when necessary\" 수업을 따라가지 못할 때 도움을 구할 방법이다. 인사와 동아리는 다른 적응 기회이며 수업 도움과 직접 연결되는 보기는 이것이다."
+      },
+      {
+        "qid": "ea3610cf-aa85-48e2-9729-8cf01d8272b0",
+        "type": "mc",
+        "q": "How does making the list differ from revisiting the website?",
+        "choices": [
+          "It proves that the chosen school has no weaknesses.",
+          "It removes the need to meet teachers or classmates.",
+          "It makes the friend choose the same school at once.",
+          "It focuses on possible actions rather than unknowable outcomes.",
+          "It gives exact answers about all future lessons."
+        ],
+        "answer": "It focuses on possible actions rather than unknowable outcomes.",
+        "explanation": "근거: \"preparing to enter it\" 웹사이트에서는 미래를 확실히 알려고 했지만 목록은 지금 계획할 수 있는 행동을 정리한다. 결과를 보장하지 않는다."
+      },
+      {
+        "qid": "c0b6548f-871d-4dc8-9c6b-9674fda71581",
+        "type": "mc",
+        "q": "What does \"None of these steps guaranteed an easy first day\" emphasize?",
+        "choices": [
+          "The list is useless unless it solves every problem.",
+          "Useful preparation does not promise a trouble-free start.",
+          "Every first day must be difficult for every student.",
+          "The writer has already failed to make any friends.",
+          "The sister expects the writer to change schools."
+        ],
+        "answer": "Useful preparation does not promise a trouble-free start.",
+        "explanation": "근거: \"None of these steps guaranteed an easy first day.\" 보장이 없다는 것과 도움이 없다는 것은 다르다. 반드시 실패한다는 뜻도 아니다."
+      },
+      {
+        "qid": "32ff2e83-9e1d-4194-821d-dd3b4c4b0bf2",
+        "type": "mc",
+        "q": "Which statement is NOT supported by the passage?",
+        "choices": [
+          "The bus journey to the school took twenty minutes.",
+          "The writer wanted to join the school's science club.",
+          "The sister listened without asking the writer to choose again.",
+          "Some of the writer's questions remained unanswered.",
+          "The writer successfully made a new friend before closing the website."
+        ],
+        "answer": "The writer successfully made a new friend before closing the website.",
+        "explanation": "근거: \"With some questions still unanswered, I closed the website\" 아직 입학 전 준비 단계이며 새 친구를 실제로 사귀었다는 사건은 없다. 나머지는 명시된 사실이다."
+      },
+      {
+        "qid": "43eabb57-dc62-4c86-8bb7-773672b5a231",
+        "type": "mc",
+        "q": "Which title best captures the change described in the passage?",
+        "choices": [
+          "From a Science Club to a Different School",
+          "How a Website Solved Every School Problem",
+          "From Seeking Certainty to Preparing to Participate",
+          "Why Friendship Should Decide Every School Choice",
+          "A Perfect First Day Without Any Preparation"
+        ],
+        "answer": "From Seeking Certainty to Preparing to Participate",
+        "explanation": "근거: \"take part in school life instead of only worrying about it\" 미래를 확실히 알려는 걱정에서 참여를 위한 준비로 이동한다. 동아리 포기·완벽한 첫날은 없다."
+      },
+      {
+        "qid": "8ab15533-f6b5-443a-b7c5-90f7a456b960",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (안도감)\nI expected the decision to bring ___, yet some worries remained.",
+        "answer": "relief",
+        "explanation": "\"I expected the decision to bring relief, yet some worries remained.\" 문맥에서 '안도감'에 해당하는 표현은 relief이다."
+      },
+      {
+        "qid": "7886fd95-0389-4a10-ac74-b1b1bd426a21",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (상상했다)\nI immediately ___ eating lunch alone.",
+        "answer": "imagined",
+        "explanation": "\"I immediately imagined eating lunch alone.\" 문맥에서 '상상했다'에 해당하는 표현은 imagined이다."
+      },
+      {
+        "qid": "6d9da02d-dd79-4010-b8d6-528db81acfe2",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (~하지 않고)\nMy older sister listened ___ telling me to choose again.",
+        "answer": "without",
+        "explanation": "\"My older sister listened without telling me to choose again.\" 문맥에서 '~하지 않고'에 해당하는 표현은 without이다."
+      },
+      {
+        "qid": "6e1456f6-1647-401c-ab1c-6fe6f592dd02",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (차이)\nHer words helped me notice the ___ between choosing a school and preparing to enter it.",
+        "answer": "difference",
+        "explanation": "\"Her words helped me notice the difference between choosing a school and preparing to enter it.\" 문맥에서 '차이'에 해당하는 표현은 difference이다."
+      },
+      {
+        "qid": "9b867c33-414e-4482-8c86-6b7073bb81e6",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (~에 참여하다)\nThey did, however, give me a way to ___ school life instead of only worrying about it.",
+        "answer": "take part in",
+        "explanation": "\"They did, however, give me a way to take part in school life instead of only worrying about it.\" 문맥에서 '~에 참여하다'에 해당하는 표현은 take part in이다."
+      },
+      {
+        "qid": "9b39dee6-7992-46b9-bcaf-bc8b6c12a3b1",
+        "type": "tf",
+        "q": "글쓴이는 친구 관계뿐 아니라 수업을 따라갈 수 있을지도 걱정했다.",
+        "answer": true,
+        "explanation": "근거: \"Would I be able to keep up with the lessons?\" 친구 관계 질문 뒤 수업에 관한 질문도 제시된다."
+      },
+      {
+        "qid": "815da9d7-886d-4b95-a4d4-22b02034922c",
+        "type": "tf",
+        "q": "언니 또는 누나는 학교 선택을 다시 하라고 지시했다.",
+        "answer": false,
+        "explanation": "근거: \"without telling me to choose again\" without이므로 다시 고르라고 말하지 않았다."
+      },
+      {
+        "qid": "282358b6-17b1-4e4c-bf42-60c444b49b6c",
+        "type": "tf",
+        "q": "마지막 행동은 질문이 남아 있어도 준비를 이어 가는 모습으로 볼 수 있다.",
+        "answer": true,
+        "explanation": "근거: \"With some questions still unanswered, I closed the website and put the notebook in my bag.\" 해결되지 않은 질문과 노트를 가방에 넣는 준비 행동이 함께 제시된다."
+      },
+      {
+        "qid": "d2ad17b1-88a7-4c22-b87d-c8e1ce617fb7",
+        "type": "mc",
+        "q": "Choose the correct completion of this NEW sentence: With the door ___, nobody could enter the room.",
+        "choices": [
+          "locked",
+          "locking",
+          "lock",
+          "to lock",
+          "locks"
+        ],
+        "answer": "locked",
+        "explanation": "근거: \"With some questions still unanswered\" 문은 잠그는 주체가 아니라 잠긴 대상이다. with + 목적어 + 과거분사 구조이므로 locked가 맞다. 원문의 unanswered와 같은 수동·상태 관계이다."
+      },
+      {
+        "qid": "e6923275-5eff-49fa-bcfe-bf8a0df48334",
+        "type": "match",
+        "q": "영어 단어·표현과 이 지문에서의 우리말 뜻을 짝지으세요.",
+        "pairs": [
+          {
+            "word": "relief",
+            "meaning": "안도감"
+          },
+          {
+            "word": "considered",
+            "meaning": "숙고하다"
+          },
+          {
+            "word": "greet",
+            "meaning": "인사하다"
+          },
+          {
+            "word": "guaranteed",
+            "meaning": "보장하다"
+          },
+          {
+            "word": "unanswered",
+            "meaning": "답을 얻지 못한"
+          }
+        ],
+        "explanation": "단어장의 지문 속 뜻을 기준으로 연결한다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "be5f822b-cf11-4109-a545-f9834eb65d06",
+        "q": "학교를 신중히 골랐다는 근거 두 가지를 영어로 쓰세요. (The writer had ~ 로 시작)",
+        "wordLimit": 35,
+        "sampleAnswer": "The writer had compared schools and discussed them with their parents.",
+        "rubric": "① 비교·부모님과 대화·방문 중 두 가지 ② 본문 근거 ③ 자연스러운 문장. the writer's parents로 써도 인정.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "e0b20d1d-aa78-493e-9c17-776e72cd8622",
+        "q": "웹사이트가 답할 수 없었던 것은 무엇인지 설명하세요. (It could not tell ~ 사용)",
+        "wordLimit": 35,
+        "sampleAnswer": "It could not tell the writer how personal school life would turn out, including friendships and keeping up with lessons.",
+        "rubric": "① 개인 학교생활의 전개 ② 친구 또는 수업 걱정을 예로 연결 ③ 사이트에 아무 정보도 없었다고 과장하지 않음.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "ca3e85a4-01b8-4532-b91a-cf6b6948f5fa",
+        "q": "학교 선택과 입학 준비의 차이를 영어 두 문장으로 쓰세요. (Choosing ~ / Preparing ~)",
+        "wordLimit": 45,
+        "sampleAnswer": "Choosing a school involves comparing options. Preparing to enter it includes planning actions such as greeting a classmate and asking a teacher for help.",
+        "rubric": "① 선택에는 학교 비교 ② 준비에는 적응 행동 ③ 두 완전한 문장과 적절한 예. 같은 내용의 다른 표현 인정.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "58165e27-beba-41bb-a3f5-0cd2daffef00",
+        "q": "다음을 with로 시작하는 한 문장으로 연결하세요. Some questions were still unanswered. I put the notebook in my bag.",
+        "wordLimit": 30,
+        "sampleAnswer": "With some questions still unanswered, I put the notebook in my bag.",
+        "rubric": "① with + 목적어 + unanswered ② 남은 질문과 준비 행동을 동시에 표현 ③ 의미를 바꾸지 않음.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "7b6ac00d-98bd-469f-b9ad-2e38ed0677de",
+        "q": "새 학교에서 친구를 사귀는 일이 걱정될 때 할 수 있는 행동과 그 이유를 영어 두 문장으로 쓰세요. (could / because 사용, 자유 응답)",
+        "wordLimit": 45,
+        "sampleAnswer": "I could greet a classmate because a short conversation might help us get to know each other. I could also join a club to meet students with similar interests.",
+        "rubric": "① 실행 가능한 행동 ② because로 이유 연결 ③ 결과를 반드시 보장하지 않는 논리적인 설명. 예시와 다른 행동도 인정.",
+        "wordLimitUnit": "words"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "offer",
+        "surface": "offered",
+        "pos": "동",
+        "meaning": "제공하다",
+        "sentence": "It offered a science club I wanted to join, and the bus journey took twenty minutes."
+      },
+      {
+        "word": "journey",
+        "surface": "journey",
+        "pos": "명",
+        "meaning": "이동, 여정",
+        "sentence": "It offered a science club I wanted to join, and the bus journey took twenty minutes."
+      },
+      {
+        "word": "relief",
+        "surface": "relief",
+        "pos": "명",
+        "meaning": "안도감",
+        "sentence": "I expected the decision to bring relief, yet some worries remained."
+      },
+      {
+        "word": "remain",
+        "surface": "remained",
+        "pos": "동",
+        "meaning": "남다",
+        "sentence": "I expected the decision to bring relief, yet some worries remained."
+      },
+      {
+        "word": "immediately",
+        "surface": "immediately",
+        "pos": "부",
+        "meaning": "즉시",
+        "sentence": "I immediately imagined eating lunch alone."
+      },
+      {
+        "word": "imagine",
+        "surface": "imagined",
+        "pos": "동",
+        "meaning": "상상하다",
+        "sentence": "I immediately imagined eating lunch alone."
+      },
+      {
+        "word": "keep up with",
+        "surface": "keep up with",
+        "pos": "동",
+        "meaning": "~을 따라가다",
+        "sentence": "Would I be able to keep up with the lessons?"
+      },
+      {
+        "word": "turn out",
+        "surface": "turn out",
+        "pos": "동",
+        "meaning": "결국 ~이 되다",
+        "sentence": "I returned to the school website, although its pages could not tell me how my own school life would turn out."
+      },
+      {
+        "word": "consider",
+        "surface": "considered",
+        "pos": "동",
+        "meaning": "숙고하다",
+        "sentence": "\"You've considered your choice carefully,\" she said."
+      },
+      {
+        "word": "difference",
+        "surface": "difference",
+        "pos": "명",
+        "meaning": "차이",
+        "sentence": "Her words helped me notice the difference between choosing a school and preparing to enter it."
+      },
+      {
+        "word": "greet",
+        "surface": "greet",
+        "pos": "동",
+        "meaning": "인사하다",
+        "sentence": "I opened a notebook and listed three actions: greet a classmate, ask a teacher for help when necessary, and attend the science club's first meeting."
+      },
+      {
+        "word": "guarantee",
+        "surface": "guaranteed",
+        "pos": "동",
+        "meaning": "보장하다",
+        "sentence": "None of these steps guaranteed an easy first day."
+      },
+      {
+        "word": "take part in",
+        "surface": "take part in",
+        "pos": "동",
+        "meaning": "~에 참여하다",
+        "sentence": "They did, however, give me a way to take part in school life instead of only worrying about it."
+      },
+      {
+        "word": "unanswered",
+        "surface": "unanswered",
+        "pos": "형",
+        "meaning": "답을 얻지 못한",
+        "sentence": "With some questions still unanswered, I closed the website and put the notebook in my bag."
+      }
+    ]
+  },
+  "prestudy": {
+    "tagged_body": "Last Friday, I finally chose a high school that offered a science club I wanted to join. It was a twenty-minute bus ride away. Before reaching my decision, I had compared schools, discussed them with my parents, and visited the school. The decision was {{v:informed}}, but it did not bring the complete {{v:relief}} I had expected.\n\nWhen my best friend told me that evening that she had chosen another school, I {{v:pictured}} myself eating lunch alone. I also wondered whether I could keep up with the lessons. {{g:Returning to the school website|능동 분사구문: 웹사이트로 다시 돌아가서; 주어는 I}}, I searched for {{v:reassurance}}. Yet the information there could not {{v:predict}} the friendships I would {{v:form}} or the difficulties I might face.\n\nMy older sister listened. Rather than {{v:recommending}} another school, she reminded me that careful {{v:preparation}} could not remove every {{v:uncertainty}}. \"You can make a {{v:thoughtful}} choice without knowing exactly how everything will turn out,\" she said.\n\nI began to {{v:distinguish}} {{g:what I could do now|명사절 what: 지금 내가 할 수 있는 것}} from {{t:what I could discover only after entering school}}. In a notebook, I listed three {{v:manageable}} actions: greet a classmate, {{v:seek}} a teacher's help when necessary, and attend the science club's first meeting.\n\nThese steps were not a promise that I would never feel lonely or {{v:struggle}} with a lesson. They were {{v:opportunities}} to {{v:respond}} when difficulties {{v:arose}}. {{g:Although the uncertainty remained|양보절 although: 불확실성은 남아 있었지만}}, I no longer treated it as {{v:proof}} that my decision was wrong. I closed the website and put the notebook in my bag.",
+    "tags": {
+      "vocab": [
+        "informed",
+        "relief",
+        "pictured",
+        "reassurance",
+        "predict",
+        "form",
+        "recommending",
+        "preparation",
+        "uncertainty",
+        "thoughtful",
+        "distinguish",
+        "manageable",
+        "seek",
+        "struggle",
+        "opportunities",
+        "respond",
+        "arose",
+        "proof"
+      ],
+      "grammar": [
+        "능동 분사구문: 웹사이트로 다시 돌아가서; 주어는 I",
+        "명사절 what: 지금 내가 할 수 있는 것",
+        "양보절 although: 불확실성은 남아 있었지만"
+      ],
+      "topic": [
+        "고등학교 선택",
+        "선택 후의 불안",
+        "작은 행동과 준비"
+      ]
+    },
+    "questions": [
+      {
+        "qid": "f9d13ba7-3ca8-4a7a-8250-5b0618456a5e",
+        "type": "mc",
+        "q": "Which reason for choosing the school is directly mentioned?",
+        "choices": [
+          "It was chosen by every one of the writer's friends.",
+          "It offered a science club the writer wanted to join.",
+          "It guaranteed an easy first day for every student.",
+          "It allowed the writer to skip difficult lessons.",
+          "It was recommended as the only choice by the sister."
+        ],
+        "answer": "It offered a science club the writer wanted to join.",
+        "explanation": "근거: \"a science club I wanted to join\" 관심 있는 과학 동아리는 직접 제시된 선택 이유다. 친구·보장·수업 생략은 근거가 없다."
+      },
+      {
+        "qid": "3ae47c7b-4339-4f09-b090-5ef3f32a9739",
+        "type": "mc",
+        "q": "How long was the bus ride to the chosen school?",
+        "choices": [
+          "Ten minutes.",
+          "Fifteen minutes.",
+          "Thirty minutes.",
+          "Twenty minutes.",
+          "Forty minutes."
+        ],
+        "answer": "Twenty minutes.",
+        "explanation": "근거: \"a twenty-minute bus ride\" 복합형용사 twenty-minute은 20분짜리라는 뜻이다."
+      },
+      {
+        "qid": "3874eaf0-d2c6-463a-9ca2-60375570c355",
+        "type": "mc",
+        "q": "What does \"informed\" mean when describing the decision?",
+        "choices": [
+          "Based on relevant information.",
+          "Shared publicly with every student.",
+          "Made quickly without comparison.",
+          "Changed whenever a friend asked.",
+          "Guaranteed to prevent loneliness."
+        ],
+        "answer": "Based on relevant information.",
+        "explanation": "근거: \"I had compared schools, discussed them with my parents, and visited the school.\" 비교·상의·방문이라는 정보를 바탕으로 한 결정이다. 공개 발표나 결과 보장을 의미하지 않는다."
+      },
+      {
+        "qid": "e6246c49-ee05-47c2-b3b2-26d6c3efd771",
+        "type": "mc",
+        "q": "What was the writer seeking on returning to the website?",
+        "choices": [
+          "Proof that the best friend had changed schools.",
+          "A new science club for the older sister to join.",
+          "An excuse to avoid attending any school lessons.",
+          "The exact date of the first completed experiment.",
+          "Reassurance about future school experiences."
+        ],
+        "answer": "Reassurance about future school experiences.",
+        "explanation": "근거: \"I searched for reassurance\" 친구 관계와 수업에 대한 걱정을 줄일 확신을 찾았다. 다른 보기의 사건은 없다."
+      },
+      {
+        "qid": "ea57a319-d5d6-490b-b9b9-f34de1579518",
+        "type": "mc",
+        "q": "Which distinction does the writer begin to make?",
+        "choices": [
+          "The friend's old school and the sister's future school.",
+          "Science experiments and lessons already completed.",
+          "Actions possible now and experiences knowable only later.",
+          "A guaranteed friendship and a cancelled club meeting.",
+          "Information from parents and information that must be false."
+        ],
+        "answer": "Actions possible now and experiences knowable only later.",
+        "explanation": "근거: \"what I could do now from what I could discover only after entering school\" 현재 할 수 있는 행동과 입학 후에야 알 수 있는 경험을 구분한다."
+      },
+      {
+        "qid": "3367bd52-f64f-4cbc-9876-b49882b38f09",
+        "type": "mc",
+        "q": "What are \"manageable actions\" in the context of the list?",
+        "choices": [
+          "Small steps the writer can realistically attempt.",
+          "Plans that control how every classmate behaves.",
+          "Tasks that remove every possible uncertainty.",
+          "Actions that require changing schools immediately.",
+          "Rules that guarantee high scores in all subjects."
+        ],
+        "answer": "Small steps the writer can realistically attempt.",
+        "explanation": "근거: \"greet a classmate, seek a teacher's help when necessary, and attend the science club's first meeting\" 세 가지는 실행 가능한 작은 행동이다. 타인의 반응·완전한 확신·성적을 통제하는 일은 아니다."
+      },
+      {
+        "qid": "75eb9851-fce0-4b28-a74d-6b7143be115c",
+        "type": "mc",
+        "q": "Which plan directly provides a way to respond to academic difficulty?",
+        "choices": [
+          "Ignoring lessons until friendships improve.",
+          "Waiting for the website to predict every test.",
+          "Asking the best friend to make a new choice.",
+          "Seeking a teacher's help when needed.",
+          "Giving up the science club before its first meeting."
+        ],
+        "answer": "Seeking a teacher's help when needed.",
+        "explanation": "근거: \"seek a teacher's help when necessary\" 학습상의 어려움에는 선생님에게 도움을 구할 수 있다. 다른 행동은 목록에 없거나 관련 근거가 없다."
+      },
+      {
+        "qid": "06f84a3e-baa8-4107-b07a-09761993fab2",
+        "type": "mc",
+        "q": "Which conclusion follows from the contrast between an informed decision and remaining uncertainty?",
+        "choices": [
+          "A decision is sound only if it removes every future difficulty.",
+          "Uncertainty alone does not show that a careful decision was wrong.",
+          "Careful research makes it possible to predict every friendship.",
+          "A remaining worry always means that another school is better.",
+          "No information is useful because school life cannot be predicted."
+        ],
+        "answer": "Uncertainty alone does not show that a careful decision was wrong.",
+        "explanation": "근거: \"I no longer treated it as proof that my decision was wrong\" 불확실성이 남아도 잘못된 선택의 증거라고 여기지 않게 된다. 정보의 무용함이나 선택의 완벽함까지 주장하지 않는다."
+      },
+      {
+        "qid": "c140bdaf-b485-43c2-a1ca-27d80fb5b5e0",
+        "type": "mc",
+        "q": "Which student response best applies the passage's message to a new situation?",
+        "choices": [
+          "I feel uncertain about a club, so that proves I should never join it.",
+          "I have read the club guide, so I am certain that I will never face a problem.",
+          "I cannot predict every meeting, so preparing for the club would be pointless.",
+          "My friend chose another club, so I must choose it regardless of my interests.",
+          "I may feel lost in a new club, so I will prepare a question and ask for help."
+        ],
+        "answer": "I may feel lost in a new club, so I will prepare a question and ask for help.",
+        "explanation": "근거: \"They were opportunities to respond when difficulties arose.\" 낯섦을 인정하면서 가능한 준비·도움 요청을 선택하는 적용이다. 불확실성을 실패로 확정하거나 준비를 무의미하게 여기면 글과 어긋난다."
+      },
+      {
+        "qid": "f8bd3dcf-345e-47e5-b068-300b7c294a71",
+        "type": "mc",
+        "q": "Which account of the website and the notebook best explains their different roles in the ending?",
+        "choices": [
+          "The website reveals the future completely; the notebook merely copies its predictions.",
+          "The website proves the decision was wrong; the notebook records the choice of another school.",
+          "The website cannot settle personal unknowns; the notebook turns attention to responses within reach.",
+          "The website makes the friend return; the notebook lists friendships that have already formed.",
+          "The website removes academic problems; the notebook guarantees a successful first club meeting."
+        ],
+        "answer": "The website cannot settle personal unknowns; the notebook turns attention to responses within reach.",
+        "explanation": "근거: \"I listed three manageable actions\" 웹사이트는 개인의 미래를 예측하지 못하고 노트는 대응할 행동을 담는다. 결과 보장·선택 취소·이미 생긴 우정은 없다. 두 장면과 결말을 함께 해석하는 문항이다."
+      },
+      {
+        "qid": "c5e20f81-8cb6-4e19-9771-837a5f77489c",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (안도감)\nThe decision was informed, but it did not bring the complete ___ I had expected.",
+        "answer": "relief",
+        "explanation": "\"The decision was informed, but it did not bring the complete relief I had expected.\" 문맥에서 '안도감'에 해당하는 표현은 relief이다."
+      },
+      {
+        "qid": "cb902f11-fcbe-48af-afa6-7595030d72be",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (안심할 만한 확신)\nReturning to the school website, I searched for ___.",
+        "answer": "reassurance",
+        "explanation": "\"Returning to the school website, I searched for reassurance.\" 문맥에서 '안심할 만한 확신'에 해당하는 표현은 reassurance이다."
+      },
+      {
+        "qid": "b7591511-8389-4964-88b9-70b9a72326f3",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (구별하다)\nI began to ___ what I could do now from what I could discover only after entering school.",
+        "answer": "distinguish",
+        "explanation": "\"I began to distinguish what I could do now from what I could discover only after entering school.\" 문맥에서 '구별하다'에 해당하는 표현은 distinguish이다."
+      },
+      {
+        "qid": "7cc1c05f-6603-4801-87d9-921fadbfd8e3",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (감당할 수 있는)\nIn a notebook, I listed three ___ actions: greet a classmate, seek a teacher's help when necessary, and attend the science club's first meeting.",
+        "answer": "manageable",
+        "explanation": "\"In a notebook, I listed three manageable actions: greet a classmate, seek a teacher's help when necessary, and attend the science club's first meeting.\" 문맥에서 '감당할 수 있는'에 해당하는 표현은 manageable이다."
+      },
+      {
+        "qid": "d8f80944-ca63-4b89-b1a4-23c8d7b38501",
+        "type": "blank",
+        "q": "본문과 같은 단어·표현으로 빈칸을 채우세요. (발생했다)\nThey were opportunities to respond when difficulties ___.",
+        "answer": "arose",
+        "explanation": "\"They were opportunities to respond when difficulties arose.\" 문맥에서 '발생했다'에 해당하는 표현은 arose이다."
+      },
+      {
+        "qid": "035a874a-62d3-4379-979c-7f362a84a165",
+        "type": "tf",
+        "q": "학교를 고른 결정은 비교·상의·방문 없이 즉흥적으로 이루어졌다.",
+        "answer": false,
+        "explanation": "근거: \"The decision was informed\" 앞 문장의 비교·부모님과 대화·방문에 기반한 선택이므로 즉흥적이라는 주장과 다르다."
+      },
+      {
+        "qid": "0d5a0969-be96-46a1-aa11-b773f7a2c764",
+        "type": "tf",
+        "q": "언니 또는 누나는 모든 불확실성을 준비로 없앨 수 있다고 보았다.",
+        "answer": false,
+        "explanation": "근거: \"careful preparation could not remove every uncertainty\" could not remove every이므로 준비에도 한계가 있음을 말했다."
+      },
+      {
+        "qid": "f4151b67-7c04-4633-b6e8-2b1f00723cfe",
+        "type": "tf",
+        "q": "글쓴이는 불확실성이 남는다는 이유만으로 자신의 선택이 틀렸다고 보지 않게 되었다.",
+        "answer": true,
+        "explanation": "근거: \"I no longer treated it as proof that my decision was wrong\" it은 남아 있는 불확실성을 받으며 no longer가 관점의 변화를 드러낸다."
+      },
+      {
+        "qid": "51517a60-f124-4d11-999a-a5eaf0639149",
+        "type": "mc",
+        "q": "다음 새 문장의 빈칸에 알맞은 것은? ___ at the club room, Sora asked a member for help. (소라가 동아리방에 도착한 상황)",
+        "choices": [
+          "Arriving",
+          "Arrived",
+          "To arriving",
+          "Was arriving",
+          "Has arrived"
+        ],
+        "answer": "Arriving",
+        "explanation": "근거: \"Returning to the school website\" 주절의 주어 Sora가 arrive의 능동 주체이므로 Arriving으로 분사구문을 만든다. Arrived는 수동형처럼 쓰일 수 없고, 나머지는 이 자리에 독립된 부사구를 만들지 못한다."
+      },
+      {
+        "qid": "dfc482ed-59a2-4d17-b084-a5f184da76aa",
+        "type": "match",
+        "q": "영어 단어·표현과 이 지문에서의 우리말 뜻을 짝지으세요.",
+        "pairs": [
+          {
+            "word": "informed",
+            "meaning": "충분한 정보를 바탕으로 한"
+          },
+          {
+            "word": "predict",
+            "meaning": "예측하다"
+          },
+          {
+            "word": "uncertainty",
+            "meaning": "불확실성"
+          },
+          {
+            "word": "manageable",
+            "meaning": "감당할 수 있는"
+          },
+          {
+            "word": "respond",
+            "meaning": "대응하다"
+          }
+        ],
+        "explanation": "단어장의 지문 속 뜻을 기준으로 연결한다."
+      }
+    ],
+    "essays": [
+      {
+        "qid": "66e07b82-601e-44bb-ada8-d39436e8c206",
+        "q": "학교 선택에 정보가 활용되었다는 근거를 두 가지 영어로 쓰세요. (The decision was informed because ~)",
+        "wordLimit": 40,
+        "sampleAnswer": "The decision was informed because the writer had compared schools and visited the chosen school.",
+        "rubric": "① 비교·부모님과 대화·방문 중 두 가지 ② because 뒤 완전한 절 ③ 미래 결과가 보장됐다는 근거 없는 설명 제외.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "54fe8e19-e6d1-487a-88f3-609f41d85abd",
+        "q": "다음을 능동 분사구문으로 바꾸세요. When I returned to the school website, I searched for reassurance. (Returning ~ 으로 시작)",
+        "wordLimit": 25,
+        "sampleAnswer": "Returning to the school website, I searched for reassurance.",
+        "rubric": "① 공통 주어 I 생략 ② Returning으로 능동 표현 ③ 주절과 의미 보존. 시간 접속사 유무 자체로 별도 추론을 요구하지 않음.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "56080c87-1ed0-43dd-ab0b-072df7b1446c",
+        "q": "필자의 목록에서 학업 걱정에 대응하는 행동 하나와 관심사를 이어 가는 행동 하나를 영어로 쓰세요. (The writer planned to ~)",
+        "wordLimit": 45,
+        "sampleAnswer": "The writer planned to seek a teacher's help when necessary and attend the science club's first meeting.",
+        "rubric": "① 학업 도움 요청 ② 관심 있는 과학 동아리 참석 ③ 병렬 동사 구조와 본문 내용.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "7c501678-5490-4167-82aa-21bbf503dfe1",
+        "q": "“목록은 결과의 보장이 아니라 대응의 기회였다”를 목록 속 행동 하나로 설명하세요. 영어 2~3문장. (does not guarantee / can 사용)",
+        "wordLimit": 55,
+        "sampleAnswer": "Greeting a classmate does not guarantee a close friendship. It can create a chance to start a conversation. The plan offers an action rather than control over the result.",
+        "rubric": "① 실제 목록의 행동 하나 ② 결과 보장과 기회의 구별 ③ 본문 밖 실제 성공을 만들어 쓰지 않음. 다른 목록 행동을 사용한 논리적인 답 인정.",
+        "wordLimitUnit": "words"
+      },
+      {
+        "qid": "342faffe-d396-4f5a-b446-cf68b22376c9",
+        "q": "[도전] “불안이 남았으니 선택을 잘못한 것이다”라는 주장에 필자의 변화로 답하세요. 영어 2~3문장, 구체적 근거 두 가지 포함. (Although 사용)",
+        "wordLimit": 65,
+        "sampleAnswer": "Although the writer had compared schools carefully, uncertainty remained. The writer then planned manageable actions instead of treating uncertainty as proof of a wrong decision. This shows that a thoughtful choice can still leave questions unanswered.",
+        "rubric": "① 정보에 기반한 선택과 남은 불안 ② 목록 또는 마지막 관점 변화의 구체적 근거 ③ Although절과 주절의 의미 연결. 선택이 반드시 최선이었다고 보장하는 주장은 감점. 표현이 달라도 근거·논리가 맞으면 인정.",
+        "wordLimitUnit": "words"
+      }
+    ],
+    "wordbook": [
+      {
+        "word": "informed",
+        "surface": "informed",
+        "pos": "형",
+        "meaning": "충분한 정보를 바탕으로 한",
+        "sentence": "The decision was informed, but it did not bring the complete relief I had expected."
+      },
+      {
+        "word": "relief",
+        "surface": "relief",
+        "pos": "명",
+        "meaning": "안도감",
+        "sentence": "The decision was informed, but it did not bring the complete relief I had expected."
+      },
+      {
+        "word": "picture",
+        "surface": "pictured",
+        "pos": "동",
+        "meaning": "상상하다",
+        "sentence": "When my best friend told me that evening that she had chosen another school, I pictured myself eating lunch alone."
+      },
+      {
+        "word": "reassurance",
+        "surface": "reassurance",
+        "pos": "명",
+        "meaning": "안심시키는 말이나 확신",
+        "sentence": "Returning to the school website, I searched for reassurance."
+      },
+      {
+        "word": "predict",
+        "surface": "predict",
+        "pos": "동",
+        "meaning": "예측하다",
+        "sentence": "Yet the information there could not predict the friendships I would form or the difficulties I might face."
+      },
+      {
+        "word": "form",
+        "surface": "form",
+        "pos": "동",
+        "meaning": "형성하다",
+        "sentence": "Yet the information there could not predict the friendships I would form or the difficulties I might face."
+      },
+      {
+        "word": "recommend",
+        "surface": "recommending",
+        "pos": "동",
+        "meaning": "추천하다",
+        "sentence": "Rather than recommending another school, she reminded me that careful preparation could not remove every uncertainty."
+      },
+      {
+        "word": "preparation",
+        "surface": "preparation",
+        "pos": "명",
+        "meaning": "준비",
+        "sentence": "Rather than recommending another school, she reminded me that careful preparation could not remove every uncertainty."
+      },
+      {
+        "word": "uncertainty",
+        "surface": "uncertainty",
+        "pos": "명",
+        "meaning": "불확실성",
+        "sentence": "Rather than recommending another school, she reminded me that careful preparation could not remove every uncertainty."
+      },
+      {
+        "word": "thoughtful",
+        "surface": "thoughtful",
+        "pos": "형",
+        "meaning": "신중히 생각한",
+        "sentence": "\"You can make a thoughtful choice without knowing exactly how everything will turn out,\" she said."
+      },
+      {
+        "word": "distinguish",
+        "surface": "distinguish",
+        "pos": "동",
+        "meaning": "구별하다",
+        "sentence": "I began to distinguish what I could do now from what I could discover only after entering school."
+      },
+      {
+        "word": "manageable",
+        "surface": "manageable",
+        "pos": "형",
+        "meaning": "감당할 수 있는",
+        "sentence": "In a notebook, I listed three manageable actions: greet a classmate, seek a teacher's help when necessary, and attend the science club's first meeting."
+      },
+      {
+        "word": "seek",
+        "surface": "seek",
+        "pos": "동",
+        "meaning": "구하다",
+        "sentence": "In a notebook, I listed three manageable actions: greet a classmate, seek a teacher's help when necessary, and attend the science club's first meeting."
+      },
+      {
+        "word": "struggle",
+        "surface": "struggle",
+        "pos": "동",
+        "meaning": "애를 쓰다",
+        "sentence": "These steps were not a promise that I would never feel lonely or struggle with a lesson."
+      },
+      {
+        "word": "opportunity",
+        "surface": "opportunities",
+        "pos": "명",
+        "meaning": "기회",
+        "sentence": "They were opportunities to respond when difficulties arose."
+      },
+      {
+        "word": "respond",
+        "surface": "respond",
+        "pos": "동",
+        "meaning": "대응하다",
+        "sentence": "They were opportunities to respond when difficulties arose."
+      },
+      {
+        "word": "arise",
+        "surface": "arose",
+        "pos": "동",
+        "meaning": "발생하다",
+        "sentence": "They were opportunities to respond when difficulties arose."
+      },
+      {
+        "word": "proof",
+        "surface": "proof",
+        "pos": "명",
+        "meaning": "증거",
+        "sentence": "Although the uncertainty remained, I no longer treated it as proof that my decision was wrong."
+      }
+    ]
+  }
+}

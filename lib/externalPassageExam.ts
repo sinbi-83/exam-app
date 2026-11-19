@@ -4,6 +4,7 @@
 // "이 문제는 이미 이 시험에 담겼다"를 나중에 다시 열어도 판단할 수 있게 한다.
 
 import type { PassageEssay, PassageQuestion } from '@/types/passageBank'
+import { passageEssayLimit } from './passageEssay.ts'
 
 export type ExamSourceKind = 'question' | 'essay'
 
@@ -124,7 +125,7 @@ export function buildExternalExamQuestionData(
 
   if (kind === 'essay') {
     const e = item as PassageEssay
-    const limitNote = e.wordLimit ? ` (${e.wordLimit}자 이내)` : ''
+    const limitNote = e.wordLimit ? ` (${passageEssayLimit(e, '이내')})` : ''
     return {
       ...base,
       type: 'essay',

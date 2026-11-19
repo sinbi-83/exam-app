@@ -51,6 +51,7 @@ export type PassageQuestion =
 export interface PassageEssay extends PassageItemIdentity {
   q: string;
   wordLimit: number;
+  wordLimitUnit?: "words" | "characters"; // 없으면 기존 자료의 글자 수 기준 유지
   sampleAnswer: string;
   rubric: string;
   answerLang?: "en" | "ko"; // 답변 언어. 없으면 영어 작문으로 간주 ("ko"는 "우리말로 쓰시오" 유형)

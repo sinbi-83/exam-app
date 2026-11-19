@@ -4,7 +4,7 @@
 
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { copyFileSync, mkdtempSync, readFileSync, rmSync } from 'node:fs'
+import { copyFileSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { inspectQids, isValidQid, qidErrors, withQids } from '../lib/passageQid.ts'
@@ -181,7 +181,13 @@ test('CLI. assign-qids: 새 파일에 qid 부여·재실행 시 불변 / 검사�
   const dir = mkdtempSync(join(tmpdir(), 'qid-test-'))
   try {
     const content = join(dir, 'content.json')
-    copyFileSync(resolve('data/passage-sets/uncle-rocket-launch.content.json'), content)
+    // 현행 문항·단어장 규칙을 충족하는 표본에서 qid만 제거해 legacy를 검증한다.
+    copyFileSync(resolve('data/passage-sets/my-math-test.content.json'), content)
+    const legacyContent = JSON.parse(readFileSync(content, 'utf-8'))
+    for (const variant of Object.values(legacyContent) as { questions: { qid?: string }[]; essays: { qid?: string }[] }[]) {
+      for (const item of [...variant.questions, ...variant.essays]) delete item.qid
+    }
+    writeFileSync(content, JSON.stringify(legacyContent, null, 2) + '\n')
     const run = (script: string, args: string[]) =>
       execFileSync(process.execPath, [resolve('scripts', script), ...args], { encoding: 'utf-8', stdio: 'pipe' })
     const runFails = (script: string, args: string[]) => {
@@ -193,8 +199,8 @@ test('CLI. assign-qids: 새 파일에 qid 부여·재실행 시 불변 / 검사�
       }
     }
     // 검사기: legacy content 는 기본 모드에서 실패, --allow-legacy 에서 통과
-    assert.ok(runFails('check-passage-questions.ts', [content, 'data/passage-sets/uncle-rocket-launch.json']))
-    run('check-passage-questions.ts', [content, 'data/passage-sets/uncle-rocket-launch.json', '--allow-legacy'])
+    assert.ok(runFails('check-passage-questions.ts', [content, 'data/passage-sets/my-math-test.json']))
+    run('check-passage-questions.ts', [content, 'data/passage-sets/my-math-test.json', '--allow-legacy'])
     // assign-qids → 4단계 × (20+5) = 100개 부여, 검사기 기본 모드 통과
     run('assign-qids.ts', [content])
     const once = JSON.parse(readFileSync(content, 'utf-8'))
@@ -202,7 +208,7 @@ test('CLI. assign-qids: 새 파일에 qid 부여·재실행 시 불변 / 검사�
     assert.equal(all.length, 100)
     assert.ok(all.every((i: { qid?: string }) => isValidQid(i.qid)))
     assert.equal(new Set(all.map((i: { qid: string }) => i.qid)).size, 100)
-    run('check-passage-questions.ts', [content, 'data/passage-sets/uncle-rocket-launch.json'])
+    run('check-passage-questions.ts', [content, 'data/passage-sets/my-math-test.json'])
     // 재실행해도 qid 가 바뀌지 않음
     run('assign-qids.ts', [content])
     assert.equal(readFileSync(content, 'utf-8'), JSON.stringify(once, null, 2) + '\n')
