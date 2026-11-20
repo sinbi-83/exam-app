@@ -804,12 +804,12 @@ function EssayRow({
         </div>
       ) : (
         <>
-          <p className="text-sm font-medium text-gray-800">{essay.q}</p>
+          <p className="whitespace-pre-wrap text-sm font-medium text-gray-800">{essay.q}</p>
           {showAnswers && (
             <div className="mt-2 space-y-1.5">
               <div className="rounded bg-gray-50 p-2 text-xs text-gray-600">
                 <span className="font-medium text-gray-500">예시 답안: </span>
-                {essay.sampleAnswer}
+                <span className="whitespace-pre-wrap">{essay.sampleAnswer}</span>
               </div>
               <div className="rounded bg-gray-50 p-2 text-xs text-gray-600">
                 <span className="font-medium text-gray-500">채점 기준: </span>

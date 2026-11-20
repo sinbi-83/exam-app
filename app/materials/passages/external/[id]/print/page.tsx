@@ -166,7 +166,7 @@ function buildBlocks(
         gapMm: 4,
         node: (
           <div className="question-block">
-            <p className="text-sm leading-relaxed text-gray-900">
+            <p className="whitespace-pre-wrap text-sm leading-relaxed text-gray-900">
               {idx + 1}. {e.q} <span className="text-[10px] text-gray-400">({passageEssayLimit(e)})</span>
             </p>
             <div className="mt-1 h-16 rounded border border-gray-300" />
@@ -218,7 +218,7 @@ function buildBlocks(
         gapMm: 1.5,
         node: (
           <div className={`answer-block text-xs text-gray-600${idx === 0 ? ' pt-1.5' : ''}`}>
-            <span className="font-medium">서술형 {idx + 1}.</span> {e.sampleAnswer}{' '}
+            <span className="font-medium">서술형 {idx + 1}.</span> <span className="whitespace-pre-wrap">{e.sampleAnswer}</span>{' '}
             <span className="text-gray-400">[{e.rubric}]</span>
           </div>
         ),
