@@ -7,6 +7,7 @@ export default function MaterialsPage() {
       <h1 className="mb-1 text-xl font-semibold text-gray-800">자료</h1>
       <p className="mb-6 text-sm text-gray-500">시험에 쓰는 지문·문제·단어를 모아 둔 곳입니다.</p>
       <div className="grid gap-4 md:grid-cols-3">
+        <HubCard icon="📝" title="문법 학습지" description="to부정사 세부 목표 선택 · 예제 검토 · 학습지 인쇄" href="/materials/grammar-practice" />
         <HubCard
           icon="📄"
           title="지문"
