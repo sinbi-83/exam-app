@@ -1,14 +1,16 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { grammarGoals, grammarPractice, grammarReviewKey, selectGrammarItems, type PracticeItem } from '@/lib/grammarWorksheet'
+import { grammarGoals, grammarPractice, grammarReviewKey, selectGrammarItems, isNewGrammarItem, type PracticeItem } from '@/lib/grammarWorksheet'
 import teacherApprovals from '@/config/grammarReviewApprovals.json'
 
 const REVIEW_STORAGE = 'bostons-grammar-review-v1'
 
 export default function GrammarPracticePage() {
-  const [goals, setGoals] = useState<string[]>([])
+  const [goals, setGoals] = useState<string[]>(grammarGoals.map(g => g.id))
   const [activity, setActivity] = useState('all')
+  const [difficulty, setDifficulty] = useState('all')
+  const [reviewFilter, setReviewFilter] = useState('all')
   const [selected, setSelected] = useState<string[]>([])
   const [teacher, setTeacher] = useState(false)
   const [title, setTitle] = useState('to부정사 보충 학습지')
@@ -33,7 +35,9 @@ export default function GrammarPracticePage() {
     try { localStorage.setItem(REVIEW_STORAGE, JSON.stringify(next)); setStorageMessage('검수 상태를 현재 브라우저에 저장했습니다.') }
     catch { setStorageMessage('검수 상태를 저장하지 못했습니다. 지금 화면에만 반영되며 새로 열면 유지되지 않습니다.') }
   }
-  const candidates = selectGrammarItems(goals, activity)
+  const candidates = selectGrammarItems(goals, activity).filter(q =>
+    (difficulty === 'all' || q.difficulty === difficulty) &&
+    (reviewFilter === 'all' || (reviewFilter === 'pending' && !approved(q)) || (reviewFilter === 'done' && approved(q)) || (reviewFilter === 'new' && isNewGrammarItem(q))))
   const questions = candidates.filter(q => selected.includes(q.fixtureId))
   function toggleGoal(id: string) {
     setGoals(old => old.includes(id) ? old.filter(x => x !== id) : [...old, id])
@@ -46,9 +50,9 @@ export default function GrammarPracticePage() {
           <p className="text-sm text-amber-700">선생님 검수용 · 시험 기능</p>
           <h1 className="mt-1 text-2xl font-bold text-slate-800">문법 학습지</h1>
           <p className="mt-2 text-sm text-slate-600">to부정사 세부 목표를 고르고, 문항을 확인한 뒤 인쇄하세요.</p>
-          <p className="mt-2 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">예제 9문항은 검토용 초안입니다. 학년·4단계 난이도는 아직 확정하지 않았습니다. 학생 자료를 읽거나 저장하지 않으며 화면을 나가면 선택은 초기화됩니다.</p>
+          <p className="mt-2 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">총 60문항 · 기본·응용·심화는 출제 기준상 예상 난이도이며 선생님 검수로 조정합니다. 기존 9문항은 내용 검수 완료, 새 51문항은 검수 대기입니다. 학년이나 학교형·일반학원형 등과 자동 대응하지 않습니다.</p>
           <p className="mt-3 text-sm text-slate-700">전체 {grammarPractice.length}문항 · 검수 완료 {grammarPractice.filter(approved).length} · 검수 대기 {grammarPractice.filter(q => !approved(q)).length}</p>
-          <p className="mt-1 text-xs text-slate-600">명사적 용법 3문항은 선생님이 대화에서 검수 완료하셨습니다. 추가로 누르는 검수 상태는 이 브라우저에만 저장되며 다른 PC와 공유되지 않습니다. 브라우저 데이터를 지우면 추가 기록이 초기화됩니다. 문항 선택은 저장되지 않습니다.</p>
+          <p className="mt-1 text-xs text-slate-600">기존 9문항은 선생님이 대화에서 내용 검수 완료하셨습니다. 추가 검수 상태는 이 브라우저에만 저장되며 다른 PC와 공유되지 않습니다. 브라우저 데이터를 지우면 추가 기록이 초기화됩니다. 학생 자료와 문항 선택은 저장하지 않습니다.</p>
           {storageMessage && <p role="status" className="mt-2 text-sm text-blue-800">{storageMessage}</p>}
         </header>
         <section className="rounded-lg border bg-white p-5" aria-labelledby="goal-heading">
@@ -60,19 +64,27 @@ export default function GrammarPracticePage() {
           <label className="mt-4 block text-sm">활동 형태 <select className="ml-2 rounded border p-2" value={activity} onChange={e => { setActivity(e.target.value); setSelected([]) }}>
             <option value="all">전체</option>{['고르기', '조건 영작', '문장 전환'].map(a => <option key={a}>{a}</option>)}
           </select></label>
+          <div className="mt-3 flex flex-wrap gap-4">
+            <label className="text-sm">난이도 <select className="ml-2 rounded border p-2" value={difficulty} onChange={e => { setDifficulty(e.target.value); setSelected([]) }}><option value="all">전체</option>{['기본','응용','심화'].map(d => <option key={d}>{d}</option>)}</select></label>
+            <label className="text-sm">검수 상태 <select className="ml-2 rounded border p-2" value={reviewFilter} onChange={e => { setReviewFilter(e.target.value); setSelected([]) }}><option value="all">전체</option><option value="new">새 문항만</option><option value="pending">검수 대기만</option><option value="done">검수 완료만</option></select></label>
+          </div>
         </section>
         <section className="rounded-lg border bg-white p-5" aria-labelledby="question-heading">
           <div className="flex flex-wrap items-center justify-between gap-2"><h2 id="question-heading" className="font-bold">2. 문항 확인 · 선택</h2>
             <button type="button" disabled={!candidates.length} onClick={() => setSelected(candidates.map(q => q.fixtureId))} className="rounded border px-3 py-2 text-sm disabled:opacity-40">현재 문항 전체 선택</button></div>
-          <p role="status" className="my-3 text-sm text-slate-600">검색 {candidates.length}문항 · 선택 {questions.length}문항. 각 목표의 예제는 3문항이며 부족한 문항을 자동 생성하지 않습니다.</p>
-          {!candidates.length && <p className="py-5 text-center text-slate-500">먼저 문법 목표를 선택해주세요.</p>}
+          <p role="status" className="my-3 text-sm text-slate-600">검색 {candidates.length}문항 · 선택 {questions.length}문항. 각 목표 20문항(고르기 8 · 조건 영작 6 · 문장 전환 6). 부족한 문항을 자동 생성하지 않습니다.</p>
+          {!candidates.length && <p className="py-5 text-center text-slate-500">조건에 맞는 문항이 없습니다. 문법 목표·난이도·검수 상태를 확인해주세요.</p>}
           <div className="space-y-3">{candidates.map(q => <article key={q.fixtureId} className="rounded border p-4">
-            <p className="mb-3"><span className={`inline-block rounded-full border px-3 py-1 text-xs font-semibold ${approved(q) ? 'border-green-300 bg-green-50 text-green-800' : reviewing.includes(q.fixtureId) ? 'border-blue-300 bg-blue-50 text-blue-800' : 'border-amber-300 bg-amber-50 text-amber-900'}`}>{approved(q) ? '검수 완료' : reviewing.includes(q.fixtureId) ? '검수 중' : '검수 대기'}</span></p>
+            <div className="mb-3 flex flex-wrap items-center gap-2"><span className={`inline-block rounded-full border px-3 py-1 text-xs font-semibold ${approved(q) ? 'border-green-300 bg-green-50 text-green-800' : reviewing.includes(q.fixtureId) ? 'border-blue-300 bg-blue-50 text-blue-800' : 'border-amber-300 bg-amber-50 text-amber-900'}`}>{approved(q) ? '검수 완료' : reviewing.includes(q.fixtureId) ? '검수 중' : '검수 대기'}</span>
+              <span className="rounded border px-2 py-1 text-xs font-bold">{q.difficulty}</span>{isNewGrammarItem(q) && <span className="text-xs text-blue-800">새 문항</span>}
+              <span className="text-xs text-slate-500">{q.fixtureId}</span>
+              <button type="button" onClick={() => markReviewed(q, !approved(q))} className="ml-auto rounded border border-green-700 px-3 py-2 text-sm font-semibold text-green-900">{approved(q) ? '검수 대기로 되돌리기' : '검수 완료로 표시'}</button>
+            </div>
             <label className="flex cursor-pointer items-start gap-2"><input type="checkbox" checked={selected.includes(q.fixtureId)} onChange={() => setSelected(old => old.includes(q.fixtureId) ? old.filter(x => x !== q.fixtureId) : [...old, q.fixtureId])} className="mt-1" />
               <span><span className="mb-2 block text-xs text-amber-800">{grammarGoals.find(g => g.id === q.goal)?.label} · {q.activity}</span><span className="whitespace-pre-line text-sm">{q.prompt}</span></span></label>
             {q.choices && <ol className="mt-2 space-y-1 pl-6 text-sm">{q.choices.map((v,i) => <li key={v}>{['①','②','③','④','⑤'][i]} {v}</li>)}</ol>}
             <details className="mt-3 text-sm" onToggle={e => { const open = e.currentTarget.open; setReviewing(old => open ? [...new Set([...old, q.fixtureId])] : old.filter(id => id !== q.fixtureId)) }}><summary className="cursor-pointer text-blue-800">검수 · 정답·해설·채점 기준 보기</summary><p className="mt-2">정답: {q.answer}</p><p>{q.explanation}</p><p className="text-slate-600">{q.rubric}</p>
-              <button type="button" onClick={() => markReviewed(q, !approved(q))} className="mt-3 rounded border px-3 py-2 font-semibold">{approved(q) ? '검수 대기로 되돌리기' : '검수 완료로 표시'}</button>
+              <p className="mt-2 text-slate-600">예상 난이도: {q.difficulty} · {q.difficultyReason}</p>
             </details>
           </article>)}</div>
         </section>
@@ -90,6 +102,7 @@ export default function GrammarPracticePage() {
         <p className="my-3 border-b pb-3 text-sm">이름: ____________________　 총 {questions.length}문항</p>
         {!questions.length && <p className="text-sm text-slate-500">문항을 선택하면 이곳에 학습지가 표시됩니다.</p>}
         {questions.map((q,i) => <article key={q.fixtureId} className="worksheet-question mb-6">
+          <p className="mb-1 text-xs text-slate-600">{q.difficulty} · {grammarGoals.find(g => g.id === q.goal)?.label} · {q.activity}</p>
           <p className="mb-2 whitespace-pre-line text-sm leading-6"><strong>{i+1}. </strong>{q.prompt}</p>
           {q.choices && <ol className="space-y-1 text-sm">{q.choices.map((v,j) => <li key={v}>{['①','②','③','④','⑤'][j]} {v}</li>)}</ol>}
           <p className="mt-4 text-sm">답: __________________________________________________</p>
