@@ -39,6 +39,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { label: '문제은행', href: '/materials/questions', icon: '🏦' },
       { label: '문항 검색', href: '/materials/questions/search', icon: '🔎' },
       { label: '문법 학습지', href: '/materials/grammar-practice', icon: '📝' },
+      { label: '전자칠판 수업', href: '/materials/classroom', icon: '🖊️' },
       { label: '단어은행', href: '/materials/vocabulary', icon: '📒' },
       { label: '지문 단어장', href: '/materials/wordbooks', icon: '📗' },
       { label: '레벨테스트', href: '/materials/level-tests', icon: '📏' },
