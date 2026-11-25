@@ -9,6 +9,10 @@ export type PracticeItem = {
   fixtureId: string; goal: GrammarGoal; activity: '고르기' | '조건 영작' | '문장 전환';
   prompt: string; choices?: string[]; answer: string; explanation: string; rubric: string;
 }
+// Teacher approved these exact contents in chat. Any content edit invalidates approval.
+const reviewFingerprint = (q: PracticeItem) => JSON.stringify([q.prompt, q.choices, q.answer, q.explanation, q.rubric, q.goal, q.activity])
+export function grammarReviewKey(q: PracticeItem) { return q.fixtureId + ':' + reviewFingerprint(q) }
+export const teacherApprovedGrammarIds = ['review-n1', 'review-n2', 'review-n3'] as const
 export const grammarPractice: PracticeItem[] = [
   { fixtureId: 'review-n1', goal: 'noun', activity: '고르기', prompt: '밑줄 대신 [ ]로 표시한 부분이 문장의 목적어인 것을 고르세요.', choices: ['She wants [to learn English].', 'I have a book [to read].', 'He ran [to catch the bus].', 'We need a chair [to sit on].', 'She went out [to buy milk].'], answer: '① She wants to learn English.', explanation: 'to learn English는 wants의 목적어로 쓰였습니다. ②·④는 명사를 꾸미고 ③·⑤는 목적을 나타냅니다.', rubric: '① 선택 시 정답.' },
   { fixtureId: 'review-n2', goal: 'noun', activity: '조건 영작', prompt: '“나는 영어를 배우기를 원한다.”를 영작하세요.\n조건: I로 시작하고 want, learn, English를 각각 한 번 사용하세요. 필요하면 단어를 추가하세요.', answer: 'I want to learn English.', explanation: 'want의 목적어로 to learn English를 씁니다.', rubric: 'I want 1점 / to learn English 1점. 총 2점. 대소문자·마침표만의 차이는 감점하지 않습니다.' },

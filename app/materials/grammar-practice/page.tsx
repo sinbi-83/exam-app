@@ -1,7 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { grammarGoals, selectGrammarItems } from '@/lib/grammarWorksheet'
+import { useEffect, useState } from 'react'
+import { grammarGoals, grammarPractice, grammarReviewKey, selectGrammarItems, type PracticeItem } from '@/lib/grammarWorksheet'
+import teacherApprovals from '@/config/grammarReviewApprovals.json'
+
+const REVIEW_STORAGE = 'bostons-grammar-review-v1'
 
 export default function GrammarPracticePage() {
   const [goals, setGoals] = useState<string[]>([])
@@ -9,6 +12,27 @@ export default function GrammarPracticePage() {
   const [selected, setSelected] = useState<string[]>([])
   const [teacher, setTeacher] = useState(false)
   const [title, setTitle] = useState('to부정사 보충 학습지')
+  const [reviews, setReviews] = useState<Record<string, boolean>>({})
+  const [reviewing, setReviewing] = useState<string[]>([])
+  const [storageMessage, setStorageMessage] = useState('')
+  useEffect(() => {
+    try {
+      const saved: unknown = JSON.parse(localStorage.getItem(REVIEW_STORAGE) || '{}')
+      if (saved && typeof saved === 'object' && !Array.isArray(saved)) {
+        setReviews(Object.fromEntries(Object.entries(saved).filter(([,v]) => typeof v === 'boolean')))
+      }
+    } catch { setStorageMessage('저장된 검수 기록을 읽지 못했습니다. 이 화면의 변경은 다시 확인해주세요.') }
+  }, [])
+  function approved(q: PracticeItem) {
+    const override = reviews[grammarReviewKey(q)]
+    return typeof override === 'boolean' ? override : (teacherApprovals as Record<string, boolean>)[grammarReviewKey(q)] === true
+  }
+  function markReviewed(q: PracticeItem, done: boolean) {
+    const next = { ...reviews, [grammarReviewKey(q)]: done }
+    setReviews(next)
+    try { localStorage.setItem(REVIEW_STORAGE, JSON.stringify(next)); setStorageMessage('검수 상태를 현재 브라우저에 저장했습니다.') }
+    catch { setStorageMessage('검수 상태를 저장하지 못했습니다. 지금 화면에만 반영되며 새로 열면 유지되지 않습니다.') }
+  }
   const candidates = selectGrammarItems(goals, activity)
   const questions = candidates.filter(q => selected.includes(q.fixtureId))
   function toggleGoal(id: string) {
@@ -23,6 +47,9 @@ export default function GrammarPracticePage() {
           <h1 className="mt-1 text-2xl font-bold text-slate-800">문법 학습지</h1>
           <p className="mt-2 text-sm text-slate-600">to부정사 세부 목표를 고르고, 문항을 확인한 뒤 인쇄하세요.</p>
           <p className="mt-2 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">예제 9문항은 검토용 초안입니다. 학년·4단계 난이도는 아직 확정하지 않았습니다. 학생 자료를 읽거나 저장하지 않으며 화면을 나가면 선택은 초기화됩니다.</p>
+          <p className="mt-3 text-sm text-slate-700">전체 {grammarPractice.length}문항 · 검수 완료 {grammarPractice.filter(approved).length} · 검수 대기 {grammarPractice.filter(q => !approved(q)).length}</p>
+          <p className="mt-1 text-xs text-slate-600">명사적 용법 3문항은 선생님이 대화에서 검수 완료하셨습니다. 추가로 누르는 검수 상태는 이 브라우저에만 저장되며 다른 PC와 공유되지 않습니다. 브라우저 데이터를 지우면 추가 기록이 초기화됩니다. 문항 선택은 저장되지 않습니다.</p>
+          {storageMessage && <p role="status" className="mt-2 text-sm text-blue-800">{storageMessage}</p>}
         </header>
         <section className="rounded-lg border bg-white p-5" aria-labelledby="goal-heading">
           <h2 id="goal-heading" className="mb-3 font-bold">1. 문법 목표 선택</h2>
@@ -40,10 +67,13 @@ export default function GrammarPracticePage() {
           <p role="status" className="my-3 text-sm text-slate-600">검색 {candidates.length}문항 · 선택 {questions.length}문항. 각 목표의 예제는 3문항이며 부족한 문항을 자동 생성하지 않습니다.</p>
           {!candidates.length && <p className="py-5 text-center text-slate-500">먼저 문법 목표를 선택해주세요.</p>}
           <div className="space-y-3">{candidates.map(q => <article key={q.fixtureId} className="rounded border p-4">
+            <p className="mb-3"><span className={`inline-block rounded-full border px-3 py-1 text-xs font-semibold ${approved(q) ? 'border-green-300 bg-green-50 text-green-800' : reviewing.includes(q.fixtureId) ? 'border-blue-300 bg-blue-50 text-blue-800' : 'border-amber-300 bg-amber-50 text-amber-900'}`}>{approved(q) ? '검수 완료' : reviewing.includes(q.fixtureId) ? '검수 중' : '검수 대기'}</span></p>
             <label className="flex cursor-pointer items-start gap-2"><input type="checkbox" checked={selected.includes(q.fixtureId)} onChange={() => setSelected(old => old.includes(q.fixtureId) ? old.filter(x => x !== q.fixtureId) : [...old, q.fixtureId])} className="mt-1" />
               <span><span className="mb-2 block text-xs text-amber-800">{grammarGoals.find(g => g.id === q.goal)?.label} · {q.activity}</span><span className="whitespace-pre-line text-sm">{q.prompt}</span></span></label>
             {q.choices && <ol className="mt-2 space-y-1 pl-6 text-sm">{q.choices.map((v,i) => <li key={v}>{['①','②','③','④','⑤'][i]} {v}</li>)}</ol>}
-            <details className="mt-3 text-sm"><summary className="cursor-pointer text-blue-800">정답·해설·채점 기준 검토</summary><p className="mt-2">정답: {q.answer}</p><p>{q.explanation}</p><p className="text-slate-600">{q.rubric}</p></details>
+            <details className="mt-3 text-sm" onToggle={e => { const open = e.currentTarget.open; setReviewing(old => open ? [...new Set([...old, q.fixtureId])] : old.filter(id => id !== q.fixtureId)) }}><summary className="cursor-pointer text-blue-800">검수 · 정답·해설·채점 기준 보기</summary><p className="mt-2">정답: {q.answer}</p><p>{q.explanation}</p><p className="text-slate-600">{q.rubric}</p>
+              <button type="button" onClick={() => markReviewed(q, !approved(q))} className="mt-3 rounded border px-3 py-2 font-semibold">{approved(q) ? '검수 대기로 되돌리기' : '검수 완료로 표시'}</button>
+            </details>
           </article>)}</div>
         </section>
         <section className="rounded-lg border bg-white p-5">

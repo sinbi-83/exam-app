@@ -1,0 +1,5 @@
+{
+  "review-n1:[\"밑줄 대신 [ ]로 표시한 부분이 문장의 목적어인 것을 고르세요.\",[\"She wants [to learn English].\",\"I have a book [to read].\",\"He ran [to catch the bus].\",\"We need a chair [to sit on].\",\"She went out [to buy milk].\"],\"① She wants to learn English.\",\"to learn English는 wants의 목적어로 쓰였습니다. ②·④는 명사를 꾸미고 ③·⑤는 목적을 나타냅니다.\",\"① 선택 시 정답.\",\"noun\",\"고르기\"]": true,
+  "review-n2:[\"“나는 영어를 배우기를 원한다.”를 영작하세요.\\n조건: I로 시작하고 want, learn, English를 각각 한 번 사용하세요. 필요하면 단어를 추가하세요.\",null,\"I want to learn English.\",\"want의 목적어로 to learn English를 씁니다.\",\"I want 1점 / to learn English 1점. 총 2점. 대소문자·마침표만의 차이는 감점하지 않습니다.\",\"noun\",\"조건 영작\"]": true,
+  "review-n3:[\"같은 뜻이 되도록 빈칸에 알맞은 말을 쓰세요.\\nLearning English is fun.\\n→ _____ English is fun.\\n조건: to부정사를 사용하세요.\",null,\"To learn\",\"동명사 주어 Learning English를 to부정사 주어 To learn English로 바꿉니다.\",\"빈칸에 To learn을 쓰면 정답. 문장 전체를 바르게 써도 인정합니다.\",\"noun\",\"문장 전환\"]": true
+}
