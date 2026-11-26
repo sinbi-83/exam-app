@@ -25,10 +25,37 @@ export default function LevelTestPaperGradePage() {
   const [memo, setMemo] = useState('')
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
+  const [notice, setNotice] = useState('')
 
   const score = useMemo(() => (test ? scoreLevelTest(test, answers, overrides) : null), [test, answers, overrides])
   if (!test || !info || !score) return <p className="py-20 text-center text-sm text-gray-400">시험지를 찾을 수 없습니다.</p>
   const rec = recommendLevel(test.form, score.percent, test.grade)
+  const hasAnswers = Object.values(answers).some(v => v !== '') || Object.keys(overrides).length > 0
+
+  function clearItem(id: string) {
+    setAnswers(old => { const next = { ...old }; delete next[id]; return next })
+    setOverride(id, null)
+    setNotice('')
+  }
+
+  function toggleChoice(id: string, choice: number) {
+    setAnswers(old => {
+      const next = { ...old }
+      if (old[id] === choice) delete next[id]
+      else next[id] = choice
+      return next
+    })
+    setOverride(id, null)
+    setNotice('')
+  }
+
+  function resetAnswers() {
+    if (!confirm('현재 입력한 모든 답안과 수동 맞음/틀림 판정을 초기화할까요? 학생 정보·응시일·메모와 이미 저장된 결과는 지우지 않습니다.')) return
+    setAnswers({})
+    setOverrides({})
+    setError('')
+    setNotice('답안과 수동 채점을 초기화했습니다. 학생 정보·응시일·메모는 유지했습니다.')
+  }
 
   function setOverride(id: string, v: boolean | null) {
     setOverrides((o) => {
@@ -78,6 +105,12 @@ export default function LevelTestPaperGradePage() {
         </label>
       </div>
 
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded border border-gray-200 bg-white p-3">
+        <p className="text-sm text-gray-600">같은 번호를 다시 누르면 선택이 해제됩니다. 초기화는 현재 입력 중인 답안에만 적용됩니다.</p>
+        <button type="button" onClick={resetAnswers} disabled={!hasAnswers || saving} className="rounded border border-red-300 px-3 py-2 text-sm font-medium text-red-700 disabled:opacity-40">답안 전체 초기화</button>
+      </div>
+      {notice && <p role="status" className="mb-3 text-sm text-blue-700">{notice}</p>}
+
       <div className="space-y-4">
         {SECTION_ORDER.map((section) => {
           const list = items.filter((i) => i.section === section)
@@ -91,14 +124,17 @@ export default function LevelTestPaperGradePage() {
                   const ok = isItemCorrect(it, answers, overrides)
                   const answered = answers[it.id] !== undefined && answers[it.id] !== ''
                   return (
-                    <div key={it.id} className="flex flex-wrap items-center gap-2 border-b border-gray-100 pb-2 text-sm">
+                    <div key={it.id} role="group" aria-label={`${num}번 답안`} className="flex flex-wrap items-center gap-2 border-b border-gray-100 pb-2 text-sm">
                       <span className="w-7 font-semibold text-gray-700">{num}.</span>
                       {it.type === 'mc' ? (
                         <div className="flex gap-1">
                           {(it.choices ?? []).map((_, i) => (
                             <button
                               key={i}
-                              onClick={() => setAnswers((a) => ({ ...a, [it.id]: i }))}
+                              type="button"
+                              aria-label={`${num}번 문항 ${i + 1}번 보기`}
+                              aria-pressed={answers[it.id] === i}
+                              onClick={() => toggleChoice(it.id, i)}
                               className={`h-9 w-9 rounded-full border text-base ${answers[it.id] === i ? 'border-blue-500 bg-blue-500 text-white' : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'}`}
                             >
                               {CHOICE_MARKS[i]}
@@ -126,6 +162,7 @@ export default function LevelTestPaperGradePage() {
                           <span className="text-xs text-gray-400">모범답: {String(it.answer)}</span>
                         </>
                       )}
+                      {(answered || it.id in overrides) && <button type="button" disabled={saving} onClick={() => clearItem(it.id)} className="rounded border border-gray-300 px-2 py-1 text-xs text-gray-600 disabled:opacity-40" aria-label={`${num}번 답안 지우기`}>답 지우기</button>}
                       <span className={`ml-auto text-sm font-semibold ${!answered && !(it.id in overrides) ? 'text-gray-300' : ok ? 'text-green-600' : 'text-red-500'}`}>
                         {!answered && !(it.id in overrides) ? '—' : ok ? 'O' : 'X'}
                       </span>
